@@ -11,6 +11,7 @@ import sys
 from wc26bot.betting import BetOption, best_value_bet, recommend_stake
 from wc26bot.data.wc26_teams import WC26_TEAMS
 from wc26bot.model import match_probabilities
+from wc26bot.odds_api import OddsApiError, find_match_odds
 
 
 def parse_args(argv: list[str]) -> argparse.Namespace:
@@ -19,13 +20,18 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
     )
     parser.add_argument("home", help="Hemmalag (se wc26bot/data/wc26_teams.py for namn)")
     parser.add_argument("away", help="Bortalag")
-    parser.add_argument(
+    odds_group = parser.add_mutually_exclusive_group(required=True)
+    odds_group.add_argument(
         "--odds",
         nargs=3,
         type=float,
         metavar=("HEMMA", "OAVGJORT", "BORTA"),
-        required=True,
-        help="Decimalodds (1X2) fran bookmaker",
+        help="Decimalodds (1X2) angivna manuellt",
+    )
+    odds_group.add_argument(
+        "--live-odds",
+        action="store_true",
+        help="Hamta riktiga odds fran The Odds API (kraver ODDS_API_KEY)",
     )
     parser.add_argument(
         "--bankroll", type=float, default=1000.0, help="Tillganglig bankrulle"
@@ -65,7 +71,26 @@ def run(argv: list[str]) -> int:
     print(f"Bada lag gor mal: {probs.btts_yes:.1%}")
     print(f"Over 2.5 mal:     {probs.over_2_5:.1%}")
 
-    home_odds, draw_odds, away_odds = args.odds
+    if args.live_odds:
+        try:
+            match_odds = find_match_odds(args.home, args.away)
+        except OddsApiError as exc:
+            print(f"Fel vid hamtning av odds: {exc}", file=sys.stderr)
+            return 1
+        if match_odds is None:
+            print(
+                f"Hittade inga live-odds for {args.home} vs {args.away}.",
+                file=sys.stderr,
+            )
+            return 1
+        print(f"\n(Live-odds fran {match_odds.bookmaker}, {match_odds.commence_time})")
+        home_odds, draw_odds, away_odds = (
+            match_odds.home_odds,
+            match_odds.draw_odds,
+            match_odds.away_odds,
+        )
+    else:
+        home_odds, draw_odds, away_odds = args.odds
     options = [
         BetOption(f"1 ({args.home})", probs.home_win, home_odds),
         BetOption("X (Oavgjort)", probs.draw, draw_odds),

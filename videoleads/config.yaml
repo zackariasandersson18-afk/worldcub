@@ -1,0 +1,36 @@
+# Inställningar för leadverktyget. API-nycklar ligger i .env, inte här.
+
+market:
+  countries: [SE, NO, DK, FI]     # Sverige/Norden
+  include_global_launches: true   # + globala lanseringar (Product Hunt)
+
+videos_per_day: 5
+
+my_name: ""            # t.ex. "Zackarias"
+my_company: ""         # t.ex. "Ditt Bolag AB"
+booking_link: ""       # t.ex. https://cal.com/dittnamn/15min eller Calendly
+link_in_first_message: false   # false = videolänken skickas först i followup
+
+database: leads.db
+
+sources:
+  producthunt:
+    enabled: true
+    days_back: 30
+    topics: [saas, productivity, developer-tools, marketing]
+    max_pages_per_topic: 3     # 20 produkter per sida
+
+  bolagsverket:
+    enabled: true
+    # Ladda ner bulkfilen från Bolagsverket (se README) och lägg den här.
+    # .zip, .txt och .csv fungerar.
+    bulk_file: data/bolagsverket_bolagsdata.zip
+    sni_codes: ["62.010", "58.290"]
+    only_aktiebolag: true
+    max_new_per_run: 200
+    # Nyckelord i verksamhetsbeskrivningen, används om bulkfilen saknar SNI-kolumn.
+    # keywords: [programvar, mjukvar, saas, molntjänst]
+
+http:
+  user_agent: "videoleads/0.1"
+  timeout: 15

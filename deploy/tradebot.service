@@ -1,0 +1,19 @@
+# systemd unit for the tradebot server (Docker). Install:
+#   sudo cp deploy/tradebot.service /etc/systemd/system/
+#   sudo systemctl daemon-reload && sudo systemctl enable --now tradebot
+#   journalctl -u tradebot -f      # live log
+[Unit]
+Description=tradebot always-on server
+After=docker.service network-online.target
+Requires=docker.service
+
+[Service]
+Restart=always
+RestartSec=10
+EnvironmentFile=/etc/tradebot.env
+ExecStartPre=-/usr/bin/docker rm -f tradebot
+ExecStart=/usr/bin/docker run --name tradebot --rm --env-file /etc/tradebot.env -v tradebot-data:/data tradebot
+ExecStop=/usr/bin/docker stop tradebot
+
+[Install]
+WantedBy=multi-user.target

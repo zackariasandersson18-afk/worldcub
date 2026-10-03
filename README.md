@@ -208,6 +208,39 @@ pa BTCUSDT.
 
 Schemalagda workflows kor bara fran repots default-gren.
 
+## Server som kor dygnet runt (`python -m tradebot serve`)
+
+GitHub Actions kor boten en gang per dygn. Servern kor den hela tiden:
+
+- **Varje prisandring** (Binance WebSocket, REST-polling som reserv):
+  - **stop-loss:** om priset nar stopnivan saljs hela positionen direkt.
+    Stopnivan satts vid kop (pris - 2 x daglig volatilitet) och flyttas bara
+    uppat medan positionen ar oppen.
+  - **kill switch:** om drawdown passerar halt-linjen saljs allt och boten
+    stannar for gott.
+- **Efter 00:00 UTC varje dag:** samma beslut som i Actions (signal,
+  positionsstorlek, Sharpe-kontroll).
+- **State** pushas till grenen `tradebot-state` vid varje affar och minst var
+  5:e minut, sa att dashboarden visar "SERVER LIVE" och stop-bevakningen.
+- Endast en server at gangen: lasfil i state-katalogen.
+
+### Satta upp pa en server (t.ex. Hetzner CX22, ca 4 EUR/man, valj EU)
+
+1. Skapa en GitHub-token: Settings -> Developer settings -> Fine-grained
+   tokens. Valj bara repot `worldcub` och ge **Contents: Read and write**.
+2. Pa servern (Ubuntu), som root:
+   ```bash
+   curl -fsSL https://raw.githubusercontent.com/zackariasandersson18-afk/worldcub/claude/football-betting-optimizer-45ox0q/deploy/install.sh | bash -s -- <GITHUB_TOKEN>
+   # testnet i stallet for paper: lagg till <TESTNET_KEY> <TESTNET_SECRET> efter token
+   ```
+3. Stang av Actions-schemat sa att de tva inte handlar samtidigt:
+   repot -> Settings -> Secrets and variables -> Actions -> **Variables** ->
+   `TRADEBOT_RUNNER` = `server`.
+4. Live-logg: `journalctl -u tradebot -f`
+
+Lokalt (utan Docker): `python -m tradebot serve --state-dir state --repo
+zackariasandersson18-afk/worldcub --ignore-gates` med `GITHUB_TOKEN` satt.
+
 ## Live-dashboard
 
 `dashboard/index.html` ar en fristaende sida utan byggsteg. I webblasaren

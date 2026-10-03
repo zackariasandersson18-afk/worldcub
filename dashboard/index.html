@@ -344,6 +344,13 @@ function marketSignal() {
   if (!L || d.length <= L) return null;
   return d.at(-1).c > d.at(-1 - L).c ? 1 : 0;
 }
+// the always-on server writes a heartbeat at least every 5 minutes
+function serverStatus() {
+  const hb = S.state?.server?.heartbeat;
+  if (!hb) return null;
+  const age = (Date.now() - new Date(hb.replace(' ', 'T'))) / 1000;
+  return {age, alive: age < 15 * 60, watching: !!S.state.server.watching};
+}
 function account() {
   const st = S.state || {}, hist = st.history || [], trades = st.trades || [], r = S.lastRun;
   const initial = hist.length ? hist[0].equity : null;
@@ -373,7 +380,7 @@ function account() {
   const equity = cash != null && px != null ? cash + qty * px : null;
   const d = decision();
   return {initial, qty, cash, entry, px, equity, pnl: equity != null && initial != null ? equity - initial : null,
-          trades: trades.length, stop: d.stop ?? null, signal: d.signal ?? marketSignal(), broker: S.runs.at(-1)?.broker,
+          trades: trades.length, stop: st.stop ?? d.stop ?? null, signal: d.signal ?? marketSignal(), broker: S.runs.at(-1)?.broker,
           health: d.health ?? null, lastAction: d.action ?? null, halted: !!st.halted, haltReason: st.halt_reason};
 }
 
@@ -433,7 +440,7 @@ function connect() {
     } else if (stream.includes('@depth')) {
       S.book = {bids: data.bids.slice(0, 5).map(x => [+x[0], +x[1]]), asks: data.asks.slice(0, 5).map(x => [+x[0], +x[1]])};
     } else if (stream.endsWith('@aggTrade')) {
-      S.ticks++; S.price = +data.p; S.lag = Math.max(0, Date.now() - data.T); S.lastTick = Date.now();
+      S.ticks++; S.price = +data.p; S.lag = data.T ? Math.max(0, Date.now() - data.T) : null; S.lastTick = Date.now();
       const notional = +data.p * +data.q;
       if (S.pulses.length < 60) S.pulses.push({lane: Math.floor(Math.random() * 12), t: 0, sell: data.m});
       if (notional >= 250_000) pushFeed(`<span class="${data.m ? 'down' : 'up'}">${data.m ? 'SÄLJ' : 'KÖP'} ${fmt(+data.q, 3)} BTC</span> <b>${usd(notional, 0)}</b> @ ${fmt(+data.p, 1)}`);
@@ -450,7 +457,8 @@ function pushFeed(html) {
 function buildFeed() {
   const items = [];
   for (const tr of (S.state?.trades || []).slice(-6).reverse()) {
-    items.push(`<span><span class="mute">${esc(String(tr.bar).slice(0, 10))}</span> <span class="${tr.side === 'BUY' ? 'up' : 'down'}">BOT ${tr.side === 'BUY' ? 'KÖPTE' : 'SÅLDE'} ${fmt(tr.qty, 6)} BTC</span> @ <b>${fmt(tr.price, 2)}</b> · avgift ${usd(tr.commission_quote)}</span>`);
+    const why = tr.reason === 'STOP' ? 'STOP-LOSS ' : tr.reason === 'HALT' ? 'KILL SWITCH ' : '';
+    items.push(`<span><span class="mute">${esc(String(tr.ts).slice(0, 16))}</span> <span class="${tr.side === 'BUY' ? 'up' : 'down'}">${why}BOT ${tr.side === 'BUY' ? 'KÖPTE' : 'SÅLDE'} ${fmt(tr.qty, 6)} BTC</span> @ <b>${fmt(tr.price, 2)}</b> · avgift ${usd(tr.commission_quote)}</span>`);
   }
   for (const r of S.runs.slice(-4).reverse()) {
     items.push(`<span><span class="mute">${esc(r.ts.slice(0, 16).replace('T', ' '))}</span> KÖRNING ${esc(r.broker)} <span class="${r.exit ? 'down' : 'up'}">exit ${r.exit}</span></span>`);
@@ -503,14 +511,18 @@ function renderHeader() {
   set('h-pos', a.qty ? fmt(a.qty, 6) + ' BTC' : '0 BTC');
   set('h-next', a.halted ? 'HALTED' : nextRun());
   const at = S.stateCommitAt ? new Date(S.stateCommitAt).toISOString().slice(11, 16) + ' UTC' : null;
-  $('h-account').textContent = (a.broker || '—').toUpperCase() + ' · ' +
+  const sv = serverStatus();
+  const mode = sv ? (sv.alive ? 'SERVER LIVE' : 'SERVER TYST ' + Math.round(sv.age / 60) + ' min') : 'DAGLIG (ACTIONS)';
+  $('h-account').textContent = mode + ' · ' + (a.broker || '—').toUpperCase() + ' · ' +
     (!S.stateOk ? 'ingen bot-data än' : at ? 'bot-data från ' + at + (S.stateSha ? ' · ' + S.stateSha.slice(0, 7) : '') : 'bot-data (cache)');
   $('s-price').textContent = S.price ? fmt(S.price, 2) : '—';
 }
 function renderWallet() {
   const a = account();
   $('w-acct').textContent = (a.broker === 'testnet' ? 'Binance testnet' : 'Paper') + ' · ' + CFG.symbol;
-  const b = $('w-badge'); b.textContent = a.halted ? 'HALTED' : 'ACTIVE'; b.className = 'r badge ' + (a.halted ? 'b-red' : 'b-green');
+  const sv = serverStatus(), b = $('w-badge');
+  b.textContent = a.halted ? 'HALTED' : sv?.alive && sv.watching ? 'STOP BEVAKAS' : sv && !sv.alive ? 'SERVER TYST' : 'ACTIVE';
+  b.className = 'r badge ' + (a.halted || (sv && !sv.alive) ? 'b-red' : 'b-green');
   const pnl = $('w-pnl');
   pnl.textContent = a.pnl == null ? '—' : (a.pnl >= 0 ? '+' : '−') + '$' + fmt(Math.abs(a.pnl), 3);
   pnl.style.color = a.pnl == null ? C.mute : a.pnl >= 0 ? C.green : C.red;

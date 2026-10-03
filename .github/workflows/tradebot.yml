@@ -23,6 +23,9 @@ concurrency:
 
 jobs:
   step:
+    # When the always-on server runs the account (repo variable TRADEBOT_RUNNER=server),
+    # the schedule stands down so the two never trade at the same time.
+    if: github.event_name == 'workflow_dispatch' || vars.TRADEBOT_RUNNER != 'server'
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:

@@ -206,3 +206,19 @@ def test_cli_run_then_trade_on_paper(tmp_path, monkeypatch, capsys):
     out = capsys.readouterr().out
     assert '"executed": true' in out
     assert (tmp_path / 's.json').exists()
+
+
+def test_approval_contains_dashboard_fields(tmp_path):
+    import json
+    from tradebot import __main__ as cli
+
+    p = synthetic_prices(700, seed=4)
+    csv = tmp_path / 'p.csv'
+    pd.DataFrame({'timestamp': p.index, 'close': p.values}).to_csv(csv, index=False)
+    out = tmp_path / 'a.json'
+    cli.main(['run', '--csv', str(csv), '--save-approval', str(out)])
+    a = json.loads(out.read_text())
+    assert set(a['gates']) == {'no_leakage', 'deflated_sharpe', 'walk_forward'}
+    assert len(a['critic']) == 8
+    assert a['walk_forward']['folds'] and 'sharpe' in a['walk_forward']['folds'][0]
+    assert set(a['regimes']) == {'bull', 'bear', 'chop'}

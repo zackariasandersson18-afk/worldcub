@@ -1,0 +1,34 @@
+name: dashboard (GitHub Pages)
+
+# Publishes dashboard/ as a static site. The page itself reads the bot's state
+# from the tradebot-state branch and live prices from Binance in the browser,
+# so it only needs redeploying when the dashboard code changes.
+on:
+  push:
+    paths: ['dashboard/**', '.github/workflows/dashboard.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    if: github.ref_name == github.event.repository.default_branch
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dashboard
+      - id: deploy
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,28 @@
+{
+  "approved": false,
+  "symbol": "BTCUSDT",
+  "interval": "1d",
+  "strategy": "momentum",
+  "params": {
+    "lookback": 60
+  },
+  "allow_short": false,
+  "n_trials": 25,
+  "oos_metrics": {
+    "sharpe": 1.03,
+    "ann_return": 44.8,
+    "max_drawdown": -59.9,
+    "longest_dd_periods": 756,
+    "calmar": 0.75,
+    "skew": 0.553,
+    "kurtosis": 10.846,
+    "n_obs": 2640,
+    "red_flag": "False"
+  },
+  "dsr": {
+    "deflated_sharpe": 0.783,
+    "expected_max_from_noise": 0.74,
+    "verdict": "REJECT"
+  },
+  "data_end": "2026-10-03 00:00:00+00:00"
+}

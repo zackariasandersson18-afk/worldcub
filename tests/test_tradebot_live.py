@@ -222,3 +222,15 @@ def test_approval_contains_dashboard_fields(tmp_path):
     assert len(a['critic']) == 8
     assert a['walk_forward']['folds'] and 'sharpe' in a['walk_forward']['folds'][0]
     assert set(a['regimes']) == {'bull', 'bear', 'chop'}
+
+
+def test_state_keeps_account_snapshot_after_skip(tmp_path):
+    p = rising()
+    b, state = paper(tmp_path, p), {}
+    trade_step(b, p, APPROVAL, state, execute=True, now=now_after(p))
+    acct = state['account']
+    assert acct['base'] == pytest.approx(b.balances()['BTC'])
+    assert acct['quote'] == pytest.approx(b.balances()['USDT'])
+    assert state['last_decision']['action'] == 'BUY'
+    trade_step(b, p, APPROVAL, state, execute=True, now=now_after(p))  # SKIP
+    assert state['account'] == acct

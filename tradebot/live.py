@@ -127,9 +127,17 @@ def trade_step(broker, prices: pd.Series, approval: dict, state: dict,
         report['fill'] = asdict(fill)
         bal = broker.balances()
         base_qty = bal.get(rules.base, 0.0)
-        equity = bal.get(rules.quote, 0.0) + base_qty * price
+        quote_qty = bal.get(rules.quote, 0.0)
+        equity = quote_qty + base_qty * price
         history[-1]['exposure'] = base_qty * price / equity if equity > 0 else 0.0
 
+    # snapshot for the dashboard: survives later SKIP/REFUSED reports
+    state['account'] = {'base': base_qty, 'quote': quote_qty,
+                        'price': price, 'bar': str(bar), 'asset': rules.base,
+                        'quote_asset': rules.quote}
+    state['last_decision'] = {'action': report['action'], 'signal': signal,
+                              'stop': report['stop'], 'target_qty': report['target_qty'],
+                              'health': health['action'], 'alerts': health['alerts']}
     state['history'] = history
     state['last_bar'] = str(bar)
     if health['action'] == 'HALT':

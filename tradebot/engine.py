@@ -64,7 +64,7 @@ def metrics(net: pd.Series, cfg: Config, min_obs: int = 100) -> dict:
     sharpe = ann_return / ann_vol if ann_vol > 0 else 0.0
 
     equity = (1 + r).cumprod()
-    peak = equity.cummax()
+    peak = equity.cummax().clip(lower=1.0)  # starting equity counts as a peak
     dd = (equity - peak) / peak
     max_dd = dd.min()
 

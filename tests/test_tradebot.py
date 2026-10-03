@@ -271,3 +271,9 @@ def test_cli_demo_runs_gates(capsys):
     out = capsys.readouterr().out
     assert code in (0, 1)
     assert '== Gates ==' in out
+
+
+def test_drawdown_counts_loss_on_first_period():
+    m = metrics(pd.Series([-0.5] + [0.0] * 120), Config())
+    assert m['max_drawdown'] == pytest.approx(-50.0)
+    assert health_check(pd.Series([-0.5]), {'sharpe': 1, 'max_drawdown': -20})['action'] == 'HALT'

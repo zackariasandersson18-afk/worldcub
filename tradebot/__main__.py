@@ -8,20 +8,28 @@ Examples:
     python -m tradebot dsr --sharpe 1.8 --n-trials 80 --n-obs 1095
     python -m tradebot health --returns live.csv --sharpe 1.2 --max-dd -25
     python -m tradebot prompt hypothesis --asset ETH --timeframe 1D
+
+    # live: approve, then run once per closed bar (dry-run without --execute)
+    python -m tradebot run --binance BTCUSDT --save-approval approval.json
+    python -m tradebot trade --approval approval.json --broker paper --execute
+    python -m tradebot trade --approval approval.json --broker testnet --execute
 """
 from __future__ import annotations
 
 import argparse
+import json
 import sys
 from functools import partial
 
 import pandas as pd
 
 from tradebot import strategies
+from tradebot.broker import BinanceTestnetBroker, PaperBroker
 from tradebot.critic import format_review
 from tradebot.data import fetch_binance, load_csv, synthetic_prices
 from tradebot.engine import Config, backtest, metrics
 from tradebot.gates import GateThresholds, run_gates
+from tradebot.live import LiveConfig, load_json, save_json, trade_step
 from tradebot.monitor import health_check
 from tradebot.prompts import TEMPLATES, render
 from tradebot.regimes import regime_report
@@ -87,6 +95,22 @@ def run_pipeline(prices: pd.Series, args: argparse.Namespace) -> int:
     print(f"1. Critic finds no leakage:        {_yes(result['gate1_no_leakage'])}")
     print(f"2. Deflated Sharpe clears the bar: {_yes(result['gate2_deflated_sharpe'])}")
     print(f"3. Survives walk-forward:          {_yes(result['gate3_walk_forward'])}")
+
+    if getattr(args, 'save_approval', None):
+        latest = fit(prices.iloc[-args.train_days:])['params']
+        save_json(args.save_approval, {
+            'approved': result['approved'],
+            'symbol': getattr(args, 'binance', None),
+            'interval': getattr(args, 'interval', '1d'),
+            'strategy': 'momentum',
+            'params': latest,
+            'allow_short': args.allow_short,
+            'n_trials': n_trials,
+            'oos_metrics': oos,
+            'dsr': result['dsr'],
+            'data_end': str(prices.index[-1]),
+        })
+        print(f'\nApproval file written: {args.save_approval} (approved={result["approved"]})')
     if result['approved']:
         print('\nAPPROVED for paper trading. Decide the kill condition now:')
         print(f"  halt if 30-period Sharpe < {oos['sharpe'] * 0.5:.2f} "
@@ -107,6 +131,38 @@ def cmd_run(args):
     else:
         prices = fetch_binance(args.binance, args.interval, args.start, args.end)
     return run_pipeline(prices, args)
+
+
+def cmd_trade(args):
+    approval = load_json(args.approval, {})
+    if not approval:
+        print(f'no approval file at {args.approval}; run `run --save-approval` first')
+        return 1
+    symbol = args.symbol or approval.get('symbol') or 'BTCUSDT'
+    interval = approval.get('interval', '1d')
+    start = (pd.Timestamp.now(tz='UTC') - pd.Timedelta(days=args.history_days)).strftime('%Y-%m-%d')
+    prices = fetch_binance(symbol, interval, start)
+
+    if args.broker == 'paper':
+        broker = PaperBroker(args.paper_wallet, symbol, args.paper_capital)
+        broker.set_price(float(prices.iloc[-1]))
+    else:
+        broker = BinanceTestnetBroker(symbol)
+
+    if args.ignore_gates and not approval.get('approved'):
+        print('WARNING: --ignore-gates. This strategy did NOT pass the gates. '
+              'Testnet/paper only -- never real money.')
+
+    state = load_json(args.state, {})
+    cfg = LiveConfig(risk_pct=args.risk_pct, max_position_pct=args.max_position_pct)
+    report = trade_step(broker, prices, approval, state, cfg,
+                        execute=args.execute, ignore_gates=args.ignore_gates)
+    if args.execute:
+        save_json(args.state, state)
+    else:
+        print('DRY RUN -- no order sent, state not changed. Add --execute.')
+    print(json.dumps(report, indent=2, default=str))
+    return {'HALT': 2, 'HALTED': 2, 'REFUSED': 1}.get(report['action'], 0)
 
 
 def cmd_backtest(args):
@@ -185,6 +241,24 @@ def build_parser() -> argparse.ArgumentParser:
     sp.add_argument('--start', default='2019-01-01')
     sp.add_argument('--end')
     sp.set_defaults(func=cmd_run)
+
+    sp.add_argument('--save-approval', metavar='PATH',
+                    help='write the gate result + latest params for `trade`')
+
+    sp = sub.add_parser('trade', help='one live step on paper or the Binance testnet')
+    sp.add_argument('--approval', required=True)
+    sp.add_argument('--state', default='trade_state.json')
+    sp.add_argument('--broker', choices=('paper', 'testnet'), default='paper')
+    sp.add_argument('--symbol', help='defaults to the symbol in the approval file')
+    sp.add_argument('--paper-wallet', default='paper_wallet.json')
+    sp.add_argument('--paper-capital', type=float, default=10_000)
+    sp.add_argument('--history-days', type=int, default=400)
+    sp.add_argument('--risk-pct', type=float, default=0.01)
+    sp.add_argument('--max-position-pct', type=float, default=0.20)
+    sp.add_argument('--execute', action='store_true', help='actually send the order')
+    sp.add_argument('--ignore-gates', action='store_true',
+                    help='trade a strategy that failed the gates (testnet/paper only)')
+    sp.set_defaults(func=cmd_trade)
 
     sp = sub.add_parser('backtest', help='single in-sample backtest')
     costs(sp)

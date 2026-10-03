@@ -129,7 +129,7 @@ stangda barer tas med.
 
 ## Avvikelser fran originalkoden i dokumentet
 
-Fyra saker i originalkoden ar fixade, eftersom de annars ger fel svar:
+Fem saker i originalkoden ar fixade, eftersom de annars ger fel svar:
 
 - **Deflated Sharpe** raknas pa Sharpe per period, inte arsvis. Originalet
   blandade arsvis Sharpe med antal dagliga observationer, och da gar nastan
@@ -142,9 +142,52 @@ Fyra saker i originalkoden ar fixade, eftersom de annars ger fel svar:
   far ocksa se historiken fore testfonstret, sa att indikatorerna hinner
   varmas upp. Lackagetestet ser till att den inte ser framat.
 - `fee_bps` dras per sida, pa varje enhet turnover.
+- **Drawdown** raknar nu startkapitalet som en topp. Annars missades en
+  forlust redan i forsta perioden, bade i `metrics` och i `health_check`.
+
+## Handla pa papper eller Binance testnet
+
+Orderlaggning finns for tva konton: ett lokalt **paper**-konto (en JSON-fil,
+samma avgifter och slippage som backtesten) och **Binance Spot Testnet**
+(lekpengar). Riktiga pengar stods medvetet inte: testnet-brokern vagrar alla
+URL:er som inte ar testnet.
+
+```bash
+# 1. Validera och spara godkannandet (parametrar + OOS-matt for kill-villkoret)
+python -m tradebot run --binance BTCUSDT --n-trials 25 --save-approval approval.json
+
+# 2. Kor en gang per stangd bar, t.ex. via cron strax efter 00:00 UTC
+python -m tradebot trade --approval approval.json --broker paper            # dry run
+python -m tradebot trade --approval approval.json --broker paper --execute
+python -m tradebot trade --approval approval.json --broker testnet --execute
+```
+
+For testnet: skapa nycklar pa https://testnet.binance.vision och satt
+`BINANCE_TESTNET_API_KEY` och `BINANCE_TESTNET_API_SECRET`.
+
+Varje `trade`-steg (`tradebot/live.py`):
+
+1. **Vagrar** om strategin inte passerat alla tre grindarna. `--ignore-gates`
+   finns for att prova flodet pa testnet/paper, med en tydlig varning.
+2. **Vagrar** gammal data (senaste bar aldre an 2 dagar) och hoppar over en
+   bar som redan hanterats, sa att dubbla cron-korningar inte dubbelhandlar.
+3. Kor **health check**. Vid HALT saljs positionen och boten stannar for gott
+   (`halted` i state-filen). Kill-villkoret bestams i forvag: 30-perioders
+   Sharpe under halften av backtestens, eller drawdown over 1,5 ganger
+   backtestens. Live-avkastningen raknas per enhet exponering, sa att den gar
+   att jamfora med backtesten som kor 100 %.
+4. Raknar signalen pa **stangda** barer (bara long, eftersom det ar ett
+   spotkonto).
+5. **Positionsstorlek:** stop = pris - 2 x daglig volatilitet. 1 % av kapitalet
+   riskeras om stoppen nas, med ett tak pa 20 % av kapitalet.
+6. Skickar hogst en marknadsorder. Kvantiteten rundas nedat till borsens
+   stepSize, och ordern hoppas over under minNotional. Storleken justeras bara
+   om den avviker mer an 25 % fran malet, for att undvika onodig handel.
+
+Signalen beraknas pa riktig marknadsdata (publika api.binance.com). Ordrar
+gar till testnet, dar priserna kan skilja sig fran den riktiga marknaden.
 
 ## Begransningar
 
-Det har ar ett validerings- och forskningsverktyg. Det skickar inga ordrar
-till nagon bors. En godkand strategi ska forst paper-tradas med
-`health`-kontrollen igang. Inget har ar finansiell radgivning.
+Inget har ar finansiell radgivning. Kor pa testnet lange innan du ens
+funderar pa riktiga pengar, och da kravs en egen, granskad kodandring.

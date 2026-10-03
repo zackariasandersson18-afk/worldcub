@@ -13,6 +13,9 @@ Examples:
     python -m tradebot run --binance BTCUSDT --save-approval approval.json
     python -m tradebot trade --approval approval.json --broker paper --execute
     python -m tradebot trade --approval approval.json --broker testnet --execute
+
+    # always-on server: live stop-loss + kill switch, daily decision after 00:00 UTC
+    python -m tradebot serve --state-dir state --repo OWNER/REPO --broker paper
 """
 from __future__ import annotations
 
@@ -191,6 +194,11 @@ def cmd_trade(args):
     return {'HALT': 2, 'HALTED': 2, 'REFUSED': 1}.get(report['action'], 0)
 
 
+def cmd_serve(args):
+    from tradebot import server
+    return server.main(args)
+
+
 def cmd_backtest(args):
     cfg = Config(fee_bps=args.fee_bps, slippage_bps=args.slippage_bps,
                  periods_per_year=args.periods_per_year)
@@ -285,6 +293,20 @@ def build_parser() -> argparse.ArgumentParser:
     sp.add_argument('--ignore-gates', action='store_true',
                     help='trade a strategy that failed the gates (testnet/paper only)')
     sp.set_defaults(func=cmd_trade)
+
+    sp = sub.add_parser('serve', help='always-on server: live stop, kill switch, daily step')
+    sp.add_argument('--state-dir', default='state',
+                    help='checkout of the tradebot-state branch (cloned if missing and --repo is set)')
+    sp.add_argument('--repo', help='OWNER/REPO to clone the state branch from (GITHUB_TOKEN to push)')
+    sp.add_argument('--broker', choices=('paper', 'testnet'),
+                    help='default: testnet if BINANCE_TESTNET_API_KEY/SECRET are set, else paper')
+    sp.add_argument('--symbol')
+    sp.add_argument('--risk-pct', type=float, default=0.01)
+    sp.add_argument('--max-position-pct', type=float, default=0.20)
+    sp.add_argument('--ignore-gates', action='store_true',
+                    help='trade a strategy that failed the gates (paper/testnet only)')
+    sp.add_argument('--no-push', action='store_true', help='keep state local, do not push to GitHub')
+    sp.set_defaults(func=cmd_serve)
 
     sp = sub.add_parser('backtest', help='single in-sample backtest')
     costs(sp)

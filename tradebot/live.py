@@ -132,12 +132,17 @@ def trade_step(broker, prices: pd.Series, approval: dict, state: dict,
         history[-1]['exposure'] = base_qty * price / equity if equity > 0 else 0.0
 
     # snapshot for the dashboard: survives later SKIP/REFUSED reports
-    state['account'] = {'base': base_qty, 'quote': quote_qty,
-                        'price': price, 'bar': str(bar), 'asset': rules.base,
-                        'quote_asset': rules.quote}
+    new_account = {'base': base_qty, 'quote': quote_qty,
+                   'price': price, 'bar': str(bar), 'asset': rules.base,
+                   'quote_asset': rules.quote}
     state['last_decision'] = {'action': report['action'], 'signal': signal,
                               'stop': report['stop'], 'target_qty': report['target_qty'],
                               'health': health['action'], 'alerts': health['alerts']}
+    # protective stop for the server's intraday watch: set on entry, only ever
+    # ratcheted up while the position is open, cleared when flat
+    prev = state.get('stop') if state.get('account', {}).get('base', 0) > 0 else None
+    state['stop'] = max(prev or 0.0, report['stop']) if base_qty * price >= rules.min_notional else None
+    state['account'] = new_account
     state['history'] = history
     state['last_bar'] = str(bar)
     if health['action'] == 'HALT':

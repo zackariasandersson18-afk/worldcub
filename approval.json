@@ -17,12 +17,402 @@
     "skew": 0.553,
     "kurtosis": 10.846,
     "n_obs": 2640,
-    "red_flag": "False"
+    "red_flag": false
   },
   "dsr": {
     "deflated_sharpe": 0.783,
     "expected_max_from_noise": 0.74,
     "verdict": "REJECT"
   },
-  "data_end": "2026-10-03 00:00:00+00:00"
+  "data_end": "2026-10-03 00:00:00+00:00",
+  "gates": {
+    "no_leakage": true,
+    "deflated_sharpe": false,
+    "walk_forward": false
+  },
+  "leakage": {
+    "status": "ABSENT",
+    "cuts_tested": 8,
+    "failures": []
+  },
+  "critic": [
+    {
+      "item": 1,
+      "name": "Look-ahead",
+      "status": "ABSENT"
+    },
+    {
+      "item": 2,
+      "name": "Survivorship",
+      "status": "CHECK"
+    },
+    {
+      "item": 3,
+      "name": "Repainting",
+      "status": "ABSENT"
+    },
+    {
+      "item": 4,
+      "name": "Costs",
+      "status": "ABSENT"
+    },
+    {
+      "item": 5,
+      "name": "Fill assumption",
+      "status": "ABSENT"
+    },
+    {
+      "item": 6,
+      "name": "Parameter fitting",
+      "status": "ABSENT"
+    },
+    {
+      "item": 7,
+      "name": "Sample",
+      "status": "ABSENT"
+    },
+    {
+      "item": 8,
+      "name": "Data alignment",
+      "status": "ABSENT"
+    }
+  ],
+  "walk_forward": {
+    "mean_sharpe": 0.36,
+    "positive_folds": "23/44",
+    "worst_fold": -5.31,
+    "folds": [
+      {
+        "start": "2019-07-01 00:00:00+00:00",
+        "lookback": 120,
+        "sharpe": -0.99,
+        "ann_return": -85.8,
+        "max_drawdown": -24.7
+      },
+      {
+        "start": "2019-08-30 00:00:00+00:00",
+        "lookback": 20,
+        "sharpe": 1.82,
+        "ann_return": 39.1,
+        "max_drawdown": -3.8
+      },
+      {
+        "start": "2019-10-29 00:00:00+00:00",
+        "lookback": 20,
+        "sharpe": -4.12,
+        "ann_return": -98.7,
+        "max_drawdown": -15.4
+      },
+      {
+        "start": "2019-12-28 00:00:00+00:00",
+        "lookback": 120,
+        "sharpe": 1.82,
+        "ann_return": 67.5,
+        "max_drawdown": -7.3
+      },
+      {
+        "start": "2020-02-26 00:00:00+00:00",
+        "lookback": 120,
+        "sharpe": -5.31,
+        "ann_return": -169.7,
+        "max_drawdown": -25.2
+      },
+      {
+        "start": "2020-04-26 00:00:00+00:00",
+        "lookback": 40,
+        "sharpe": 2.73,
+        "ann_return": 186.7,
+        "max_drawdown": -14.3
+      },
+      {
+        "start": "2020-06-25 00:00:00+00:00",
+        "lookback": 40,
+        "sharpe": 3.13,
+        "ann_return": 134.0,
+        "max_drawdown": -6.2
+      },
+      {
+        "start": "2020-08-24 00:00:00+00:00",
+        "lookback": 120,
+        "sharpe": 1.41,
+        "ann_return": 66.4,
+        "max_drawdown": -15.1
+      },
+      {
+        "start": "2020-10-23 00:00:00+00:00",
+        "lookback": 90,
+        "sharpe": 6.04,
+        "ann_return": 391.1,
+        "max_drawdown": -10.5
+      },
+      {
+        "start": "2020-12-22 00:00:00+00:00",
+        "lookback": 90,
+        "sharpe": 5.39,
+        "ann_return": 527.7,
+        "max_drawdown": -25.2
+      },
+      {
+        "start": "2021-02-20 00:00:00+00:00",
+        "lookback": 120,
+        "sharpe": 0.99,
+        "ann_return": 71.0,
+        "max_drawdown": -21.4
+      },
+      {
+        "start": "2021-04-21 00:00:00+00:00",
+        "lookback": 40,
+        "sharpe": 0.31,
+        "ann_return": 8.7,
+        "max_drawdown": -8.0
+      },
+      {
+        "start": "2021-06-20 00:00:00+00:00",
+        "lookback": 40,
+        "sharpe": 2.16,
+        "ann_return": 82.4,
+        "max_drawdown": -9.5
+      },
+      {
+        "start": "2021-08-19 00:00:00+00:00",
+        "lookback": 60,
+        "sharpe": 2.84,
+        "ann_return": 205.5,
+        "max_drawdown": -22.7
+      },
+      {
+        "start": "2021-10-18 00:00:00+00:00",
+        "lookback": 60,
+        "sharpe": -1.98,
+        "ann_return": -114.3,
+        "max_drawdown": -27.3
+      },
+      {
+        "start": "2021-12-17 00:00:00+00:00",
+        "lookback": 20,
+        "sharpe": -2.82,
+        "ann_return": -56.5,
+        "max_drawdown": -9.2
+      },
+      {
+        "start": "2022-02-15 00:00:00+00:00",
+        "lookback": 40,
+        "sharpe": -2.64,
+        "ann_return": -129.2,
+        "max_drawdown": -21.5
+      },
+      {
+        "start": "2022-04-16 00:00:00+00:00",
+        "lookback": 120,
+        "sharpe": 0.0,
+        "ann_return": 0.0,
+        "max_drawdown": 0.0
+      },
+      {
+        "start": "2022-06-15 00:00:00+00:00",
+        "lookback": 120,
+        "sharpe": 0.0,
+        "ann_return": 0.0,
+        "max_drawdown": 0.0
+      },
+      {
+        "start": "2022-08-14 00:00:00+00:00",
+        "lookback": 40,
+        "sharpe": -3.98,
+        "ann_return": -119.6,
+        "max_drawdown": -18.6
+      },
+      {
+        "start": "2022-10-13 00:00:00+00:00",
+        "lookback": 120,
+        "sharpe": -1.15,
+        "ann_return": -10.9,
+        "max_drawdown": -3.2
+      },
+      {
+        "start": "2022-12-12 00:00:00+00:00",
+        "lookback": 20,
+        "sharpe": 4.4,
+        "ann_return": 170.1,
+        "max_drawdown": -7.7
+      },
+      {
+        "start": "2023-02-10 00:00:00+00:00",
+        "lookback": 120,
+        "sharpe": 2.38,
+        "ann_return": 145.1,
+        "max_drawdown": -18.9
+      },
+      {
+        "start": "2023-04-11 00:00:00+00:00",
+        "lookback": 60,
+        "sharpe": -1.17,
+        "ann_return": -38.2,
+        "max_drawdown": -13.4
+      },
+      {
+        "start": "2023-06-10 00:00:00+00:00",
+        "lookback": 90,
+        "sharpe": 0.21,
+        "ann_return": 5.8,
+        "max_drawdown": -6.8
+      },
+      {
+        "start": "2023-08-09 00:00:00+00:00",
+        "lookback": 120,
+        "sharpe": 1.18,
+        "ann_return": 12.1,
+        "max_drawdown": -2.6
+      },
+      {
+        "start": "2023-10-08 00:00:00+00:00",
+        "lookback": 40,
+        "sharpe": 6.32,
+        "ann_return": 288.0,
+        "max_drawdown": -5.6
+      },
+      {
+        "start": "2023-12-07 00:00:00+00:00",
+        "lookback": 120,
+        "sharpe": -0.09,
+        "ann_return": -4.4,
+        "max_drawdown": -15.7
+      },
+      {
+        "start": "2024-02-05 00:00:00+00:00",
+        "lookback": 60,
+        "sharpe": 4.03,
+        "ann_return": 262.6,
+        "max_drawdown": -15.2
+      },
+      {
+        "start": "2024-04-05 00:00:00+00:00",
+        "lookback": 120,
+        "sharpe": 0.56,
+        "ann_return": 28.9,
+        "max_drawdown": -18.5
+      },
+      {
+        "start": "2024-06-04 00:00:00+00:00",
+        "lookback": 40,
+        "sharpe": -4.78,
+        "ann_return": -100.2,
+        "max_drawdown": -20.3
+      },
+      {
+        "start": "2024-08-03 00:00:00+00:00",
+        "lookback": 20,
+        "sharpe": -3.68,
+        "ann_return": -101.8,
+        "max_drawdown": -19.9
+      },
+      {
+        "start": "2024-10-02 00:00:00+00:00",
+        "lookback": 20,
+        "sharpe": 4.44,
+        "ann_return": 220.9,
+        "max_drawdown": -7.0
+      },
+      {
+        "start": "2024-12-01 00:00:00+00:00",
+        "lookback": 120,
+        "sharpe": 0.75,
+        "ann_return": 32.4,
+        "max_drawdown": -12.8
+      },
+      {
+        "start": "2025-01-30 00:00:00+00:00",
+        "lookback": 60,
+        "sharpe": -3.64,
+        "ann_return": -56.6,
+        "max_drawdown": -12.2
+      },
+      {
+        "start": "2025-03-31 00:00:00+00:00",
+        "lookback": 20,
+        "sharpe": 2.63,
+        "ann_return": 94.6,
+        "max_drawdown": -9.4
+      },
+      {
+        "start": "2025-05-30 00:00:00+00:00",
+        "lookback": 90,
+        "sharpe": 2.23,
+        "ann_return": 66.2,
+        "max_drawdown": -8.4
+      },
+      {
+        "start": "2025-07-29 00:00:00+00:00",
+        "lookback": 40,
+        "sharpe": -1.39,
+        "ann_return": -27.8,
+        "max_drawdown": -8.5
+      },
+      {
+        "start": "2025-09-27 00:00:00+00:00",
+        "lookback": 20,
+        "sharpe": -0.85,
+        "ann_return": -21.1,
+        "max_drawdown": -13.5
+      },
+      {
+        "start": "2025-11-26 00:00:00+00:00",
+        "lookback": 90,
+        "sharpe": 0.0,
+        "ann_return": 0.0,
+        "max_drawdown": 0.0
+      },
+      {
+        "start": "2026-01-25 00:00:00+00:00",
+        "lookback": 90,
+        "sharpe": 0.0,
+        "ann_return": 0.0,
+        "max_drawdown": 0.0
+      },
+      {
+        "start": "2026-03-26 00:00:00+00:00",
+        "lookback": 90,
+        "sharpe": -1.66,
+        "ann_return": -25.4,
+        "max_drawdown": -8.1
+      },
+      {
+        "start": "2026-05-25 00:00:00+00:00",
+        "lookback": 60,
+        "sharpe": -4.44,
+        "ann_return": -83.9,
+        "max_drawdown": -13.7
+      },
+      {
+        "start": "2026-07-24 00:00:00+00:00",
+        "lookback": 40,
+        "sharpe": 2.77,
+        "ann_return": 110.6,
+        "max_drawdown": -6.9
+      }
+    ]
+  },
+  "regimes": {
+    "bull": {
+      "sharpe": 2.33,
+      "ann_return": 121.4,
+      "n_obs": 1465
+    },
+    "bear": {
+      "sharpe": -2.07,
+      "ann_return": -47.0,
+      "n_obs": 1037
+    },
+    "chop": {
+      "sharpe": -1.76,
+      "ann_return": -67.2,
+      "n_obs": 119
+    }
+  },
+  "regime_verdict": "edge exists only in the bull regime",
+  "trade_config": {
+    "risk_pct": 0.01,
+    "max_position_pct": 0.2,
+    "stop_vol_mult": 2.0
+  }
 }

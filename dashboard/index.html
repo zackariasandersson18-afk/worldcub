@@ -310,17 +310,35 @@ async function loadState() {
   buildFeed();
 }
 
-// account from the last run report: exact for paper and testnet alike
+// account: the bot's own snapshot (state.account) > last run report > replay of the fills.
+// A SKIP/REFUSED report carries no balances, so it is never used on its own.
+function decision() {
+  const d = S.state?.last_decision, r = S.lastRun;
+  if (d) return d;
+  return r && r.equity != null ? {action: r.action, signal: r.signal, stop: r.stop, health: r.health?.action} : {};
+}
+// same rule as the bot: long when the close is above the close `lookback` days ago (closed bars only)
+function marketSignal() {
+  const L = S.approval?.params?.lookback, d = S.daily;
+  if (!L || d.length <= L) return null;
+  return d.at(-1).c > d.at(-1 - L).c ? 1 : 0;
+}
 function account() {
   const st = S.state || {}, hist = st.history || [], trades = st.trades || [], r = S.lastRun;
   const initial = hist.length ? hist[0].equity : null;
   let qty = 0, cash = initial;
-  if (r && r.equity != null) {
+  if (st.account) { qty = st.account.base; cash = st.account.quote; }
+  else if (r && r.equity != null) {
     qty = r.current_qty || 0; cash = r.equity - qty * r.price;
     if (r.fill) {
       const f = r.fill;
       if (f.side === 'BUY') { qty += f.qty; cash -= f.quote_qty + f.commission_quote; }
       else { qty -= f.qty; cash += f.quote_qty - f.commission_quote; }
+    }
+  } else if (initial != null) {
+    for (const t of trades) {
+      if (t.side === 'BUY') { qty += t.qty; cash -= t.quote_qty + t.commission_quote; }
+      else { qty -= t.qty; cash += t.quote_qty - t.commission_quote; }
     }
   }
   // average entry of the open position (walk the fills)
@@ -330,11 +348,12 @@ function account() {
     else if (pq > 0) { const avg = cost / pq; pq -= t.qty; cost -= avg * t.qty; if (pq < 1e-9) { pq = 0; cost = 0; } }
   }
   const entry = pq > 0 ? cost / pq : null;
-  const px = S.price ?? r?.price;
+  const px = S.price ?? st.account?.price ?? r?.price;
   const equity = cash != null && px != null ? cash + qty * px : null;
+  const d = decision();
   return {initial, qty, cash, entry, px, equity, pnl: equity != null && initial != null ? equity - initial : null,
-          trades: trades.length, stop: r?.stop ?? null, signal: r?.signal ?? null, broker: S.runs.at(-1)?.broker,
-          halted: !!st.halted, haltReason: st.halt_reason};
+          trades: trades.length, stop: d.stop ?? null, signal: d.signal ?? marketSignal(), broker: S.runs.at(-1)?.broker,
+          health: d.health ?? null, lastAction: d.action ?? null, halted: !!st.halted, haltReason: st.halt_reason};
 }
 
 // live per-unit-exposure returns, as tradebot/live.py computes them
@@ -624,7 +643,7 @@ const NODES = {
 function nodeState() {
   const ap = S.approval || {}, a = account(), g = ap.gates || {}, crit = ap.critic || [];
   const absent = crit.filter(c => c.status === 'ABSENT').length, present = crit.filter(c => c.status === 'PRESENT').length;
-  const health = S.lastRun?.health?.action;
+  const health = a.health;
   const s = (ok, txt) => ({col: ok === true ? C.green : ok === false ? C.red : C.yellow, txt});
   return {
     left: [
@@ -641,7 +660,7 @@ function nodeState() {
       s(g.walk_forward, ap.walk_forward ? ap.walk_forward.positive_folds : '—'),
       s(true, '1% · tak 20%'),
       s(health ? health === 'CONTINUE' : null, health || '—'),
-      s(a.halted ? false : S.lastRun ? true : null, S.lastRun ? (S.lastRun.action || '—') : '—'),
+      s(a.halted ? false : S.lastRun ? true : null, S.lastRun?.action || a.lastAction || '—'),
     ],
   };
 }
@@ -726,7 +745,7 @@ function drawKill() {
   set('k-dd', sgn(cur * 100, 2, '%'), cur < 0 ? -1 : 0);
   set('k-halt', haltDD == null ? '—' : fmt(haltDD * 100, 1) + '%');
   set('k-sh', L.sharpe == null ? `${L.n}/30 dagar` : sgn(L.sharpe) + ` (min ${fmt(haltSh)})`);
-  const hs = account().halted ? 'HALT' : S.lastRun?.health?.action || '—';
+  const ac = account(), hs = ac.halted ? 'HALT' : ac.health || '—';
   set('k-health', hs); $('k-health').className = 'v ' + (hs === 'CONTINUE' ? 'up' : hs === 'HALT' ? 'down' : '');
   $('k-t4').className = 'tile ' + (hs === 'CONTINUE' ? 'g' : hs === 'HALT' ? 'r' : '');
   $('k-t1').className = 'tile ' + (cur < 0 ? 'r' : 'g');

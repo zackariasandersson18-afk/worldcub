@@ -84,5 +84,5 @@ def metrics(net: pd.Series, cfg: Config, min_obs: int = 100) -> dict:
         'skew': round(float(r.skew()), 3) if len(r) > 2 else 0.0,
         'kurtosis': round(float(r.kurt()) + 3.0, 3) if len(r) > 3 else 3.0,
         'n_obs': len(r),
-        'red_flag': sharpe > 2,  # above 2 on daily crypto: leakage until proven otherwise
+        'red_flag': bool(sharpe > 2),  # above 2 on daily crypto: leakage until proven otherwise
     }

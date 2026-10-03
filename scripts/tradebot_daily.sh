@@ -34,7 +34,9 @@ else
 fi
 
 # --- gates: validate once (or on request) ------------------------------------
-if [[ ! -f "$STATE_DIR/approval.json" || "${REVALIDATE:-false}" == "true" ]]; then
+# also revalidate approvals written before the dashboard fields existed
+if [[ ! -f "$STATE_DIR/approval.json" || "${REVALIDATE:-false}" == "true" ]] \
+   || ! grep -q '"walk_forward"' "$STATE_DIR/approval.json"; then
   echo "== validating $SYMBOL =="
   python -m tradebot run --binance "$SYMBOL" --n-trials 25 \
     --save-approval "$STATE_DIR/approval.json" | tee "$STATE_DIR/validation.txt"

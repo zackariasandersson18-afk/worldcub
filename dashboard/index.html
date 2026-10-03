@@ -1,0 +1,843 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>tradebot live</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&family=VT323&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#05080e; --panel:#0a111c; --panel2:#0d1624; --line:#1a2638; --line2:#24344b;
+  --ink:#d6e2ef; --ink2:#8ea3ba; --mute:#5b6f86;
+  --green:#3dff8f; --red:#ff3d6e; --yellow:#ffd23d; --cyan:#3de0ff; --magenta:#ff3dd8; --blue:#3d7bff;
+  --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg);color:var(--ink);font-family:var(--mono);font-size:11px;min-height:100%}
+body{padding:0 0 28px;overflow-x:hidden}
+.up{color:var(--green)} .down{color:var(--red)} .warn{color:var(--yellow)} .cy{color:var(--cyan)} .mg{color:var(--magenta)} .mute{color:var(--mute)} .ink2{color:var(--ink2)}
+
+/* header */
+header{display:flex;align-items:center;gap:18px;padding:10px 16px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.logo{width:34px;height:34px;border-radius:6px;background:linear-gradient(135deg,#1d4ed8,#3de0ff);display:grid;place-items:center;font-weight:800;color:#fff;font-size:13px;flex:none}
+.brand .t{font-size:16px;font-weight:800;letter-spacing:.5px}
+.brand .t b{color:var(--cyan)}
+.brand .s{color:var(--mute);font-size:10px;letter-spacing:1.5px;margin-top:2px;text-transform:uppercase}
+.hstats{display:flex;gap:22px;margin-left:auto;flex-wrap:wrap}
+.hs .k{color:var(--mute);font-size:9px;letter-spacing:1.5px;text-transform:uppercase}
+.hs .v{font-size:15px;font-weight:600;margin-top:2px}
+.badge{display:inline-block;font-size:9px;font-weight:800;padding:2px 6px;border-radius:3px;letter-spacing:1px;vertical-align:middle}
+.b-green{background:rgba(61,255,143,.15);color:var(--green);border:1px solid rgba(61,255,143,.4)}
+.b-red{background:rgba(255,61,110,.15);color:var(--red);border:1px solid rgba(255,61,110,.4)}
+.b-yellow{background:rgba(255,210,61,.12);color:var(--yellow);border:1px solid rgba(255,210,61,.4)}
+.b-cyan{background:rgba(61,224,255,.12);color:var(--cyan);border:1px solid rgba(61,224,255,.4)}
+.clock{text-align:right}
+.clock .v{font-size:20px;font-weight:800}
+
+/* tickers */
+.ticker{display:flex;align-items:center;border-bottom:1px solid var(--line);background:#070c14;height:26px;overflow:hidden;white-space:nowrap}
+.ticker .tag{flex:none;background:var(--red);color:#fff;font-weight:800;font-size:10px;padding:0 10px;height:100%;display:flex;align-items:center;gap:6px;letter-spacing:1px}
+.ticker .tag i{width:6px;height:6px;border-radius:50%;background:#fff;animation:blink 1s infinite}
+.ticker .track{flex:1;overflow:hidden;position:relative;height:100%}
+.ticker .run{position:absolute;left:0;top:0;height:100%;display:flex;align-items:center;gap:28px;padding-left:20px;animation:marquee 60s linear infinite;color:var(--ink2)}
+.ticker .run span b{color:var(--ink)}
+.foot{position:fixed;bottom:0;left:0;right:0;border-top:1px solid var(--line);border-bottom:0;z-index:5}
+.foot .run{animation-duration:80s}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes blink{50%{opacity:.2}}
+
+/* grid */
+main{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:8px;padding:8px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:4px;display:flex;flex-direction:column;min-width:0;position:relative}
+.ph{display:flex;align-items:center;gap:8px;padding:7px 10px;border-bottom:1px solid var(--line);font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:var(--ink2);white-space:nowrap;overflow:hidden}
+.ph b{color:var(--ink);font-weight:800}
+.ph .d{color:var(--cyan)}
+.ph .r{margin-left:auto}
+.pb{padding:10px;flex:1;display:flex;flex-direction:column;gap:8px;min-height:0}
+canvas{display:block;width:100%}
+.c-wallet{grid-column:span 3}
+.c-spot{grid-column:span 3}
+.c-right{grid-column:span 6;display:flex;flex-direction:column;gap:8px}
+.c-shell{grid-column:span 12}
+.c-half{grid-column:span 6}
+@media (max-width:1100px){.c-wallet,.c-spot{grid-column:span 6}.c-right{grid-column:span 12}}
+@media (max-width:720px){main{padding:6px;gap:6px}.c-wallet,.c-spot,.c-half{grid-column:span 12}.hstats{gap:14px;margin-left:0}.clock{text-align:left}}
+
+/* wallet */
+.pnl{font-family:'VT323',var(--mono);font-size:64px;line-height:.9;letter-spacing:1px;text-shadow:0 0 18px currentColor}
+.k9{color:var(--mute);font-size:9px;letter-spacing:1.5px;text-transform:uppercase}
+.kv{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.kv .v{font-size:14px;font-weight:600;margin-top:2px}
+.sub{display:flex;gap:14px;color:var(--ink2);flex-wrap:wrap}
+
+/* order book */
+.book{width:100%;border-collapse:collapse;font-size:10.5px}
+.book td{padding:2px 6px;text-align:right;position:relative}
+.book td:first-child{text-align:left}
+.book tr.a td{color:var(--red)} .book tr.b td{color:var(--green)}
+.book tr .bar{position:absolute;right:0;top:1px;bottom:1px;opacity:.16;z-index:0}
+.book tr.a .bar{background:var(--red)} .book tr.b .bar{background:var(--green)}
+.book td span{position:relative;z-index:1}
+.spread{display:flex;justify-content:space-between;color:var(--ink2);padding:3px 6px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+
+/* side stats */
+.split{display:grid;grid-template-columns:1fr 120px;gap:10px;flex:1;min-height:0}
+.side{display:flex;flex-direction:column;gap:9px;border-left:1px solid var(--line);padding-left:10px}
+.side .v{font-size:15px;font-weight:600}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.tile{border:1px solid var(--line2);border-radius:3px;padding:6px 8px;background:var(--panel2)}
+.tile .v{font-size:14px;font-weight:700;margin-top:3px}
+.tile.g{border-color:rgba(61,255,143,.45)} .tile.r{border-color:rgba(255,61,110,.45)} .tile.y{border-color:rgba(255,210,61,.45)} .tile.c{border-color:rgba(61,224,255,.45)}
+@media (max-width:720px){.split{grid-template-columns:1fr}.side{border-left:0;padding-left:0;flex-direction:row;flex-wrap:wrap;gap:14px}.tiles{grid-template-columns:repeat(2,1fr)}}
+
+.tip{position:fixed;pointer-events:none;background:#0e1828;border:1px solid var(--line2);padding:6px 8px;border-radius:3px;font-size:10.5px;color:var(--ink);z-index:20;display:none;white-space:nowrap;box-shadow:0 4px 18px rgba(0,0,0,.5)}
+.empty{color:var(--mute);font-size:10px;padding:6px 0}
+.note{color:var(--mute);font-size:9.5px;line-height:1.5}
+a{color:var(--cyan)}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">TB</div>
+  <div class="brand">
+    <div class="t">tradebot <b>//</b> <span id="h-symbol">BTCUSDT</span> MOMENTUM</div>
+    <div class="s" id="h-sub">volatility stop · walk-forward validated · demo account</div>
+  </div>
+  <div class="hstats">
+    <div class="hs"><div class="k">BTC spot <span class="badge b-green" id="h-live">LIVE</span></div><div class="v" id="h-price">—</div></div>
+    <div class="hs"><div class="k">Idag (UTC)</div><div class="v" id="h-day">—</div></div>
+    <div class="hs"><div class="k">Signal</div><div class="v" id="h-signal">—</div></div>
+    <div class="hs"><div class="k">Position</div><div class="v" id="h-pos">—</div></div>
+    <div class="hs"><div class="k">Nästa körning</div><div class="v" id="h-next">—</div></div>
+  </div>
+  <div class="clock"><div class="v" id="h-clock">--:--:-- UTC</div><div class="k9" id="h-account">—</div></div>
+</header>
+
+<div class="ticker"><div class="tag"><i></i>LIVE FEED</div><div class="track"><div class="run" id="feed"></div></div></div>
+
+<main>
+  <!-- wallet -->
+  <section class="panel c-wallet">
+    <div class="ph"><span class="d">◆</span><b>Wallet</b> · <span id="w-acct">—</span><span class="r badge b-cyan" id="w-badge">—</span></div>
+    <div class="pb">
+      <div class="k9">All-time PnL · live mark-to-market</div>
+      <div class="pnl" id="w-pnl">—</div>
+      <div class="sub"><span id="w-pct">—</span><span id="w-eq">—</span></div>
+      <div class="kv">
+        <div><div class="k9">Affärer</div><div class="v" id="w-trades">—</div></div>
+        <div><div class="k9">Exponering</div><div class="v" id="w-exp">—</div></div>
+        <div><div class="k9">Insatt</div><div class="v" id="w-dep">—</div></div>
+        <div><div class="k9">Inköpspris</div><div class="v" id="w-entry">—</div></div>
+        <div><div class="k9">Stop</div><div class="v down" id="w-stop">—</div></div>
+        <div><div class="k9">Orealiserat</div><div class="v" id="w-unreal">—</div></div>
+      </div>
+      <div class="ph" style="padding:6px 0 4px;border:0"><span class="d">◆</span>Equity · daglig + live</div>
+      <canvas id="c-equity" height="110"></canvas>
+    </div>
+  </section>
+
+  <!-- spot -->
+  <section class="panel c-spot">
+    <div class="ph"><span class="d">◆</span><b>BTC spot</b> · 1m<span class="r" id="s-price">—</span></div>
+    <div class="pb">
+      <canvas id="c-candles" height="180"></canvas>
+      <table class="book" id="book"></table>
+    </div>
+  </section>
+
+  <div class="c-right">
+    <section class="panel">
+      <div class="ph"><span class="d">◆</span><b>Walk-forward ledger</b> · out-of-sample Sharpe per fold<span class="r mute" id="wf-sub"></span></div>
+      <div class="pb"><div class="split">
+        <canvas id="c-folds" height="150"></canvas>
+        <div class="side">
+          <div><div class="k9">Positiva fold</div><div class="v" id="wf-pos">—</div></div>
+          <div><div class="k9">Medel-Sharpe</div><div class="v" id="wf-mean">—</div></div>
+          <div><div class="k9">Sämsta fold</div><div class="v" id="wf-worst">—</div></div>
+          <div><div class="k9">OOS Sharpe</div><div class="v" id="wf-oos">—</div></div>
+        </div>
+      </div></div>
+    </section>
+    <section class="panel">
+      <div class="ph"><span class="d">◆</span><b>Signal ridge</b> · avkastning över varje lookback, 120 dagar</div>
+      <div class="pb"><div class="split">
+        <canvas id="c-ridge" height="170"></canvas>
+        <div class="side">
+          <div><div class="k9">Aktiv lookback</div><div class="v warn" id="r-lb">—</div></div>
+          <div><div class="k9">Avkastning över L</div><div class="v" id="r-ret">—</div></div>
+          <div><div class="k9">Signal</div><div class="v" id="r-sig">—</div></div>
+          <div><div class="k9">Daglig vol (30d)</div><div class="v" id="r-vol">—</div></div>
+        </div>
+      </div></div>
+    </section>
+  </div>
+
+  <!-- neural shell -->
+  <section class="panel c-shell">
+    <div class="ph"><span class="d">◆</span><b>Neural shell</b> · hypothesis → code → critic → statistician → risk → execution<span class="r" id="sh-ticks">—</span></div>
+    <canvas id="c-shell" height="380"></canvas>
+  </section>
+
+  <!-- kill switch -->
+  <section class="panel c-half">
+    <div class="ph"><span class="d">◆</span><b>Kill switch</b> · drawdown mot halt-linjen</div>
+    <div class="pb">
+      <canvas id="c-kill" height="170"></canvas>
+      <div class="tiles">
+        <div class="tile" id="k-t1"><div class="k9">Drawdown nu</div><div class="v" id="k-dd">—</div></div>
+        <div class="tile y"><div class="k9">Halt vid</div><div class="v" id="k-halt">—</div></div>
+        <div class="tile c"><div class="k9">Live Sharpe 30d</div><div class="v" id="k-sh">—</div></div>
+        <div class="tile" id="k-t4"><div class="k9">Health</div><div class="v" id="k-health">—</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- regimes / statistics -->
+  <section class="panel c-half">
+    <div class="ph"><span class="d">◆</span><b>Regime map</b> · BTC månadsavkastning + fold-fördelning</div>
+    <div class="pb">
+      <div class="split" style="grid-template-columns:1.25fr 1fr">
+        <canvas id="c-heat" height="170"></canvas>
+        <canvas id="c-hist" height="170"></canvas>
+      </div>
+      <div class="tiles">
+        <div class="tile" id="g-t1"><div class="k9">Deflated Sharpe</div><div class="v" id="g-dsr">—</div></div>
+        <div class="tile c"><div class="k9">Brus-tak</div><div class="v" id="g-noise">—</div></div>
+        <div class="tile"><div class="k9">Bull / bear</div><div class="v" id="g-reg">—</div></div>
+        <div class="tile" id="g-t4"><div class="k9">Grindar</div><div class="v" id="g-gates">—</div></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="ticker foot"><div class="tag" style="background:#1d4ed8"><i></i>STATUS</div><div class="track"><div class="run" id="foot"></div></div></div>
+<div class="tip" id="tip"></div>
+
+<script>
+'use strict';
+// ---------------------------------------------------------------- config
+const qs = new URLSearchParams(location.search);
+const CFG = {
+  symbol: (qs.get('symbol') || 'BTCUSDT').toUpperCase(),
+  stateBase: qs.get('state') || 'https://raw.githubusercontent.com/zackariasandersson18-afk/worldcub/tradebot-state/',
+  rest: ['https://data-api.binance.vision', 'https://api.binance.com'],
+  ws: ['wss://data-stream.binance.vision', 'wss://stream.binance.com:9443'],
+  lookbacks: [20, 40, 60, 90, 120],
+  runAt: {h: 0, m: 7},           // daily GitHub Actions run, UTC
+  statePollMs: 60_000,
+};
+const C = {green:'#3dff8f', red:'#ff3d6e', yellow:'#ffd23d', cyan:'#3de0ff', magenta:'#ff3dd8', blue:'#3d7bff',
+           ink:'#d6e2ef', ink2:'#8ea3ba', mute:'#5b6f86', line:'#1a2638', panel:'#0a111c'};
+
+const S = {
+  approval: null, state: null, lastRun: null, runs: [],
+  price: null, candles: [], daily: [], book: {bids: [], asks: []},
+  feed: [], ws: null, wsOk: false, ticks: 0, stateAt: null, pulses: [],
+};
+
+// ---------------------------------------------------------------- utils
+const $ = id => document.getElementById(id);
+const fmt = (x, d = 2) => x == null || !isFinite(x) ? '—' : Number(x).toLocaleString('en-US', {minimumFractionDigits: d, maximumFractionDigits: d});
+const usd = (x, d = 2) => x == null || !isFinite(x) ? '—' : (x < 0 ? '-$' : '$') + fmt(Math.abs(x), d);
+const sgn = (x, d = 2, suf = '') => x == null || !isFinite(x) ? '—' : (x >= 0 ? '+' : '−') + fmt(Math.abs(x), d) + suf;
+const cls = (el, x) => { el.classList.remove('up', 'down'); if (x > 0) el.classList.add('up'); else if (x < 0) el.classList.add('down'); };
+const set = (id, txt, x) => { const el = $(id); if (!el) return; el.textContent = txt; if (x !== undefined) cls(el, x); };
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]));
+
+function canvas(id) {
+  const cv = $(id), dpr = Math.min(window.devicePixelRatio || 1, 2);
+  // the CSS height is fixed from the original height attribute; the buffer size must never feed back into layout
+  if (!cv.dataset.h) { cv.dataset.h = cv.getAttribute('height'); cv.style.height = cv.dataset.h + 'px'; }
+  const w = cv.clientWidth, h = +cv.dataset.h;
+  if (cv.width !== Math.round(w * dpr) || cv.height !== Math.round(h * dpr)) {
+    cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr);
+  }
+  const g = cv.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); g.clearRect(0, 0, w, h);
+  g.font = '10px JetBrains Mono, monospace'; g.textBaseline = 'middle';
+  return {g, w, h, cv};
+}
+function grid(g, x0, y0, x1, y1, rows = 4) {
+  g.strokeStyle = C.line; g.lineWidth = 1; g.setLineDash([2, 4]);
+  for (let i = 0; i <= rows; i++) { const y = Math.round(y0 + (y1 - y0) * i / rows) + .5; g.beginPath(); g.moveTo(x0, y); g.lineTo(x1, y); g.stroke(); }
+  g.setLineDash([]);
+}
+function empty(id, msg) { const {g, w, h} = canvas(id); g.fillStyle = C.mute; g.textAlign = 'center'; g.fillText(msg, w / 2, h / 2); }
+
+// hover tooltips: each canvas registers hit boxes on draw
+const HITS = {};
+function hit(id, x, y, w, h, html) { (HITS[id] ||= []).push({x, y, w, h, html}); }
+function bindTip(id) {
+  const cv = $(id), tip = $('tip');
+  cv.addEventListener('mousemove', e => {
+    const r = cv.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top;
+    const hb = (HITS[id] || []).find(b => x >= b.x && x <= b.x + b.w && y >= b.y && y <= b.y + b.h);
+    if (!hb) { tip.style.display = 'none'; return; }
+    tip.innerHTML = hb.html; tip.style.display = 'block';
+    const tx = Math.min(e.clientX + 14, innerWidth - tip.offsetWidth - 8);
+    tip.style.left = tx + 'px'; tip.style.top = (e.clientY + 14) + 'px';
+  });
+  cv.addEventListener('mouseleave', () => tip.style.display = 'none');
+}
+
+// ---------------------------------------------------------------- data: bot state
+async function getText(url) {
+  const r = await fetch(url + (url.includes('?') ? '&' : '?') + 't=' + Date.now(), {cache: 'no-store'});
+  if (!r.ok) throw new Error(r.status + ' ' + url);
+  return r.text();
+}
+async function loadState() {
+  const base = CFG.stateBase.endsWith('/') ? CFG.stateBase : CFG.stateBase + '/';
+  const [a, s, l, runs] = await Promise.allSettled([
+    getText(base + 'approval.json'), getText(base + 'trade_state.json'),
+    getText(base + 'last_run.txt'), getText(base + 'runs.log'),
+  ]);
+  if (a.status === 'fulfilled') S.approval = JSON.parse(a.value);
+  if (s.status === 'fulfilled') S.state = JSON.parse(s.value);
+  if (l.status === 'fulfilled') {
+    const i = l.value.indexOf('{');
+    try { S.lastRun = i >= 0 ? JSON.parse(l.value.slice(i)) : null; } catch { S.lastRun = null; }
+  }
+  if (runs.status === 'fulfilled') {
+    S.runs = runs.value.split('\n').filter(x => x.startsWith('--- ')).map(x => {
+      const m = x.match(/--- (\S+) broker=(\S+) exit=(\d+)/); return m ? {ts: m[1], broker: m[2], exit: +m[3]} : null;
+    }).filter(Boolean);
+  }
+  S.stateAt = new Date();
+  S.stateOk = a.status === 'fulfilled' || s.status === 'fulfilled';
+  if (S.approval?.symbol && !qs.get('symbol')) CFG.symbol = S.approval.symbol;
+  buildFeed();
+}
+
+// account from the last run report: exact for paper and testnet alike
+function account() {
+  const st = S.state || {}, hist = st.history || [], trades = st.trades || [], r = S.lastRun;
+  const initial = hist.length ? hist[0].equity : null;
+  let qty = 0, cash = initial;
+  if (r && r.equity != null) {
+    qty = r.current_qty || 0; cash = r.equity - qty * r.price;
+    if (r.fill) {
+      const f = r.fill;
+      if (f.side === 'BUY') { qty += f.qty; cash -= f.quote_qty + f.commission_quote; }
+      else { qty -= f.qty; cash += f.quote_qty - f.commission_quote; }
+    }
+  }
+  // average entry of the open position (walk the fills)
+  let pq = 0, cost = 0;
+  for (const t of trades) {
+    if (t.side === 'BUY') { pq += t.qty; cost += t.quote_qty + t.commission_quote; }
+    else if (pq > 0) { const avg = cost / pq; pq -= t.qty; cost -= avg * t.qty; if (pq < 1e-9) { pq = 0; cost = 0; } }
+  }
+  const entry = pq > 0 ? cost / pq : null;
+  const px = S.price ?? r?.price;
+  const equity = cash != null && px != null ? cash + qty * px : null;
+  return {initial, qty, cash, entry, px, equity, pnl: equity != null && initial != null ? equity - initial : null,
+          trades: trades.length, stop: r?.stop ?? null, signal: r?.signal ?? null, broker: S.runs.at(-1)?.broker,
+          halted: !!st.halted, haltReason: st.halt_reason};
+}
+
+// live per-unit-exposure returns, as tradebot/live.py computes them
+function liveSeries() {
+  const hist = (S.state?.history || []).map(h => ({ts: h.ts, equity: h.equity, exposure: h.exposure}));
+  const a = account();
+  if (a.equity != null && hist.length) hist.push({ts: 'live', equity: a.equity, exposure: a.equity ? a.qty * a.px / a.equity : 0});
+  const rets = [];
+  for (let i = 1; i < hist.length; i++) {
+    const e = hist[i - 1].exposure, r = hist[i].equity / hist[i - 1].equity - 1;
+    rets.push(e > 0.01 ? r / e : 0);
+  }
+  let eq = 1, peak = 1; const dd = [0];
+  for (const r of rets) { eq *= 1 + r; peak = Math.max(peak, eq); dd.push(eq / peak - 1); }
+  const w = rets.slice(-30), m = w.reduce((s, x) => s + x, 0) / (w.length || 1);
+  const sd = Math.sqrt(w.reduce((s, x) => s + (x - m) ** 2, 0) / Math.max(w.length - 1, 1));
+  return {hist, rets, dd, sharpe: w.length > 1 && sd > 0 ? m / sd * Math.sqrt(365) : null, n: rets.length};
+}
+
+// ---------------------------------------------------------------- data: market
+async function rest(path) {
+  for (const base of CFG.rest) {
+    try { const r = await fetch(base + path); if (r.ok) return r.json(); } catch {}
+  }
+  throw new Error('market data unavailable');
+}
+async function loadMarket() {
+  try {
+    const [m1, d1] = await Promise.all([
+      rest(`/api/v3/klines?symbol=${CFG.symbol}&interval=1m&limit=90`),
+      rest(`/api/v3/klines?symbol=${CFG.symbol}&interval=1d&limit=1000`),
+    ]);
+    S.candles = m1.map(k => ({t: k[0], o: +k[1], h: +k[2], l: +k[3], c: +k[4]}));
+    S.daily = d1.filter(k => k[6] < Date.now()).map(k => ({t: k[6] + 1, c: +k[4], o: +k[1]}));
+    S.dayOpen = +d1.at(-1)[1];
+    S.price ??= S.candles.at(-1)?.c;
+  } catch (e) { pushFeed('<span class="down">MARKET DATA</span> ' + esc(e.message)); }
+}
+
+let wsTry = 0;
+function connect() {
+  const host = CFG.ws[wsTry % CFG.ws.length], s = CFG.symbol.toLowerCase();
+  const ws = new WebSocket(`${host}/stream?streams=${s}@kline_1m/${s}@depth20@1000ms/${s}@aggTrade`);
+  S.ws = ws;
+  ws.onopen = () => { S.wsOk = true; wsTry = 0; };
+  ws.onclose = () => { S.wsOk = false; wsTry++; setTimeout(connect, Math.min(30_000, 1000 * 2 ** Math.min(wsTry, 5))); };
+  ws.onerror = () => ws.close();
+  ws.onmessage = ev => {
+    const {stream, data} = JSON.parse(ev.data);
+    if (stream.endsWith('@kline_1m')) {
+      const k = data.k, c = {t: k.t, o: +k.o, h: +k.h, l: +k.l, c: +k.c};
+      const last = S.candles.at(-1);
+      if (last && last.t === c.t) S.candles[S.candles.length - 1] = c; else { S.candles.push(c); if (S.candles.length > 90) S.candles.shift(); }
+      S.price = c.c;
+    } else if (stream.includes('@depth')) {
+      S.book = {bids: data.bids.slice(0, 5).map(x => [+x[0], +x[1]]), asks: data.asks.slice(0, 5).map(x => [+x[0], +x[1]])};
+    } else if (stream.endsWith('@aggTrade')) {
+      S.ticks++; S.price = +data.p;
+      const notional = +data.p * +data.q;
+      if (S.pulses.length < 60) S.pulses.push({lane: Math.floor(Math.random() * 12), t: 0, sell: data.m});
+      if (notional >= 250_000) pushFeed(`<span class="${data.m ? 'down' : 'up'}">${data.m ? 'SÄLJ' : 'KÖP'} ${fmt(+data.q, 3)} BTC</span> <b>${usd(notional, 0)}</b> @ ${fmt(+data.p, 1)}`);
+    }
+  };
+}
+
+// ---------------------------------------------------------------- feed
+function pushFeed(html) {
+  const t = new Date().toISOString().slice(11, 19);
+  S.feed.unshift(`<span><span class="mute">${t}</span> ${html}</span>`);
+  S.feed = S.feed.slice(0, 14);
+}
+function buildFeed() {
+  const items = [];
+  for (const tr of (S.state?.trades || []).slice(-6).reverse()) {
+    items.push(`<span><span class="mute">${esc(String(tr.bar).slice(0, 10))}</span> <span class="${tr.side === 'BUY' ? 'up' : 'down'}">BOT ${tr.side === 'BUY' ? 'KÖPTE' : 'SÅLDE'} ${fmt(tr.qty, 6)} BTC</span> @ <b>${fmt(tr.price, 2)}</b> · avgift ${usd(tr.commission_quote)}</span>`);
+  }
+  for (const r of S.runs.slice(-4).reverse()) {
+    items.push(`<span><span class="mute">${esc(r.ts.slice(0, 16).replace('T', ' '))}</span> KÖRNING ${esc(r.broker)} <span class="${r.exit ? 'down' : 'up'}">exit ${r.exit}</span></span>`);
+  }
+  S.botFeed = items;
+}
+function renderTickers() {
+  const items = [...S.feed, ...(S.botFeed || [])];
+  if (!items.length) items.push('<span class="mute">väntar på data…</span>');
+  const html = items.join('<span class="mute">·</span>');
+  const run = $('feed'); if (run.dataset.h !== html) { run.innerHTML = html + '<span class="mute">·</span>' + html; run.dataset.h = html; }
+
+  const a = account(), ap = S.approval || {}, o = ap.oos_metrics || {}, g = ap.gates || {};
+  const gates = ['no_leakage', 'deflated_sharpe', 'walk_forward'].map(k => g[k]);
+  const foot = [
+    `<span>VALIDERING <b class="${ap.approved ? 'up' : 'down'}">${ap.approved ? 'GODKÄND' : 'UNDERKÄND'}</b></span>`,
+    `<span>PnL <b class="${a.pnl >= 0 ? 'up' : 'down'}">${a.pnl == null ? '—' : sgn(a.pnl, 2).replace(/^([+−])/, '$1$')}</b></span>`,
+    `<span>OOS SHARPE <b>${fmt(o.sharpe)}</b></span>`,
+    `<span>MAX DD <b class="down">${fmt(o.max_drawdown, 1)}%</b></span>`,
+    `<span>DEFLATED SHARPE <b>${fmt(ap.dsr?.deflated_sharpe, 3)}</b></span>`,
+    `<span>GRINDAR <b>${gates.filter(Boolean).length}/3</b></span>`,
+    `<span>REGIM <b>${esc(ap.regime_verdict || '—')}</b></span>`,
+    `<span>RISK <b>1% / affär · tak 20%</b></span>`,
+    `<span>STATE <b>${S.stateAt ? S.stateAt.toISOString().slice(11, 19) + ' UTC' : '—'}</b></span>`,
+    `<span class="mute">Demo-konto · ingen finansiell rådgivning</span>`,
+  ].join('<span class="mute">·</span>');
+  const f = $('foot'); if (f.dataset.h !== foot) { f.innerHTML = foot + '<span class="mute">·</span>' + foot; f.dataset.h = foot; }
+}
+
+// ---------------------------------------------------------------- header + wallet
+function nextRun() {
+  const n = new Date(), t = new Date(Date.UTC(n.getUTCFullYear(), n.getUTCMonth(), n.getUTCDate(), CFG.runAt.h, CFG.runAt.m));
+  if (t <= n) t.setUTCDate(t.getUTCDate() + 1);
+  const s = Math.floor((t - n) / 1000);
+  return [s / 3600 | 0, (s % 3600) / 60 | 0, s % 60].map(x => String(x).padStart(2, '0')).join(':');
+}
+function renderHeader() {
+  const a = account();
+  $('h-symbol').textContent = CFG.symbol;
+  $('h-clock').textContent = new Date().toISOString().slice(11, 19) + ' UTC';
+  const live = $('h-live'); live.textContent = S.wsOk ? 'LIVE' : 'OFFLINE'; live.className = 'badge ' + (S.wsOk ? 'b-green' : 'b-red');
+  set('h-price', S.price ? '$' + fmt(S.price, 2) : '—');
+  const day = S.dayOpen && S.price ? (S.price / S.dayOpen - 1) * 100 : null;
+  set('h-day', sgn(day, 2, '%'), day);
+  const sig = a.signal; set('h-signal', sig == null ? '—' : sig > 0 ? 'LÅNG' : 'KONTANT');
+  $('h-signal').className = 'v ' + (sig > 0 ? 'up' : 'mute');
+  set('h-pos', a.qty ? fmt(a.qty, 6) + ' BTC' : '0 BTC');
+  set('h-next', a.halted ? 'HALTED' : nextRun());
+  $('h-account').textContent = (a.broker || '—').toUpperCase() + ' · ' + (S.stateOk ? 'state ok' : 'ingen state än');
+  $('s-price').textContent = S.price ? fmt(S.price, 2) : '—';
+}
+function renderWallet() {
+  const a = account();
+  $('w-acct').textContent = (a.broker === 'testnet' ? 'Binance testnet' : 'Paper') + ' · ' + CFG.symbol;
+  const b = $('w-badge'); b.textContent = a.halted ? 'HALTED' : 'ACTIVE'; b.className = 'r badge ' + (a.halted ? 'b-red' : 'b-green');
+  const pnl = $('w-pnl');
+  pnl.textContent = a.pnl == null ? '—' : (a.pnl >= 0 ? '+' : '−') + '$' + fmt(Math.abs(a.pnl), 3);
+  pnl.style.color = a.pnl == null ? C.mute : a.pnl >= 0 ? C.green : C.red;
+  const pct = a.pnl != null && a.initial ? a.pnl / a.initial * 100 : null;
+  set('w-pct', sgn(pct, 3, '%'), pct);
+  set('w-eq', 'equity ' + usd(a.equity));
+  set('w-trades', a.trades);
+  const exp = a.equity ? a.qty * a.px / a.equity * 100 : null;
+  set('w-exp', exp == null ? '—' : fmt(exp, 1) + '%');
+  set('w-dep', a.initial == null ? '—' : usd(a.initial, 0));
+  set('w-entry', a.entry ? fmt(a.entry, 2) : '—');
+  set('w-stop', a.qty > 0 && a.stop ? fmt(a.stop, 2) : '—');
+  const un = a.entry && a.qty ? (a.px - a.entry) * a.qty : null;
+  set('w-unreal', un == null ? '—' : sgn(un, 2).replace(/^([+−])/, '$1$'), un);
+  drawEquity();
+}
+function drawEquity() {
+  const L = liveSeries(), pts = L.hist;
+  if (pts.length < 1) return empty('c-equity', 'equity visas efter första körningen');
+  const {g, w, h} = canvas('c-equity'); HITS['c-equity'] = [];
+  const pad = {l: 4, r: 66, t: 8, b: 14};
+  const vals = pts.map(p => p.equity), init = vals[0];
+  let lo = Math.min(...vals, init), hi = Math.max(...vals, init); const span = Math.max(hi - lo, init * 0.002); lo -= span * .25; hi += span * .25;
+  const X = i => pad.l + (pts.length === 1 ? (w - pad.l - pad.r) / 2 : i * (w - pad.l - pad.r) / (pts.length - 1));
+  const Y = v => pad.t + (1 - (v - lo) / (hi - lo)) * (h - pad.t - pad.b);
+  grid(g, pad.l, pad.t, w - pad.r, h - pad.b, 3);
+  g.strokeStyle = C.mute; g.setLineDash([3, 3]); g.beginPath(); g.moveTo(pad.l, Y(init)); g.lineTo(w - pad.r, Y(init)); g.stroke(); g.setLineDash([]);
+  g.fillStyle = C.mute; g.textAlign = 'left'; g.fillText('start', w - pad.r + 4, Y(init) + 11);
+  const up = vals.at(-1) >= init, col = up ? C.green : C.red;
+  const grad = g.createLinearGradient(0, pad.t, 0, h - pad.b); grad.addColorStop(0, col + '55'); grad.addColorStop(1, col + '00');
+  g.beginPath(); pts.forEach((p, i) => i ? g.lineTo(X(i), Y(p.equity)) : g.moveTo(X(i), Y(p.equity)));
+  g.lineTo(X(pts.length - 1), h - pad.b); g.lineTo(X(0), h - pad.b); g.closePath(); g.fillStyle = grad; g.fill();
+  g.beginPath(); pts.forEach((p, i) => i ? g.lineTo(X(i), Y(p.equity)) : g.moveTo(X(i), Y(p.equity)));
+  g.strokeStyle = col; g.lineWidth = 2; g.stroke();
+  const lx = X(pts.length - 1), ly = Y(vals.at(-1));
+  g.fillStyle = col; g.beginPath(); g.arc(lx, ly, 4, 0, 7); g.fill();
+  g.fillStyle = C.ink; g.fillText(fmt(vals.at(-1), 2), w - pad.r + 4, ly);
+  pts.forEach((p, i) => hit('c-equity', X(i) - 8, pad.t, 16, h, `${p.ts === 'live' ? 'live' : esc(String(p.ts).slice(0, 10))}<br>equity <b>${usd(p.equity)}</b><br>exponering ${fmt(p.exposure * 100, 1)}%`));
+}
+
+// ---------------------------------------------------------------- spot
+function drawCandles() {
+  const cs = S.candles;
+  if (!cs.length) return empty('c-candles', 'ansluter till Binance…');
+  const {g, w, h} = canvas('c-candles'); HITS['c-candles'] = [];
+  const pad = {l: 2, r: 56, t: 8, b: 14}, a = account();
+  let lo = Math.min(...cs.map(c => c.l)), hi = Math.max(...cs.map(c => c.h));
+  const m = (hi - lo) * .08 || 1; lo -= m; hi += m;
+  const Y = v => pad.t + (1 - (v - lo) / (hi - lo)) * (h - pad.t - pad.b);
+  const bw = (w - pad.l - pad.r) / cs.length;
+  grid(g, pad.l, pad.t, w - pad.r, h - pad.b, 4);
+  g.textAlign = 'left';
+  for (let i = 0; i <= 4; i++) { const v = hi - (hi - lo) * i / 4; g.fillStyle = C.mute; g.fillText(fmt(v, 0), w - pad.r + 4, Y(v)); }
+  cs.forEach((c, i) => {
+    const x = pad.l + i * bw + bw / 2, col = c.c >= c.o ? C.green : C.red;
+    g.strokeStyle = col; g.lineWidth = 1; g.beginPath(); g.moveTo(x, Y(c.h)); g.lineTo(x, Y(c.l)); g.stroke();
+    const y0 = Y(Math.max(c.o, c.c)), y1 = Y(Math.min(c.o, c.c));
+    g.fillStyle = col; g.fillRect(x - Math.max(bw * .32, .8), y0, Math.max(bw * .64, 1.6), Math.max(y1 - y0, 1));
+    hit('c-candles', x - bw / 2, pad.t, bw, h - pad.t - pad.b, `${new Date(c.t).toISOString().slice(11, 16)} UTC<br>O ${fmt(c.o)} H ${fmt(c.h)}<br>L ${fmt(c.l)} C <b>${fmt(c.c)}</b>`);
+  });
+  const line = (v, col, label) => {
+    if (v == null || v < lo || v > hi) return;
+    g.strokeStyle = col; g.setLineDash([4, 3]); g.beginPath(); g.moveTo(pad.l, Y(v)); g.lineTo(w - pad.r, Y(v)); g.stroke(); g.setLineDash([]);
+    g.fillStyle = col; g.fillText(label, pad.l + 4, Y(v) - 7);
+  };
+  line(a.entry, C.yellow, 'ENTRY ' + fmt(a.entry, 0));
+  if (a.qty > 0) line(a.stop, C.red, 'STOP ' + fmt(a.stop, 0));
+  const last = cs.at(-1), ly = Y(last.c);
+  g.fillStyle = last.c >= last.o ? C.green : C.red; g.fillRect(w - pad.r + 1, ly - 8, pad.r - 2, 16);
+  g.fillStyle = '#04110a'; g.font = '600 10px JetBrains Mono, monospace'; g.fillText(fmt(last.c, 1), w - pad.r + 4, ly);
+}
+function renderBook() {
+  const {bids, asks} = S.book, el = $('book');
+  if (!bids.length) { el.innerHTML = '<tr><td class="empty">orderbok: väntar…</td></tr>'; return; }
+  const max = Math.max(...bids.map(b => b[1]), ...asks.map(a => a[1]));
+  const row = (cl, p, q) => `<tr class="${cl}"><td><span>${fmt(p, 2)}</span></td><td><span>${fmt(q, 4)}</span></td><td><span>${usd(p * q, 0)}</span><div class="bar" style="width:${q / max * 100}%"></div></td></tr>`;
+  const spread = asks[0][0] - bids[0][0];
+  el.innerHTML = asks.slice().reverse().map(a => row('a', a[0], a[1])).join('') +
+    `<tr><td colspan="3" style="padding:0"><div class="spread"><span>Senast ${fmt(S.price, 2)}</span><span>Spread ${fmt(spread, 2)}</span></div></td></tr>` +
+    bids.map(b => row('b', b[0], b[1])).join('');
+}
+
+// ---------------------------------------------------------------- walk-forward + ridge
+function drawFolds() {
+  const wf = S.approval?.walk_forward, o = S.approval?.oos_metrics;
+  if (!wf?.folds?.length) { empty('c-folds', 'walk-forward visas efter nästa validering'); return; }
+  const folds = wf.folds.filter(f => f.sharpe != null);
+  const {g, w, h} = canvas('c-folds'); HITS['c-folds'] = [];
+  const pad = {l: 30, r: 4, t: 8, b: 16};
+  const m = Math.max(2, ...folds.map(f => Math.abs(f.sharpe)));
+  const Y = v => pad.t + (1 - (v + m) / (2 * m)) * (h - pad.t - pad.b);
+  grid(g, pad.l, pad.t, w - pad.r, h - pad.b, 4);
+  g.textAlign = 'right'; g.fillStyle = C.mute;
+  [m, m / 2, 0, -m / 2, -m].forEach(v => g.fillText(fmt(v, 1), pad.l - 4, Y(v)));
+  g.strokeStyle = C.ink2; g.beginPath(); g.moveTo(pad.l, Y(0)); g.lineTo(w - pad.r, Y(0)); g.stroke();
+  const bw = (w - pad.l - pad.r) / folds.length;
+  folds.forEach((f, i) => {
+    const x = pad.l + i * bw + 1, y0 = Y(0), y1 = Y(f.sharpe), col = f.sharpe >= 0 ? C.green : C.red;
+    const top = Math.min(y0, y1), hh = Math.max(Math.abs(y1 - y0), 1);
+    g.fillStyle = col; g.globalAlpha = .85; g.fillRect(x, top, Math.max(bw - 2, 1), hh); g.globalAlpha = 1;
+    hit('c-folds', x - 1, pad.t, bw, h - pad.t - pad.b, `fold ${i + 1} · från ${esc(String(f.start).slice(0, 10))}<br>Sharpe <b>${sgn(f.sharpe)}</b> · lookback ${f.lookback}<br>årsavk. ${sgn(f.ann_return, 1, '%')} · max DD ${fmt(f.max_drawdown, 1)}%`);
+  });
+  g.textAlign = 'left'; g.fillStyle = C.mute;
+  g.fillText(String(folds[0].start).slice(0, 7), pad.l, h - 6);
+  g.textAlign = 'right'; g.fillText(String(folds.at(-1).start).slice(0, 7), w - pad.r, h - 6);
+  const pos = folds.filter(f => f.sharpe > 0).length;
+  set('wf-pos', `${pos}/${folds.length}`); $('wf-pos').className = 'v ' + (pos / folds.length >= .6 ? 'up' : 'down');
+  set('wf-mean', sgn(wf.mean_sharpe), wf.mean_sharpe);
+  set('wf-worst', sgn(wf.worst_fold), wf.worst_fold);
+  set('wf-oos', sgn(o?.sharpe), o?.sharpe);
+  $('wf-sub').textContent = `${folds.length} fold · 180d träning / 60d test`;
+}
+function drawRidge() {
+  const d = S.daily;
+  if (d.length < 250) return empty('c-ridge', 'hämtar dagliga barer…');
+  const {g, w, h} = canvas('c-ridge'); HITS['c-ridge'] = [];
+  const n = 120, pad = {l: 34, r: 6, t: 10, b: 14}, lbs = CFG.lookbacks;
+  const active = S.approval?.params?.lookback;
+  const rows = lbs.map(L => d.slice(-n).map((p, i) => {
+    const j = d.length - n + i; return Math.log(p.c / d[j - L].c);
+  }));
+  const m = Math.max(...rows.flat().map(Math.abs)) || 1;
+  const band = (h - pad.t - pad.b) / lbs.length, amp = band * 1.25;
+  const X = i => pad.l + i * (w - pad.l - pad.r) / (n - 1);
+  rows.forEach((r, k) => {
+    const base = pad.t + band * (k + .6), isA = lbs[k] === active;
+    // area above / below the zero line, clipped by sign
+    for (const [sign, col] of [[1, C.green], [-1, C.red]]) {
+      g.beginPath(); g.moveTo(X(0), base);
+      r.forEach((v, i) => g.lineTo(X(i), base - Math.max(sign * v, 0) * sign * amp / m));
+      g.lineTo(X(n - 1), base); g.closePath();
+      g.fillStyle = col + (isA ? '55' : '26'); g.fill();
+    }
+    g.beginPath(); r.forEach((v, i) => i ? g.lineTo(X(i), base - v * amp / m) : g.moveTo(X(i), base - v * amp / m));
+    g.strokeStyle = isA ? C.yellow : C.ink2; g.lineWidth = isA ? 2 : 1; g.stroke(); g.lineWidth = 1;
+    g.strokeStyle = C.line; g.beginPath(); g.moveTo(pad.l, base); g.lineTo(w - pad.r, base); g.stroke();
+    g.fillStyle = isA ? C.yellow : C.mute; g.textAlign = 'right'; g.fillText(lbs[k] + 'd', pad.l - 5, base);
+    const last = r.at(-1); g.fillStyle = last > 0 ? C.green : C.red; g.beginPath(); g.arc(X(n - 1), base - last * amp / m, 3, 0, 7); g.fill();
+    hit('c-ridge', pad.l, base - band / 2, w - pad.l - pad.r, band, `lookback ${lbs[k]}d${isA ? ' (aktiv)' : ''}<br>avkastning nu <b>${sgn(last * 100, 1, '%')}</b><br>signal ${last > 0 ? 'LÅNG' : 'KONTANT'}`);
+  });
+  g.textAlign = 'left'; g.fillStyle = C.mute; g.fillText(new Date(d.at(-n).t).toISOString().slice(0, 10), pad.l, h - 5);
+  g.textAlign = 'right'; g.fillText('idag', w - pad.r, h - 5);
+  const L = active || 60, j = d.length - 1, ret = Math.log(d[j].c / d[j - L].c) * 100;
+  set('r-lb', L + ' dagar');
+  set('r-ret', sgn(ret, 1, '%'), ret);
+  set('r-sig', ret > 0 ? 'LÅNG' : 'KONTANT'); $('r-sig').className = 'v ' + (ret > 0 ? 'up' : 'mute');
+  const r30 = d.slice(-31).map((p, i, a) => i ? p.c / a[i - 1].c - 1 : null).slice(1);
+  const mu = r30.reduce((s, x) => s + x, 0) / r30.length, sd = Math.sqrt(r30.reduce((s, x) => s + (x - mu) ** 2, 0) / (r30.length - 1));
+  set('r-vol', fmt(sd * 100, 2) + '%');
+}
+
+// ---------------------------------------------------------------- neural shell
+const NODES = {
+  left: ['MARKET INPUTS', 'DAILY BARS', 'LOOKBACK SCAN', 'SIGNAL', 'LEAKAGE TEST', 'CRITIC 8-POINT'],
+  right: ['GATE 1 · LEAKAGE', 'GATE 2 · DEFLATED', 'GATE 3 · WALK-FWD', 'POSITION SIZER', 'HEALTH CHECK', 'EXECUTION'],
+};
+function nodeState() {
+  const ap = S.approval || {}, a = account(), g = ap.gates || {}, crit = ap.critic || [];
+  const absent = crit.filter(c => c.status === 'ABSENT').length, present = crit.filter(c => c.status === 'PRESENT').length;
+  const health = S.lastRun?.health?.action;
+  const s = (ok, txt) => ({col: ok === true ? C.green : ok === false ? C.red : C.yellow, txt});
+  return {
+    left: [
+      s(S.wsOk, S.price ? fmt(S.price, 1) : 'offline'),
+      s(S.daily.length > 0 ? true : null, S.daily.length + ' bars'),
+      s(null, (ap.params?.lookback || '—') + 'd vald'),
+      s(a.signal == null ? null : a.signal > 0, a.signal == null ? '—' : a.signal > 0 ? 'LÅNG' : 'KONTANT'),
+      s(ap.leakage ? ap.leakage.status === 'ABSENT' : null, ap.leakage?.status || '—'),
+      s(crit.length ? present === 0 : null, crit.length ? `${absent} ok · ${present} fel` : '—'),
+    ],
+    right: [
+      s(g.no_leakage, g.no_leakage == null ? '—' : g.no_leakage ? 'PASS' : 'FAIL'),
+      s(g.deflated_sharpe, ap.dsr ? 'DSR ' + fmt(ap.dsr.deflated_sharpe, 2) : '—'),
+      s(g.walk_forward, ap.walk_forward ? ap.walk_forward.positive_folds : '—'),
+      s(true, '1% · tak 20%'),
+      s(health ? health === 'CONTINUE' : null, health || '—'),
+      s(a.halted ? false : S.lastRun ? true : null, S.lastRun ? (S.lastRun.action || '—') : '—'),
+    ],
+  };
+}
+const torus = (() => {
+  const pts = [], U = 90, V = 34;
+  for (let i = 0; i < U; i++) for (let j = 0; j < V; j++) pts.push([i / U * Math.PI * 2, j / V * Math.PI * 2]);
+  return pts;
+})();
+let tShell = 0;
+function drawShell(dt) {
+  const {g, w, h} = canvas('c-shell');
+  tShell += dt;
+  const ns = nodeState(), cx = w / 2, cy = h / 2, R = Math.min(h * .3, w * .14);
+  const narrow = w < 640;
+  const xl = narrow ? 10 : w * .07, xr = narrow ? w - 10 : w * .93;
+  const ny = i => h * (.12 + i * .152);
+  const lanes = [];
+  // lanes: node -> torus edge, bezier
+  ['left', 'right'].forEach(side => NODES[side].forEach((name, i) => {
+    const x0 = side === 'left' ? xl + 8 : xr - 8, y0 = ny(i);
+    const ang = side === 'left' ? Math.PI + (i - 2.5) * .28 : (i - 2.5) * .28;
+    const x1 = cx + Math.cos(ang) * R * 1.55, y1 = cy + Math.sin(ang) * R * 1.05;
+    const mx = (x0 + x1) / 2;
+    lanes.push({x0, y0, x1, y1, c1: [mx, y0], c2: [mx, y1], col: ns[side][i].col});
+    g.strokeStyle = 'rgba(142,163,186,.18)'; g.lineWidth = 1;
+    g.beginPath(); g.moveTo(x0, y0); g.bezierCurveTo(mx, y0, mx, y1, x1, y1); g.stroke();
+  }));
+  // pulses travel along lanes on every live trade
+  const bez = (l, t) => {
+    const u = 1 - t;
+    return [u ** 3 * l.x0 + 3 * u * u * t * l.c1[0] + 3 * u * t * t * l.c2[0] + t ** 3 * l.x1,
+            u ** 3 * l.y0 + 3 * u * u * t * l.c1[1] + 3 * u * t * t * l.c2[1] + t ** 3 * l.y1];
+  };
+  S.pulses = S.pulses.filter(p => (p.t += dt * .7) < 1);
+  for (const p of S.pulses) {
+    const l = lanes[p.lane % lanes.length], [x, y] = bez(l, p.t);
+    g.fillStyle = p.sell ? C.red : C.green; g.shadowColor = g.fillStyle; g.shadowBlur = 8;
+    g.beginPath(); g.arc(x, y, 2.2, 0, 7); g.fill(); g.shadowBlur = 0;
+  }
+  // torus: deforming particle shell, cyan outer / magenta inner
+  const pr = S.candles.length > 1 ? (S.candles.at(-1).c / S.candles.at(-2).c - 1) * 400 : 0;
+  const ax = tShell * .35, ay = tShell * .22, wob = .18 + Math.min(Math.abs(pr), .25);
+  const ca = Math.cos(ax), sa = Math.sin(ax), cb = Math.cos(ay), sb = Math.sin(ay);
+  const proj = [];
+  for (const [u, v] of torus) {
+    const rr = .42 + wob * Math.sin(2 * u + tShell * .9) * .5;
+    let x = (1 + rr * Math.cos(v)) * Math.cos(u), y = (1 + rr * Math.cos(v)) * Math.sin(u) * .85, z = rr * Math.sin(v) * 1.4;
+    let y2 = y * ca - z * sa, z2 = y * sa + z * ca; let x3 = x * cb + z2 * sb, z3 = -x * sb + z2 * cb;
+    const s = 2.6 / (3.4 + z3);
+    proj.push([cx + x3 * R * s, cy + y2 * R * s, z3, Math.cos(v)]);
+  }
+  proj.sort((a, b) => a[2] - b[2]);
+  for (const [x, y, z, cv] of proj) {
+    const inner = cv < -.2, al = .25 + (z + 1.5) / 3 * .65;
+    g.fillStyle = inner ? `rgba(255,61,216,${al})` : `rgba(61,224,255,${al * .9})`;
+    g.fillRect(x, y, 1.6, 1.6);
+  }
+  // centre readout
+  g.textAlign = 'center'; g.fillStyle = C.ink; g.font = '800 12px JetBrains Mono, monospace';
+  g.fillText(S.price ? '$' + fmt(S.price, 1) : '—', cx, cy - 6);
+  g.font = '10px JetBrains Mono, monospace'; g.fillStyle = C.ink2;
+  const a = account(); g.fillText(a.pnl == null ? '' : 'PnL ' + (a.pnl >= 0 ? '+' : '−') + '$' + fmt(Math.abs(a.pnl), 2), cx, cy + 10);
+  // nodes
+  ['left', 'right'].forEach(side => NODES[side].forEach((name, i) => {
+    const x = side === 'left' ? xl : xr, y = ny(i), st = ns[side][i];
+    g.fillStyle = st.col; g.shadowColor = st.col; g.shadowBlur = 10;
+    g.beginPath(); g.arc(x, y, 5, 0, 7); g.fill(); g.shadowBlur = 0;
+    g.textAlign = side === 'left' ? 'left' : 'right';
+    const tx = side === 'left' ? x + 12 : x - 12;
+    g.fillStyle = C.ink2; g.font = '9px JetBrains Mono, monospace'; g.fillText(name, tx, y - 7);
+    g.fillStyle = C.ink; g.font = '600 10px JetBrains Mono, monospace'; g.fillText(st.txt, tx, y + 6);
+  }));
+  g.font = '10px JetBrains Mono, monospace';
+  $('sh-ticks').textContent = `TICKS ${S.ticks.toLocaleString('en-US')} · NÄSTA KÖRNING ${nextRun()}`;
+}
+
+// ---------------------------------------------------------------- kill switch
+function drawKill() {
+  const L = liveSeries(), o = S.approval?.oos_metrics;
+  const haltDD = o ? o.max_drawdown * 1.5 / 100 : null, haltSh = o ? o.sharpe * .5 : null;
+  const dd = L.dd, cur = dd.at(-1) ?? 0;
+  set('k-dd', sgn(cur * 100, 2, '%'), cur < 0 ? -1 : 0);
+  set('k-halt', haltDD == null ? '—' : fmt(haltDD * 100, 1) + '%');
+  set('k-sh', L.sharpe == null ? `${L.n}/30 dagar` : sgn(L.sharpe) + ` (min ${fmt(haltSh)})`);
+  const hs = account().halted ? 'HALT' : S.lastRun?.health?.action || '—';
+  set('k-health', hs); $('k-health').className = 'v ' + (hs === 'CONTINUE' ? 'up' : hs === 'HALT' ? 'down' : '');
+  $('k-t4').className = 'tile ' + (hs === 'CONTINUE' ? 'g' : hs === 'HALT' ? 'r' : '');
+  $('k-t1').className = 'tile ' + (cur < 0 ? 'r' : 'g');
+  const {g, w, h} = canvas('c-kill'); HITS['c-kill'] = [];
+  if (haltDD == null) { g.fillStyle = C.mute; g.textAlign = 'center'; g.fillText('halt-linjen visas efter validering', w / 2, h / 2); return; }
+  const pad = {l: 40, r: 10, t: 12, b: 16}, lo = haltDD * 1.25;
+  const Y = v => pad.t + (v / lo) * (h - pad.t - pad.b);
+  // risk gradient: green near 0, red near the halt line
+  const grad = g.createLinearGradient(0, Y(0), 0, Y(lo));
+  grad.addColorStop(0, 'rgba(61,255,143,.10)'); grad.addColorStop(.75, 'rgba(255,210,61,.08)'); grad.addColorStop(.8, 'rgba(255,61,110,.18)'); grad.addColorStop(1, 'rgba(255,61,110,.28)');
+  g.fillStyle = grad; g.fillRect(pad.l, Y(0), w - pad.l - pad.r, Y(lo) - Y(0));
+  grid(g, pad.l, pad.t, w - pad.r, h - pad.b, 4);
+  g.textAlign = 'right'; g.fillStyle = C.mute;
+  for (let i = 0; i <= 4; i++) { const v = lo * i / 4; g.fillText(fmt(v * 100, 0) + '%', pad.l - 5, Y(v)); }
+  g.strokeStyle = C.red; g.lineWidth = 2; g.setLineDash([6, 4]); g.beginPath(); g.moveTo(pad.l, Y(haltDD)); g.lineTo(w - pad.r, Y(haltDD)); g.stroke(); g.setLineDash([]); g.lineWidth = 1;
+  g.fillStyle = C.red; g.textAlign = 'left'; g.fillText('HALT ' + fmt(haltDD * 100, 1) + '%  (1,5 × backtestens max DD)', pad.l + 6, Y(haltDD) - 8);
+  const n = dd.length, X = i => pad.l + (n === 1 ? (w - pad.l - pad.r) - 20 : i * (w - pad.l - pad.r - 20) / (n - 1));
+  g.beginPath(); dd.forEach((v, i) => i ? g.lineTo(X(i), Y(v)) : g.moveTo(X(i), Y(v)));
+  g.strokeStyle = C.cyan; g.lineWidth = 2; g.stroke(); g.lineWidth = 1;
+  const bx = X(n - 1), by = Y(cur);
+  g.fillStyle = C.yellow; g.shadowColor = C.yellow; g.shadowBlur = 14; g.beginPath(); g.arc(bx, by, 6, 0, 7); g.fill(); g.shadowBlur = 0;
+  g.fillStyle = C.ink; g.textAlign = 'right'; g.fillText('nu ' + sgn(cur * 100, 2, '%'), bx - 10, by + 14);
+  const room = haltDD - cur;
+  hit('c-kill', bx - 12, by - 12, 24, 24, `drawdown nu <b>${sgn(cur * 100, 2, '%')}</b><br>marginal till halt ${fmt(Math.abs(room) * 100, 1)} procentenheter<br>${L.n} live-dagar`);
+}
+
+// ---------------------------------------------------------------- regime map
+function drawHeat() {
+  const d = S.daily;
+  if (d.length < 60) return empty('c-heat', 'hämtar dagliga barer…');
+  const {g, w, h} = canvas('c-heat'); HITS['c-heat'] = [];
+  const months = new Map();
+  for (const p of d) {
+    const k = new Date(p.t - 1).toISOString().slice(0, 7), m = months.get(k);
+    if (m) m.c = p.c; else months.set(k, {o: p.o, c: p.c});
+  }
+  const years = [...new Set([...months.keys()].map(k => k.slice(0, 4)))].slice(-4);
+  const pad = {l: 34, r: 4, t: 14, b: 4}, cw = (w - pad.l - pad.r) / 12, ch = (h - pad.t - pad.b) / years.length;
+  const names = 'JFMAMJJASOND';
+  g.textAlign = 'center'; g.fillStyle = C.mute;
+  for (let m = 0; m < 12; m++) g.fillText(names[m], pad.l + cw * (m + .5), 6);
+  const now = new Date().toISOString().slice(0, 7);
+  years.forEach((y, r) => {
+    g.textAlign = 'right'; g.fillStyle = C.mute; g.fillText(y, pad.l - 5, pad.t + ch * (r + .5));
+    for (let m = 0; m < 12; m++) {
+      const k = `${y}-${String(m + 1).padStart(2, '0')}`, v = months.get(k);
+      const x = pad.l + cw * m + 1, yy = pad.t + ch * r + 1, ww = cw - 2, hh = ch - 2;
+      if (!v) { g.strokeStyle = C.line; g.strokeRect(x + .5, yy + .5, ww - 1, hh - 1); continue; }
+      const ret = v.c / v.o - 1, a = Math.min(Math.abs(ret) / .25, 1);
+      g.fillStyle = ret >= 0 ? `rgba(61,123,255,${.15 + a * .85})` : `rgba(255,61,110,${.15 + a * .8})`;
+      g.fillRect(x, yy, ww, hh);
+      if (k === now) { g.strokeStyle = '#fff'; g.lineWidth = 1.5; g.strokeRect(x - .5, yy - .5, ww + 1, hh + 1); g.lineWidth = 1; }
+      if (cw > 30) { g.fillStyle = a > .5 ? '#fff' : C.ink2; g.textAlign = 'center'; g.font = '9px JetBrains Mono, monospace'; g.fillText((ret * 100).toFixed(0), x + ww / 2, yy + hh / 2); g.font = '10px JetBrains Mono, monospace'; }
+      hit('c-heat', x, yy, ww, hh, `${k}${k === now ? ' (pågår)' : ''}<br>BTC <b>${sgn(ret * 100, 1, '%')}</b>`);
+    }
+  });
+}
+function drawHist() {
+  const folds = (S.approval?.walk_forward?.folds || []).filter(f => f.sharpe != null);
+  if (!folds.length) return empty('c-hist', 'fold-fördelning efter validering');
+  const {g, w, h} = canvas('c-hist'); HITS['c-hist'] = [];
+  const edges = [-Infinity, -4, -2, 0, 2, 4, Infinity], labels = ['<-4', '-4..-2', '-2..0', '0..2', '2..4', '>4'];
+  const short = ['<-4', '-4', '-2', '0', '2', '>4'];
+  const cols = [C.red, C.red, '#ff8a5c', C.yellow, '#9dff5c', C.green];
+  const counts = labels.map((_, i) => folds.filter(f => f.sharpe >= edges[i] && f.sharpe < edges[i + 1]).length);
+  const pad = {l: 4, r: 4, t: 16, b: 16}, max = Math.max(...counts, 1), bw = (w - pad.l - pad.r) / counts.length;
+  g.fillStyle = C.mute; g.textAlign = 'left'; g.fillText('Sharpe per fold', pad.l, 6);
+  counts.forEach((c, i) => {
+    const bh = c / max * (h - pad.t - pad.b), x = pad.l + i * bw + 3, y = h - pad.b - bh;
+    g.fillStyle = cols[i]; g.globalAlpha = .9; g.fillRect(x, y, bw - 6, Math.max(bh, 1)); g.globalAlpha = 1;
+    g.fillStyle = C.ink; g.textAlign = 'center'; if (c) g.fillText(c, x + (bw - 6) / 2, y - 7);
+    g.fillStyle = C.mute; g.fillText(bw < 44 ? short[i] : labels[i], x + (bw - 6) / 2, h - 6);
+    hit('c-hist', x, pad.t, bw - 6, h - pad.t - pad.b, `Sharpe ${labels[i]}<br><b>${c}</b> av ${folds.length} fold`);
+  });
+}
+function renderStats() {
+  const ap = S.approval || {};
+  const dsr = ap.dsr?.deflated_sharpe;
+  set('g-dsr', dsr == null ? '—' : fmt(dsr, 3) + (dsr > .95 ? ' ✓' : ' ✕'));
+  $('g-dsr').className = 'v ' + (dsr == null ? '' : dsr > .95 ? 'up' : 'down');
+  $('g-t1').className = 'tile ' + (dsr == null ? '' : dsr > .95 ? 'g' : 'r');
+  set('g-noise', ap.dsr ? 'Sharpe ' + fmt(ap.dsr.expected_max_from_noise) : '—');
+  const rg = ap.regimes;
+  set('g-reg', rg ? `${sgn(rg.bull?.sharpe, 1)} / ${sgn(rg.bear?.sharpe, 1)}` : '—');
+  const gs = ap.gates ? Object.values(ap.gates).filter(Boolean).length : null;
+  set('g-gates', gs == null ? '—' : `${gs}/3 ${gs === 3 ? '✓' : '✕'}`);
+  $('g-gates').className = 'v ' + (gs === 3 ? 'up' : gs == null ? '' : 'down');
+  $('g-t4').className = 'tile ' + (gs === 3 ? 'g' : gs == null ? '' : 'r');
+}
+
+// ---------------------------------------------------------------- loop
+['c-equity', 'c-candles', 'c-folds', 'c-ridge', 'c-kill', 'c-heat', 'c-hist'].forEach(bindTip);
+function slow() {
+  try { renderHeader(); renderWallet(); drawCandles(); renderBook(); drawFolds(); drawRidge(); drawKill(); drawHeat(); drawHist(); renderStats(); renderTickers(); }
+  catch (e) { console.error(e); }
+}
+let last = performance.now();
+function frame(now) {
+  const dt = Math.min((now - last) / 1000, .1); last = now;
+  try { drawShell(dt); } catch (e) { console.error(e); }
+  requestAnimationFrame(frame);
+}
+(async function init() {
+  slow(); requestAnimationFrame(frame);
+  await Promise.allSettled([loadState(), loadMarket()]);
+  slow(); connect();
+  setInterval(slow, 1000);
+  setInterval(() => loadState().catch(() => {}), CFG.statePollMs);
+  setInterval(() => loadMarket().catch(() => {}), 10 * 60_000);
+  addEventListener('resize', slow);
+})();
+</script>
+</body>
+</html>

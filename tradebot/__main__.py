@@ -109,6 +109,32 @@ def run_pipeline(prices: pd.Series, args: argparse.Namespace) -> int:
             'oos_metrics': oos,
             'dsr': result['dsr'],
             'data_end': str(prices.index[-1]),
+            # for the dashboard
+            'gates': {
+                'no_leakage': result['gate1_no_leakage'],
+                'deflated_sharpe': result['gate2_deflated_sharpe'],
+                'walk_forward': result['gate3_walk_forward'],
+            },
+            'leakage': result['leakage'],
+            'critic': [{k: it[k] for k in ('item', 'name', 'status')}
+                       for it in result['critic']],
+            'walk_forward': {
+                'mean_sharpe': wf['mean_sharpe'],
+                'positive_folds': wf['positive_folds'],
+                'worst_fold': wf['worst_fold'],
+                'folds': [{
+                    'start': str(row['start']),
+                    'lookback': (row.get('params') or {}).get('lookback'),
+                    'sharpe': row.get('sharpe'),
+                    'ann_return': row.get('ann_return'),
+                    'max_drawdown': row.get('max_drawdown'),
+                } for row in wf['folds'].to_dict('records')],
+            },
+            'regimes': {k: {m: v.get(m) for m in ('sharpe', 'ann_return', 'n_obs')}
+                        for k, v in reg['regimes'].items()},
+            'regime_verdict': reg['verdict'],
+            'trade_config': {'risk_pct': 0.01, 'max_position_pct': 0.20,
+                             'stop_vol_mult': 2.0},
         })
         print(f'\nApproval file written: {args.save_approval} (approved={result["approved"]})')
     if result['approved']:

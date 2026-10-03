@@ -221,12 +221,13 @@ a{color:var(--cyan)}
 const qs = new URLSearchParams(location.search);
 const CFG = {
   symbol: (qs.get('symbol') || 'BTCUSDT').toUpperCase(),
-  stateBase: qs.get('state') || 'https://raw.githubusercontent.com/zackariasandersson18-afk/worldcub/tradebot-state/',
+  repo: 'zackariasandersson18-afk/worldcub', stateBranch: 'tradebot-state',
+  stateOverride: qs.get('state'),
   rest: ['https://data-api.binance.vision', 'https://api.binance.com'],
   ws: ['wss://data-stream.binance.vision', 'wss://stream.binance.com:9443'],
   lookbacks: [20, 40, 60, 90, 120],
   runAt: {h: 0, m: 7},           // daily GitHub Actions run, UTC
-  statePollMs: 60_000,
+  statePollMs: 75_000,          // GitHub allows 60 unauthenticated API calls/hour per IP
 };
 const C = {green:'#3dff8f', red:'#ff3d6e', yellow:'#ffd23d', cyan:'#3de0ff', magenta:'#ff3dd8', blue:'#3d7bff',
            ink:'#d6e2ef', ink2:'#8ea3ba', mute:'#5b6f86', line:'#1a2638', panel:'#0a111c'};
@@ -287,8 +288,26 @@ async function getText(url) {
   if (!r.ok) throw new Error(r.status + ' ' + url);
   return r.text();
 }
+// The branch URL on raw.githubusercontent.com is CDN-cached for minutes. Asking the
+// API for the branch's newest commit and reading the files at that exact commit is
+// never stale, and the files are only downloaded again when the bot has pushed.
+async function stateBase() {
+  if (CFG.stateOverride) return CFG.stateOverride.endsWith('/') ? CFG.stateOverride : CFG.stateOverride + '/';
+  const raw = `https://raw.githubusercontent.com/${CFG.repo}/`;
+  try {
+    const r = await fetch(`https://api.github.com/repos/${CFG.repo}/commits/${CFG.stateBranch}`, {cache: 'no-store'});
+    if (!r.ok) throw new Error(r.status);
+    const c = await r.json();
+    S.stateSha = c.sha; S.stateCommitAt = c.commit?.committer?.date || null;
+    return raw + c.sha + '/';
+  } catch {
+    S.stateSha = null;                       // rate-limited or offline: fall back to the cached branch URL
+    return raw + CFG.stateBranch + '/';
+  }
+}
 async function loadState() {
-  const base = CFG.stateBase.endsWith('/') ? CFG.stateBase : CFG.stateBase + '/';
+  const base = await stateBase();
+  if (S.stateSha && S.stateSha === S.loadedSha) { S.stateAt = new Date(); return; }
   const [a, s, l, runs] = await Promise.allSettled([
     getText(base + 'approval.json'), getText(base + 'trade_state.json'),
     getText(base + 'last_run.txt'), getText(base + 'runs.log'),
@@ -306,6 +325,8 @@ async function loadState() {
   }
   S.stateAt = new Date();
   S.stateOk = a.status === 'fulfilled' || s.status === 'fulfilled';
+  if (S.stateOk) S.loadedSha = S.stateSha;
+  S.full = true;
   if (S.approval?.symbol && !qs.get('symbol')) CFG.symbol = S.approval.symbol;
   buildFeed();
 }
@@ -396,12 +417,13 @@ async function loadMarket() {
 let wsTry = 0;
 function connect() {
   const host = CFG.ws[wsTry % CFG.ws.length], s = CFG.symbol.toLowerCase();
-  const ws = new WebSocket(`${host}/stream?streams=${s}@kline_1m/${s}@depth20@1000ms/${s}@aggTrade`);
+  const ws = new WebSocket(`${host}/stream?streams=${s}@kline_1m/${s}@depth20@100ms/${s}@aggTrade`);
   S.ws = ws;
   ws.onopen = () => { S.wsOk = true; wsTry = 0; };
   ws.onclose = () => { S.wsOk = false; wsTry++; setTimeout(connect, Math.min(30_000, 1000 * 2 ** Math.min(wsTry, 5))); };
   ws.onerror = () => ws.close();
   ws.onmessage = ev => {
+    S.dirty = true;
     const {stream, data} = JSON.parse(ev.data);
     if (stream.endsWith('@kline_1m')) {
       const k = data.k, c = {t: k.t, o: +k.o, h: +k.h, l: +k.l, c: +k.c};
@@ -411,7 +433,7 @@ function connect() {
     } else if (stream.includes('@depth')) {
       S.book = {bids: data.bids.slice(0, 5).map(x => [+x[0], +x[1]]), asks: data.asks.slice(0, 5).map(x => [+x[0], +x[1]])};
     } else if (stream.endsWith('@aggTrade')) {
-      S.ticks++; S.price = +data.p;
+      S.ticks++; S.price = +data.p; S.lag = Math.max(0, Date.now() - data.T); S.lastTick = Date.now();
       const notional = +data.p * +data.q;
       if (S.pulses.length < 60) S.pulses.push({lane: Math.floor(Math.random() * 12), t: 0, sell: data.m});
       if (notional >= 250_000) pushFeed(`<span class="${data.m ? 'down' : 'up'}">${data.m ? 'SÄLJ' : 'KÖP'} ${fmt(+data.q, 3)} BTC</span> <b>${usd(notional, 0)}</b> @ ${fmt(+data.p, 1)}`);
@@ -469,7 +491,10 @@ function renderHeader() {
   const a = account();
   $('h-symbol').textContent = CFG.symbol;
   $('h-clock').textContent = new Date().toISOString().slice(11, 19) + ' UTC';
-  const live = $('h-live'); live.textContent = S.wsOk ? 'LIVE' : 'OFFLINE'; live.className = 'badge ' + (S.wsOk ? 'b-green' : 'b-red');
+  const stale = S.lastTick && Date.now() - S.lastTick > 10_000;
+  const live = $('h-live');
+  live.textContent = !S.wsOk ? 'OFFLINE' : stale ? 'VÄNTAR' : 'LIVE' + (S.lag != null ? ' ' + Math.round(S.lag) + ' ms' : '');
+  live.className = 'badge ' + (!S.wsOk ? 'b-red' : stale ? 'b-yellow' : 'b-green');
   set('h-price', S.price ? '$' + fmt(S.price, 2) : '—');
   const day = S.dayOpen && S.price ? (S.price / S.dayOpen - 1) * 100 : null;
   set('h-day', sgn(day, 2, '%'), day);
@@ -477,7 +502,9 @@ function renderHeader() {
   $('h-signal').className = 'v ' + (sig > 0 ? 'up' : 'mute');
   set('h-pos', a.qty ? fmt(a.qty, 6) + ' BTC' : '0 BTC');
   set('h-next', a.halted ? 'HALTED' : nextRun());
-  $('h-account').textContent = (a.broker || '—').toUpperCase() + ' · ' + (S.stateOk ? 'state ok' : 'ingen state än');
+  const at = S.stateCommitAt ? new Date(S.stateCommitAt).toISOString().slice(11, 16) + ' UTC' : null;
+  $('h-account').textContent = (a.broker || '—').toUpperCase() + ' · ' +
+    (!S.stateOk ? 'ingen bot-data än' : at ? 'bot-data från ' + at + (S.stateSha ? ' · ' + S.stateSha.slice(0, 7) : '') : 'bot-data (cache)');
   $('s-price').textContent = S.price ? fmt(S.price, 2) : '—';
 }
 function renderWallet() {
@@ -838,13 +865,21 @@ function renderStats() {
 
 // ---------------------------------------------------------------- loop
 ['c-equity', 'c-candles', 'c-folds', 'c-ridge', 'c-kill', 'c-heat', 'c-hist'].forEach(bindTip);
-function slow() {
-  try { renderHeader(); renderWallet(); drawCandles(); renderBook(); drawFolds(); drawRidge(); drawKill(); drawHeat(); drawHist(); renderStats(); renderTickers(); }
+// live panels redraw on every animation frame that has new market data;
+// the history charts only when their data or the layout changes
+function live() {
+  try { renderHeader(); renderWallet(); drawCandles(); renderBook(); drawKill(); }
   catch (e) { console.error(e); }
 }
-let last = performance.now();
+function slow() {
+  try { live(); drawFolds(); drawRidge(); drawHeat(); drawHist(); renderStats(); renderTickers(); }
+  catch (e) { console.error(e); }
+}
+let last = performance.now(), lastLive = 0;
 function frame(now) {
   const dt = Math.min((now - last) / 1000, .1); last = now;
+  if (S.full) { S.full = false; S.dirty = false; lastLive = now; slow(); }
+  else if (S.dirty && now - lastLive >= 50) { S.dirty = false; lastLive = now; live(); }   // at most ~20 redraws/s
   try { drawShell(dt); } catch (e) { console.error(e); }
   requestAnimationFrame(frame);
 }
@@ -852,10 +887,11 @@ function frame(now) {
   slow(); requestAnimationFrame(frame);
   await Promise.allSettled([loadState(), loadMarket()]);
   slow(); connect();
-  setInterval(slow, 1000);
+  setInterval(() => { S.dirty = true; }, 1000);          // clock and countdown
+  setInterval(renderTickers, 5000);
   setInterval(() => loadState().catch(() => {}), CFG.statePollMs);
-  setInterval(() => loadMarket().catch(() => {}), 10 * 60_000);
-  addEventListener('resize', slow);
+  setInterval(() => loadMarket().then(() => { S.full = true; }).catch(() => {}), 10 * 60_000);
+  addEventListener('resize', () => { S.full = true; });
 })();
 </script>
 </body>

@@ -1,0 +1,45 @@
+name: tradebot daily (demo account)
+
+on:
+  schedule:
+    - cron: '7 0 * * *'   # 00:07 UTC, just after the daily bar closes
+  workflow_dispatch:
+    inputs:
+      broker:
+        description: 'paper or testnet (empty = testnet if secrets exist)'
+        required: false
+        default: ''
+      revalidate:
+        description: 'rerun the gates and rewrite approval.json'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write   # to push the tradebot-state branch
+
+concurrency:
+  group: tradebot
+  cancel-in-progress: false
+
+jobs:
+  step:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: trade step
+        env:
+          SYMBOL: BTCUSDT
+          # DEMO ONLY: the example strategy fails the gates. Trading it on
+          # paper/testnet shows the plumbing works; never do this with real money.
+          IGNORE_GATES: 'true'
+          BROKER: ${{ inputs.broker }}
+          REVALIDATE: ${{ inputs.revalidate }}
+          BINANCE_TESTNET_API_KEY: ${{ secrets.BINANCE_TESTNET_API_KEY }}
+          BINANCE_TESTNET_API_SECRET: ${{ secrets.BINANCE_TESTNET_API_SECRET }}
+        run: scripts/tradebot_daily.sh

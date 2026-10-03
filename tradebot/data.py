@@ -5,13 +5,24 @@ value at time t was known at time t.
 """
 from __future__ import annotations
 
+import os
 import time
 
 import numpy as np
 import pandas as pd
 import requests
 
-BINANCE_URL = 'https://api.binance.com/api/v3/klines'
+# data-api.binance.vision serves public market data only and is reachable from
+# regions (e.g. US cloud runners) where api.binance.com answers 451.
+BINANCE_URLS = (
+    'https://data-api.binance.vision/api/v3/klines',
+    'https://api.binance.com/api/v3/klines',
+)
+
+
+def _klines_urls() -> tuple[str, ...]:
+    custom = os.environ.get('TRADEBOT_KLINES_URL')
+    return (custom,) if custom else BINANCE_URLS
 
 
 def normalize(prices: pd.Series) -> pd.Series:
@@ -67,14 +78,23 @@ def fetch_binance(symbol: str = 'BTCUSDT', interval: str = '1d',
     end_ms = int(pd.Timestamp(end, tz='UTC').timestamp() * 1000) if end \
         else int(time.time() * 1000)
 
+    def get(params):
+        errors = []
+        for url in _klines_urls():
+            try:
+                resp = http.get(url, params=params, timeout=20)
+                resp.raise_for_status()
+                return resp.json()
+            except requests.RequestException as exc:
+                errors.append(f'{url}: {exc}')
+        raise RuntimeError('all kline endpoints failed: ' + '; '.join(errors))
+
     rows = []
     while start_ms < end_ms:
-        resp = http.get(BINANCE_URL, params={
+        batch = get({
             'symbol': symbol, 'interval': interval,
             'startTime': start_ms, 'endTime': end_ms, 'limit': 1000,
-        }, timeout=20)
-        resp.raise_for_status()
-        batch = resp.json()
+        })
         if not batch:
             break
         rows.extend(batch)

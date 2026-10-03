@@ -187,6 +187,27 @@ Varje `trade`-steg (`tradebot/live.py`):
 Signalen beraknas pa riktig marknadsdata (publika api.binance.com). Ordrar
 gar till testnet, dar priserna kan skilja sig fran den riktiga marknaden.
 
+## Daglig korning pa demokonto (GitHub Actions)
+
+`.github/workflows/tradebot.yml` kor `scripts/tradebot_daily.sh` varje dag
+kl 00:07 UTC, strax efter att dagens bar stangt. Den gor ett `trade`-steg
+pa BTCUSDT.
+
+- **Konto:** Binance testnet om repo-hemligheterna
+  `BINANCE_TESTNET_API_KEY` och `BINANCE_TESTNET_API_SECRET` finns,
+  annars paper-kontot (10 000 USDT i lekpengar).
+- **State** (godkannande, planbok, historik, `runs.log`) sparas pa grenen
+  `tradebot-state`, en commit per korning.
+- **Avisering:** jobbet failar vid HALT eller vagran, och da skickar GitHub
+  ett mejl.
+- **Manuell korning:** Actions -> "tradebot daily (demo account)" -> Run
+  workflow. Valj `revalidate` for att kora om grindarna.
+- `IGNORE_GATES: 'true'` star i workflowen eftersom exempelstrategin inte
+  klarar grindarna. Det ar bara for demo. Ta bort raden nar du har en
+  strategi som klarar dem.
+
+Schemalagda workflows kor bara fran repots default-gren.
+
 ## Begransningar
 
 Inget har ar finansiell radgivning. Kor pa testnet lange innan du ens

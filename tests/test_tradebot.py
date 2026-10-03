@@ -277,3 +277,18 @@ def test_drawdown_counts_loss_on_first_period():
     m = metrics(pd.Series([-0.5] + [0.0] * 120), Config())
     assert m['max_drawdown'] == pytest.approx(-50.0)
     assert health_check(pd.Series([-0.5]), {'sharpe': 1, 'max_drawdown': -20})['action'] == 'HALT'
+
+
+def test_fetch_binance_falls_back_to_second_endpoint():
+    import requests
+
+    class Flaky(FakeSession):
+        def get(self, url, params, timeout):
+            if 'data-api' in url:
+                raise requests.ConnectionError('blocked')
+            return super().get(url, params, timeout)
+
+    day, t0 = 86_400_000, 1_704_067_200_000
+    k = [t0, '0', '0', '0', '42', '0', t0 + day - 1]
+    s = fetch_binance(start='2024-01-01', end='2024-01-02', session=Flaky([[k]]))
+    assert list(s) == [42.0]

@@ -212,7 +212,7 @@ const qs = new URLSearchParams(location.search);
 const CFG = {
   repo: 'zackariasandersson18-afk/worldcub', stateBranch: 'tradebot-state', codeBranch: 'claude/football-betting-optimizer-45ox0q',
   stateOverride: qs.get('state'), gamma: 'https://gamma-api.polymarket.com', clob: 'https://clob.polymarket.com',
-  metar: 'https://aviationweather.gov/api/data/metar', START_USD: 1000, HOUR: 16, WINDOW_END: 18,
+  START_USD: 1000, HOUR: 16, WINDOW_END: 18,
 };
 const COL = {green:'#39ff6a', red:'#ff3b3b', yellow:'#ffd400', cyan:'#3ad7ff', blue:'#2f6bff', orange:'#ff9a1f', ink:'#f2f2f2', ink2:'#a8a8a8', mute:'#6b6b6b', line:'#2a2a2a'};
 const S = {fx: null, st: null, bt: null, stations: null, events: [], quotes: {}, metar: {}, metarAt: 0};
@@ -293,20 +293,27 @@ async function loadEvents() {
   }
   S.events = raw.map(parseEvent).filter(e => e && S.stations[e.station] && e.date === solarDate(S.stations[e.station].lon));
 }
-// live METAR (aviationweather.gov); purely informative, the bot uses the IEM archive
+// live METAR from the same archive the bot reads (Iowa Environmental Mesonet, CORS enabled)
 async function loadMetar() {
   const ids = [...new Set(S.events.map(e => e.station))];
   if (!ids.length) return;
+  const iem = id => id.length === 4 && id.startsWith('K') ? id.slice(1) : id;   // US ASOS ids drop the K
+  const back = Object.fromEntries(ids.map(id => [iem(id), id]));
+  const d0 = new Date(Date.now() - 864e5), d1 = new Date(Date.now() + 864e5);
+  const ymd = (d, k) => `year${k}=${d.getUTCFullYear()}&month${k}=${d.getUTCMonth() + 1}&day${k}=${d.getUTCDate()}`;
+  const url = `https://mesonet.agron.iastate.edu/cgi-bin/request/asos.py?${ids.map(id => 'station=' + iem(id)).join('&')}` +
+    `&data=tmpf&tz=Etc/UTC&format=onlycomma&latlon=no&missing=M&report_type=3&report_type=4&${ymd(d0, 1)}&${ymd(d1, 2)}`;
   try {
-    const rows = await getJSON(`${CFG.metar}?ids=${ids.join(',')}&format=json&hours=24`);
+    const r = await fetch(url, {cache: 'no-store'}); if (!r.ok) throw new Error(r.status);
     const out = {};
-    for (const r of rows) {
-      const s = S.stations[r.icaoId]; if (!s || r.temp == null) continue;
-      const t = (r.obsTime || 0) * 1000, off = Math.round(s.lon / 15 * 3600) * 1000;
+    for (const line of (await r.text()).split('\n').slice(1)) {
+      const [sid, valid, tmpf] = line.split(','); const icao = back[sid], f = parseFloat(tmpf);
+      const s = S.stations[icao]; if (!s || !isFinite(f)) continue;
+      const t = Date.parse(valid.replace(' ', 'T') + ':00Z'), off = Math.round(s.lon / 15 * 3600) * 1000;
       if (new Date(t + off).toISOString().slice(0, 10) !== solarDate(s.lon)) continue;   // today, solar
-      const o = out[r.icaoId] ||= {max: -999, last: null, at: 0};
-      o.max = Math.max(o.max, +r.temp);
-      if (t > o.at) { o.at = t; o.last = +r.temp; }
+      const o = out[icao] ||= {maxF: -999, lastF: null, at: 0};
+      o.maxF = Math.max(o.maxF, f);
+      if (t > o.at) { o.at = t; o.lastF = f; }
     }
     S.metar = out; S.metarAt = Date.now();
   } catch { S.metarErr = true; }
@@ -324,7 +331,8 @@ async function loadBooks(tokens) {
   }
   S.posAt = Date.now();
 }
-const unitTemp = (c, unit) => unit === 'F' ? Math.round(c * 9 / 5 + 32) : Math.round(c);
+// mirrors nowcast.to_unit: whole market degrees from METAR Fahrenheit
+const unitTemp = (f, unit) => unit === 'F' ? Math.round(f) : Math.round((f - 32) * 5 / 9);
 
 // ------------------------------------------------------------------ account
 const posValue = p => { const bid = S.quotes[p.token]?.bid; return bid == null ? null : p.shares * bid; };
@@ -387,7 +395,7 @@ function renderCountdown() {
     return {e, h, left, html:
       `<tr class="${h >= CFG.HOUR && h < CFG.WINDOW_END && !decided.has(e.id) ? 'now' : ''}"><td><b>${esc(e.city)}</b> <span class="mute">${esc(e.station)}</span></td>` +
       `<td>${hhmm(h)}</td><td>${left > 0 ? hhmm(left) : '—'}<span class="prog"><i style="width:${Math.min(100, Math.max(0, h / CFG.HOUR * 100))}%"></i></span></td>` +
-      `<td>${m ? unitTemp(m.max, e.unit) + '°' + e.unit : '—'}</td><td>${m ? unitTemp(m.last, e.unit) + '°' + e.unit : '—'}</td><td>${status}</td></tr>`};
+      `<td>${m ? unitTemp(m.maxF, e.unit) + '°' + e.unit : '—'}</td><td>${m ? unitTemp(m.lastF, e.unit) + '°' + e.unit : '—'}</td><td>${status}</td></tr>`};
   }).sort((a, b) => a.left - b.left);
   const n = rows.filter(r => r.left > 0).length;
   $('cd-sub').textContent = `${n} kvar idag · ${rows.length - n} passerade`;
@@ -442,7 +450,7 @@ function renderTickers() {
   $('banner').textContent = `◆ VIRTUELLA PENGAR · BACKTEST GODKÄND (FLAGGAD) · VERIFIERAS LIVE · ${S.st?.closed?.length || 0} AVRÄKNADE · ` +
     (sc?.n ? `LOG-LOSS MODELL ${fmt(sc.model / sc.n, 3)} / MARKNAD ${fmt(sc.market / sc.n, 3)} · ` : '') + `1 USD = ${S.fx ? fmt(S.fx, 2) : '—'} KR`;
   const items = S.events.map(e => { const s = S.stations[e.station], m = S.metar[e.station];
-    return `<span><b>${esc(e.city)}</b> ${hhmm(solarHours(s.lon))} soltid${m ? ' · max ' + unitTemp(m.max, e.unit) + '°' + e.unit : ''}</span>`; }).join('');
+    return `<span><b>${esc(e.city)}</b> ${hhmm(solarHours(s.lon))} soltid${m ? ' · max ' + unitTemp(m.maxF, e.unit) + '°' + e.unit : ''}</span>`; }).join('');
   const feed = (S.st?.open || []).map(p => `<span><b>${esc(p.city)}</b> ${p.side === 'YES' ? 'JA' : 'NEJ'} ${esc(p.bucket)} @ ${fmt(p.price, 2)}</span>`).join('') ||
     `<span>backtest: ${b ? fmt(b.n_trades) + ' affärer · ' + pct(b.hit_rate, 1) + ' träff' : '—'}</span><span>beslut tas 16:00 soltid per stad</span>`;
   for (const [id, html] of [['feed', feed], ['foot', items || '<span>laddar städer…</span>']]) {

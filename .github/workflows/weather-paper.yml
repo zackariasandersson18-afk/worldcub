@@ -30,9 +30,9 @@ jobs:
       - run: pip install -r requirements.txt
       - name: paper step
         env:
-          # The backtest rejected the strategy (the market's prices beat the model).
-          # Measure only: log fresh forecasts and market prices, score both once
-          # each market resolves. Set to 'true' to paper-trade anyway.
-          IGNORE_GATES: 'false'
+          # Paper trading with virtual money against Polymarket's live order books.
+          # The backtest REJECTED the strategy (the market's prices beat the model),
+          # so this trades anyway -- virtual money only, never real.
+          IGNORE_GATES: 'true'
           REBACKTEST: ${{ inputs.rebacktest }}
         run: scripts/weather_paper.sh

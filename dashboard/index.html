@@ -404,13 +404,13 @@ async function cycle() {
     STEP_INFO[1] = `${today.length} prognoser`;
 
     S.step = 2; STEP_INFO[2] = 'kalibrering'; renderSteps();
-    const approved = !!S.wbt?.approved;
+    const approved = isTrading();
     for (const e of today) {
       const cal = calibration(e.localDay, e.unit);
       e.cal = cal;
       if (cal) { e.mu = e.muRaw + cal.bias; e.sigma = cal.sigma; e.probs = e.buckets.map(b => bucketProb(e.mu, e.sigma, b.lo, b.hi)); }
     }
-    STEP_INFO[2] = approved ? 'godkänd' : 'underkänd · mäter';
+    STEP_INFO[2] = S.wbt?.approved ? 'godkänd' : approved ? 'underkänd · handlar ändå' : 'underkänd · mäter';
 
     S.step = 3; STEP_INFO[3] = 'orderböcker'; renderSteps();
     const tokens = today.filter(e => e.probs).flatMap(e => e.buckets.flatMap(b => [b.yes, b.no]));
@@ -461,6 +461,8 @@ async function cycle() {
 }
 
 // ------------------------------------------------------------------ account (from the bot's own state)
+// the bot trades when the backtest approved it, or when it runs with --ignore-gates
+function isTrading() { return S.wstate?.mode ? S.wstate.mode === 'trading' : !!S.wbt?.approved; }
 function equity() {
   const st = S.wstate;
   if (!st) return CFG.START_USD;
@@ -487,9 +489,9 @@ function renderAccount() {
   $('riskbar').style.width = risk * 10 + '%';
   $('riskb').textContent = risk < 4 ? 'SÄKER' : risk < 7 ? 'FÖRHÖJD' : 'HÖG';
   $('riskb').className = 'badge ' + (risk < 4 ? 'b-green' : risk < 7 ? 'b-yellow' : 'b-red');
-  const approved = !!S.wbt?.approved;
-  $('mode').textContent = approved ? 'PAPER · HANDLAR' : 'PAPER · MÄTER';
-  $('mode').className = 'badge ' + (approved ? 'b-green' : 'b-yellow');
+  const trading = isTrading(), forced = !!S.wstate?.gates_ignored;
+  $('mode').textContent = trading ? (forced ? 'VIRTUELL · EJ GODKÄND' : 'VIRTUELL · HANDLAR') : 'VIRTUELL · MÄTER';
+  $('mode').className = 'badge ' + (trading && !forced ? 'b-green' : 'b-yellow');
   $('nevents').textContent = S.events.length;
 }
 function renderBest() {
@@ -555,7 +557,7 @@ function drawTree(dt) {
   const narrow = w < 560, boxW = narrow ? 54 : 72, span = w - boxW - 10;
   const m0 = narrow ? 24 : 30;  // keep the first node clear of the left edge
   const P = k => [m0 + (TREE.nodes[k][0] - 0.04) / 0.82 * (span - m0 - 20), TREE.nodes[k][1] * h];
-  const approved = !!S.wbt?.approved;
+  const approved = isTrading();
   const counts = {mis: S.rows.filter(r => r.cls === 'MISPRIS').length, fair: S.rows.filter(r => r.cls === 'RÄTT').length,
                   tail: S.rows.filter(r => r.cls === 'SVANS').length};
   const active = new Set(['tick>scan', 'scan>classify', 'classify>fair', 'fair>hold', 'classify>tail', 'tail>hold',
@@ -736,7 +738,7 @@ function renderTickers() {
   }
   const bt = S.wbt, sc = S.wstate?.score;
   const live = sc && sc.n ? `LIVE MODELL ${fmt(sc.model / sc.n, 3)} / MARKNAD ${fmt(sc.market / sc.n, 3)}` : 'LIVE-MÄTNING STARTAD';
-  $('banner').textContent = `◆ PAPER-KONTO · BACKTEST ${bt ? (bt.approved ? 'GODKÄND' : 'UNDERKÄND') : '—'} · ${live} · ${S.cands.length} KANDIDATER · 1 USD = ${S.fx ? fmt(S.fx, 2) : '—'} KR`;
+  $('banner').textContent = `◆ VIRTUELLA PENGAR · ${isTrading() ? 'HANDLAR' : 'MÄTER'} · BACKTEST ${bt ? (bt.approved ? 'GODKÄND' : 'UNDERKÄND') : '—'} · ${live} · ${S.cands.length} KANDIDATER · 1 USD = ${S.fx ? fmt(S.fx, 2) : '—'} KR`;
 }
 function renderSteps() {
   $('steps').innerHTML = STEPS.map(([name, col], i) =>

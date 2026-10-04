@@ -75,7 +75,7 @@ def equity(state: dict) -> float:
 
 
 def step(state_dir: str | Path, now: datetime | None = None, http=None, approved: bool = True,
-         log=print) -> dict:
+         log=print, gates_ignored: bool = False) -> dict:
     d = Path(state_dir)
     d.mkdir(parents=True, exist_ok=True)
     http = http or requests.Session()
@@ -179,6 +179,8 @@ def step(state_dir: str | Path, now: datetime | None = None, http=None, approved
             st['open'].append(pos)
             report['opened'].append(pos)
 
+    st['mode'] = 'trading' if approved else 'measuring'
+    st['gates_ignored'] = gates_ignored
     st['history'].append({'ts': now.isoformat(), 'equity': round(equity(st), 2),
                           'cash': round(st['cash'], 2), 'open': len(st['open'])})
     st['history'] = st['history'][-2000:]

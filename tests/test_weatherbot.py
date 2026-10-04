@@ -199,6 +199,13 @@ class FakeWorld:
             ask = (self.cheap_ask if is_yes else 1 - self.cheap_ask + 0.02) if label == self.cheap_bucket \
                 else (0.02 if is_yes else 0.99)
             return Resp({'bids': [], 'asks': [{'price': str(ask), 'size': '1000'}]})
+        if 'ensemble-api' in url:
+            times = [f'2026-10-0{3 + h // 24}T{h % 24:02d}:00' for h in range(48)]
+            hourly = {'time': times}
+            for k in range(31):
+                key = 'temperature_2m' if k == 0 else f'temperature_2m_member{k:02d}'
+                hourly[key] = [self.forecast_high - 6 + (6 + (k % 5) - 2) * (12 <= h % 24 <= 16) for h in range(48)]
+            return Resp({'utc_offset_seconds': 7200, 'hourly': hourly})
         if 'open-meteo' in url:
             times = [f'2026-10-0{3 + h // 24}T{h % 24:02d}:00' for h in range(48)]
             temps = [self.forecast_high - 6 + 6 * (12 <= h % 24 <= 16) for h in range(48)]
@@ -269,6 +276,7 @@ def test_paper_without_approval_only_logs_forecasts(tmp_path):
     sc = json.loads((tmp_path / 'weather_state.json').read_text())['score']
     assert sc['events'] == 1 and sc['n'] == 11
     assert sc['model'] > 0 and sc['market'] > 0
+    assert sc['n_gfs'] == 11 and sc['gfs'] > 0 and sc['market_gfs'] > 0
 
 
 def test_fetch_events_stops_at_since_and_at_gamma_offset_limit():
@@ -312,3 +320,12 @@ def test_paper_skips_orders_below_polymarket_minimum(tmp_path):
     rep = paper.step(tmp_path, now=datetime(2026, 10, 3, 4, 30, tzinfo=timezone.utc), http=FakeWorld())
     # with $4 the 0.30 bucket would be ~1 share at most: below the 5-share minimum
     assert all(p['shares'] >= 5 for p in rep['opened'])
+
+
+def test_ensemble_bucket_probs_are_their_member_counts():
+    ev = markets.parse_event(gamma_event())
+    members = [21.6] * 10 + [22.4] * 10 + [23.0] * 11      # rounds to 22, 22, 23
+    ps = forecast.ensemble_bucket_probs(members, ev.buckets)
+    by = {b.label: p for b, p in zip(ev.buckets, ps)}
+    assert by['22°C'] == pytest.approx(20 / 31) and by['23°C'] == pytest.approx(11 / 31)
+    assert by['17°C or below'] == 0.05                      # clipped like their bot

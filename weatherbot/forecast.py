@@ -54,6 +54,41 @@ def blend(models: dict[str, float]) -> tuple[float, float, int] | None:
     return sum(vals) / len(vals), max(vals) - min(vals), len(vals)
 
 
+ENSEMBLE_URL = 'https://ensemble-api.open-meteo.com/v1/ensemble'
+
+
+def gfs_ensemble(lat: float, lon: float, unit: str, session: requests.Session | None = None,
+                 days: int = 3) -> dict[date, list[float]]:
+    """Daily high per GFS ensemble member (control + 30), per local date --
+    the forecast suislanchez's weather bot counts members of."""
+    http = session or requests.Session()
+    r = http.get(ENSEMBLE_URL, params={
+        'latitude': lat, 'longitude': lon, 'hourly': 'temperature_2m', 'models': 'gfs_seamless',
+        'timezone': 'auto', 'forecast_days': days,
+        'temperature_unit': 'fahrenheit' if unit == 'F' else 'celsius'}, timeout=30)
+    r.raise_for_status()
+    hourly = r.json()['hourly']
+    out: dict[date, list[float]] = defaultdict(list)
+    for key, values in hourly.items():
+        if not key.startswith('temperature_2m'):
+            continue
+        per_day: dict[date, list[float]] = defaultdict(list)
+        for t, v in zip(hourly['time'], values):
+            if v is not None:
+                per_day[date.fromisoformat(t[:10])].append(float(v))
+        for d, vs in per_day.items():
+            if len(vs) >= 20:
+                out[d].append(max(vs))
+    return dict(out)
+
+
+def ensemble_bucket_probs(members: list[float], buckets) -> list[float]:
+    """Their method: share of members whose (whole-degree) high falls in the
+    bucket, clipped to [0.05, 0.95] as in their weather_signals.py."""
+    n = len(members)
+    return [min(0.95, max(0.05, sum(b.lo <= round(m) <= b.hi for m in members) / n)) for b in buckets]
+
+
 def live_forecast(lat: float, lon: float, unit: str, session: requests.Session | None = None,
                   days: int = 3) -> tuple[dict[date, dict[str, float]], int]:
     http = session or requests.Session()

@@ -8,8 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo "== aviationweather CORS"; curl -sI -H "Origin: https://raw.githack.com" "https://aviationweather.gov/api/data/metar?ids=LEMD,KLGA&format=json&hours=3" | grep -iE "^HTTP|access-control"
-          curl -s "https://aviationweather.gov/api/data/metar?ids=LEMD,KLGA&format=json&hours=3" | python3 -c "import json,sys; d=json.load(sys.stdin); print(len(d), [(r['icaoId'], r['obsTime'], r['temp']) for r in d[:4]])"
-          echo "== IEM latest LEMD"; curl -s "https://mesonet.agron.iastate.edu/cgi-bin/request/asos.py?station=LEMD&data=tmpf&tz=Etc/UTC&format=onlycomma&latlon=no&missing=M&report_type=3&report_type=4&year1=2026&month1=10&day1=4&year2=2026&month2=10&day2=5" | tail -3; date -u
-          echo "== IEM KLGA"; curl -s "https://mesonet.agron.iastate.edu/cgi-bin/request/asos.py?station=LGA&data=tmpf&tz=Etc/UTC&format=onlycomma&latlon=no&missing=M&report_type=3&report_type=4&year1=2026&month1=10&day1=4&year2=2026&month2=10&day2=5" | tail -2
-          echo "== CORS gamma/clob/frankfurter"; for u in "https://gamma-api.polymarket.com/events?limit=1" "https://api.frankfurter.app/latest?from=USD&to=SEK"; do curl -sI -H "Origin: https://raw.githack.com" "$u" | grep -iE "^HTTP|access-control-allow-origin"; done
+          for u in "https://mesonet.agron.iastate.edu/cgi-bin/request/asos.py?station=LEMD&data=tmpf&tz=Etc/UTC&format=onlycomma&latlon=no&missing=M&report_type=3&report_type=4&year1=2026&month1=10&day1=4&year2=2026&month2=10&day2=5" \
+                   "https://mesonet.agron.iastate.edu/api/1/currents.json?station=LEMD" \
+                   "https://api.frankfurter.app/latest?from=USD&to=SEK" "https://api.frankfurter.dev/v1/latest?base=USD&symbols=SEK" \
+                   "https://open.er-api.com/v6/latest/USD" "https://clob.polymarket.com/books"; do
+            echo "== $u"; curl -sIL -H "Origin: https://raw.githack.com" "$u" | grep -iE "^HTTP|access-control-allow-origin|^location"; done
+          curl -s "https://mesonet.agron.iastate.edu/api/1/currents.json?station=LEMD" | head -c 600

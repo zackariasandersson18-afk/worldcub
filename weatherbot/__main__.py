@@ -42,10 +42,11 @@ def cmd_paper(args) -> int:
     from weatherbot import paper
     bt = Path(args.state) / 'backtest.json'
     approved = json.loads(bt.read_text()).get('approved', False) if bt.exists() else False
-    if args.ignore_gates and not approved:
-        print('WARNING: --ignore-gates: weather strategy did NOT pass the gates. Paper only.')
+    ignored = args.ignore_gates and not approved
+    if ignored:
+        print('WARNING: --ignore-gates: weather strategy did NOT pass the gates. Virtual money only.')
         approved = True
-    rep = paper.step(args.state, approved=approved)
+    rep = paper.step(args.state, approved=approved, gates_ignored=ignored)
     print(json.dumps({k: rep[k] for k in ('ts', 'logged', 'skipped')}, indent=1, default=str))
     for p in rep['opened']:
         print(f"OPEN  {p['city']:15s} {p['bucket']:18s} {p['side']:3s} @ {p['price']:.3f} "

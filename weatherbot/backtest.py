@@ -40,11 +40,34 @@ def _retry(fn, *args, tries: int = 4):
     return fn(*args)
 
 
+STATION_SHRINK = 10   # round 8: pseudo-days pulling a station's bias toward the pooled bias
+
+
+def station_params(rows: list, station: str, before: date, unit: str) -> tuple[float, float] | None:
+    """Round 8 (pre-registered, trial 55): per-station bias (shrunk toward the pooled bias)
+    and sigma of the station-debiased residuals, from days strictly before `before`.
+    rows: [(day, station, residual in C)]. Returned in the market's unit."""
+    past = [(st, r) for d, st, r in rows if d < before]
+    if len(past) < model.MIN_RESIDUALS:
+        return None
+    pooled = sum(r for _, r in past) / len(past)
+    by_st: dict[str, list[float]] = defaultdict(list)
+    for st, r in past:
+        by_st[st].append(r)
+    bias = {st: (sum(v) + STATION_SHRINK * pooled) / (len(v) + STATION_SHRINK) for st, v in by_st.items()}
+    dev = [r - bias[st] for st, r in past]
+    sd = math.sqrt(sum(x * x for x in dev) / (len(dev) - 1))
+    b = bias.get(station, pooled)
+    scale = 1.0 / model.C_PER_F if unit == 'F' else 1.0
+    return b * scale, max(sd, model.MIN_SIGMA_C) * scale
+
+
 def run(events: list[markets.Event], forecasts: dict, histories: dict, blend: float | None = None,
-        n_trials: int = N_TRIALS) -> dict:
+        n_trials: int = N_TRIALS, per_station: bool = False) -> dict:
     """forecasts: {(station, unit): (daily {date: {model: high}}, utc_offset)};
     histories: {yes_token: [(t, p), ...]}"""
     calib = model.Calibration()
+    st_rows: list = []   # (day, station, residual in C) for the per-station variant
     by_day: dict[date, list[markets.Event]] = defaultdict(list)
     for ev in events:
         by_day[ev.date].append(ev)
@@ -62,9 +85,10 @@ def run(events: list[markets.Event], forecasts: dict, histories: dict, blend: fl
             if not blended:
                 continue
             mu_raw, spread, n_models = blended
-            residuals.append((winner.center() - mu_raw, ev.unit))
+            residuals.append((winner.center() - mu_raw, ev.unit, ev.station))
 
-            cal = calib.params(before=day, unit=ev.unit)
+            cal = (station_params(st_rows, ev.station, day, ev.unit) if per_station
+                   else calib.params(before=day, unit=ev.unit))
             if cal is None:
                 continue
             bias, sigma = cal
@@ -92,8 +116,9 @@ def run(events: list[markets.Event], forecasts: dict, histories: dict, blend: fl
                                'sigma': round(sigma, 2), 'models': n_models})
         if calib.params(before=day, unit='C') is not None:
             daily[day] = pnl
-        for res, unit in residuals:  # only now: today's outcome is known
+        for res, unit, station in residuals:  # only now: today's outcome is known
             calib.add(day, res, unit)
+            st_rows.append((day, station, res * (model.C_PER_F if unit == 'F' else 1.0)))
     out = evaluate(trades, scored, daily, n_trials=n_trials)
     out['calibration_rows'] = [[str(d), round(r, 3)] for d, r in calib.rows]
     return out

@@ -1,6 +1,6 @@
-name: weather backtest (round 7, model/market blend)
+name: weather backtest (rounds 7-8)
 
-# Pre-registered single variant (trial 54): p = 0.5 * model + 0.5 * market price.
+# Round 7 (trial 54): p = 0.5 * model + 0.5 * market. Round 8 (trial 55): + per-station bias.
 on:
   push:
     branches: [claude/great-rubin-cbww8t]
@@ -18,7 +18,7 @@ jobs:
           python-version: '3.11'
           cache: pip
       - run: pip install -r requirements.txt
-      - run: python -m weatherbot backtest --days 45 --blend 0.5 --out weather_blend.json
+      - run: python -m weatherbot backtest --days 45 --blend 0.5 --per-station --out weather_blend.json
       - uses: actions/upload-artifact@v4
         with:
           name: weather-blend

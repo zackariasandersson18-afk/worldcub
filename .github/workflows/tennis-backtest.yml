@@ -1,0 +1,29 @@
+name: tennis hold-favourite backtest
+
+# Re-test of the hold-favourite baseline from livetennisapi/polymarket-tennis,
+# pre-registered in tennisbot/hold_favourite.py. Read-only.
+on:
+  push:
+    branches: [claude/great-rubin-cbww8t]
+    paths: ['.github/workflows/tennis-backtest.yml', 'tennisbot/**']
+  workflow_dispatch:
+    inputs:
+      days:
+        default: '30'
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: python -m tennisbot.hold_favourite --days "${{ inputs.days || '30' }}" --out tennis.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: tennis
+          path: tennis.json

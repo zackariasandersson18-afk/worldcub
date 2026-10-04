@@ -2,7 +2,12 @@ name: tradebot daily (demo account)
 
 on:
   schedule:
-    - cron: '7 0 * * *'   # 00:07 UTC, just after the daily bar closes
+    # 00:07 UTC, just after the daily bar closes. GitHub sometimes delays or drops
+    # scheduled runs around midnight, so two backup times follow; a backup run that
+    # finds the day already handled exits without changing anything.
+    - cron: '7 0 * * *'
+    - cron: '37 1 * * *'
+    - cron: '7 4 * * *'
   workflow_dispatch:
     inputs:
       broker:

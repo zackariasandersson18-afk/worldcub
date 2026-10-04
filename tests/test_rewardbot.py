@@ -26,3 +26,22 @@ def test_fills_only_through_the_quote_and_marks_daily():
     assert pnl.sum() > 0
     flat = [(t0 + 10, 0.50, 5)] + [(t0 + 3600 * k + 10, 0.48, 50) for k in range(1, 24)]
     assert simulate_fills(flat, t0, t0 + 86400, 0.02, 10).sum() == 0     # touching is not a fill
+
+
+def test_live_step_freezes_portfolio_accrues_reward_and_fills(tmp_path, monkeypatch):
+    from rewardbot import backtest as bt, live
+    port = [{'cond': 'c1', 'question': 'Q', 'yes': 'y', 'no': 'n', 'rate': 24.0, 'v': 4.0, 'min_size': 10.0,
+             'd': 0.02, 'asset': '0x2791bca1f2de4661ed88a30c99a7a9449aa84174', 'collateral': 9.6,
+             'est_reward_day': 24.0, 'end': '2027-01-01'}]
+    monkeypatch.setattr(live, 'choose', lambda http, log: port)
+    book = {'y': {'bids': [{'price': '0.49', 'size': '5'}], 'asks': [{'price': '0.51', 'size': '5'}]},
+            'n': {'bids': [], 'asks': []}}
+    monkeypatch.setattr(bt, 'fetch_books', lambda toks, http: book)
+    t0 = 1_790_000_000
+    monkeypatch.setattr(bt, 'fetch_trades', lambda c, y, since, http: [(t0 + 100, 0.47, 50)])
+    live.step(tmp_path, now=t0, http=object())
+    tick = live.step(tmp_path, now=t0 + 3600, http=object())
+    # alone in the book (competitor levels below min size): full share, 1 h of a 24/day pool
+    assert abs(tick['reward_tick'] - 1.0) < 1e-9
+    st = __import__('json').loads((tmp_path / 'rewards_state.json').read_text())
+    assert st['positions']['c1']['inv'] == 10.0 and st['portfolio'] == port     # bid 0.48 filled, portfolio frozen

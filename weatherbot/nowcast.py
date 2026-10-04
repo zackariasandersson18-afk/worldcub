@@ -106,7 +106,14 @@ def bucket_probs(m: int, dist: list[float], buckets) -> list[float]:
     return out
 
 
-def run(events: list[markets.Event], metar: dict, histories: dict, hour: int) -> dict:
+def price_age(history, ts: int) -> int | None:
+    """Minutes between the price point price_at would use and the decision time."""
+    before = [t for t, _ in history if t <= ts]
+    return (ts - before[-1]) // 60 if before else None
+
+
+def run(events: list[markets.Event], metar: dict, histories: dict, hour: int,
+        max_age_s: int = 6 * 3600) -> dict:
     """metar: {station: [(unix, temp_f), ...]}; histories: {yes_token: [(t, p), ...]}"""
     units = {}
     for e in events:
@@ -136,7 +143,7 @@ def run(events: list[markets.Event], metar: dict, histories: dict, hour: int) ->
             traded_day = True
             probs = bucket_probs(m, dp, ev.buckets)
             ts = solar_day_start(day, lon) + hour * 3600
-            prices = [markets.price_at(histories.get(b.yes_token, []), ts) for b in ev.buckets]
+            prices = [markets.price_at(histories.get(b.yes_token, []), ts, max_age_s) for b in ev.buckets]
             for b, p, q in zip(ev.buckets, probs, prices):
                 if q is not None:
                     scored.append({'won': bool(b.resolved_yes), 'model': p, 'market': q})
@@ -149,7 +156,10 @@ def run(events: list[markets.Event], metar: dict, histories: dict, hour: int) ->
                                'bucket': bet.bucket, 'side': bet.side, 'price': bet.price,
                                'cost': round(bet.cost, 4), 'prob': round(bet.prob, 4),
                                'edge': round(bet.edge, 4), 'stake': round(bet.stake, 5),
-                               'won': won, 'pnl': round(r, 5)})
+                               'won': won, 'pnl': round(r, 5),
+                               'price_age_min': price_age(histories.get(b.yes_token, []), ts),
+                               # already settled by the observations: the high is past this bucket
+                               'decided': bool(b.hi < m)})
         if traded_day:
             daily[day] = pnl
         for unit, delta in todays:  # only now: today's full-day max is known
@@ -207,6 +217,15 @@ def collect(days: int = 45, pages: int = 40, workers: int = 8, log=print):
     return events, metar, histories
 
 
+def diagnose(t) -> None:
+    """Where does the profit come from? Stale prices on already-decided buckets
+    are not executable: the order book moves as soon as the observation is out."""
+    import pandas as pd
+    age = pd.cut(t['price_age_min'], [-1, 30, 60, 120, 360], labels=['<=30m', '30-60m', '1-2h', '2-6h'])
+    print('\nby price age:\n', t.groupby(age, observed=True)['pnl'].agg(['count', 'sum']).round(3))
+    print('\nby already-decided bucket:\n', t.groupby('decided')[['won', 'pnl']].agg(['count', 'mean', 'sum']).round(3))
+
+
 def main(argv=None) -> int:
     import argparse
     import pandas as pd
@@ -224,7 +243,15 @@ def main(argv=None) -> int:
         if trades:
             t = pd.DataFrame(trades)
             print(t.groupby('side')[['won', 'pnl']].agg(['count', 'mean', 'sum']).round(4))
+            diagnose(t)
         results[hour] = {**res, 'trades': trades}
+    # robustness (NOT new trials, only stricter): the hour-16 rule with fresh prices only
+    for age in (3600, 1800):
+        res = run(events, metar, histories, 16, max_age_s=age)
+        res.pop('trades')
+        print(f'\n----- robustness: hour 16, price at most {age // 60} min old -----')
+        print(json.dumps({k: res.get(k) for k in ('n_trades', 'hit_rate', 'total_return', 'logloss_model',
+                                                   'logloss_market', 'folds', 'gates', 'verdict')}, default=str))
     if a.out:
         with open(a.out, 'w') as f:
             json.dump(results, f, indent=1, default=str)

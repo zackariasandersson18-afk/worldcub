@@ -170,9 +170,19 @@ def scan(http, budget_usd: float, max_pages: int = 30) -> dict:
                           'budget_profit_usd': round(mine['profit'], 4), 'budget_cost_usd': round(mine['cost'], 2),
                           'executable': mine['executable']})
     found.sort(key=lambda x: -x['budget_profit_usd'])
+    # sanity check: how close the best baskets came (cost of one basket at the best asks / what it pays)
+    near = []
+    for b in baskets:
+        if all(lg.asks for lg in b.legs):
+            unit = sum(lg.asks[0][0] + fee(lg.asks[0][0], lg.fee_rate, lg.fee_exp) for lg in b.legs)
+            raw = sum(lg.asks[0][0] for lg in b.legs)
+            near.append({'event': b.event, 'kind': b.kind, 'legs': len(b.legs), 'payout': b.payout,
+                         'cost_with_fees': round(unit, 4), 'cost_no_fees': round(raw, 4),
+                         'ratio': round(unit / b.payout, 4)})
+    near.sort(key=lambda x: x['ratio'])
     return {'events': len(events), 'temperature_events': sum(ex for _, ex in events),
             'baskets': len(baskets), 'with_books': sum(all(lg.asks for lg in b.legs) for b in baskets),
-            'opportunities': found}
+            'opportunities': found, 'nearest': near[:8]}
 
 
 def main(argv=None) -> int:
@@ -208,6 +218,9 @@ def main(argv=None) -> int:
                   f"max={o['max_baskets']:.1f} baskets profit=${o['max_profit_usd']:.2f} | "
                   f"my budget: ${o['budget_profit_usd']:.2f} ({o['budget_profit_usd'] * fx:.1f} SEK) "
                   f"{'OK' if o['executable'] else 'below min size'} | {o['event'][:60]}")
+        for n in res['nearest'][:5]:
+            print(f"  nearest {n['kind']:7s} legs={n['legs']:2d} pays={n['payout']:.0f} cost={n['cost_with_fees']:.4f} "
+                  f"(no fees {n['cost_no_fees']:.4f}) ratio={n['ratio']:.4f} | {n['event'][:60]}")
         if k + 1 < a.rounds:
             time.sleep(max(0, a.every - (time.time() - t0)))
     if a.out:

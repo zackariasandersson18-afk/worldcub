@@ -54,11 +54,12 @@ def _j(v):
     return json.loads(v) if isinstance(v, str) else v
 
 
-def polymarket_markets(http, pages=10):
+def polymarket_markets(http, pages=60):
     out = []
     for page in range(pages):
-        batch = _get(http, f'{GAMMA}/markets', {'active': 'true', 'closed': 'false', 'limit': 500,
-                                                'offset': page * 500, 'order': 'volume24hr', 'ascending': 'false'})
+        # Gamma serves at most 100 markets per page
+        batch = _get(http, f'{GAMMA}/markets', {'active': 'true', 'closed': 'false', 'limit': 100,
+                                                'offset': page * 100, 'order': 'volume24hr', 'ascending': 'false'})
         if not batch:
             break
         for m in batch:
@@ -75,7 +76,7 @@ def polymarket_markets(http, pages=10):
                                        no_token=str(toks[1]), slug=m.get('slug'),
                                        fee_rate=float(sched.get('rate', 0) or 0),
                                        fee_exp=float(sched.get('exponent', 1) or 1)))
-        if len(batch) < 500:
+        if len(batch) < 100:
             break
     return out
 

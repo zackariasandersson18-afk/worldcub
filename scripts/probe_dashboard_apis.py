@@ -1,19 +1,23 @@
-"""Dev aid: check the browser data sources for the dashboard (runs in Actions)."""
-import json
+"""Dev aid: can a browser call these APIs (CORS)? Runs in Actions."""
 import requests
 
-def show(url, n=700):
+H = {'Origin': 'https://example.com'}
+urls = [
+    'https://gamma-api.polymarket.com/events?tag_slug=highest-temperature&closed=false&limit=2',
+    'https://clob.polymarket.com/book?token_id=0',
+    'https://clob.polymarket.com/prices-history?market=0&interval=1d',
+    'https://api.open-meteo.com/v1/forecast?latitude=51.5&longitude=0&hourly=temperature_2m&forecast_days=1',
+    'https://raw.githubusercontent.com/zackariasandersson18-afk/worldcub/claude/football-betting-optimizer-45ox0q/weatherbot/stations.json',
+]
+for u in urls:
     try:
-        r = requests.get(url, timeout=20, headers={'Origin': 'https://example.com'})
-        print('\n', r.status_code, url, '| CORS:', r.headers.get('access-control-allow-origin'))
-        print(r.text[:n])
+        r = requests.get(u, headers=H, timeout=20)
+        print(r.status_code, 'CORS:', r.headers.get('access-control-allow-origin'), u)
     except Exception as e:
-        print('ERR', url, e)
-
-syms = json.dumps(["BTCUSDT", "ETHUSDT", "SOLUSDT", "BNBUSDT", "XRPUSDT", "ADAUSDT", "DOTUSDT"], separators=(',', ':'))
-for w in ('5m', '15m', '1h', '4h', '1d', '7d'):
-    show(f'https://data-api.binance.vision/api/v3/ticker?symbols={syms}&windowSize={w}&type=MINI', 400 if w != '5m' else 900)
-show('https://api.frankfurter.app/latest?from=USD&to=SEK')
-show('https://api.frankfurter.dev/v1/latest?base=USD&symbols=SEK')
-show('https://open.er-api.com/v6/latest/USD', 300)
-show('https://data-api.binance.vision/api/v3/klines?symbol=BTCUSDT&interval=5m&limit=2')
+        print('ERR', u, e)
+# preflight-free POST for clob /books (several books in one call)?
+r = requests.post('https://clob.polymarket.com/books', json=[{'token_id': '0'}], headers=H, timeout=20)
+print(r.status_code, 'CORS:', r.headers.get('access-control-allow-origin'), 'POST /books', r.text[:200])
+r = requests.options('https://clob.polymarket.com/books', headers={**H, 'Access-Control-Request-Method': 'POST',
+                     'Access-Control-Request-Headers': 'content-type'}, timeout=20)
+print('OPTIONS /books', r.status_code, dict((k, v) for k, v in r.headers.items() if k.lower().startswith('access-control')))

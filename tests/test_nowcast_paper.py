@@ -70,6 +70,20 @@ def test_trades_after_16_solar_on_observed_high_and_settles(tmp_path, monkeypatc
     assert not st['open'] and st['score']['events'] == 1
 
 
+def test_uses_every_report_up_to_the_decision(tmp_path, monkeypatch):
+    monkeypatch.setattr(nowcast, 'MIN_TRAIN_DAYS', 50)
+    world = NowcastWorld(late_obs=[(16.2, 23), (16.6, 30)])  # 16:12 report seen; 16:36 is in the future
+    nowcast_paper.step(tmp_path, now=at_solar(16.4), http=world)
+    st = json.loads((tmp_path / 'nowcast_state.json').read_text())
+    assert next(iter(st['decisions'].values()))['observed'] == 23
+
+
+def test_a_city_missed_for_the_whole_hour_is_not_traded_late(tmp_path, monkeypatch):
+    monkeypatch.setattr(nowcast, 'MIN_TRAIN_DAYS', 50)
+    rep = nowcast_paper.step(tmp_path, now=at_solar(17.2), http=NowcastWorld())
+    assert rep['decided'] == 0 and rep['opened'] == []
+
+
 def test_waits_until_enough_training_days(tmp_path):
     rep = nowcast_paper.step(tmp_path, now=at_solar(16.4), http=NowcastWorld())
     assert rep['opened'] == [] and 'training' in rep['skipped']['Madrid']

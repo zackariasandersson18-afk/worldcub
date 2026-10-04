@@ -8,7 +8,7 @@ have no public history, so it is tested live here, read-only:
   1. Polymarket: active binary markets from Gamma (top by 24 h volume) with best
      bid/ask; Kalshi: open markets from its public API (multivariate combos excluded)
   2. pairs are found with the repo's OWN matcher (core/cross_platform_arb.py,
-     CrossPlatformMatcher, min_similarity 0.6 as in its config.yaml)
+     MarketMatcher, min_similarity 0.6 as in its config.yaml)
   3. each pair is priced in all four directions two ways:
        theirs     the repo's check_arbitrage formula and fee constants
                   (Polymarket 1.5 %, Kalshi 1 %, 0.02 gas per leg, min edge 2 %)
@@ -148,13 +148,13 @@ def theirs(pm, km, min_edge=0.02, pf=0.015, kf=0.01, gas=0.02):
 
 def run_round(repo: str, http, log=print) -> dict:
     sys.path.insert(0, repo)
-    from core.cross_platform_arb import CrossPlatformMatcher   # the repo's own matcher
+    from core.cross_platform_arb import MarketMatcher   # the repo's own matcher
     import logging
     logging.disable(logging.INFO)
     pms, kms = polymarket_markets(http), kalshi_markets(http, log=log)
     log(f'{len(pms)} Polymarket binary markets, {len(kms)} Kalshi markets')
     t0 = time.time()
-    pairs = asyncio.run(CrossPlatformMatcher(min_similarity=0.6).find_matches(pms, kms))
+    pairs = asyncio.run(MarketMatcher(min_similarity=0.6).find_matches(pms, kms))
     log(f'{len(pairs)} pairs matched by their matcher in {time.time() - t0:.0f}s')
     pmap = {m.market_id: m for m in pms}
     kmap = {m.ticker: m for m in kms}

@@ -189,7 +189,8 @@ def run_round(repo: str, http, log=print) -> dict:
             'their_signals': sum(r['their_signal'] for r in rows),
             'real_positive': sum(r['real_edge'] > 0 for r in rows),
             'bundle_checked': len(bundle), 'bundle_min_total_ask': min(bundle) if bundle else None,
-            'bundle_below_1': sum(b < 1 for b in bundle), 'top': rows[:25]}
+            'bundle_below_1': sum(b < 1 for b in bundle), 'top': rows[:25],
+            'signals': [r for r in rows if r['their_signal']]}
 
 
 def main(argv=None) -> int:
@@ -214,6 +215,10 @@ def main(argv=None) -> int:
             print(f"  real {r['real_edge']:+.4f} ({r['real_direction']}, raw {r['real_raw_cost']}) theirs {r['their_edge']:+.4f}"
                   f"{' SIGNAL' if r['their_signal'] else ''} score {r['score']}\n"
                   f"     P: {r['poly'][:90]}  {r['poly_yes']}\n     K: {r['kalshi'][:90]}  {r['kalshi_yes']}")
+        if k == a.rounds - 1:
+            print(f"\nALL {len(res['signals'])} pairs their bot signals (last round):")
+            for r in res['signals']:
+                print(f"  {r['their_edge']:+.3f} | P: {r['poly'][:70]} | K: {r['kalshi'][:70]}")
         if k + 1 < a.rounds:
             time.sleep(max(0, a.every - (time.time() - t0)))
     if a.out:

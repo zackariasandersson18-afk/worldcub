@@ -23,7 +23,7 @@ jobs:
           git clone --depth 1 https://github.com/ImMike/polymarket-arbitrage /tmp/immike
           pip install httpx websockets aiohttp pyyaml pydantic python-dotenv
           git -C /tmp/immike log -1 --format='tested commit %H %cd'
-      - run: python -m arbbot.cross_kalshi --repo /tmp/immike --rounds 2 --every 180 --out immike.json
+      - run: python -m arbbot.cross_kalshi --repo /tmp/immike --rounds 1 --every 180 --out immike.json
       - uses: actions/upload-artifact@v4
         with:
           name: immike

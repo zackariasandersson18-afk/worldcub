@@ -6,7 +6,8 @@ Pre-registered before any backtest result was seen (round 3, +1 trial -> 48):
              only days strictly before the trading day), floor 0.7 C
   * settlement whole degrees: P(lo <= round(T) <= hi)
   * trade YES when p - cost >= MIN_EDGE, NO when (1 - p) - cost_no >= MIN_EDGE,
-    cost = price + SLIPPAGE + fee, fee = rate * min(price, 1 - price) per share
+    cost = price + SLIPPAGE + fee, fee = rate * (price * (1 - price)) ** exponent per
+    share (Polymarket's taker fee; corrected from a cruder rate * min(p, 1 - p))
   * size: KELLY_FRACTION x Kelly, at most MAX_BET of bankroll per bet and
     MAX_EVENT per city-day; prices outside [MIN_PRICE, MAX_PRICE] are skipped
 """
@@ -36,9 +37,10 @@ def bucket_prob(mu: float, sigma: float, lo: float, hi: float) -> float:
     return max(0.0, upper - lower)
 
 
-def fee_per_share(price: float, rate: float) -> float:
-    # conservative reading of Polymarket's weather fee (taker only)
-    return rate * min(price, 1.0 - price)
+def fee_per_share(price: float, rate: float, exponent: float = 1.0) -> float:
+    """Polymarket taker fee per share: rate * (p * (1 - p)) ** exponent
+    (weather markets: rate 0.05, exponent 1 -> $1.25 on 100 shares at 0.50)."""
+    return rate * (price * (1.0 - price)) ** exponent
 
 
 class Calibration:
@@ -86,7 +88,7 @@ def select_bets_quotes(buckets, probs: list[float], yes_asks: list[float | None]
         for side, prob, price in (('YES', p, ya), ('NO', 1 - p, na)):
             if price is None or not MIN_PRICE <= price <= MAX_PRICE:
                 continue
-            cost = price + SLIPPAGE + fee_per_share(price, b.fee_rate)
+            cost = price + SLIPPAGE + fee_per_share(price, b.fee_rate, getattr(b, 'fee_exp', 1.0))
             edge = prob - cost
             if edge < MIN_EDGE or cost >= 1:
                 continue

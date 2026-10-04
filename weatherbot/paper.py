@@ -165,9 +165,10 @@ def step(state_dir: str | Path, now: datetime | None = None, http=None, approved
         for bet in model.select_bets_quotes(ev.buckets, probs, yes_asks, no_asks):
             # whole cents, rounded down so the per-event cap is never exceeded
             stake = math.floor(min(bet.stake * bankroll, sizes[(bet.bucket, bet.side)] * bet.cost) * 100) / 100
-            if stake < 1.0 or stake > st['cash']:
-                continue
             b = next(x for x in ev.buckets if x.label == bet.bucket)
+            # Polymarket rejects orders below orderMinSize shares
+            if stake < 1.0 or stake > st['cash'] or stake / bet.cost < b.min_size:
+                continue
             pos = {'event_id': ev.id, 'slug': ev.slug, 'city': ev.city, 'date': str(ev.date),
                    'station': ev.station, 'bucket': bet.bucket, 'side': bet.side,
                    'token': b.yes_token if bet.side == 'YES' else b.no_token,

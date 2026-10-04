@@ -92,6 +92,13 @@ canvas{display:block;width:100%}
 .tile.g{border-color:rgba(61,255,143,.45)} .tile.r{border-color:rgba(255,61,110,.45)} .tile.y{border-color:rgba(255,210,61,.45)} .tile.c{border-color:rgba(61,224,255,.45)}
 @media (max-width:720px){.split{grid-template-columns:1fr}.side{border-left:0;padding-left:0;flex-direction:row;flex-wrap:wrap;gap:14px}.tiles{grid-template-columns:repeat(2,1fr)}}
 
+.wx{width:100%;border-collapse:collapse;font-size:10.5px;font-variant-numeric:tabular-nums}
+.wx th{color:var(--mute);font-weight:400;text-align:left;padding:4px 6px;border-bottom:1px solid var(--line);font-size:9px;letter-spacing:1.2px;text-transform:uppercase}
+.wx td{padding:4px 6px;border-bottom:1px solid var(--line);white-space:nowrap}
+.wx-wrap{overflow-x:auto;max-height:260px;overflow-y:auto}
+.c-wx{grid-column:span 12}
+.wx-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:10px}
+@media (max-width:900px){.wx-grid{grid-template-columns:1fr}}
 .tip{position:fixed;pointer-events:none;background:#0e1828;border:1px solid var(--line2);padding:6px 8px;border-radius:3px;font-size:10.5px;color:var(--ink);z-index:20;display:none;white-space:nowrap;box-shadow:0 4px 18px rgba(0,0,0,.5)}
 .empty{color:var(--mute);font-size:10px;padding:6px 0}
 .note{color:var(--mute);font-size:9.5px;line-height:1.5}
@@ -210,6 +217,22 @@ a{color:var(--cyan)}
       </div>
     </div>
   </section>
+  <!-- weather desk -->
+  <section class="panel c-wx">
+    <div class="ph"><span class="d">◆</span><b>Weather desk</b> · Polymarket dagens högsta temperatur · paper<span class="r" id="wx-badge">—</span></div>
+    <div class="pb"><div class="wx-grid">
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div class="tiles" style="grid-template-columns:repeat(2,1fr)">
+          <div class="tile" id="wx-t1"><div class="k9">Paper equity</div><div class="v" id="wx-eq">—</div></div>
+          <div class="tile"><div class="k9">Avgjorda / träff</div><div class="v" id="wx-hit">—</div></div>
+          <div class="tile c"><div class="k9">Öppna bets</div><div class="v" id="wx-open">—</div></div>
+          <div class="tile" id="wx-t4"><div class="k9">Backtest</div><div class="v" id="wx-bt">—</div></div>
+        </div>
+        <div class="note" id="wx-note">Väderboten köper intervall där sex vädermodeller ger högre sannolikhet än priset, efter avgift. Handlar 06–08 lokal tid per stad.</div>
+      </div>
+      <div class="wx-wrap"><table class="wx" id="wx-table"><tr><td class="empty">väntar på väderboten…</td></tr></table></div>
+    </div></div>
+  </section>
 </main>
 
 <div class="ticker foot"><div class="tag" style="background:#1d4ed8"><i></i>STATUS</div><div class="track"><div class="run" id="foot"></div></div></div>
@@ -308,10 +331,13 @@ async function stateBase() {
 async function loadState() {
   const base = await stateBase();
   if (S.stateSha && S.stateSha === S.loadedSha) { S.stateAt = new Date(); return; }
-  const [a, s, l, runs] = await Promise.allSettled([
+  const [a, s, l, runs, ws, wb] = await Promise.allSettled([
     getText(base + 'approval.json'), getText(base + 'trade_state.json'),
     getText(base + 'last_run.txt'), getText(base + 'runs.log'),
+    getText(base + 'weather/weather_state.json'), getText(base + 'weather/backtest.json'),
   ]);
+  try { if (ws.status === 'fulfilled') S.wstate = JSON.parse(ws.value); } catch {}
+  try { if (wb.status === 'fulfilled') S.wbt = JSON.parse(wb.value); } catch {}
   if (a.status === 'fulfilled') S.approval = JSON.parse(a.value);
   if (s.status === 'fulfilled') S.state = JSON.parse(s.value);
   if (l.status === 'fulfilled') {
@@ -875,6 +901,41 @@ function renderStats() {
   $('g-t4').className = 'tile ' + (gs === 3 ? 'g' : gs == null ? '' : 'r');
 }
 
+// ---------------------------------------------------------------- weather desk
+function renderWeather() {
+  const st = S.wstate, bt = S.wbt;
+  if (!st && !bt) return;
+  if (st) {
+    const openStake = (st.open || []).reduce((x, p) => x + p.stake_usd, 0);
+    const eq = st.cash + openStake, pnl = eq - 1000;
+    set('wx-eq', usd(eq) + '  ' + sgn(pnl, 2).replace(/^([+−])/, '$1$'), pnl);
+    $('wx-t1').className = 'tile ' + (pnl > 0 ? 'g' : pnl < 0 ? 'r' : '');
+    const closed = st.closed || [], wins = closed.filter(p => p.won).length;
+    set('wx-hit', closed.length ? `${closed.length} / ${Math.round(wins / closed.length * 100)}%` : '0');
+    set('wx-open', `${(st.open || []).length} · ${usd(openStake, 0)}`);
+    const rows = [...(st.open || []).map(p => ({...p, state: 'ÖPPEN'})),
+                  ...closed.slice(-12).reverse().map(p => ({...p, state: p.won ? 'VANN' : 'FÖRLUST'}))];
+    const html = '<tr><th>Datum</th><th>Stad</th><th>Intervall</th><th>Sida</th><th>Pris</th><th>Modell</th><th>Edge</th><th>Insats</th><th>Status</th></tr>' +
+      (rows.length ? rows.map(p => `<tr><td>${esc(p.date)}</td><td>${esc(p.city)}</td><td>${esc(p.bucket)}</td>` +
+        `<td class="${p.side === 'YES' ? 'cy' : 'mg'}">${p.side}</td><td>${fmt(p.price, 3)}</td><td>${fmt(p.prob * 100, 0)}%</td>` +
+        `<td class="up">+${fmt(p.edge * 100, 1)}</td><td>${usd(p.stake_usd)}</td>` +
+        `<td class="${p.state === 'VANN' ? 'up' : p.state === 'FÖRLUST' ? 'down' : 'warn'}">${p.state}${p.pnl_usd != null ? ' ' + sgn(p.pnl_usd, 2) : ''}</td></tr>`).join('')
+        : '<tr><td colspan="9" class="empty">inga bets än — boten handlar 06–08 lokal tid när en stad har edge</td></tr>');
+    const t = $('wx-table'); if (t.dataset.h !== html) { t.innerHTML = html; t.dataset.h = html; }
+  }
+  if (bt) {
+    const ok = bt.approved;
+    set('wx-bt', bt.verdict === 'NOT ENOUGH DATA' ? 'för lite data' : ok ? 'GODKÄND ✓' : 'UNDERKÄND ✕');
+    $('wx-bt').className = 'v ' + (ok ? 'up' : 'down');
+    $('wx-t4').className = 'tile ' + (ok ? 'g' : 'r');
+    const b = $('wx-badge'); b.textContent = ok ? 'GODKÄND' : 'MÄTER · HANDLAR EJ'; b.className = 'r badge ' + (ok ? 'b-green' : 'b-yellow');
+    const ll = bt.logloss_model != null ? ` Modell log-loss ${fmt(bt.logloss_model, 3)} mot marknadens ${fmt(bt.logloss_market, 3)} (lägre = bättre).` : '';
+    const sc = st?.score;
+    const live = sc && sc.n ? ` Live (färska prognoser, ${sc.events} städer-dagar): modell ${fmt(sc.model / sc.n, 3)} mot marknad ${fmt(sc.market / sc.n, 3)} — ${sc.model < sc.market ? 'modellen leder' : 'marknaden leder'}.` : ' Live-mätning: väntar på första avgjorda marknaderna.';
+    $('wx-note').textContent = `Backtest (dygnsgamla prognoser): ${bt.n_trades ?? 0} bets, träff ${bt.hit_rate != null ? Math.round(bt.hit_rate * 100) + '%' : '—'}.` + ll + live;
+  }
+}
+
 // ---------------------------------------------------------------- loop
 ['c-equity', 'c-candles', 'c-folds', 'c-ridge', 'c-kill', 'c-heat', 'c-hist'].forEach(bindTip);
 // live panels redraw on every animation frame that has new market data;
@@ -884,7 +945,7 @@ function live() {
   catch (e) { console.error(e); }
 }
 function slow() {
-  try { live(); drawFolds(); drawRidge(); drawHeat(); drawHist(); renderStats(); renderTickers(); }
+  try { live(); drawFolds(); drawRidge(); drawHeat(); drawHist(); renderStats(); renderTickers(); renderWeather(); }
   catch (e) { console.error(e); }
 }
 let last = performance.now(), lastLive = 0;

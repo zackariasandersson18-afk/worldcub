@@ -1,0 +1,28 @@
+name: weather nowcast backtest
+
+# Late-day METAR nowcast backtest (pre-registered in weatherbot/nowcast.py).
+on:
+  push:
+    branches: [claude/great-rubin-cbww8t]
+    paths: ['.github/workflows/weather-nowcast.yml', 'weatherbot/nowcast.py']
+  workflow_dispatch:
+    inputs:
+      days:
+        default: '45'
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: python -m weatherbot.nowcast --days "${{ inputs.days || '45' }}" --out weather_nowcast.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: weather-nowcast
+          path: weather_nowcast.json

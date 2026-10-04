@@ -205,7 +205,7 @@ a{color:var(--cyan)}
 </section>
 
 <section class="panel">
-  <div class="ph">〜 Monte Carlo · <span id="mc-n">0</span> simulerade dagar · kr<span class="r" id="mc-p">—</span></div>
+  <div class="ph">〜 Monte Carlo · botens affärer · <span id="mc-n">0</span> simulerade utfall · kr<span class="r" id="mc-p">—</span></div>
   <div class="pb mc">
     <canvas id="c-mc" height="200"></canvas>
     <div class="boxes">
@@ -754,29 +754,54 @@ function drawGauge() {
     `<span>SUIS GFS</span><b>${sc?.n_gfs > 20 ? fmt(sc.market_gfs / sc.gfs * 100, 0) + '/100' : '—'}</b>`;
 }
 
-// Monte Carlo: one simulated settlement of today's candidates; each city's
-// realized bucket is drawn from the model distribution (one bucket wins per city)
+// Monte Carlo: one simulated settlement of what the bot really holds -- its open
+// positions plus the candidates it could still buy right now (city in its 06-08
+// window, not yet traded), only as far as the virtual cash reaches.
+function mcBook() {
+  const st = S.wstate || {cash: CFG.START_USD, open: [], closed: [], forecast_log: {}};
+  const live = new Map(S.events.map(e => [e.id, e]));
+  const items = [];
+  for (const p of st.open || []) {
+    const e = live.get(p.event_id), i = e?.probs ? e.buckets.findIndex(b => b.label === p.bucket) : -1;
+    const q = S.quotes[p.token], mid = q?.bid != null && q?.ask != null ? (q.bid + q.ask) / 2 : (q?.bid ?? p.price);
+    items.push({key: p.event_id, e: i >= 0 ? e : null, i, side: p.side, prob: p.prob, stake: p.stake_usd,
+                payout: p.shares, mkt: mid, open: true});
+  }
+  const done = new Set([...(st.open || []), ...(st.closed || [])].map(p => p.event_id).concat(Object.keys(st.forecast_log || {})));
+  let cash = st.cash ?? CFG.START_USD;
+  for (const c of S.cands) {
+    if (!c.e.isToday || c.e.localHour < 6 || c.e.localHour >= 8 || done.has(c.e.id) || c.stakeUsd > cash) continue;
+    cash -= c.stakeUsd;
+    items.push({key: c.e.id, e: c.e, i: c.i, side: c.side, prob: c.prob, stake: c.stakeUsd, payout: c.stakeUsd / c.cost,
+                mkt: c.mktProb, open: false});
+  }
+  return items;
+}
 function drawMC() {
-  const cands = S.cands, N = cands.length ? 4000 : 0;
+  const items = mcBook(), N = items.length ? 4000 : 0;
   $('mc-n').textContent = fmt(N);
   const {g, w, h} = canvas('c-mc'); HITS['c-mc'] = [];
   if (!N || S.fx == null) {
-    g.fillStyle = COL.mute; g.textAlign = 'center'; g.fillText(cands.length ? 'väntar på växelkurs…' : 'inga kandidater att simulera just nu', w / 2, h / 2);
+    g.fillStyle = COL.mute; g.textAlign = 'center'; g.fillText(items.length ? 'väntar på växelkurs…' : 'inga öppna affärer och inget att köpa just nu', w / 2, h / 2);
     ['mc-p5', 'mc-ev', 'mc-evm'].forEach(id => $(id).textContent = '—'); $('mc-p').textContent = '—'; return;
   }
-  const byEv = new Map();
-  for (const c of cands) (byEv.get(c.e) || byEv.set(c.e, []).get(c.e)).push(c);
-  const evs = [...byEv.entries()];
+  const groups = new Map();
+  for (const it of items) (groups.get(it.key) || groups.set(it.key, []).get(it.key)).push(it);
+  const evs = [...groups.values()];
   const sims = new Float64Array(N);
   let seed = 12345; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
   for (let n = 0; n < N; n++) {
     let pnl = 0;
-    for (const [e, cs] of evs) {
-      let u = rnd(), win = e.probs.length - 1, acc = 0;
-      for (let i = 0; i < e.probs.length; i++) { acc += e.probs[i]; if (u <= acc) { win = i; break; } }
-      for (const c of cs) {
-        const yesWins = c.i === win, won = c.side === 'YES' ? yesWins : !yesWins;
-        pnl += (won ? c.stakeUsd / c.cost : 0) - c.stakeUsd;
+    for (const its of evs) {
+      const e = its.find(x => x.e)?.e;
+      let win = -1;
+      if (e) {  // one bucket wins per city-day
+        let u = rnd(), acc = 0; win = e.probs.length - 1;
+        for (let i = 0; i < e.probs.length; i++) { acc += e.probs[i]; if (u <= acc) { win = i; break; } }
+      }
+      for (const it of its) {
+        const won = it.e ? (it.side === 'YES' ? it.i === win : it.i !== win) : rnd() < it.prob;
+        pnl += (won ? it.payout : 0) - it.stake;
       }
     }
     sims[n] = pnl * S.fx;
@@ -784,7 +809,7 @@ function drawMC() {
   const sorted = Array.from(sims).sort((a, b) => a - b);
   const p5 = sorted[Math.floor(N * 0.05)], ev = sorted.reduce((a, b) => a + b, 0) / N, ploss = sorted.filter(x => x < 0).length / N;
   // expected value if the market's prices are right instead of the model
-  const evm = cands.reduce((a, c) => a + (c.mktProb == null ? 0 : c.stakeUsd * (c.mktProb / c.cost - 1)), 0) * S.fx;
+  const evm = items.reduce((a, it) => a + (it.mkt == null ? 0 : it.payout * it.mkt - it.stake), 0) * S.fx;
   $('mc-p5').textContent = skr(p5); $('mc-p5').className = 'v ' + (p5 >= 0 ? 'up' : 'down');
   $('mc-ev').textContent = skr(ev); $('mc-ev').className = 'v ' + (ev >= 0 ? 'up' : 'down');
   $('mc-evm').textContent = skr(evm); $('mc-evm').className = 'v ' + (evm >= 0 ? 'up' : 'down');
@@ -802,7 +827,8 @@ function drawMC() {
   const zx = pad.l + (0 - lo) / (hi - lo) * (w - pad.l - pad.r);
   if (zx > pad.l && zx < w - pad.r) { g.strokeStyle = COL.ink2; g.setLineDash([3, 3]); g.beginPath(); g.moveTo(zx, pad.t - 6); g.lineTo(zx, h - pad.b); g.stroke(); g.setLineDash([]); }
   g.fillStyle = COL.ink2; g.textAlign = 'left'; g.font = '9px JetBrains Mono, monospace';
-  g.fillText(`μ ${skr(ev)} · σ ${fmt(Math.sqrt(sorted.reduce((a, x) => a + (x - ev) ** 2, 0) / N), 0)} kr · ${cands.length} bets i ${evs.length} städer`, pad.l, 8);
+  const nOpen = items.filter(x => x.open).length, atRisk = items.reduce((a, x) => a + x.stake, 0) * S.fx;
+  g.fillText(`μ ${skr(ev)} · σ ${fmt(Math.sqrt(sorted.reduce((a, x) => a + (x - ev) ** 2, 0) / N), 0)} kr · ${nOpen} öppna + ${items.length - nOpen} nya · insatt ${kr(atRisk)}`, pad.l, 8);
   g.fillText('enligt modellen — backtesten visar att modellen är för säker', pad.l, 19);
   g.textAlign = 'left'; g.fillText(skr(lo), pad.l, h - 6); g.textAlign = 'right'; g.fillText(skr(hi), w - pad.r, h - 6);
 }

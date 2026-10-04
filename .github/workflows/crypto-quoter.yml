@@ -1,0 +1,26 @@
+name: crypto smart-quoter backtest
+
+# Re-test of the smart quoter in bigmacman1129/crypto-ai-trading-bot,
+# pre-registered in cryptobot/smart_quoter.py. Read-only.
+on:
+  push:
+    branches: [claude/great-rubin-cbww8t]
+    paths: ['.github/workflows/crypto-quoter.yml', 'cryptobot/**']
+  workflow_dispatch:
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: python -m cryptobot.smart_quoter --days 14 --out quoter.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: quoter
+          path: quoter.json

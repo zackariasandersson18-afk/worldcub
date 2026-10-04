@@ -180,7 +180,7 @@ a{color:var(--cyan)}
 </section>
 
 <section class="panel">
-  <div class="ph">◎ Dagens beslut · vad boten såg kl 16<span class="r" id="dec-sub">—</span></div>
+  <div class="ph">◎ Dagens beslut · vad boten såg vid beslutet<span class="r" id="dec-sub">—</span></div>
   <div class="tw" style="max-height:320px"><table class="ctd" id="decisions"></table></div>
 </section>
 
@@ -202,7 +202,7 @@ a{color:var(--cyan)}
   <div class="pb"><canvas id="c-eq" height="170"></canvas></div>
 </section>
 
-<div class="note">Strategin: kl 16:00 soltid läser boten flygplatsens METAR-observationer. Dagens högsta hittills + den historiska fördelningen av hur mycket det brukar stiga efter 16 ger en sannolikhet per grad. Den köper bara när den är minst 5 procentenheter billigare än modellen efter Polymarkets avgift och slippage, till det riktiga säljpriset i orderboken, minst 5 andelar. Backtesten godkände varianten men räknade på historiska mitt-/senaste-priser — därför körs den nu framåt med virtuella pengar för att se om priserna verkligen går att få. Belopp i kronor via ECB:s dagskurs. Ingen finansiell rådgivning.</div>
+<div class="note">Strategin: kl 16:00 soltid läser boten flygplatsens METAR-observationer. Dagens högsta hittills (alla rapporter fram till köpet) + den historiska fördelningen av hur mycket det brukar stiga efter 16 ger en sannolikhet per grad. Den köper bara när den är minst 5 procentenheter billigare än modellen efter Polymarkets avgift och slippage, till det riktiga säljpriset i orderboken, minst 5 andelar. Backtesten godkände varianten men räknade på historiska mitt-/senaste-priser — därför körs den nu framåt med virtuella pengar för att se om priserna verkligen går att få. Belopp i kronor via ECB:s dagskurs. Ingen finansiell rådgivning.</div>
 </div>
 <div class="ticker foot"><div class="tag" style="background:var(--orange);color:#000">METAR</div><div class="track"><div class="run" id="foot"></div></div></div>
 
@@ -212,7 +212,7 @@ const qs = new URLSearchParams(location.search);
 const CFG = {
   repo: 'zackariasandersson18-afk/worldcub', stateBranch: 'tradebot-state', codeBranch: 'claude/football-betting-optimizer-45ox0q',
   stateOverride: qs.get('state'), gamma: 'https://gamma-api.polymarket.com', clob: 'https://clob.polymarket.com',
-  START_USD: 1000, HOUR: 16, WINDOW_END: 18,
+  START_USD: 1000, HOUR: 16, WINDOW_END: 17,
 };
 const COL = {green:'#39ff6a', red:'#ff3b3b', yellow:'#ffd400', cyan:'#3ad7ff', blue:'#2f6bff', orange:'#ff9a1f', ink:'#f2f2f2', ink2:'#a8a8a8', mute:'#6b6b6b', line:'#2a2a2a'};
 const S = {fx: null, st: null, bt: null, stations: null, events: [], quotes: {}, metar: {}, metarAt: 0};
@@ -406,7 +406,7 @@ function renderDecisions() {
   const decs = Object.entries(S.st?.decisions || {}).map(([id, d]) => ({id, ...d})).sort((a, b) => b.decided.localeCompare(a.decided)).slice(0, 40);
   const bought = new Map(); for (const p of [...(S.st?.open || []), ...(S.st?.closed || [])]) (bought.get(p.event_id) || bought.set(p.event_id, []).get(p.event_id)).push(p);
   $('dec-sub').textContent = `${decs.length} senaste`;
-  $('decisions').innerHTML = '<tr><th>Stad · dag</th><th>Sett kl 16</th><th>Modellens favorit</th><th>Modell</th><th>Marknad</th><th>Köpt</th><th>Utfall</th></tr>' +
+  $('decisions').innerHTML = '<tr><th>Stad · dag</th><th>Sett vid beslut</th><th>Modellens favorit</th><th>Modell</th><th>Marknad</th><th>Köpt</th><th>Utfall</th></tr>' +
     (decs.map(d => {
       const i = d.probs.indexOf(Math.max(...d.probs)), ps = bought.get(d.id) || [];
       return `<tr><td><b>${esc(d.city)}</b> <span class="mute">${esc(d.date.slice(5))} ${esc(d.solar_time)}</span></td><td>${d.observed}°${d.unit}</td>` +
@@ -432,7 +432,7 @@ function renderTrades() {
         `<td>${fmt(p.price, 3)}</td><td>${bid == null ? (s === 'open' ? '—' : (p.won ? '1,000' : '0,000')) : fmt(bid, 3)}</td><td>${pct(p.prob, 0)}</td>` +
         `<td>${kr(sek(p.stake_usd))}</td><td>${val == null ? '—' : kr(sek(val))}</td><td class="${pnl > 0 ? 'up' : pnl < 0 ? 'down' : ''}">${pnl == null ? '—' : skr(sek(pnl))}</td>` +
         `<td>${s === 'open' ? '<span class="cy">ÖPPEN</span>' : s === 'won' ? '<b class="up">VANN</b>' : '<b class="down">FÖRLUST</b>'}</td></tr>`;
-    }).join('') || '<tr><td colspan="10" class="mute" style="text-align:center;padding:14px">inga affärer än — boten handlar 16:00–18:00 soltid per stad</td></tr>');
+    }).join('') || '<tr><td colspan="10" class="mute" style="text-align:center;padding:14px">inga affärer än — boten handlar 16:00–17:00 soltid per stad</td></tr>');
 }
 function drawEquity() {
   const {g, w, h} = canvas('c-eq'), hist = (S.st?.history || []).map(x => x.equity);

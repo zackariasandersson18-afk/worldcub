@@ -8,8 +8,11 @@ Each run (twice an hour):
   1. settles resolved positions and scores model vs market on them
   2. once per UTC day rebuilds the remaining-rise distribution from METAR
      (complete solar days before today only, the backtest's rule)
-  3. for every open event whose station is between 16:00 and 18:00 solar time
-     on the event day: observed high = METAR max strictly before 16:00 solar,
+  3. for every open event whose station is between 16:00 and 17:00 solar time
+     on the event day: observed high = METAR max up to the moment of the
+     decision (the market sees those reports too; using only pre-16:00 ones
+     left the bot behind it), remaining rise from the 16:00 distribution
+     (slightly overstated when deciding after 16:00, i.e. cautious),
      probabilities as in the backtest, buys at the real best ask with the
      same edge, fee, size and minimum-order rules as weatherbot.paper
 
@@ -29,7 +32,7 @@ from weatherbot import forecast, markets, model, nowcast
 from weatherbot.paper import START_CASH, _mid, equity, fetch_event, load, save
 
 HOUR = 16
-WINDOW_END = 18          # trade until 18:00 solar if the 16:xx run was missed
+WINDOW_END = 17          # a city missed for a whole hour is skipped, not traded late
 HISTORY_DAYS = 45
 
 
@@ -150,10 +153,10 @@ def step(state_dir: str | Path, now: datetime | None = None, http=None, log=prin
         except requests.RequestException as exc:
             report['skipped'][ev.city] = f'metar: {exc}'
             continue
-        cutoff = nowcast.solar_day_start(ev.date, lon) + HOUR * 3600
-        today_obs = [(t, f) for t, f in obs if nowcast.solar_day_start(ev.date, lon) <= t < cutoff]
+        cutoff = int(now.timestamp())  # every report published before this decision
+        today_obs = [(t, f) for t, f in obs if nowcast.solar_day_start(ev.date, lon) <= t <= cutoff]
         if not today_obs:
-            report['skipped'][ev.city] = 'no METAR before 16:00 solar'
+            report['skipped'][ev.city] = 'no METAR today'
             continue
         m = max(nowcast.to_unit(f, ev.unit) for _, f in today_obs)
         probs = nowcast.bucket_probs(m, dp, ev.buckets)

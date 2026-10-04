@@ -176,7 +176,7 @@ def cmd_research(args):
                         test_days=args.test_days, sources=(strategies,), thresholds=th)
         wf, oos, reg = res['walk_forward'], res['oos_metrics'], regime_report(prices, res['walk_forward']['oos_net'], cfg)
         rows.append({
-            'strategy': strategy_name,
+            'strategy': name,
             'approved': res['approved'],
             'gate1': res['gate1_no_leakage'], 'gate2': res['gate2_deflated_sharpe'],
             'gate3': res['gate3_walk_forward'],

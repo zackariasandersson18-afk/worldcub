@@ -113,6 +113,11 @@ canvas{display:block;width:100%}
 .tsum .box{text-align:left}
 .tw{overflow-x:auto;max-height:420px;overflow-y:auto}
 @media (max-width:560px){.tsum{grid-template-columns:repeat(2,1fr)}}
+.ctd{width:100%;border-collapse:collapse;font-size:10.5px;font-variant-numeric:tabular-nums}
+.ctd th{color:var(--mute);font-weight:400;font-size:9px;letter-spacing:1.2px;text-transform:uppercase;text-align:right;padding:4px 6px;border-bottom:1px solid var(--line);white-space:nowrap}
+.ctd td{padding:5px 6px;border-bottom:1px solid #161616;text-align:right;white-space:nowrap}
+.ctd th:first-child,.ctd td:first-child{text-align:left}
+@media (max-width:480px){.ctd td,.ctd th{padding:4px 3px}.ctd{font-size:10px}}
 .note{color:var(--mute);font-size:9.5px;line-height:1.5;padding:4px 0 10px}
 .tip{position:fixed;pointer-events:none;background:#111;border:1px solid var(--line2);padding:6px 8px;font-size:10.5px;z-index:20;display:none;white-space:nowrap}
 a{color:var(--cyan)}
@@ -183,6 +188,12 @@ a{color:var(--cyan)}
     <div class="tw"><table class="trades" id="tr-table"></table></div>
     <div class="note" style="padding:6px 0 0">Värde nu = antal andelar × bästa bud i Polymarkets orderbok (det du skulle få om du sålde nu). Klicka på en rad för att öppna marknaden på Polymarket.</div>
   </div>
+</section>
+
+<section class="panel">
+  <div class="ph">Σ Resultat per period · avräknade affärer<span class="r" id="per-sub">—</span></div>
+  <div class="tw"><table class="ctd" id="periods"></table></div>
+  <div class="note" style="padding:6px 8px" id="per-avg"></div>
 </section>
 
 <section class="panel">
@@ -514,6 +525,29 @@ async function refreshPositions() {
   Object.assign(S.quotes, await loadBooks(toks));
   S.posAt = Date.now();
   renderTrades(); renderAccount();
+}
+// results of settled positions over the last day / week / two weeks / month (by settlement time)
+function renderPeriods(st) {
+  const closed = (st?.closed || []).filter(p => p.settled), first = st?.history?.[0]?.ts;
+  const live = first ? (Date.now() - new Date(first)) / 864e5 : 0;
+  const rows = [['1 dag', 1], ['1 vecka', 7], ['2 veckor', 14], ['1 månad', 30]].map(([name, days]) => {
+    const since = Date.now() - days * 864e5, ps = closed.filter(p => new Date(p.settled) >= since);
+    const wins = ps.filter(p => p.pnl_usd > 0), losses = ps.filter(p => p.pnl_usd <= 0);
+    const won = wins.reduce((a, p) => a + p.pnl_usd, 0), lost = losses.reduce((a, p) => a + p.pnl_usd, 0), net = won + lost;
+    const span = Math.min(days, Math.max(live, 1));          // days the bot has actually run in this window
+    const cls = x => x > 0 ? 'up' : x < 0 ? 'down' : '';
+    return `<tr><td><b>${name}</b>${live < days ? ` <span class="mute">(${fmt(Math.max(live, 0), live < 2 ? 1 : 0)} d)</span>` : ''}</td>` +
+      `<td>${ps.length ? `${wins.length}<span class="mute">/</span>${losses.length}` : '—'}</td>` +
+      `<td class="up">${ps.length ? skr(sek(won)) : '—'}</td><td class="down">${ps.length ? skr(sek(lost)) : '—'}</td>` +
+      `<td class="${cls(net)}"><b>${ps.length ? skr(sek(net)) : '—'}</b></td>` +
+      `<td class="${cls(net)}">${ps.length ? skr(sek(net / span)) : '—'}</td></tr>`;
+  }).join('');
+  $('per-sub').textContent = closed.length ? `${closed.length} avräknade totalt` : 'inga avräknade än';
+  $('periods').innerHTML = '<tr><th>Period</th><th>V/F</th><th>Vunnet</th><th>Förlorat</th><th>Netto</th><th>Snitt/dag</th></tr>' + rows +
+    (closed.length ? '' : '<tr><td colspan="6" class="mute" style="text-align:center;padding:10px">fylls i när de första affärerna avgjorts</td></tr>');
+  const W = closed.filter(p => p.pnl_usd > 0), L = closed.filter(p => p.pnl_usd <= 0);
+  $('per-avg').innerHTML = closed.length ? `Snitt per affär (all tid): vinst <b class="up">${W.length ? skr(sek(W.reduce((a, p) => a + p.pnl_usd, 0) / W.length)) : '—'}</b> · ` +
+    `förlust <b class="down">${L.length ? skr(sek(L.reduce((a, p) => a + p.pnl_usd, 0) / L.length)) : '—'}</b> · träff ${pct(W.length / closed.length, 0)}` : '';
 }
 function renderTrades() {
   const st = S.wstate || {open: [], closed: []}, open = st.open || [], closed = st.closed || [];
@@ -863,7 +897,7 @@ function renderSteps() {
   $('cyc-n').textContent = '#' + S.cycle;
   $('cyc-t').textContent = S.scanMs ? fmt(S.scanMs / 1000, 2) + 's' : '—';
 }
-function renderAll() { renderTrades(); renderAccount(); renderBest(); drawDist(); renderMatrix(); drawGauge(); drawMC(); renderTickers(); renderSteps(); }
+function renderAll() { renderPeriods(S.wstate); renderTrades(); renderAccount(); renderBest(); drawDist(); renderMatrix(); drawGauge(); drawMC(); renderTickers(); renderSteps(); }
 
 // ------------------------------------------------------------------ loop
 ['c-dist', 'c-mc'].forEach(bindTip);

@@ -122,6 +122,7 @@ a{color:var(--cyan)}
 .ctd th{color:var(--mute);font-weight:400;font-size:9px;letter-spacing:1.2px;text-transform:uppercase;text-align:right;padding:4px 6px;border-bottom:1px solid var(--line);white-space:nowrap}
 .ctd td{padding:4px 6px;border-bottom:1px solid #161616;text-align:right;white-space:nowrap}
 .ctd th:first-child,.ctd td:first-child{text-align:left}
+@media (max-width:480px){.ctd td,.ctd th{padding:4px 3px}.ctd{font-size:10px}}
 .ctd tr.now td{background:rgba(255,212,0,.08)}
 .prog{display:inline-block;width:70px;height:6px;background:#1a1a1a;vertical-align:middle;margin-left:6px}
 .prog i{display:block;height:100%;background:var(--yellow)}
@@ -195,6 +196,12 @@ a{color:var(--cyan)}
     </div>
     <div class="tw"><table class="trades" id="tr-table"></table></div>
   </div>
+</section>
+
+<section class="panel">
+  <div class="ph">Σ Resultat per period · avräknade affärer<span class="r" id="per-sub">—</span></div>
+  <div class="tw"><table class="ctd" id="periods"></table></div>
+  <div class="note" style="padding:6px 8px" id="per-avg"></div>
 </section>
 
 <section class="panel">
@@ -415,6 +422,29 @@ function renderDecisions() {
         `<td>${d.winner ? esc(d.winner) : '<span class="mute">väntar</span>'}</td></tr>`;
     }).join('') || '<tr><td colspan="7" class="mute" style="text-align:center;padding:12px">inga beslut än — första tas när en stad når 16:00 soltid</td></tr>');
 }
+// results of settled positions over the last day / week / two weeks / month (by settlement time)
+function renderPeriods(st) {
+  const closed = (st?.closed || []).filter(p => p.settled), first = st?.history?.[0]?.ts;
+  const live = first ? (Date.now() - new Date(first)) / 864e5 : 0;
+  const rows = [['1 dag', 1], ['1 vecka', 7], ['2 veckor', 14], ['1 månad', 30]].map(([name, days]) => {
+    const since = Date.now() - days * 864e5, ps = closed.filter(p => new Date(p.settled) >= since);
+    const wins = ps.filter(p => p.pnl_usd > 0), losses = ps.filter(p => p.pnl_usd <= 0);
+    const won = wins.reduce((a, p) => a + p.pnl_usd, 0), lost = losses.reduce((a, p) => a + p.pnl_usd, 0), net = won + lost;
+    const span = Math.min(days, Math.max(live, 1));          // days the bot has actually run in this window
+    const cls = x => x > 0 ? 'up' : x < 0 ? 'down' : '';
+    return `<tr><td><b>${name}</b>${live < days ? ` <span class="mute">(${fmt(Math.max(live, 0), live < 2 ? 1 : 0)} d)</span>` : ''}</td>` +
+      `<td>${ps.length ? `${wins.length}<span class="mute">/</span>${losses.length}` : '—'}</td>` +
+      `<td class="up">${ps.length ? skr(sek(won)) : '—'}</td><td class="down">${ps.length ? skr(sek(lost)) : '—'}</td>` +
+      `<td class="${cls(net)}"><b>${ps.length ? skr(sek(net)) : '—'}</b></td>` +
+      `<td class="${cls(net)}">${ps.length ? skr(sek(net / span)) : '—'}</td></tr>`;
+  }).join('');
+  $('per-sub').textContent = closed.length ? `${closed.length} avräknade totalt` : 'inga avräknade än';
+  $('periods').innerHTML = '<tr><th>Period</th><th>V/F</th><th>Vunnet</th><th>Förlorat</th><th>Netto</th><th>Snitt/dag</th></tr>' + rows +
+    (closed.length ? '' : '<tr><td colspan="6" class="mute" style="text-align:center;padding:10px">fylls i när de första affärerna avgjorts</td></tr>');
+  const W = closed.filter(p => p.pnl_usd > 0), L = closed.filter(p => p.pnl_usd <= 0);
+  $('per-avg').innerHTML = closed.length ? `Snitt per affär (all tid): vinst <b class="up">${W.length ? skr(sek(W.reduce((a, p) => a + p.pnl_usd, 0) / W.length)) : '—'}</b> · ` +
+    `förlust <b class="down">${L.length ? skr(sek(L.reduce((a, p) => a + p.pnl_usd, 0) / L.length)) : '—'}</b> · träff ${pct(W.length / closed.length, 0)}` : '';
+}
 function renderTrades() {
   const st = S.st || {open: [], closed: []}, open = st.open || [], closed = st.closed || [];
   let stake = 0, value = 0;
@@ -457,7 +487,7 @@ function renderTickers() {
     const el = $(id); if (el.dataset.h !== html) { el.innerHTML = html + '<span class="mute">·</span>' + html; el.dataset.h = html; }
   }
 }
-function renderAll() { renderAccount(); renderBacktest(); renderVerify(); renderCountdown(); renderDecisions(); renderTrades(); drawEquity(); renderTickers(); }
+function renderAll() { renderPeriods(S.st); renderAccount(); renderBacktest(); renderVerify(); renderCountdown(); renderDecisions(); renderTrades(); drawEquity(); renderTickers(); }
 
 (async function init() {
   setInterval(() => { $('clock').textContent = new Date().toISOString().slice(11, 19); }, 1000);

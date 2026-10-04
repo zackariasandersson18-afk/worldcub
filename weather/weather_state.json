@@ -2016,14 +2016,22 @@
    "equity": 1000.0,
    "cash": 604.3,
    "open": 43
+  },
+  {
+   "ts": "2026-10-04T14:01:40.039089+00:00",
+   "equity": 1000.0,
+   "cash": 604.3,
+   "open": 43
   }
  ],
  "last_run": {
-  "ts": "2026-10-04T13:31:22.445700+00:00",
+  "ts": "2026-10-04T14:01:40.039089+00:00",
   "settled": [],
   "opened": [],
   "logged": 0,
-  "skipped": {}
+  "skipped": {
+   "Panama City": "forecast: HTTPSConnectionPool(host='api.open-meteo.com', port=443): Read timed out. (read timeout=30)"
+  }
  },
  "mode": "trading",
  "gates_ignored": true

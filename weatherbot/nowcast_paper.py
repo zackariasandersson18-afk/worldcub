@@ -51,8 +51,10 @@ def rebuild_deltas(stations: dict[str, str], now: datetime, http, log=print) -> 
             log(f'metar {st}: {exc}')
             continue
         solar_today = solar_now(now, coords[1]).date()
-        for d, (m, full) in nowcast.daily_obs(obs, coords[1], unit, HOUR).items():
-            if d < solar_today:
+        days = nowcast.daily_obs(obs, coords[1], unit, HOUR)
+        first = min(days, default=None)  # starts at UTC midnight, so its solar morning is cut off
+        for d, (m, full) in days.items():
+            if first < d < solar_today:
                 rows.append([str(d), unit, full - m])
     return rows
 

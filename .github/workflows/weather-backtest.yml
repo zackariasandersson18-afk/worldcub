@@ -6,7 +6,7 @@ name: weather backtest
 on:
   push:
     branches: [claude/great-rubin-cbww8t]
-    paths: ['.github/workflows/weather-backtest.yml']
+    paths: ['.github/workflows/weather-backtest.yml', 'weatherbot/markets.py']
   workflow_dispatch:
     inputs:
       days:

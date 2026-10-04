@@ -131,17 +131,22 @@ def parse_event(e: dict) -> Event | None:
 
 
 def fetch_events(closed: bool, pages: int = 1, page_size: int = 100,
-                 session: requests.Session | None = None) -> list[Event]:
+                 session: requests.Session | None = None, since: date | None = None) -> list[Event]:
+    """Newest first. Stops at `since`, at the last page, or where Gamma stops
+    paginating (it answers 422 past its maximum offset)."""
     http = session or requests.Session()
     out = []
     for page in range(pages):
         r = http.get(f'{GAMMA}/events', params={
             'tag_slug': TAG, 'closed': str(closed).lower(), 'limit': page_size,
             'offset': page * page_size, 'order': 'endDate', 'ascending': 'false'}, timeout=30)
+        if r.status_code == 422 and page > 0:
+            break
         r.raise_for_status()
         batch = r.json()
-        out += [ev for ev in map(parse_event, batch) if ev]
-        if len(batch) < page_size:
+        parsed = [ev for ev in map(parse_event, batch) if ev]
+        out += parsed
+        if len(batch) < page_size or (since and parsed and max(e.date for e in parsed) < since):
             break
     return out
 

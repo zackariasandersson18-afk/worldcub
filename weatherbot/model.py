@@ -73,13 +73,18 @@ class Bet:
 
 
 def select_bets(buckets, probs: list[float], prices: list[float | None]) -> list[Bet]:
-    """prices: YES price per bucket (None = no quote)."""
+    """Backtest version: one YES price per bucket (None = no quote); NO costs 1 - price."""
+    return select_bets_quotes(buckets, probs, prices,
+                              [None if p is None else 1 - p for p in prices])
+
+
+def select_bets_quotes(buckets, probs: list[float], yes_asks: list[float | None],
+                       no_asks: list[float | None]) -> list[Bet]:
+    """Live version: buy each side at its own best ask (the price actually payable)."""
     bets = []
-    for b, p, yes_price in zip(buckets, probs, prices):
-        if yes_price is None:
-            continue
-        for side, prob, price in (('YES', p, yes_price), ('NO', 1 - p, 1 - yes_price)):
-            if not MIN_PRICE <= price <= MAX_PRICE:
+    for b, p, ya, na in zip(buckets, probs, yes_asks, no_asks):
+        for side, prob, price in (('YES', p, ya), ('NO', 1 - p, na)):
+            if price is None or not MIN_PRICE <= price <= MAX_PRICE:
                 continue
             cost = price + SLIPPAGE + fee_per_share(price, b.fee_rate)
             edge = prob - cost
@@ -89,7 +94,7 @@ def select_bets(buckets, probs: list[float], prices: list[float | None]) -> list
             bets.append(Bet(b.label, side, price, cost, prob, edge,
                             min(KELLY_FRACTION * kelly, MAX_BET)))
     total = sum(x.stake for x in bets)
-    if total > MAX_EVENT:  # scale the whole city-day down to the cap
+    if total > MAX_EVENT:
         for x in bets:
             x.stake *= MAX_EVENT / total
     return bets

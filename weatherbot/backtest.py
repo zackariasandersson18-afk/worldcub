@@ -89,7 +89,9 @@ def run(events: list[markets.Event], forecasts: dict, histories: dict) -> dict:
             daily[day] = pnl
         for res, unit in residuals:  # only now: today's outcome is known
             calib.add(day, res, unit)
-    return evaluate(trades, scored, daily)
+    out = evaluate(trades, scored, daily)
+    out['calibration_rows'] = [[str(d), round(r, 3)] for d, r in calib.rows]
+    return out
 
 
 def _logloss(rows, key):
@@ -139,7 +141,7 @@ def collect(days: int = 45, pages: int = 40, workers: int = 8, session: requests
             log=print) -> tuple[list, dict, dict]:
     http = session or requests.Session()
     cutoff = date.today() - timedelta(days=days)
-    events = [e for e in _retry(markets.fetch_events, True, pages, 100, http)
+    events = [e for e in _retry(markets.fetch_events, True, pages, 100, http, cutoff)
               if e.date >= cutoff and e.winner and forecast.station_coords(e.station)]
     log(f'{len(events)} resolved events since {cutoff} with a known station')
 

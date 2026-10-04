@@ -1,0 +1,25 @@
+name: football value-signal backtest
+
+# Trial 61, pre-registered in footbot/backtest.py. Free data from football-data.co.uk. Read-only.
+on:
+  push:
+    branches: [claude/great-rubin-cbww8t]
+    paths: ['.github/workflows/football-backtest.yml', 'footbot/**']
+  workflow_dispatch:
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: python -m footbot.backtest --out football.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: football
+          path: football.json

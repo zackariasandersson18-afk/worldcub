@@ -21,6 +21,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 from functools import partial
 
@@ -51,11 +52,15 @@ def _yes(ok: bool) -> str:
 def run_pipeline(prices: pd.Series, args: argparse.Namespace) -> int:
     cfg = Config(fee_bps=args.fee_bps, slippage_bps=args.slippage_bps,
                  periods_per_year=args.periods_per_year)
-    fit = partial(strategies.fit_momentum, cfg=cfg, allow_short=args.allow_short)
+    strategy_name = getattr(args, 'strategy', 'momentum')
+    if strategy_name == 'momentum':
+        fit = partial(strategies.fit_momentum, cfg=cfg, allow_short=args.allow_short)
+    else:
+        fit = partial(strategies.make_fit(strategy_name), cfg=cfg)
     n_trials = max(args.n_trials, len(strategies.LOOKBACK_GRID))
 
     print(f'Data: {len(prices)} bars, {prices.index[0]} -> {prices.index[-1]}')
-    print(f'Strategy: time-series momentum, lookback grid {strategies.LOOKBACK_GRID}')
+    print(f'Strategy: {strategy_name}, lookback grid {strategies.LOOKBACK_GRID}')
     print(f'Trials counted: {n_trials}\n')
 
     result = run_gates(prices, fit, cfg, n_trials,
@@ -105,7 +110,7 @@ def run_pipeline(prices: pd.Series, args: argparse.Namespace) -> int:
             'approved': result['approved'],
             'symbol': getattr(args, 'binance', None),
             'interval': getattr(args, 'interval', '1d'),
-            'strategy': 'momentum',
+            'strategy': strategy_name,
             'params': latest,
             'allow_short': args.allow_short,
             'n_trials': n_trials,
@@ -147,6 +152,62 @@ def run_pipeline(prices: pd.Series, args: argparse.Namespace) -> int:
         return 0
     print('\nREJECTED. Do not trade this. That discovery is worth more than the strategy.')
     return 1
+
+
+def cmd_research(args):
+    """Run every pre-registered strategy through the same three gates."""
+    if args.csv:
+        prices = load_csv(args.csv, args.time_col, args.price_col)
+    else:
+        prices = fetch_binance(args.binance, args.interval, args.start, args.end)
+    cfg = Config(fee_bps=args.fee_bps, slippage_bps=args.slippage_bps,
+                 periods_per_year=args.periods_per_year)
+    n_trials = args.prior_trials + strategies.NEW_VARIANT_TRIALS
+    th = GateThresholds(min_positive_folds=args.min_positive_folds,
+                        min_worst_fold=args.min_worst_fold)
+    print(f'Data: {len(prices)} bars, {prices.index[0]} -> {prices.index[-1]}')
+    print(f'Trials counted for every variant: {n_trials} '
+          f'({args.prior_trials} earlier + {strategies.NEW_VARIANT_TRIALS} new)\n')
+
+    rows = []
+    for name in strategies.STRATEGIES:
+        fit = partial(strategies.make_fit(name), cfg=cfg)
+        res = run_gates(prices, fit, cfg, n_trials, train_days=args.train_days,
+                        test_days=args.test_days, sources=(strategies,), thresholds=th)
+        wf, oos, reg = res['walk_forward'], res['oos_metrics'], regime_report(prices, res['walk_forward']['oos_net'], cfg)
+        rows.append({
+            'strategy': strategy_name,
+            'approved': res['approved'],
+            'gate1': res['gate1_no_leakage'], 'gate2': res['gate2_deflated_sharpe'],
+            'gate3': res['gate3_walk_forward'],
+            'oos_sharpe': oos.get('sharpe'), 'ann_return': oos.get('ann_return'),
+            'max_drawdown': oos.get('max_drawdown'),
+            'dsr': res['dsr']['deflated_sharpe'],
+            'positive_folds': wf['positive_folds'], 'worst_fold': wf['worst_fold'],
+            'mean_fold': wf['mean_sharpe'],
+            'bull': reg['regimes']['bull'].get('sharpe'), 'bear': reg['regimes']['bear'].get('sharpe'),
+        })
+        print(f"{name:22s} gates {int(res['gate1_no_leakage'])}{int(res['gate2_deflated_sharpe'])}"
+              f"{int(res['gate3_walk_forward'])}  OOS Sharpe {oos.get('sharpe')}  "
+              f"maxDD {oos.get('max_drawdown')}%  DSR {res['dsr']['deflated_sharpe']}  "
+              f"folds {wf['positive_folds']} worst {wf['worst_fold']}")
+
+    table = pd.DataFrame(rows)
+    print('\n' + table.to_string(index=False))
+    passed = table[table['approved']].sort_values('dsr', ascending=False)
+    best = passed.iloc[0]['strategy'] if len(passed) else None
+    print(f"\nAPPROVED: {best}" if best else '\nNO VARIANT PASSED ALL THREE GATES')
+    if args.out:
+        with open(args.out, 'w') as f:
+            json.dump({'n_trials': n_trials, 'data_end': str(prices.index[-1]),
+                       'best': best, 'results': rows}, f, indent=2, default=str)
+    summary = os.environ.get('GITHUB_STEP_SUMMARY')
+    if summary:
+        with open(summary, 'a') as f:
+            f.write(f'### Strategy research ({n_trials} trials counted)\n\n')
+            f.write(table.to_markdown(index=False) if hasattr(table, 'to_markdown') else table.to_string())
+            f.write(f"\n\n**{'APPROVED: ' + best if best else 'No variant passed all three gates'}**\n")
+    return 0
 
 
 def cmd_demo(args):
@@ -251,6 +312,7 @@ def build_parser() -> argparse.ArgumentParser:
 
     def pipeline(sp):
         costs(sp)
+        sp.add_argument('--strategy', choices=strategies.STRATEGIES, default='momentum')
         sp.add_argument('--n-trials', type=int, default=0,
                         help='every variation you tried. Be honest. '
                              '(minimum: size of the lookback grid)')
@@ -293,6 +355,25 @@ def build_parser() -> argparse.ArgumentParser:
     sp.add_argument('--ignore-gates', action='store_true',
                     help='trade a strategy that failed the gates (testnet/paper only)')
     sp.set_defaults(func=cmd_trade)
+
+    sp = sub.add_parser('research', help='test every pre-registered strategy against the gates')
+    costs(sp)
+    src = sp.add_mutually_exclusive_group(required=True)
+    src.add_argument('--csv')
+    src.add_argument('--binance', metavar='SYMBOL')
+    sp.add_argument('--time-col', default='timestamp')
+    sp.add_argument('--price-col', default='close')
+    sp.add_argument('--interval', default='1d')
+    sp.add_argument('--start', default='2019-01-01')
+    sp.add_argument('--end')
+    sp.add_argument('--prior-trials', type=int, default=25,
+                    help='variations tried before this research round')
+    sp.add_argument('--train-days', type=int, default=180)
+    sp.add_argument('--test-days', type=int, default=60)
+    sp.add_argument('--min-positive-folds', type=float, default=0.6)
+    sp.add_argument('--min-worst-fold', type=float, default=-2.0)
+    sp.add_argument('--out', help='write results as JSON')
+    sp.set_defaults(func=cmd_research)
 
     sp = sub.add_parser('serve', help='always-on server: live stop, kill switch, daily step')
     sp.add_argument('--state-dir', default='state',

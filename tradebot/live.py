@@ -18,7 +18,7 @@ import pandas as pd
 
 from tradebot.monitor import health_check
 from tradebot.sizing import position_size
-from tradebot.strategies import momentum_signal
+from tradebot.strategies import build_signal
 
 
 @dataclass
@@ -88,7 +88,8 @@ def trade_step(broker, prices: pd.Series, approval: dict, state: dict,
                           window=cfg.health_window,
                           periods_per_year=cfg.periods_per_year)
 
-    signal = float(momentum_signal(prices, approval['params']['lookback']).iloc[-1])
+    strategy = build_signal(approval.get('strategy', 'momentum'), approval.get('params'))
+    signal = float(strategy(prices).iloc[-1])
     vol = float(prices.pct_change().tail(cfg.vol_window).std())
     stop = price * (1 - cfg.stop_vol_mult * vol)
     size = position_size(equity, price, stop, cfg.risk_pct, cfg.max_position_pct)

@@ -43,6 +43,9 @@ jobs:
       - name: trade step
         env:
           SYMBOL: BTCUSDT
+          # which pre-registered strategy trades (see tradebot/strategies.py)
+          STRATEGY: momentum
+          N_TRIALS: '25'
           # DEMO ONLY: the example strategy fails the gates. Trading it on
           # paper/testnet shows the plumbing works; never do this with real money.
           IGNORE_GATES: 'true'

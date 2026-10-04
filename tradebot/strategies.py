@@ -56,3 +56,79 @@ def fit_momentum(train: pd.Series, cfg: Config | None = None,
         'params': {'lookback': best_lb},
         'n_trials': len(grid),
     }
+
+
+# ---------------------------------------------------------------------------
+# Pre-registered variants (fixed BEFORE looking at their results).
+#
+#   momentum             baseline above
+#   momentum_regime      momentum, but only while the close is above its
+#                        200-day average: stay in cash in bear markets
+#   momentum_voltarget   momentum, position scaled to TARGET_VOL annualized
+#                        volatility (never above the baseline's full size)
+#   ensemble             no fitted parameter: the fraction of lookbacks in
+#                        LOOKBACK_GRID whose return is positive
+#   ensemble_regime_vol  ensemble x regime filter x volatility scaling
+#
+# Each modifier has fixed constants; only the momentum lookback is ever fitted,
+# and only on the training window.
+# ---------------------------------------------------------------------------
+TREND_MA = 200
+TARGET_VOL = 0.40
+VOL_WINDOW = 30
+PERIODS_PER_YEAR = 365
+NEW_VARIANT_TRIALS = 4 * len(LOOKBACK_GRID)  # counted honestly: 4 new ideas x 5 lookbacks
+
+
+def regime_filter(history: pd.Series, ma: int = TREND_MA) -> pd.Series:
+    """1 while the close is above its `ma`-day average, else 0 (0 during warm-up)."""
+    sma = history.rolling(ma).mean()
+    return (history > sma).astype(float)
+
+
+def vol_scale(history: pd.Series, target: float = TARGET_VOL, window: int = VOL_WINDOW,
+              periods_per_year: int = PERIODS_PER_YEAR) -> pd.Series:
+    """Position multiplier in [0, 1]: target / realized volatility, capped at 1."""
+    vol = history.pct_change().rolling(window).std() * np.sqrt(periods_per_year)
+    return (target / vol).clip(upper=1.0).fillna(0.0)
+
+
+def ensemble_signal(history: pd.Series, lookbacks: tuple[int, ...] = LOOKBACK_GRID) -> pd.Series:
+    """Share of lookbacks with a positive past return, in [0, 1]."""
+    votes = [(np.log(history / history.shift(lb)) > 0).astype(float) for lb in lookbacks]
+    return sum(votes) / len(lookbacks)
+
+
+def build_signal(name: str, params: dict | None = None):
+    """signal_fn(history) for a strategy name and its fitted params."""
+    params = params or {}
+    lb = params.get('lookback')
+    if name == 'momentum':
+        return lambda h: momentum_signal(h, lb)
+    if name == 'momentum_regime':
+        return lambda h: momentum_signal(h, lb) * regime_filter(h)
+    if name == 'momentum_voltarget':
+        return lambda h: momentum_signal(h, lb) * vol_scale(h)
+    if name == 'ensemble':
+        return ensemble_signal
+    if name == 'ensemble_regime_vol':
+        return lambda h: ensemble_signal(h) * regime_filter(h) * vol_scale(h)
+    raise ValueError(f'unknown strategy {name!r}; choose from {sorted(STRATEGIES)}')
+
+
+def make_fit(name: str):
+    """fit(train) -> {'signal_fn', 'params'}. Lookback strategies pick the lookback
+    with plain momentum on the training window (the filters have no free
+    parameter, and a 180-day window is too short for the 200-day average)."""
+    def fit(train: pd.Series, cfg: Config | None = None, allow_short: bool = False) -> dict:
+        if name.startswith('ensemble'):
+            params = {}
+        else:
+            params = fit_momentum(train, cfg)['params']
+        return {'signal_fn': build_signal(name, params), 'params': params,
+                'n_trials': len(LOOKBACK_GRID)}
+    return fit
+
+
+STRATEGIES = ('momentum', 'momentum_regime', 'momentum_voltarget',
+              'ensemble', 'ensemble_regime_vol')

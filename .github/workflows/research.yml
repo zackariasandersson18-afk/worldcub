@@ -1,0 +1,34 @@
+name: strategy research
+
+# Runs every pre-registered strategy (tradebot/strategies.py) through the same
+# three gates on real Binance data. Manual only: every run is a look at the data.
+on:
+  workflow_dispatch:
+    inputs:
+      symbol:
+        default: BTCUSDT
+      start:
+        default: '2019-01-01'
+      prior_trials:
+        description: 'variations tried before this round'
+        default: '25'
+
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - run: pip install -r requirements.txt tabulate
+      - run: >-
+          python -m tradebot research --binance "${{ inputs.symbol }}"
+          --start "${{ inputs.start }}" --prior-trials "${{ inputs.prior_trials }}"
+          --out research.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: research
+          path: research.json

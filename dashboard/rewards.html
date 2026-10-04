@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rewards desk live</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* layout: one portrait column of boxed terminal panels, like a trading desk on a phone */
+:root{
+  --bg:#000; --panel:#070707; --line:#2a2a2a; --line2:#3a3a3a;
+  --ink:#f2f2f2; --ink2:#a8a8a8; --mute:#6b6b6b;
+  --green:#39ff6a; --red:#ff3b3b; --yellow:#ffd400; --cyan:#3ad7ff; --blue:#2f6bff; --orange:#ff9a1f; --purple:#8a3dff;
+  --mono:'JetBrains Mono',ui-monospace,Menlo,monospace; --pix:'Silkscreen','JetBrains Mono',monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg);color:var(--ink);font-family:var(--mono);font-size:11px}
+body{padding-bottom:28px}
+.wrap{max-width:780px;margin:0 auto;padding:0 8px}
+.up{color:var(--green)} .down{color:var(--red)} .warn{color:var(--yellow)} .cy{color:var(--cyan)} .mute{color:var(--mute)} .ink2{color:var(--ink2)}
+.k9{color:var(--mute);font-size:9px;letter-spacing:1.4px;text-transform:uppercase}
+.badge{display:inline-block;font-size:9px;font-weight:800;padding:2px 6px;letter-spacing:1px}
+.b-green{background:var(--green);color:#000} .b-yellow{background:var(--yellow);color:#000} .b-red{background:var(--red);color:#000} .b-cyan{background:var(--cyan);color:#000}
+
+/* header */
+header{display:grid;grid-template-columns:auto minmax(0,1fr) auto auto;align-items:center;gap:12px;padding:10px 0 8px}
+.logo{width:30px;height:30px;background:var(--yellow);color:#000;font-weight:800;display:grid;place-items:center;font-size:15px}
+.brand b{font-size:15px;letter-spacing:1px}
+.brand .s{color:var(--mute);font-size:9px;letter-spacing:1.2px}
+.mid{text-align:center;color:var(--ink2);letter-spacing:2px;font-size:11px}
+.clock{text-align:right}
+.clock .v{font-size:17px;font-weight:800}
+@media (max-width:640px){header{grid-template-columns:auto minmax(0,1fr) auto}.mid{display:none}}
+
+.banner{color:var(--yellow);font-size:10px;letter-spacing:1px;padding:5px 0;border-top:1px solid var(--line);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ticker{display:flex;align-items:center;height:24px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;white-space:nowrap;margin-bottom:8px}
+.ticker .tag{flex:none;background:var(--red);color:#fff;font-weight:800;font-size:10px;padding:0 8px;height:100%;display:flex;align-items:center;gap:6px}
+.ticker .tag i{width:6px;height:6px;border-radius:50%;background:#fff;animation:blink 1s infinite}
+.track{flex:1;overflow:hidden;position:relative;height:100%}
+.run{position:absolute;left:0;top:0;height:100%;display:flex;align-items:center;gap:26px;padding-left:16px;animation:marquee 70s linear infinite}
+.run b{color:var(--ink)}
+.foot{position:fixed;left:0;right:0;bottom:0;background:#000;margin:0;z-index:5}
+.foot .run{animation-duration:90s;color:var(--ink2)}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes blink{50%{opacity:.2}}
+@media (prefers-reduced-motion:reduce){.run{animation:none}}
+
+/* panels */
+.panel{border:1px solid var(--line2);background:var(--panel);margin-bottom:8px;min-width:0}
+.ph{display:flex;align-items:center;gap:6px;padding:6px 8px;border-bottom:1px solid var(--line);font-size:10px;letter-spacing:1.4px;text-transform:uppercase;font-weight:600;white-space:nowrap;overflow:hidden}
+.ph .r{margin-left:auto;color:var(--ink2);font-weight:400}
+.ph .dot{width:7px;height:7px;background:var(--green)}
+.pb{padding:8px}
+canvas{display:block;width:100%}
+.row3{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:8px}
+.row3 .panel{margin-bottom:8px}
+@media (max-width:640px){.row3{grid-template-columns:1fr}}
+
+/* account */
+.who{display:flex;align-items:center;gap:6px;font-weight:800;font-size:13px}
+.addr{color:var(--mute);font-size:9px;letter-spacing:1px;margin:2px 0 6px}
+.pnl{font-family:var(--pix);font-size:40px;line-height:1;color:var(--green);letter-spacing:-1px;white-space:nowrap}
+.pnl small{font-size:18px;margin-left:4px}
+.kv3{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:8px}
+.kv3 .v{font-family:var(--pix);font-size:17px;margin-top:2px}
+.bar{height:6px;background:#1a1a1a;margin-top:4px}
+.bar i{display:block;height:100%;background:var(--green)}
+
+/* best edge */
+.mult{font-family:var(--pix);font-size:38px;color:var(--yellow);text-align:center;line-height:1.1}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:4px 10px;margin-top:6px;font-size:10px}
+.grid2 .k9{font-size:8.5px}
+
+/* execution cycle */
+.steps{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}
+.step{border:1px solid var(--line2);padding:5px 6px;min-width:0}
+.step .n{color:var(--mute);font-size:9px}
+.step .t{font-weight:800;margin-top:2px}
+.step .d{color:var(--ink2);font-size:9px;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.step.on{color:#000;border-color:transparent}
+.step.on .n,.step.on .d{color:#000}
+@media (max-width:560px){.steps{grid-template-columns:repeat(3,1fr)}}
+
+/* matrix */
+.mx-wrap{display:grid;grid-template-columns:minmax(0,1fr) 120px;gap:8px;align-items:center}
+.mx{width:100%;border-collapse:separate;border-spacing:3px;font-size:10px;font-variant-numeric:tabular-nums}
+.mx th{color:var(--yellow);font-weight:600;font-size:9px;text-align:center;border:1px solid var(--line2);padding:2px}
+.mx td{text-align:center;padding:3px 2px;font-weight:700;color:#000;white-space:nowrap}
+.mx td.city{color:var(--ink);background:none;text-align:left;font-weight:600;border:1px solid var(--line2)}
+.mx td.na{background:#151515;color:var(--mute);font-weight:400}
+.gauge{text-align:center}
+.gauge .lbl{display:grid;grid-template-columns:auto auto;justify-content:space-between;font-size:9px;color:var(--ink2);margin-top:6px;gap:2px 8px}
+@media (max-width:560px){.mx-wrap{grid-template-columns:1fr}}
+
+/* monte carlo */
+.mc{display:grid;grid-template-columns:minmax(0,1fr) 130px;gap:8px}
+.boxes{display:flex;flex-direction:column;gap:6px}
+.box{border:1px solid var(--line2);padding:5px 8px;text-align:right}
+.box .v{font-family:var(--pix);font-size:18px;margin-top:2px}
+@media (max-width:560px){.mc{grid-template-columns:1fr}.boxes{flex-direction:row}.box{flex:1}}
+
+.trades{width:100%;border-collapse:collapse;font-size:10.5px;font-variant-numeric:tabular-nums}
+.trades th{color:var(--mute);font-weight:400;font-size:9px;letter-spacing:1.2px;text-transform:uppercase;text-align:right;padding:4px 6px;border-bottom:1px solid var(--line);white-space:nowrap}
+.trades td{padding:5px 6px;border-bottom:1px solid #161616;text-align:right;white-space:nowrap}
+.trades th:nth-child(-n+3),.trades td:nth-child(-n+3){text-align:left}
+.trades tr.pos:hover td{background:#101010;cursor:pointer}
+.trades .flash-up{animation:fu .9s} .trades .flash-dn{animation:fd .9s}
+@keyframes fu{from{background:rgba(57,255,106,.35)}} @keyframes fd{from{background:rgba(255,59,59,.35)}}
+.tsum{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:8px}
+.tsum .box{text-align:left}
+.tw{overflow-x:auto;max-height:420px;overflow-y:auto}
+@media (max-width:560px){.tsum{grid-template-columns:repeat(2,1fr)}}
+.ctd{width:100%;border-collapse:collapse;font-size:10.5px;font-variant-numeric:tabular-nums}
+.ctd th{color:var(--mute);font-weight:400;font-size:9px;letter-spacing:1.2px;text-transform:uppercase;text-align:right;padding:4px 6px;border-bottom:1px solid var(--line);white-space:nowrap}
+.ctd td{padding:5px 6px;border-bottom:1px solid #161616;text-align:right;white-space:nowrap}
+.ctd th:first-child,.ctd td:first-child{text-align:left}
+<style>
+.ctd{width:100%;border-collapse:collapse;font-size:10.5px;font-variant-numeric:tabular-nums}
+.ctd th{color:var(--mute);font-weight:400;font-size:9px;letter-spacing:1.2px;text-transform:uppercase;text-align:right;padding:4px 6px;border-bottom:1px solid var(--line);white-space:nowrap}
+.ctd td{padding:5px 6px;border-bottom:1px solid #161616;text-align:right;white-space:nowrap}
+.ctd th:first-child,.ctd td:first-child{text-align:left;white-space:normal;min-width:150px}
+@media (max-width:480px){.ctd td,.ctd th{padding:4px 3px}.ctd{font-size:10px}}
+.kv{display:grid;grid-template-columns:1fr auto;gap:3px 10px;font-size:10.5px}
+.kv span{color:var(--ink2)}
+.nav{display:flex;gap:10px;font-size:10px;letter-spacing:1px;padding:4px 0}
+.shbar{display:inline-block;width:46px;height:6px;background:#1a1a1a;vertical-align:middle;margin-left:4px}
+.shbar i{display:block;height:100%;background:var(--green)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="logo" style="background:var(--green)">$</div>
+  <div class="brand"><b>TRADEBOT × REWARDS</b><div class="s">POLYMARKET · LIKVIDITETSBELÖNINGAR · VIRTUELL MÄTNING</div></div>
+  <div class="mid">QMIN · MARKET MAKING · pUSD</div>
+  <div class="clock"><div class="v" id="clock">--:--:--</div><div class="k9" id="scanmeta">UTC</div></div>
+</header>
+<div class="nav"><a href="index.html">← väderboten (06:00)</a><span class="mute">·</span><a href="nowcast.html">nowcast 16:00</a><span class="mute">·</span><b class="warn">belöningar</b></div>
+<div class="banner" id="banner">◆ laddar…</div>
+<div class="ticker"><div class="tag"><i></i>LIVE</div><div class="track"><div class="run" id="feed"></div></div></div>
+
+<div class="row3">
+  <section class="panel">
+    <div class="ph">◆ Konto · netto<span class="r"><span class="dot"></span></span></div>
+    <div class="pb">
+      <div class="who">rewards-boten <span class="badge b-yellow">VIRTUELL · MÄTER</span></div>
+      <div class="addr">KAPITAL 1 000 USD · <span id="nmk">—</span> MARKNADER</div>
+      <div class="pnl" id="pnl">—</div>
+      <div class="k9" style="margin-top:4px" id="pnlsub">NETTO SEDAN START</div>
+      <div class="kv3">
+        <div><div class="k9">Belöning</div><div class="v up" id="rew">—</div></div>
+        <div><div class="k9">Market making</div><div class="v" id="mm">—</div></div>
+        <div><div class="k9">Per dag nu</div><div class="v" id="perday">—</div></div>
+      </div>
+    </div>
+  </section>
+  <section class="panel">
+    <div class="ph">⚖ Konkurrens just nu</div>
+    <div class="pb"><div class="kv" id="comp"></div></div>
+  </section>
+  <section class="panel">
+    <div class="ph">ⓘ Vad mäts</div>
+    <div class="pb"><div class="kv" id="meta"></div></div>
+  </section>
+</div>
+
+<section class="panel">
+  <div class="ph">▲ Netto över tid · kr<span class="r" id="eq-sub">—</span></div>
+  <div class="pb"><canvas id="c-eq" height="170"></canvas></div>
+</section>
+
+<section class="panel">
+  <div class="ph">◎ Vår andel av belöningen · snitt över portföljen<span class="r" id="sh-sub">—</span></div>
+  <div class="pb"><canvas id="c-sh" height="120"></canvas></div>
+</section>
+
+<section class="panel">
+  <div class="ph">◉ Marknaderna · live mot orderboken<span class="r" id="tb-sub">—</span></div>
+  <div class="tw" style="max-height:560px"><table class="ctd" id="mk"></table></div>
+</section>
+
+<div class="note">Polymarket betalar en daglig pott per marknad till dem som har köp- och säljbud nära mittpriset. Varje minut får ett bud poängen ((v − avstånd)/v)² × storlek, där v är max-avståndet. Potten delas efter poäng. Den här sidan räknar live med samma formel mot de riktiga orderböckerna: vår andel om vi låg med minsta storlek på halva max-avståndet. Market making-delen är virtuella bud som fylls av riktiga affärer. Belöningar betalas bara för riktiga bud, så allt här är uppskattningar. Belöningen betalas i pUSD (Polymarkets dollartoken). Belopp i kronor via ECB:s dagskurs. Ingen finansiell rådgivning.</div>
+</div>
+<div class="ticker foot"><div class="tag" style="background:var(--green);color:#000">REWARDS</div><div class="track"><div class="run" id="foot"></div></div></div>
+
+<script>
+'use strict';
+const qs = new URLSearchParams(location.search);
+const CFG = {repo: 'zackariasandersson18-afk/worldcub', stateBranch: 'tradebot-state', stateOverride: qs.get('state'),
+             clob: 'https://clob.polymarket.com', CAPITAL: 1000, C: 3.0};
+const COL = {green:'#39ff6a', red:'#ff3b3b', yellow:'#ffd400', cyan:'#3ad7ff', ink2:'#a8a8a8', mute:'#6b6b6b', line:'#2a2a2a'};
+const S = {fx: null, st: null, books: {}, live: {}, booksAt: null};
+const $ = id => document.getElementById(id);
+const nf = d => new Intl.NumberFormat('sv-SE', {minimumFractionDigits: d, maximumFractionDigits: d});
+const fmt = (x, d = 0) => x == null || !isFinite(x) ? '—' : nf(d).format(x);
+const kr = (x, d = 0) => x == null || !isFinite(x) ? '—' : fmt(x, d) + ' kr';
+const skr = (x, d = 0) => x == null || !isFinite(x) ? '—' : (x >= 0 ? '+' : '−') + fmt(Math.abs(x), d) + ' kr';
+const pct = (x, d = 0) => x == null || !isFinite(x) ? '—' : fmt(x * 100, d) + '%';
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]));
+const sek = usd => usd == null || S.fx == null ? null : usd * S.fx;
+async function getJSON(url, opts) { const r = await fetch(url, {cache: 'no-store', ...opts}); if (!r.ok) throw new Error(r.status); return r.json(); }
+function canvas(id) {
+  const cv = $(id), dpr = Math.min(devicePixelRatio || 1, 2);
+  if (!cv.dataset.h) { cv.dataset.h = cv.getAttribute('height'); cv.style.height = cv.dataset.h + 'px'; }
+  const w = cv.clientWidth, h = +cv.dataset.h;
+  if (cv.width !== Math.round(w * dpr) || cv.height !== Math.round(h * dpr)) { cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr); }
+  const g = cv.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); g.clearRect(0, 0, w, h);
+  g.font = '10px JetBrains Mono, monospace'; g.textBaseline = 'middle';
+  return {g, w, h};
+}
+
+// ---- Polymarket reward scoring (mirrors rewardbot/backtest.py)
+const score = (distC, v, size) => distC >= 0 && distC < v ? ((v - distC) / v) ** 2 * size : 0;
+const qmin = (q1, q2) => Math.max(Math.min(q1, q2), Math.max(q1, q2) / CFG.C);
+function bookQ(yes, no, mid, v, minSize) {
+  const side = (levels, conv) => (levels || []).reduce((a, lv) => {
+    const p = +lv.price, z = +lv.size;
+    return z < minSize ? a : a + score(Math.abs(conv(p) - mid) * 100, v, z);
+  }, 0);
+  const q1 = side(yes?.bids, p => p) + side(no?.asks, p => 1 - p);
+  const q2 = side(yes?.asks, p => p) + side(no?.bids, p => 1 - p);
+  return [q1, q2];
+}
+function liveShare(c) {
+  const yb = S.books[c.yes], nb = S.books[c.no];
+  if (!yb?.bids?.length || !yb?.asks?.length) return null;
+  const mid = (Math.max(...yb.bids.map(x => +x.price)) + Math.min(...yb.asks.map(x => +x.price))) / 2;
+  const rest = bookQ(yb, nb, mid, c.v, c.min_size);
+  const ours = qmin(score(c.d * 100, c.v, c.min_size), score(c.d * 100, c.v, c.min_size));
+  const share = ours / (ours + qmin(...rest));
+  const inBand = mid >= 0.10 && mid <= 0.90;
+  return {mid, rest, share, perDay: inBand ? c.rate * share : 0, inBand};
+}
+
+// ---- data
+async function loadFx() {
+  for (const [url, pick] of [['https://api.frankfurter.app/latest?from=USD&to=SEK', d => d.rates.SEK],
+                             ['https://open.er-api.com/v6/latest/USD', d => d.rates.SEK]]) {
+    try { S.fx = pick(await getJSON(url)); return; } catch {}
+  }
+}
+async function stateBase() {
+  if (CFG.stateOverride) return CFG.stateOverride.replace(/\/?$/, '/');
+  try { const c = await getJSON(`https://api.github.com/repos/${CFG.repo}/commits/${CFG.stateBranch}`); S.sha = c.sha; return `https://raw.githubusercontent.com/${CFG.repo}/${c.sha}/`; }
+  catch { return `https://raw.githubusercontent.com/${CFG.repo}/${CFG.stateBranch}/`; }
+}
+async function loadState() {
+  const base = await stateBase();
+  if (S.sha && S.sha === S.loadedSha) return;
+  try { S.st = await getJSON(base + 'rewards/rewards_state.json'); S.loadedSha = S.sha; } catch {}
+}
+async function loadBooks() {
+  const toks = (S.st?.portfolio || []).flatMap(c => [c.yes, c.no]);
+  for (let i = 0; i < toks.length; i += 100) {
+    try {
+      const books = await getJSON(`${CFG.clob}/books`, {method: 'POST', headers: {'content-type': 'application/json'},
+        body: JSON.stringify(toks.slice(i, i + 100).map(t => ({token_id: t})))});
+      for (const b of books) S.books[String(b.asset_id)] = b;
+    } catch {}
+  }
+  S.booksAt = Date.now();
+  for (const c of S.st?.portfolio || []) S.live[c.cond] = liveShare(c);
+}
+
+// ---- render
+function renderAccount() {
+  const st = S.st, h = st?.history || [], last = h[h.length - 1];
+  const rew = st?.reward_total ?? 0, mm = last?.mm_value ?? 0, net = rew + mm;
+  $('pnl').innerHTML = S.fx == null ? '—' : `${net >= 0 ? '+' : '−'}${fmt(Math.abs(sek(net)), 0)}<small>kr</small>`;
+  $('pnl').style.color = net >= 0 ? COL.green : COL.red;
+  const days = st?.started ? (Date.now() - new Date(st.started)) / 864e5 : 0;
+  $('pnlsub').textContent = `NETTO SEDAN START · ${fmt(days, days < 2 ? 1 : 0)} DAGAR · ${fmt(net / CFG.CAPITAL * 100, 2)}%`;
+  $('rew').textContent = skr(sek(rew), 0);
+  $('mm').textContent = skr(sek(mm), 0); $('mm').className = 'v ' + (mm >= 0 ? 'up' : 'down');
+  const perDay = Object.values(S.live).reduce((a, x) => a + (x?.perDay || 0), 0);
+  $('perday').textContent = kr(sek(perDay), 0);
+  $('nmk').textContent = (st?.portfolio || []).length;
+}
+function renderComp() {
+  const port = S.st?.portfolio || [];
+  const lv = port.map(c => ({c, x: S.live[c.cond]})).filter(o => o.x);
+  const alone = lv.filter(o => o.x.share > 0.9).length, crowded = lv.filter(o => o.x.share < 0.1).length;
+  const startEst = port.reduce((a, c) => a + c.est_reward_day, 0);
+  const now = lv.reduce((a, o) => a + o.x.perDay, 0);
+  const avg = lv.length ? lv.reduce((a, o) => a + o.x.share, 0) / lv.length : null;
+  $('comp').innerHTML = [
+    ['Snittandel nu', pct(avg, 1)], ['Marknader nästan ensam (>90 %)', `${alone}`], ['Trängsel (<10 %)', `${crowded}`],
+    ['Uppskattat/dag vid start', kr(sek(startEst), 0)], ['Uppskattat/dag nu', kr(sek(now), 0)],
+    ['Förändring', startEst ? pct(now / startEst - 1, 0) : '—'],
+  ].map(([k, v]) => `<span>${k}</span><b>${v}</b>`).join('');
+}
+function renderMeta() {
+  const st = S.st, tok = Object.values(st?.tokens || {})[0];
+  $('meta').innerHTML = [
+    ['Start', st?.started ? st.started.slice(0, 16).replace('T', ' ') + ' UTC' : '—'],
+    ['Senaste mätning', st?.last_tick?.ts ? st.last_tick.ts.slice(11, 16) + ' UTC' : '—'],
+    ['Mätningar', fmt((st?.history || []).length)], ['Bud', 'min.storlek, halva max-avståndet'],
+    ['Belöningstoken', tok ? `${tok.symbol} (${tok.decimals} dec)` : '—'], ['Orderböcker', S.booksAt ? new Date(S.booksAt).toISOString().slice(11, 19) + ' UTC' : '—'],
+  ].map(([k, v]) => `<span>${k}</span><b>${esc(v)}</b>`).join('');
+}
+function renderTable() {
+  const port = (S.st?.portfolio || []).slice();
+  const pos = S.st?.positions || {};
+  port.sort((a, b) => (S.live[b.cond]?.perDay || 0) - (S.live[a.cond]?.perDay || 0));
+  $('tb-sub').textContent = S.booksAt ? 'uppdaterad ' + new Date(S.booksAt).toISOString().slice(11, 19) + ' UTC' : 'laddar orderböcker';
+  $('mk').innerHTML = '<tr><th>Marknad</th><th>Pott/dag</th><th>Mitt</th><th>Andel nu</th><th>Kr/dag nu</th><th>Vid start</th><th>Intjänat</th><th>Lager</th><th>MM-värde</th></tr>' +
+    port.map(c => {
+      const x = S.live[c.cond], p = pos[c.cond] || {}, mmv = (p.cash || 0) + (p.inv || 0) * (x?.mid ?? p.mid ?? 0);
+      return `<tr><td>${esc(c.question)}</td><td>${kr(sek(c.rate), 0)}</td><td>${x ? fmt(x.mid, 3) : '—'}</td>` +
+        `<td>${x ? pct(x.share, 0) + `<span class="shbar"><i style="width:${Math.round(x.share * 100)}%"></i></span>` : '—'}</td>` +
+        `<td class="up">${x ? kr(sek(x.perDay), 1) : '—'}${x && !x.inBand ? ' <span class="warn">(utanför 0,10–0,90)</span>' : ''}</td>` +
+        `<td class="mute">${kr(sek(c.est_reward_day), 1)}</td><td class="up">${kr(sek(p.reward || 0), 1)}</td>` +
+        `<td>${fmt(p.inv || 0, 0)}</td><td class="${mmv >= 0 ? 'up' : 'down'}">${skr(sek(mmv), 0)}</td></tr>`;
+    }).join('');
+}
+function drawLines(id, series, colors, fmtY) {
+  const {g, w, h} = canvas(id);
+  const pts = series[0] || [];
+  if (pts.length < 2) { g.fillStyle = COL.mute; g.textAlign = 'center'; g.fillText('kurvan byggs upp efter några mätningar', w / 2, h / 2); return; }
+  const all = series.flat(), lo = Math.min(0, ...all), hi = Math.max(0, ...all), pad = 16;
+  const X = i => pad + i / (pts.length - 1) * (w - 2 * pad), Y = v => h - pad - (v - lo) / Math.max(hi - lo, 1e-9) * (h - 2 * pad);
+  g.strokeStyle = COL.line; g.setLineDash([2, 4]); g.beginPath(); g.moveTo(pad, Y(0)); g.lineTo(w - pad, Y(0)); g.stroke(); g.setLineDash([]);
+  series.forEach((s, k) => { g.strokeStyle = colors[k]; g.lineWidth = 2; g.beginPath(); s.forEach((v, i) => i ? g.lineTo(X(i), Y(v)) : g.moveTo(X(i), Y(v))); g.stroke(); });
+  g.fillStyle = COL.ink2; g.textAlign = 'left'; g.fillText(fmtY(hi), 2, 8); g.fillText(fmtY(lo), 2, h - 6);
+}
+function renderCharts() {
+  const h = S.st?.history || [];
+  if (S.fx) {
+    drawLines('c-eq', [h.map(x => x.net * S.fx), h.map(x => x.reward_total * S.fx), h.map(x => x.mm_value * S.fx)],
+              [COL.yellow, COL.green, COL.red], v => kr(v, 0));
+    const last = h[h.length - 1];
+    $('eq-sub').innerHTML = last ? `<span class="warn">netto ${skr(last.net * S.fx)}</span> · <span class="up">belöning ${skr(last.reward_total * S.fx)}</span> · <span class="down">MM ${skr(last.mm_value * S.fx)}</span>` : '—';
+  }
+  drawLines('c-sh', [h.map(x => x.avg_share * 100)], [COL.cyan], v => fmt(v, 0) + '%');
+  $('sh-sub').textContent = h.length ? `start ${pct(h[0].avg_share, 0)} · nu ${pct(h[h.length - 1].avg_share, 0)}` : '—';
+}
+function renderTickers() {
+  const st = S.st;
+  const perDay = Object.values(S.live).reduce((a, x) => a + (x?.perDay || 0), 0);
+  $('banner').textContent = `◆ VIRTUELL MÄTNING · INGA RIKTIGA ORDER · ${(st?.portfolio || []).length} MARKNADER · UPPSKATTAT ${kr(sek(perDay), 0)}/DAG NU · 1 USD = ${S.fx ? fmt(S.fx, 2) : '—'} KR`;
+  const items = (st?.portfolio || []).map(c => { const x = S.live[c.cond]; return `<span><b>${esc(c.question.slice(0, 40))}</b> andel ${x ? pct(x.share, 0) : '—'} · ${x ? kr(sek(x.perDay), 1) : '—'}/dag</span>`; }).join('');
+  for (const [id, html] of [['feed', items || '<span>laddar…</span>'], ['foot', items || '<span>laddar…</span>']]) {
+    const el = $(id); if (el.dataset.h !== html) { el.innerHTML = html + '<span class="mute">·</span>' + html; el.dataset.h = html; }
+  }
+}
+function renderAll() { renderAccount(); renderComp(); renderMeta(); renderTable(); renderCharts(); renderTickers(); }
+
+(async function init() {
+  setInterval(() => { $('clock').textContent = new Date().toISOString().slice(11, 19); }, 1000);
+  await Promise.allSettled([loadFx(), loadState()]);
+  renderAll();
+  await loadBooks(); renderAll();
+  setInterval(() => loadBooks().then(renderAll), 30_000);
+  setInterval(() => loadState().then(renderAll).catch(() => {}), 75_000);
+  setInterval(() => loadFx().catch(() => {}), 3600_000);
+  addEventListener('resize', renderAll);
+})();
+</script>
+</body>
+</html>

@@ -99,7 +99,7 @@ def _logloss(rows, key):
     return float(np.mean([-math.log(min(max(r[key] if r['won'] else 1 - r[key], eps), 1)) for r in rows]))
 
 
-def evaluate(trades: list[dict], scored: list[dict], daily: dict) -> dict:
+def evaluate(trades: list[dict], scored: list[dict], daily: dict, n_trials: int = N_TRIALS) -> dict:
     out = {'n_trades': len(trades), 'n_days': len(daily), 'trades': trades}
     if scored:
         # does the model know more than the market price? lower log loss = better
@@ -124,7 +124,7 @@ def evaluate(trades: list[dict], scored: list[dict], daily: dict) -> dict:
     pos = sum(s > 0 for s in fold_sharpes) / len(fold_sharpes)
     out['folds'] = {'n': len(folds), 'positive': f'{sum(s > 0 for s in fold_sharpes)}/{len(folds)}',
                     'worst': round(min(fold_sharpes), 2), 'mean': round(float(np.mean(fold_sharpes)), 2)}
-    dsr = deflated_sharpe(m['sharpe'], N_TRIALS, m['n_obs'], m['skew'], m['kurtosis'], 365)
+    dsr = deflated_sharpe(m['sharpe'], n_trials, m['n_obs'], m['skew'], m['kurtosis'], 365)
     out['dsr'] = dsr
     gates = {
         'no_leakage': True,  # structural: prices <= decision time, calibration < day, previous_day1 runs

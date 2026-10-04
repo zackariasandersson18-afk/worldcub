@@ -34,11 +34,14 @@ else
 fi
 
 # --- gates: validate once (or on request) ------------------------------------
-# also revalidate approvals written before the dashboard fields existed
+STRATEGY="${STRATEGY:-momentum}"
+# also revalidate approvals written before the dashboard fields existed, and
+# whenever the configured strategy changed
 if [[ ! -f "$STATE_DIR/approval.json" || "${REVALIDATE:-false}" == "true" ]] \
-   || ! grep -q '"walk_forward"' "$STATE_DIR/approval.json"; then
-  echo "== validating $SYMBOL =="
-  python -m tradebot run --binance "$SYMBOL" --n-trials 25 \
+   || ! grep -q '"walk_forward"' "$STATE_DIR/approval.json" \
+   || ! grep -q "\"strategy\": \"$STRATEGY\"" "$STATE_DIR/approval.json"; then
+  echo "== validating $SYMBOL with $STRATEGY =="
+  python -m tradebot run --binance "$SYMBOL" --strategy "$STRATEGY" --n-trials "${N_TRIALS:-25}" \
     --save-approval "$STATE_DIR/approval.json" | tee "$STATE_DIR/validation.txt"
   if [[ ! -f "$STATE_DIR/approval.json" ]]; then
     echo "validation failed to produce an approval file" >&2

@@ -506,7 +506,7 @@ function renderHeader() {
   set('h-price', S.price ? '$' + fmt(S.price, 2) : '—');
   const day = S.dayOpen && S.price ? (S.price / S.dayOpen - 1) * 100 : null;
   set('h-day', sgn(day, 2, '%'), day);
-  const sig = a.signal; set('h-signal', sig == null ? '—' : sig > 0 ? 'LÅNG' : 'KONTANT');
+  const sig = a.signal; set('h-signal', sig == null ? '—' : sig > 0 ? 'LÅNG' + (sig < .999 ? ' ' + Math.round(sig * 100) + '%' : '') : 'KONTANT');
   $('h-signal').className = 'v ' + (sig > 0 ? 'up' : 'mute');
   set('h-pos', a.qty ? fmt(a.qty, 6) + ' BTC' : '0 BTC');
   set('h-next', a.halted ? 'HALTED' : nextRun());
@@ -688,8 +688,8 @@ function nodeState() {
     left: [
       s(S.wsOk, S.price ? fmt(S.price, 1) : 'offline'),
       s(S.daily.length > 0 ? true : null, S.daily.length + ' bars'),
-      s(null, (ap.params?.lookback || '—') + 'd vald'),
-      s(a.signal == null ? null : a.signal > 0, a.signal == null ? '—' : a.signal > 0 ? 'LÅNG' : 'KONTANT'),
+      s(null, ap.params?.lookback ? ap.params.lookback + 'd vald' : (ap.strategy || '—')),
+      s(a.signal == null ? null : a.signal > 0, a.signal == null ? '—' : a.signal > 0 ? 'LÅNG ' + Math.round(a.signal * 100) + '%' : 'KONTANT'),
       s(ap.leakage ? ap.leakage.status === 'ABSENT' : null, ap.leakage?.status || '—'),
       s(crit.length ? present === 0 : null, crit.length ? `${absent} ok · ${present} fel` : '—'),
     ],

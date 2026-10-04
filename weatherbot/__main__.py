@@ -12,7 +12,8 @@ import sys
 def cmd_backtest(args) -> int:
     from weatherbot import backtest
     events, forecasts, histories = backtest.collect(args.days, args.pages, args.workers)
-    res = backtest.run(events, forecasts, histories)
+    res = backtest.run(events, forecasts, histories, blend=args.blend,
+                       n_trials=backtest.N_TRIALS if args.blend is None else 54)
     trades = res.pop('trades')
     cal_rows = res.pop('calibration_rows')
     if args.state:
@@ -79,6 +80,7 @@ def main(argv=None) -> int:
     sp.add_argument('--workers', type=int, default=8)
     sp.add_argument('--out')
     sp.add_argument('--state', help='state dir: write backtest.json and seed calibration.json')
+    sp.add_argument('--blend', type=float, help='weight of the model vs the market price (round 7: 0.5)')
     sp.set_defaults(func=cmd_backtest)
 
     sp = sub.add_parser('paper', help='one paper-trading step on live markets')

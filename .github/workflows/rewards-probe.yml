@@ -1,0 +1,26 @@
+name: rewards probe
+on:
+  push:
+    branches: [claude/great-rubin-cbww8t]
+    paths: ['.github/workflows/rewards-probe.yml']
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          python3 - <<'PY'
+          import json, urllib.request as u
+          def get(url):
+              try:
+                  return json.load(u.urlopen(u.Request(url, headers={'User-Agent': 'probe'}), timeout=30))
+              except Exception as e:
+                  return f'ERR {e}'
+          ms = get('https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=5&order=volume24hr&ascending=false')
+          for m in ms[:2]:
+              print({k: m.get(k) for k in m if 'eward' in k.lower() or k in ('question','endDate','spread','orderPriceMinTickSize','conditionId')})
+          for url in ['https://clob.polymarket.com/sampling-markets', 'https://clob.polymarket.com/rewards/markets/current',
+                      'https://clob.polymarket.com/rewards/markets', 'https://polymarket.com/api/rewards/markets']:
+              d = get(url)
+              s = json.dumps(d)[:1500] if not isinstance(d, str) else d
+              print('\n==', url, '\n', s)
+          PY

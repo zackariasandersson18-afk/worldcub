@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nowcast desk live</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* layout: one portrait column of boxed terminal panels, like a trading desk on a phone */
+:root{
+  --bg:#000; --panel:#070707; --line:#2a2a2a; --line2:#3a3a3a;
+  --ink:#f2f2f2; --ink2:#a8a8a8; --mute:#6b6b6b;
+  --green:#39ff6a; --red:#ff3b3b; --yellow:#ffd400; --cyan:#3ad7ff; --blue:#2f6bff; --orange:#ff9a1f; --purple:#8a3dff;
+  --mono:'JetBrains Mono',ui-monospace,Menlo,monospace; --pix:'Silkscreen','JetBrains Mono',monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg);color:var(--ink);font-family:var(--mono);font-size:11px}
+body{padding-bottom:28px}
+.wrap{max-width:780px;margin:0 auto;padding:0 8px}
+.up{color:var(--green)} .down{color:var(--red)} .warn{color:var(--yellow)} .cy{color:var(--cyan)} .mute{color:var(--mute)} .ink2{color:var(--ink2)}
+.k9{color:var(--mute);font-size:9px;letter-spacing:1.4px;text-transform:uppercase}
+.badge{display:inline-block;font-size:9px;font-weight:800;padding:2px 6px;letter-spacing:1px}
+.b-green{background:var(--green);color:#000} .b-yellow{background:var(--yellow);color:#000} .b-red{background:var(--red);color:#000} .b-cyan{background:var(--cyan);color:#000}
+
+/* header */
+header{display:grid;grid-template-columns:auto minmax(0,1fr) auto auto;align-items:center;gap:12px;padding:10px 0 8px}
+.logo{width:30px;height:30px;background:var(--yellow);color:#000;font-weight:800;display:grid;place-items:center;font-size:15px}
+.brand b{font-size:15px;letter-spacing:1px}
+.brand .s{color:var(--mute);font-size:9px;letter-spacing:1.2px}
+.mid{text-align:center;color:var(--ink2);letter-spacing:2px;font-size:11px}
+.clock{text-align:right}
+.clock .v{font-size:17px;font-weight:800}
+@media (max-width:640px){header{grid-template-columns:auto minmax(0,1fr) auto}.mid{display:none}}
+
+.banner{color:var(--yellow);font-size:10px;letter-spacing:1px;padding:5px 0;border-top:1px solid var(--line);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ticker{display:flex;align-items:center;height:24px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;white-space:nowrap;margin-bottom:8px}
+.ticker .tag{flex:none;background:var(--red);color:#fff;font-weight:800;font-size:10px;padding:0 8px;height:100%;display:flex;align-items:center;gap:6px}
+.ticker .tag i{width:6px;height:6px;border-radius:50%;background:#fff;animation:blink 1s infinite}
+.track{flex:1;overflow:hidden;position:relative;height:100%}
+.run{position:absolute;left:0;top:0;height:100%;display:flex;align-items:center;gap:26px;padding-left:16px;animation:marquee 70s linear infinite}
+.run b{color:var(--ink)}
+.foot{position:fixed;left:0;right:0;bottom:0;background:#000;margin:0;z-index:5}
+.foot .run{animation-duration:90s;color:var(--ink2)}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes blink{50%{opacity:.2}}
+@media (prefers-reduced-motion:reduce){.run{animation:none}}
+
+/* panels */
+.panel{border:1px solid var(--line2);background:var(--panel);margin-bottom:8px;min-width:0}
+.ph{display:flex;align-items:center;gap:6px;padding:6px 8px;border-bottom:1px solid var(--line);font-size:10px;letter-spacing:1.4px;text-transform:uppercase;font-weight:600;white-space:nowrap;overflow:hidden}
+.ph .r{margin-left:auto;color:var(--ink2);font-weight:400}
+.ph .dot{width:7px;height:7px;background:var(--green)}
+.pb{padding:8px}
+canvas{display:block;width:100%}
+.row3{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:8px}
+.row3 .panel{margin-bottom:8px}
+@media (max-width:640px){.row3{grid-template-columns:1fr}}
+
+/* account */
+.who{display:flex;align-items:center;gap:6px;font-weight:800;font-size:13px}
+.addr{color:var(--mute);font-size:9px;letter-spacing:1px;margin:2px 0 6px}
+.pnl{font-family:var(--pix);font-size:40px;line-height:1;color:var(--green);letter-spacing:-1px;white-space:nowrap}
+.pnl small{font-size:18px;margin-left:4px}
+.kv3{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:8px}
+.kv3 .v{font-family:var(--pix);font-size:17px;margin-top:2px}
+.bar{height:6px;background:#1a1a1a;margin-top:4px}
+.bar i{display:block;height:100%;background:var(--green)}
+
+/* best edge */
+.mult{font-family:var(--pix);font-size:38px;color:var(--yellow);text-align:center;line-height:1.1}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:4px 10px;margin-top:6px;font-size:10px}
+.grid2 .k9{font-size:8.5px}
+
+/* execution cycle */
+.steps{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}
+.step{border:1px solid var(--line2);padding:5px 6px;min-width:0}
+.step .n{color:var(--mute);font-size:9px}
+.step .t{font-weight:800;margin-top:2px}
+.step .d{color:var(--ink2);font-size:9px;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.step.on{color:#000;border-color:transparent}
+.step.on .n,.step.on .d{color:#000}
+@media (max-width:560px){.steps{grid-template-columns:repeat(3,1fr)}}
+
+/* matrix */
+.mx-wrap{display:grid;grid-template-columns:minmax(0,1fr) 120px;gap:8px;align-items:center}
+.mx{width:100%;border-collapse:separate;border-spacing:3px;font-size:10px;font-variant-numeric:tabular-nums}
+.mx th{color:var(--yellow);font-weight:600;font-size:9px;text-align:center;border:1px solid var(--line2);padding:2px}
+.mx td{text-align:center;padding:3px 2px;font-weight:700;color:#000;white-space:nowrap}
+.mx td.city{color:var(--ink);background:none;text-align:left;font-weight:600;border:1px solid var(--line2)}
+.mx td.na{background:#151515;color:var(--mute);font-weight:400}
+.gauge{text-align:center}
+.gauge .lbl{display:grid;grid-template-columns:auto auto;justify-content:space-between;font-size:9px;color:var(--ink2);margin-top:6px;gap:2px 8px}
+@media (max-width:560px){.mx-wrap{grid-template-columns:1fr}}
+
+/* monte carlo */
+.mc{display:grid;grid-template-columns:minmax(0,1fr) 130px;gap:8px}
+.boxes{display:flex;flex-direction:column;gap:6px}
+.box{border:1px solid var(--line2);padding:5px 8px;text-align:right}
+.box .v{font-family:var(--pix);font-size:18px;margin-top:2px}
+@media (max-width:560px){.mc{grid-template-columns:1fr}.boxes{flex-direction:row}.box{flex:1}}
+
+.trades{width:100%;border-collapse:collapse;font-size:10.5px;font-variant-numeric:tabular-nums}
+.trades th{color:var(--mute);font-weight:400;font-size:9px;letter-spacing:1.2px;text-transform:uppercase;text-align:right;padding:4px 6px;border-bottom:1px solid var(--line);white-space:nowrap}
+.trades td{padding:5px 6px;border-bottom:1px solid #161616;text-align:right;white-space:nowrap}
+.trades th:nth-child(-n+3),.trades td:nth-child(-n+3){text-align:left}
+.trades tr.pos:hover td{background:#101010;cursor:pointer}
+.trades .flash-up{animation:fu .9s} .trades .flash-dn{animation:fd .9s}
+@keyframes fu{from{background:rgba(57,255,106,.35)}} @keyframes fd{from{background:rgba(255,59,59,.35)}}
+.tsum{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:8px}
+.tsum .box{text-align:left}
+.tw{overflow-x:auto;max-height:420px;overflow-y:auto}
+@media (max-width:560px){.tsum{grid-template-columns:repeat(2,1fr)}}
+.note{color:var(--mute);font-size:9.5px;line-height:1.5;padding:4px 0 10px}
+.tip{position:fixed;pointer-events:none;background:#111;border:1px solid var(--line2);padding:6px 8px;font-size:10.5px;z-index:20;display:none;white-space:nowrap}
+a{color:var(--cyan)}
+</style>
+<style>
+.ctd{width:100%;border-collapse:collapse;font-size:10.5px;font-variant-numeric:tabular-nums}
+.ctd th{color:var(--mute);font-weight:400;font-size:9px;letter-spacing:1.2px;text-transform:uppercase;text-align:right;padding:4px 6px;border-bottom:1px solid var(--line);white-space:nowrap}
+.ctd td{padding:4px 6px;border-bottom:1px solid #161616;text-align:right;white-space:nowrap}
+.ctd th:first-child,.ctd td:first-child{text-align:left}
+.ctd tr.now td{background:rgba(255,212,0,.08)}
+.prog{display:inline-block;width:70px;height:6px;background:#1a1a1a;vertical-align:middle;margin-left:6px}
+.prog i{display:block;height:100%;background:var(--yellow)}
+.kv{display:grid;grid-template-columns:1fr auto;gap:3px 10px;font-size:10.5px}
+.kv span{color:var(--ink2)}
+.gate{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.nav{display:flex;gap:10px;font-size:10px;letter-spacing:1px;padding:4px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="logo" style="background:var(--orange)">16</div>
+  <div class="brand"><b>TRADEBOT × NOWCAST</b><div class="s">POLYMARKET · HÖGSTA TEMPERATUR · HANDLAR 16:00 SOLTID · PAPER</div></div>
+  <div class="mid">METAR · KELLY · WALK-FORWARD</div>
+  <div class="clock"><div class="v" id="clock">--:--:--</div><div class="k9" id="scanmeta">UTC</div></div>
+</header>
+<div class="nav"><a href="index.html">← väderboten (06:00)</a><span class="mute">·</span><b class="warn">nowcast 16:00</b></div>
+<div class="banner" id="banner">◆ laddar…</div>
+<div class="ticker"><div class="tag"><i></i>LIVE</div><div class="track"><div class="run" id="feed"></div></div></div>
+
+<div class="row3">
+  <section class="panel">
+    <div class="ph">◆ Konto<span class="r"><span class="dot"></span></span></div>
+    <div class="pb">
+      <div class="who">nowcast 16:00 <span class="badge b-yellow" id="mode">VIRTUELL</span></div>
+      <div class="addr">START 1 000 USD · <span id="nevents">—</span> STÄDER IDAG</div>
+      <div class="pnl" id="pnl">—</div>
+      <div class="k9" style="margin-top:4px" id="pnlsub">ALL-TIME PNL</div>
+      <div class="kv3">
+        <div><div class="k9">Affärer</div><div class="v" id="trades">—</div></div>
+        <div><div class="k9">Vinst%</div><div class="v" id="winrate">—</div></div>
+        <div><div class="k9">Backtest</div><div class="v" id="btwin">—</div></div>
+      </div>
+    </div>
+  </section>
+  <section class="panel">
+    <div class="ph">✓ Backtest · 3 tester</div>
+    <div class="pb">
+      <div class="kv" id="bt"></div>
+      <div class="gate" id="gates"></div>
+    </div>
+  </section>
+  <section class="panel">
+    <div class="ph">⚖ Live-verifiering</div>
+    <div class="pb">
+      <div class="kv" id="verify"></div>
+      <div class="k9" style="margin-top:8px;line-height:1.5;text-transform:none;letter-spacing:0" id="verify-note"></div>
+    </div>
+  </section>
+</div>
+
+<section class="panel">
+  <div class="ph">◷ Nedräkning till 16:00 soltid · per stad<span class="r" id="cd-sub">—</span></div>
+  <div class="tw" style="max-height:360px"><table class="ctd" id="countdown"></table></div>
+</section>
+
+<section class="panel">
+  <div class="ph">◎ Dagens beslut · vad boten såg kl 16<span class="r" id="dec-sub">—</span></div>
+  <div class="tw" style="max-height:320px"><table class="ctd" id="decisions"></table></div>
+</section>
+
+<section class="panel">
+  <div class="ph">◉ Mina affärer · live mot orderboken<span class="r"><span id="tr-upd">—</span> <span class="dot" id="tr-dot"></span></span></div>
+  <div class="pb">
+    <div class="tsum">
+      <div class="box"><div class="k9">Öppna</div><div class="v" id="tr-open">—</div></div>
+      <div class="box"><div class="k9">Insatt</div><div class="v" id="tr-stake">—</div></div>
+      <div class="box"><div class="k9">Värde nu</div><div class="v" id="tr-value">—</div></div>
+      <div class="box"><div class="k9">Orealiserat</div><div class="v" id="tr-unreal">—</div></div>
+    </div>
+    <div class="tw"><table class="trades" id="tr-table"></table></div>
+  </div>
+</section>
+
+<section class="panel">
+  <div class="ph">▲ Kapital · kr<span class="r" id="eq-sub">—</span></div>
+  <div class="pb"><canvas id="c-eq" height="170"></canvas></div>
+</section>
+
+<div class="note">Strategin: kl 16:00 soltid läser boten flygplatsens METAR-observationer. Dagens högsta hittills + den historiska fördelningen av hur mycket det brukar stiga efter 16 ger en sannolikhet per grad. Den köper bara när den är minst 5 procentenheter billigare än modellen efter Polymarkets avgift och slippage, till det riktiga säljpriset i orderboken, minst 5 andelar. Backtesten godkände varianten men räknade på historiska mitt-/senaste-priser — därför körs den nu framåt med virtuella pengar för att se om priserna verkligen går att få. Belopp i kronor via ECB:s dagskurs. Ingen finansiell rådgivning.</div>
+</div>
+<div class="ticker foot"><div class="tag" style="background:var(--orange);color:#000">METAR</div><div class="track"><div class="run" id="foot"></div></div></div>
+
+<script>
+'use strict';
+const qs = new URLSearchParams(location.search);
+const CFG = {
+  repo: 'zackariasandersson18-afk/worldcub', stateBranch: 'tradebot-state', codeBranch: 'claude/football-betting-optimizer-45ox0q',
+  stateOverride: qs.get('state'), gamma: 'https://gamma-api.polymarket.com', clob: 'https://clob.polymarket.com',
+  metar: 'https://aviationweather.gov/api/data/metar', START_USD: 1000, HOUR: 16, WINDOW_END: 18,
+};
+const COL = {green:'#39ff6a', red:'#ff3b3b', yellow:'#ffd400', cyan:'#3ad7ff', blue:'#2f6bff', orange:'#ff9a1f', ink:'#f2f2f2', ink2:'#a8a8a8', mute:'#6b6b6b', line:'#2a2a2a'};
+const S = {fx: null, st: null, bt: null, stations: null, events: [], quotes: {}, metar: {}, metarAt: 0};
+
+const $ = id => document.getElementById(id);
+const nf = d => new Intl.NumberFormat('sv-SE', {minimumFractionDigits: d, maximumFractionDigits: d});
+const fmt = (x, d = 0) => x == null || !isFinite(x) ? '—' : nf(d).format(x);
+const kr = (x, d = 0) => x == null || !isFinite(x) ? '—' : fmt(x, d) + ' kr';
+const skr = (x, d = 0) => x == null || !isFinite(x) ? '—' : (x >= 0 ? '+' : '−') + fmt(Math.abs(x), d) + ' kr';
+const pct = (x, d = 0) => x == null || !isFinite(x) ? '—' : fmt(x * 100, d) + '%';
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]));
+const sek = usd => usd == null || S.fx == null ? null : usd * S.fx;
+async function getJSON(url, opts) { const r = await fetch(url, {cache: 'no-store', ...opts}); if (!r.ok) throw new Error(r.status); return r.json(); }
+function canvas(id) {
+  const cv = $(id), dpr = Math.min(devicePixelRatio || 1, 2);
+  if (!cv.dataset.h) { cv.dataset.h = cv.getAttribute('height'); cv.style.height = cv.dataset.h + 'px'; }
+  const w = cv.clientWidth, h = +cv.dataset.h;
+  if (cv.width !== Math.round(w * dpr) || cv.height !== Math.round(h * dpr)) { cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr); }
+  const g = cv.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); g.clearRect(0, 0, w, h);
+  g.font = '10px JetBrains Mono, monospace'; g.textBaseline = 'middle';
+  return {g, w, h};
+}
+
+// solar time = UTC + longitude / 15 h (mirrors weatherbot/nowcast.py)
+const solarMs = lon => Date.now() + Math.round(lon / 15 * 3600) * 1000;
+const solarDate = lon => new Date(solarMs(lon)).toISOString().slice(0, 10);
+const solarHours = lon => { const d = new Date(solarMs(lon)); return d.getUTCHours() + d.getUTCMinutes() / 60 + d.getUTCSeconds() / 3600; };
+const hhmm = h => String(Math.floor(h)).padStart(2, '0') + ':' + String(Math.floor((h % 1) * 60)).padStart(2, '0');
+const MONTHS = ['january','february','march','april','may','june','july','august','september','october','november','december'];
+function parseBucket(label) {
+  const s = String(label || '').trim().replace('º', '°'); let m;
+  if ((m = s.match(/^(-?\d+)°([CF]) or below$/))) return {lo: -Infinity, hi: +m[1], unit: m[2]};
+  if ((m = s.match(/^(-?\d+)°([CF]) or higher$/))) return {lo: +m[1], hi: Infinity, unit: m[2]};
+  if ((m = s.match(/^(-?\d+)-(-?\d+)°([CF])$/))) return {lo: +m[1], hi: +m[2], unit: m[3]};
+  if ((m = s.match(/^(-?\d+)°([CF])$/))) return {lo: +m[1], hi: +m[1], unit: m[2]};
+  return null;
+}
+function parseEvent(e) {
+  const tm = (e.title || '').match(/^Highest temperature in (.+?) on [A-Za-z]+ \d{1,2}\??$/);
+  const dm = (e.slug || '').match(/-on-([a-z]+)-(\d{1,2})-(\d{4})$/);
+  if (!tm || !dm || MONTHS.indexOf(dm[1]) < 0) return null;
+  const date = `${dm[3]}-${String(MONTHS.indexOf(dm[1]) + 1).padStart(2, '0')}-${dm[2].padStart(2, '0')}`;
+  const src = e.resolutionSource || '';
+  const st = (src.match(/[?&]site=([A-Za-z0-9]{3,4})/) || src.match(/\/([A-Za-z]{4})\/?$/) || [])[1];
+  const buckets = [];
+  for (const m of e.markets || []) { const b = parseBucket(m.groupItemTitle); if (b) buckets.push({...b, label: m.groupItemTitle}); }
+  return {id: String(e.id), slug: e.slug, city: tm[1], date, station: st ? st.toUpperCase() : null, unit: buckets[0]?.unit || 'C'};
+}
+
+// ------------------------------------------------------------------ data
+async function loadFx() {
+  for (const [url, pick] of [['https://api.frankfurter.app/latest?from=USD&to=SEK', d => d.rates.SEK],
+                             ['https://open.er-api.com/v6/latest/USD', d => d.rates.SEK]]) {
+    try { S.fx = pick(await getJSON(url)); return; } catch {}
+  }
+}
+async function stateBase() {
+  if (CFG.stateOverride) return CFG.stateOverride.replace(/\/?$/, '/');
+  try { const c = await getJSON(`https://api.github.com/repos/${CFG.repo}/commits/${CFG.stateBranch}`); S.sha = c.sha; return `https://raw.githubusercontent.com/${CFG.repo}/${c.sha}/`; }
+  catch { return `https://raw.githubusercontent.com/${CFG.repo}/${CFG.stateBranch}/`; }
+}
+const codeBase = () => CFG.stateOverride ? CFG.stateOverride.replace(/\/?$/, '/') + '../' : `https://raw.githubusercontent.com/${CFG.repo}/${CFG.codeBranch}/`;
+async function loadState() {
+  const base = await stateBase();
+  if (S.sha && S.sha === S.loadedSha) return;
+  try { S.st = await getJSON(base + 'nowcast/nowcast_state.json'); S.loadedSha = S.sha; } catch {}
+}
+async function loadStatic() {
+  const [st, bt] = await Promise.allSettled([getJSON(codeBase() + 'weatherbot/stations.json'), getJSON(codeBase() + 'weatherbot/nowcast_backtest.json')]);
+  S.stations = st.status === 'fulfilled' ? st.value : {};
+  S.bt = bt.status === 'fulfilled' ? bt.value : null;
+}
+async function loadEvents() {
+  const raw = [];
+  for (let off = 0; off < 300; off += 100) {
+    const page = await getJSON(`${CFG.gamma}/events?tag_slug=highest-temperature&closed=false&limit=100&offset=${off}&order=endDate&ascending=false`);
+    raw.push(...page); if (page.length < 100) break;
+  }
+  S.events = raw.map(parseEvent).filter(e => e && S.stations[e.station] && e.date === solarDate(S.stations[e.station].lon));
+}
+// live METAR (aviationweather.gov); purely informative, the bot uses the IEM archive
+async function loadMetar() {
+  const ids = [...new Set(S.events.map(e => e.station))];
+  if (!ids.length) return;
+  try {
+    const rows = await getJSON(`${CFG.metar}?ids=${ids.join(',')}&format=json&hours=24`);
+    const out = {};
+    for (const r of rows) {
+      const s = S.stations[r.icaoId]; if (!s || r.temp == null) continue;
+      const t = (r.obsTime || 0) * 1000, off = Math.round(s.lon / 15 * 3600) * 1000;
+      if (new Date(t + off).toISOString().slice(0, 10) !== solarDate(s.lon)) continue;   // today, solar
+      const o = out[r.icaoId] ||= {max: -999, last: null, at: 0};
+      o.max = Math.max(o.max, +r.temp);
+      if (t > o.at) { o.at = t; o.last = +r.temp; }
+    }
+    S.metar = out; S.metarAt = Date.now();
+  } catch { S.metarErr = true; }
+}
+async function loadBooks(tokens) {
+  for (let i = 0; i < tokens.length; i += 100) {
+    try {
+      const books = await getJSON(`${CFG.clob}/books`, {method: 'POST', headers: {'content-type': 'application/json'},
+        body: JSON.stringify(tokens.slice(i, i + 100).map(t => ({token_id: t})))});
+      for (const b of books) {
+        const asks = (b.asks || []).map(x => +x.price), bids = (b.bids || []).map(x => +x.price);
+        S.quotes[b.asset_id] = {ask: asks.length ? Math.min(...asks) : null, bid: bids.length ? Math.max(...bids) : null};
+      }
+    } catch {}
+  }
+  S.posAt = Date.now();
+}
+const unitTemp = (c, unit) => unit === 'F' ? Math.round(c * 9 / 5 + 32) : Math.round(c);
+
+// ------------------------------------------------------------------ account
+const posValue = p => { const bid = S.quotes[p.token]?.bid; return bid == null ? null : p.shares * bid; };
+function equityLive() {
+  const st = S.st; if (!st) return CFG.START_USD;
+  return st.cash + (st.open || []).reduce((a, p) => a + (posValue(p) ?? p.stake_usd), 0);
+}
+function renderAccount() {
+  const st = S.st || {open: [], closed: [], history: []};
+  const eq = equityLive(), pnlUsd = eq - CFG.START_USD, pnl = sek(pnlUsd);
+  $('pnl').innerHTML = pnl == null ? '—' : `${pnl >= 0 ? '+' : '−'}${fmt(Math.abs(pnl), 0)}<small>kr</small>`;
+  $('pnl').style.color = pnl == null ? COL.mute : pnl >= 0 ? COL.green : COL.red;
+  const first = st.history?.[0]?.ts, days = first ? Math.max(1, Math.round((Date.now() - new Date(first)) / 864e5)) : 0;
+  $('pnlsub').textContent = `ALL-TIME PNL (LIVE) · ${days} DAGAR · ${pnlUsd >= 0 ? '+' : '−'}${fmt(Math.abs(pnlUsd / CFG.START_USD * 100), 2)}% · KAPITAL ${kr(sek(eq))}`;
+  const closed = st.closed || [], wins = closed.filter(p => p.won);
+  $('trades').textContent = fmt(closed.length + (st.open || []).length);
+  $('winrate').textContent = closed.length ? pct(wins.length / closed.length, 1) : '—';
+  $('btwin').textContent = S.bt ? pct(S.bt.hit_rate, 0) : '—';
+  $('mode').textContent = S.st ? 'VIRTUELL · VERIFIERAS' : 'STARTAR';
+  $('nevents').textContent = S.events.length;
+}
+function renderBacktest() {
+  const b = S.bt; if (!b) { $('bt').innerHTML = '<span>laddar…</span><b></b>'; return; }
+  $('bt').innerHTML = [
+    ['Period', `${b.days} dagar · ${fmt(b.events)} marknader`], ['Affärer', fmt(b.n_trades)], ['Träffsäkerhet', pct(b.hit_rate, 1)],
+    ['Snittpris', fmt(b.avg_price, 2)], ['Avkastning', '+' + fmt(b.total_return_pct, 0) + '%'], ['Sharpe', fmt(b.sharpe, 1) + ' ⚠'],
+    ['Lönsamma veckor', b.folds_positive], ['Deflated Sharpe', fmt(b.deflated_sharpe, 2)], ['Försök räknade', b.n_trials],
+    ['Bara färska priser (≤30 min)', '+' + fmt(b.fresh_prices_30m.total_return_pct, 0) + '%'],
+  ].map(([k, v]) => `<span>${k}</span><b>${v}</b>`).join('');
+  $('gates').innerHTML = [['Ingen läcka', b.gates.no_leakage], ['Deflated Sharpe', b.gates.deflated_sharpe], ['Walk-forward', b.gates.walk_forward]]
+    .map(([k, ok]) => `<span class="badge ${ok ? 'b-green' : 'b-red'}">${ok ? '✓' : '✗'} ${k}</span>`).join('') +
+    `<span class="badge b-yellow">⚠ FÖR BRA FÖR ATT VARA SANT?</span>`;
+}
+function renderVerify() {
+  const st = S.st, sc = st?.score, closed = st?.closed || [], b = S.bt;
+  const hit = closed.length ? closed.filter(p => p.won).length / closed.length : null;
+  const ll = sc && sc.n ? [sc.model / sc.n, sc.market / sc.n] : null;
+  const td = st?.training_days || {};
+  $('verify').innerHTML = [
+    ['Avräknade affärer', fmt(closed.length)], ['Träffsäkerhet live', hit == null ? '—' : pct(hit, 1)],
+    ['…backtest', b ? pct(b.hit_rate, 1) : '—'],
+    ['Log-loss modell / marknad', ll ? `${fmt(ll[0], 3)} / ${fmt(ll[1], 3)}` : '—'],
+    ['Mätta städer', fmt(sc?.events ?? 0)], ['Träningsdagar °C / °F', `${fmt(td.C)} / ${fmt(td.F)}`],
+    ['Senaste körning', st?.last_run?.ts ? st.last_run.ts.slice(11, 16) + ' UTC' : '—'],
+  ].map(([k, v]) => `<span>${k}</span><b>${v}</b>`).join('');
+  const n = closed.length;
+  $('verify-note').innerHTML = n < 100
+    ? `<span class="warn">För tidigt att säga.</span> Ca 100 avräknade affärer (2–3 veckor) behövs innan live-träffsäkerheten säger något. Hamnar den nära backtestens ${b ? pct(b.hit_rate, 0) : ''} är övertaget verkligt; faller den mot köppriset (~${b ? pct(b.avg_price, 0) : ''}) var det en illusion av historiska priser.`
+    : hit >= (b?.avg_price ?? .7) + 0.05 ? '<span class="up">Live-resultatet håller hittills.</span> Träffsäkerheten ligger klart över snittpriset.'
+    : '<span class="down">Live-resultatet håller inte.</span> Träffsäkerheten ligger nära eller under köppriset — backtestens övertag gick inte att få i orderboken.';
+}
+function renderCountdown() {
+  const decided = new Set(Object.keys(S.st?.decisions || {}));
+  const rows = S.events.map(e => {
+    const s = S.stations[e.station], h = solarHours(s.lon), left = CFG.HOUR - h;
+    const m = S.metar[e.station];
+    const status = decided.has(e.id) ? '<b class="up">BESLUTAD</b>'
+      : h >= CFG.WINDOW_END ? '<span class="mute">missad</span>'
+      : h >= CFG.HOUR ? '<b class="warn">BESLUTAS NU</b>' : '<span class="cy">väntar</span>';
+    return {e, h, left, html:
+      `<tr class="${h >= CFG.HOUR && h < CFG.WINDOW_END && !decided.has(e.id) ? 'now' : ''}"><td><b>${esc(e.city)}</b> <span class="mute">${esc(e.station)}</span></td>` +
+      `<td>${hhmm(h)}</td><td>${left > 0 ? hhmm(left) : '—'}<span class="prog"><i style="width:${Math.min(100, Math.max(0, h / CFG.HOUR * 100))}%"></i></span></td>` +
+      `<td>${m ? unitTemp(m.max, e.unit) + '°' + e.unit : '—'}</td><td>${m ? unitTemp(m.last, e.unit) + '°' + e.unit : '—'}</td><td>${status}</td></tr>`};
+  }).sort((a, b) => a.left - b.left);
+  const n = rows.filter(r => r.left > 0).length;
+  $('cd-sub').textContent = `${n} kvar idag · ${rows.length - n} passerade`;
+  $('countdown').innerHTML = '<tr><th>Stad</th><th>Soltid</th><th>Till 16:00</th><th>Högsta hittills</th><th>Senaste</th><th>Status</th></tr>' +
+    (rows.map(r => r.html).join('') || '<tr><td colspan="6" class="mute" style="text-align:center;padding:12px">inga öppna marknader för idag</td></tr>');
+}
+function renderDecisions() {
+  const decs = Object.entries(S.st?.decisions || {}).map(([id, d]) => ({id, ...d})).sort((a, b) => b.decided.localeCompare(a.decided)).slice(0, 40);
+  const bought = new Map(); for (const p of [...(S.st?.open || []), ...(S.st?.closed || [])]) (bought.get(p.event_id) || bought.set(p.event_id, []).get(p.event_id)).push(p);
+  $('dec-sub').textContent = `${decs.length} senaste`;
+  $('decisions').innerHTML = '<tr><th>Stad · dag</th><th>Sett kl 16</th><th>Modellens favorit</th><th>Modell</th><th>Marknad</th><th>Köpt</th><th>Utfall</th></tr>' +
+    (decs.map(d => {
+      const i = d.probs.indexOf(Math.max(...d.probs)), ps = bought.get(d.id) || [];
+      return `<tr><td><b>${esc(d.city)}</b> <span class="mute">${esc(d.date.slice(5))} ${esc(d.solar_time)}</span></td><td>${d.observed}°${d.unit}</td>` +
+        `<td>${esc(d.labels[i])}</td><td class="up">${pct(d.probs[i], 0)}</td><td class="cy">${pct(d.market[i], 0)}</td>` +
+        `<td>${ps.length ? ps.map(p => `${p.side === 'YES' ? 'JA' : 'NEJ'} ${esc(p.bucket)}`).join(', ') : '<span class="mute">inget</span>'}</td>` +
+        `<td>${d.winner ? esc(d.winner) : '<span class="mute">väntar</span>'}</td></tr>`;
+    }).join('') || '<tr><td colspan="7" class="mute" style="text-align:center;padding:12px">inga beslut än — första tas när en stad når 16:00 soltid</td></tr>');
+}
+function renderTrades() {
+  const st = S.st || {open: [], closed: []}, open = st.open || [], closed = st.closed || [];
+  let stake = 0, value = 0;
+  for (const p of open) { stake += p.stake_usd; value += posValue(p) ?? p.stake_usd; }
+  $('tr-open').textContent = open.length; $('tr-stake').textContent = kr(sek(stake)); $('tr-value').textContent = kr(sek(value));
+  const u = $('tr-unreal'), un = value - stake; u.textContent = skr(sek(un)); u.className = 'v ' + (un > 0 ? 'up' : un < 0 ? 'down' : '');
+  $('tr-upd').textContent = S.posAt ? 'uppdaterad ' + new Date(S.posAt).toISOString().slice(11, 19) + ' UTC' : 'väntar på orderbok';
+  const rows = [...open.map(p => ({p, s: 'open'})), ...closed.slice().reverse().slice(0, 30).map(p => ({p, s: p.won ? 'won' : 'lost'}))];
+  $('tr-table').innerHTML = '<tr><th>Öppnad</th><th>Stad · intervall</th><th>Sida</th><th>Köpt</th><th>Nu</th><th>Modell</th><th>Insats</th><th>Värde</th><th>PnL</th><th>Status</th></tr>' +
+    (rows.map(({p, s}) => {
+      const bid = s === 'open' ? S.quotes[p.token]?.bid : null, val = s === 'open' ? posValue(p) : (p.won ? p.shares : 0);
+      const pnl = s === 'open' ? (val == null ? null : val - p.stake_usd) : p.pnl_usd;
+      return `<tr class="pos" data-slug="${esc(p.slug || '')}"><td class="mute">${esc(p.date.slice(5))} ${p.opened.slice(11, 16)}</td>` +
+        `<td><b>${esc(p.city)}</b> ${esc(p.bucket)}</td><td class="${p.side === 'YES' ? 'up' : 'cy'}">${p.side === 'YES' ? 'JA' : 'NEJ'}</td>` +
+        `<td>${fmt(p.price, 3)}</td><td>${bid == null ? (s === 'open' ? '—' : (p.won ? '1,000' : '0,000')) : fmt(bid, 3)}</td><td>${pct(p.prob, 0)}</td>` +
+        `<td>${kr(sek(p.stake_usd))}</td><td>${val == null ? '—' : kr(sek(val))}</td><td class="${pnl > 0 ? 'up' : pnl < 0 ? 'down' : ''}">${pnl == null ? '—' : skr(sek(pnl))}</td>` +
+        `<td>${s === 'open' ? '<span class="cy">ÖPPEN</span>' : s === 'won' ? '<b class="up">VANN</b>' : '<b class="down">FÖRLUST</b>'}</td></tr>`;
+    }).join('') || '<tr><td colspan="10" class="mute" style="text-align:center;padding:14px">inga affärer än — boten handlar 16:00–18:00 soltid per stad</td></tr>');
+}
+function drawEquity() {
+  const {g, w, h} = canvas('c-eq'), hist = (S.st?.history || []).map(x => x.equity);
+  if (S.st) hist.push(equityLive());
+  if (hist.length < 2 || S.fx == null) { g.fillStyle = COL.mute; g.textAlign = 'center'; g.fillText('kurvan byggs upp när boten körts några gånger', w / 2, h / 2); $('eq-sub').textContent = '—'; return; }
+  const v = hist.map(x => x * S.fx), lo = Math.min(...v, CFG.START_USD * S.fx), hi = Math.max(...v, CFG.START_USD * S.fx), pad = 14;
+  const X = i => pad + i / (v.length - 1) * (w - 2 * pad), Y = x => h - pad - (x - lo) / Math.max(hi - lo, 1) * (h - 2 * pad);
+  g.strokeStyle = COL.line; g.setLineDash([2, 4]); g.beginPath(); g.moveTo(pad, Y(CFG.START_USD * S.fx)); g.lineTo(w - pad, Y(CFG.START_USD * S.fx)); g.stroke(); g.setLineDash([]);
+  g.strokeStyle = v[v.length - 1] >= CFG.START_USD * S.fx ? COL.green : COL.red; g.lineWidth = 2; g.beginPath();
+  v.forEach((x, i) => i ? g.lineTo(X(i), Y(x)) : g.moveTo(X(i), Y(x))); g.stroke();
+  $('eq-sub').textContent = `start ${kr(CFG.START_USD * S.fx)} · nu ${kr(v[v.length - 1])}`;
+}
+function renderTickers() {
+  const sc = S.st?.score, b = S.bt;
+  $('banner').textContent = `◆ VIRTUELLA PENGAR · BACKTEST GODKÄND (FLAGGAD) · VERIFIERAS LIVE · ${S.st?.closed?.length || 0} AVRÄKNADE · ` +
+    (sc?.n ? `LOG-LOSS MODELL ${fmt(sc.model / sc.n, 3)} / MARKNAD ${fmt(sc.market / sc.n, 3)} · ` : '') + `1 USD = ${S.fx ? fmt(S.fx, 2) : '—'} KR`;
+  const items = S.events.map(e => { const s = S.stations[e.station], m = S.metar[e.station];
+    return `<span><b>${esc(e.city)}</b> ${hhmm(solarHours(s.lon))} soltid${m ? ' · max ' + unitTemp(m.max, e.unit) + '°' + e.unit : ''}</span>`; }).join('');
+  const feed = (S.st?.open || []).map(p => `<span><b>${esc(p.city)}</b> ${p.side === 'YES' ? 'JA' : 'NEJ'} ${esc(p.bucket)} @ ${fmt(p.price, 2)}</span>`).join('') ||
+    `<span>backtest: ${b ? fmt(b.n_trades) + ' affärer · ' + pct(b.hit_rate, 1) + ' träff' : '—'}</span><span>beslut tas 16:00 soltid per stad</span>`;
+  for (const [id, html] of [['feed', feed], ['foot', items || '<span>laddar städer…</span>']]) {
+    const el = $(id); if (el.dataset.h !== html) { el.innerHTML = html + '<span class="mute">·</span>' + html; el.dataset.h = html; }
+  }
+}
+function renderAll() { renderAccount(); renderBacktest(); renderVerify(); renderCountdown(); renderDecisions(); renderTrades(); drawEquity(); renderTickers(); }
+
+(async function init() {
+  setInterval(() => { $('clock').textContent = new Date().toISOString().slice(11, 19); }, 1000);
+  await Promise.allSettled([loadFx(), loadState(), loadStatic()]);
+  renderAll();
+  const refresh = async () => { await loadEvents().catch(() => {}); await loadMetar(); renderAll(); };
+  await refresh();
+  const books = () => loadBooks((S.st?.open || []).map(p => p.token)).then(() => { renderTrades(); renderAccount(); drawEquity(); });
+  books();
+  setInterval(books, 10_000);
+  setInterval(refresh, 120_000);
+  setInterval(() => loadState().then(renderAll).catch(() => {}), 75_000);
+  setInterval(renderCountdown, 1000);
+  setInterval(() => loadFx().catch(() => {}), 3600_000);
+  $('tr-table').addEventListener('click', e => { const slug = e.target.closest('tr.pos')?.dataset.slug; if (slug) window.open('https://polymarket.com/event/' + slug, '_blank', 'noopener'); });
+  addEventListener('resize', renderAll);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+ "variant": "16:00 solar",
+ "run": "https://github.com/zackariasandersson18-afk/worldcub/actions/runs/37194715246",
+ "days": 45, "events": 1938, "stations": 47, "n_trials": 51,
+ "n_trades": 580, "hit_rate": 0.933, "avg_price": 0.715, "total_return_pct": 553.08,
+ "sharpe": 15.29, "max_drawdown_pct": -16.2, "folds_positive": "5/6", "deflated_sharpe": 1.0,
+ "logloss_model": 0.0307, "logloss_market": 0.0247, "red_flag": true,
+ "fresh_prices_30m": {"n_trades": 225, "hit_rate": 0.92, "total_return_pct": 204.79},
+ "gates": {"no_leakage": true, "deflated_sharpe": true, "walk_forward": true},
+ "approved": true,
+ "caveat": "historical prices are mid/last trade, not the payable ask: verified only by forward paper trading"
+}

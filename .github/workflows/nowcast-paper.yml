@@ -1,0 +1,29 @@
+name: nowcast paper (16:00 solar)
+
+# Virtual-money forward test of the late-day METAR nowcast against Polymarket's
+# live order books. Each city is decided once, in its 16:00-18:00 solar window.
+on:
+  schedule:
+    - cron: '8,38 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: tradebot           # one writer to tradebot-state at a time
+  cancel-in-progress: false
+
+jobs:
+  step:
+    if: github.event_name == 'workflow_dispatch' || vars.NOWCAST_RUNNER != 'off'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: scripts/nowcast_paper.sh

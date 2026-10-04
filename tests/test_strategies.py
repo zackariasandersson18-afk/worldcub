@@ -55,3 +55,16 @@ def test_live_step_uses_the_approved_strategy(tmp_path):
     rep = trade_step(b, p, approval, {}, now=p.index[-1] + pd.Timedelta(hours=1))
     expected = float(st.build_signal('ensemble_regime_vol')(p).iloc[-1])
     assert rep['signal'] == pytest.approx(expected) and rep['action'] == 'BUY'
+
+
+def test_research_cli_tests_every_variant(tmp_path, capsys):
+    import json
+    from tradebot.__main__ import main
+    p = synthetic_prices(700, seed=8)
+    csv = tmp_path / 'p.csv'
+    pd.DataFrame({'timestamp': p.index, 'close': p.values}).to_csv(csv, index=False)
+    out = tmp_path / 'r.json'
+    assert main(['research', '--csv', str(csv), '--out', str(out)]) == 0
+    res = json.loads(out.read_text())
+    assert [r['strategy'] for r in res['results']] == list(st.STRATEGIES)
+    assert res['n_trials'] == 25 + st.NEW_VARIANT_TRIALS

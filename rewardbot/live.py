@@ -134,8 +134,10 @@ def step(state_dir: str | Path, now: float | None = None, http=None, log=print) 
     st['last_ts'] = now
     tick.update(reward_tick=round(reward_tick, 4), reward_total=round(st['reward_total'], 2),
                 mm_value=round(mm_value, 2), net=round(st['reward_total'] + mm_value, 2),
-                avg_share=round(sum(m.get('share', 0) for m in tick['markets']) / max(len(tick['markets']), 1), 4))
-    st['history'].append({k: tick[k] for k in ('ts', 'dt_h', 'reward_tick', 'reward_total', 'mm_value', 'net', 'avg_share')})
+                avg_share=round(sum(m.get('share', 0) for m in tick['markets']) / max(len(tick['markets']), 1), 4),
+                fills_total=sum(p.get('fills', 0) for p in st['positions'].values()))
+    st['history'].append({k: tick[k] for k in ('ts', 'dt_h', 'reward_tick', 'reward_total', 'mm_value', 'net',
+                                               'avg_share', 'fills_total')})
     st['history'] = st['history'][-3000:]
     st['last_tick'] = tick
     save(d / 'rewards_state.json', st)

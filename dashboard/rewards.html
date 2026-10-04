@@ -155,6 +155,11 @@ canvas{display:block;width:100%}
         <div><div class="k9">Market making</div><div class="v" id="mm">—</div></div>
         <div><div class="k9">Per dag nu</div><div class="v" id="perday">—</div></div>
       </div>
+      <div class="kv3">
+        <div><div class="k9">Affärer</div><div class="v" id="fills">—</div></div>
+        <div><div class="k9">Snitt/dag</div><div class="v" id="avgday">—</div></div>
+        <div><div class="k9">Plusdagar</div><div class="v" id="posdays">—</div></div>
+      </div>
     </div>
   </section>
   <section class="panel">
@@ -175,6 +180,12 @@ canvas{display:block;width:100%}
 <section class="panel">
   <div class="ph">◎ Vår andel av belöningen · snitt över portföljen<span class="r" id="sh-sub">—</span></div>
   <div class="pb"><canvas id="c-sh" height="120"></canvas></div>
+</section>
+
+<section class="panel">
+  <div class="ph">Σ Per dag · vinst och förlust<span class="r" id="day-sub">—</span></div>
+  <div class="tw" style="max-height:420px"><table class="ctd" id="days"></table></div>
+  <div class="note" style="padding:6px 8px" id="day-avg"></div>
 </section>
 
 <section class="panel">
@@ -346,7 +357,40 @@ function renderTickers() {
     const el = $(id); if (el.dataset.h !== html) { el.innerHTML = html + '<span class="mute">·</span>' + html; el.dataset.h = html; }
   }
 }
-function renderAll() { renderAccount(); renderComp(); renderMeta(); renderTable(); renderCharts(); renderTickers(); }
+// one row per UTC day: change in net, rewards and market making, and fills, from the tick history
+function dayRows() {
+  const h = S.st?.history || [];
+  const byDay = new Map();
+  for (const x of h) byDay.set(x.ts.slice(0, 10), x);               // last tick of each day
+  const days = [...byDay.keys()].sort();
+  let prev = {net: 0, reward_total: 0, mm_value: 0, fills_total: 0};
+  return days.map(d => {
+    const x = byDay.get(d);
+    const row = {day: d, net: x.net - prev.net, reward: x.reward_total - prev.reward_total,
+                 mm: x.mm_value - prev.mm_value, fills: (x.fills_total ?? 0) - (prev.fills_total ?? 0),
+                 share: x.avg_share, partial: d === new Date().toISOString().slice(0, 10)};
+    prev = x;
+    return row;
+  });
+}
+function renderDays() {
+  const rows = dayRows(), done = rows.filter(r => !r.partial);
+  const cls = v => v > 0 ? 'up' : v < 0 ? 'down' : '';
+  $('days').innerHTML = '<tr><th>Dag</th><th>Affärer</th><th>Belöning</th><th>Market making</th><th>Netto</th><th>Andel</th></tr>' +
+    (rows.slice().reverse().map(r => `<tr><td><b>${r.day.slice(5)}</b>${r.partial ? ' <span class="mute">(pågår)</span>' : ''}</td>` +
+      `<td>${fmt(r.fills)}</td><td class="up">${skr(sek(r.reward), 0)}</td><td class="${cls(r.mm)}">${skr(sek(r.mm), 0)}</td>` +
+      `<td class="${cls(r.net)}"><b>${skr(sek(r.net), 0)}</b></td><td>${pct(r.share, 0)}</td></tr>`).join('') ||
+     '<tr><td colspan="6" class="mute" style="text-align:center;padding:10px">fylls i efter första dagen</td></tr>');
+  const tot = done.reduce((a, r) => a + r.net, 0), pos = done.filter(r => r.net > 0).length;
+  $('day-sub').textContent = `${done.length} hela dagar`;
+  $('day-avg').innerHTML = done.length ? `Snitt per hel dag: <b class="${cls(tot)}">${skr(sek(tot / done.length), 0)}</b> · bästa ${skr(sek(Math.max(...done.map(r => r.net))), 0)} · sämsta ${skr(sek(Math.min(...done.map(r => r.net))), 0)} · plusdagar ${pos}/${done.length}` : 'Snittet per dag visas när första hela dagen är klar.';
+  const fills = (S.st?.history || []).slice(-1)[0]?.fills_total ?? Object.values(S.st?.positions || {}).reduce((a, p) => a + (p.fills || 0), 0);
+  $('fills').textContent = fmt(fills);
+  $('avgday').textContent = done.length ? skr(sek(tot / done.length), 0) : '—';
+  $('avgday').className = 'v ' + cls(tot);
+  $('posdays').textContent = done.length ? `${pos}/${done.length}` : '—';
+}
+function renderAll() { renderDays(); renderAccount(); renderComp(); renderMeta(); renderTable(); renderCharts(); renderTickers(); }
 
 (async function init() {
   setInterval(() => { $('clock').textContent = new Date().toISOString().slice(11, 19); }, 1000);

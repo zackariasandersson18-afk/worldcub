@@ -1,0 +1,30 @@
+name: weather backtest
+
+# Walk-forward backtest of weatherbot on resolved Polymarket markets.
+# The configuration is pre-registered in weatherbot/model.py; re-running it does
+# not add trials, changing it does.
+on:
+  push:
+    branches: [claude/great-rubin-cbww8t]
+    paths: ['.github/workflows/weather-backtest.yml']
+  workflow_dispatch:
+    inputs:
+      days:
+        default: '45'
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: python -m weatherbot backtest --days "${{ inputs.days || '45' }}" --out weather_backtest.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: weather-backtest
+          path: weather_backtest.json

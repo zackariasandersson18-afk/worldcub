@@ -142,23 +142,23 @@ def _get(http, url, params, tries=4):
 def collect(days: int = 30, workers: int = 8, log=print):
     http = requests.Session()
     since = int((datetime.now(timezone.utc) - timedelta(days=days)).timestamp())
-    mks, seen, old_pages = [], set(), 0
-    for page in range(150):
-        batch = _get(http, f'{GAMMA}/events', {'tag_slug': 'tennis', 'closed': 'true', 'limit': 100,
-                                               'offset': page * 100, 'order': 'endDate', 'ascending': 'false'})
-        if not batch:
-            break
-        parsed = [parse_market(e) for e in batch]
-        for mk in parsed:
-            if mk and mk['start'] >= since and mk['slug'] not in seen:
-                seen.add(mk['slug'])
-                mks.append(mk)
-        # stop after 3 pages in a row with no match inside the window (a single old
-        # futures event in a page must not end the scan early)
-        recent = [mk for mk in parsed if mk and mk['start'] >= since]
-        old_pages = 0 if recent else old_pages + 1
-        if len(batch) < 100 or old_pages >= 3:
-            break
+    mks, seen = [], set()
+    # Gamma refuses deep offsets (422), so walk the window one day of end dates at a time
+    day0 = datetime.fromtimestamp(since, timezone.utc).replace(hour=0, minute=0, second=0, microsecond=0)
+    for k in range(days + 3):
+        lo, hi = day0 + timedelta(days=k), day0 + timedelta(days=k + 1)
+        for page in range(20):
+            batch = _get(http, f'{GAMMA}/events', {
+                'tag_slug': 'tennis', 'closed': 'true', 'limit': 100, 'offset': page * 100,
+                'end_date_min': lo.strftime('%Y-%m-%dT%H:%M:%SZ'), 'end_date_max': hi.strftime('%Y-%m-%dT%H:%M:%SZ')})
+            if not batch:
+                break
+            for mk in map(parse_market, batch):
+                if mk and mk['start'] >= since and mk['slug'] not in seen:
+                    seen.add(mk['slug'])
+                    mks.append(mk)
+            if len(batch) < 100:
+                break
     log(f'{len(mks)} resolved singles moneyline markets since {datetime.fromtimestamp(since, timezone.utc).date()}, '
         f'fee rates {sorted({m["fee_rate"] for m in mks})}')
 

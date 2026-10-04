@@ -52,9 +52,16 @@ flags=()
 echo "== trade step: broker=$BROKER symbol=$SYMBOL =="
 python -m tradebot trade --approval "$STATE_DIR/approval.json" \
   --state "$STATE_DIR/trade_state.json" --paper-wallet "$STATE_DIR/paper_wallet.json" \
-  --broker "$BROKER" --symbol "$SYMBOL" --execute "${flags[@]}" > "$STATE_DIR/last_run.txt"
+  --broker "$BROKER" --symbol "$SYMBOL" --execute "${flags[@]}" > run_out.txt
 code=$?
-cat "$STATE_DIR/last_run.txt"
+cat run_out.txt
+# The schedule has backup times in case GitHub skips one. A backup run that finds
+# today's bar already handled changes nothing: keep the real run's report.
+if [[ $code -eq 0 ]] && grep -q '"action": "SKIP"' run_out.txt; then
+  echo "today's bar was already handled by an earlier run; nothing to save"
+  exit 0
+fi
+mv run_out.txt "$STATE_DIR/last_run.txt"
 {
   echo "--- $(date -u +%FT%TZ) broker=$BROKER exit=$code"
   cat "$STATE_DIR/last_run.txt"

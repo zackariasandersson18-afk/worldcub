@@ -1,0 +1,29 @@
+name: mm probe
+on:
+  push:
+    branches: [claude/great-rubin-cbww8t]
+    paths: ['.github/workflows/mm-probe.yml']
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          python3 - <<'PY'
+          import json, urllib.request as u
+          def get(url):
+              return json.load(u.urlopen(u.Request(url, headers={'User-Agent': 'probe'}), timeout=30))
+          evs = get('https://gamma-api.polymarket.com/events?tag_slug=highest-temperature&closed=true&limit=3&order=endDate&ascending=false')
+          e = evs[0]; m = e['markets'][5]
+          print('event', e['title'], 'endDate', e.get('endDate'), 'created', e.get('createdAt'))
+          print('market keys', sorted(m.keys()))
+          print('conditionId', m.get('conditionId'), 'endDate', m.get('endDate'), 'clob', m.get('clobTokenIds'), 'title', m.get('groupItemTitle'), 'outcomePrices', m.get('outcomePrices'))
+          tr = get(f"https://data-api.polymarket.com/trades?market={m['conditionId']}&limit=500")
+          print('n trades', len(tr)); print(json.dumps(tr[:3], indent=1))
+          tr2 = get(f"https://data-api.polymarket.com/trades?market={m['conditionId']}&limit=500&offset=500")
+          print('page2', len(tr2))
+          tot = sum(len(get(f"https://data-api.polymarket.com/trades?market={mm['conditionId']}&limit=500")) for mm in e['markets'])
+          print('event total trades (first page each)', tot, 'markets', len(e['markets']))
+          old = get('https://gamma-api.polymarket.com/events?tag_slug=highest-temperature&closed=true&limit=1&offset=1500&order=endDate&ascending=false')[0]
+          om = old['markets'][4]; t3 = get(f"https://data-api.polymarket.com/trades?market={om['conditionId']}&limit=500")
+          print('old event', old['title'], 'trades', len(t3), t3[-1] if t3 else None)
+          PY

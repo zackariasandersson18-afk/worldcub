@@ -1,0 +1,36 @@
+name: weatherbot paper (hourly)
+
+on:
+  schedule:
+    - cron: '23 * * * *'   # every hour; each city trades in its 06:00-08:00 local window
+  workflow_dispatch:
+    inputs:
+      rebacktest:
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: tradebot           # shared with the BTC bot: one writer to tradebot-state at a time
+  cancel-in-progress: false
+
+jobs:
+  step:
+    if: github.event_name == 'workflow_dispatch' || vars.WEATHERBOT_RUNNER != 'off'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: paper step
+        env:
+          # DEMO: trades even if the backtest rejected the strategy -- paper money only
+          IGNORE_GATES: 'true'
+          REBACKTEST: ${{ inputs.rebacktest }}
+        run: scripts/weather_paper.sh

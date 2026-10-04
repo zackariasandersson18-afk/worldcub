@@ -102,6 +102,17 @@ canvas{display:block;width:100%}
 .box .v{font-family:var(--pix);font-size:18px;margin-top:2px}
 @media (max-width:560px){.mc{grid-template-columns:1fr}.boxes{flex-direction:row}.box{flex:1}}
 
+.trades{width:100%;border-collapse:collapse;font-size:10.5px;font-variant-numeric:tabular-nums}
+.trades th{color:var(--mute);font-weight:400;font-size:9px;letter-spacing:1.2px;text-transform:uppercase;text-align:right;padding:4px 6px;border-bottom:1px solid var(--line);white-space:nowrap}
+.trades td{padding:5px 6px;border-bottom:1px solid #161616;text-align:right;white-space:nowrap}
+.trades th:nth-child(-n+3),.trades td:nth-child(-n+3){text-align:left}
+.trades tr.pos:hover td{background:#101010;cursor:pointer}
+.trades .flash-up{animation:fu .9s} .trades .flash-dn{animation:fd .9s}
+@keyframes fu{from{background:rgba(57,255,106,.35)}} @keyframes fd{from{background:rgba(255,59,59,.35)}}
+.tsum{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:8px}
+.tsum .box{text-align:left}
+.tw{overflow-x:auto;max-height:420px;overflow-y:auto}
+@media (max-width:560px){.tsum{grid-template-columns:repeat(2,1fr)}}
 .note{color:var(--mute);font-size:9.5px;line-height:1.5;padding:4px 0 10px}
 .tip{position:fixed;pointer-events:none;background:#111;border:1px solid var(--line2);padding:6px 8px;font-size:10.5px;z-index:20;display:none;white-space:nowrap}
 a{color:var(--cyan)}
@@ -158,6 +169,20 @@ a{color:var(--cyan)}
     <div class="pb"><canvas id="c-dist" height="190"></canvas></div>
   </section>
 </div>
+
+<section class="panel">
+  <div class="ph">◉ Mina affärer · live mot orderboken<span class="r"><span id="tr-upd">—</span> <span class="dot" id="tr-dot"></span></span></div>
+  <div class="pb">
+    <div class="tsum">
+      <div class="box"><div class="k9">Öppna</div><div class="v" id="tr-open">—</div></div>
+      <div class="box"><div class="k9">Insatt</div><div class="v" id="tr-stake">—</div></div>
+      <div class="box"><div class="k9">Värde nu</div><div class="v" id="tr-value">—</div></div>
+      <div class="box"><div class="k9">Orealiserat</div><div class="v" id="tr-unreal">—</div></div>
+    </div>
+    <div class="tw"><table class="trades" id="tr-table"></table></div>
+    <div class="note" style="padding:6px 0 0">Värde nu = antal andelar × bästa bud i Polymarkets orderbok (det du skulle få om du sålde nu). Klicka på en rad för att öppna marknaden på Polymarket.</div>
+  </div>
+</section>
 
 <section class="panel">
   <div class="ph">▸ Execution cycle · <span id="cyc-n">#0</span><span class="r">Skanning <span id="cyc-t">—</span></span></div>
@@ -413,7 +438,8 @@ async function cycle() {
     STEP_INFO[2] = S.wbt?.approved ? 'godkänd' : approved ? 'underkänd · handlar ändå' : 'underkänd · mäter';
 
     S.step = 3; STEP_INFO[3] = 'orderböcker'; renderSteps();
-    const tokens = today.filter(e => e.probs).flatMap(e => e.buckets.flatMap(b => [b.yes, b.no]));
+    const tokens = [...today.filter(e => e.probs).flatMap(e => e.buckets.flatMap(b => [b.yes, b.no])),
+                    ...(S.wstate?.open || []).map(p => p.token)];
     S.quotes = {...S.quotes, ...(await loadBooks(tokens))};
     const rows = [], cands = [];
     const equityUsd = equity();
@@ -463,20 +489,78 @@ async function cycle() {
 // ------------------------------------------------------------------ account (from the bot's own state)
 // the bot trades when the backtest approved it, or when it runs with --ignore-gates
 function isTrading() { return S.wstate?.mode ? S.wstate.mode === 'trading' : !!S.wbt?.approved; }
-function equity() {
+function equity() {        // at cost: what the bot sizes its bets on
   const st = S.wstate;
   if (!st) return CFG.START_USD;
   return st.cash + (st.open || []).reduce((a, p) => a + p.stake_usd, 0);
 }
+// live value of an open position: shares x best bid (what selling now would pay)
+function posValue(p) {
+  const bid = S.quotes[p.token]?.bid;
+  return bid == null ? null : p.shares * bid;
+}
+function equityLive() {
+  const st = S.wstate;
+  if (!st) return CFG.START_USD;
+  return st.cash + (st.open || []).reduce((a, p) => a + (posValue(p) ?? p.stake_usd), 0);
+}
+async function refreshPositions() {
+  const toks = (S.wstate?.open || []).map(p => p.token).filter(Boolean);
+  if (!toks.length) return;
+  Object.assign(S.quotes, await loadBooks(toks));
+  S.posAt = Date.now();
+  renderTrades(); renderAccount();
+}
+function renderTrades() {
+  const st = S.wstate || {open: [], closed: []}, open = st.open || [], closed = st.closed || [];
+  let stake = 0, value = 0, priced = 0;
+  for (const p of open) { stake += p.stake_usd; const v = posValue(p); if (v != null) { value += v; priced++; } else value += p.stake_usd; }
+  const unreal = value - stake;
+  $('tr-open').textContent = open.length;
+  $('tr-stake').textContent = kr(sek(stake));
+  $('tr-value').textContent = kr(sek(value));
+  const u = $('tr-unreal'); u.textContent = skr(sek(unreal)); u.className = 'v ' + (unreal > 0 ? 'up' : unreal < 0 ? 'down' : '');
+  $('tr-upd').textContent = S.posAt ? 'uppdaterad ' + new Date(S.posAt).toISOString().slice(11, 19) + ' UTC' : 'väntar på orderbok';
+  const live = new Map(S.events.map(e => [e.id, e]));
+  const rows = [
+    ...open.map(p => ({p, st: 'open'})),
+    ...closed.slice().reverse().slice(0, 30).map(p => ({p, st: p.won ? 'won' : 'lost'})),
+  ];
+  const head = '<tr><th>Öppnad</th><th>Stad · intervall</th><th>Sida</th><th>Köpt</th><th>Nu</th><th>Modell nu</th><th>Insats</th><th>Värde</th><th>PnL</th><th>Status</th></tr>';
+  const prev = S.prevVal || {};
+  const body = rows.map(({p, st: state}) => {
+    const ev = live.get(p.event_id), i = ev ? ev.buckets.findIndex(b => b.label === p.bucket) : -1;
+    const modelNow = ev?.probs && i >= 0 ? (p.side === 'YES' ? ev.probs[i] : 1 - ev.probs[i]) : null;
+    const bid = state === 'open' ? S.quotes[p.token]?.bid : null;
+    const value = state === 'open' ? posValue(p) : (p.won ? p.shares : 0);
+    const pnl = state === 'open' ? (value == null ? null : value - p.stake_usd) : p.pnl_usd;
+    const key = p.token + p.opened, flash = state === 'open' && value != null && prev[key] != null && value !== prev[key]
+      ? (value > prev[key] ? 'flash-up' : 'flash-dn') : '';
+    if (state === 'open' && value != null) prev[key] = value;
+    const status = state === 'open' ? (p.date < (ev?.localDay || '9999') ? '<span class="warn">väntar avgörande</span>' : '<span class="cy">ÖPPEN</span>')
+      : state === 'won' ? '<b class="up">VANN</b>' : '<b class="down">FÖRLUST</b>';
+    const t = new Date(p.opened);
+    return `<tr class="pos ${flash}" data-slug="${esc(p.slug || '')}">` +
+      `<td class="mute">${esc(p.date.slice(5))} ${t.toISOString().slice(11, 16)}</td>` +
+      `<td><b>${esc(p.city)}</b> ${esc(p.bucket)}</td>` +
+      `<td class="${p.side === 'YES' ? 'up' : 'cy'}">${p.side === 'YES' ? 'JA' : 'NEJ'}</td>` +
+      `<td>${fmt(p.price, 3)}</td><td>${bid == null ? (state === 'open' ? '—' : (p.won ? '1,000' : '0,000')) : fmt(bid, 3)}</td>` +
+      `<td>${modelNow == null ? pct(p.prob, 0) : pct(modelNow, 0)}</td>` +
+      `<td>${kr(sek(p.stake_usd))}</td><td>${value == null ? '—' : kr(sek(value))}</td>` +
+      `<td class="${pnl > 0 ? 'up' : pnl < 0 ? 'down' : ''}">${pnl == null ? '—' : skr(sek(pnl))}</td><td>${status}</td></tr>`;
+  }).join('');
+  S.prevVal = prev;
+  $('tr-table').innerHTML = head + (body || '<tr><td colspan="10" class="mute" style="text-align:center;padding:14px">inga affärer än — boten handlar 06–08 lokal tid per stad</td></tr>');
+}
 function renderAccount() {
   const st = S.wstate || {cash: CFG.START_USD, open: [], closed: []};
-  const eqUsd = equity(), pnlUsd = eqUsd - CFG.START_USD, pnl = sek(pnlUsd);
+  const eqUsd = equityLive(), pnlUsd = eqUsd - CFG.START_USD, pnl = sek(pnlUsd);
   const el = $('pnl');
   el.innerHTML = pnl == null ? '—' : `${pnl >= 0 ? '+' : '−'}${fmt(Math.abs(pnl), 0)}<small>kr</small>`;
   el.style.color = pnl == null ? COL.mute : pnl >= 0 ? COL.green : COL.red;
   const first = st.history?.[0]?.ts;
   const days = first ? Math.max(1, Math.round((Date.now() - new Date(first)) / 864e5)) : 0;
-  $('pnlsub').textContent = `ALL-TIME PNL · ${days} DAGAR · ${pnlUsd >= 0 ? '+' : '−'}${fmt(Math.abs(pnlUsd / CFG.START_USD * 100), 2)}% · KAPITAL ${kr(sek(eqUsd))}`;
+  $('pnlsub').textContent = `ALL-TIME PNL (LIVE) · ${days} DAGAR · ${pnlUsd >= 0 ? '+' : '−'}${fmt(Math.abs(pnlUsd / CFG.START_USD * 100), 2)}% · KAPITAL ${kr(sek(eqUsd))}`;
   const closed = st.closed || [], wins = closed.filter(p => p.won);
   $('trades').textContent = fmt(closed.length + (st.open || []).length);
   $('winrate').textContent = closed.length ? pct(wins.length / closed.length, 1) : '—';
@@ -723,6 +807,7 @@ function buildFeed() {
   const items = [];
   for (const c of S.cands.slice(0, 8)) items.push(`<span><b class="${c.side === 'YES' ? 'up' : 'cy'}">${esc(c.e.city.toUpperCase())} ${c.side === 'YES' ? '▲' : '▼'} ${esc(c.b.label)}</b> modell ${pct(c.prob)} · pris ${fmt(c.price, 3)} · <span class="warn">+${fmt(c.edge * 100, 1)} pe</span></span>`);
   const st = S.wstate;
+  for (const p of (st?.open || []).slice(-6).reverse()) items.push(`<span class="cy">MIN AFFÄR</span> <span>${esc(p.city.toUpperCase())} ${esc(p.bucket)} ${p.side === 'YES' ? 'JA' : 'NEJ'} @ ${fmt(p.price, 3)} · ${kr(sek(p.stake_usd))}</span>`);
   for (const p of (st?.closed || []).slice(-5).reverse()) items.push(`<span>${esc(p.city.toUpperCase())} ${esc(p.bucket)} ${p.side} <b class="${p.won ? 'up' : 'down'}">${p.won ? 'VANN' : 'FÖRLUST'} ${skr(sek(p.pnl_usd))}</b></span>`);
   const lr = st?.last_run;
   if (lr) items.push(`<span class="mute">boten ${esc(String(lr.ts).slice(11, 16))} UTC · ${lr.logged} loggade · ${(lr.opened || []).length} köp</span>`);
@@ -746,7 +831,7 @@ function renderSteps() {
   $('cyc-n').textContent = '#' + S.cycle;
   $('cyc-t').textContent = S.scanMs ? fmt(S.scanMs / 1000, 2) + 's' : '—';
 }
-function renderAll() { renderAccount(); renderBest(); drawDist(); renderMatrix(); drawGauge(); drawMC(); renderTickers(); renderSteps(); }
+function renderAll() { renderTrades(); renderAccount(); renderBest(); drawDist(); renderMatrix(); drawGauge(); drawMC(); renderTickers(); renderSteps(); }
 
 // ------------------------------------------------------------------ loop
 ['c-dist', 'c-mc'].forEach(bindTip);
@@ -763,6 +848,11 @@ function frame(now) {
   renderAll();
   await cycle();
   setInterval(cycle, CFG.scanMs);
+  setInterval(() => refreshPositions().catch(() => {}), 10_000);
+  $('tr-table').addEventListener('click', e => {
+    const slug = e.target.closest('tr.pos')?.dataset.slug;
+    if (slug) window.open('https://polymarket.com/event/' + slug, '_blank', 'noopener');
+  });
   setInterval(() => loadState().then(renderAll).catch(() => {}), CFG.statePollMs);
   setInterval(() => { S.featured++; drawDist(); }, 6000);
   setInterval(() => loadFx().catch(() => {}), 60 * 60_000);

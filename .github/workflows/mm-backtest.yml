@@ -1,0 +1,29 @@
+name: market making backtest
+
+# Walk-forward backtest of passive market making on Polymarket temperature
+# markets, pre-registered in mmbot/backtest.py. Read-only.
+on:
+  push:
+    branches: [claude/great-rubin-cbww8t]
+    paths: ['.github/workflows/mm-backtest.yml', 'mmbot/**']
+  workflow_dispatch:
+    inputs:
+      days:
+        default: '45'
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: python -m mmbot.backtest --days "${{ inputs.days || '45' }}" --out mm_backtest.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: mm-backtest
+          path: mm_backtest.json

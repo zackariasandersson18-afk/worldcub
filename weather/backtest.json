@@ -1,0 +1,41 @@
+{
+ "n_trades": 3729,
+ "n_days": 40,
+ "logloss_model": 0.2204,
+ "logloss_market": 0.1731,
+ "n_scored": 15015,
+ "hit_rate": 0.335,
+ "avg_edge": 0.157,
+ "avg_price": 0.343,
+ "total_return": -929.4,
+ "yes_share": 0.45,
+ "metrics": {
+  "sharpe": -10.4,
+  "ann_return": -8478.5,
+  "max_drawdown": -100.1,
+  "longest_dd_periods": 30,
+  "calmar": -84.7,
+  "skew": -0.149,
+  "kurtosis": 2.522,
+  "n_obs": 40,
+  "red_flag": false
+ },
+ "folds": {
+  "n": 5,
+  "positive": "0/5",
+  "worst": -16.35,
+  "mean": -8.97
+ },
+ "dsr": {
+  "deflated_sharpe": 0.0,
+  "expected_max_from_noise": 6.92,
+  "verdict": "REJECT"
+ },
+ "gates": {
+  "no_leakage": true,
+  "deflated_sharpe": false,
+  "walk_forward": false
+ },
+ "approved": false,
+ "verdict": "REJECTED"
+}

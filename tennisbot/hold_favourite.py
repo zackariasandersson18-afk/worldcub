@@ -142,8 +142,8 @@ def _get(http, url, params, tries=4):
 def collect(days: int = 30, workers: int = 8, log=print):
     http = requests.Session()
     since = int((datetime.now(timezone.utc) - timedelta(days=days)).timestamp())
-    mks, seen = [], set()
-    for page in range(80):
+    mks, seen, old_pages = [], set(), 0
+    for page in range(150):
         batch = _get(http, f'{GAMMA}/events', {'tag_slug': 'tennis', 'closed': 'true', 'limit': 100,
                                                'offset': page * 100, 'order': 'endDate', 'ascending': 'false'})
         if not batch:
@@ -153,8 +153,11 @@ def collect(days: int = 30, workers: int = 8, log=print):
             if mk and mk['start'] >= since and mk['slug'] not in seen:
                 seen.add(mk['slug'])
                 mks.append(mk)
-        ends = [e.get('endDate') for e in batch if e.get('endDate')]
-        if len(batch) < 100 or (ends and min(ends) < datetime.fromtimestamp(since - 7 * 86400, timezone.utc).isoformat()):
+        # stop after 3 pages in a row with no match inside the window (a single old
+        # futures event in a page must not end the scan early)
+        recent = [mk for mk in parsed if mk and mk['start'] >= since]
+        old_pages = 0 if recent else old_pages + 1
+        if len(batch) < 100 or old_pages >= 3:
             break
     log(f'{len(mks)} resolved singles moneyline markets since {datetime.fromtimestamp(since, timezone.utc).date()}, '
         f'fee rates {sorted({m["fee_rate"] for m in mks})}')

@@ -1,0 +1,30 @@
+name: ImMike cross-platform arbitrage (live, read-only)
+
+# Runs ImMike/polymarket-arbitrage's own market matcher against live Polymarket
+# and Kalshi prices (arbbot/cross_kalshi.py). Places no orders.
+on:
+  push:
+    branches: [claude/great-rubin-cbww8t]
+    paths: ['.github/workflows/immike-arb.yml', 'arbbot/cross_kalshi.py']
+  workflow_dispatch:
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: |
+          git clone --depth 1 https://github.com/ImMike/polymarket-arbitrage /tmp/immike
+          pip install httpx websockets aiohttp pyyaml pydantic python-dotenv
+          git -C /tmp/immike log -1 --format='tested commit %H %cd'
+      - run: python -m arbbot.cross_kalshi --repo /tmp/immike --rounds 1 --every 180 --out immike.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: immike
+          path: immike.json

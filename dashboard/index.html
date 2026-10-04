@@ -3,968 +3,768 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>tradebot live</title>
+<title>Weather desk live</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&family=VT323&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
 <style>
+/* layout: one portrait column of boxed terminal panels, like a trading desk on a phone */
 :root{
-  --bg:#05080e; --panel:#0a111c; --panel2:#0d1624; --line:#1a2638; --line2:#24344b;
-  --ink:#d6e2ef; --ink2:#8ea3ba; --mute:#5b6f86;
-  --green:#3dff8f; --red:#ff3d6e; --yellow:#ffd23d; --cyan:#3de0ff; --magenta:#ff3dd8; --blue:#3d7bff;
-  --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  --bg:#000; --panel:#070707; --line:#2a2a2a; --line2:#3a3a3a;
+  --ink:#f2f2f2; --ink2:#a8a8a8; --mute:#6b6b6b;
+  --green:#39ff6a; --red:#ff3b3b; --yellow:#ffd400; --cyan:#3ad7ff; --blue:#2f6bff; --orange:#ff9a1f; --purple:#8a3dff;
+  --mono:'JetBrains Mono',ui-monospace,Menlo,monospace; --pix:'Silkscreen','JetBrains Mono',monospace;
+  color-scheme:dark;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{background:var(--bg);color:var(--ink);font-family:var(--mono);font-size:11px;min-height:100%}
-body{padding:0 0 28px;overflow-x:hidden}
-.up{color:var(--green)} .down{color:var(--red)} .warn{color:var(--yellow)} .cy{color:var(--cyan)} .mg{color:var(--magenta)} .mute{color:var(--mute)} .ink2{color:var(--ink2)}
+html,body{background:var(--bg);color:var(--ink);font-family:var(--mono);font-size:11px}
+body{padding-bottom:28px}
+.wrap{max-width:780px;margin:0 auto;padding:0 8px}
+.up{color:var(--green)} .down{color:var(--red)} .warn{color:var(--yellow)} .cy{color:var(--cyan)} .mute{color:var(--mute)} .ink2{color:var(--ink2)}
+.k9{color:var(--mute);font-size:9px;letter-spacing:1.4px;text-transform:uppercase}
+.badge{display:inline-block;font-size:9px;font-weight:800;padding:2px 6px;letter-spacing:1px}
+.b-green{background:var(--green);color:#000} .b-yellow{background:var(--yellow);color:#000} .b-red{background:var(--red);color:#000} .b-cyan{background:var(--cyan);color:#000}
 
 /* header */
-header{display:flex;align-items:center;gap:18px;padding:10px 16px;border-bottom:1px solid var(--line);flex-wrap:wrap}
-.logo{width:34px;height:34px;border-radius:6px;background:linear-gradient(135deg,#1d4ed8,#3de0ff);display:grid;place-items:center;font-weight:800;color:#fff;font-size:13px;flex:none}
-.brand .t{font-size:16px;font-weight:800;letter-spacing:.5px}
-.brand .t b{color:var(--cyan)}
-.brand .s{color:var(--mute);font-size:10px;letter-spacing:1.5px;margin-top:2px;text-transform:uppercase}
-.hstats{display:flex;gap:22px;margin-left:auto;flex-wrap:wrap}
-.hs .k{color:var(--mute);font-size:9px;letter-spacing:1.5px;text-transform:uppercase}
-.hs .v{font-size:15px;font-weight:600;margin-top:2px}
-.badge{display:inline-block;font-size:9px;font-weight:800;padding:2px 6px;border-radius:3px;letter-spacing:1px;vertical-align:middle}
-.b-green{background:rgba(61,255,143,.15);color:var(--green);border:1px solid rgba(61,255,143,.4)}
-.b-red{background:rgba(255,61,110,.15);color:var(--red);border:1px solid rgba(255,61,110,.4)}
-.b-yellow{background:rgba(255,210,61,.12);color:var(--yellow);border:1px solid rgba(255,210,61,.4)}
-.b-cyan{background:rgba(61,224,255,.12);color:var(--cyan);border:1px solid rgba(61,224,255,.4)}
+header{display:grid;grid-template-columns:auto minmax(0,1fr) auto auto;align-items:center;gap:12px;padding:10px 0 8px}
+.logo{width:30px;height:30px;background:var(--yellow);color:#000;font-weight:800;display:grid;place-items:center;font-size:15px}
+.brand b{font-size:15px;letter-spacing:1px}
+.brand .s{color:var(--mute);font-size:9px;letter-spacing:1.2px}
+.mid{text-align:center;color:var(--ink2);letter-spacing:2px;font-size:11px}
 .clock{text-align:right}
-.clock .v{font-size:20px;font-weight:800}
+.clock .v{font-size:17px;font-weight:800}
+@media (max-width:640px){header{grid-template-columns:auto minmax(0,1fr) auto}.mid{display:none}}
 
-/* tickers */
-.ticker{display:flex;align-items:center;border-bottom:1px solid var(--line);background:#070c14;height:26px;overflow:hidden;white-space:nowrap}
-.ticker .tag{flex:none;background:var(--red);color:#fff;font-weight:800;font-size:10px;padding:0 10px;height:100%;display:flex;align-items:center;gap:6px;letter-spacing:1px}
+.banner{color:var(--yellow);font-size:10px;letter-spacing:1px;padding:5px 0;border-top:1px solid var(--line);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ticker{display:flex;align-items:center;height:24px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;white-space:nowrap;margin-bottom:8px}
+.ticker .tag{flex:none;background:var(--red);color:#fff;font-weight:800;font-size:10px;padding:0 8px;height:100%;display:flex;align-items:center;gap:6px}
 .ticker .tag i{width:6px;height:6px;border-radius:50%;background:#fff;animation:blink 1s infinite}
-.ticker .track{flex:1;overflow:hidden;position:relative;height:100%}
-.ticker .run{position:absolute;left:0;top:0;height:100%;display:flex;align-items:center;gap:28px;padding-left:20px;animation:marquee 60s linear infinite;color:var(--ink2)}
-.ticker .run span b{color:var(--ink)}
-.foot{position:fixed;bottom:0;left:0;right:0;border-top:1px solid var(--line);border-bottom:0;z-index:5}
-.foot .run{animation-duration:80s}
+.track{flex:1;overflow:hidden;position:relative;height:100%}
+.run{position:absolute;left:0;top:0;height:100%;display:flex;align-items:center;gap:26px;padding-left:16px;animation:marquee 70s linear infinite}
+.run b{color:var(--ink)}
+.foot{position:fixed;left:0;right:0;bottom:0;background:#000;margin:0;z-index:5}
+.foot .run{animation-duration:90s;color:var(--ink2)}
 @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @keyframes blink{50%{opacity:.2}}
+@media (prefers-reduced-motion:reduce){.run{animation:none}}
 
-/* grid */
-main{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:8px;padding:8px}
-.panel{background:var(--panel);border:1px solid var(--line);border-radius:4px;display:flex;flex-direction:column;min-width:0;position:relative}
-.ph{display:flex;align-items:center;gap:8px;padding:7px 10px;border-bottom:1px solid var(--line);font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:var(--ink2);white-space:nowrap;overflow:hidden}
-.ph b{color:var(--ink);font-weight:800}
-.ph .d{color:var(--cyan)}
-.ph .r{margin-left:auto}
-.pb{padding:10px;flex:1;display:flex;flex-direction:column;gap:8px;min-height:0}
+/* panels */
+.panel{border:1px solid var(--line2);background:var(--panel);margin-bottom:8px;min-width:0}
+.ph{display:flex;align-items:center;gap:6px;padding:6px 8px;border-bottom:1px solid var(--line);font-size:10px;letter-spacing:1.4px;text-transform:uppercase;font-weight:600;white-space:nowrap;overflow:hidden}
+.ph .r{margin-left:auto;color:var(--ink2);font-weight:400}
+.ph .dot{width:7px;height:7px;background:var(--green)}
+.pb{padding:8px}
 canvas{display:block;width:100%}
-.c-wallet{grid-column:span 3}
-.c-spot{grid-column:span 3}
-.c-right{grid-column:span 6;display:flex;flex-direction:column;gap:8px}
-.c-shell{grid-column:span 12}
-.c-half{grid-column:span 6}
-@media (max-width:1100px){.c-wallet,.c-spot{grid-column:span 6}.c-right{grid-column:span 12}}
-@media (max-width:720px){main{padding:6px;gap:6px}.c-wallet,.c-spot,.c-half{grid-column:span 12}.hstats{gap:14px;margin-left:0}.clock{text-align:left}}
+.row3{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:8px}
+.row3 .panel{margin-bottom:8px}
+@media (max-width:640px){.row3{grid-template-columns:1fr}}
 
-/* wallet */
-.pnl{font-family:'VT323',var(--mono);font-size:64px;line-height:.9;letter-spacing:1px;text-shadow:0 0 18px currentColor}
-.k9{color:var(--mute);font-size:9px;letter-spacing:1.5px;text-transform:uppercase}
-.kv{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.kv .v{font-size:14px;font-weight:600;margin-top:2px}
-.sub{display:flex;gap:14px;color:var(--ink2);flex-wrap:wrap}
+/* account */
+.who{display:flex;align-items:center;gap:6px;font-weight:800;font-size:13px}
+.addr{color:var(--mute);font-size:9px;letter-spacing:1px;margin:2px 0 6px}
+.pnl{font-family:var(--pix);font-size:40px;line-height:1;color:var(--green);letter-spacing:-1px;white-space:nowrap}
+.pnl small{font-size:18px;margin-left:4px}
+.kv3{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:8px}
+.kv3 .v{font-family:var(--pix);font-size:17px;margin-top:2px}
+.bar{height:6px;background:#1a1a1a;margin-top:4px}
+.bar i{display:block;height:100%;background:var(--green)}
 
-/* order book */
-.book{width:100%;border-collapse:collapse;font-size:10.5px}
-.book td{padding:2px 6px;text-align:right;position:relative}
-.book td:first-child{text-align:left}
-.book tr.a td{color:var(--red)} .book tr.b td{color:var(--green)}
-.book tr .bar{position:absolute;right:0;top:1px;bottom:1px;opacity:.16;z-index:0}
-.book tr.a .bar{background:var(--red)} .book tr.b .bar{background:var(--green)}
-.book td span{position:relative;z-index:1}
-.spread{display:flex;justify-content:space-between;color:var(--ink2);padding:3px 6px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+/* best edge */
+.mult{font-family:var(--pix);font-size:38px;color:var(--yellow);text-align:center;line-height:1.1}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:4px 10px;margin-top:6px;font-size:10px}
+.grid2 .k9{font-size:8.5px}
 
-/* side stats */
-.split{display:grid;grid-template-columns:1fr 120px;gap:10px;flex:1;min-height:0}
-.side{display:flex;flex-direction:column;gap:9px;border-left:1px solid var(--line);padding-left:10px}
-.side .v{font-size:15px;font-weight:600}
-.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
-.tile{border:1px solid var(--line2);border-radius:3px;padding:6px 8px;background:var(--panel2)}
-.tile .v{font-size:14px;font-weight:700;margin-top:3px}
-.tile.g{border-color:rgba(61,255,143,.45)} .tile.r{border-color:rgba(255,61,110,.45)} .tile.y{border-color:rgba(255,210,61,.45)} .tile.c{border-color:rgba(61,224,255,.45)}
-@media (max-width:720px){.split{grid-template-columns:1fr}.side{border-left:0;padding-left:0;flex-direction:row;flex-wrap:wrap;gap:14px}.tiles{grid-template-columns:repeat(2,1fr)}}
+/* execution cycle */
+.steps{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}
+.step{border:1px solid var(--line2);padding:5px 6px;min-width:0}
+.step .n{color:var(--mute);font-size:9px}
+.step .t{font-weight:800;margin-top:2px}
+.step .d{color:var(--ink2);font-size:9px;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.step.on{color:#000;border-color:transparent}
+.step.on .n,.step.on .d{color:#000}
+@media (max-width:560px){.steps{grid-template-columns:repeat(3,1fr)}}
 
-.wx{width:100%;border-collapse:collapse;font-size:10.5px;font-variant-numeric:tabular-nums}
-.wx th{color:var(--mute);font-weight:400;text-align:left;padding:4px 6px;border-bottom:1px solid var(--line);font-size:9px;letter-spacing:1.2px;text-transform:uppercase}
-.wx td{padding:4px 6px;border-bottom:1px solid var(--line);white-space:nowrap}
-.wx-wrap{overflow-x:auto;max-height:260px;overflow-y:auto}
-.c-wx{grid-column:span 12}
-.wx-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:10px}
-@media (max-width:900px){.wx-grid{grid-template-columns:1fr}}
-.tip{position:fixed;pointer-events:none;background:#0e1828;border:1px solid var(--line2);padding:6px 8px;border-radius:3px;font-size:10.5px;color:var(--ink);z-index:20;display:none;white-space:nowrap;box-shadow:0 4px 18px rgba(0,0,0,.5)}
-.empty{color:var(--mute);font-size:10px;padding:6px 0}
-.note{color:var(--mute);font-size:9.5px;line-height:1.5}
+/* matrix */
+.mx-wrap{display:grid;grid-template-columns:minmax(0,1fr) 120px;gap:8px;align-items:center}
+.mx{width:100%;border-collapse:separate;border-spacing:3px;font-size:10px;font-variant-numeric:tabular-nums}
+.mx th{color:var(--yellow);font-weight:600;font-size:9px;text-align:center;border:1px solid var(--line2);padding:2px}
+.mx td{text-align:center;padding:3px 2px;font-weight:700;color:#000;white-space:nowrap}
+.mx td.city{color:var(--ink);background:none;text-align:left;font-weight:600;border:1px solid var(--line2)}
+.mx td.na{background:#151515;color:var(--mute);font-weight:400}
+.gauge{text-align:center}
+.gauge .lbl{display:grid;grid-template-columns:auto auto;justify-content:space-between;font-size:9px;color:var(--ink2);margin-top:6px;gap:2px 8px}
+@media (max-width:560px){.mx-wrap{grid-template-columns:1fr}}
+
+/* monte carlo */
+.mc{display:grid;grid-template-columns:minmax(0,1fr) 130px;gap:8px}
+.boxes{display:flex;flex-direction:column;gap:6px}
+.box{border:1px solid var(--line2);padding:5px 8px;text-align:right}
+.box .v{font-family:var(--pix);font-size:18px;margin-top:2px}
+@media (max-width:560px){.mc{grid-template-columns:1fr}.boxes{flex-direction:row}.box{flex:1}}
+
+.note{color:var(--mute);font-size:9.5px;line-height:1.5;padding:4px 0 10px}
+.tip{position:fixed;pointer-events:none;background:#111;border:1px solid var(--line2);padding:6px 8px;font-size:10.5px;z-index:20;display:none;white-space:nowrap}
 a{color:var(--cyan)}
 </style>
 </head>
 <body>
+<div class="wrap">
 <header>
-  <div class="logo">TB</div>
-  <div class="brand">
-    <div class="t">tradebot <b>//</b> <span id="h-symbol">BTCUSDT</span> MOMENTUM</div>
-    <div class="s" id="h-sub">volatility stop · walk-forward validated · demo account · <a href="polymarket.html" style="color:var(--yellow)">väderbot →</a></div>
-  </div>
-  <div class="hstats">
-    <div class="hs"><div class="k">BTC spot <span class="badge b-green" id="h-live">LIVE</span></div><div class="v" id="h-price">—</div></div>
-    <div class="hs"><div class="k">Idag (UTC)</div><div class="v" id="h-day">—</div></div>
-    <div class="hs"><div class="k">Signal</div><div class="v" id="h-signal">—</div></div>
-    <div class="hs"><div class="k">Position</div><div class="v" id="h-pos">—</div></div>
-    <div class="hs"><div class="k">Nästa körning</div><div class="v" id="h-next">—</div></div>
-  </div>
-  <div class="clock"><div class="v" id="h-clock">--:--:-- UTC</div><div class="k9" id="h-account">—</div></div>
+  <div class="logo">W</div>
+  <div class="brand"><b>TRADEBOT × WEATHER</b><div class="s">POLYMARKET · DAGENS HÖGSTA TEMPERATUR · PAPER</div></div>
+  <div class="mid">6 MODELLER · KELLY · WALK-FORWARD</div>
+  <div class="clock"><div class="v" id="clock">--:--:--</div><div class="k9" id="scanmeta">UTC · SKANNAR</div></div>
 </header>
+<div class="banner" id="banner">◆ laddar…</div>
+<div class="ticker"><div class="tag"><i></i>LIVE</div><div class="track"><div class="run" id="feed"></div></div></div>
 
-<div class="ticker"><div class="tag"><i></i>LIVE FEED</div><div class="track"><div class="run" id="feed"></div></div></div>
-
-<main>
-  <!-- wallet -->
-  <section class="panel c-wallet">
-    <div class="ph"><span class="d">◆</span><b>Wallet</b> · <span id="w-acct">—</span><span class="r badge b-cyan" id="w-badge">—</span></div>
+<div class="row3">
+  <section class="panel">
     <div class="pb">
-      <div class="k9">All-time PnL · live mark-to-market</div>
-      <div class="pnl" id="w-pnl">—</div>
-      <div class="sub"><span id="w-pct">—</span><span id="w-eq">—</span></div>
-      <div class="kv">
-        <div><div class="k9">Affärer</div><div class="v" id="w-trades">—</div></div>
-        <div><div class="k9">Exponering</div><div class="v" id="w-exp">—</div></div>
-        <div><div class="k9">Insatt</div><div class="v" id="w-dep">—</div></div>
-        <div><div class="k9">Inköpspris</div><div class="v" id="w-entry">—</div></div>
-        <div><div class="k9">Stop</div><div class="v down" id="w-stop">—</div></div>
-        <div><div class="k9">Orealiserat</div><div class="v" id="w-unreal">—</div></div>
+      <div class="who">weatherbot <span class="badge b-green" id="mode">PAPER</span></div>
+      <div class="addr">POLYMARKET · <span id="nevents">—</span> MARKNADER LIVE</div>
+      <div class="pnl" id="pnl">—</div>
+      <div class="k9" style="margin-top:4px" id="pnlsub">ALL-TIME PNL</div>
+      <div class="kv3">
+        <div><div class="k9">Affärer</div><div class="v" id="trades">—</div></div>
+        <div><div class="k9">Vinst%</div><div class="v" id="winrate">—</div></div>
+        <div><div class="k9">Snitt R/R</div><div class="v" id="rr">—</div></div>
       </div>
-      <div class="ph" style="padding:6px 0 4px;border:0"><span class="d">◆</span>Equity · daglig + live</div>
-      <canvas id="c-equity" height="110"></canvas>
+      <div style="display:flex;justify-content:space-between;margin-top:8px"><span class="k9">Risk <span id="risk">—</span></span><span class="badge b-green" id="riskb">SÄKER</span></div>
+      <div class="bar"><i id="riskbar" style="width:0"></i></div>
     </div>
   </section>
-
-  <!-- spot -->
-  <section class="panel c-spot">
-    <div class="ph"><span class="d">◆</span><b>BTC spot</b> · 1m<span class="r" id="s-price">—</span></div>
+  <section class="panel">
+    <div class="ph">★ Största edge <span class="r"><span class="badge b-yellow">LIVE</span></span></div>
     <div class="pb">
-      <canvas id="c-candles" height="180"></canvas>
-      <table class="book" id="book"></table>
+      <div class="mult" id="bx-mult">—</div>
+      <div class="k9" style="text-align:center" id="bx-what">ingen kandidat än</div>
+      <div class="grid2">
+        <div><div class="k9">Stad</div><b id="bx-city">—</b></div>
+        <div><div class="k9">Intervall</div><b id="bx-bucket">—</b></div>
+        <div><div class="k9">Modell</div><b class="up" id="bx-model">—</b></div>
+        <div><div class="k9">Marknad</div><b class="cy" id="bx-mkt">—</b></div>
+        <div><div class="k9">Edge</div><b class="warn" id="bx-edge">—</b></div>
+        <div><div class="k9">Kostnad/andel</div><b id="bx-cost">—</b></div>
+        <div><div class="k9">Insats (¼ Kelly)</div><b id="bx-stake">—</b></div>
+        <div><div class="k9">Vinst om rätt</div><b class="up" id="bx-win">—</b></div>
+      </div>
+      <div class="k9" style="margin-top:6px">Kandidater idag <span id="bx-n">—</span></div>
+      <div class="bar"><i id="bx-bar" style="width:0;background:var(--cyan)"></i></div>
     </div>
   </section>
+  <section class="panel">
+    <div class="ph">▣ <span id="ch-title">Modell vs marknad</span><span class="r" id="ch-sub">—</span></div>
+    <div class="pb"><canvas id="c-dist" height="190"></canvas></div>
+  </section>
+</div>
 
-  <div class="c-right">
-    <section class="panel">
-      <div class="ph"><span class="d">◆</span><b>Walk-forward ledger</b> · out-of-sample Sharpe per fold<span class="r mute" id="wf-sub"></span></div>
-      <div class="pb"><div class="split">
-        <canvas id="c-folds" height="150"></canvas>
-        <div class="side">
-          <div><div class="k9">Positiva fold</div><div class="v" id="wf-pos">—</div></div>
-          <div><div class="k9">Medel-Sharpe</div><div class="v" id="wf-mean">—</div></div>
-          <div><div class="k9">Sämsta fold</div><div class="v" id="wf-worst">—</div></div>
-          <div><div class="k9">OOS Sharpe</div><div class="v" id="wf-oos">—</div></div>
-        </div>
-      </div></div>
-    </section>
-    <section class="panel">
-      <div class="ph"><span class="d">◆</span><b>Signal ridge</b> · avkastning över varje lookback, 120 dagar</div>
-      <div class="pb"><div class="split">
-        <canvas id="c-ridge" height="170"></canvas>
-        <div class="side">
-          <div><div class="k9">Aktiv lookback</div><div class="v warn" id="r-lb">—</div></div>
-          <div><div class="k9">Avkastning över L</div><div class="v" id="r-ret">—</div></div>
-          <div><div class="k9">Signal</div><div class="v" id="r-sig">—</div></div>
-          <div><div class="k9">Daglig vol (30d)</div><div class="v" id="r-vol">—</div></div>
-        </div>
-      </div></div>
-    </section>
+<section class="panel">
+  <div class="ph">▸ Execution cycle · <span id="cyc-n">#0</span><span class="r">Skanning <span id="cyc-t">—</span></span></div>
+  <div class="pb"><div class="steps" id="steps"></div></div>
+</section>
+
+<section class="panel">
+  <div class="ph">⌥ Strategy decision tree · varje intervall spårat<span class="r">I spel <span id="inplay">—</span></span></div>
+  <canvas id="c-tree" height="230"></canvas>
+</section>
+
+<section class="panel">
+  <div class="ph">▦ Edge-matris · 7 städer × 6 intervall<span class="r">Modell − marknad (procentenheter) <span class="dot"></span></span></div>
+  <div class="pb mx-wrap">
+    <div style="overflow-x:auto"><table class="mx" id="matrix"></table></div>
+    <div class="gauge"><canvas id="c-gauge" height="110"></canvas>
+      <div class="lbl" id="gauge-lbl"></div></div>
   </div>
+</section>
 
-  <!-- neural shell -->
-  <section class="panel c-shell">
-    <div class="ph"><span class="d">◆</span><b>Neural shell</b> · hypothesis → code → critic → statistician → risk → execution<span class="r" id="sh-ticks">—</span></div>
-    <canvas id="c-shell" height="380"></canvas>
-  </section>
-
-  <!-- kill switch -->
-  <section class="panel c-half">
-    <div class="ph"><span class="d">◆</span><b>Kill switch</b> · drawdown mot halt-linjen</div>
-    <div class="pb">
-      <canvas id="c-kill" height="170"></canvas>
-      <div class="tiles">
-        <div class="tile" id="k-t1"><div class="k9">Drawdown nu</div><div class="v" id="k-dd">—</div></div>
-        <div class="tile y"><div class="k9">Halt vid</div><div class="v" id="k-halt">—</div></div>
-        <div class="tile c"><div class="k9">Live Sharpe 30d</div><div class="v" id="k-sh">—</div></div>
-        <div class="tile" id="k-t4"><div class="k9">Health</div><div class="v" id="k-health">—</div></div>
-      </div>
+<section class="panel">
+  <div class="ph">〜 Monte Carlo · <span id="mc-n">0</span> simulerade dagar · kr<span class="r" id="mc-p">—</span></div>
+  <div class="pb mc">
+    <canvas id="c-mc" height="200"></canvas>
+    <div class="boxes">
+      <div class="box"><div class="k9">5:e percentil</div><div class="v" id="mc-p5">—</div></div>
+      <div class="box"><div class="k9">Förväntat (modell)</div><div class="v" id="mc-ev">—</div></div>
+      <div class="box"><div class="k9">Förväntat (marknad)</div><div class="v" id="mc-evm">—</div></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- regimes / statistics -->
-  <section class="panel c-half">
-    <div class="ph"><span class="d">◆</span><b>Regime map</b> · BTC månadsavkastning + fold-fördelning</div>
-    <div class="pb">
-      <div class="split" style="grid-template-columns:1.25fr 1fr">
-        <canvas id="c-heat" height="170"></canvas>
-        <canvas id="c-hist" height="170"></canvas>
-      </div>
-      <div class="tiles">
-        <div class="tile" id="g-t1"><div class="k9">Deflated Sharpe</div><div class="v" id="g-dsr">—</div></div>
-        <div class="tile c"><div class="k9">Brus-tak</div><div class="v" id="g-noise">—</div></div>
-        <div class="tile"><div class="k9">Bull / bear</div><div class="v" id="g-reg">—</div></div>
-        <div class="tile" id="g-t4"><div class="k9">Grindar</div><div class="v" id="g-gates">—</div></div>
-      </div>
-    </div>
-  </section>
-  <!-- weather desk -->
-  <section class="panel c-wx">
-    <div class="ph"><span class="d">◆</span><b>Weather desk</b> · Polymarket dagens högsta temperatur · paper<span class="r" id="wx-badge">—</span></div>
-    <div class="pb"><div class="wx-grid">
-      <div style="display:flex;flex-direction:column;gap:8px">
-        <div class="tiles" style="grid-template-columns:repeat(2,1fr)">
-          <div class="tile" id="wx-t1"><div class="k9">Paper equity</div><div class="v" id="wx-eq">—</div></div>
-          <div class="tile"><div class="k9">Avgjorda / träff</div><div class="v" id="wx-hit">—</div></div>
-          <div class="tile c"><div class="k9">Öppna bets</div><div class="v" id="wx-open">—</div></div>
-          <div class="tile" id="wx-t4"><div class="k9">Backtest</div><div class="v" id="wx-bt">—</div></div>
-        </div>
-        <div class="note" id="wx-note">Väderboten köper intervall där sex vädermodeller ger högre sannolikhet än priset, efter avgift. Handlar 06–08 lokal tid per stad.</div>
-      </div>
-      <div class="wx-wrap"><table class="wx" id="wx-table"><tr><td class="empty">väntar på väderboten…</td></tr></table></div>
-    </div></div>
-  </section>
-</main>
+<div class="note" id="note">Alla siffror räknas live i din webbläsare med samma regler som boten: sex vädermodeller (Open-Meteo) → sannolikhet per hel grad → jämförs med Polymarkets orderbok efter avgift och slippage. Belopp i kronor via ECB:s dagskurs. Inget här är finansiell rådgivning.</div>
+</div>
 
-<div class="ticker foot"><div class="tag" style="background:#1d4ed8"><i></i>STATUS</div><div class="track"><div class="run" id="foot"></div></div></div>
+<div class="ticker foot"><div class="tag" style="background:var(--blue)">PROGNOS</div><div class="track"><div class="run" id="foot"></div></div></div>
 <div class="tip" id="tip"></div>
 
 <script>
 'use strict';
-// ---------------------------------------------------------------- config
+// ------------------------------------------------------------------ config (mirrors weatherbot/model.py)
 const qs = new URLSearchParams(location.search);
 const CFG = {
-  symbol: (qs.get('symbol') || 'BTCUSDT').toUpperCase(),
-  repo: 'zackariasandersson18-afk/worldcub', stateBranch: 'tradebot-state',
+  repo: 'zackariasandersson18-afk/worldcub', stateBranch: 'tradebot-state', codeBranch: 'claude/football-betting-optimizer-45ox0q',
   stateOverride: qs.get('state'),
-  rest: ['https://data-api.binance.vision', 'https://api.binance.com'],
-  ws: ['wss://data-stream.binance.vision', 'wss://stream.binance.com:9443'],
-  lookbacks: [20, 40, 60, 90, 120],
-  runAt: {h: 0, m: 7},           // daily GitHub Actions run, UTC
-  statePollMs: 75_000,          // GitHub allows 60 unauthenticated API calls/hour per IP
+  gamma: 'https://gamma-api.polymarket.com', clob: 'https://clob.polymarket.com', meteo: 'https://api.open-meteo.com/v1/forecast',
+  models: ['ecmwf_ifs025', 'ecmwf_aifs025_single', 'gfs_seamless', 'icon_seamless', 'gem_seamless', 'jma_seamless'],
+  MIN_SIGMA_C: 0.7, MIN_RESIDUALS: 50, MIN_EDGE: 0.05, SLIPPAGE: 0.01, KELLY: 0.25, MAX_BET: 0.02, MAX_EVENT: 0.05,
+  MIN_PRICE: 0.02, MAX_PRICE: 0.98, START_USD: 1000,
+  scanMs: 30_000, forecastTtl: 15 * 60_000, statePollMs: 75_000,
 };
-const C = {green:'#3dff8f', red:'#ff3d6e', yellow:'#ffd23d', cyan:'#3de0ff', magenta:'#ff3dd8', blue:'#3d7bff',
-           ink:'#d6e2ef', ink2:'#8ea3ba', mute:'#5b6f86', line:'#1a2638', panel:'#0a111c'};
+const COL = {green:'#39ff6a', red:'#ff3b3b', yellow:'#ffd400', cyan:'#3ad7ff', blue:'#2f6bff', orange:'#ff9a1f', purple:'#8a3dff',
+             ink:'#f2f2f2', ink2:'#a8a8a8', mute:'#6b6b6b', line:'#2a2a2a'};
+const S = {fx: null, fxDate: null, stations: null, wstate: null, wbt: null, calib: [], events: [], fc: {}, quotes: {},
+           rows: [], cands: [], cycle: 0, step: -1, scanMs: null, scanAt: null, feed: [], pulses: [], featured: 0};
 
-const S = {
-  approval: null, state: null, lastRun: null, runs: [],
-  price: null, candles: [], daily: [], book: {bids: [], asks: []},
-  feed: [], ws: null, wsOk: false, ticks: 0, stateAt: null, pulses: [],
-};
-
-// ---------------------------------------------------------------- utils
+// ------------------------------------------------------------------ utils
 const $ = id => document.getElementById(id);
-const fmt = (x, d = 2) => x == null || !isFinite(x) ? '—' : Number(x).toLocaleString('en-US', {minimumFractionDigits: d, maximumFractionDigits: d});
-const usd = (x, d = 2) => x == null || !isFinite(x) ? '—' : (x < 0 ? '-$' : '$') + fmt(Math.abs(x), d);
-const sgn = (x, d = 2, suf = '') => x == null || !isFinite(x) ? '—' : (x >= 0 ? '+' : '−') + fmt(Math.abs(x), d) + suf;
-const cls = (el, x) => { el.classList.remove('up', 'down'); if (x > 0) el.classList.add('up'); else if (x < 0) el.classList.add('down'); };
-const set = (id, txt, x) => { const el = $(id); if (!el) return; el.textContent = txt; if (x !== undefined) cls(el, x); };
+const nf = (d) => new Intl.NumberFormat('sv-SE', {minimumFractionDigits: d, maximumFractionDigits: d});
+const fmt = (x, d = 0) => x == null || !isFinite(x) ? '—' : nf(d).format(x);
+const kr = (x, d = 0) => x == null || !isFinite(x) ? '—' : fmt(x, d) + ' kr';
+const skr = (x, d = 0) => x == null || !isFinite(x) ? '—' : (x >= 0 ? '+' : '−') + fmt(Math.abs(x), d) + ' kr';
+const pct = (x, d = 0) => x == null || !isFinite(x) ? '—' : fmt(x * 100, d) + '%';
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]));
+const sek = usd => usd == null || S.fx == null ? null : usd * S.fx;
 
 function canvas(id) {
-  const cv = $(id), dpr = Math.min(window.devicePixelRatio || 1, 2);
-  // the CSS height is fixed from the original height attribute; the buffer size must never feed back into layout
+  const cv = $(id), dpr = Math.min(devicePixelRatio || 1, 2);
   if (!cv.dataset.h) { cv.dataset.h = cv.getAttribute('height'); cv.style.height = cv.dataset.h + 'px'; }
   const w = cv.clientWidth, h = +cv.dataset.h;
-  if (cv.width !== Math.round(w * dpr) || cv.height !== Math.round(h * dpr)) {
-    cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr);
-  }
+  if (cv.width !== Math.round(w * dpr) || cv.height !== Math.round(h * dpr)) { cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr); }
   const g = cv.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); g.clearRect(0, 0, w, h);
   g.font = '10px JetBrains Mono, monospace'; g.textBaseline = 'middle';
-  return {g, w, h, cv};
+  return {g, w, h};
 }
-function grid(g, x0, y0, x1, y1, rows = 4) {
-  g.strokeStyle = C.line; g.lineWidth = 1; g.setLineDash([2, 4]);
-  for (let i = 0; i <= rows; i++) { const y = Math.round(y0 + (y1 - y0) * i / rows) + .5; g.beginPath(); g.moveTo(x0, y); g.lineTo(x1, y); g.stroke(); }
-  g.setLineDash([]);
-}
-function empty(id, msg) { const {g, w, h} = canvas(id); g.fillStyle = C.mute; g.textAlign = 'center'; g.fillText(msg, w / 2, h / 2); }
-
-// hover tooltips: each canvas registers hit boxes on draw
 const HITS = {};
 function hit(id, x, y, w, h, html) { (HITS[id] ||= []).push({x, y, w, h, html}); }
 function bindTip(id) {
   const cv = $(id), tip = $('tip');
   cv.addEventListener('mousemove', e => {
     const r = cv.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top;
-    const hb = (HITS[id] || []).find(b => x >= b.x && x <= b.x + b.w && y >= b.y && y <= b.y + b.h);
-    if (!hb) { tip.style.display = 'none'; return; }
-    tip.innerHTML = hb.html; tip.style.display = 'block';
-    const tx = Math.min(e.clientX + 14, innerWidth - tip.offsetWidth - 8);
-    tip.style.left = tx + 'px'; tip.style.top = (e.clientY + 14) + 'px';
+    const b = (HITS[id] || []).find(b => x >= b.x && x <= b.x + b.w && y >= b.y && y <= b.y + b.h);
+    if (!b) { tip.style.display = 'none'; return; }
+    tip.innerHTML = b.html; tip.style.display = 'block';
+    tip.style.left = Math.min(e.clientX + 14, innerWidth - tip.offsetWidth - 8) + 'px'; tip.style.top = (e.clientY + 14) + 'px';
   });
   cv.addEventListener('mouseleave', () => tip.style.display = 'none');
 }
-
-// ---------------------------------------------------------------- data: bot state
-async function getText(url) {
-  const r = await fetch(url + (url.includes('?') ? '&' : '?') + 't=' + Date.now(), {cache: 'no-store'});
+async function getJSON(url, opts) {
+  const r = await fetch(url, {cache: 'no-store', ...opts});
   if (!r.ok) throw new Error(r.status + ' ' + url);
-  return r.text();
+  return r.json();
 }
-// The branch URL on raw.githubusercontent.com is CDN-cached for minutes. Asking the
-// API for the branch's newest commit and reading the files at that exact commit is
-// never stale, and the files are only downloaded again when the bot has pushed.
-async function stateBase() {
-  if (CFG.stateOverride) return CFG.stateOverride.endsWith('/') ? CFG.stateOverride : CFG.stateOverride + '/';
-  const raw = `https://raw.githubusercontent.com/${CFG.repo}/`;
-  try {
-    const r = await fetch(`https://api.github.com/repos/${CFG.repo}/commits/${CFG.stateBranch}`, {cache: 'no-store'});
-    if (!r.ok) throw new Error(r.status);
-    const c = await r.json();
-    S.stateSha = c.sha; S.stateCommitAt = c.commit?.committer?.date || null;
-    return raw + c.sha + '/';
-  } catch {
-    S.stateSha = null;                       // rate-limited or offline: fall back to the cached branch URL
-    return raw + CFG.stateBranch + '/';
+// standard normal CDF (Abramowitz-Stegun 7.1.26, |error| < 1.5e-7)
+function ncdf(z) {
+  const t = 1 / (1 + 0.3275911 * Math.abs(z) / Math.SQRT2);
+  const y = 1 - (((((1.061405429 * t - 1.453152027) * t) + 1.421413741) * t - 0.284496736) * t + 0.254829592) * t * Math.exp(-z * z / 2);
+  return z >= 0 ? (1 + y) / 2 : (1 - y) / 2;
+}
+function bucketProb(mu, sigma, lo, hi) {
+  const up = hi === Infinity ? 1 : ncdf((hi + 0.5 - mu) / sigma);
+  const dn = lo === -Infinity ? 0 : ncdf((lo - 0.5 - mu) / sigma);
+  return Math.max(0, up - dn);
+}
+
+// ------------------------------------------------------------------ market parsing (mirrors weatherbot/markets.py)
+const MONTHS = ['january','february','march','april','may','june','july','august','september','october','november','december'];
+function parseBucket(label) {
+  const s = String(label || '').trim().replace('º', '°');
+  let m;
+  if ((m = s.match(/^(-?\d+)°([CF]) or below$/))) return {lo: -Infinity, hi: +m[1], unit: m[2]};
+  if ((m = s.match(/^(-?\d+)°([CF]) or higher$/))) return {lo: +m[1], hi: Infinity, unit: m[2]};
+  if ((m = s.match(/^(-?\d+)-(-?\d+)°([CF])$/))) return {lo: +m[1], hi: +m[2], unit: m[3]};
+  if ((m = s.match(/^(-?\d+)°([CF])$/))) return {lo: +m[1], hi: +m[1], unit: m[2]};
+  return null;
+}
+function parseEvent(e) {
+  const tm = (e.title || '').match(/^Highest temperature in (.+?) on [A-Za-z]+ \d{1,2}\??$/);
+  const dm = (e.slug || '').match(/-on-([a-z]+)-(\d{1,2})-(\d{4})$/);
+  if (!tm || !dm || MONTHS.indexOf(dm[1]) < 0) return null;
+  const date = `${dm[3]}-${String(MONTHS.indexOf(dm[1]) + 1).padStart(2, '0')}-${dm[2].padStart(2, '0')}`;
+  const src = e.resolutionSource || '';
+  const st = (src.match(/[?&]site=([A-Za-z0-9]{3,4})/) || src.match(/\/([A-Za-z]{4})\/?$/) || [])[1];
+  const buckets = [], units = new Set();
+  for (const m of e.markets || []) {
+    const b = parseBucket(m.groupItemTitle);
+    let tokens = m.clobTokenIds; try { if (typeof tokens === 'string') tokens = JSON.parse(tokens); } catch { tokens = null; }
+    if (!b || !tokens || tokens.length !== 2) return null;
+    units.add(b.unit);
+    buckets.push({...b, label: m.groupItemTitle, yes: String(tokens[0]), no: String(tokens[1]), fee: m.feeSchedule?.rate ?? 0.05});
   }
+  if (!buckets.length || units.size !== 1) return null;
+  buckets.sort((a, b) => a.lo - b.lo);
+  return {id: String(e.id), slug: e.slug, city: tm[1], date, station: st ? st.toUpperCase() : null, unit: [...units][0], buckets};
+}
+
+// ------------------------------------------------------------------ data sources
+async function loadFx() {
+  for (const [url, pick] of [
+    ['https://api.frankfurter.app/latest?from=USD&to=SEK', d => [d.rates.SEK, d.date]],
+    ['https://open.er-api.com/v6/latest/USD', d => [d.rates.SEK, (d.time_last_update_utc || '').slice(5, 16)]]]) {
+    try { const d = await getJSON(url); [S.fx, S.fxDate] = pick(d); return; } catch {}
+  }
+}
+async function stateBase() {
+  if (CFG.stateOverride) return CFG.stateOverride.replace(/\/?$/, '/');
+  try {
+    const c = await getJSON(`https://api.github.com/repos/${CFG.repo}/commits/${CFG.stateBranch}`);
+    S.stateSha = c.sha; S.stateAt = c.commit?.committer?.date;
+    return `https://raw.githubusercontent.com/${CFG.repo}/${c.sha}/`;
+  } catch { S.stateSha = null; return `https://raw.githubusercontent.com/${CFG.repo}/${CFG.stateBranch}/`; }
 }
 async function loadState() {
   const base = await stateBase();
-  if (S.stateSha && S.stateSha === S.loadedSha) { S.stateAt = new Date(); return; }
-  const [a, s, l, runs, ws, wb] = await Promise.allSettled([
-    getText(base + 'approval.json'), getText(base + 'trade_state.json'),
-    getText(base + 'last_run.txt'), getText(base + 'runs.log'),
-    getText(base + 'weather/weather_state.json'), getText(base + 'weather/backtest.json'),
-  ]);
-  try { if (ws.status === 'fulfilled') S.wstate = JSON.parse(ws.value); } catch {}
-  try { if (wb.status === 'fulfilled') S.wbt = JSON.parse(wb.value); } catch {}
-  if (a.status === 'fulfilled') S.approval = JSON.parse(a.value);
-  if (s.status === 'fulfilled') S.state = JSON.parse(s.value);
-  if (l.status === 'fulfilled') {
-    const i = l.value.indexOf('{');
-    try { S.lastRun = i >= 0 ? JSON.parse(l.value.slice(i)) : null; } catch { S.lastRun = null; }
+  if (S.stateSha && S.stateSha === S.loadedSha) return;
+  const [ws, bt, cal] = await Promise.allSettled([
+    getJSON(base + 'weather/weather_state.json'), getJSON(base + 'weather/backtest.json'), getJSON(base + 'weather/calibration.json')]);
+  if (ws.status === 'fulfilled') S.wstate = ws.value;
+  if (bt.status === 'fulfilled') S.wbt = bt.value;
+  if (cal.status === 'fulfilled') S.calib = cal.value.rows || [];
+  if (ws.status === 'fulfilled') S.loadedSha = S.stateSha;
+}
+async function loadStations() {
+  if (S.stations) return;
+  const base = CFG.stateOverride ? CFG.stateOverride.replace(/\/?$/, '/') + '../' : `https://raw.githubusercontent.com/${CFG.repo}/${CFG.codeBranch}/`;
+  try { S.stations = await getJSON(base + 'weatherbot/stations.json'); } catch { S.stations = {}; }
+}
+function calibration(beforeDate, unit) {
+  const past = S.calib.filter(r => r[0] < beforeDate).map(r => +r[1]);
+  if (past.length < CFG.MIN_RESIDUALS) return null;
+  const bias = past.reduce((a, b) => a + b, 0) / past.length;
+  const sd = Math.sqrt(past.reduce((a, r) => a + (r - bias) ** 2, 0) / (past.length - 1));
+  const k = unit === 'F' ? 9 / 5 : 1;
+  return {bias: bias * k, sigma: Math.max(sd, CFG.MIN_SIGMA_C) * k};
+}
+async function forecastFor(station, unit) {
+  const key = station + unit, cached = S.fc[key];
+  if (cached && Date.now() - cached.at < CFG.forecastTtl) return cached;
+  const s = S.stations?.[station];
+  if (!s) return null;
+  const u = `${CFG.meteo}?latitude=${s.lat}&longitude=${s.lon}&hourly=temperature_2m&models=${CFG.models.join(',')}` +
+            `&timezone=auto&forecast_days=3&temperature_unit=${unit === 'F' ? 'fahrenheit' : 'celsius'}`;
+  const d = await getJSON(u);
+  const daily = {};
+  for (const m of CFG.models) {
+    const vals = d.hourly['temperature_2m_' + m];
+    if (!vals) continue;
+    const per = {};
+    d.hourly.time.forEach((t, i) => { if (vals[i] != null) (per[t.slice(0, 10)] ||= []).push(vals[i]); });
+    for (const [day, vs] of Object.entries(per)) if (vs.length >= 20) (daily[day] ||= {})[m] = Math.max(...vs);
   }
-  if (runs.status === 'fulfilled') {
-    S.runs = runs.value.split('\n').filter(x => x.startsWith('--- ')).map(x => {
-      const m = x.match(/--- (\S+) broker=(\S+) exit=(\d+)/); return m ? {ts: m[1], broker: m[2], exit: +m[3]} : null;
-    }).filter(Boolean);
+  const out = {daily, offset: d.utc_offset_seconds || 0, at: Date.now()};
+  S.fc[key] = out;
+  return out;
+}
+async function loadBooks(tokens) {
+  const out = {};
+  for (let i = 0; i < tokens.length; i += 100) {
+    const batch = tokens.slice(i, i + 100).map(t => ({token_id: t}));
+    try {
+      const books = await getJSON(`${CFG.clob}/books`, {method: 'POST', headers: {'content-type': 'application/json'}, body: JSON.stringify(batch)});
+      for (const b of books) {
+        const asks = (b.asks || []).map(x => +x.price), bids = (b.bids || []).map(x => +x.price);
+        out[b.asset_id] = {ask: asks.length ? Math.min(...asks) : null, bid: bids.length ? Math.max(...bids) : null};
+      }
+    } catch {}
   }
-  S.stateAt = new Date();
-  S.stateOk = a.status === 'fulfilled' || s.status === 'fulfilled';
-  if (S.stateOk) S.loadedSha = S.stateSha;
-  S.full = true;
-  if (S.approval?.symbol && !qs.get('symbol')) CFG.symbol = S.approval.symbol;
-  buildFeed();
+  return out;
 }
 
-// account: the bot's own snapshot (state.account) > last run report > replay of the fills.
-// A SKIP/REFUSED report carries no balances, so it is never used on its own.
-function decision() {
-  const d = S.state?.last_decision, r = S.lastRun;
-  if (d) return d;
-  return r && r.equity != null ? {action: r.action, signal: r.signal, stop: r.stop, health: r.health?.action} : {};
-}
-// same rule as the bot: long when the close is above the close `lookback` days ago (closed bars only)
-function marketSignal() {
-  const L = S.approval?.params?.lookback, d = S.daily;
-  if (!L || d.length <= L) return null;
-  return d.at(-1).c > d.at(-1 - L).c ? 1 : 0;
-}
-// the always-on server writes a heartbeat at least every 5 minutes
-function serverStatus() {
-  const hb = S.state?.server?.heartbeat;
-  if (!hb) return null;
-  const age = (Date.now() - new Date(hb.replace(' ', 'T'))) / 1000;
-  return {age, alive: age < 15 * 60, watching: !!S.state.server.watching};
-}
-function account() {
-  const st = S.state || {}, hist = st.history || [], trades = st.trades || [], r = S.lastRun;
-  const initial = hist.length ? hist[0].equity : null;
-  let qty = 0, cash = initial;
-  if (st.account) { qty = st.account.base; cash = st.account.quote; }
-  else if (r && r.equity != null) {
-    qty = r.current_qty || 0; cash = r.equity - qty * r.price;
-    if (r.fill) {
-      const f = r.fill;
-      if (f.side === 'BUY') { qty += f.qty; cash -= f.quote_qty + f.commission_quote; }
-      else { qty -= f.qty; cash += f.quote_qty - f.commission_quote; }
-    }
-  } else if (initial != null) {
-    for (const t of trades) {
-      if (t.side === 'BUY') { qty += t.qty; cash -= t.quote_qty + t.commission_quote; }
-      else { qty -= t.qty; cash += t.quote_qty - t.commission_quote; }
-    }
-  }
-  // average entry of the open position (walk the fills)
-  let pq = 0, cost = 0;
-  for (const t of trades) {
-    if (t.side === 'BUY') { pq += t.qty; cost += t.quote_qty + t.commission_quote; }
-    else if (pq > 0) { const avg = cost / pq; pq -= t.qty; cost -= avg * t.qty; if (pq < 1e-9) { pq = 0; cost = 0; } }
-  }
-  const entry = pq > 0 ? cost / pq : null;
-  const px = S.price ?? st.account?.price ?? r?.price;
-  const equity = cash != null && px != null ? cash + qty * px : null;
-  const d = decision();
-  return {initial, qty, cash, entry, px, equity, pnl: equity != null && initial != null ? equity - initial : null,
-          trades: trades.length, stop: st.stop ?? d.stop ?? null, signal: d.signal ?? marketSignal(), broker: S.runs.at(-1)?.broker,
-          health: d.health ?? null, lastAction: d.action ?? null, halted: !!st.halted, haltReason: st.halt_reason};
-}
-
-// live per-unit-exposure returns, as tradebot/live.py computes them
-function liveSeries() {
-  const hist = (S.state?.history || []).map(h => ({ts: h.ts, equity: h.equity, exposure: h.exposure}));
-  const a = account();
-  if (a.equity != null && hist.length) hist.push({ts: 'live', equity: a.equity, exposure: a.equity ? a.qty * a.px / a.equity : 0});
-  const rets = [];
-  for (let i = 1; i < hist.length; i++) {
-    const e = hist[i - 1].exposure, r = hist[i].equity / hist[i - 1].equity - 1;
-    rets.push(e > 0.01 ? r / e : 0);
-  }
-  let eq = 1, peak = 1; const dd = [0];
-  for (const r of rets) { eq *= 1 + r; peak = Math.max(peak, eq); dd.push(eq / peak - 1); }
-  const w = rets.slice(-30), m = w.reduce((s, x) => s + x, 0) / (w.length || 1);
-  const sd = Math.sqrt(w.reduce((s, x) => s + (x - m) ** 2, 0) / Math.max(w.length - 1, 1));
-  return {hist, rets, dd, sharpe: w.length > 1 && sd > 0 ? m / sd * Math.sqrt(365) : null, n: rets.length};
-}
-
-// ---------------------------------------------------------------- data: market
-async function rest(path) {
-  for (const base of CFG.rest) {
-    try { const r = await fetch(base + path); if (r.ok) return r.json(); } catch {}
-  }
-  throw new Error('market data unavailable');
-}
-async function loadMarket() {
+// ------------------------------------------------------------------ the live cycle (same steps as the bot)
+const STEPS = [['Scan', COL.blue], ['Detect', COL.green], ['Validate', COL.orange], ['Size', COL.purple], ['Fill', COL.cyan], ['Settle', COL.red]];
+const STEP_INFO = ['', '', '', '', '', ''];
+async function cycle() {
+  const t0 = performance.now();
+  S.cycle++;
   try {
-    const [m1, d1] = await Promise.all([
-      rest(`/api/v3/klines?symbol=${CFG.symbol}&interval=1m&limit=90`),
-      rest(`/api/v3/klines?symbol=${CFG.symbol}&interval=1d&limit=1000`),
-    ]);
-    S.candles = m1.map(k => ({t: k[0], o: +k[1], h: +k[2], l: +k[3], c: +k[4]}));
-    S.daily = d1.filter(k => k[6] < Date.now()).map(k => ({t: k[6] + 1, c: +k[4], o: +k[1]}));
-    S.dayOpen = +d1.at(-1)[1];
-    S.price ??= S.candles.at(-1)?.c;
-  } catch (e) { pushFeed('<span class="down">MARKET DATA</span> ' + esc(e.message)); }
-}
-
-let wsTry = 0;
-function connect() {
-  const host = CFG.ws[wsTry % CFG.ws.length], s = CFG.symbol.toLowerCase();
-  const ws = new WebSocket(`${host}/stream?streams=${s}@kline_1m/${s}@depth20@100ms/${s}@aggTrade`);
-  S.ws = ws;
-  ws.onopen = () => { S.wsOk = true; wsTry = 0; };
-  ws.onclose = () => { S.wsOk = false; wsTry++; setTimeout(connect, Math.min(30_000, 1000 * 2 ** Math.min(wsTry, 5))); };
-  ws.onerror = () => ws.close();
-  ws.onmessage = ev => {
-    S.dirty = true;
-    const {stream, data} = JSON.parse(ev.data);
-    if (stream.endsWith('@kline_1m')) {
-      const k = data.k, c = {t: k.t, o: +k.o, h: +k.h, l: +k.l, c: +k.c};
-      const last = S.candles.at(-1);
-      if (last && last.t === c.t) S.candles[S.candles.length - 1] = c; else { S.candles.push(c); if (S.candles.length > 90) S.candles.shift(); }
-      S.price = c.c;
-    } else if (stream.includes('@depth')) {
-      S.book = {bids: data.bids.slice(0, 5).map(x => [+x[0], +x[1]]), asks: data.asks.slice(0, 5).map(x => [+x[0], +x[1]])};
-    } else if (stream.endsWith('@aggTrade')) {
-      S.ticks++; S.price = +data.p; S.lag = data.T ? Math.max(0, Date.now() - data.T) : null; S.lastTick = Date.now();
-      const notional = +data.p * +data.q;
-      if (S.pulses.length < 60) S.pulses.push({lane: Math.floor(Math.random() * 12), t: 0, sell: data.m});
-      if (notional >= 250_000) pushFeed(`<span class="${data.m ? 'down' : 'up'}">${data.m ? 'SÄLJ' : 'KÖP'} ${fmt(+data.q, 3)} BTC</span> <b>${usd(notional, 0)}</b> @ ${fmt(+data.p, 1)}`);
+    S.step = 0; STEP_INFO[0] = 'hämtar marknader'; renderSteps();
+    const raw = [];
+    for (let off = 0; off < 300; off += 100) {
+      const page = await getJSON(`${CFG.gamma}/events?tag_slug=highest-temperature&closed=false&limit=100&offset=${off}&order=endDate&ascending=false`);
+      raw.push(...page); if (page.length < 100) break;
     }
-  };
+    await loadStations();
+    const parsed = raw.map(parseEvent).filter(e => e && S.stations[e.station]);
+    STEP_INFO[0] = `${parsed.length} marknader`;
+
+    S.step = 1; STEP_INFO[1] = 'prognoser'; renderSteps();
+    const keys = [...new Set(parsed.map(e => e.station + '|' + e.unit))];
+    await Promise.all(keys.map(k => forecastFor(...k.split('|')).catch(() => null)));
+    const today = [];
+    for (const e of parsed) {
+      const fc = S.fc[e.station + e.unit];
+      if (!fc) continue;
+      const localDay = new Date(Date.now() + fc.offset * 1000).toISOString().slice(0, 10);
+      if (e.date < localDay) continue;                 // stale, not yet settled
+      const models = fc.daily[e.date];
+      if (!models || Object.keys(models).length < 3) continue;
+      const v = Object.values(models);
+      e.muRaw = v.reduce((a, b) => a + b, 0) / v.length; e.spread = Math.max(...v) - Math.min(...v); e.nModels = v.length;
+      e.localDay = localDay; e.isToday = e.date === localDay; e.localHour = new Date(Date.now() + fc.offset * 1000).getUTCHours();
+      today.push(e);
+    }
+    STEP_INFO[1] = `${today.length} prognoser`;
+
+    S.step = 2; STEP_INFO[2] = 'kalibrering'; renderSteps();
+    const approved = !!S.wbt?.approved;
+    for (const e of today) {
+      const cal = calibration(e.localDay, e.unit);
+      e.cal = cal;
+      if (cal) { e.mu = e.muRaw + cal.bias; e.sigma = cal.sigma; e.probs = e.buckets.map(b => bucketProb(e.mu, e.sigma, b.lo, b.hi)); }
+    }
+    STEP_INFO[2] = approved ? 'godkänd' : 'underkänd · mäter';
+
+    S.step = 3; STEP_INFO[3] = 'orderböcker'; renderSteps();
+    const tokens = today.filter(e => e.probs).flatMap(e => e.buckets.flatMap(b => [b.yes, b.no]));
+    S.quotes = {...S.quotes, ...(await loadBooks(tokens))};
+    const rows = [], cands = [];
+    const equityUsd = equity();
+    for (const e of today.filter(e => e.probs)) {
+      const evCands = [];
+      e.buckets.forEach((b, i) => {
+        const p = e.probs[i], ya = S.quotes[b.yes]?.ask ?? null, na = S.quotes[b.no]?.ask ?? null;
+        const mid = ya != null && na != null ? (ya + 1 - na) / 2 : null;
+        let best = null;
+        for (const [side, prob, price] of [['YES', p, ya], ['NO', 1 - p, na]]) {
+          if (price == null || price < CFG.MIN_PRICE || price > CFG.MAX_PRICE) continue;
+          const cost = price + CFG.SLIPPAGE + b.fee * Math.min(price, 1 - price);
+          const edge = prob - cost;
+          if (edge >= CFG.MIN_EDGE && cost < 1) {
+            const c = {e, b, i, side, prob, price, cost, edge, stake: Math.min(CFG.KELLY * (prob - cost) / (1 - cost), CFG.MAX_BET),
+                       mktProb: side === 'YES' ? mid : (mid == null ? null : 1 - mid)};
+            evCands.push(c); if (!best || edge > best.edge) best = c;
+          }
+        }
+        rows.push({e, b, i, p, mid, ya, na, cls: best ? 'MISPRIS' : (mid != null && mid < 0.05 && p < 0.05 ? 'SVANS' : 'RÄTT')});
+      });
+      const tot = evCands.reduce((a, c) => a + c.stake, 0);
+      if (tot > CFG.MAX_EVENT) evCands.forEach(c => c.stake *= CFG.MAX_EVENT / tot);
+      evCands.forEach(c => c.stakeUsd = c.stake * equityUsd);
+      cands.push(...evCands);
+    }
+    S.rows = rows; S.cands = cands.sort((a, b) => b.edge - a.edge); S.events = today;
+    STEP_INFO[3] = `${cands.length} kandidater`;
+
+    S.step = 4; renderSteps();
+    const open = S.wstate?.open?.length || 0;
+    STEP_INFO[4] = approved ? `${open} öppna` : 'av · mäter';
+
+    S.step = 5; renderSteps();
+    const settled = S.wstate?.closed?.length || 0, scored = S.wstate?.score?.events || 0;
+    STEP_INFO[5] = `${settled} avräknade · ${scored} mätta`;
+
+    for (let k = 0; k < 6; k++) S.pulses.push({lane: k % 3, t: -k * 0.15});
+    S.scanMs = performance.now() - t0; S.scanAt = Date.now();
+    buildFeed(); renderAll();
+  } catch (err) {
+    STEP_INFO[S.step] = 'fel: ' + String(err.message || err).slice(0, 30);
+    renderSteps();
+  }
 }
 
-// ---------------------------------------------------------------- feed
-function pushFeed(html) {
-  const t = new Date().toISOString().slice(11, 19);
-  S.feed.unshift(`<span><span class="mute">${t}</span> ${html}</span>`);
-  S.feed = S.feed.slice(0, 14);
+// ------------------------------------------------------------------ account (from the bot's own state)
+function equity() {
+  const st = S.wstate;
+  if (!st) return CFG.START_USD;
+  return st.cash + (st.open || []).reduce((a, p) => a + p.stake_usd, 0);
 }
+function renderAccount() {
+  const st = S.wstate || {cash: CFG.START_USD, open: [], closed: []};
+  const eqUsd = equity(), pnlUsd = eqUsd - CFG.START_USD, pnl = sek(pnlUsd);
+  const el = $('pnl');
+  el.innerHTML = pnl == null ? '—' : `${pnl >= 0 ? '+' : '−'}${fmt(Math.abs(pnl), 0)}<small>kr</small>`;
+  el.style.color = pnl == null ? COL.mute : pnl >= 0 ? COL.green : COL.red;
+  const first = st.history?.[0]?.ts;
+  const days = first ? Math.max(1, Math.round((Date.now() - new Date(first)) / 864e5)) : 0;
+  $('pnlsub').textContent = `ALL-TIME PNL · ${days} DAGAR · ${pnlUsd >= 0 ? '+' : '−'}${fmt(Math.abs(pnlUsd / CFG.START_USD * 100), 2)}% · KAPITAL ${kr(sek(eqUsd))}`;
+  const closed = st.closed || [], wins = closed.filter(p => p.won);
+  $('trades').textContent = fmt(closed.length + (st.open || []).length);
+  $('winrate').textContent = closed.length ? pct(wins.length / closed.length, 1) : '—';
+  const avgWin = wins.length ? wins.reduce((a, p) => a + p.pnl_usd, 0) / wins.length : null;
+  const losses = closed.filter(p => !p.won), avgLoss = losses.length ? -losses.reduce((a, p) => a + p.pnl_usd, 0) / losses.length : null;
+  $('rr').textContent = avgWin && avgLoss ? fmt(avgWin / avgLoss, 2) : '—';
+  const openStake = (st.open || []).reduce((a, p) => a + p.stake_usd, 0);
+  const risk = Math.min(10, openStake / Math.max(eqUsd, 1) / 0.25 * 10);
+  $('risk').textContent = fmt(risk, 1) + '/10';
+  $('riskbar').style.width = risk * 10 + '%';
+  $('riskb').textContent = risk < 4 ? 'SÄKER' : risk < 7 ? 'FÖRHÖJD' : 'HÖG';
+  $('riskb').className = 'badge ' + (risk < 4 ? 'b-green' : risk < 7 ? 'b-yellow' : 'b-red');
+  const approved = !!S.wbt?.approved;
+  $('mode').textContent = approved ? 'PAPER · HANDLAR' : 'PAPER · MÄTER';
+  $('mode').className = 'badge ' + (approved ? 'b-green' : 'b-yellow');
+  $('nevents').textContent = S.events.length;
+}
+function renderBest() {
+  const c = S.cands[0];
+  $('bx-n').textContent = `${S.cands.length} av ${S.rows.length} intervall`;
+  $('bx-bar').style.width = Math.min(100, S.cands.length / Math.max(S.rows.length, 1) * 400) + '%';
+  if (!c) { $('bx-mult').textContent = '—'; $('bx-what').textContent = 'ingen edge ≥ 5 procentenheter just nu'; return; }
+  $('bx-mult').textContent = 'X' + fmt(1 / c.cost, 1);
+  $('bx-what').textContent = `${c.side} · betalar ${fmt(1 / c.cost, 1)}× insatsen om rätt`;
+  $('bx-city').textContent = c.e.city + (c.e.isToday ? '' : ' (imorgon)');
+  $('bx-bucket').textContent = c.b.label;
+  $('bx-model').textContent = pct(c.prob, 0);
+  $('bx-mkt').textContent = c.mktProb == null ? '—' : pct(c.mktProb, 0);
+  $('bx-edge').textContent = '+' + fmt(c.edge * 100, 1) + ' pe';
+  $('bx-cost').textContent = kr(sek(c.cost), 2);
+  $('bx-stake').textContent = kr(sek(c.stakeUsd), 0);
+  $('bx-win').textContent = skr(sek(c.stakeUsd / c.cost - c.stakeUsd), 0);
+}
+
+// ------------------------------------------------------------------ charts
+function drawDist() {
+  const evs = S.events.filter(e => e.probs);
+  if (!evs.length) { const {g, w, h} = canvas('c-dist'); g.fillStyle = COL.mute; g.textAlign = 'center'; g.fillText('väntar på prognoser…', w / 2, h / 2); return; }
+  // featured: cities with candidates first, rotating
+  const order = [...new Set([...S.cands.map(c => c.e), ...evs])];
+  const e = order[S.featured % order.length];
+  $('ch-title').textContent = `${e.city} · ${e.unit === 'F' ? '°F' : '°C'}`;
+  $('ch-sub').textContent = `μ ${fmt(e.mu, 1)} · σ ${fmt(e.sigma, 1)} · ${e.nModels} modeller`;
+  const {g, w, h} = canvas('c-dist'); HITS['c-dist'] = [];
+  const pad = {l: 4, r: 4, t: 30, b: 30}, n = e.buckets.length, bw = (w - pad.l - pad.r) / n;
+  const rows = S.rows.filter(r => r.e === e);
+  const max = Math.max(0.3, ...rows.map(r => Math.max(r.p, r.mid ?? 0)));
+  const Y = v => h - pad.b - v / max * (h - pad.t - pad.b);
+  g.strokeStyle = COL.line; g.setLineDash([2, 4]);
+  [0.25, 0.5, 0.75].forEach(f => { const y = Y(max * f); g.beginPath(); g.moveTo(pad.l, y); g.lineTo(w - pad.r, y); g.stroke(); });
+  g.setLineDash([]);
+  rows.forEach((r, i) => {
+    const x = pad.l + i * bw;
+    if (r.mid != null) { g.fillStyle = COL.blue; g.fillRect(x + 3, Y(r.mid), bw - 6, h - pad.b - Y(r.mid)); }
+    const isC = r.cls === 'MISPRIS';
+    g.fillStyle = isC ? COL.yellow : COL.green;
+    g.fillRect(x + 2, Y(r.p) - 1.5, bw - 4, 3);
+    g.fillStyle = isC ? COL.yellow : COL.ink2; g.textAlign = 'center'; g.font = '9px JetBrains Mono, monospace';
+    g.fillText(r.b.label.replace(/°[CF]/, '°').replace(' or below', '↓').replace(' or higher', '↑'), x + bw / 2, h - pad.b + 10);
+    if (isC) { g.fillText('EDGE', x + bw / 2, h - pad.b + 21); }
+    hit('c-dist', x, pad.t, bw, h - pad.t - pad.b, `${esc(r.b.label)}<br>modell <b>${pct(r.p, 1)}</b> · marknad <b>${r.mid == null ? '—' : pct(r.mid, 1)}</b><br>YES ask ${r.ya ?? '—'} · NO ask ${r.na ?? '—'}`);
+  });
+  g.font = '9px JetBrains Mono, monospace'; g.textAlign = 'left';
+  g.fillStyle = COL.blue; g.fillRect(pad.l, 4, 8, 8); g.fillStyle = COL.ink2; g.fillText('marknad', pad.l + 12, 8);
+  g.fillStyle = COL.green; g.fillRect(pad.l + 70, 7, 10, 3); g.fillStyle = COL.ink2; g.fillText('modell', pad.l + 84, 8);
+  g.fillStyle = COL.yellow; g.fillRect(pad.l + 134, 7, 10, 3); g.fillStyle = COL.ink2; g.fillText('edge', pad.l + 148, 8);
+}
+
+const TREE = {nodes: {tick: [0.04, 0.5, 'TICK'], scan: [0.16, 0.5, 'SCAN'], classify: [0.32, 0.5, 'CLASSIFY'],
+  mis: [0.55, 0.25, 'MISPRIS'], fair: [0.55, 0.5, 'RÄTT PRIS'], tail: [0.55, 0.75, 'BILLIG SVANS'],
+  fill: [0.76, 0.3, 'FILL'], hold: [0.76, 0.66, 'MÄT / HÅLL']},
+  edges: [['tick', 'scan'], ['scan', 'classify'], ['classify', 'mis'], ['classify', 'fair'], ['classify', 'tail'],
+          ['mis', 'fill'], ['mis', 'hold'], ['fair', 'hold'], ['tail', 'hold']]};
+let tTree = 0;
+function drawTree(dt) {
+  tTree += dt;
+  const {g, w, h} = canvas('c-tree');
+  const narrow = w < 560, boxW = narrow ? 54 : 72, span = w - boxW - 10;
+  const m0 = narrow ? 24 : 30;  // keep the first node clear of the left edge
+  const P = k => [m0 + (TREE.nodes[k][0] - 0.04) / 0.82 * (span - m0 - 20), TREE.nodes[k][1] * h];
+  const approved = !!S.wbt?.approved;
+  const counts = {mis: S.rows.filter(r => r.cls === 'MISPRIS').length, fair: S.rows.filter(r => r.cls === 'RÄTT').length,
+                  tail: S.rows.filter(r => r.cls === 'SVANS').length};
+  const active = new Set(['tick>scan', 'scan>classify', 'classify>fair', 'fair>hold', 'classify>tail', 'tail>hold',
+                          ...(counts.mis ? ['classify>mis', approved ? 'mis>fill' : 'mis>hold'] : [])]);
+  for (const [a, b] of TREE.edges) {
+    const [x0, y0] = P(a), [x1, y1] = P(b), on = active.has(a + '>' + b);
+    g.strokeStyle = on ? (b === 'mis' || a === 'mis' ? COL.yellow : '#9a9a9a') : '#2c2c2c'; g.lineWidth = on ? 1.6 : 1;
+    g.beginPath(); g.moveTo(x0, y0); g.bezierCurveTo((x0 + x1) / 2, y0, (x0 + x1) / 2, y1, x1, y1); g.stroke();
+    if (a === 'classify') {
+      g.fillStyle = COL.mute; g.font = '8.5px JetBrains Mono, monospace'; g.textAlign = 'center';
+      const n = b === 'mis' ? counts.mis : b === 'fair' ? counts.fair : counts.tail;
+      g.fillText(`${n} st`, (x0 + x1) / 2 + 10, (y0 + y1) / 2 - 8);
+    }
+  }
+  // pulses run along the active path after every scan
+  S.pulses = S.pulses.filter(p => (p.t += dt * 0.5) < 1);
+  const lanes = [['tick', 'scan', 'classify', 'fair', 'hold'], ['tick', 'scan', 'classify', 'tail', 'hold'],
+                 counts.mis ? ['tick', 'scan', 'classify', 'mis', approved ? 'fill' : 'hold'] : ['tick', 'scan', 'classify', 'fair', 'hold']];
+  for (const p of S.pulses) {
+    if (p.t < 0) continue;
+    const path = lanes[p.lane], seg = Math.min(path.length - 2, Math.floor(p.t * (path.length - 1)));
+    const f = p.t * (path.length - 1) - seg, [x0, y0] = P(path[seg]), [x1, y1] = P(path[seg + 1]);
+    const u = f, x = x0 + (x1 - x0) * u, y = y0 + (y1 - y0) * (u * u * (3 - 2 * u));
+    g.fillStyle = p.lane === 2 && counts.mis ? COL.yellow : COL.green; g.beginPath(); g.arc(x, y, 2.5, 0, 7); g.fill();
+  }
+  for (const [k, [fx, fy, label]] of Object.entries(TREE.nodes)) {
+    const [x, y] = P(k), bw = Math.max(narrow ? 40 : 52, label.length * (narrow ? 5.6 : 6.6) + 12), bh = 20;
+    const hot = (k === 'mis' && counts.mis) || (k === 'fill' && approved && counts.mis) || k === 'hold' || ['tick', 'scan', 'classify'].includes(k);
+    g.fillStyle = '#0d0d0d'; g.fillRect(x - bw / 2, y - bh / 2, bw, bh);
+    g.strokeStyle = k === 'mis' && counts.mis ? COL.yellow : k === 'fill' ? (approved ? COL.green : '#444') : hot ? '#bdbdbd' : '#444';
+    g.lineWidth = 1.2; g.strokeRect(x - bw / 2 + .5, y - bh / 2 + .5, bw - 1, bh - 1);
+    g.fillStyle = k === 'fill' && !approved ? COL.mute : COL.ink; g.font = `600 ${narrow ? 8 : 9}px JetBrains Mono, monospace`; g.textAlign = 'center';
+    g.fillText(label, x, y + 1);
+  }
+  // edge confidence box + side stats
+  const best = S.cands[0];
+  const [mx, my] = P('mis');
+  g.textAlign = 'center';
+  g.strokeStyle = COL.line; g.fillStyle = '#0d0d0d'; g.fillRect(mx - 46, my - 58, 92, 36); g.strokeRect(mx - 45.5, my - 57.5, 91, 35);
+  g.fillStyle = COL.ink2; g.font = '8.5px JetBrains Mono, monospace'; g.fillText('BÄSTA EDGE', mx, my - 49);
+  g.fillStyle = COL.cyan; g.font = '700 16px Silkscreen, monospace'; g.fillText(best ? '+' + fmt(best.edge * 100, 1) + '%' : '—', mx, my - 33);
+  if (best) {
+    const [hx, hy] = P('hold');
+    if (narrow) { /* no room: the best bet is in the card above */ } else {
+    g.fillStyle = '#0d0d0d'; g.fillRect(hx - 140, hy + 30, 150, 24); g.strokeStyle = COL.line; g.strokeRect(hx - 139.5, hy + 30.5, 149, 23);
+    g.fillStyle = COL.ink2; g.font = '8.5px JetBrains Mono, monospace'; g.textAlign = 'left';
+    g.fillText(`${best.e.city.toUpperCase().slice(0, 12)} ${best.b.label}`, hx - 134, hy + 42);
+    g.fillStyle = COL.green; g.font = '700 11px Silkscreen, monospace'; g.textAlign = 'right';
+    g.fillText(skr(sek(best.stakeUsd * best.edge / best.cost), 0), hx + 6, hy + 42);
+    }
+  }
+  const sx = w - 4, boxes = [['STÄDER', S.events.length], ['MÄTTA', S.wstate?.score?.events ?? 0],
+    ['NÄSTA', S.scanAt ? Math.max(0, Math.ceil((S.scanAt + CFG.scanMs - Date.now()) / 1000)) + 's' : '—']];
+  boxes.forEach(([k, v], i) => {
+    const y = h * (0.42 + i * 0.19);
+    g.fillStyle = '#0d0d0d'; g.fillRect(sx - boxW, y - 16, boxW, 32); g.strokeStyle = COL.line; g.strokeRect(sx - boxW + .5, y - 15.5, boxW - 1, 31);
+    g.textAlign = 'right'; g.fillStyle = COL.ink2; g.font = '8.5px JetBrains Mono, monospace'; g.fillText(k, sx - 6, y - 7);
+    g.fillStyle = COL.ink; g.font = '700 13px Silkscreen, monospace'; g.fillText(String(v), sx - 6, y + 7);
+  });
+  $('inplay').textContent = S.cands.length;
+}
+
+function cellColor(v) {
+  if (v == null) return null;
+  if (v >= 0.10) return COL.green; if (v >= 0.03) return COL.cyan; if (v > -0.03) return '#8f8f8f';
+  if (v > -0.10) return COL.orange; return COL.red;
+}
+function renderMatrix() {
+  const byEvent = new Map();
+  for (const r of S.rows) (byEvent.get(r.e) || byEvent.set(r.e, []).get(r.e)).push(r);
+  const ranked = [...byEvent.entries()].map(([e, rs]) => {
+    const scores = rs.map(r => r.mid == null ? null : r.p - r.mid);
+    return {e, rs, scores, max: Math.max(...scores.filter(x => x != null).map(Math.abs), 0)};
+  }).sort((a, b) => b.max - a.max).slice(0, 7);
+  let html = '<tr><th>STAD</th><th>−2</th><th>−1</th><th>MODELL</th><th>+1</th><th>+2</th><th>+3</th><th>MAX</th></tr>';
+  for (const {e, rs, scores, max} of ranked) {
+    const top = e.probs.indexOf(Math.max(...e.probs));
+    html += `<tr><td class="city">${esc(e.city.slice(0, 13))}${e.isToday ? '' : ' ›'}</td>`;
+    for (let k = -2; k <= 3; k++) {
+      const r = rs[top + k], v = r ? scores[top + k] : null, col = cellColor(v);
+      html += col ? `<td style="background:${col}" title="${esc(r.b.label)}: modell ${pct(r.p, 1)}, marknad ${pct(r.mid, 1)}">${v >= 0 ? '+' : '−'}${fmt(Math.abs(v) * 100, 1)}</td>` : '<td class="na">·</td>';
+    }
+    html += `<td style="background:${cellColor(max)}">${fmt(max * 100, 1)}</td></tr>`;
+  }
+  if (!ranked.length) html += '<tr><td class="na" colspan="8">väntar på första skanningen…</td></tr>';
+  const t = $('matrix'); if (t.dataset.h !== html) { t.innerHTML = html; t.dataset.h = html; }
+}
+function drawGauge() {
+  const {g, w, h} = canvas('c-gauge');
+  const sc = S.wstate?.score, bt = S.wbt;
+  // live score if measured, else backtest: market log-loss / model log-loss (100 = as good as the market)
+  let val = null, src = '';
+  if (sc && sc.n > 20) { val = sc.market / sc.model * 100; src = 'LIVE'; }
+  else if (bt?.logloss_model) { val = bt.logloss_market / bt.logloss_model * 100; src = 'BACKTEST'; }
+  const cx = w / 2, cy = h / 2, R = Math.min(w, h) / 2 - 8;
+  g.lineWidth = 7; g.strokeStyle = '#1a1a1a'; g.beginPath(); g.arc(cx, cy, R, 0, 7); g.stroke();
+  if (val != null) {
+    g.strokeStyle = val >= 100 ? COL.green : COL.cyan;
+    g.beginPath(); g.arc(cx, cy, R, -Math.PI / 2, -Math.PI / 2 + Math.min(val, 100) / 100 * Math.PI * 2); g.stroke();
+  }
+  g.fillStyle = COL.ink; g.textAlign = 'center'; g.font = '700 16px Silkscreen, monospace'; g.fillText(val == null ? '—' : fmt(val, 0), cx, cy - 2);
+  g.fillStyle = COL.mute; g.font = '8px JetBrains Mono, monospace'; g.fillText(src || 'SKILL', cx, cy + 14);
+  $('gauge-lbl').innerHTML = `<span>SKILL</span><b>${val == null ? '—' : fmt(val, 0) + '/100'}</b>` +
+    `<span>TRÄFF BT</span><b>${bt?.hit_rate != null ? pct(bt.hit_rate) : '—'}</b>` +
+    `<span>MÄTTA</span><b>${sc?.events ?? 0}</b>`;
+}
+
+// Monte Carlo: one simulated settlement of today's candidates; each city's
+// realized bucket is drawn from the model distribution (one bucket wins per city)
+function drawMC() {
+  const cands = S.cands, N = cands.length ? 4000 : 0;
+  $('mc-n').textContent = fmt(N);
+  const {g, w, h} = canvas('c-mc'); HITS['c-mc'] = [];
+  if (!N || S.fx == null) {
+    g.fillStyle = COL.mute; g.textAlign = 'center'; g.fillText(cands.length ? 'väntar på växelkurs…' : 'inga kandidater att simulera just nu', w / 2, h / 2);
+    ['mc-p5', 'mc-ev', 'mc-evm'].forEach(id => $(id).textContent = '—'); $('mc-p').textContent = '—'; return;
+  }
+  const byEv = new Map();
+  for (const c of cands) (byEv.get(c.e) || byEv.set(c.e, []).get(c.e)).push(c);
+  const evs = [...byEv.entries()];
+  const sims = new Float64Array(N);
+  let seed = 12345; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+  for (let n = 0; n < N; n++) {
+    let pnl = 0;
+    for (const [e, cs] of evs) {
+      let u = rnd(), win = e.probs.length - 1, acc = 0;
+      for (let i = 0; i < e.probs.length; i++) { acc += e.probs[i]; if (u <= acc) { win = i; break; } }
+      for (const c of cs) {
+        const yesWins = c.i === win, won = c.side === 'YES' ? yesWins : !yesWins;
+        pnl += (won ? c.stakeUsd / c.cost : 0) - c.stakeUsd;
+      }
+    }
+    sims[n] = pnl * S.fx;
+  }
+  const sorted = Array.from(sims).sort((a, b) => a - b);
+  const p5 = sorted[Math.floor(N * 0.05)], ev = sorted.reduce((a, b) => a + b, 0) / N, ploss = sorted.filter(x => x < 0).length / N;
+  // expected value if the market's prices are right instead of the model
+  const evm = cands.reduce((a, c) => a + (c.mktProb == null ? 0 : c.stakeUsd * (c.mktProb / c.cost - 1)), 0) * S.fx;
+  $('mc-p5').textContent = skr(p5); $('mc-p5').className = 'v ' + (p5 >= 0 ? 'up' : 'down');
+  $('mc-ev').textContent = skr(ev); $('mc-ev').className = 'v ' + (ev >= 0 ? 'up' : 'down');
+  $('mc-evm').textContent = skr(evm); $('mc-evm').className = 'v ' + (evm >= 0 ? 'up' : 'down');
+  $('mc-p').textContent = `P(FÖRLUST) ${pct(ploss, 1)}`;
+  const lo = sorted[0], hi = sorted[N - 1], bins = 70, bwid = (hi - lo) / bins || 1, counts = new Array(bins).fill(0);
+  for (const x of sorted) counts[Math.min(bins - 1, Math.floor((x - lo) / bwid))]++;
+  const max = Math.max(...counts), pad = {l: 4, r: 4, t: 26, b: 16}, cw = (w - pad.l - pad.r) / bins;
+  const p15 = sorted[Math.floor(N * 0.15)];
+  counts.forEach((c, i) => {
+    const x0 = lo + i * bwid, bh = c / max * (h - pad.t - pad.b), x = pad.l + i * cw;
+    g.fillStyle = x0 < p5 ? COL.red : x0 < p15 ? COL.orange : COL.blue;
+    g.fillRect(x + .5, h - pad.b - bh, Math.max(cw - 1, 1), bh);
+    hit('c-mc', x, pad.t, cw, h - pad.t - pad.b, `${skr(x0)} … ${skr(x0 + bwid)}<br>${fmt(c / N * 100, 1)}% av dagarna`);
+  });
+  const zx = pad.l + (0 - lo) / (hi - lo) * (w - pad.l - pad.r);
+  if (zx > pad.l && zx < w - pad.r) { g.strokeStyle = COL.ink2; g.setLineDash([3, 3]); g.beginPath(); g.moveTo(zx, pad.t - 6); g.lineTo(zx, h - pad.b); g.stroke(); g.setLineDash([]); }
+  g.fillStyle = COL.ink2; g.textAlign = 'left'; g.font = '9px JetBrains Mono, monospace';
+  g.fillText(`μ ${skr(ev)} · σ ${fmt(Math.sqrt(sorted.reduce((a, x) => a + (x - ev) ** 2, 0) / N), 0)} kr · ${cands.length} bets i ${evs.length} städer`, pad.l, 8);
+  g.fillText('enligt modellen — backtesten visar att modellen är för säker', pad.l, 19);
+  g.textAlign = 'left'; g.fillText(skr(lo), pad.l, h - 6); g.textAlign = 'right'; g.fillText(skr(hi), w - pad.r, h - 6);
+}
+
+// ------------------------------------------------------------------ feed, banner, steps
 function buildFeed() {
   const items = [];
-  for (const tr of (S.state?.trades || []).slice(-6).reverse()) {
-    const why = tr.reason === 'STOP' ? 'STOP-LOSS ' : tr.reason === 'HALT' ? 'KILL SWITCH ' : '';
-    items.push(`<span><span class="mute">${esc(String(tr.ts).slice(0, 16))}</span> <span class="${tr.side === 'BUY' ? 'up' : 'down'}">${why}BOT ${tr.side === 'BUY' ? 'KÖPTE' : 'SÅLDE'} ${fmt(tr.qty, 6)} BTC</span> @ <b>${fmt(tr.price, 2)}</b> · avgift ${usd(tr.commission_quote)}</span>`);
-  }
-  for (const r of S.runs.slice(-4).reverse()) {
-    items.push(`<span><span class="mute">${esc(r.ts.slice(0, 16).replace('T', ' '))}</span> KÖRNING ${esc(r.broker)} <span class="${r.exit ? 'down' : 'up'}">exit ${r.exit}</span></span>`);
-  }
-  S.botFeed = items;
+  for (const c of S.cands.slice(0, 8)) items.push(`<span><b class="${c.side === 'YES' ? 'up' : 'cy'}">${esc(c.e.city.toUpperCase())} ${c.side === 'YES' ? '▲' : '▼'} ${esc(c.b.label)}</b> modell ${pct(c.prob)} · pris ${fmt(c.price, 3)} · <span class="warn">+${fmt(c.edge * 100, 1)} pe</span></span>`);
+  const st = S.wstate;
+  for (const p of (st?.closed || []).slice(-5).reverse()) items.push(`<span>${esc(p.city.toUpperCase())} ${esc(p.bucket)} ${p.side} <b class="${p.won ? 'up' : 'down'}">${p.won ? 'VANN' : 'FÖRLUST'} ${skr(sek(p.pnl_usd))}</b></span>`);
+  const lr = st?.last_run;
+  if (lr) items.push(`<span class="mute">boten ${esc(String(lr.ts).slice(11, 16))} UTC · ${lr.logged} loggade · ${(lr.opened || []).length} köp</span>`);
+  if (!items.length) items.push('<span class="mute">skannar marknaderna…</span>');
+  S.feedHtml = items.join('<span class="mute">·</span>');
+  const foot = S.events.slice(0, 30).map(e => `<span>${esc(e.city.toUpperCase())} <b>${fmt(e.mu, 1)}°${e.unit}</b> <span class="mute">±${fmt(e.sigma, 1)} · ${e.nModels} mod</span></span>`);
+  if (S.fx) foot.push(`<span>USD/SEK <b>${fmt(S.fx, 2)}</b> <span class="mute">ECB ${esc(S.fxDate || '')}</span></span>`);
+  S.footHtml = foot.join('<span class="mute">·</span>');
 }
 function renderTickers() {
-  const items = [...S.feed, ...(S.botFeed || [])];
-  if (!items.length) items.push('<span class="mute">väntar på data…</span>');
-  const html = items.join('<span class="mute">·</span>');
-  const run = $('feed'); if (run.dataset.h !== html) { run.innerHTML = html + '<span class="mute">·</span>' + html; run.dataset.h = html; }
-
-  const a = account(), ap = S.approval || {}, o = ap.oos_metrics || {}, g = ap.gates || {};
-  const gates = ['no_leakage', 'deflated_sharpe', 'walk_forward'].map(k => g[k]);
-  const foot = [
-    `<span>VALIDERING <b class="${ap.approved ? 'up' : 'down'}">${ap.approved ? 'GODKÄND' : 'UNDERKÄND'}</b></span>`,
-    `<span>PnL <b class="${a.pnl >= 0 ? 'up' : 'down'}">${a.pnl == null ? '—' : sgn(a.pnl, 2).replace(/^([+−])/, '$1$')}</b></span>`,
-    `<span>OOS SHARPE <b>${fmt(o.sharpe)}</b></span>`,
-    `<span>MAX DD <b class="down">${fmt(o.max_drawdown, 1)}%</b></span>`,
-    `<span>DEFLATED SHARPE <b>${fmt(ap.dsr?.deflated_sharpe, 3)}</b></span>`,
-    `<span>GRINDAR <b>${gates.filter(Boolean).length}/3</b></span>`,
-    `<span>REGIM <b>${esc(ap.regime_verdict || '—')}</b></span>`,
-    `<span>RISK <b>1% / affär · tak 20%</b></span>`,
-    `<span>STATE <b>${S.stateAt ? S.stateAt.toISOString().slice(11, 19) + ' UTC' : '—'}</b></span>`,
-    `<span class="mute">Demo-konto · ingen finansiell rådgivning</span>`,
-  ].join('<span class="mute">·</span>');
-  const f = $('foot'); if (f.dataset.h !== foot) { f.innerHTML = foot + '<span class="mute">·</span>' + foot; f.dataset.h = foot; }
-}
-
-// ---------------------------------------------------------------- header + wallet
-function nextRun() {
-  const n = new Date(), t = new Date(Date.UTC(n.getUTCFullYear(), n.getUTCMonth(), n.getUTCDate(), CFG.runAt.h, CFG.runAt.m));
-  if (t <= n) t.setUTCDate(t.getUTCDate() + 1);
-  const s = Math.floor((t - n) / 1000);
-  return [s / 3600 | 0, (s % 3600) / 60 | 0, s % 60].map(x => String(x).padStart(2, '0')).join(':');
-}
-function renderHeader() {
-  const a = account();
-  $('h-symbol').textContent = CFG.symbol;
-  $('h-clock').textContent = new Date().toISOString().slice(11, 19) + ' UTC';
-  const stale = S.lastTick && Date.now() - S.lastTick > 10_000;
-  const live = $('h-live');
-  live.textContent = !S.wsOk ? 'OFFLINE' : stale ? 'VÄNTAR' : 'LIVE' + (S.lag != null ? ' ' + Math.round(S.lag) + ' ms' : '');
-  live.className = 'badge ' + (!S.wsOk ? 'b-red' : stale ? 'b-yellow' : 'b-green');
-  set('h-price', S.price ? '$' + fmt(S.price, 2) : '—');
-  const day = S.dayOpen && S.price ? (S.price / S.dayOpen - 1) * 100 : null;
-  set('h-day', sgn(day, 2, '%'), day);
-  const sig = a.signal; set('h-signal', sig == null ? '—' : sig > 0 ? 'LÅNG' + (sig < .999 ? ' ' + Math.round(sig * 100) + '%' : '') : 'KONTANT');
-  $('h-signal').className = 'v ' + (sig > 0 ? 'up' : 'mute');
-  set('h-pos', a.qty ? fmt(a.qty, 6) + ' BTC' : '0 BTC');
-  set('h-next', a.halted ? 'HALTED' : nextRun());
-  const at = S.stateCommitAt ? new Date(S.stateCommitAt).toISOString().slice(11, 16) + ' UTC' : null;
-  const sv = serverStatus();
-  const mode = sv ? (sv.alive ? 'SERVER LIVE' : 'SERVER TYST ' + Math.round(sv.age / 60) + ' min') : 'DAGLIG (ACTIONS)';
-  $('h-account').textContent = mode + ' · ' + (a.broker || '—').toUpperCase() + ' · ' +
-    (!S.stateOk ? 'ingen bot-data än' : at ? 'bot-data från ' + at + (S.stateSha ? ' · ' + S.stateSha.slice(0, 7) : '') : 'bot-data (cache)');
-  $('s-price').textContent = S.price ? fmt(S.price, 2) : '—';
-}
-function renderWallet() {
-  const a = account();
-  $('w-acct').textContent = (a.broker === 'testnet' ? 'Binance testnet' : 'Paper') + ' · ' + CFG.symbol;
-  const sv = serverStatus(), b = $('w-badge');
-  b.textContent = a.halted ? 'HALTED' : sv?.alive && sv.watching ? 'STOP BEVAKAS' : sv && !sv.alive ? 'SERVER TYST' : 'ACTIVE';
-  b.className = 'r badge ' + (a.halted || (sv && !sv.alive) ? 'b-red' : 'b-green');
-  const pnl = $('w-pnl');
-  pnl.textContent = a.pnl == null ? '—' : (a.pnl >= 0 ? '+' : '−') + '$' + fmt(Math.abs(a.pnl), 3);
-  pnl.style.color = a.pnl == null ? C.mute : a.pnl >= 0 ? C.green : C.red;
-  const pct = a.pnl != null && a.initial ? a.pnl / a.initial * 100 : null;
-  set('w-pct', sgn(pct, 3, '%'), pct);
-  set('w-eq', 'equity ' + usd(a.equity));
-  set('w-trades', a.trades);
-  const exp = a.equity ? a.qty * a.px / a.equity * 100 : null;
-  set('w-exp', exp == null ? '—' : fmt(exp, 1) + '%');
-  set('w-dep', a.initial == null ? '—' : usd(a.initial, 0));
-  set('w-entry', a.entry ? fmt(a.entry, 2) : '—');
-  set('w-stop', a.qty > 0 && a.stop ? fmt(a.stop, 2) : '—');
-  const un = a.entry && a.qty ? (a.px - a.entry) * a.qty : null;
-  set('w-unreal', un == null ? '—' : sgn(un, 2).replace(/^([+−])/, '$1$'), un);
-  drawEquity();
-}
-function drawEquity() {
-  const L = liveSeries(), pts = L.hist;
-  if (pts.length < 1) return empty('c-equity', 'equity visas efter första körningen');
-  const {g, w, h} = canvas('c-equity'); HITS['c-equity'] = [];
-  const pad = {l: 4, r: 66, t: 8, b: 14};
-  const vals = pts.map(p => p.equity), init = vals[0];
-  let lo = Math.min(...vals, init), hi = Math.max(...vals, init); const span = Math.max(hi - lo, init * 0.002); lo -= span * .25; hi += span * .25;
-  const X = i => pad.l + (pts.length === 1 ? (w - pad.l - pad.r) / 2 : i * (w - pad.l - pad.r) / (pts.length - 1));
-  const Y = v => pad.t + (1 - (v - lo) / (hi - lo)) * (h - pad.t - pad.b);
-  grid(g, pad.l, pad.t, w - pad.r, h - pad.b, 3);
-  g.strokeStyle = C.mute; g.setLineDash([3, 3]); g.beginPath(); g.moveTo(pad.l, Y(init)); g.lineTo(w - pad.r, Y(init)); g.stroke(); g.setLineDash([]);
-  g.fillStyle = C.mute; g.textAlign = 'left'; g.fillText('start', w - pad.r + 4, Y(init) + 11);
-  const up = vals.at(-1) >= init, col = up ? C.green : C.red;
-  const grad = g.createLinearGradient(0, pad.t, 0, h - pad.b); grad.addColorStop(0, col + '55'); grad.addColorStop(1, col + '00');
-  g.beginPath(); pts.forEach((p, i) => i ? g.lineTo(X(i), Y(p.equity)) : g.moveTo(X(i), Y(p.equity)));
-  g.lineTo(X(pts.length - 1), h - pad.b); g.lineTo(X(0), h - pad.b); g.closePath(); g.fillStyle = grad; g.fill();
-  g.beginPath(); pts.forEach((p, i) => i ? g.lineTo(X(i), Y(p.equity)) : g.moveTo(X(i), Y(p.equity)));
-  g.strokeStyle = col; g.lineWidth = 2; g.stroke();
-  const lx = X(pts.length - 1), ly = Y(vals.at(-1));
-  g.fillStyle = col; g.beginPath(); g.arc(lx, ly, 4, 0, 7); g.fill();
-  g.fillStyle = C.ink; g.fillText(fmt(vals.at(-1), 2), w - pad.r + 4, ly);
-  pts.forEach((p, i) => hit('c-equity', X(i) - 8, pad.t, 16, h, `${p.ts === 'live' ? 'live' : esc(String(p.ts).slice(0, 10))}<br>equity <b>${usd(p.equity)}</b><br>exponering ${fmt(p.exposure * 100, 1)}%`));
-}
-
-// ---------------------------------------------------------------- spot
-function drawCandles() {
-  const cs = S.candles;
-  if (!cs.length) return empty('c-candles', 'ansluter till Binance…');
-  const {g, w, h} = canvas('c-candles'); HITS['c-candles'] = [];
-  const pad = {l: 2, r: 56, t: 8, b: 14}, a = account();
-  let lo = Math.min(...cs.map(c => c.l)), hi = Math.max(...cs.map(c => c.h));
-  const m = (hi - lo) * .08 || 1; lo -= m; hi += m;
-  const Y = v => pad.t + (1 - (v - lo) / (hi - lo)) * (h - pad.t - pad.b);
-  const bw = (w - pad.l - pad.r) / cs.length;
-  grid(g, pad.l, pad.t, w - pad.r, h - pad.b, 4);
-  g.textAlign = 'left';
-  for (let i = 0; i <= 4; i++) { const v = hi - (hi - lo) * i / 4; g.fillStyle = C.mute; g.fillText(fmt(v, 0), w - pad.r + 4, Y(v)); }
-  cs.forEach((c, i) => {
-    const x = pad.l + i * bw + bw / 2, col = c.c >= c.o ? C.green : C.red;
-    g.strokeStyle = col; g.lineWidth = 1; g.beginPath(); g.moveTo(x, Y(c.h)); g.lineTo(x, Y(c.l)); g.stroke();
-    const y0 = Y(Math.max(c.o, c.c)), y1 = Y(Math.min(c.o, c.c));
-    g.fillStyle = col; g.fillRect(x - Math.max(bw * .32, .8), y0, Math.max(bw * .64, 1.6), Math.max(y1 - y0, 1));
-    hit('c-candles', x - bw / 2, pad.t, bw, h - pad.t - pad.b, `${new Date(c.t).toISOString().slice(11, 16)} UTC<br>O ${fmt(c.o)} H ${fmt(c.h)}<br>L ${fmt(c.l)} C <b>${fmt(c.c)}</b>`);
-  });
-  const line = (v, col, label) => {
-    if (v == null || v < lo || v > hi) return;
-    g.strokeStyle = col; g.setLineDash([4, 3]); g.beginPath(); g.moveTo(pad.l, Y(v)); g.lineTo(w - pad.r, Y(v)); g.stroke(); g.setLineDash([]);
-    g.fillStyle = col; g.fillText(label, pad.l + 4, Y(v) - 7);
-  };
-  line(a.entry, C.yellow, 'ENTRY ' + fmt(a.entry, 0));
-  if (a.qty > 0) line(a.stop, C.red, 'STOP ' + fmt(a.stop, 0));
-  const last = cs.at(-1), ly = Y(last.c);
-  g.fillStyle = last.c >= last.o ? C.green : C.red; g.fillRect(w - pad.r + 1, ly - 8, pad.r - 2, 16);
-  g.fillStyle = '#04110a'; g.font = '600 10px JetBrains Mono, monospace'; g.fillText(fmt(last.c, 1), w - pad.r + 4, ly);
-}
-function renderBook() {
-  const {bids, asks} = S.book, el = $('book');
-  if (!bids.length) { el.innerHTML = '<tr><td class="empty">orderbok: väntar…</td></tr>'; return; }
-  const max = Math.max(...bids.map(b => b[1]), ...asks.map(a => a[1]));
-  const row = (cl, p, q) => `<tr class="${cl}"><td><span>${fmt(p, 2)}</span></td><td><span>${fmt(q, 4)}</span></td><td><span>${usd(p * q, 0)}</span><div class="bar" style="width:${q / max * 100}%"></div></td></tr>`;
-  const spread = asks[0][0] - bids[0][0];
-  el.innerHTML = asks.slice().reverse().map(a => row('a', a[0], a[1])).join('') +
-    `<tr><td colspan="3" style="padding:0"><div class="spread"><span>Senast ${fmt(S.price, 2)}</span><span>Spread ${fmt(spread, 2)}</span></div></td></tr>` +
-    bids.map(b => row('b', b[0], b[1])).join('');
-}
-
-// ---------------------------------------------------------------- walk-forward + ridge
-function drawFolds() {
-  const wf = S.approval?.walk_forward, o = S.approval?.oos_metrics;
-  if (!wf?.folds?.length) { empty('c-folds', 'walk-forward visas efter nästa validering'); return; }
-  const folds = wf.folds.filter(f => f.sharpe != null);
-  const {g, w, h} = canvas('c-folds'); HITS['c-folds'] = [];
-  const pad = {l: 30, r: 4, t: 8, b: 16};
-  const m = Math.max(2, ...folds.map(f => Math.abs(f.sharpe)));
-  const Y = v => pad.t + (1 - (v + m) / (2 * m)) * (h - pad.t - pad.b);
-  grid(g, pad.l, pad.t, w - pad.r, h - pad.b, 4);
-  g.textAlign = 'right'; g.fillStyle = C.mute;
-  [m, m / 2, 0, -m / 2, -m].forEach(v => g.fillText(fmt(v, 1), pad.l - 4, Y(v)));
-  g.strokeStyle = C.ink2; g.beginPath(); g.moveTo(pad.l, Y(0)); g.lineTo(w - pad.r, Y(0)); g.stroke();
-  const bw = (w - pad.l - pad.r) / folds.length;
-  folds.forEach((f, i) => {
-    const x = pad.l + i * bw + 1, y0 = Y(0), y1 = Y(f.sharpe), col = f.sharpe >= 0 ? C.green : C.red;
-    const top = Math.min(y0, y1), hh = Math.max(Math.abs(y1 - y0), 1);
-    g.fillStyle = col; g.globalAlpha = .85; g.fillRect(x, top, Math.max(bw - 2, 1), hh); g.globalAlpha = 1;
-    hit('c-folds', x - 1, pad.t, bw, h - pad.t - pad.b, `fold ${i + 1} · från ${esc(String(f.start).slice(0, 10))}<br>Sharpe <b>${sgn(f.sharpe)}</b> · lookback ${f.lookback}<br>årsavk. ${sgn(f.ann_return, 1, '%')} · max DD ${fmt(f.max_drawdown, 1)}%`);
-  });
-  g.textAlign = 'left'; g.fillStyle = C.mute;
-  g.fillText(String(folds[0].start).slice(0, 7), pad.l, h - 6);
-  g.textAlign = 'right'; g.fillText(String(folds.at(-1).start).slice(0, 7), w - pad.r, h - 6);
-  const pos = folds.filter(f => f.sharpe > 0).length;
-  set('wf-pos', `${pos}/${folds.length}`); $('wf-pos').className = 'v ' + (pos / folds.length >= .6 ? 'up' : 'down');
-  set('wf-mean', sgn(wf.mean_sharpe), wf.mean_sharpe);
-  set('wf-worst', sgn(wf.worst_fold), wf.worst_fold);
-  set('wf-oos', sgn(o?.sharpe), o?.sharpe);
-  $('wf-sub').textContent = `${folds.length} fold · 180d träning / 60d test`;
-}
-function drawRidge() {
-  const d = S.daily;
-  if (d.length < 250) return empty('c-ridge', 'hämtar dagliga barer…');
-  const {g, w, h} = canvas('c-ridge'); HITS['c-ridge'] = [];
-  const n = 120, pad = {l: 34, r: 6, t: 10, b: 14}, lbs = CFG.lookbacks;
-  const active = S.approval?.params?.lookback;
-  const rows = lbs.map(L => d.slice(-n).map((p, i) => {
-    const j = d.length - n + i; return Math.log(p.c / d[j - L].c);
-  }));
-  const m = Math.max(...rows.flat().map(Math.abs)) || 1;
-  const band = (h - pad.t - pad.b) / lbs.length, amp = band * 1.25;
-  const X = i => pad.l + i * (w - pad.l - pad.r) / (n - 1);
-  rows.forEach((r, k) => {
-    const base = pad.t + band * (k + .6), isA = lbs[k] === active;
-    // area above / below the zero line, clipped by sign
-    for (const [sign, col] of [[1, C.green], [-1, C.red]]) {
-      g.beginPath(); g.moveTo(X(0), base);
-      r.forEach((v, i) => g.lineTo(X(i), base - Math.max(sign * v, 0) * sign * amp / m));
-      g.lineTo(X(n - 1), base); g.closePath();
-      g.fillStyle = col + (isA ? '55' : '26'); g.fill();
-    }
-    g.beginPath(); r.forEach((v, i) => i ? g.lineTo(X(i), base - v * amp / m) : g.moveTo(X(i), base - v * amp / m));
-    g.strokeStyle = isA ? C.yellow : C.ink2; g.lineWidth = isA ? 2 : 1; g.stroke(); g.lineWidth = 1;
-    g.strokeStyle = C.line; g.beginPath(); g.moveTo(pad.l, base); g.lineTo(w - pad.r, base); g.stroke();
-    g.fillStyle = isA ? C.yellow : C.mute; g.textAlign = 'right'; g.fillText(lbs[k] + 'd', pad.l - 5, base);
-    const last = r.at(-1); g.fillStyle = last > 0 ? C.green : C.red; g.beginPath(); g.arc(X(n - 1), base - last * amp / m, 3, 0, 7); g.fill();
-    hit('c-ridge', pad.l, base - band / 2, w - pad.l - pad.r, band, `lookback ${lbs[k]}d${isA ? ' (aktiv)' : ''}<br>avkastning nu <b>${sgn(last * 100, 1, '%')}</b><br>signal ${last > 0 ? 'LÅNG' : 'KONTANT'}`);
-  });
-  g.textAlign = 'left'; g.fillStyle = C.mute; g.fillText(new Date(d.at(-n).t).toISOString().slice(0, 10), pad.l, h - 5);
-  g.textAlign = 'right'; g.fillText('idag', w - pad.r, h - 5);
-  const L = active || 60, j = d.length - 1, ret = Math.log(d[j].c / d[j - L].c) * 100;
-  set('r-lb', L + ' dagar');
-  set('r-ret', sgn(ret, 1, '%'), ret);
-  set('r-sig', ret > 0 ? 'LÅNG' : 'KONTANT'); $('r-sig').className = 'v ' + (ret > 0 ? 'up' : 'mute');
-  const r30 = d.slice(-31).map((p, i, a) => i ? p.c / a[i - 1].c - 1 : null).slice(1);
-  const mu = r30.reduce((s, x) => s + x, 0) / r30.length, sd = Math.sqrt(r30.reduce((s, x) => s + (x - mu) ** 2, 0) / (r30.length - 1));
-  set('r-vol', fmt(sd * 100, 2) + '%');
-}
-
-// ---------------------------------------------------------------- neural shell
-const NODES = {
-  left: ['MARKET INPUTS', 'DAILY BARS', 'LOOKBACK SCAN', 'SIGNAL', 'LEAKAGE TEST', 'CRITIC 8-POINT'],
-  right: ['GATE 1 · LEAKAGE', 'GATE 2 · DEFLATED', 'GATE 3 · WALK-FWD', 'POSITION SIZER', 'HEALTH CHECK', 'EXECUTION'],
-};
-function nodeState() {
-  const ap = S.approval || {}, a = account(), g = ap.gates || {}, crit = ap.critic || [];
-  const absent = crit.filter(c => c.status === 'ABSENT').length, present = crit.filter(c => c.status === 'PRESENT').length;
-  const health = a.health;
-  const s = (ok, txt) => ({col: ok === true ? C.green : ok === false ? C.red : C.yellow, txt});
-  return {
-    left: [
-      s(S.wsOk, S.price ? fmt(S.price, 1) : 'offline'),
-      s(S.daily.length > 0 ? true : null, S.daily.length + ' bars'),
-      s(null, ap.params?.lookback ? ap.params.lookback + 'd vald' : (ap.strategy || '—')),
-      s(a.signal == null ? null : a.signal > 0, a.signal == null ? '—' : a.signal > 0 ? 'LÅNG ' + Math.round(a.signal * 100) + '%' : 'KONTANT'),
-      s(ap.leakage ? ap.leakage.status === 'ABSENT' : null, ap.leakage?.status || '—'),
-      s(crit.length ? present === 0 : null, crit.length ? `${absent} ok · ${present} fel` : '—'),
-    ],
-    right: [
-      s(g.no_leakage, g.no_leakage == null ? '—' : g.no_leakage ? 'PASS' : 'FAIL'),
-      s(g.deflated_sharpe, ap.dsr ? 'DSR ' + fmt(ap.dsr.deflated_sharpe, 2) : '—'),
-      s(g.walk_forward, ap.walk_forward ? ap.walk_forward.positive_folds : '—'),
-      s(true, '1% · tak 20%'),
-      s(health ? health === 'CONTINUE' : null, health || '—'),
-      s(a.halted ? false : S.lastRun ? true : null, S.lastRun?.action || a.lastAction || '—'),
-    ],
-  };
-}
-const torus = (() => {
-  const pts = [], U = 90, V = 34;
-  for (let i = 0; i < U; i++) for (let j = 0; j < V; j++) pts.push([i / U * Math.PI * 2, j / V * Math.PI * 2]);
-  return pts;
-})();
-let tShell = 0;
-function drawShell(dt) {
-  const {g, w, h} = canvas('c-shell');
-  tShell += dt;
-  const ns = nodeState(), cx = w / 2, cy = h / 2, R = Math.min(h * .3, w * .14);
-  const narrow = w < 640;
-  const xl = narrow ? 10 : w * .07, xr = narrow ? w - 10 : w * .93;
-  const ny = i => h * (.12 + i * .152);
-  const lanes = [];
-  // lanes: node -> torus edge, bezier
-  ['left', 'right'].forEach(side => NODES[side].forEach((name, i) => {
-    const x0 = side === 'left' ? xl + 8 : xr - 8, y0 = ny(i);
-    const ang = side === 'left' ? Math.PI + (i - 2.5) * .28 : (i - 2.5) * .28;
-    const x1 = cx + Math.cos(ang) * R * 1.55, y1 = cy + Math.sin(ang) * R * 1.05;
-    const mx = (x0 + x1) / 2;
-    lanes.push({x0, y0, x1, y1, c1: [mx, y0], c2: [mx, y1], col: ns[side][i].col});
-    g.strokeStyle = 'rgba(142,163,186,.18)'; g.lineWidth = 1;
-    g.beginPath(); g.moveTo(x0, y0); g.bezierCurveTo(mx, y0, mx, y1, x1, y1); g.stroke();
-  }));
-  // pulses travel along lanes on every live trade
-  const bez = (l, t) => {
-    const u = 1 - t;
-    return [u ** 3 * l.x0 + 3 * u * u * t * l.c1[0] + 3 * u * t * t * l.c2[0] + t ** 3 * l.x1,
-            u ** 3 * l.y0 + 3 * u * u * t * l.c1[1] + 3 * u * t * t * l.c2[1] + t ** 3 * l.y1];
-  };
-  S.pulses = S.pulses.filter(p => (p.t += dt * .7) < 1);
-  for (const p of S.pulses) {
-    const l = lanes[p.lane % lanes.length], [x, y] = bez(l, p.t);
-    g.fillStyle = p.sell ? C.red : C.green; g.shadowColor = g.fillStyle; g.shadowBlur = 8;
-    g.beginPath(); g.arc(x, y, 2.2, 0, 7); g.fill(); g.shadowBlur = 0;
+  for (const [id, html] of [['feed', S.feedHtml], ['foot', S.footHtml]]) {
+    const el = $(id); if (html && el.dataset.h !== html) { el.innerHTML = html + '<span class="mute">·</span>' + html; el.dataset.h = html; }
   }
-  // torus: deforming particle shell, cyan outer / magenta inner
-  const pr = S.candles.length > 1 ? (S.candles.at(-1).c / S.candles.at(-2).c - 1) * 400 : 0;
-  const ax = tShell * .35, ay = tShell * .22, wob = .18 + Math.min(Math.abs(pr), .25);
-  const ca = Math.cos(ax), sa = Math.sin(ax), cb = Math.cos(ay), sb = Math.sin(ay);
-  const proj = [];
-  for (const [u, v] of torus) {
-    const rr = .42 + wob * Math.sin(2 * u + tShell * .9) * .5;
-    let x = (1 + rr * Math.cos(v)) * Math.cos(u), y = (1 + rr * Math.cos(v)) * Math.sin(u) * .85, z = rr * Math.sin(v) * 1.4;
-    let y2 = y * ca - z * sa, z2 = y * sa + z * ca; let x3 = x * cb + z2 * sb, z3 = -x * sb + z2 * cb;
-    const s = 2.6 / (3.4 + z3);
-    proj.push([cx + x3 * R * s, cy + y2 * R * s, z3, Math.cos(v)]);
-  }
-  proj.sort((a, b) => a[2] - b[2]);
-  for (const [x, y, z, cv] of proj) {
-    const inner = cv < -.2, al = .25 + (z + 1.5) / 3 * .65;
-    g.fillStyle = inner ? `rgba(255,61,216,${al})` : `rgba(61,224,255,${al * .9})`;
-    g.fillRect(x, y, 1.6, 1.6);
-  }
-  // centre readout
-  g.textAlign = 'center'; g.fillStyle = C.ink; g.font = '800 12px JetBrains Mono, monospace';
-  g.fillText(S.price ? '$' + fmt(S.price, 1) : '—', cx, cy - 6);
-  g.font = '10px JetBrains Mono, monospace'; g.fillStyle = C.ink2;
-  const a = account(); g.fillText(a.pnl == null ? '' : 'PnL ' + (a.pnl >= 0 ? '+' : '−') + '$' + fmt(Math.abs(a.pnl), 2), cx, cy + 10);
-  // nodes
-  ['left', 'right'].forEach(side => NODES[side].forEach((name, i) => {
-    const x = side === 'left' ? xl : xr, y = ny(i), st = ns[side][i];
-    g.fillStyle = st.col; g.shadowColor = st.col; g.shadowBlur = 10;
-    g.beginPath(); g.arc(x, y, 5, 0, 7); g.fill(); g.shadowBlur = 0;
-    g.textAlign = side === 'left' ? 'left' : 'right';
-    const tx = side === 'left' ? x + 12 : x - 12;
-    g.fillStyle = C.ink2; g.font = '9px JetBrains Mono, monospace'; g.fillText(name, tx, y - 7);
-    g.fillStyle = C.ink; g.font = '600 10px JetBrains Mono, monospace'; g.fillText(st.txt, tx, y + 6);
-  }));
-  g.font = '10px JetBrains Mono, monospace';
-  $('sh-ticks').textContent = `TICKS ${S.ticks.toLocaleString('en-US')} · NÄSTA KÖRNING ${nextRun()}`;
+  const bt = S.wbt, sc = S.wstate?.score;
+  const live = sc && sc.n ? `LIVE MODELL ${fmt(sc.model / sc.n, 3)} / MARKNAD ${fmt(sc.market / sc.n, 3)}` : 'LIVE-MÄTNING STARTAD';
+  $('banner').textContent = `◆ PAPER-KONTO · BACKTEST ${bt ? (bt.approved ? 'GODKÄND' : 'UNDERKÄND') : '—'} · ${live} · ${S.cands.length} KANDIDATER · 1 USD = ${S.fx ? fmt(S.fx, 2) : '—'} KR`;
 }
+function renderSteps() {
+  $('steps').innerHTML = STEPS.map(([name, col], i) =>
+    `<div class="step${i === S.step ? ' on' : ''}" style="${i === S.step ? 'background:' + col : ''}"><div class="n">0${i + 1}</div><div class="t">${name}</div><div class="d">${esc(STEP_INFO[i] || '—')}</div></div>`).join('');
+  $('cyc-n').textContent = '#' + S.cycle;
+  $('cyc-t').textContent = S.scanMs ? fmt(S.scanMs / 1000, 2) + 's' : '—';
+}
+function renderAll() { renderAccount(); renderBest(); drawDist(); renderMatrix(); drawGauge(); drawMC(); renderTickers(); renderSteps(); }
 
-// ---------------------------------------------------------------- kill switch
-function drawKill() {
-  const L = liveSeries(), o = S.approval?.oos_metrics;
-  const haltDD = o ? o.max_drawdown * 1.5 / 100 : null, haltSh = o ? o.sharpe * .5 : null;
-  const dd = L.dd, cur = dd.at(-1) ?? 0;
-  set('k-dd', sgn(cur * 100, 2, '%'), cur < 0 ? -1 : 0);
-  set('k-halt', haltDD == null ? '—' : fmt(haltDD * 100, 1) + '%');
-  set('k-sh', L.sharpe == null ? `${L.n}/30 dagar` : sgn(L.sharpe) + ` (min ${fmt(haltSh)})`);
-  const ac = account(), hs = ac.halted ? 'HALT' : ac.health || '—';
-  set('k-health', hs); $('k-health').className = 'v ' + (hs === 'CONTINUE' ? 'up' : hs === 'HALT' ? 'down' : '');
-  $('k-t4').className = 'tile ' + (hs === 'CONTINUE' ? 'g' : hs === 'HALT' ? 'r' : '');
-  $('k-t1').className = 'tile ' + (cur < 0 ? 'r' : 'g');
-  const {g, w, h} = canvas('c-kill'); HITS['c-kill'] = [];
-  if (haltDD == null) { g.fillStyle = C.mute; g.textAlign = 'center'; g.fillText('halt-linjen visas efter validering', w / 2, h / 2); return; }
-  const pad = {l: 40, r: 10, t: 12, b: 16}, lo = haltDD * 1.25;
-  const Y = v => pad.t + (v / lo) * (h - pad.t - pad.b);
-  // risk gradient: green near 0, red near the halt line
-  const grad = g.createLinearGradient(0, Y(0), 0, Y(lo));
-  grad.addColorStop(0, 'rgba(61,255,143,.10)'); grad.addColorStop(.75, 'rgba(255,210,61,.08)'); grad.addColorStop(.8, 'rgba(255,61,110,.18)'); grad.addColorStop(1, 'rgba(255,61,110,.28)');
-  g.fillStyle = grad; g.fillRect(pad.l, Y(0), w - pad.l - pad.r, Y(lo) - Y(0));
-  grid(g, pad.l, pad.t, w - pad.r, h - pad.b, 4);
-  g.textAlign = 'right'; g.fillStyle = C.mute;
-  for (let i = 0; i <= 4; i++) { const v = lo * i / 4; g.fillText(fmt(v * 100, 0) + '%', pad.l - 5, Y(v)); }
-  g.strokeStyle = C.red; g.lineWidth = 2; g.setLineDash([6, 4]); g.beginPath(); g.moveTo(pad.l, Y(haltDD)); g.lineTo(w - pad.r, Y(haltDD)); g.stroke(); g.setLineDash([]); g.lineWidth = 1;
-  g.fillStyle = C.red; g.textAlign = 'left'; g.fillText('HALT ' + fmt(haltDD * 100, 1) + '%  (1,5 × backtestens max DD)', pad.l + 6, Y(haltDD) - 8);
-  const n = dd.length, X = i => pad.l + (n === 1 ? (w - pad.l - pad.r) - 20 : i * (w - pad.l - pad.r - 20) / (n - 1));
-  g.beginPath(); dd.forEach((v, i) => i ? g.lineTo(X(i), Y(v)) : g.moveTo(X(i), Y(v)));
-  g.strokeStyle = C.cyan; g.lineWidth = 2; g.stroke(); g.lineWidth = 1;
-  const bx = X(n - 1), by = Y(cur);
-  g.fillStyle = C.yellow; g.shadowColor = C.yellow; g.shadowBlur = 14; g.beginPath(); g.arc(bx, by, 6, 0, 7); g.fill(); g.shadowBlur = 0;
-  g.fillStyle = C.ink; g.textAlign = 'right'; g.fillText('nu ' + sgn(cur * 100, 2, '%'), bx - 10, by + 14);
-  const room = haltDD - cur;
-  hit('c-kill', bx - 12, by - 12, 24, 24, `drawdown nu <b>${sgn(cur * 100, 2, '%')}</b><br>marginal till halt ${fmt(Math.abs(room) * 100, 1)} procentenheter<br>${L.n} live-dagar`);
-}
-
-// ---------------------------------------------------------------- regime map
-function drawHeat() {
-  const d = S.daily;
-  if (d.length < 60) return empty('c-heat', 'hämtar dagliga barer…');
-  const {g, w, h} = canvas('c-heat'); HITS['c-heat'] = [];
-  const months = new Map();
-  for (const p of d) {
-    const k = new Date(p.t - 1).toISOString().slice(0, 7), m = months.get(k);
-    if (m) m.c = p.c; else months.set(k, {o: p.o, c: p.c});
-  }
-  const years = [...new Set([...months.keys()].map(k => k.slice(0, 4)))].slice(-4);
-  const pad = {l: 34, r: 4, t: 14, b: 4}, cw = (w - pad.l - pad.r) / 12, ch = (h - pad.t - pad.b) / years.length;
-  const names = 'JFMAMJJASOND';
-  g.textAlign = 'center'; g.fillStyle = C.mute;
-  for (let m = 0; m < 12; m++) g.fillText(names[m], pad.l + cw * (m + .5), 6);
-  const now = new Date().toISOString().slice(0, 7);
-  years.forEach((y, r) => {
-    g.textAlign = 'right'; g.fillStyle = C.mute; g.fillText(y, pad.l - 5, pad.t + ch * (r + .5));
-    for (let m = 0; m < 12; m++) {
-      const k = `${y}-${String(m + 1).padStart(2, '0')}`, v = months.get(k);
-      const x = pad.l + cw * m + 1, yy = pad.t + ch * r + 1, ww = cw - 2, hh = ch - 2;
-      if (!v) { g.strokeStyle = C.line; g.strokeRect(x + .5, yy + .5, ww - 1, hh - 1); continue; }
-      const ret = v.c / v.o - 1, a = Math.min(Math.abs(ret) / .25, 1);
-      g.fillStyle = ret >= 0 ? `rgba(61,123,255,${.15 + a * .85})` : `rgba(255,61,110,${.15 + a * .8})`;
-      g.fillRect(x, yy, ww, hh);
-      if (k === now) { g.strokeStyle = '#fff'; g.lineWidth = 1.5; g.strokeRect(x - .5, yy - .5, ww + 1, hh + 1); g.lineWidth = 1; }
-      if (cw > 30) { g.fillStyle = a > .5 ? '#fff' : C.ink2; g.textAlign = 'center'; g.font = '9px JetBrains Mono, monospace'; g.fillText((ret * 100).toFixed(0), x + ww / 2, yy + hh / 2); g.font = '10px JetBrains Mono, monospace'; }
-      hit('c-heat', x, yy, ww, hh, `${k}${k === now ? ' (pågår)' : ''}<br>BTC <b>${sgn(ret * 100, 1, '%')}</b>`);
-    }
-  });
-}
-function drawHist() {
-  const folds = (S.approval?.walk_forward?.folds || []).filter(f => f.sharpe != null);
-  if (!folds.length) return empty('c-hist', 'fold-fördelning efter validering');
-  const {g, w, h} = canvas('c-hist'); HITS['c-hist'] = [];
-  const edges = [-Infinity, -4, -2, 0, 2, 4, Infinity], labels = ['<-4', '-4..-2', '-2..0', '0..2', '2..4', '>4'];
-  const short = ['<-4', '-4', '-2', '0', '2', '>4'];
-  const cols = [C.red, C.red, '#ff8a5c', C.yellow, '#9dff5c', C.green];
-  const counts = labels.map((_, i) => folds.filter(f => f.sharpe >= edges[i] && f.sharpe < edges[i + 1]).length);
-  const pad = {l: 4, r: 4, t: 16, b: 16}, max = Math.max(...counts, 1), bw = (w - pad.l - pad.r) / counts.length;
-  g.fillStyle = C.mute; g.textAlign = 'left'; g.fillText('Sharpe per fold', pad.l, 6);
-  counts.forEach((c, i) => {
-    const bh = c / max * (h - pad.t - pad.b), x = pad.l + i * bw + 3, y = h - pad.b - bh;
-    g.fillStyle = cols[i]; g.globalAlpha = .9; g.fillRect(x, y, bw - 6, Math.max(bh, 1)); g.globalAlpha = 1;
-    g.fillStyle = C.ink; g.textAlign = 'center'; if (c) g.fillText(c, x + (bw - 6) / 2, y - 7);
-    g.fillStyle = C.mute; g.fillText(bw < 44 ? short[i] : labels[i], x + (bw - 6) / 2, h - 6);
-    hit('c-hist', x, pad.t, bw - 6, h - pad.t - pad.b, `Sharpe ${labels[i]}<br><b>${c}</b> av ${folds.length} fold`);
-  });
-}
-function renderStats() {
-  const ap = S.approval || {};
-  const dsr = ap.dsr?.deflated_sharpe;
-  set('g-dsr', dsr == null ? '—' : fmt(dsr, 3) + (dsr > .95 ? ' ✓' : ' ✕'));
-  $('g-dsr').className = 'v ' + (dsr == null ? '' : dsr > .95 ? 'up' : 'down');
-  $('g-t1').className = 'tile ' + (dsr == null ? '' : dsr > .95 ? 'g' : 'r');
-  set('g-noise', ap.dsr ? 'Sharpe ' + fmt(ap.dsr.expected_max_from_noise) : '—');
-  const rg = ap.regimes;
-  set('g-reg', rg ? `${sgn(rg.bull?.sharpe, 1)} / ${sgn(rg.bear?.sharpe, 1)}` : '—');
-  const gs = ap.gates ? Object.values(ap.gates).filter(Boolean).length : null;
-  set('g-gates', gs == null ? '—' : `${gs}/3 ${gs === 3 ? '✓' : '✕'}`);
-  $('g-gates').className = 'v ' + (gs === 3 ? 'up' : gs == null ? '' : 'down');
-  $('g-t4').className = 'tile ' + (gs === 3 ? 'g' : gs == null ? '' : 'r');
-}
-
-// ---------------------------------------------------------------- weather desk
-function renderWeather() {
-  const st = S.wstate, bt = S.wbt;
-  if (!st && !bt) return;
-  if (st) {
-    const openStake = (st.open || []).reduce((x, p) => x + p.stake_usd, 0);
-    const eq = st.cash + openStake, pnl = eq - 1000;
-    set('wx-eq', usd(eq) + '  ' + sgn(pnl, 2).replace(/^([+−])/, '$1$'), pnl);
-    $('wx-t1').className = 'tile ' + (pnl > 0 ? 'g' : pnl < 0 ? 'r' : '');
-    const closed = st.closed || [], wins = closed.filter(p => p.won).length;
-    set('wx-hit', closed.length ? `${closed.length} / ${Math.round(wins / closed.length * 100)}%` : '0');
-    set('wx-open', `${(st.open || []).length} · ${usd(openStake, 0)}`);
-    const rows = [...(st.open || []).map(p => ({...p, state: 'ÖPPEN'})),
-                  ...closed.slice(-12).reverse().map(p => ({...p, state: p.won ? 'VANN' : 'FÖRLUST'}))];
-    const html = '<tr><th>Datum</th><th>Stad</th><th>Intervall</th><th>Sida</th><th>Pris</th><th>Modell</th><th>Edge</th><th>Insats</th><th>Status</th></tr>' +
-      (rows.length ? rows.map(p => `<tr><td>${esc(p.date)}</td><td>${esc(p.city)}</td><td>${esc(p.bucket)}</td>` +
-        `<td class="${p.side === 'YES' ? 'cy' : 'mg'}">${p.side}</td><td>${fmt(p.price, 3)}</td><td>${fmt(p.prob * 100, 0)}%</td>` +
-        `<td class="up">+${fmt(p.edge * 100, 1)}</td><td>${usd(p.stake_usd)}</td>` +
-        `<td class="${p.state === 'VANN' ? 'up' : p.state === 'FÖRLUST' ? 'down' : 'warn'}">${p.state}${p.pnl_usd != null ? ' ' + sgn(p.pnl_usd, 2) : ''}</td></tr>`).join('')
-        : '<tr><td colspan="9" class="empty">inga bets än — boten handlar 06–08 lokal tid när en stad har edge</td></tr>');
-    const t = $('wx-table'); if (t.dataset.h !== html) { t.innerHTML = html; t.dataset.h = html; }
-  }
-  if (bt) {
-    const ok = bt.approved;
-    set('wx-bt', bt.verdict === 'NOT ENOUGH DATA' ? 'för lite data' : ok ? 'GODKÄND ✓' : 'UNDERKÄND ✕');
-    $('wx-bt').className = 'v ' + (ok ? 'up' : 'down');
-    $('wx-t4').className = 'tile ' + (ok ? 'g' : 'r');
-    const b = $('wx-badge'); b.textContent = ok ? 'GODKÄND' : 'MÄTER · HANDLAR EJ'; b.className = 'r badge ' + (ok ? 'b-green' : 'b-yellow');
-    const ll = bt.logloss_model != null ? ` Modell log-loss ${fmt(bt.logloss_model, 3)} mot marknadens ${fmt(bt.logloss_market, 3)} (lägre = bättre).` : '';
-    const sc = st?.score;
-    const live = sc && sc.n ? ` Live (färska prognoser, ${sc.events} städer-dagar): modell ${fmt(sc.model / sc.n, 3)} mot marknad ${fmt(sc.market / sc.n, 3)} — ${sc.model < sc.market ? 'modellen leder' : 'marknaden leder'}.` : ' Live-mätning: väntar på första avgjorda marknaderna.';
-    $('wx-note').textContent = `Backtest (dygnsgamla prognoser): ${bt.n_trades ?? 0} bets, träff ${bt.hit_rate != null ? Math.round(bt.hit_rate * 100) + '%' : '—'}.` + ll + live;
-  }
-}
-
-// ---------------------------------------------------------------- loop
-['c-equity', 'c-candles', 'c-folds', 'c-ridge', 'c-kill', 'c-heat', 'c-hist'].forEach(bindTip);
-// live panels redraw on every animation frame that has new market data;
-// the history charts only when their data or the layout changes
-function live() {
-  try { renderHeader(); renderWallet(); drawCandles(); renderBook(); drawKill(); }
-  catch (e) { console.error(e); }
-}
-function slow() {
-  try { live(); drawFolds(); drawRidge(); drawHeat(); drawHist(); renderStats(); renderTickers(); renderWeather(); }
-  catch (e) { console.error(e); }
-}
-let last = performance.now(), lastLive = 0;
+// ------------------------------------------------------------------ loop
+['c-dist', 'c-mc'].forEach(bindTip);
+let last = performance.now();
 function frame(now) {
   const dt = Math.min((now - last) / 1000, .1); last = now;
-  if (S.full) { S.full = false; S.dirty = false; lastLive = now; slow(); }
-  else if (S.dirty && now - lastLive >= 50) { S.dirty = false; lastLive = now; live(); }   // at most ~20 redraws/s
-  try { drawShell(dt); } catch (e) { console.error(e); }
+  try { drawTree(dt); } catch (e) { console.error(e); }
+  $('clock').textContent = new Date().toISOString().slice(11, 19);
   requestAnimationFrame(frame);
 }
 (async function init() {
-  slow(); requestAnimationFrame(frame);
-  await Promise.allSettled([loadState(), loadMarket()]);
-  slow(); connect();
-  setInterval(() => { S.dirty = true; }, 1000);          // clock and countdown
-  setInterval(renderTickers, 5000);
-  setInterval(() => loadState().catch(() => {}), CFG.statePollMs);
-  setInterval(() => loadMarket().then(() => { S.full = true; }).catch(() => {}), 10 * 60_000);
-  addEventListener('resize', () => { S.full = true; });
+  renderSteps(); requestAnimationFrame(frame);
+  await Promise.allSettled([loadFx(), loadState(), loadStations()]);
+  renderAll();
+  await cycle();
+  setInterval(cycle, CFG.scanMs);
+  setInterval(() => loadState().then(renderAll).catch(() => {}), CFG.statePollMs);
+  setInterval(() => { S.featured++; drawDist(); }, 6000);
+  setInterval(() => loadFx().catch(() => {}), 60 * 60_000);
+  addEventListener('resize', renderAll);
 })();
 </script>
 </body>

@@ -241,25 +241,21 @@ GitHub Actions kor boten en gang per dygn. Servern kor den hela tiden:
 Lokalt (utan Docker): `python -m tradebot serve --state-dir state --repo
 zackariasandersson18-afk/worldcub --ignore-gates` med `GITHUB_TOKEN` satt.
 
-## Live-dashboard
+## Live-dashboard (väderboten)
 
-`dashboard/index.html` ar en fristaende sida utan byggsteg. I webblasaren
-laser den:
+`dashboard/index.html` är väderbotens dashboard, i kronor. Allt räknas live i
+webbläsaren med samma regler som `weatherbot/model.py`:
 
-- **botens state** fran grenen `tradebot-state` (raw.githubusercontent.com),
-  uppdateras varje minut
-- **livepriser** fran Binance: 1-minuters candles, orderbok och affarer via
-  WebSocket (`data-stream.binance.vision`)
+- Polymarkets öppna temperaturmarknader (Gamma) och alla orderböcker (CLOB)
+- färska prognoser från sex vädermodeller (Open-Meteo)
+- botens kalibrering, paper-konto och mätningar från grenen `tradebot-state`
+- USD/SEK från ECB (frankfurter.app)
 
-Paneler: wallet med live-PnL (mark-to-market), BTC-candles med entry och stop,
-orderbok, walk-forward-ledger, signal ridge per lookback, "neural shell"
-(pipelinen hypotes -> kritiker -> grindar -> risk -> exekvering med status per
-steg), kill switch (drawdown mot halt-linjen) och regimkarta (manadsavkastning
-+ fold-fordelning).
+Panelerna visar konto, största edge, modell mot marknad per stad,
+exekveringscykeln, beslutsträdet, en edge-matris och en Monte Carlo i kr.
 
-Publiceras med GitHub Pages via `.github/workflows/dashboard.yml`. Engangssteg:
-Settings -> Pages -> Source: **GitHub Actions**. Ingen PnL raknas pa servern:
-allt utgar fran samma filer som boten skriver.
+Publiceras med GitHub Pages via `.github/workflows/dashboard.yml`. Engångssteg:
+Settings -> Pages -> Source: **GitHub Actions**.
 
 ## Begransningar
 

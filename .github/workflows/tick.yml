@@ -29,6 +29,9 @@ jobs:
         env:
           STATE_DIR: state_nowcast
         run: scripts/nowcast_paper.sh
+      - name: release the state worktree
+        if: always()
+        run: git worktree remove --force state_nowcast || true
       - name: weatherbot 06:00 local
         if: always()
         env:

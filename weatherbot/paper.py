@@ -60,13 +60,19 @@ def score(st: dict, logged: dict, ev: markets.Event) -> None:
         return
     sc = st.setdefault('score', {'n': 0, 'model': 0.0, 'market': 0.0, 'events': 0})
     won = {b.label: bool(b.resolved_yes) for b in ev.buckets}
-    for label, p, q in zip(logged['labels'], logged['probs'], logged['market']):
+    ll = lambda p, y: -math.log(max(p if y else 1 - p, 1e-4))  # noqa: E731
+    gfs = logged.get('gfs')
+    for i, (label, p, q) in enumerate(zip(logged['labels'], logged['probs'], logged['market'])):
         if q is None or label not in won:
             continue
         y = won[label]
-        sc['model'] += -math.log(max(p if y else 1 - p, 1e-4))
-        sc['market'] += -math.log(max(q if y else 1 - q, 1e-4))
+        sc['model'] += ll(p, y)
+        sc['market'] += ll(q, y)
         sc['n'] += 1
+        if gfs:  # suislanchez's GFS-ensemble method, on the same buckets
+            sc['gfs'] = sc.get('gfs', 0.0) + ll(gfs[i], y)
+            sc['n_gfs'] = sc.get('n_gfs', 0) + 1
+            sc['market_gfs'] = sc.get('market_gfs', 0.0) + ll(q, y)
     sc['events'] += 1
 
 
@@ -159,6 +165,14 @@ def step(state_dir: str | Path, now: datetime | None = None, http=None, approved
         st['forecast_log'][ev.id].update(
             labels=[b.label for b in ev.buckets], probs=[round(p, 4) for p in probs],
             market=[_mid(ya, na) for ya, na in zip(yes_asks, no_asks)])
+        # suislanchez's method, measured alongside (never traded on)
+        try:
+            members = forecast.gfs_ensemble(*coords, ev.unit, http).get(ev.date)
+            if members and len(members) >= 20:
+                st['forecast_log'][ev.id]['gfs'] = [round(p, 4) for p in
+                                                    forecast.ensemble_bucket_probs(members, ev.buckets)]
+        except requests.RequestException:
+            pass
         if not approved:
             report['skipped'][ev.city] = 'strategy not approved (forecast and prices logged)'
             continue

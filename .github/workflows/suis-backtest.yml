@@ -1,0 +1,29 @@
+name: suis btc5m backtest
+
+# Honest re-test of suislanchez/polymarket-kalshi-weather-bot's BTC 5-minute
+# strategy on resolved Polymarket windows. Pre-registered in suisbot/btc5m.py.
+on:
+  push:
+    branches: [claude/great-rubin-cbww8t]
+    paths: ['.github/workflows/suis-backtest.yml', 'suisbot/**']
+  workflow_dispatch:
+    inputs:
+      days:
+        default: '14'
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: python -m suisbot.btc5m --days "${{ inputs.days || '14' }}" --out suis_btc5m.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: suis-btc5m
+          path: suis_btc5m.json

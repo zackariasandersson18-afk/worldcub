@@ -749,7 +749,8 @@ function drawGauge() {
   g.fillStyle = COL.mute; g.font = '8px JetBrains Mono, monospace'; g.fillText(src || 'SKILL', cx, cy + 14);
   $('gauge-lbl').innerHTML = `<span>SKILL</span><b>${val == null ? '—' : fmt(val, 0) + '/100'}</b>` +
     `<span>TRÄFF BT</span><b>${bt?.hit_rate != null ? pct(bt.hit_rate) : '—'}</b>` +
-    `<span>MÄTTA</span><b>${sc?.events ?? 0}</b>`;
+    `<span>MÄTTA</span><b>${sc?.events ?? 0}</b>` +
+    `<span>SUIS GFS</span><b>${sc?.n_gfs > 20 ? fmt(sc.market_gfs / sc.gfs * 100, 0) + '/100' : '—'}</b>`;
 }
 
 // Monte Carlo: one simulated settlement of today's candidates; each city's
@@ -825,7 +826,8 @@ function renderTickers() {
     const el = $(id); if (html && el.dataset.h !== html) { el.innerHTML = html + '<span class="mute">·</span>' + html; el.dataset.h = html; }
   }
   const bt = S.wbt, sc = S.wstate?.score;
-  const live = sc && sc.n ? `LIVE MODELL ${fmt(sc.model / sc.n, 3)} / MARKNAD ${fmt(sc.market / sc.n, 3)}` : 'LIVE-MÄTNING STARTAD';
+  const live = sc && sc.n ? `LIVE MODELL ${fmt(sc.model / sc.n, 3)} / MARKNAD ${fmt(sc.market / sc.n, 3)}` +
+    (sc.n_gfs ? ` / SUIS GFS ${fmt(sc.gfs / sc.n_gfs, 3)} (MARKNAD ${fmt(sc.market_gfs / sc.n_gfs, 3)})` : '') : 'LIVE-MÄTNING STARTAD';
   $('banner').textContent = `◆ VIRTUELLA PENGAR · ${isTrading() ? 'HANDLAR' : 'MÄTER'} · BACKTEST ${bt ? (bt.approved ? 'GODKÄND' : 'UNDERKÄND') : '—'} · ${live} · ${S.cands.length} KANDIDATER · 1 USD = ${S.fx ? fmt(S.fx, 2) : '—'} KR`;
 }
 function renderSteps() {

@@ -39,3 +39,11 @@ jobs:
           # the backtest REJECTED this strategy; virtual money only (see weather-paper.yml)
           IGNORE_GATES: 'true'
         run: scripts/weather_paper.sh
+      - name: release the weather worktree
+        if: always()
+        run: git worktree remove --force state_weather || true
+      - name: liquidity-rewards live measurement (virtual)
+        if: always()
+        env:
+          STATE_DIR: state_rewards
+        run: scripts/rewards_live.sh

@@ -1,0 +1,25 @@
+name: weather backtest (round 7, model/market blend)
+
+# Pre-registered single variant (trial 54): p = 0.5 * model + 0.5 * market price.
+on:
+  push:
+    branches: [claude/great-rubin-cbww8t]
+    paths: ['.github/workflows/weather-blend.yml']
+  workflow_dispatch:
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: python -m weatherbot backtest --days 45 --blend 0.5 --out weather_blend.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: weather-blend
+          path: weather_blend.json

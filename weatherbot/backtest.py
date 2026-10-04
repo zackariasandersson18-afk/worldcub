@@ -40,7 +40,8 @@ def _retry(fn, *args, tries: int = 4):
     return fn(*args)
 
 
-def run(events: list[markets.Event], forecasts: dict, histories: dict) -> dict:
+def run(events: list[markets.Event], forecasts: dict, histories: dict, blend: float | None = None,
+        n_trials: int = N_TRIALS) -> dict:
     """forecasts: {(station, unit): (daily {date: {model: high}}, utc_offset)};
     histories: {yes_token: [(t, p), ...]}"""
     calib = model.Calibration()
@@ -74,6 +75,10 @@ def run(events: list[markets.Event], forecasts: dict, histories: dict) -> dict:
             for b, p, q in zip(ev.buckets, probs, prices):
                 if q is not None:
                     scored.append({'won': bool(b.resolved_yes), 'model': p, 'market': q})
+            if blend is not None:
+                # round 7 (pre-registered, trial 54): the market beat the model, so lean on it:
+                # p = blend * model + (1 - blend) * market price; buckets without a price are skipped
+                probs = [blend * p + (1 - blend) * q if q is not None else p for p, q in zip(probs, prices)]
             for bet in model.select_bets(ev.buckets, probs, prices):
                 b = next(x for x in ev.buckets if x.label == bet.bucket)
                 won = bool(b.resolved_yes) if bet.side == 'YES' else not b.resolved_yes
@@ -89,7 +94,7 @@ def run(events: list[markets.Event], forecasts: dict, histories: dict) -> dict:
             daily[day] = pnl
         for res, unit in residuals:  # only now: today's outcome is known
             calib.add(day, res, unit)
-    out = evaluate(trades, scored, daily)
+    out = evaluate(trades, scored, daily, n_trials=n_trials)
     out['calibration_rows'] = [[str(d), round(r, 3)] for d, r in calib.rows]
     return out
 

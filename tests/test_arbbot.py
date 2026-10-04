@@ -38,3 +38,17 @@ def test_all_yes_only_for_exhaustive_events():
     kinds = {b.kind: b for b in baskets_from_event(ev, True)}
     assert kinds['ALL-NO'].payout == 1 and kinds['ALL-YES'].payout == 1
     assert [lg.token for lg in kinds['ALL-NO'].legs] == ['b', 'd']
+
+
+def test_cross_platform_pricing_counts_both_legs_and_fees():
+    from types import SimpleNamespace as N
+    from arbbot.cross_kalshi import price_pair, theirs
+    pm = N(yes_bid=0.40, yes_ask=0.42, fee_rate=0.0, fee_exp=1.0)
+    km = N(yes_bid=0.50, yes_ask=0.52, no_bid=0.48, no_ask=0.50)
+    r = price_pair(pm, km)
+    # YES on Polymarket 0.42 + NO on Kalshi 0.50 = 0.92, Kalshi fee 0.07*0.25 = 0.0175
+    assert r['direction'].startswith('YES@Polymarket') and abs(r['edge'] - (1 - 0.92 - 0.0175)) < 1e-9
+    edge, signal = theirs(pm, km)
+    assert signal and edge > 0
+    same = N(yes_bid=0.49, yes_ask=0.51, no_bid=0.49, no_ask=0.51)
+    assert price_pair(N(yes_bid=0.49, yes_ask=0.51, fee_rate=0.0, fee_exp=1.0), same)['edge'] < 0

@@ -47,6 +47,29 @@ def fetch_event(event_id: str, http) -> markets.Event | None:
     return markets.parse_event(r.json())
 
 
+def _mid(yes_ask, no_ask):
+    """Market-implied YES probability: midpoint of the YES ask and 1 - NO ask."""
+    if yes_ask is None or no_ask is None:
+        return None
+    return round((yes_ask + 1 - no_ask) / 2, 4)
+
+
+def score(st: dict, logged: dict, ev: markets.Event) -> None:
+    """Running log-loss of the model and of the market on resolved buckets."""
+    if 'probs' not in logged:
+        return
+    sc = st.setdefault('score', {'n': 0, 'model': 0.0, 'market': 0.0, 'events': 0})
+    won = {b.label: bool(b.resolved_yes) for b in ev.buckets}
+    for label, p, q in zip(logged['labels'], logged['probs'], logged['market']):
+        if q is None or label not in won:
+            continue
+        y = won[label]
+        sc['model'] += -math.log(max(p if y else 1 - p, 1e-4))
+        sc['market'] += -math.log(max(q if y else 1 - q, 1e-4))
+        sc['n'] += 1
+    sc['events'] += 1
+
+
 def equity(state: dict) -> float:
     return state['cash'] + sum(p['stake_usd'] for p in state['open'])
 
@@ -75,6 +98,7 @@ def step(state_dir: str | Path, now: datetime | None = None, http=None, approved
         if logged:
             cal_rows.append([logged['date'], (ev.winner.center() - logged['mu_raw'])
                              * (model.C_PER_F if ev.unit == 'F' else 1.0)])
+            score(st, logged, ev)
         for p in [p for p in st['open'] if p['event_id'] == eid]:
             b = next(b for b in ev.buckets if b.label == p['bucket'])
             won = bool(b.resolved_yes) if p['side'] == 'YES' else not b.resolved_yes
@@ -118,9 +142,6 @@ def step(state_dir: str | Path, now: datetime | None = None, http=None, approved
         if cal is None:
             report['skipped'][ev.city] = 'calibration not ready'
             continue
-        if not approved:
-            report['skipped'][ev.city] = 'strategy not approved'
-            continue
         bias, sigma = cal
         probs = [model.bucket_prob(mu_raw + bias, sigma, b.lo, b.hi) for b in ev.buckets]
         yes_asks, no_asks, sizes = [], [], {}
@@ -134,6 +155,13 @@ def step(state_dir: str | Path, now: datetime | None = None, http=None, approved
             yes_asks.append(ya)
             no_asks.append(na)
             sizes[(b.label, 'YES')], sizes[(b.label, 'NO')] = ys, ns
+        # keep what the model and the market said, to score both once it resolves
+        st['forecast_log'][ev.id].update(
+            labels=[b.label for b in ev.buckets], probs=[round(p, 4) for p in probs],
+            market=[_mid(ya, na) for ya, na in zip(yes_asks, no_asks)])
+        if not approved:
+            report['skipped'][ev.city] = 'strategy not approved (forecast and prices logged)'
+            continue
         for bet in model.select_bets_quotes(ev.buckets, probs, yes_asks, no_asks):
             # whole cents, rounded down so the per-event cap is never exceeded
             stake = math.floor(min(bet.stake * bankroll, sizes[(bet.bucket, bet.side)] * bet.cost) * 100) / 100

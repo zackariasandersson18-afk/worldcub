@@ -255,10 +255,20 @@ def test_paper_without_approval_only_logs_forecasts(tmp_path):
     from datetime import datetime, timezone
     from weatherbot import paper
     seed_calibration(tmp_path)
+    world = FakeWorld()
     rep = paper.step(tmp_path, now=datetime(2026, 10, 3, 4, 30, tzinfo=timezone.utc),
-                     http=FakeWorld(), approved=False)
+                     http=world, approved=False)
     assert rep['opened'] == [] and rep['logged'] == 1
-    assert rep['skipped']['Madrid'] == 'strategy not approved'
+    assert rep['skipped']['Madrid'].startswith('strategy not approved')
+    logged = json.loads((tmp_path / 'weather_state.json').read_text())['forecast_log']['Madrid3']
+    assert len(logged['probs']) == len(logged['market']) == 11
+
+    # once resolved, model and market are both scored on every bucket
+    world.resolve(winner=22)
+    paper.step(tmp_path, now=datetime(2026, 10, 4, 10, tzinfo=timezone.utc), http=world, approved=False)
+    sc = json.loads((tmp_path / 'weather_state.json').read_text())['score']
+    assert sc['events'] == 1 and sc['n'] == 11
+    assert sc['model'] > 0 and sc['market'] > 0
 
 
 def test_fetch_events_stops_at_since_and_at_gamma_offset_limit():

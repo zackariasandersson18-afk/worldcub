@@ -928,9 +928,11 @@ function renderWeather() {
     set('wx-bt', bt.verdict === 'NOT ENOUGH DATA' ? 'för lite data' : ok ? 'GODKÄND ✓' : 'UNDERKÄND ✕');
     $('wx-bt').className = 'v ' + (ok ? 'up' : 'down');
     $('wx-t4').className = 'tile ' + (ok ? 'g' : 'r');
-    const b = $('wx-badge'); b.textContent = ok ? 'GODKÄND' : 'DEMO · EJ GODKÄND'; b.className = 'r badge ' + (ok ? 'b-green' : 'b-yellow');
+    const b = $('wx-badge'); b.textContent = ok ? 'GODKÄND' : 'MÄTER · HANDLAR EJ'; b.className = 'r badge ' + (ok ? 'b-green' : 'b-yellow');
     const ll = bt.logloss_model != null ? ` Modell log-loss ${fmt(bt.logloss_model, 3)} mot marknadens ${fmt(bt.logloss_market, 3)} (lägre = bättre).` : '';
-    $('wx-note').textContent = `Backtest: ${bt.n_trades ?? 0} bets, avkastning ${sgn(bt.total_return, 1, '%')}, träff ${bt.hit_rate != null ? Math.round(bt.hit_rate * 100) + '%' : '—'}.` + ll;
+    const sc = st?.score;
+    const live = sc && sc.n ? ` Live (färska prognoser, ${sc.events} städer-dagar): modell ${fmt(sc.model / sc.n, 3)} mot marknad ${fmt(sc.market / sc.n, 3)} — ${sc.model < sc.market ? 'modellen leder' : 'marknaden leder'}.` : ' Live-mätning: väntar på första avgjorda marknaderna.';
+    $('wx-note').textContent = `Backtest (dygnsgamla prognoser): ${bt.n_trades ?? 0} bets, träff ${bt.hit_rate != null ? Math.round(bt.hit_rate * 100) + '%' : '—'}.` + ll + live;
   }
 }
 

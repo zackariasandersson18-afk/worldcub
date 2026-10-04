@@ -37,6 +37,8 @@ class Bucket:
     best_bid: float | None = None
     best_ask: float | None = None
     fee_rate: float = 0.05
+    fee_exp: float = 1.0       # Polymarket feeSchedule exponent
+    min_size: float = 5.0      # orderMinSize: smallest order in shares
 
     def center(self) -> float:
         """Best point estimate of the realized high when this bucket won."""
@@ -119,9 +121,11 @@ def parse_event(e: dict) -> Event | None:
         if m.get('closed') and prices and len(prices) == 2:
             yes = float(prices[0])
             resolved = True if yes >= 0.99 else False if yes <= 0.01 else None
-        fee = (m.get('feeSchedule') or {}).get('rate', 0.05)
+        sched = m.get('feeSchedule') or {}
         buckets.append(Bucket(m.get('groupItemTitle'), lo, hi, str(tokens[0]), str(tokens[1]),
-                              resolved, m.get('bestBid'), m.get('bestAsk'), float(fee or 0)))
+                              resolved, m.get('bestBid'), m.get('bestAsk'),
+                              float(sched.get('rate', 0.05) or 0), float(sched.get('exponent', 1) or 1),
+                              float(m.get('orderMinSize') or 5)))
     if not buckets or len(units) != 1:
         return None
     buckets.sort(key=lambda b: b.lo)

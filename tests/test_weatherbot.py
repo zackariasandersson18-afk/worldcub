@@ -79,7 +79,7 @@ def test_select_bets_respects_edge_fees_and_caps():
     bets = model.select_bets(ev.buckets, probs, prices)
     yes = [b for b in bets if b.side == 'YES']
     assert len(yes) == 1 and yes[0].bucket == '22°C'
-    assert yes[0].cost == pytest.approx(0.30 + 0.01 + 0.05 * 0.30)
+    assert yes[0].cost == pytest.approx(0.30 + 0.01 + 0.05 * 0.30 * 0.70)
     assert sum(b.stake for b in bets) <= model.MAX_EVENT + 1e-12
     assert all(b.stake <= model.MAX_BET for b in bets)
     # a fair price gives no bet
@@ -286,3 +286,29 @@ def test_fetch_events_stops_at_since_and_at_gamma_offset_limit():
     Http.calls = 0
     evs = markets.fetch_events(True, pages=10, page_size=1, session=Http(), since=date(2026, 10, 3))
     assert Http.calls == 2 and evs[0].date.day == 3       # page with day 2 < since ends it
+
+
+def test_fee_matches_polymarket_formula():
+    # weather markets: rate 0.05, exponent 1 -> $1.25 on 100 shares at 0.50
+    assert 100 * model.fee_per_share(0.50, 0.05, 1) == pytest.approx(1.25)
+    assert 100 * model.fee_per_share(0.05, 0.05, 1) == pytest.approx(0.2375)
+
+
+def test_parse_reads_fee_schedule_and_min_size():
+    e = gamma_event()
+    for m in e['markets']:
+        m['feeSchedule'] = {'rate': 0.05, 'exponent': 2}
+        m['orderMinSize'] = 5
+    b = markets.parse_event(e).buckets[0]
+    assert (b.fee_rate, b.fee_exp, b.min_size) == (0.05, 2.0, 5.0)
+
+
+def test_paper_skips_orders_below_polymarket_minimum(tmp_path):
+    from datetime import datetime, timezone
+    from weatherbot import paper
+    seed_calibration(tmp_path)
+    (tmp_path / 'weather_state.json').write_text(json.dumps(
+        {'cash': 4.0, 'open': [], 'closed': [], 'forecast_log': {}, 'history': []}))
+    rep = paper.step(tmp_path, now=datetime(2026, 10, 3, 4, 30, tzinfo=timezone.utc), http=FakeWorld())
+    # with $4 the 0.30 bucket would be ~1 share at most: below the 5-share minimum
+    assert all(p['shares'] >= 5 for p in rep['opened'])

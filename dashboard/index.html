@@ -312,7 +312,8 @@ function parseEvent(e) {
     let tokens = m.clobTokenIds; try { if (typeof tokens === 'string') tokens = JSON.parse(tokens); } catch { tokens = null; }
     if (!b || !tokens || tokens.length !== 2) return null;
     units.add(b.unit);
-    buckets.push({...b, label: m.groupItemTitle, yes: String(tokens[0]), no: String(tokens[1]), fee: m.feeSchedule?.rate ?? 0.05});
+    buckets.push({...b, label: m.groupItemTitle, yes: String(tokens[0]), no: String(tokens[1]),
+                  fee: m.feeSchedule?.rate ?? 0.05, feeExp: m.feeSchedule?.exponent ?? 1, minSize: +(m.orderMinSize ?? 5)});
   }
   if (!buckets.length || units.size !== 1) return null;
   buckets.sort((a, b) => a.lo - b.lo);
@@ -451,7 +452,8 @@ async function cycle() {
         let best = null;
         for (const [side, prob, price] of [['YES', p, ya], ['NO', 1 - p, na]]) {
           if (price == null || price < CFG.MIN_PRICE || price > CFG.MAX_PRICE) continue;
-          const cost = price + CFG.SLIPPAGE + b.fee * Math.min(price, 1 - price);
+          // Polymarket taker fee per share: rate * (p * (1 - p)) ** exponent
+          const cost = price + CFG.SLIPPAGE + b.fee * (price * (1 - price)) ** b.feeExp;
           const edge = prob - cost;
           if (edge >= CFG.MIN_EDGE && cost < 1) {
             const c = {e, b, i, side, prob, price, cost, edge, stake: Math.min(CFG.KELLY * (prob - cost) / (1 - cost), CFG.MAX_BET),
@@ -464,7 +466,8 @@ async function cycle() {
       const tot = evCands.reduce((a, c) => a + c.stake, 0);
       if (tot > CFG.MAX_EVENT) evCands.forEach(c => c.stake *= CFG.MAX_EVENT / tot);
       evCands.forEach(c => c.stakeUsd = c.stake * equityUsd);
-      cands.push(...evCands);
+      // same as the bot: orders below Polymarket's minimum size are not placed
+      cands.push(...evCands.filter(c => c.stakeUsd >= 1 && c.stakeUsd / c.cost >= c.b.minSize));
     }
     S.rows = rows; S.cands = cands.sort((a, b) => b.edge - a.edge); S.events = today;
     STEP_INFO[3] = `${cands.length} kandidater`;

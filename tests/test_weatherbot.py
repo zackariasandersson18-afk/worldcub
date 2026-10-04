@@ -329,3 +329,24 @@ def test_ensemble_bucket_probs_are_their_member_counts():
     by = {b.label: p for b, p in zip(ev.buckets, ps)}
     assert by['22°C'] == pytest.approx(20 / 31) and by['23°C'] == pytest.approx(11 / 31)
     assert by['17°C or below'] == 0.05                      # clipped like their bot
+
+
+def test_station_params_shrink_station_bias_and_use_only_earlier_days():
+    d0 = date(2026, 9, 1)
+    rows = [(d0 + timedelta(days=i % 20), 'HOT', 2.0) for i in range(30)] + \
+           [(d0 + timedelta(days=i % 20), 'OK', 0.0) for i in range(30)]
+    hot_b, sd = backtest.station_params(rows, 'HOT', d0 + timedelta(days=30), 'C')
+    ok_b, _ = backtest.station_params(rows, 'OK', d0 + timedelta(days=30), 'C')
+    assert 1.5 < hot_b < 2.0 and 0 < ok_b < 0.5          # pulled toward the pooled 1.0
+    assert sd < 1.0                                        # debiased spread, not the pooled 1.0
+    assert backtest.station_params(rows, 'HOT', d0, 'C') is None   # nothing before day 0
+    new_b, _ = backtest.station_params(rows, 'NEW', d0 + timedelta(days=30), 'C')
+    assert abs(new_b - 1.0) < 1e-9                         # unseen station: pooled bias
+    f_b, f_sd = backtest.station_params(rows, 'HOT', d0 + timedelta(days=30), 'F')
+    assert abs(f_b - hot_b * 9 / 5) < 1e-9 and abs(f_sd - sd * 9 / 5) < 1e-9
+
+
+def test_backtest_runs_with_per_station_calibration():
+    events, forecasts, histories = synthetic_world()
+    res = backtest.run(events, forecasts, histories, per_station=True)
+    assert res['n_trades'] > 0 and 'gates' in res

@@ -1,0 +1,38 @@
+name: tick (both weather bots)
+
+# Started every 30 minutes by an external cron (cron-job.org) through the
+# workflow_dispatch API, because GitHub's own schedules are often delayed by
+# hours. Runs both paper bots one after the other; each step is idempotent
+# (a city-day is decided once), so extra or missed ticks do no harm.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: tradebot           # one writer to tradebot-state at a time
+  cancel-in-progress: false
+
+jobs:
+  tick:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: nowcast 16:00 solar
+        env:
+          STATE_DIR: state_nowcast
+        run: scripts/nowcast_paper.sh
+      - name: weatherbot 06:00 local
+        if: always()
+        env:
+          STATE_DIR: state_weather
+          # the backtest REJECTED this strategy; virtual money only (see weather-paper.yml)
+          IGNORE_GATES: 'true'
+        run: scripts/weather_paper.sh

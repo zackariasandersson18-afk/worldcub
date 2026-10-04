@@ -1,0 +1,11 @@
+name: suis probe
+on:
+  push:
+    branches: [claude/great-rubin-cbww8t]
+    paths: ['scripts/probe_suis.py']
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install requests && python scripts/probe_suis.py

@@ -63,12 +63,16 @@ def qmin(q1: float, q2: float) -> float:
     return max(min(q1, q2), max(q1, q2) / SCALE_C)
 
 
-def book_q(yes_book: dict, no_book: dict, mid: float, v: float) -> tuple[float, float]:
-    """Competitors' one-sided scores. Q1: YES bids + NO asks; Q2: YES asks + NO bids."""
+def book_q(yes_book: dict, no_book: dict, mid: float, v: float, min_size: float = 0.0) -> tuple[float, float]:
+    """Competitors' one-sided scores. Q1: YES bids + NO asks; Q2: YES asks + NO bids.
+    Book levels aggregate orders, so a level below min_size is skipped (lower bound
+    on competition only where single orders are small)."""
     def side(levels, ref_from):
         tot = 0.0
         for lv in levels or []:
             p, z = float(lv['price']), float(lv['size'])
+            if z < min_size:
+                continue
             tot += score(abs(ref_from(p) - mid) * 100, v, z)
         return tot
     yes = lambda p: p          # noqa: E731
@@ -144,16 +148,26 @@ def _get(http, url, params=None, tries=4):
 
 
 def reward_markets(http, log=print) -> list[dict]:
-    out, cursor = [], None
+    out, seen, cursor = [], set(), None
     for _ in range(200):
         d = _get(http, REWARDS_API, {'next_cursor': cursor} if cursor else None)
         if not d:
             break
-        out += d.get('data') or []
-        cursor = d.get('next_cursor')
-        if not cursor or cursor in ('LTE=', ''):
+        new = [m for m in d.get('data') or [] if m.get('condition_id') not in seen]
+        if not new:
+            break                                   # the API repeated a page
+        for m in new:
+            seen.add(m['condition_id'])
+        out += new
+        nxt = d.get('next_cursor')
+        if not nxt or nxt in ('LTE=', '') or nxt == cursor:
             break
-    log(f'{len(out)} markets in the rewards programme')
+        cursor = nxt
+    assets = {}
+    for m in out:
+        for c in m.get('rewards_config') or []:
+            assets[c.get('asset_address')] = assets.get(c.get('asset_address'), 0) + 1
+    log(f'{len(out)} unique markets in the rewards programme; reward assets {assets}')
     return out
 
 
@@ -216,6 +230,8 @@ def candidates(http, log=print) -> list[dict]:
             continue
         out.append({'cond': m['condition_id'], 'question': m.get('question', ''), 'yes': toks['yes'], 'no': toks['no'],
                     'rate': float(sum(c.get('rate_per_day', 0) for c in m['rewards_config'])),
+                    'asset': (m['rewards_config'][0] or {}).get('asset_address'),
+                    'competitiveness': m.get('market_competitiveness'),
                     'v': float(m['rewards_max_spread']), 'min_size': float(m['rewards_min_size']),
                     'end': g['endDate']})
     books = fetch_books([c[k] for c in out for k in ('yes', 'no')], http)
@@ -230,7 +246,9 @@ def candidates(http, log=print) -> list[dict]:
         if not 0.10 <= mid <= 0.90:
             continue
         c['mid'] = mid
-        c['rest_q'] = book_q(yb, nb, mid, c['v'])
+        c['rest_q'] = book_q(yb, nb, mid, c['v'], c['min_size'])
+        c['levels_within_v'] = sum(1 for lv in (yb.get('bids') or []) + (yb.get('asks') or [])
+                                   if abs(float(lv['price']) - mid) * 100 < c['v'])
         keep.append(c)
     log(f'{len(out)} long-dated reward markets, {len(keep)} with books and midpoint in [0.10, 0.90]')
     return keep
@@ -262,7 +280,9 @@ def run_variant(cands: list[dict], label: str, d_of, trades_of, now: int) -> dic
                              datetime.fromtimestamp(now, timezone.utc).date() - timedelta(days=1)).date
         pnl = pd.Series(r['reward_day'], index=list(days)).add(mm.reindex(list(days)).fillna(0.0), fill_value=0.0)
         total = total.add(pnl, fill_value=0.0)
-        detail.append({'question': r['question'][:70], 'rate_day': r['rate'], 'v_c': r['v'], 'size': r['size'],
+        detail.append({'question': r['question'][:70], 'asset': (r.get('asset') or '')[:10],
+                       'competitiveness': r.get('competitiveness'), 'rest_q': [round(x, 1) for x in r['rest_q']],
+                       'levels_within_v': r.get('levels_within_v'), 'rate_day': r['rate'], 'v_c': r['v'], 'size': r['size'],
                        'mid': round(r['mid'], 3), 'share': round(r['reward_day'] / r['rate'], 4),
                        'reward_day': round(r['reward_day'], 3), 'mm_pnl': round(float(mm.sum()), 2),
                        'reward_sum': round(r['reward_day'] * len(days), 2), 'trades': len(tr)})

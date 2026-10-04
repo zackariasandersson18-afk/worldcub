@@ -1,0 +1,15 @@
+name: audit probe
+on:
+  push:
+    branches: [claude/great-rubin-cbww8t]
+    paths: ['.github/workflows/audit-probe.yml']
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "== aviationweather CORS"; curl -sI -H "Origin: https://raw.githack.com" "https://aviationweather.gov/api/data/metar?ids=LEMD,KLGA&format=json&hours=3" | grep -iE "^HTTP|access-control"
+          curl -s "https://aviationweather.gov/api/data/metar?ids=LEMD,KLGA&format=json&hours=3" | python3 -c "import json,sys; d=json.load(sys.stdin); print(len(d), [(r['icaoId'], r['obsTime'], r['temp']) for r in d[:4]])"
+          echo "== IEM latest LEMD"; curl -s "https://mesonet.agron.iastate.edu/cgi-bin/request/asos.py?station=LEMD&data=tmpf&tz=Etc/UTC&format=onlycomma&latlon=no&missing=M&report_type=3&report_type=4&year1=2026&month1=10&day1=4&year2=2026&month2=10&day2=5" | tail -3; date -u
+          echo "== IEM KLGA"; curl -s "https://mesonet.agron.iastate.edu/cgi-bin/request/asos.py?station=LGA&data=tmpf&tz=Etc/UTC&format=onlycomma&latlon=no&missing=M&report_type=3&report_type=4&year1=2026&month1=10&day1=4&year2=2026&month2=10&day2=5" | tail -2
+          echo "== CORS gamma/clob/frankfurter"; for u in "https://gamma-api.polymarket.com/events?limit=1" "https://api.frankfurter.app/latest?from=USD&to=SEK"; do curl -sI -H "Origin: https://raw.githack.com" "$u" | grep -iE "^HTTP|access-control-allow-origin"; done

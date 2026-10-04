@@ -57,6 +57,19 @@ def cmd_paper(args) -> int:
     return 0
 
 
+def cmd_nowcast_paper(args) -> int:
+    from weatherbot import nowcast_paper
+    rep = nowcast_paper.step(args.state)
+    print(json.dumps({k: rep[k] for k in ('ts', 'decided', 'skipped')}, indent=1, default=str))
+    for p in rep['opened']:
+        print(f"OPEN  {p['city']:15s} {p['bucket']:18s} {p['side']:3s} @ {p['price']:.3f} "
+              f"seen={p['observed']} p={p['prob']:.2f} edge={p['edge']:.2f} ${p['stake_usd']}")
+    for p in rep['settled']:
+        print(f"SETTLE {p['city']:15s} {p['bucket']:18s} {p['side']:3s} {'WON' if p['won'] else 'lost'} "
+              f"{p['pnl_usd']:+.2f}")
+    return 0
+
+
 def main(argv=None) -> int:
     p = argparse.ArgumentParser(prog='weatherbot')
     sub = p.add_subparsers(dest='cmd', required=True)
@@ -72,6 +85,10 @@ def main(argv=None) -> int:
     sp.add_argument('--state', default='state/weather')
     sp.add_argument('--ignore-gates', action='store_true')
     sp.set_defaults(func=cmd_paper)
+
+    sp = sub.add_parser('nowcast-paper', help='one paper step of the 16:00 solar nowcast')
+    sp.add_argument('--state', default='state/nowcast')
+    sp.set_defaults(func=cmd_nowcast_paper)
     args = p.parse_args(argv)
     return args.func(args)
 

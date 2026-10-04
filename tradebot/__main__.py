@@ -210,6 +210,49 @@ def cmd_research(args):
     return 0
 
 
+def cmd_research_portfolio(args):
+    """Round 2: multi-asset trend following on the 2019 top-10 universe."""
+    from tradebot import portfolio
+    if args.csv:
+        wide = pd.read_csv(args.csv, index_col=0, parse_dates=True)
+        wide.index = pd.DatetimeIndex(wide.index).tz_localize('UTC') if wide.index.tz is None else wide.index
+        prices, info = wide, {'loaded': list(wide.columns), 'missing': [], 'errors': {}}
+    else:
+        prices, info = portfolio.load_universe(lambda sym, start: fetch_binance(sym, '1d', start), args.start)
+    cfg = Config(fee_bps=args.fee_bps, slippage_bps=args.slippage_bps,
+                 periods_per_year=args.periods_per_year)
+    n_trials = args.prior_trials + len(portfolio.VARIANTS)
+    th = GateThresholds(min_positive_folds=args.min_positive_folds, min_worst_fold=args.min_worst_fold)
+    print(f'Universe loaded: {info["loaded"]}')
+    print(f'Missing (survivorship gap): {info["missing"]} {info["errors"]}')
+    print(f'Data: {len(prices)} days, {prices.index[0]} -> {prices.index[-1]}')
+    print(f'Trials counted: {n_trials} ({args.prior_trials} earlier + {len(portfolio.VARIANTS)} new)\n')
+
+    rows = []
+    for name in portfolio.VARIANTS:
+        res = portfolio.run_portfolio_gates(prices, name, cfg, n_trials, args.train_days,
+                                            args.test_days, th)
+        wf, oos = res['walk_forward'], res['oos_metrics']
+        rows.append({'strategy': name, 'approved': res['approved'],
+                     'gate1': res['gate1_no_leakage'], 'gate2': res['gate2_deflated_sharpe'],
+                     'gate3': res['gate3_walk_forward'], 'oos_sharpe': oos.get('sharpe'),
+                     'ann_return': oos.get('ann_return'), 'max_drawdown': oos.get('max_drawdown'),
+                     'dsr': res['dsr']['deflated_sharpe'],
+                     'noise_ceiling': res['dsr']['expected_max_from_noise'],
+                     'positive_folds': wf['positive_folds'], 'worst_fold': wf['worst_fold'],
+                     'mean_fold': wf['mean_sharpe'], 'avg_exposure': res['avg_exposure']})
+    table = pd.DataFrame(rows)
+    print(table.to_string(index=False))
+    passed = table[table['approved']].sort_values('dsr', ascending=False)
+    best = passed.iloc[0]['strategy'] if len(passed) else None
+    print(f"\nAPPROVED: {best}" if best else '\nNO VARIANT PASSED ALL THREE GATES')
+    if args.out:
+        with open(args.out, 'w') as f:
+            json.dump({'n_trials': n_trials, 'universe': info, 'best': best, 'results': rows},
+                      f, indent=2, default=str)
+    return 0
+
+
 def cmd_demo(args):
     print('DEMO on synthetic prices -- illustrates the pipeline, proves nothing.\n')
     return run_pipeline(synthetic_prices(seed=args.seed), args)
@@ -374,6 +417,18 @@ def build_parser() -> argparse.ArgumentParser:
     sp.add_argument('--min-worst-fold', type=float, default=-2.0)
     sp.add_argument('--out', help='write results as JSON')
     sp.set_defaults(func=cmd_research)
+
+    sp = sub.add_parser('research-portfolio', help='round 2: multi-coin trend following vs the gates')
+    costs(sp)
+    sp.add_argument('--csv', help='wide CSV: date index, one close column per coin (tests)')
+    sp.add_argument('--start', default='2019-01-01')
+    sp.add_argument('--prior-trials', type=int, default=45)
+    sp.add_argument('--train-days', type=int, default=180)
+    sp.add_argument('--test-days', type=int, default=60)
+    sp.add_argument('--min-positive-folds', type=float, default=0.6)
+    sp.add_argument('--min-worst-fold', type=float, default=-2.0)
+    sp.add_argument('--out')
+    sp.set_defaults(func=cmd_research_portfolio)
 
     sp = sub.add_parser('serve', help='always-on server: live stop, kill switch, daily step')
     sp.add_argument('--state-dir', default='state',

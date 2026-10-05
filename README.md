@@ -261,3 +261,23 @@ Settings -> Pages -> Source: **GitHub Actions**.
 
 Inget har ar finansiell radgivning. Kor pa testnet lange innan du ens
 funderar pa riktiga pengar, och da kravs en egen, granskad kodandring.
+
+# flipbot
+
+Letar efter saker som gar att kopa billigt och salja dyrare pa Vinted.
+
+For varje sokord hamtas Vinted-annonser och medianpriset raknas ut (extrema
+priser och annonser som "defekt"/"kopia" rensas bort). Sedan visas annonser
+(pa Vinted, och med `--blocket` aven Blocket) dar forvantad vinst efter
+kopskydd, frakt och en rabatt pa medianen (begarda priser > slutpriser) ar
+over grans.
+
+```bash
+python -m flipbot                                   # inbyggd lista med marken
+python -m flipbot "arcteryx jacka" "nike dunk" --min-profit 200
+python -m flipbot --blocket --sell-discount 0.8 --shipping 70
+```
+
+Begransningar: Vinted och Blocket har inga publika API:er, sa anropen kan
+sluta fungera om sajterna andras. Referenspriset bygger pa begarda priser,
+inte salda. Storlek och skick jamfors inte, sa kolla alltid annonsen.

@@ -130,6 +130,14 @@ a{color:var(--cyan)}
 .kv span{color:var(--ink2)}
 .gate{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
 .nav{display:flex;gap:10px;font-size:10px;letter-spacing:1px;padding:4px 0}
+
+.wlrow{display:flex;align-items:flex-end;gap:14px;flex-wrap:wrap;margin-bottom:8px}
+.wl{font-family:var(--pix);font-size:34px;line-height:1;white-space:nowrap}
+.wl .w{color:var(--green)} .wl .l{color:var(--red)} .wl .s{color:var(--mute);margin:0 2px}
+.wlinfo{font-size:10px;color:var(--ink2);line-height:1.6}
+.filters{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.filters button{background:none;border:1px solid var(--line2);color:var(--ink2);font:inherit;font-size:10px;letter-spacing:1px;padding:4px 8px;cursor:pointer}
+.filters button.on{background:var(--yellow);color:#000;border-color:var(--yellow);font-weight:800}
 </style>
 </head>
 <body>
@@ -140,7 +148,7 @@ a{color:var(--cyan)}
   <div class="mid">METAR · KELLY · WALK-FORWARD</div>
   <div class="clock"><div class="v" id="clock">--:--:--</div><div class="k9" id="scanmeta">UTC</div></div>
 </header>
-<div class="nav"><a href="index.html">← väderboten (06:00)</a><span class="mute">·</span><b class="warn">nowcast 16:00</b><span class="mute">·</span><a href="rewards.html">belöningar →</a><span class="mute">·</span><a href="trades.html">affärer →</a></div>
+<div class="nav"><a href="index.html">← väderboten (06:00)</a><span class="mute">·</span><b class="warn">nowcast 16:00</b><span class="mute">·</span><a href="rewards.html">belöningar →</a></div>
 <div class="banner" id="banner">◆ laddar…</div>
 <div class="ticker"><div class="tag"><i></i>LIVE</div><div class="track"><div class="run" id="feed"></div></div></div>
 
@@ -194,7 +202,11 @@ a{color:var(--cyan)}
       <div class="box"><div class="k9">Värde nu</div><div class="v" id="tr-value">—</div></div>
       <div class="box"><div class="k9">Orealiserat</div><div class="v" id="tr-unreal">—</div></div>
     </div>
+    <div class="wlrow"><div class="wl" id="tr-wl">—</div><div class="wlinfo" id="tr-wlinfo"></div></div>
+    <div class="filters" id="tr-f"><button data-v="all" class="on">ALLA</button><button data-v="open">ÖPPNA</button><button data-v="won">VUNNA</button><button data-v="lost">FÖRLORADE</button></div>
     <div class="tw"><table class="trades" id="tr-table"></table></div>
+    <div class="k9" style="margin:10px 0 4px">Per dag · vinster / förluster (avgörandedag, UTC)</div>
+    <div class="tw" style="max-height:240px"><table class="ctd" id="tr-days"></table></div>
   </div>
 </section>
 
@@ -463,12 +475,14 @@ function renderPeriods(st) {
 }
 function renderTrades() {
   const st = S.st || {open: [], closed: []}, open = st.open || [], closed = st.closed || [];
+  renderWL(st);
   let stake = 0, value = 0;
   for (const p of open) { stake += p.stake_usd; value += posValue(p) ?? p.stake_usd; }
   $('tr-open').textContent = open.length; $('tr-stake').textContent = kr(sek(stake)); $('tr-value').textContent = kr(sek(value));
   const u = $('tr-unreal'), un = value - stake; u.textContent = skr(sek(un)); u.className = 'v ' + (un > 0 ? 'up' : un < 0 ? 'down' : '');
   $('tr-upd').textContent = S.posAt ? 'uppdaterad ' + new Date(S.posAt).toISOString().slice(11, 19) + ' UTC' : 'väntar på orderbok';
-  const rows = [...open.map(p => ({p, s: 'open'})), ...closed.slice().reverse().slice(0, 30).map(p => ({p, s: p.won ? 'won' : 'lost'}))];
+  const rows = [...open.map(p => ({p, s: 'open'})), ...closed.slice().reverse().map(p => ({p, s: p.won ? 'won' : 'lost'}))]
+    .filter(r => S.trF === 'all' || r.s === S.trF);
   $('tr-table').innerHTML = '<tr><th>Öppnad</th><th>Stad · intervall</th><th>Sida</th><th>Köpt</th><th>Nu</th><th>Modell</th><th>Insats</th><th>Värde</th><th>PnL</th><th>Status</th></tr>' +
     (rows.map(({p, s}) => {
       const bid = s === 'open' ? S.quotes[p.token]?.bid : null, val = s === 'open' ? posValue(p) : (p.won ? p.shares : 0);
@@ -521,6 +535,33 @@ function renderAll() { renderPeriods(S.st); renderAccount(); renderBacktest(); r
   $('tr-table').addEventListener('click', e => { const slug = e.target.closest('tr.pos')?.dataset.slug; if (slug) window.open('https://polymarket.com/event/' + slug, '_blank', 'noopener'); });
   addEventListener('resize', renderAll);
 })();
+
+// wins / losses: total, positions open now that are ahead / behind, and per settlement day
+S.trF = 'all';
+function renderWL(st) {
+  const open = st.open || [], closed = st.closed || [];
+  const W = closed.filter(p => p.won).length, L = closed.length - W;
+  let ahead = 0, behind = 0;
+  for (const p of open) { const v = posValue(p); if (v == null) continue; if (v > p.stake_usd) ahead++; else if (v < p.stake_usd) behind++; }
+  const net = closed.reduce((a, p) => a + p.pnl_usd, 0);
+  $('tr-wl').innerHTML = `<span class="w">${W}</span><span class="s">/</span><span class="l">${L}</span>`;
+  $('tr-wlinfo').innerHTML = `vinster / förluster · ${closed.length} avgjorda · träff ${closed.length ? pct(W / closed.length, 0) : '—'}<br>` +
+    `netto avgjort <b class="${net > 0 ? 'up' : net < 0 ? 'down' : ''}">${skr(sek(net))}</b> · öppna: <b class="up">${ahead} leder</b> / <b class="down">${behind} efter</b>`;
+  const byDay = new Map();
+  for (const p of closed) {
+    const d = (p.settled || '').slice(0, 10); if (!d) continue;
+    const o = byDay.get(d) || {w: 0, l: 0, net: 0}; p.won ? o.w++ : o.l++; o.net += p.pnl_usd; byDay.set(d, o);
+  }
+  $('tr-days').innerHTML = '<tr><th>Dag</th><th>V/F</th><th>Träff</th><th>Netto</th></tr>' +
+    ([...byDay.entries()].sort((a, b) => b[0].localeCompare(a[0])).map(([d, o]) =>
+      `<tr><td><b>${d.slice(5)}</b></td><td><b class="up">${o.w}</b>/<b class="down">${o.l}</b></td><td>${pct(o.w / (o.w + o.l), 0)}</td>` +
+      `<td class="${o.net > 0 ? 'up' : o.net < 0 ? 'down' : ''}"><b>${skr(sek(o.net))}</b></td></tr>`).join('') ||
+     '<tr><td colspan="4" class="mute" style="text-align:center;padding:10px">fylls i när affärer avgjorts</td></tr>');
+}
+$('tr-f').addEventListener('click', e => {
+  const b = e.target.closest('button'); if (!b) return;
+  S.trF = b.dataset.v; for (const x of $('tr-f').children) x.classList.toggle('on', x === b); renderTrades();
+});
 </script>
 </body>
 </html>

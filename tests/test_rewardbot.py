@@ -85,3 +85,22 @@ def test_realistic_ledger_rules(tmp_path, monkeypatch):
     books.clear()
     t4 = live.step(tmp_path, now=t0 + 14400, http=object())
     assert abs(t4['real_mm_value'] - t3['real_mm_value']) < 1e-9 and abs(t4['mm_value'] - t3['mm_value']) < 1e-9
+
+
+def test_fills_are_recorded_per_ledger(tmp_path, monkeypatch):
+    from rewardbot import backtest as bt, live
+    port = [{'cond': 'c1', 'question': 'Q', 'yes': 'y', 'no': 'n', 'rate': 24.0, 'v': 4.0, 'min_size': 10.0,
+             'd': 0.02, 'asset': '0x2791bca1f2de4661ed88a30c99a7a9449aa84174', 'collateral': 9.6,
+             'est_reward_day': 24.0, 'end': '2027-01-01'}]
+    monkeypatch.setattr(live, 'choose', lambda http, log: port)
+    book = {'y': {'bids': [{'price': '0.49', 'size': '5'}], 'asks': [{'price': '0.51', 'size': '5'}]},
+            'n': {'bids': [], 'asks': []}}
+    monkeypatch.setattr(bt, 'fetch_books', lambda toks, http: book)
+    t0 = 1_790_000_000
+    # one trade through our bid (both ledgers), one touching our ask (realistic only)
+    monkeypatch.setattr(bt, 'fetch_trades', lambda c, y, since, http: [(t0 + 100, 0.47, 50), (t0 + 200, 0.52, 50)])
+    live.step(tmp_path, now=t0, http=object())
+    live.step(tmp_path, now=t0 + 3600, http=object())
+    st = __import__('json').loads((tmp_path / 'rewards_state.json').read_text())
+    got = sorted((f['ledger'], f['side'], f['price']) for f in st['fills'])
+    assert got == [('opt', 'BUY', 0.48), ('real', 'BUY', 0.48), ('real', 'SELL', 0.52)]

@@ -422,6 +422,14 @@ function renderDecisions() {
         `<td>${d.winner ? esc(d.winner) : '<span class="mute">väntar</span>'}</td></tr>`;
     }).join('') || '<tr><td colspan="7" class="mute" style="text-align:center;padding:12px">inga beslut än — första tas när en stad når 16:00 soltid</td></tr>');
 }
+// realistic result of a settled position: the paper fill already pays the ask + taker fee + 1 cent;
+// here one more cent for latency / a thinner book, and the trade is skipped if its edge falls below 5 points
+const EXTRA_SLIP = 0.01, MIN_EDGE = 0.05;
+function realPnl(p) {
+  const cost = p.cost + EXTRA_SLIP;
+  if (p.prob == null || p.prob - cost < MIN_EDGE || cost >= 1) return {pnl: 0, skipped: true};
+  return {pnl: p.won ? p.stake_usd / cost - p.stake_usd : -p.stake_usd, skipped: false};
+}
 // results of settled positions over the last day / week / two weeks / month (by settlement time)
 function renderPeriods(st) {
   const closed = (st?.closed || []).filter(p => p.settled), first = st?.history?.[0]?.ts;
@@ -430,20 +438,28 @@ function renderPeriods(st) {
     const since = Date.now() - days * 864e5, ps = closed.filter(p => new Date(p.settled) >= since);
     const wins = ps.filter(p => p.pnl_usd > 0), losses = ps.filter(p => p.pnl_usd <= 0);
     const won = wins.reduce((a, p) => a + p.pnl_usd, 0), lost = losses.reduce((a, p) => a + p.pnl_usd, 0), net = won + lost;
+    const real = ps.reduce((a, p) => a + realPnl(p).pnl, 0);
     const span = Math.min(days, Math.max(live, 1));          // days the bot has actually run in this window
     const cls = x => x > 0 ? 'up' : x < 0 ? 'down' : '';
     return `<tr><td><b>${name}</b>${live < days ? ` <span class="mute">(${fmt(Math.max(live, 0), live < 2 ? 1 : 0)} d)</span>` : ''}</td>` +
       `<td>${ps.length ? `${wins.length}<span class="mute">/</span>${losses.length}` : '—'}</td>` +
       `<td class="up">${ps.length ? skr(sek(won)) : '—'}</td><td class="down">${ps.length ? skr(sek(lost)) : '—'}</td>` +
       `<td class="${cls(net)}"><b>${ps.length ? skr(sek(net)) : '—'}</b></td>` +
-      `<td class="${cls(net)}">${ps.length ? skr(sek(net / span)) : '—'}</td></tr>`;
+      `<td class="${cls(net)}">${ps.length ? skr(sek(net / span)) : '—'}</td>` +
+      `<td class="${cls(real)}">${ps.length ? skr(sek(real)) : '—'}</td></tr>`;
   }).join('');
   $('per-sub').textContent = closed.length ? `${closed.length} avräknade totalt` : 'inga avräknade än';
-  $('periods').innerHTML = '<tr><th>Period</th><th>V/F</th><th>Vunnet</th><th>Förlorat</th><th>Netto</th><th>Snitt/dag</th></tr>' + rows +
-    (closed.length ? '' : '<tr><td colspan="6" class="mute" style="text-align:center;padding:10px">fylls i när de första affärerna avgjorts</td></tr>');
+  $('periods').innerHTML = '<tr><th>Period</th><th>V/F</th><th>Vunnet</th><th>Förlorat</th><th>Netto</th><th>Snitt/dag</th><th>Realistiskt</th></tr>' + rows +
+    (closed.length ? '' : '<tr><td colspan="7" class="mute" style="text-align:center;padding:10px">fylls i när de första affärerna avgjorts</td></tr>');
   const W = closed.filter(p => p.pnl_usd > 0), L = closed.filter(p => p.pnl_usd <= 0);
   $('per-avg').innerHTML = closed.length ? `Snitt per affär (all tid): vinst <b class="up">${W.length ? skr(sek(W.reduce((a, p) => a + p.pnl_usd, 0) / W.length)) : '—'}</b> · ` +
-    `förlust <b class="down">${L.length ? skr(sek(L.reduce((a, p) => a + p.pnl_usd, 0) / L.length)) : '—'}</b> · träff ${pct(W.length / closed.length, 0)}` : '';
+    `förlust <b class="down">${L.length ? skr(sek(L.reduce((a, p) => a + p.pnl_usd, 0) / L.length)) : '—'}</b> · träff ${pct(W.length / closed.length, 0)}` +
+    (() => {
+      const r = closed.map(realPnl), tot = r.reduce((a, x) => a + x.pnl, 0), opt = closed.reduce((a, p) => a + p.pnl_usd, 0);
+      return `<br>Realistiskt (all tid): <b class="${tot >= 0 ? 'up' : 'down'}">${skr(sek(tot))}</b> mot ${skr(sek(opt))} · ` +
+        `${r.filter(x => x.skipped).length} av ${closed.length} affärer hade inte blivit av. ` +
+        `<span class="mute">Pappershandeln köper redan till riktigt säljpris + avgift + 1 cent; realistiskt lägger på 1 cent till för fördröjning och tunnare orderbok och hoppar över affärer vars edge då blir under 5 %.</span>`;
+    })() : '';
 }
 function renderTrades() {
   const st = S.st || {open: [], closed: []}, open = st.open || [], closed = st.closed || [];

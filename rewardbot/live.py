@@ -77,6 +77,12 @@ def token_info(address: str, http) -> dict:
     return {'address': address, 'symbol': None, 'error': 'no RPC answered'}
 
 
+def fill_row(t: int, c: dict, side: str, price: float, size: float, ledger: str) -> dict:
+    """One virtual fill of the YES token at our quote."""
+    return {'ts': datetime.fromtimestamp(t, timezone.utc).isoformat(), 'cond': c['cond'], 'q': c['question'][:80],
+            'side': side, 'price': round(price, 4), 'size': size, 'ledger': ledger}
+
+
 def choose(http, log) -> list[dict]:
     cands = bt.candidates(http, log)
     rows = []
@@ -115,6 +121,7 @@ def step(state_dir: str | Path, now: float | None = None, http=None, log=print) 
     books = bt.fetch_books([c[k] for c in st['portfolio'] for k in ('yes', 'no')], http)
     tick = {'ts': datetime.fromtimestamp(now, timezone.utc).isoformat(), 'dt_h': round(dt / 3600, 3), 'markets': []}
     reward_tick = mm_value = r_tick = r_mm = 0.0
+    fills = st.setdefault('fills', [])           # every virtual fill, both ledgers (kept from 2026-10-05 on)
     for c in st['portfolio']:
         pos = st['positions'].setdefault(c['cond'], {'inv': 0.0, 'cash': 0.0, 'mid': None, 'reward': 0.0, 'fills': 0})
         for k, v in (('r_inv', 0.0), ('r_cash', 0.0), ('r_fills', 0), ('r_reward', 0.0)):
@@ -151,13 +158,17 @@ def step(state_dir: str | Path, now: float | None = None, http=None, log=print) 
                     continue
                 if bq > 0 and p < bid:
                     q = min(bq, z); bq -= q; pos['inv'] += q; pos['cash'] -= q * bid; pos['fills'] += 1   # noqa: E702
+                    fills.append(fill_row(t, c, 'BUY', bid, q, 'opt'))
                 elif aq > 0 and p > ask:
                     q = min(aq, z); aq -= q; pos['inv'] -= q; pos['cash'] += q * ask; pos['fills'] += 1   # noqa: E702
+                    fills.append(fill_row(t, c, 'SELL', ask, q, 'opt'))
                 # R4: touching our price fills the realistic ledger too
                 if rbq > 0 and p <= bid + eps:
                     q = min(rbq, z); rbq -= q; pos['r_inv'] += q; pos['r_cash'] -= q * bid; pos['r_fills'] += 1   # noqa: E702
+                    fills.append(fill_row(t, c, 'BUY', bid, q, 'real'))
                 elif raq > 0 and p >= ask - eps:
                     q = min(raq, z); raq -= q; pos['r_inv'] -= q; pos['r_cash'] += q * ask; pos['r_fills'] += 1   # noqa: E702
+                    fills.append(fill_row(t, c, 'SELL', ask, q, 'real'))
         pos['mid'] = mid
         pos['share'] = share
         pos['reward'] += earned
@@ -185,6 +196,7 @@ def step(state_dir: str | Path, now: float | None = None, http=None, log=print) 
                                                'avg_share', 'fills_total', 'real_reward_total', 'real_mm_value',
                                                'real_net', 'real_fills_total')})
     st['history'] = st['history'][-3000:]
+    st['fills'] = fills[-3000:]
     st['last_tick'] = tick
     save(d / 'rewards_state.json', st)
     return tick

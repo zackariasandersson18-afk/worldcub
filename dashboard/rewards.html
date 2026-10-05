@@ -128,6 +128,14 @@ canvas{display:block;width:100%}
 .nav{display:flex;gap:10px;font-size:10px;letter-spacing:1px;padding:4px 0}
 .shbar{display:inline-block;width:46px;height:6px;background:#1a1a1a;vertical-align:middle;margin-left:4px}
 .shbar i{display:block;height:100%;background:var(--green)}
+
+.wlrow{display:flex;align-items:flex-end;gap:14px;flex-wrap:wrap;margin-bottom:8px}
+.wl{font-family:var(--pix);font-size:34px;line-height:1;white-space:nowrap}
+.wl .w{color:var(--green)} .wl .l{color:var(--red)} .wl .s{color:var(--mute);margin:0 2px}
+.wlinfo{font-size:10px;color:var(--ink2);line-height:1.6}
+.filters{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.filters button{background:none;border:1px solid var(--line2);color:var(--ink2);font:inherit;font-size:10px;letter-spacing:1px;padding:4px 8px;cursor:pointer}
+.filters button.on{background:var(--yellow);color:#000;border-color:var(--yellow);font-weight:800}
 </style>
 </head>
 <body>
@@ -187,6 +195,17 @@ canvas{display:block;width:100%}
 <section class="panel">
   <div class="ph">◎ Vår andel av belöningen · snitt över portföljen<span class="r" id="sh-sub">—</span></div>
   <div class="pb"><canvas id="c-sh" height="120"></canvas></div>
+</section>
+
+<section class="panel">
+  <div class="ph">◉ Mina affärer · vinst och förlust<span class="r" id="af-sub">—</span></div>
+  <div class="pb">
+    <div class="wlrow"><div class="wl" id="af-wl">—</div><div class="wlinfo" id="af-info"></div></div>
+    <div class="filters" id="af-led"><button data-v="opt" class="on">OPTIMISTISK</button><button data-v="real">REALISTISK</button></div>
+    <div class="filters" id="af-f"><button data-v="all" class="on">ALLA</button><button data-v="win">I VINST</button><button data-v="loss">I FÖRLUST</button></div>
+    <div class="tw" style="max-height:420px"><table class="ctd" id="af"></table></div>
+    <div class="note" style="padding:6px 0 0">Stora siffran: marknader i vinst / förlust (belöning + market making per marknad). Tabellen: varje fyllt virtuellt bud, värderat mot mittpriset just nu — ett köp vinner om priset gått upp sedan, en sälj om det gått ned. Enskilda affärer sparas från 5 okt.</div>
+  </div>
 </section>
 
 <section class="panel">
@@ -419,7 +438,7 @@ function renderDays() {
   $('avgday').className = 'v ' + cls(tot);
   $('posdays').textContent = done.length ? `${pos}/${done.length}` : '—';
 }
-function renderAll() { renderDays(); renderAccount(); renderComp(); renderMeta(); renderTable(); renderCharts(); renderTickers(); }
+function renderAll() { renderMine(); renderDays(); renderAccount(); renderComp(); renderMeta(); renderTable(); renderCharts(); renderTickers(); }
 
 (async function init() {
   setInterval(() => { $('clock').textContent = new Date().toISOString().slice(11, 19); }, 1000);
@@ -431,6 +450,43 @@ function renderAll() { renderDays(); renderAccount(); renderComp(); renderMeta()
   setInterval(() => loadFx().catch(() => {}), 3600_000);
   addEventListener('resize', renderAll);
 })();
+
+// ---- my trades: markets in profit / loss, and every virtual fill marked to the current midpoint
+S.afF = 'all'; S.afLed = 'opt';
+function midOf(cond) { return S.live[cond]?.mid ?? S.st?.positions?.[cond]?.mid ?? null; }
+function renderMine() {
+  const st = S.st; if (!st) return;
+  const real = S.afLed === 'real';
+  const mk = (st.portfolio || []).map(c => {
+    const p = st.positions?.[c.cond] || {}, mid = midOf(c.cond) ?? 0;
+    const rew = real ? (p.r_reward || 0) : (p.reward || 0);
+    const mm = real ? (p.r_cash || 0) + (p.r_inv || 0) * mid : (p.cash || 0) + (p.inv || 0) * mid;
+    return rew + mm;
+  });
+  const W = mk.filter(x => x > 0.005).length, L = mk.filter(x => x < -0.005).length;
+  const fills = (st.fills || []).filter(f => f.ledger === S.afLed).map(f => {
+    const mid = midOf(f.cond), pnl = mid == null ? null : (f.side === 'BUY' ? mid - f.price : f.price - mid) * f.size;
+    return {...f, mid, pnl};
+  });
+  const fw = fills.filter(f => f.pnl > 0).length, fl = fills.filter(f => f.pnl < 0).length;
+  const fsum = fills.reduce((a, f) => a + (f.pnl || 0), 0);
+  $('af-wl').innerHTML = `<span class="w">${W}</span><span class="s">/</span><span class="l">${L}</span>`;
+  $('af-info').innerHTML = `marknader i vinst / förlust · ${mk.length} marknader${real ? ' · realistisk' : ''}<br>` +
+    `fyllda bud: <b class="up">${fw} i vinst</b> / <b class="down">${fl} i förlust</b> · ${skr(sek(fsum), 1)} mot mittpriset nu`;
+  const rows = fills.filter(f => S.afF === 'all' || (S.afF === 'win' ? f.pnl > 0 : f.pnl < 0)).reverse();
+  $('af-sub').textContent = `${fills.length} fyllda bud`;
+  $('af').innerHTML = '<tr><th>Tid</th><th>Marknad</th><th>Sida</th><th>Pris</th><th>Antal</th><th>Mitt nu</th><th>Vinst/förlust</th></tr>' +
+    (rows.map(f => `<tr><td class="mute">${f.ts.slice(5, 16).replace('T', ' ')}</td><td>${esc(f.q.slice(0, 44))}</td>` +
+      `<td class="${f.side === 'BUY' ? 'up' : 'cy'}">${f.side === 'BUY' ? 'KÖP' : 'SÄLJ'}</td><td>${fmt(f.price, 3)}</td><td>${fmt(f.size, 0)}</td>` +
+      `<td>${f.mid == null ? '—' : fmt(f.mid, 3)}</td><td class="${f.pnl > 0 ? 'up' : f.pnl < 0 ? 'down' : ''}"><b>${f.pnl == null ? '—' : skr(sek(f.pnl), 1)}</b></td></tr>`).join('') ||
+     `<tr><td colspan="7" class="mute" style="text-align:center;padding:10px">${(st.fills || []).length ? 'inga affärer här' : 'enskilda affärer visas från nästa mätning'}</td></tr>`);
+}
+for (const [id, key] of [['af-f', 'afF'], ['af-led', 'afLed']]) {
+  $(id).addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    S[key] = b.dataset.v; for (const x of $(id).children) x.classList.toggle('on', x === b); renderMine();
+  });
+}
 </script>
 </body>
 </html>

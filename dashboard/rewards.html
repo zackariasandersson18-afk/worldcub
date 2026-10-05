@@ -246,6 +246,12 @@ function liveShare(c) {
   return {mid, rest, share, perDay: inBand ? c.rate * share : 0, inBand};
 }
 
+// estimated rewards per day from the live books; null while no book has loaded
+function liveTotal() {
+  const xs = Object.values(S.live).filter(Boolean);
+  return xs.length ? xs.reduce((a, x) => a + x.perDay, 0) : null;
+}
+
 // ---- data
 async function loadFx() {
   for (const [url, pick] of [['https://api.frankfurter.app/latest?from=USD&to=SEK', d => d.rates.SEK],
@@ -286,7 +292,7 @@ function renderAccount() {
   $('pnlsub').textContent = `NETTO SEDAN START · ${fmt(days, days < 2 ? 1 : 0)} DAGAR · ${fmt(net / CFG.CAPITAL * 100, 2)}%`;
   $('rew').textContent = skr(sek(rew), 0);
   $('mm').textContent = skr(sek(mm), 0); $('mm').className = 'v ' + (mm >= 0 ? 'up' : 'down');
-  const perDay = Object.values(S.live).reduce((a, x) => a + (x?.perDay || 0), 0);
+  const perDay = liveTotal();
   $('perday').textContent = kr(sek(perDay), 0);
   $('nmk').textContent = (st?.portfolio || []).length;
 }
@@ -295,12 +301,12 @@ function renderComp() {
   const lv = port.map(c => ({c, x: S.live[c.cond]})).filter(o => o.x);
   const alone = lv.filter(o => o.x.share > 0.9).length, crowded = lv.filter(o => o.x.share < 0.1).length;
   const startEst = port.reduce((a, c) => a + c.est_reward_day, 0);
-  const now = lv.reduce((a, o) => a + o.x.perDay, 0);
+  const now = lv.length ? lv.reduce((a, o) => a + o.x.perDay, 0) : null;
   const avg = lv.length ? lv.reduce((a, o) => a + o.x.share, 0) / lv.length : null;
   $('comp').innerHTML = [
     ['Snittandel nu', pct(avg, 1)], ['Marknader nästan ensam (>90 %)', `${alone}`], ['Trängsel (<10 %)', `${crowded}`],
     ['Uppskattat/dag vid start', kr(sek(startEst), 0)], ['Uppskattat/dag nu', kr(sek(now), 0)],
-    ['Förändring', startEst ? pct(now / startEst - 1, 0) : '—'],
+    ['Förändring', startEst && now != null ? pct(now / startEst - 1, 0) : '—'],
   ].map(([k, v]) => `<span>${k}</span><b>${v}</b>`).join('');
 }
 function renderMeta() {
@@ -350,7 +356,7 @@ function renderCharts() {
 }
 function renderTickers() {
   const st = S.st;
-  const perDay = Object.values(S.live).reduce((a, x) => a + (x?.perDay || 0), 0);
+  const perDay = liveTotal();
   $('banner').textContent = `◆ VIRTUELL MÄTNING · INGA RIKTIGA ORDER · ${(st?.portfolio || []).length} MARKNADER · UPPSKATTAT ${kr(sek(perDay), 0)}/DAG NU · 1 USD = ${S.fx ? fmt(S.fx, 2) : '—'} KR`;
   const items = (st?.portfolio || []).map(c => { const x = S.live[c.cond]; return `<span><b>${esc(c.question.slice(0, 40))}</b> andel ${x ? pct(x.share, 0) : '—'} · ${x ? kr(sek(x.perDay), 1) : '—'}/dag</span>`; }).join('');
   for (const [id, html] of [['feed', items || '<span>laddar…</span>'], ['foot', items || '<span>laddar…</span>']]) {
@@ -363,12 +369,14 @@ function dayRows() {
   const byDay = new Map();
   for (const x of h) byDay.set(x.ts.slice(0, 10), x);               // last tick of each day
   const days = [...byDay.keys()].sort();
+  const start = S.st?.started?.slice(0, 10);
   let prev = {net: 0, reward_total: 0, mm_value: 0, fills_total: 0};
   return days.map(d => {
     const x = byDay.get(d);
     const row = {day: d, net: x.net - prev.net, reward: x.reward_total - prev.reward_total,
                  mm: x.mm_value - prev.mm_value, fills: (x.fills_total ?? 0) - (prev.fills_total ?? 0),
-                 share: x.avg_share, partial: d === new Date().toISOString().slice(0, 10)};
+                 // the start day and today are not whole days: kept out of the per-day average
+                 share: x.avg_share, partial: d === new Date().toISOString().slice(0, 10) || d === start};
     prev = x;
     return row;
   });
@@ -377,7 +385,7 @@ function renderDays() {
   const rows = dayRows(), done = rows.filter(r => !r.partial);
   const cls = v => v > 0 ? 'up' : v < 0 ? 'down' : '';
   $('days').innerHTML = '<tr><th>Dag</th><th>Affärer</th><th>Belöning</th><th>Market making</th><th>Netto</th><th>Andel</th></tr>' +
-    (rows.slice().reverse().map(r => `<tr><td><b>${r.day.slice(5)}</b>${r.partial ? ' <span class="mute">(pågår)</span>' : ''}</td>` +
+    (rows.slice().reverse().map(r => `<tr><td><b>${r.day.slice(5)}</b>${r.partial ? ` <span class="mute">(${r.day === S.st?.started?.slice(0, 10) ? 'startdag, del av dag' : 'pågår'})</span>` : ''}</td>` +
       `<td>${fmt(r.fills)}</td><td class="up">${skr(sek(r.reward), 0)}</td><td class="${cls(r.mm)}">${skr(sek(r.mm), 0)}</td>` +
       `<td class="${cls(r.net)}"><b>${skr(sek(r.net), 0)}</b></td><td>${pct(r.share, 0)}</td></tr>`).join('') ||
      '<tr><td colspan="6" class="mute" style="text-align:center;padding:10px">fylls i efter första dagen</td></tr>');

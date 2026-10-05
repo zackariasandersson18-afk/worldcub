@@ -160,6 +160,13 @@ canvas{display:block;width:100%}
         <div><div class="k9">Snitt/dag</div><div class="v" id="avgday">—</div></div>
         <div><div class="k9">Plusdagar</div><div class="v" id="posdays">—</div></div>
       </div>
+      <div class="k9" style="margin-top:10px">REALISTISKT · SOM MED RIKTIGA PENGAR (SÅ NÄRA PUBLIK DATA TILLÅTER)</div>
+      <div class="kv3">
+        <div><div class="k9">Netto</div><div class="v" id="rnet">—</div></div>
+        <div><div class="k9">Belöning</div><div class="v up" id="rrew">—</div></div>
+        <div><div class="k9">Market making</div><div class="v" id="rmm">—</div></div>
+      </div>
+      <div class="k9" style="margin-top:4px" id="rsub">startar vid nästa mätning</div>
     </div>
   </section>
   <section class="panel">
@@ -193,7 +200,7 @@ canvas{display:block;width:100%}
   <div class="tw" style="max-height:560px"><table class="ctd" id="mk"></table></div>
 </section>
 
-<div class="note">Polymarket betalar en daglig pott per marknad till dem som har köp- och säljbud nära mittpriset. Varje minut får ett bud poängen ((v − avstånd)/v)² × storlek, där v är max-avståndet. Potten delas efter poäng. Den här sidan räknar live med samma formel mot de riktiga orderböckerna: vår andel om vi låg med minsta storlek på halva max-avståndet. Market making-delen är virtuella bud som fylls av riktiga affärer. Belöningar betalas bara för riktiga bud, så allt här är uppskattningar. Belöningen betalas i pUSD (Polymarkets dollartoken). Belopp i kronor via ECB:s dagskurs. Ingen finansiell rådgivning.</div>
+<div class="note">Polymarket betalar en daglig pott per marknad till dem som har köp- och säljbud nära mittpriset. Varje minut får ett bud poängen ((v − avstånd)/v)² × storlek, där v är max-avståndet. Potten delas efter poäng. Den här sidan räknar live med samma formel mot de riktiga orderböckerna: vår andel om vi låg med minsta storlek på halva max-avståndet. Market making-delen är virtuella bud som fylls av riktiga affärer. Belöningar betalas bara för riktiga bud, så allt här är uppskattningar. Den realistiska kalkylen är strängare: den använder den lägre av två mätningars andel (konkurrenter kan ha funnits hela tiden), ger ingen belöning om priset rört sig så mycket att budet hade hamnat utanför poängzonen, och räknar att vi blir fyllda redan när någon handlar på vårt pris (fler dåliga affärer). Den kan fortfarande inte se driftstopp, fördröjning eller exakt köplats, så exakt blir det bara med riktiga order. Belöningen betalas i pUSD (Polymarkets dollartoken). Belopp i kronor via ECB:s dagskurs. Ingen finansiell rådgivning.</div>
 </div>
 <div class="ticker foot"><div class="tag" style="background:var(--green);color:#000">REWARDS</div><div class="track"><div class="run" id="foot"></div></div></div>
 
@@ -295,6 +302,16 @@ function renderAccount() {
   const perDay = liveTotal();
   $('perday').textContent = kr(sek(perDay), 0);
   $('nmk').textContent = (st?.portfolio || []).length;
+  // realistic ledger (rewardbot/live.py R1-R5); started later than the optimistic one
+  const r = [...h].reverse().find(x => x.real_net != null);
+  if (r) {
+    const optAtStart = h.find(x => x.real_net != null), optSince = (last?.net ?? 0) - (optAtStart?.net ?? 0);
+    $('rnet').textContent = skr(sek(r.real_net), 0); $('rnet').className = 'v ' + (r.real_net >= 0 ? 'up' : 'down');
+    $('rrew').textContent = skr(sek(r.real_reward_total), 0);
+    $('rmm').textContent = skr(sek(r.real_mm_value), 0); $('rmm').className = 'v ' + (r.real_mm_value >= 0 ? 'up' : 'down');
+    $('rsub').textContent = `sedan ${st.real_started?.slice(0, 16).replace('T', ' ')} UTC · ${fmt(r.real_fills_total ?? 0)} affärer · ` +
+      `optimistiskt samma period ${skr(sek(optSince), 0)}` + (optSince > 0 ? ` · realistiskt = ${pct(r.real_net / optSince, 0)} av det` : '');
+  }
 }
 function renderComp() {
   const port = S.st?.portfolio || [];
@@ -346,10 +363,12 @@ function drawLines(id, series, colors, fmtY) {
 function renderCharts() {
   const h = S.st?.history || [];
   if (S.fx) {
-    drawLines('c-eq', [h.map(x => x.net * S.fx), h.map(x => x.reward_total * S.fx), h.map(x => x.mm_value * S.fx)],
-              [COL.yellow, COL.green, COL.red], v => kr(v, 0));
+    drawLines('c-eq', [h.map(x => x.net * S.fx), h.map(x => x.reward_total * S.fx), h.map(x => x.mm_value * S.fx),
+                       h.map(x => (x.real_net ?? 0) * S.fx)],
+              [COL.yellow, COL.green, COL.red, COL.cyan], v => kr(v, 0));
     const last = h[h.length - 1];
-    $('eq-sub').innerHTML = last ? `<span class="warn">netto ${skr(last.net * S.fx)}</span> · <span class="up">belöning ${skr(last.reward_total * S.fx)}</span> · <span class="down">MM ${skr(last.mm_value * S.fx)}</span>` : '—';
+    $('eq-sub').innerHTML = last ? `<span class="warn">netto ${skr(last.net * S.fx)}</span> · <span class="up">belöning ${skr(last.reward_total * S.fx)}</span> · <span class="down">MM ${skr(last.mm_value * S.fx)}</span>` +
+      (last.real_net != null ? ` · <span style="color:${COL.cyan}">realistiskt ${skr(last.real_net * S.fx)}</span>` : '') : '—';
   }
   drawLines('c-sh', [h.map(x => x.avg_share * 100)], [COL.cyan], v => fmt(v, 0) + '%');
   $('sh-sub').textContent = h.length ? `start ${pct(h[0].avg_share, 0)} · nu ${pct(h[h.length - 1].avg_share, 0)}` : '—';
@@ -370,11 +389,12 @@ function dayRows() {
   for (const x of h) byDay.set(x.ts.slice(0, 10), x);               // last tick of each day
   const days = [...byDay.keys()].sort();
   const start = S.st?.started?.slice(0, 10);
-  let prev = {net: 0, reward_total: 0, mm_value: 0, fills_total: 0};
+  let prev = {net: 0, reward_total: 0, mm_value: 0, fills_total: 0, real_net: 0};
   return days.map(d => {
     const x = byDay.get(d);
     const row = {day: d, net: x.net - prev.net, reward: x.reward_total - prev.reward_total,
                  mm: x.mm_value - prev.mm_value, fills: (x.fills_total ?? 0) - (prev.fills_total ?? 0),
+                 real: x.real_net == null ? null : x.real_net - (prev.real_net ?? 0),
                  // the start day and today are not whole days: kept out of the per-day average
                  share: x.avg_share, partial: d === new Date().toISOString().slice(0, 10) || d === start};
     prev = x;
@@ -384,11 +404,12 @@ function dayRows() {
 function renderDays() {
   const rows = dayRows(), done = rows.filter(r => !r.partial);
   const cls = v => v > 0 ? 'up' : v < 0 ? 'down' : '';
-  $('days').innerHTML = '<tr><th>Dag</th><th>Affärer</th><th>Belöning</th><th>Market making</th><th>Netto</th><th>Andel</th></tr>' +
+  $('days').innerHTML = '<tr><th>Dag</th><th>Affärer</th><th>Belöning</th><th>Market making</th><th>Netto</th><th>Realistiskt</th><th>Andel</th></tr>' +
     (rows.slice().reverse().map(r => `<tr><td><b>${r.day.slice(5)}</b>${r.partial ? ` <span class="mute">(${r.day === S.st?.started?.slice(0, 10) ? 'startdag, del av dag' : 'pågår'})</span>` : ''}</td>` +
       `<td>${fmt(r.fills)}</td><td class="up">${skr(sek(r.reward), 0)}</td><td class="${cls(r.mm)}">${skr(sek(r.mm), 0)}</td>` +
-      `<td class="${cls(r.net)}"><b>${skr(sek(r.net), 0)}</b></td><td>${pct(r.share, 0)}</td></tr>`).join('') ||
-     '<tr><td colspan="6" class="mute" style="text-align:center;padding:10px">fylls i efter första dagen</td></tr>');
+      `<td class="${cls(r.net)}"><b>${skr(sek(r.net), 0)}</b></td>` +
+      `<td class="${cls(r.real)}">${r.real == null ? '—' : skr(sek(r.real), 0)}</td><td>${pct(r.share, 0)}</td></tr>`).join('') ||
+     '<tr><td colspan="7" class="mute" style="text-align:center;padding:10px">fylls i efter första dagen</td></tr>');
   const tot = done.reduce((a, r) => a + r.net, 0), pos = done.filter(r => r.net > 0).length;
   $('day-sub').textContent = `${done.length} hela dagar`;
   $('day-avg').innerHTML = done.length ? `Snitt per hel dag: <b class="${cls(tot)}">${skr(sek(tot / done.length), 0)}</b> · bästa ${skr(sek(Math.max(...done.map(r => r.net))), 0)} · sämsta ${skr(sek(Math.min(...done.map(r => r.net))), 0)} · plusdagar ${pos}/${done.length}` : 'Snittet per dag visas när första hela dagen är klar.';

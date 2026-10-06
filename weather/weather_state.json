@@ -7842,52 +7842,19 @@
    "equity": 1025.21,
    "cash": 2.94,
    "open": 86
+  },
+  {
+   "ts": "2026-10-06T12:31:22.382881+00:00",
+   "equity": 1025.21,
+   "cash": 2.94,
+   "open": 86
   }
  ],
  "last_run": {
-  "ts": "2026-10-06T12:01:48.313026+00:00",
+  "ts": "2026-10-06T12:31:22.382881+00:00",
   "settled": [],
-  "opened": [
-   {
-    "event_id": "1130698",
-    "slug": "highest-temperature-in-mexico-city-on-october-6-2026",
-    "city": "Mexico City",
-    "date": "2026-10-06",
-    "station": "MMMX",
-    "bucket": "21\u00b0C",
-    "side": "NO",
-    "token": "47642832598961658556260593015573435505652896041534483657310684353806960121063",
-    "price": 0.64,
-    "cost": 0.6615,
-    "prob": 0.7269,
-    "edge": 0.0654,
-    "shares": 30.9892,
-    "stake_usd": 20.5,
-    "mu": 21.25,
-    "sigma": 1.41,
-    "opened": "2026-10-06T12:01:48.313026+00:00"
-   },
-   {
-    "event_id": "1129251",
-    "slug": "highest-temperature-in-denver-on-october-6-2026",
-    "city": "Denver",
-    "date": "2026-10-06",
-    "station": "KBKF",
-    "bucket": "84-85\u00b0F",
-    "side": "YES",
-    "token": "64351503019281648726590445859605324439855951979520468131063297938080036932036",
-    "price": 0.21,
-    "cost": 0.2283,
-    "prob": 0.2828,
-    "edge": 0.0545,
-    "shares": 12.0458,
-    "stake_usd": 2.75,
-    "mu": 85.55,
-    "sigma": 2.54,
-    "opened": "2026-10-06T12:01:48.313026+00:00"
-   }
-  ],
-  "logged": 2,
+  "opened": [],
+  "logged": 0,
   "skipped": {}
  },
  "mode": "trading",

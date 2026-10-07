@@ -8464,52 +8464,19 @@
    "equity": 825.15,
    "cash": 220.71,
    "open": 63
+  },
+  {
+   "ts": "2026-10-07T01:31:24.062053+00:00",
+   "equity": 825.15,
+   "cash": 220.71,
+   "open": 63
   }
  ],
  "last_run": {
-  "ts": "2026-10-07T01:01:43.490195+00:00",
+  "ts": "2026-10-07T01:31:24.062053+00:00",
   "settled": [],
-  "opened": [
-   {
-    "event_id": "1135250",
-    "slug": "highest-temperature-in-karachi-on-october-7-2026",
-    "city": "Karachi",
-    "date": "2026-10-07",
-    "station": "OPKC",
-    "bucket": "31\u00b0C",
-    "side": "YES",
-    "token": "48236845278067133828821981971690710072865102527233011796610279670254035557732",
-    "price": 0.054,
-    "cost": 0.0666,
-    "prob": 0.1914,
-    "edge": 0.1248,
-    "shares": 21.4862,
-    "stake_usd": 1.43,
-    "mu": 32.24,
-    "sigma": 1.4,
-    "opened": "2026-10-07T01:01:43.490195+00:00"
-   },
-   {
-    "event_id": "1135250",
-    "slug": "highest-temperature-in-karachi-on-october-7-2026",
-    "city": "Karachi",
-    "date": "2026-10-07",
-    "station": "OPKC",
-    "bucket": "32\u00b0C",
-    "side": "NO",
-    "token": "81478303451860350381916228511773798087820223415024272828658113015921844940409",
-    "price": 0.59,
-    "cost": 0.6121,
-    "prob": 0.7254,
-    "edge": 0.1133,
-    "shares": 22.4638,
-    "stake_usd": 13.75,
-    "mu": 32.24,
-    "sigma": 1.4,
-    "opened": "2026-10-07T01:01:43.490195+00:00"
-   }
-  ],
-  "logged": 1,
+  "opened": [],
+  "logged": 0,
   "skipped": {}
  },
  "mode": "trading",

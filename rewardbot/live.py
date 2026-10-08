@@ -104,12 +104,46 @@ def choose(http, log) -> list[dict]:
     return chosen
 
 
+def backfill_real(st: dict) -> None:
+    """One-off: the realistic ledger started later than the measurement. Fill the gap
+    from the tick history, which only has portfolio-average shares: R1 is applied to the
+    average share (reward_tick * min(previous, current) / current); R2, R3 and R4 cannot
+    be checked without per-market data, so market making is taken from the optimistic
+    ledger. Marked as an estimate in st['real_backfill']."""
+    h = st.get('history', [])
+    first = next((i for i, x in enumerate(h) if x.get('real_net') is not None), None)
+    if st.get('real_backfill') or not first:
+        return
+    rew, prev = 0.0, None
+    for x in h[:first + 1]:
+        if prev is not None and x['avg_share'] > 0 and x.get('real_net') is None:
+            rew += x['reward_tick'] * min(prev, x['avg_share']) / x['avg_share']
+        elif prev is not None and x.get('real_net') is not None:
+            # the ledger's own first tick earned nothing (no previous share yet): fill it too
+            rew += x['reward_tick'] * min(prev, x['avg_share']) / x['avg_share']
+        prev = x['avg_share']
+        if x.get('real_net') is None:
+            x.update(real_reward_total=round(rew, 2), real_mm_value=x['mm_value'],
+                     real_net=round(rew + x['mm_value'], 2), real_fills_total=x.get('fills_total', 0))
+    mm0, fills0 = h[first]['mm_value'], h[first].get('fills_total', 0)
+    for x in h[first:]:
+        x['real_reward_total'] = round(x['real_reward_total'] + rew, 2)
+        x['real_mm_value'] = round(x['real_mm_value'] + mm0, 2)
+        x['real_net'] = round(x['real_reward_total'] + x['real_mm_value'], 2)
+        x['real_fills_total'] = x.get('real_fills_total', 0) + fills0
+    st['real_reward_total'] = st.get('real_reward_total', 0.0) + rew
+    st['real_backfill'] = {'until': h[first]['ts'], 'reward': round(rew, 4), 'mm_value': mm0, 'fills': fills0,
+                           'note': 'estimate: R1 on the average share, optimistic market making'}
+    st['real_started'] = st['started']
+
+
 def step(state_dir: str | Path, now: float | None = None, http=None, log=print) -> dict:
     d = Path(state_dir)
     d.mkdir(parents=True, exist_ok=True)
     http = http or requests.Session()
     now = now or time.time()
     st = load(d / 'rewards_state.json', {})
+    backfill_real(st)
     if not st.get('portfolio'):
         st = {'started': datetime.fromtimestamp(now, timezone.utc).isoformat(), 'portfolio': choose(http, log),
               'positions': {}, 'history': [], 'reward_total': 0.0, 'last_ts': now, 'tokens': {}}
@@ -183,15 +217,16 @@ def step(state_dir: str | Path, now: float | None = None, http=None, log=print) 
                                 'mm_value': round(value, 2)})
     st['reward_total'] += reward_tick
     st['real_reward_total'] = st.get('real_reward_total', 0.0) + r_tick
+    bf = st.get('real_backfill') or {}             # the estimated gap before the ledger started
     st.setdefault('real_started', tick['ts'])
     st['last_ts'] = now
     tick.update(reward_tick=round(reward_tick, 4), reward_total=round(st['reward_total'], 2),
                 mm_value=round(mm_value, 2), net=round(st['reward_total'] + mm_value, 2),
                 avg_share=round(sum(m.get('share', 0) for m in tick['markets']) / max(len(tick['markets']), 1), 4),
                 fills_total=sum(p.get('fills', 0) for p in st['positions'].values()),
-                real_reward_total=round(st['real_reward_total'], 2), real_mm_value=round(r_mm, 2),
-                real_net=round(st['real_reward_total'] + r_mm, 2),
-                real_fills_total=sum(p.get('r_fills', 0) for p in st['positions'].values()))
+                real_reward_total=round(st['real_reward_total'], 2), real_mm_value=round(r_mm + bf.get('mm_value', 0.0), 2),
+                real_net=round(st['real_reward_total'] + r_mm + bf.get('mm_value', 0.0), 2),
+                real_fills_total=sum(p.get('r_fills', 0) for p in st['positions'].values()) + bf.get('fills', 0))
     st['history'].append({k: tick[k] for k in ('ts', 'dt_h', 'reward_tick', 'reward_total', 'mm_value', 'net',
                                                'avg_share', 'fills_total', 'real_reward_total', 'real_mm_value',
                                                'real_net', 'real_fills_total')})

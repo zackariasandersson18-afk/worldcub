@@ -104,3 +104,23 @@ def test_fills_are_recorded_per_ledger(tmp_path, monkeypatch):
     st = __import__('json').loads((tmp_path / 'rewards_state.json').read_text())
     got = sorted((f['ledger'], f['side'], f['price']) for f in st['fills'])
     assert got == [('opt', 'BUY', 0.48), ('real', 'BUY', 0.48), ('real', 'SELL', 0.52)]
+
+
+def test_backfill_fills_the_gap_before_the_realistic_ledger():
+    from rewardbot import live
+    h = [{'ts': 't0', 'reward_tick': 0.0, 'reward_total': 0.0, 'mm_value': 0.0, 'net': 0.0, 'avg_share': 0.3},
+         {'ts': 't1', 'reward_tick': 1.0, 'reward_total': 1.0, 'mm_value': -0.5, 'net': 0.5, 'avg_share': 0.2,
+          'fills_total': 2},
+         {'ts': 't2', 'reward_tick': 1.0, 'reward_total': 2.0, 'mm_value': -0.5, 'net': 1.5, 'avg_share': 0.4,
+          'fills_total': 2, 'real_reward_total': 0.0, 'real_mm_value': 0.0, 'real_net': 0.0, 'real_fills_total': 0},
+         {'ts': 't3', 'reward_tick': 1.0, 'reward_total': 3.0, 'mm_value': -0.5, 'net': 2.5, 'avg_share': 0.4,
+          'fills_total': 2, 'real_reward_total': 1.0, 'real_mm_value': 0.0, 'real_net': 1.0, 'real_fills_total': 0}]
+    st = {'started': 't0', 'history': h, 'real_reward_total': 1.0}
+    live.backfill_real(st)
+    # t1: share fell 0.3 -> 0.2, R1 keeps the lower: full 1.0; t2: rose 0.2 -> 0.4, half: 0.5
+    assert h[1]['real_reward_total'] == 1.0 and h[1]['real_net'] == 0.5
+    assert h[2]['real_reward_total'] == 1.5 and h[2]['real_mm_value'] == -0.5 and h[2]['real_fills_total'] == 2
+    assert h[3]['real_reward_total'] == 2.5 and h[3]['real_net'] == 2.0
+    assert st['real_reward_total'] == 2.5 and st['real_backfill']['mm_value'] == -0.5
+    live.backfill_real(st)                                   # idempotent
+    assert st['real_reward_total'] == 2.5

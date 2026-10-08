@@ -329,7 +329,8 @@ function renderAccount() {
     $('rrew').textContent = skr(sek(r.real_reward_total), 0);
     $('rmm').textContent = skr(sek(r.real_mm_value), 0); $('rmm').className = 'v ' + (r.real_mm_value >= 0 ? 'up' : 'down');
     $('rsub').textContent = `sedan ${st.real_started?.slice(0, 16).replace('T', ' ')} UTC · ${fmt(r.real_fills_total ?? 0)} affärer · ` +
-      `optimistiskt samma period ${skr(sek(optSince), 0)}` + (optSince > 0 ? ` · realistiskt = ${pct(r.real_net / optSince, 0)} av det` : '');
+      `optimistiskt samma period ${skr(sek(optSince), 0)}` + (optSince > 0 ? ` · realistiskt = ${pct(r.real_net / optSince, 0)} av det` : '') +
+      (st.real_backfill ? ` · fram till ${st.real_backfill.until.slice(5, 16).replace('T', ' ')} UTC uppskattad i efterhand` : '');
   }
 }
 function renderComp() {

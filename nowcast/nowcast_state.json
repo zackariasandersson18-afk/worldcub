@@ -1,6 +1,43 @@
 {
- "cash": 1009.7192,
- "open": [],
+ "cash": 971.0491999999999,
+ "open": [
+  {
+   "event_id": "1146621",
+   "slug": "highest-temperature-in-manila-on-october-9-2026",
+   "city": "Manila",
+   "date": "2026-10-09",
+   "station": "RPLL",
+   "bucket": "32\u00b0C",
+   "side": "YES",
+   "token": "69853638461268259470270254876076711070872979328763296532685132821595027022775",
+   "price": 0.91,
+   "cost": 0.9241,
+   "prob": 0.9772,
+   "edge": 0.0531,
+   "shares": 21.8484,
+   "stake_usd": 20.19,
+   "observed": 32,
+   "opened": "2026-10-09T07:59:24.650004+00:00"
+  },
+  {
+   "event_id": "1146621",
+   "slug": "highest-temperature-in-manila-on-october-9-2026",
+   "city": "Manila",
+   "date": "2026-10-09",
+   "station": "RPLL",
+   "bucket": "33\u00b0C",
+   "side": "NO",
+   "token": "38644951845175771712739453426854225238384702341808116483390588603691321729969",
+   "price": 0.91,
+   "cost": 0.9241,
+   "prob": 0.9791,
+   "edge": 0.055,
+   "shares": 19.9979,
+   "stake_usd": 18.48,
+   "observed": 32,
+   "opened": "2026-10-09T07:59:24.650004+00:00"
+  }
+ ],
  "closed": [
   {
    "event_id": "1118072",
@@ -16862,6 +16899,310 @@
     null,
     null
    ]
+  },
+  "1146621": {
+   "city": "Manila",
+   "station": "RPLL",
+   "date": "2026-10-09",
+   "unit": "C",
+   "slug": "highest-temperature-in-manila-on-october-9-2026",
+   "observed": 32,
+   "last_obs": "2026-10-09T07:00:00+00:00",
+   "solar_time": "16:03",
+   "decided": "2026-10-09T07:59:24.650004+00:00",
+   "labels": [
+    "27\u00b0C or below",
+    "28\u00b0C",
+    "29\u00b0C",
+    "30\u00b0C",
+    "31\u00b0C",
+    "32\u00b0C",
+    "33\u00b0C",
+    "34\u00b0C",
+    "35\u00b0C",
+    "36\u00b0C",
+    "37\u00b0C or higher"
+   ],
+   "probs": [
+    0.01,
+    0.01,
+    0.01,
+    0.01,
+    0.01,
+    0.9772,
+    0.0209,
+    0.01,
+    0.01,
+    0.01,
+    0.01
+   ],
+   "market": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    0.72,
+    0.255,
+    0.006,
+    0.0015,
+    null,
+    null
+   ],
+   "yes_ask": [
+    0.001,
+    0.001,
+    0.001,
+    0.001,
+    0.001,
+    0.91,
+    0.42,
+    0.01,
+    0.002,
+    0.002,
+    0.001
+   ],
+   "no_ask": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    0.47,
+    0.91,
+    0.998,
+    0.999,
+    null,
+    null
+   ]
+  },
+  "1146596": {
+   "city": "Taipei",
+   "station": "RCSS",
+   "date": "2026-10-09",
+   "unit": "C",
+   "slug": "highest-temperature-in-taipei-on-october-9-2026",
+   "observed": 29,
+   "last_obs": "2026-10-09T05:30:00+00:00",
+   "solar_time": "16:05",
+   "decided": "2026-10-09T07:59:24.650004+00:00",
+   "labels": [
+    "24\u00b0C or below",
+    "25\u00b0C",
+    "26\u00b0C",
+    "27\u00b0C",
+    "28\u00b0C",
+    "29\u00b0C",
+    "30\u00b0C",
+    "31\u00b0C",
+    "32\u00b0C",
+    "33\u00b0C",
+    "34\u00b0C or higher"
+   ],
+   "probs": [
+    0.01,
+    0.01,
+    0.01,
+    0.01,
+    0.01,
+    0.9772,
+    0.0209,
+    0.01,
+    0.01,
+    0.01,
+    0.01
+   ],
+   "market": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    0.993,
+    0.006,
+    0.0015,
+    null,
+    null,
+    null
+   ],
+   "yes_ask": [
+    0.001,
+    0.001,
+    0.001,
+    0.001,
+    0.001,
+    0.997,
+    0.009,
+    0.002,
+    0.001,
+    0.001,
+    0.001
+   ],
+   "no_ask": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    0.011,
+    0.997,
+    0.999,
+    null,
+    null,
+    null
+   ]
+  },
+  "1146591": {
+   "city": "Shanghai",
+   "station": "ZSPD",
+   "date": "2026-10-09",
+   "unit": "C",
+   "slug": "highest-temperature-in-shanghai-on-october-9-2026",
+   "observed": 26,
+   "last_obs": "2026-10-09T07:30:00+00:00",
+   "solar_time": "16:06",
+   "decided": "2026-10-09T07:59:24.650004+00:00",
+   "labels": [
+    "20\u00b0C or below",
+    "21\u00b0C",
+    "22\u00b0C",
+    "23\u00b0C",
+    "24\u00b0C",
+    "25\u00b0C",
+    "26\u00b0C",
+    "27\u00b0C",
+    "28\u00b0C",
+    "29\u00b0C",
+    "30\u00b0C or higher"
+   ],
+   "probs": [
+    0.01,
+    0.01,
+    0.01,
+    0.01,
+    0.01,
+    0.01,
+    0.9772,
+    0.0209,
+    0.01,
+    0.01,
+    0.01
+   ],
+   "market": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    0.9975,
+    0.003,
+    null,
+    null,
+    null
+   ],
+   "yes_ask": [
+    0.001,
+    0.001,
+    0.001,
+    0.001,
+    0.001,
+    0.001,
+    0.999,
+    0.004,
+    0.001,
+    0.001,
+    0.001
+   ],
+   "no_ask": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    0.004,
+    0.998,
+    null,
+    null,
+    null
+   ]
+  },
+  "1146583": {
+   "city": "Seoul (Incheon)",
+   "station": "RKSI",
+   "date": "2026-10-09",
+   "unit": "C",
+   "slug": "highest-temperature-in-seoul-on-october-9-2026",
+   "observed": 23,
+   "last_obs": "2026-10-09T07:30:00+00:00",
+   "solar_time": "16:25",
+   "decided": "2026-10-09T07:59:24.650004+00:00",
+   "labels": [
+    "18\u00b0C or below",
+    "19\u00b0C",
+    "20\u00b0C",
+    "21\u00b0C",
+    "22\u00b0C",
+    "23\u00b0C",
+    "24\u00b0C",
+    "25\u00b0C",
+    "26\u00b0C",
+    "27\u00b0C",
+    "28\u00b0C or higher"
+   ],
+   "probs": [
+    0.01,
+    0.01,
+    0.01,
+    0.01,
+    0.01,
+    0.9772,
+    0.0209,
+    0.01,
+    0.01,
+    0.01,
+    0.01
+   ],
+   "market": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    0.9955,
+    0.003,
+    0.002,
+    null,
+    null,
+    null
+   ],
+   "yes_ask": [
+    0.001,
+    0.001,
+    0.001,
+    0.001,
+    0.001,
+    0.998,
+    0.005,
+    0.003,
+    0.001,
+    0.001,
+    0.001
+   ],
+   "no_ask": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    0.007,
+    0.999,
+    0.999,
+    null,
+    null,
+    null
+   ]
   }
  },
  "history": [
@@ -18406,6 +18747,12 @@
    "equity": 1009.72,
    "cash": 1009.72,
    "open": 0
+  },
+  {
+   "ts": "2026-10-09T07:59:24.650004+00:00",
+   "equity": 1009.72,
+   "cash": 971.05,
+   "open": 2
   }
  ],
  "upcoming": [
@@ -18413,271 +18760,271 @@
    "city": "Panama City",
    "station": "MPMG",
    "slug": "highest-temperature-in-panama-city-on-october-9-2026",
-   "solar": "02:12"
+   "solar": "02:41"
   },
   {
    "city": "Mexico City",
    "station": "MMMX",
    "slug": "highest-temperature-in-mexico-city-on-october-9-2026",
-   "solar": "00:54"
+   "solar": "01:23"
   },
   {
    "city": "Toronto",
    "station": "CYYZ",
    "slug": "highest-temperature-in-toronto-on-october-9-2026",
-   "solar": "02:12"
+   "solar": "02:40"
   },
   {
    "city": "Buenos Aires",
    "station": "SAEZ",
    "slug": "highest-temperature-in-buenos-aires-on-october-9-2026",
-   "solar": "03:37"
+   "solar": "04:05"
   },
   {
    "city": "Sao Paulo",
    "station": "SBGR",
    "slug": "highest-temperature-in-sao-paulo-on-october-9-2026",
-   "solar": "04:25"
+   "solar": "04:53"
+  },
+  {
+   "city": "Los Angeles",
+   "station": "KLAX",
+   "slug": "highest-temperature-in-los-angeles-on-october-9-2026",
+   "solar": "00:05"
   },
   {
    "city": "Denver",
    "station": "KBKF",
    "slug": "highest-temperature-in-denver-on-october-9-2026",
-   "solar": "00:32"
+   "solar": "01:00"
   },
   {
    "city": "Austin",
    "station": "KAUS",
    "slug": "highest-temperature-in-austin-on-october-9-2026",
-   "solar": "01:00"
+   "solar": "01:28"
   },
   {
    "city": "Chicago",
    "station": "KORD",
    "slug": "highest-temperature-in-chicago-on-october-9-2026",
-   "solar": "01:39"
+   "solar": "02:07"
   },
   {
    "city": "Atlanta",
    "station": "KATL",
    "slug": "highest-temperature-in-atlanta-on-october-9-2026",
-   "solar": "01:53"
+   "solar": "02:21"
   },
   {
    "city": "Dallas",
    "station": "KDAL",
    "slug": "highest-temperature-in-dallas-on-october-9-2026",
-   "solar": "01:03"
+   "solar": "01:32"
   },
   {
    "city": "NYC",
    "station": "KLGA",
    "slug": "highest-temperature-in-nyc-on-october-9-2026",
-   "solar": "02:35"
+   "solar": "03:03"
   },
   {
    "city": "Houston",
    "station": "KHOU",
    "slug": "highest-temperature-in-houston-on-october-9-2026",
-   "solar": "01:10"
+   "solar": "01:38"
   },
   {
    "city": "Miami",
    "station": "KMIA",
    "slug": "highest-temperature-in-miami-on-october-9-2026",
-   "solar": "02:10"
+   "solar": "02:38"
   },
   {
    "city": "Manila",
    "station": "RPLL",
    "slug": "highest-temperature-in-manila-on-october-9-2026",
-   "solar": "15:35"
+   "solar": "16:03"
   },
   {
    "city": "Karachi",
    "station": "OPKC",
    "slug": "highest-temperature-in-karachi-on-october-9-2026",
-   "solar": "11:59"
+   "solar": "12:28"
   },
   {
    "city": "Qingdao",
    "station": "ZSQD",
    "slug": "highest-temperature-in-qingdao-on-october-9-2026",
-   "solar": "15:31"
+   "solar": "15:59"
   },
   {
    "city": "Guangzhou",
    "station": "ZGGG",
    "slug": "highest-temperature-in-guangzhou-on-october-9-2026",
-   "solar": "15:04"
+   "solar": "15:32"
   },
   {
    "city": "Cape Town",
    "station": "FACT",
    "slug": "highest-temperature-in-cape-town-on-october-9-2026",
-   "solar": "08:45"
+   "solar": "09:13"
   },
   {
    "city": "Jeddah",
    "station": "OEJN",
    "slug": "highest-temperature-in-jeddah-on-october-9-2026",
-   "solar": "10:07"
+   "solar": "10:36"
   },
   {
    "city": "Kuala Lumpur",
    "station": "WMKK",
    "slug": "highest-temperature-in-kuala-lumpur-on-october-9-2026",
-   "solar": "14:18"
+   "solar": "14:46"
   },
   {
    "city": "Helsinki",
    "station": "EFHK",
    "slug": "highest-temperature-in-helsinki-on-october-9-2026",
-   "solar": "09:11"
+   "solar": "09:39"
   },
   {
    "city": "Amsterdam",
    "station": "EHAM",
    "slug": "highest-temperature-in-amsterdam-on-october-9-2026",
-   "solar": "07:50"
+   "solar": "08:18"
   },
   {
    "city": "Busan",
    "station": "RKPK",
    "slug": "highest-temperature-in-busan-on-october-9-2026",
-   "solar": "16:06"
+   "solar": "16:35"
   },
   {
    "city": "Shenzhen",
    "station": "ZGSZ",
    "slug": "highest-temperature-in-shenzhen-on-october-9-2026",
-   "solar": "15:06"
+   "solar": "15:34"
   },
   {
    "city": "Chengdu",
    "station": "ZUUU",
    "slug": "highest-temperature-in-chengdu-on-october-9-2026",
-   "solar": "14:26"
+   "solar": "14:55"
   },
   {
    "city": "Wuhan",
    "station": "ZHHH",
    "slug": "highest-temperature-in-wuhan-on-october-9-2026",
-   "solar": "15:08"
+   "solar": "15:36"
   },
   {
    "city": "Beijing",
    "station": "ZBAA",
    "slug": "highest-temperature-in-beijing-on-october-9-2026",
-   "solar": "15:17"
+   "solar": "15:45"
   },
   {
    "city": "Chongqing",
    "station": "ZUCK",
    "slug": "highest-temperature-in-chongqing-on-october-9-2026",
-   "solar": "14:37"
+   "solar": "15:05"
   },
   {
    "city": "Taipei",
    "station": "RCSS",
    "slug": "highest-temperature-in-taipei-on-october-9-2026",
-   "solar": "15:37"
+   "solar": "16:05"
   },
   {
    "city": "Warsaw",
    "station": "EPWA",
    "slug": "highest-temperature-in-warsaw-on-october-9-2026",
-   "solar": "08:55"
+   "solar": "09:23"
   },
   {
    "city": "Madrid",
    "station": "LEMD",
    "slug": "highest-temperature-in-madrid-on-october-9-2026",
-   "solar": "07:16"
+   "solar": "07:45"
   },
   {
    "city": "Milan",
    "station": "LIMC",
    "slug": "highest-temperature-in-milan-on-october-9-2026",
-   "solar": "08:06"
+   "solar": "08:34"
   },
   {
    "city": "Singapore",
    "station": "WSSS",
    "slug": "highest-temperature-in-singapore-on-october-9-2026",
-   "solar": "14:27"
+   "solar": "14:55"
   },
   {
    "city": "Shanghai",
    "station": "ZSPD",
    "slug": "highest-temperature-in-shanghai-on-october-9-2026",
-   "solar": "15:38"
+   "solar": "16:06"
   },
   {
    "city": "Tokyo",
    "station": "RJTT",
    "slug": "highest-temperature-in-tokyo-on-october-9-2026",
-   "solar": "16:50"
+   "solar": "17:18"
   },
   {
    "city": "Munich",
    "station": "EDDM",
    "slug": "highest-temperature-in-munich-on-october-9-2026",
-   "solar": "08:18"
+   "solar": "08:46"
   },
   {
    "city": "Lucknow",
    "station": "VILK",
    "slug": "highest-temperature-in-lucknow-on-october-9-2026",
-   "solar": "12:54"
+   "solar": "13:22"
   },
   {
    "city": "Wellington",
    "station": "NZWN",
    "slug": "highest-temperature-in-wellington-on-october-9-2026",
-   "solar": "19:10"
+   "solar": "19:38"
   },
   {
    "city": "Ankara",
    "station": "LTAC",
    "slug": "highest-temperature-in-ankara-on-october-9-2026",
-   "solar": "09:43"
+   "solar": "10:11"
   },
   {
    "city": "Seoul (Incheon)",
    "station": "RKSI",
    "slug": "highest-temperature-in-seoul-on-october-9-2026",
-   "solar": "15:56"
+   "solar": "16:25"
   },
   {
    "city": "Paris",
    "station": "LFPB",
    "slug": "highest-temperature-in-paris-on-october-9-2026",
-   "solar": "07:40"
+   "solar": "08:09"
   },
   {
    "city": "London",
    "station": "EGLC",
    "slug": "highest-temperature-in-london-on-october-9-2026",
-   "solar": "07:31"
+   "solar": "07:59"
   },
   {
    "city": "San Francisco",
    "station": "KSFO",
    "slug": "highest-temperature-in-san-francisco-on-october-8-2026",
-   "solar": "23:21"
-  },
-  {
-   "city": "Los Angeles",
-   "station": "KLAX",
-   "slug": "highest-temperature-in-los-angeles-on-october-8-2026",
-   "solar": "23:37"
+   "solar": "23:49"
   },
   {
    "city": "Seattle",
    "station": "KSEA",
    "slug": "highest-temperature-in-seattle-on-october-8-2026",
-   "solar": "23:21"
+   "solar": "23:50"
   }
  ],
  "training_days": {
@@ -18686,8 +19033,8 @@
  },
  "mode": "trading",
  "last_run": {
-  "ts": "2026-10-09T07:31:12.364536+00:00",
-  "decided": 1,
+  "ts": "2026-10-09T07:59:24.650004+00:00",
+  "decided": 4,
   "skipped": {}
  },
  "score": {

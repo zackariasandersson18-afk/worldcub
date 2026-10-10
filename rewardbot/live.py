@@ -77,6 +77,27 @@ def token_info(address: str, http) -> dict:
     return {'address': address, 'symbol': None, 'error': 'no RPC answered'}
 
 
+HISTORY_EVERY_S = 600      # one history row per 10 minutes: the minute-by-minute loop folds its ticks into it
+HISTORY_MAX = 20000
+
+
+def add_history(st: dict, row: dict, now: float) -> None:
+    """Append a history row, or fold it into the last one when both fall in the same 10-minute window
+    (totals are cumulative, so the newer row wins; per-tick amounts add up)."""
+    w = int(now // HISTORY_EVERY_S)
+    h = st['history']
+    if h and h[-1].get('w') == w:
+        last = h.pop()
+        for k in ('dt_h', 'reward_tick'):
+            if k in row and k in last:
+                row[k] = round(row[k] + last[k], 4)
+        row['rebalanced'] = bool(row.get('rebalanced') or last.get('rebalanced')) if 'rebalanced' in row else None
+        if row['rebalanced'] is None:
+            del row['rebalanced']
+    h.append({**row, 'w': w})
+    st['history'] = h[-HISTORY_MAX:]
+
+
 def refresh_rates(portfolio: list[dict], http, log=print) -> None:
     """Rewards are paid at today's rate_per_day, not the one seen when the market was
     chosen. A market no longer in a successful listing earns nothing (rate 0); if the
@@ -245,10 +266,9 @@ def step(state_dir: str | Path, now: float | None = None, http=None, log=print) 
                 real_reward_total=round(st['real_reward_total'], 2), real_mm_value=round(r_mm + bf.get('mm_value', 0.0), 2),
                 real_net=round(st['real_reward_total'] + r_mm + bf.get('mm_value', 0.0), 2),
                 real_fills_total=sum(p.get('r_fills', 0) for p in st['positions'].values()) + bf.get('fills', 0))
-    st['history'].append({k: tick[k] for k in ('ts', 'dt_h', 'reward_tick', 'reward_total', 'mm_value', 'net',
-                                               'avg_share', 'fills_total', 'real_reward_total', 'real_mm_value',
-                                               'real_net', 'real_fills_total')})
-    st['history'] = st['history'][-3000:]
+    add_history(st, {k: tick[k] for k in ('ts', 'dt_h', 'reward_tick', 'reward_total', 'mm_value', 'net',
+                                          'avg_share', 'fills_total', 'real_reward_total', 'real_mm_value',
+                                          'real_net', 'real_fills_total')}, now)
     st['fills'] = fills[-3000:]
     st['last_tick'] = tick
     save(d / 'rewards_state.json', st)

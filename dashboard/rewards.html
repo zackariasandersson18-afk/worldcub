@@ -198,6 +198,30 @@ canvas{display:block;width:100%}
 </section>
 
 <section class="panel">
+  <div class="ph">◆ Version 3 · konto 1 000 $ · bara realistiska siffror<span class="r" id="v3-sub">startar vid nästa mätning</span></div>
+  <div class="pb">
+    <div class="pnl" id="v3-bal">—</div>
+    <div class="k9" style="margin-top:4px" id="v3-balsub">SALDO · START 1 000 $</div>
+    <div class="kv3">
+      <div><div class="k9">Netto</div><div class="v" id="v3-net">—</div></div>
+      <div><div class="k9">Belöning</div><div class="v up" id="v3-rew">—</div></div>
+      <div><div class="k9">Market making</div><div class="v" id="v3-mm">—</div></div>
+    </div>
+    <div class="kv3">
+      <div><div class="k9">Snitt/dag</div><div class="v" id="v3-avg">—</div></div>
+      <div><div class="k9">Plusdagar</div><div class="v" id="v3-pos">—</div></div>
+      <div><div class="k9">Marknader · andel</div><div class="v" id="v3-mk">—</div></div>
+    </div>
+    <canvas id="c-v3" height="140" style="margin-top:8px"></canvas>
+    <div class="k9" style="margin:10px 0 4px">Per dag (UTC)</div>
+    <div class="tw" style="max-height:240px"><table class="ctd" id="v3-days"></table></div>
+    <div class="k9" style="margin:10px 0 4px">Marknaderna just nu</div>
+    <div class="tw" style="max-height:360px"><table class="ctd" id="v3-mkt"></table></div>
+    <div class="note" style="padding:6px 0 0">Saldo = 1 000 $ + intjänad belöning + värdet av market making (lager värderat till mittpriset). Allt räknas med de realistiska reglerna: den lägre av två mätningars andel, ingen belöning om priset rört sig för mycket eller ligger utanför 0,10–0,90, fyllning redan när någon handlar på vårt pris. Version 3 väljer om sina marknader varje dygn. Virtuella pengar, inga riktiga order.</div>
+  </div>
+</section>
+
+<section class="panel">
   <div class="ph">⇄ Version 2 och 3 · byter marknader varje dygn<span class="r" id="v2-sub">startar vid nästa mätning</span></div>
   <div class="pb">
     <div class="tw"><table class="ctd" id="v23"></table></div>
@@ -381,13 +405,13 @@ function renderTable() {
         `<td>${fmt(p.inv || 0, 0)}</td><td class="${mmv >= 0 ? 'up' : 'down'}">${skr(sek(mmv), 0)}</td></tr>`;
     }).join('');
 }
-function drawLines(id, series, colors, fmtY) {
+function drawLines(id, series, colors, fmtY, ref = 0) {
   const {g, w, h} = canvas(id);
   const pts = series[0] || [];
   if (pts.length < 2) { g.fillStyle = COL.mute; g.textAlign = 'center'; g.fillText('kurvan byggs upp efter några mätningar', w / 2, h / 2); return; }
-  const all = series.flat(), lo = Math.min(0, ...all), hi = Math.max(0, ...all), pad = 16;
+  const all = series.flat(), lo = Math.min(ref, ...all), hi = Math.max(ref, ...all), pad = 16;
   const X = i => pad + i / (pts.length - 1) * (w - 2 * pad), Y = v => h - pad - (v - lo) / Math.max(hi - lo, 1e-9) * (h - 2 * pad);
-  g.strokeStyle = COL.line; g.setLineDash([2, 4]); g.beginPath(); g.moveTo(pad, Y(0)); g.lineTo(w - pad, Y(0)); g.stroke(); g.setLineDash([]);
+  g.strokeStyle = COL.line; g.setLineDash([2, 4]); g.beginPath(); g.moveTo(pad, Y(ref)); g.lineTo(w - pad, Y(ref)); g.stroke(); g.setLineDash([]);
   series.forEach((s, k) => { g.strokeStyle = colors[k]; g.lineWidth = 2; g.beginPath(); s.forEach((v, i) => i ? g.lineTo(X(i), Y(v)) : g.moveTo(X(i), Y(v))); g.stroke(); });
   g.fillStyle = COL.ink2; g.textAlign = 'left'; g.fillText(fmtY(hi), 2, 8); g.fillText(fmtY(lo), 2, h - 6);
 }
@@ -450,7 +474,7 @@ function renderDays() {
   $('avgday').className = 'v ' + cls(tot);
   $('posdays').textContent = done.length ? `${pos}/${done.length}` : '—';
 }
-function renderAll() { renderV2(); renderMine(); renderDays(); renderAccount(); renderComp(); renderMeta(); renderTable(); renderCharts(); renderTickers(); }
+function renderAll() { renderV3Account(); renderV2(); renderMine(); renderDays(); renderAccount(); renderComp(); renderMeta(); renderTable(); renderCharts(); renderTickers(); }
 
 (async function init() {
   setInterval(() => { $('clock').textContent = new Date().toISOString().slice(11, 19); }, 1000);
@@ -518,6 +542,45 @@ function renderV2() {
   const base = vs[0][1].history, t0 = base[0].ts, b1 = v1at(t0);
   const series = vs.map(([, v]) => base.map(x => { const y = [...v.history].reverse().find(z => z.ts <= x.ts); return (y ? y.net : 0) * S.fx; }));
   drawLines('c-v2', [...series, base.map(x => (v1at(x.ts) - b1) * S.fx)], [...vs.map(([, , col]) => col), COL.cyan], v => kr(v, 0));
+}
+
+// ---- version 3 as an account that starts at 1000 USD, realistic only
+function renderV3Account() {
+  const v = S.v3, h = v?.history || [];
+  if (!h.length) return;
+  const START = 1000, l = h[h.length - 1], bal = START + l.net, c = x => x > 0 ? 'up' : x < 0 ? 'down' : '';
+  const both = (usd, d = 0) => `${usd >= 0 ? '+' : '−'}${fmt(Math.abs(usd), 2)} $` + (S.fx ? ` · ${skr(sek(usd), d)}` : '');
+  $('v3-bal').innerHTML = `${fmt(bal, 2)}<small>$</small>`; $('v3-bal').style.color = l.net >= 0 ? COL.green : COL.red;
+  const days = (Date.now() - new Date(v.started)) / 864e5;
+  $('v3-balsub').textContent = `SALDO · START 1 000 $ · ${fmt(l.net / START * 100, 2)}% · ${fmt(days, days < 2 ? 1 : 0)} DAGAR` + (S.fx ? ` · ≈ ${kr(sek(bal), 0)}` : '');
+  for (const [id, x] of [['v3-net', l.net], ['v3-mm', l.mm_value]]) { $(id).textContent = both(x); $(id).className = 'v ' + c(x); }
+  $('v3-rew').textContent = both(l.reward_total);
+  $('v3-mk').textContent = `${l.n_markets} · ${pct(l.avg_share, 0)}`;
+  $('v3-sub').textContent = `sedan ${v.started.slice(5, 16).replace('T', ' ')} UTC · ${(v.rebalances || []).length} byten · ${l.fills_total} affärer`;
+  // per day: change in net from the last tick of each UTC day; the start day and today are partial
+  const byDay = new Map(); for (const x of h) byDay.set(x.ts.slice(0, 10), x);
+  let prev = {net: 0, reward_total: 0, mm_value: 0, fills_total: 0};
+  const today = new Date().toISOString().slice(0, 10), start = v.started.slice(0, 10);
+  const rows = [...byDay.keys()].sort().map(d => { const x = byDay.get(d);
+    const r = {d, net: x.net - prev.net, rew: x.reward_total - prev.reward_total, mm: x.mm_value - prev.mm_value,
+               fills: x.fills_total - prev.fills_total, bal: START + x.net, partial: d === today || d === start}; prev = x; return r; });
+  const full = rows.filter(r => !r.partial), tot = full.reduce((a, r) => a + r.net, 0);
+  $('v3-avg').textContent = full.length ? both(tot / full.length) : '—'; $('v3-avg').className = 'v ' + c(tot);
+  $('v3-pos').textContent = full.length ? `${full.filter(r => r.net > 0).length}/${full.length}` : '—';
+  $('v3-days').innerHTML = '<tr><th>Dag</th><th>Belöning</th><th>Market making</th><th>Netto</th><th>Saldo</th><th>Affärer</th></tr>' +
+    rows.slice().reverse().map(r => `<tr><td><b>${r.d.slice(5)}</b>${r.partial ? ` <span class="mute">(${r.d === today ? 'pågår' : 'startdag'})</span>` : ''}</td>` +
+      `<td class="up">${fmt(r.rew, 2)} $</td><td class="${c(r.mm)}">${fmt(r.mm, 2)} $</td><td class="${c(r.net)}"><b>${r.net >= 0 ? '+' : ''}${fmt(r.net, 2)} $</b></td>` +
+      `<td>${fmt(r.bal, 2)} $</td><td>${r.fills}</td></tr>`).join('');
+  // markets: pot, last share, earned, inventory and its value at the last midpoint
+  const pos = v.positions || {}, last = new Map((v.last_tick?.markets || []).map(m => [m.q, m]));
+  $('v3-mkt').innerHTML = '<tr><th>Marknad</th><th>Pott/dag</th><th>Mitt</th><th>Andel</th><th>Intjänat</th><th>Lager</th><th>MM-värde</th></tr>' +
+    (v.portfolio || []).slice().sort((a, b) => (pos[b.cond]?.reward || 0) - (pos[a.cond]?.reward || 0)).map(m => {
+      const p = pos[m.cond] || {}, t = last.get(m.question.slice(0, 50)) || {}, mmv = (p.cash || 0) + (p.inv || 0) * (p.mid ?? 0);
+      return `<tr><td>${esc(m.question.slice(0, 46))}</td><td>${fmt(m.rate, 0)} $</td><td>${p.mid == null ? '—' : fmt(p.mid, 3)}</td>` +
+        `<td>${t.share == null ? (t.status ? '<span class="warn">ingen bok</span>' : '—') : pct(t.share, 0)}</td><td class="up">${fmt(p.reward || 0, 2)} $</td>` +
+        `<td>${fmt(p.inv || 0, 0)}</td><td class="${c(mmv)}">${fmt(mmv, 2)} $</td></tr>`;
+    }).join('');
+  drawLines('c-v3', [h.map(x => START + x.net)], [l.net >= 0 ? COL.green : COL.red], x => fmt(x, 0) + ' $', START);
 }
 </script>
 </body>

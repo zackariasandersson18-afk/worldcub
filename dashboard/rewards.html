@@ -198,10 +198,10 @@ canvas{display:block;width:100%}
 </section>
 
 <section class="panel">
-  <div class="ph">◆ Version 3 · konto 1 000 $ · bara realistiska siffror<span class="r" id="v3-sub">startar vid nästa mätning</span></div>
+  <div class="ph">◆ Version 3 · konto (start 1 000 $) · i kronor · bara realistiska siffror<span class="r" id="v3-sub">startar vid nästa mätning</span></div>
   <div class="pb">
     <div class="pnl" id="v3-bal">—</div>
-    <div class="k9" style="margin-top:4px" id="v3-balsub">SALDO · START 1 000 $</div>
+    <div class="k9" style="margin-top:4px" id="v3-balsub">SALDO</div>
     <div class="kv3">
       <div><div class="k9">Netto</div><div class="v" id="v3-net">—</div></div>
       <div><div class="k9">Belöning</div><div class="v up" id="v3-rew">—</div></div>
@@ -217,7 +217,7 @@ canvas{display:block;width:100%}
     <div class="tw" style="max-height:240px"><table class="ctd" id="v3-days"></table></div>
     <div class="k9" style="margin:10px 0 4px">Marknaderna just nu</div>
     <div class="tw" style="max-height:360px"><table class="ctd" id="v3-mkt"></table></div>
-    <div class="note" style="padding:6px 0 0">Saldo = 1 000 $ + intjänad belöning + värdet av market making (lager värderat till mittpriset). Allt räknas med de realistiska reglerna: den lägre av två mätningars andel, ingen belöning om priset rört sig för mycket eller ligger utanför 0,10–0,90, fyllning redan när någon handlar på vårt pris. Version 3 väljer om sina marknader varje dygn. Virtuella pengar, inga riktiga order.</div>
+    <div class="note" style="padding:6px 0 0">Saldo = startkapital 1 000 $ omräknat till kronor med dagens kurs + intjänad belöning + värdet av market making (lager värderat till mittpriset). Allt räknas med de realistiska reglerna: den lägre av två mätningars andel, ingen belöning om priset rört sig för mycket eller ligger utanför 0,10–0,90, fyllning redan när någon handlar på vårt pris. Version 3 väljer om sina marknader varje dygn. Virtuella pengar, inga riktiga order.</div>
   </div>
 </section>
 
@@ -544,20 +544,22 @@ function renderV2() {
   drawLines('c-v2', [...series, base.map(x => (v1at(x.ts) - b1) * S.fx)], [...vs.map(([, , col]) => col), COL.cyan], v => kr(v, 0));
 }
 
-// ---- version 3 as an account that starts at 1000 USD, realistic only
+// ---- version 3 as an account that starts at 1000 USD, realistic only, shown in kronor
 function renderV3Account() {
   const v = S.v3, h = v?.history || [];
   if (!h.length) return;
   const START = 1000, l = h[h.length - 1], bal = START + l.net, c = x => x > 0 ? 'up' : x < 0 ? 'down' : '';
-  const both = (usd, d = 0) => `${usd >= 0 ? '+' : '−'}${fmt(Math.abs(usd), 2)} $` + (S.fx ? ` · ${skr(sek(usd), d)}` : '');
-  $('v3-bal').innerHTML = `${fmt(bal, 2)}<small>$</small>`; $('v3-bal').style.color = l.net >= 0 ? COL.green : COL.red;
+  // kronor at today's rate; dollars only while the rate has not loaded
+  const K = usd => S.fx ? usd * S.fx : usd, unit = S.fx ? 'kr' : '$';
+  const sk = (usd, d = 0) => `${usd >= 0 ? '+' : '−'}${fmt(Math.abs(K(usd)), d)} ${unit}`, k = (usd, d = 0) => `${fmt(K(usd), d)} ${unit}`;
+  $('v3-bal').innerHTML = `${fmt(K(bal), 0)}<small>${unit}</small>`; $('v3-bal').style.color = l.net >= 0 ? COL.green : COL.red;
   const days = (Date.now() - new Date(v.started)) / 864e5;
-  $('v3-balsub').textContent = `SALDO · START 1 000 $ · ${fmt(l.net / START * 100, 2)}% · ${fmt(days, days < 2 ? 1 : 0)} DAGAR` + (S.fx ? ` · ≈ ${kr(sek(bal), 0)}` : '');
-  for (const [id, x] of [['v3-net', l.net], ['v3-mm', l.mm_value]]) { $(id).textContent = both(x); $(id).className = 'v ' + c(x); }
-  $('v3-rew').textContent = both(l.reward_total);
+  $('v3-balsub').textContent = `SALDO · START ${k(START)} (1 000 $) · ${fmt(l.net / START * 100, 2)}% · ${fmt(days, days < 2 ? 1 : 0)} DAGAR`;
+  for (const [id, x] of [['v3-net', l.net], ['v3-mm', l.mm_value]]) { $(id).textContent = sk(x); $(id).className = 'v ' + c(x); }
+  $('v3-rew').textContent = sk(l.reward_total);
   $('v3-mk').textContent = `${l.n_markets} · ${pct(l.avg_share, 0)}`;
-  $('v3-sub').textContent = `sedan ${v.started.slice(5, 16).replace('T', ' ')} UTC · ${(v.rebalances || []).length} byten · ${l.fills_total} affärer`;
-  // per day: change in net from the last tick of each UTC day; the start day and today are partial
+  $('v3-sub').textContent = `sedan ${v.started.slice(5, 16).replace('T', ' ')} UTC · ${(v.rebalances || []).length} byten · ${l.fills_total} affärer` +
+    (S.fx ? ` · 1 $ = ${fmt(S.fx, 2)} kr` : '');
   const byDay = new Map(); for (const x of h) byDay.set(x.ts.slice(0, 10), x);
   let prev = {net: 0, reward_total: 0, mm_value: 0, fills_total: 0};
   const today = new Date().toISOString().slice(0, 10), start = v.started.slice(0, 10);
@@ -565,22 +567,21 @@ function renderV3Account() {
     const r = {d, net: x.net - prev.net, rew: x.reward_total - prev.reward_total, mm: x.mm_value - prev.mm_value,
                fills: x.fills_total - prev.fills_total, bal: START + x.net, partial: d === today || d === start}; prev = x; return r; });
   const full = rows.filter(r => !r.partial), tot = full.reduce((a, r) => a + r.net, 0);
-  $('v3-avg').textContent = full.length ? both(tot / full.length) : '—'; $('v3-avg').className = 'v ' + c(tot);
+  $('v3-avg').textContent = full.length ? sk(tot / full.length) : '—'; $('v3-avg').className = 'v ' + c(tot);
   $('v3-pos').textContent = full.length ? `${full.filter(r => r.net > 0).length}/${full.length}` : '—';
   $('v3-days').innerHTML = '<tr><th>Dag</th><th>Belöning</th><th>Market making</th><th>Netto</th><th>Saldo</th><th>Affärer</th></tr>' +
     rows.slice().reverse().map(r => `<tr><td><b>${r.d.slice(5)}</b>${r.partial ? ` <span class="mute">(${r.d === today ? 'pågår' : 'startdag'})</span>` : ''}</td>` +
-      `<td class="up">${fmt(r.rew, 2)} $</td><td class="${c(r.mm)}">${fmt(r.mm, 2)} $</td><td class="${c(r.net)}"><b>${r.net >= 0 ? '+' : ''}${fmt(r.net, 2)} $</b></td>` +
-      `<td>${fmt(r.bal, 2)} $</td><td>${r.fills}</td></tr>`).join('');
-  // markets: pot, last share, earned, inventory and its value at the last midpoint
+      `<td class="up">${sk(r.rew)}</td><td class="${c(r.mm)}">${sk(r.mm)}</td><td class="${c(r.net)}"><b>${sk(r.net)}</b></td>` +
+      `<td>${k(r.bal)}</td><td>${r.fills}</td></tr>`).join('');
   const pos = v.positions || {}, last = new Map((v.last_tick?.markets || []).map(m => [m.q, m]));
   $('v3-mkt').innerHTML = '<tr><th>Marknad</th><th>Pott/dag</th><th>Mitt</th><th>Andel</th><th>Intjänat</th><th>Lager</th><th>MM-värde</th></tr>' +
     (v.portfolio || []).slice().sort((a, b) => (pos[b.cond]?.reward || 0) - (pos[a.cond]?.reward || 0)).map(m => {
       const p = pos[m.cond] || {}, t = last.get(m.question.slice(0, 50)) || {}, mmv = (p.cash || 0) + (p.inv || 0) * (p.mid ?? 0);
-      return `<tr><td>${esc(m.question.slice(0, 46))}</td><td>${fmt(m.rate, 0)} $</td><td>${p.mid == null ? '—' : fmt(p.mid, 3)}</td>` +
-        `<td>${t.share == null ? (t.status ? '<span class="warn">ingen bok</span>' : '—') : pct(t.share, 0)}</td><td class="up">${fmt(p.reward || 0, 2)} $</td>` +
-        `<td>${fmt(p.inv || 0, 0)}</td><td class="${c(mmv)}">${fmt(mmv, 2)} $</td></tr>`;
+      return `<tr><td>${esc(m.question.slice(0, 46))}</td><td>${k(m.rate)}</td><td>${p.mid == null ? '—' : fmt(p.mid, 3)}</td>` +
+        `<td>${t.share == null ? (t.status ? '<span class="warn">ingen bok</span>' : '—') : pct(t.share, 0)}</td><td class="up">${k(p.reward || 0, 1)}</td>` +
+        `<td>${fmt(p.inv || 0, 0)}</td><td class="${c(mmv)}">${sk(mmv, 1)}</td></tr>`;
     }).join('');
-  drawLines('c-v3', [h.map(x => START + x.net)], [l.net >= 0 ? COL.green : COL.red], x => fmt(x, 0) + ' $', START);
+  drawLines('c-v3', [h.map(x => K(START + x.net))], [l.net >= 0 ? COL.green : COL.red], x => fmt(x, 0) + ' ' + unit, K(START));
 }
 </script>
 </body>

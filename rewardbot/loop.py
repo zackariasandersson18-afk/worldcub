@@ -1,7 +1,7 @@
 """Minute-by-minute runner for the liquidity-rewards measurements (virtual, read-only).
 
 Polymarket scores resting orders every minute; the 30-minute ticks could not see
-what happened in between. This loop runs versions 1, 2 and 3 every minute for up
+what happened in between. This loop runs versions 1 to 4 every minute for up
 to --minutes (a GitHub-hosted job lives at most 6 hours), and commits the state
 every --push-every minutes to its own branch (rewards-state), so it never races
 the weather bots on tradebot-state. History keeps one row per 10 minutes.
@@ -38,7 +38,8 @@ def push(repo: Path, branch: str, log=print) -> bool:
 def tick(state: str, http, log=print) -> None:
     for name, fn in (('v1', lambda: live.step(state, http=http, log=log)),
                      ('v2', lambda: live_v2.step(state, http=http, log=log, version='v2')),
-                     ('v3', lambda: live_v2.step(state, http=http, log=log, version='v3'))):
+                     ('v3', lambda: live_v2.step(state, http=http, log=log, version='v3')),
+                     ('v4', lambda: live_v2.step(state, http=http, log=log, version='v4'))):
         try:
             t = fn()
             log(f"{time.strftime('%H:%M:%S', time.gmtime())} {name} net {t.get('net')} share {t.get('avg_share')}")

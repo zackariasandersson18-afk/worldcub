@@ -21,6 +21,15 @@ Version 3 (trial 63, registered 2026-10-10 after version 2's first selection, wh
 estimated only 1.65 USD/day because the trend rule removed the two markets that pay;
 no profit or loss of version 2 had been seen): identical to version 2 except that the
 trend rule is off. Both versions refresh reward rates every tick (rewardbot.live.refresh_rates).
+
+Version 4 (trial 65, registered 2026-10-10 before any version 4 result): starts with
+version 3's selection rule, never does the full daily re-selection, and instead reviews
+the portfolio every hour. A held market is swapped out only if
+  (a) its share has fallen below half of its share at selection, or its midpoint is
+      outside the paid band [0.10, 0.90], AND
+  (b) a market not held offers at least 1.3 x its current reward per dollar of
+      collateral (pot x current share / collateral), within the 1000 USD capital.
+Swapped-out inventory is closed at the touch, as in a daily re-selection.
 """
 from __future__ import annotations
 
@@ -35,7 +44,10 @@ from rewardbot import backtest as bt
 from rewardbot.live import add_history, fill_row, load, refresh_rates, save
 
 VERSIONS = {'v2': {'trial': 62, 'max_range': 0.10, 'file': 'rewards_v2_state.json'},
-            'v3': {'trial': 63, 'max_range': None, 'file': 'rewards_v3_state.json'}}
+            'v3': {'trial': 63, 'max_range': None, 'file': 'rewards_v3_state.json'},
+            'v4': {'trial': 65, 'max_range': None, 'file': 'rewards_v4_state.json', 'review_s': 3600}}
+REVIEW_SHARE_DROP = 0.5
+REVIEW_BETTER = 1.3
 CAPITAL = 1000.0
 REBALANCE_S = 86400
 MID_BAND = (0.15, 0.85)
@@ -44,7 +56,8 @@ INV_CAP_MULT = 1
 SCREEN_TOP = 80          # trend check only for the best candidates (each needs a trades call)
 
 
-def choose(http, now: float, log, max_range: float | None = 0.10) -> list[dict]:
+def rank(http, log) -> list[dict]:
+    """Every eligible market with its estimated reward per dollar of collateral, best first."""
     rows = []
     for c in bt.candidates(http, log):
         if not MID_BAND[0] <= c['mid'] <= MID_BAND[1]:
@@ -55,6 +68,18 @@ def choose(http, now: float, log, max_range: float | None = 0.10) -> list[dict]:
         if rew > 0 and coll > 0:
             rows.append({**c, 'd': d, 'est_reward_day': rew, 'collateral': coll, 'per_dollar': rew / coll})
     rows.sort(key=lambda r: -r['per_dollar'])
+    return rows
+
+
+KEEP = ('cond', 'question', 'yes', 'no', 'rate', 'v', 'min_size', 'd', 'collateral', 'est_reward_day', 'end')
+
+
+def held(r: dict) -> dict:
+    return {**{k: r[k] for k in KEEP}, 'share0': r['est_reward_day'] / r['rate'] if r['rate'] else 0.0}
+
+
+def choose(http, now: float, log, max_range: float | None = 0.10) -> list[dict]:
+    rows = rank(http, log)
     chosen, used, trending = [], 0.0, 0
     for r in rows[:SCREEN_TOP]:
         if used + r['collateral'] > CAPITAL:
@@ -67,12 +92,50 @@ def choose(http, now: float, log, max_range: float | None = 0.10) -> list[dict]:
             if px and max(px) - min(px) > max_range:
                 trending += 1
                 continue
-        chosen.append({k: r[k] for k in ('cond', 'question', 'yes', 'no', 'rate', 'v', 'min_size', 'd',
-                                         'collateral', 'est_reward_day', 'end')})
+        chosen.append(held(r))
         used += r['collateral']
     log(f'portfolio (max range {max_range}): {len(chosen)} markets, collateral {used:.2f} USD, {trending} trending skipped, '
         f'estimated {sum(c["est_reward_day"] for c in chosen):.2f}/day')
     return chosen
+
+
+def review(st: dict, http, now: float, log) -> list[dict]:
+    """Version 4's hourly review: swap out weak markets for clearly better ones (rules in the docstring)."""
+    port, pos = st['portfolio'], st['positions']
+    have = {c['cond'] for c in port}
+    fresh = [r for r in rank(http, log) if r['cond'] not in have]
+    used = sum(c['collateral'] for c in port)
+    swaps = []
+    def current(c):
+        p = pos.get(c['cond']) or {}
+        return c['rate'] * (p.get('share') or 0.0) / c['collateral'] if c['collateral'] else 0.0
+    for c in sorted(port, key=current):
+        p = pos.get(c['cond']) or {}
+        share, mid = p.get('share'), p.get('mid')
+        weak = (share is not None and share < REVIEW_SHARE_DROP * c.get('share0', share)) or \
+               (mid is not None and not 0.10 <= mid <= 0.90)
+        if not weak:
+            continue
+        cur = current(c)
+        for i, r in enumerate(fresh):
+            if r['per_dollar'] >= REVIEW_BETTER * cur and used - c['collateral'] + r['collateral'] <= CAPITAL:
+                swaps.append((c, held(r)))
+                used += r['collateral'] - c['collateral']
+                fresh.pop(i)
+                break
+    if swaps:
+        books = bt.fetch_books([c['yes'] for c, _ in swaps], http)
+        for c, _ in swaps:
+            if c['cond'] in pos:
+                close_out(pos[c['cond']], books.get(c['yes']))
+                pos[c['cond']]['share'] = None
+        out = {c['cond'] for c, _ in swaps}
+        st['portfolio'] = [c for c in port if c['cond'] not in out] + [n for _, n in swaps]
+    st.setdefault('reviews', []).append({'ts': datetime.fromtimestamp(now, timezone.utc).isoformat(), 'swapped': len(swaps),
+                                         'out': [c['question'][:50] for c, _ in swaps], 'in': [n['question'][:50] for _, n in swaps]})
+    st['reviews'] = st['reviews'][-500:]
+    log(f'v4 review: {len(swaps)} swaps')
+    return swaps
 
 
 def close_out(pos: dict, yb: dict | None) -> None:
@@ -100,7 +163,11 @@ def step(state_dir: str | Path, now: float | None = None, http=None, log=print, 
         st = {'started': datetime.fromtimestamp(now, timezone.utc).isoformat(), 'trial': cfg['trial'], 'version': version,
               'portfolio': [], 'positions': {}, 'history': [], 'fills': [], 'reward_total': 0.0,
               'last_ts': now, 'chosen_at': 0, 'rebalances': []}
-    rebalance = now - st['chosen_at'] >= REBALANCE_S or not st['portfolio']
+    review_s = cfg.get('review_s')
+    rebalance = not st['portfolio'] or (review_s is None and now - st['chosen_at'] >= REBALANCE_S)
+    if review_s and st['portfolio'] and now - st.get('reviewed_at', st['chosen_at']) >= review_s:
+        review(st, http, now, log)
+        st['reviewed_at'] = now
     if rebalance:
         new = choose(http, now, log, cfg['max_range'])
         if new:

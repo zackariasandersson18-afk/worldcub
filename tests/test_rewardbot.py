@@ -242,4 +242,21 @@ def test_loop_runs_every_version_even_if_one_fails(monkeypatch):
         return {'net': 2, 'avg_share': 0.2}
     monkeypatch.setattr(live_v2, 'step', v2)
     loop.tick('x', None, log=lambda *_: None)
-    assert calls == ['v1', 'v2', 'v3']
+    assert calls == ['v1', 'v2', 'v3', 'v4']
+
+
+def test_v4_hourly_review_swaps_only_weak_markets_for_clearly_better_ones(monkeypatch):
+    from rewardbot import backtest as bt, live_v2
+    def row(cond, per_dollar, coll=10.0):
+        return {'cond': cond, 'question': cond, 'yes': cond + 'y', 'no': cond + 'n', 'rate': 10.0, 'v': 4.0, 'min_size': 10.0,
+                'd': 0.02, 'collateral': coll, 'est_reward_day': per_dollar * coll, 'end': 'x', 'per_dollar': per_dollar}
+    st = {'portfolio': [live_v2.held(row('weak', 1.0)), live_v2.held(row('fine', 1.0)), live_v2.held(row('dip', 1.0))],
+          'positions': {'weak': {'share': 0.2, 'mid': 0.5, 'inv': 10.0, 'cash': -4.8},   # share 1.0 -> 0.2: weak
+                        'fine': {'share': 0.9, 'mid': 0.5, 'inv': 0.0, 'cash': 0.0},
+                        'dip': {'share': 0.45, 'mid': 0.5, 'inv': 0.0, 'cash': 0.0}}}    # weak, but nothing 1.3x better left
+    monkeypatch.setattr(live_v2, 'rank', lambda http, log: [row('new', 0.5), row('fine', 2.0)])
+    monkeypatch.setattr(bt, 'fetch_books', lambda toks, http: {'weaky': {'bids': [{'price': '0.49', 'size': '9'}], 'asks': []}})
+    swaps = live_v2.step.__globals__['review'](st, None, 0, lambda *_: None)
+    assert [(a['cond'], b['cond']) for a, b in swaps] == [('weak', 'new')]          # 0.5 >= 1.3 x (10 x 0.2 / 10)
+    assert {c['cond'] for c in st['portfolio']} == {'fine', 'dip', 'new'}
+    assert st['positions']['weak']['inv'] == 0 and abs(st['positions']['weak']['cash'] - 0.1) < 1e-9

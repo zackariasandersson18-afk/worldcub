@@ -16,4 +16,4 @@ jobs:
           python-version: '3.11'
           cache: pip
       - run: pip install -r requirements.txt
-      - run: python scripts/rewards_diag.py
+      - run: PYTHONPATH=. python scripts/rewards_diag.py

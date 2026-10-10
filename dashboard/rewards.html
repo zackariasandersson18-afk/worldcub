@@ -146,7 +146,7 @@ canvas{display:block;width:100%}
   <div class="mid">QMIN · MARKET MAKING · pUSD</div>
   <div class="clock"><div class="v" id="clock">--:--:--</div><div class="k9" id="scanmeta">UTC</div></div>
 </header>
-<div class="nav"><a href="index.html">← väderboten (06:00)</a><span class="mute">·</span><a href="nowcast.html">nowcast 16:00</a><span class="mute">·</span><b class="warn">belöningar</b></div>
+<div class="nav"><a href="index.html">← väderboten (06:00)</a><span class="mute">·</span><a href="nowcast.html">nowcast 16:00</a><span class="mute">·</span><b class="warn">belöningar</b><span style="margin-left:auto" class="filters" id="ver"><button data-v="v1">VERSION 1</button><button data-v="v3">VERSION 3 · 10 000 KR</button></span></div>
 <div class="banner" id="banner">◆ laddar…</div>
 <div class="ticker"><div class="tag"><i></i>LIVE</div><div class="track"><div class="run" id="feed"></div></div></div>
 
@@ -198,30 +198,6 @@ canvas{display:block;width:100%}
 </section>
 
 <section class="panel">
-  <div class="ph">◆ Version 3 · konto 10 000 kr · bara realistiska siffror<span class="r" id="v3-sub">startar vid nästa mätning</span></div>
-  <div class="pb">
-    <div class="pnl" id="v3-bal">—</div>
-    <div class="k9" style="margin-top:4px" id="v3-balsub">SALDO</div>
-    <div class="kv3">
-      <div><div class="k9">Netto</div><div class="v" id="v3-net">—</div></div>
-      <div><div class="k9">Belöning</div><div class="v up" id="v3-rew">—</div></div>
-      <div><div class="k9">Market making</div><div class="v" id="v3-mm">—</div></div>
-    </div>
-    <div class="kv3">
-      <div><div class="k9">Snitt/dag</div><div class="v" id="v3-avg">—</div></div>
-      <div><div class="k9">Plusdagar</div><div class="v" id="v3-pos">—</div></div>
-      <div><div class="k9">Marknader · andel</div><div class="v" id="v3-mk">—</div></div>
-    </div>
-    <canvas id="c-v3" height="140" style="margin-top:8px"></canvas>
-    <div class="k9" style="margin:10px 0 4px">Per dag (UTC)</div>
-    <div class="tw" style="max-height:240px"><table class="ctd" id="v3-days"></table></div>
-    <div class="k9" style="margin:10px 0 4px">Marknaderna just nu</div>
-    <div class="tw" style="max-height:360px"><table class="ctd" id="v3-mkt"></table></div>
-    <div class="note" style="padding:6px 0 0">Saldo = 10 000 kr + intjänad belöning + värdet av market making (lager värderat till mittpriset). Allt räknas med de realistiska reglerna: den lägre av två mätningars andel, ingen belöning om priset rört sig för mycket eller ligger utanför 0,10–0,90, fyllning redan när någon handlar på vårt pris. Version 3 väljer om sina marknader varje dygn. Mätningen körs på 1 000 $; kontot visar resultatet skalat till 10 000 kr (10 kr per mätt dollar), alltså som om vinst och förlust växer i proportion till kapitalet. Virtuella pengar, inga riktiga order.</div>
-  </div>
-</section>
-
-<section class="panel">
   <div class="ph">⇄ Version 2 och 3 · byter marknader varje dygn<span class="r" id="v2-sub">startar vid nästa mätning</span></div>
   <div class="pb">
     <div class="tw"><table class="ctd" id="v23"></table></div>
@@ -270,7 +246,8 @@ const kr = (x, d = 0) => x == null || !isFinite(x) ? '—' : fmt(x, d) + ' kr';
 const skr = (x, d = 0) => x == null || !isFinite(x) ? '—' : (x >= 0 ? '+' : '−') + fmt(Math.abs(x), d) + ' kr';
 const pct = (x, d = 0) => x == null || !isFinite(x) ? '—' : fmt(x * 100, d) + '%';
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]));
-const sek = usd => usd == null || S.fx == null ? null : usd * S.fx;
+const KR_PER_USD_V3 = 10;   // version 3 is shown as a 10 000 kr account: the 1000 USD measurement scaled 10 kr per dollar
+const sek = usd => usd == null ? null : S.view === 'v3' ? usd * KR_PER_USD_V3 : S.fx == null ? null : usd * S.fx;
 async function getJSON(url, opts) { const r = await fetch(url, {cache: 'no-store', ...opts}); if (!r.ok) throw new Error(r.status); return r.json(); }
 function canvas(id) {
   const cv = $(id), dpr = Math.min(devicePixelRatio || 1, 2);
@@ -326,9 +303,10 @@ async function stateBase() {
 async function loadState() {
   const base = await stateBase();
   if (S.sha && S.sha === S.loadedSha) return;
-  try { S.st = await getJSON(base + 'rewards/rewards_state.json'); S.loadedSha = S.sha; } catch {}
+  try { S.v1 = await getJSON(base + 'rewards/rewards_state.json'); S.loadedSha = S.sha; } catch {}
   try { S.v2 = await getJSON(base + 'rewards/rewards_v2_state.json'); } catch {}
   try { S.v3 = await getJSON(base + 'rewards/rewards_v3_state.json'); } catch {}
+  pickView();
 }
 async function loadBooks() {
   const toks = (S.st?.portfolio || []).flatMap(c => [c.yes, c.no]);
@@ -347,10 +325,11 @@ async function loadBooks() {
 function renderAccount() {
   const st = S.st, h = st?.history || [], last = h[h.length - 1];
   const rew = st?.reward_total ?? 0, mm = last?.mm_value ?? 0, net = rew + mm;
-  $('pnl').innerHTML = S.fx == null ? '—' : `${net >= 0 ? '+' : '−'}${fmt(Math.abs(sek(net)), 0)}<small>kr</small>`;
+  $('pnl').innerHTML = sek(net) == null ? '—' : `${net >= 0 ? '+' : '−'}${fmt(Math.abs(sek(net)), 0)}<small>kr</small>`;
   $('pnl').style.color = net >= 0 ? COL.green : COL.red;
   const days = st?.started ? (Date.now() - new Date(st.started)) / 864e5 : 0;
-  $('pnlsub').textContent = `NETTO SEDAN START · ${fmt(days, days < 2 ? 1 : 0)} DAGAR · ${fmt(net / CFG.CAPITAL * 100, 2)}%`;
+  $('pnlsub').textContent = `NETTO SEDAN START · ${fmt(days, days < 2 ? 1 : 0)} DAGAR · ${fmt(net / CFG.CAPITAL * 100, 2)}%` +
+    (S.view === 'v3' ? ` · SALDO ${kr(10000 + sek(net), 0)} AV 10 000 KR` : '');
   $('rew').textContent = skr(sek(rew), 0);
   $('mm').textContent = skr(sek(mm), 0); $('mm').className = 'v ' + (mm >= 0 ? 'up' : 'down');
   const perDay = liveTotal();
@@ -366,6 +345,8 @@ function renderAccount() {
     $('rsub').textContent = `sedan ${st.real_started?.slice(0, 16).replace('T', ' ')} UTC · ${fmt(r.real_fills_total ?? 0)} affärer · ` +
       `optimistiskt samma period ${skr(sek(optSince), 0)}` + (optSince > 0 ? ` · realistiskt = ${pct(r.real_net / optSince, 0)} av det` : '') +
       (st.real_backfill ? ` · fram till ${st.real_backfill.until.slice(5, 16).replace('T', ' ')} UTC uppskattad i efterhand` : '');
+    if (S.view === 'v3') $('rsub').textContent = `version 3 räknar bara realistiskt · ${fmt(r.real_fills_total ?? 0)} affärer · ` +
+      `mätt på 1 000 $, visat som 10 000 kr (10 kr per dollar) · ${(S.v3?.rebalances || []).length} marknadsbyten`;
   }
 }
 function renderComp() {
@@ -417,13 +398,13 @@ function drawLines(id, series, colors, fmtY, ref = 0) {
 }
 function renderCharts() {
   const h = S.st?.history || [];
-  if (S.fx) {
-    drawLines('c-eq', [h.map(x => x.net * S.fx), h.map(x => x.reward_total * S.fx), h.map(x => x.mm_value * S.fx),
-                       h.map(x => (x.real_net ?? 0) * S.fx)],
+  if (sek(1) != null) {
+    drawLines('c-eq', [h.map(x => sek(x.net)), h.map(x => sek(x.reward_total)), h.map(x => sek(x.mm_value)),
+                       h.map(x => sek((x.real_net ?? 0)))],
               [COL.yellow, COL.green, COL.red, COL.cyan], v => kr(v, 0));
     const last = h[h.length - 1];
-    $('eq-sub').innerHTML = last ? `<span class="warn">netto ${skr(last.net * S.fx)}</span> · <span class="up">belöning ${skr(last.reward_total * S.fx)}</span> · <span class="down">MM ${skr(last.mm_value * S.fx)}</span>` +
-      (last.real_net != null ? ` · <span style="color:${COL.cyan}">realistiskt ${skr(last.real_net * S.fx)}</span>` : '') : '—';
+    $('eq-sub').innerHTML = last ? `<span class="warn">netto ${skr(sek(last.net))}</span> · <span class="up">belöning ${skr(sek(last.reward_total))}</span> · <span class="down">MM ${skr(sek(last.mm_value))}</span>` +
+      (last.real_net != null ? ` · <span style="color:${COL.cyan}">realistiskt ${skr(sek(last.real_net))}</span>` : '') : '—';
   }
   drawLines('c-sh', [h.map(x => x.avg_share * 100)], [COL.cyan], v => fmt(v, 0) + '%');
   $('sh-sub').textContent = h.length ? `start ${pct(h[0].avg_share, 0)} · nu ${pct(h[h.length - 1].avg_share, 0)}` : '—';
@@ -431,7 +412,7 @@ function renderCharts() {
 function renderTickers() {
   const st = S.st;
   const perDay = liveTotal();
-  $('banner').textContent = `◆ VIRTUELL MÄTNING · INGA RIKTIGA ORDER · ${(st?.portfolio || []).length} MARKNADER · UPPSKATTAT ${kr(sek(perDay), 0)}/DAG NU · 1 USD = ${S.fx ? fmt(S.fx, 2) : '—'} KR`;
+  $('banner').textContent = `◆ ${S.view === 'v3' ? 'VERSION 3 · KONTO 10 000 KR · ' : 'VERSION 1 · '}VIRTUELL MÄTNING · INGA RIKTIGA ORDER · ${(st?.portfolio || []).length} MARKNADER · UPPSKATTAT ${kr(sek(perDay), 0)}/DAG NU · 1 USD = ${S.fx ? fmt(S.fx, 2) : '—'} KR`;
   const items = (st?.portfolio || []).map(c => { const x = S.live[c.cond]; return `<span><b>${esc(c.question.slice(0, 40))}</b> andel ${x ? pct(x.share, 0) : '—'} · ${x ? kr(sek(x.perDay), 1) : '—'}/dag</span>`; }).join('');
   for (const [id, html] of [['feed', items || '<span>laddar…</span>'], ['foot', items || '<span>laddar…</span>']]) {
     const el = $(id); if (el.dataset.h !== html) { el.innerHTML = html + '<span class="mute">·</span>' + html; el.dataset.h = html; }
@@ -474,7 +455,7 @@ function renderDays() {
   $('avgday').className = 'v ' + cls(tot);
   $('posdays').textContent = done.length ? `${pos}/${done.length}` : '—';
 }
-function renderAll() { renderV3Account(); renderV2(); renderMine(); renderDays(); renderAccount(); renderComp(); renderMeta(); renderTable(); renderCharts(); renderTickers(); }
+function renderAll() { renderV2(); renderMine(); renderDays(); renderAccount(); renderComp(); renderMeta(); renderTable(); renderCharts(); renderTickers(); }
 
 (async function init() {
   setInterval(() => { $('clock').textContent = new Date().toISOString().slice(11, 19); }, 1000);
@@ -526,16 +507,17 @@ for (const [id, key] of [['af-f', 'afF'], ['af-led', 'afLed']]) {
 
 // ---- versions 2 and 3 beside version 1 (realistic)
 function renderV2() {
-  const h1 = S.st?.history || [], vs = [['V2', S.v2, COL.yellow], ['V3', S.v3, COL.green]].filter(([, v]) => v?.history?.length);
+  const fxk = usd => usd == null || S.fx == null ? null : usd * S.fx;   // real kronor, whichever version is viewed
+  const h1 = S.v1?.history || [], vs = [['V2', S.v2, COL.yellow], ['V3', S.v3, COL.green]].filter(([, v]) => v?.history?.length);
   if (!vs.length) return;
   const v1at = ts => { const x = [...h1].reverse().find(y => y.ts <= ts) || h1[0]; return x?.real_net ?? 0; };
   const l1 = h1[h1.length - 1]?.real_net ?? 0, c = v => v > 0 ? 'up' : v < 0 ? 'down' : '';
   $('v23').innerHTML = '<tr><th>Version</th><th>Netto</th><th>V1 samma tid</th><th>Skillnad</th><th>Belöning</th><th>MM</th><th>Andel</th><th>Marknader</th></tr>' +
     vs.map(([name, v]) => {
       const h = v.history, l = h[h.length - 1], v1 = l1 - v1at(h[0].ts), diff = l.net - v1;
-      return `<tr><td><b>${name}</b> <span class="mute">${v.started.slice(5, 10)}</span></td><td class="${c(l.net)}"><b>${skr(sek(l.net), 0)}</b></td>` +
-        `<td class="${c(v1)}">${skr(sek(v1), 0)}</td><td class="${c(diff)}">${skr(sek(diff), 0)}</td><td class="up">${skr(sek(l.reward_total), 0)}</td>` +
-        `<td class="${c(l.mm_value)}">${skr(sek(l.mm_value), 0)}</td><td>${pct(l.avg_share, 0)}</td><td>${l.n_markets} · ${(v.rebalances || []).length} byten</td></tr>`;
+      return `<tr><td><b>${name}</b> <span class="mute">${v.started.slice(5, 10)}</span></td><td class="${c(l.net)}"><b>${skr(fxk(l.net), 0)}</b></td>` +
+        `<td class="${c(v1)}">${skr(fxk(v1), 0)}</td><td class="${c(diff)}">${skr(fxk(diff), 0)}</td><td class="up">${skr(fxk(l.reward_total), 0)}</td>` +
+        `<td class="${c(l.mm_value)}">${skr(fxk(l.mm_value), 0)}</td><td>${pct(l.avg_share, 0)}</td><td>${l.n_markets} · ${(v.rebalances || []).length} byten</td></tr>`;
     }).join('');
   $('v2-sub').textContent = vs.map(([n, v]) => `${n} ${(v.history.slice(-1)[0].fills_total)} affärer`).join(' · ');
   if (!S.fx) return;
@@ -544,46 +526,29 @@ function renderV2() {
   drawLines('c-v2', [...series, base.map(x => (v1at(x.ts) - b1) * S.fx)], [...vs.map(([, , col]) => col), COL.cyan], v => kr(v, 0));
 }
 
-// ---- version 3 as an account that starts at 1000 USD, realistic only, shown in kronor
-function renderV3Account() {
-  const v = S.v3, h = v?.history || [];
-  if (!h.length) return;
-  const START = 1000, l = h[h.length - 1], bal = START + l.net, c = x => x > 0 ? 'up' : x < 0 ? 'down' : '';
-  // an account of 10 000 kr: the measurement runs on 1000 USD, so every measured dollar is scaled to
-  // 10 kr (results assumed proportional to capital; at today's rate that is slightly more than 1000 USD)
-  const KR_START = 10000, PER_USD = KR_START / START, K = usd => usd * PER_USD, unit = 'kr';
-  const sk = (usd, d = 0) => `${usd >= 0 ? '+' : '−'}${fmt(Math.abs(K(usd)), d)} ${unit}`, k = (usd, d = 0) => `${fmt(K(usd), d)} ${unit}`;
-  $('v3-bal').innerHTML = `${fmt(K(bal), 0)}<small>${unit}</small>`; $('v3-bal').style.color = l.net >= 0 ? COL.green : COL.red;
-  const days = (Date.now() - new Date(v.started)) / 864e5;
-  $('v3-balsub').textContent = `SALDO · START 10 000 kr · ${fmt(l.net / START * 100, 2)}% · ${fmt(days, days < 2 ? 1 : 0)} DAGAR`;
-  for (const [id, x] of [['v3-net', l.net], ['v3-mm', l.mm_value]]) { $(id).textContent = sk(x); $(id).className = 'v ' + c(x); }
-  $('v3-rew').textContent = sk(l.reward_total);
-  $('v3-mk').textContent = `${l.n_markets} · ${pct(l.avg_share, 0)}`;
-  $('v3-sub').textContent = `sedan ${v.started.slice(5, 16).replace('T', ' ')} UTC · ${(v.rebalances || []).length} byten · ${l.fills_total} affärer` +
-    ' · mätt på 1 000 $, skalat till 10 000 kr';
-  const byDay = new Map(); for (const x of h) byDay.set(x.ts.slice(0, 10), x);
-  let prev = {net: 0, reward_total: 0, mm_value: 0, fills_total: 0};
-  const today = new Date().toISOString().slice(0, 10), start = v.started.slice(0, 10);
-  const rows = [...byDay.keys()].sort().map(d => { const x = byDay.get(d);
-    const r = {d, net: x.net - prev.net, rew: x.reward_total - prev.reward_total, mm: x.mm_value - prev.mm_value,
-               fills: x.fills_total - prev.fills_total, bal: START + x.net, partial: d === today || d === start}; prev = x; return r; });
-  const full = rows.filter(r => !r.partial), tot = full.reduce((a, r) => a + r.net, 0);
-  $('v3-avg').textContent = full.length ? sk(tot / full.length) : '—'; $('v3-avg').className = 'v ' + c(tot);
-  $('v3-pos').textContent = full.length ? `${full.filter(r => r.net > 0).length}/${full.length}` : '—';
-  $('v3-days').innerHTML = '<tr><th>Dag</th><th>Belöning</th><th>Market making</th><th>Netto</th><th>Saldo</th><th>Affärer</th></tr>' +
-    rows.slice().reverse().map(r => `<tr><td><b>${r.d.slice(5)}</b>${r.partial ? ` <span class="mute">(${r.d === today ? 'pågår' : 'startdag'})</span>` : ''}</td>` +
-      `<td class="up">${sk(r.rew)}</td><td class="${c(r.mm)}">${sk(r.mm)}</td><td class="${c(r.net)}"><b>${sk(r.net)}</b></td>` +
-      `<td>${k(r.bal)}</td><td>${r.fills}</td></tr>`).join('');
-  const pos = v.positions || {}, last = new Map((v.last_tick?.markets || []).map(m => [m.q, m]));
-  $('v3-mkt').innerHTML = '<tr><th>Marknad</th><th>Pott/dag</th><th>Mitt</th><th>Andel</th><th>Intjänat</th><th>Lager</th><th>MM-värde</th></tr>' +
-    (v.portfolio || []).slice().sort((a, b) => (pos[b.cond]?.reward || 0) - (pos[a.cond]?.reward || 0)).map(m => {
-      const p = pos[m.cond] || {}, t = last.get(m.question.slice(0, 50)) || {}, mmv = (p.cash || 0) + (p.inv || 0) * (p.mid ?? 0);
-      return `<tr><td>${esc(m.question.slice(0, 46))}</td><td>${k(m.rate)}</td><td>${p.mid == null ? '—' : fmt(p.mid, 3)}</td>` +
-        `<td>${t.share == null ? (t.status ? '<span class="warn">ingen bok</span>' : '—') : pct(t.share, 0)}</td><td class="up">${k(p.reward || 0, 1)}</td>` +
-        `<td>${fmt(p.inv || 0, 0)}</td><td class="${c(mmv)}">${sk(mmv, 1)}</td></tr>`;
-    }).join('');
-  drawLines('c-v3', [h.map(x => K(START + x.net))], [l.net >= 0 ? COL.green : COL.red], x => fmt(x, 0) + ' ' + unit, K(START));
+
+// ---- version switch: version 3 rendered with version 1's panels. Version 3 keeps only the realistic
+// ledger, so its numbers fill both the optimistic and the realistic fields.
+function asV1(v) {
+  if (!v) return null;
+  const pos = Object.fromEntries(Object.entries(v.positions || {}).map(([k, p]) =>
+    [k, {...p, r_reward: p.reward, r_cash: p.cash, r_inv: p.inv, r_fills: p.fills}]));
+  return {...v, positions: pos, real_started: v.started, real_reward_total: v.reward_total,
+          history: (v.history || []).map(x => ({...x, real_reward_total: x.reward_total, real_mm_value: x.mm_value,
+                                               real_net: x.net, real_fills_total: x.fills_total})),
+          fills: (v.fills || []).flatMap(f => [{...f, ledger: 'opt'}, {...f, ledger: 'real'}])};
 }
+function pickView() {
+  S.st = S.view === 'v3' ? asV1(S.v3) : S.v1;
+  for (const b of $('ver').children) b.classList.toggle('on', b.dataset.v === S.view);
+  document.title = S.view === 'v3' ? 'Rewards desk v3' : 'Rewards desk live';
+}
+S.view = (() => { const q = qs.get('v'); if (q === '3' || q === 'v3') return 'v3'; try { return localStorage.getItem('rewardsView') || 'v1'; } catch { return 'v1'; } })();
+$('ver').addEventListener('click', e => {
+  const b = e.target.closest('button'); if (!b || b.dataset.v === S.view) return;
+  S.view = b.dataset.v; try { localStorage.setItem('rewardsView', S.view); } catch {}
+  pickView(); S.live = {}; renderAll(); loadBooks().then(renderAll);
+});
 </script>
 </body>
 </html>

@@ -161,7 +161,7 @@ canvas{display:block;width:100%}
       <div class="kv3">
         <div><div class="k9">Belöning</div><div class="v up" id="rew">—</div></div>
         <div><div class="k9">Market making</div><div class="v" id="mm">—</div></div>
-        <div><div class="k9">Per dag nu</div><div class="v" id="perday">—</div></div>
+        <div><div class="k9">Netto senaste 24 h</div><div class="v" id="perday">—</div></div>
       </div>
       <div class="kv3">
         <div><div class="k9">Affärer</div><div class="v" id="fills">—</div></div>
@@ -328,7 +328,11 @@ function renderAccount() {
   $('rew').textContent = skr(sek(rew), 0);
   $('mm').textContent = skr(sek(mm), 0); $('mm').className = 'v ' + (mm >= 0 ? 'up' : 'down');
   const perDay = liveTotal();
-  $('perday').textContent = kr(sek(perDay), 0);
+  // measured, not estimated: realistic net over the last 24 h of history (the live snapshot below
+  // assumes today's books and pots hold all day, which they do not)
+  const t24 = Date.now() - 864e5, base24 = h.find(x => new Date(x.ts) >= t24) || h[0];
+  const n24 = last && base24 ? (last.real_net ?? last.net) - (base24.real_net ?? base24.net) : null;
+  $('perday').textContent = n24 == null ? '—' : skr(sek(n24), 0); $('perday').className = 'v ' + (n24 > 0 ? 'up' : n24 < 0 ? 'down' : '');
   $('nmk').textContent = (st?.portfolio || []).length;
   // realistic ledger (rewardbot/live.py R1-R5); started later than the optimistic one
   const r = [...h].reverse().find(x => x.real_net != null);
@@ -353,7 +357,7 @@ function renderComp() {
   const avg = lv.length ? lv.reduce((a, o) => a + o.x.share, 0) / lv.length : null;
   $('comp').innerHTML = [
     ['Snittandel nu', pct(avg, 1)], ['Marknader nästan ensam (>90 %)', `${alone}`], ['Trängsel (<10 %)', `${crowded}`],
-    ['Uppskattat/dag vid start', kr(sek(startEst), 0)], ['Uppskattat/dag nu', kr(sek(now), 0)],
+    ['Uppskattat/dag vid start', kr(sek(startEst), 0)], ['Ögonblicksbild/dag (om allt stod still)', kr(sek(now), 0)],
     ['Förändring', startEst && now != null ? pct(now / startEst - 1, 0) : '—'],
   ].map(([k, v]) => `<span>${k}</span><b>${v}</b>`).join('');
 }
@@ -407,7 +411,7 @@ function renderCharts() {
 function renderTickers() {
   const st = S.st;
   const perDay = liveTotal();
-  $('banner').textContent = `◆ ${S.view === 'v3' ? 'VERSION 3 · KONTO 10 000 KR · ' : 'VERSION 1 · '}VIRTUELL MÄTNING · INGA RIKTIGA ORDER · ${(st?.portfolio || []).length} MARKNADER · UPPSKATTAT ${kr(sek(perDay), 0)}/DAG NU · 1 USD = ${S.fx ? fmt(S.fx, 2) : '—'} KR`;
+  $('banner').textContent = `◆ ${S.view === 'v3' ? 'VERSION 3 · KONTO 10 000 KR · ' : 'VERSION 1 · '}VIRTUELL MÄTNING · INGA RIKTIGA ORDER · ${(st?.portfolio || []).length} MARKNADER · ÖGONBLICKSBILD ${kr(sek(perDay), 0)}/DAG OM ORDERBÖCKERNA SÅG UT SÅ HÄR HELA DAGEN · 1 USD = ${S.fx ? fmt(S.fx, 2) : '—'} KR`;
   const items = (st?.portfolio || []).map(c => { const x = S.live[c.cond]; return `<span><b>${esc(c.question.slice(0, 40))}</b> andel ${x ? pct(x.share, 0) : '—'} · ${x ? kr(sek(x.perDay), 1) : '—'}/dag</span>`; }).join('');
   for (const [id, html] of [['feed', items || '<span>laddar…</span>'], ['foot', items || '<span>laddar…</span>']]) {
     const el = $(id); if (el.dataset.h !== html) { el.innerHTML = html + '<span class="mute">·</span>' + html; el.dataset.h = html; }

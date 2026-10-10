@@ -14694,66 +14694,20 @@
    "equity": 581.25,
    "cash": 98.25,
    "open": 69
+  },
+  {
+   "ts": "2026-10-10T00:04:32.517822+00:00",
+   "equity": 581.25,
+   "cash": 98.25,
+   "open": 69
   }
  ],
  "last_run": {
-  "ts": "2026-10-10T00:01:35.861691+00:00",
-  "settled": [
-   {
-    "event_id": "1146580",
-    "slug": "highest-temperature-in-london-on-october-9-2026",
-    "city": "London",
-    "date": "2026-10-09",
-    "station": "EGLC",
-    "bucket": "19\u00b0C",
-    "side": "NO",
-    "token": "112305576901708163440630467620711478768992076657454302200488113882693459284539",
-    "price": 0.55,
-    "cost": 0.5724,
-    "prob": 0.7394,
-    "edge": 0.167,
-    "shares": 19.9869,
-    "stake_usd": 11.44,
-    "mu": 19.54,
-    "sigma": 1.39,
-    "opened": "2026-10-09T05:01:23.574522+00:00",
-    "won": true,
-    "pnl_usd": 8.5469,
-    "settled": "2026-10-10T00:01:35.861691+00:00"
-   },
-   {
-    "event_id": "1146580",
-    "slug": "highest-temperature-in-london-on-october-9-2026",
-    "city": "London",
-    "date": "2026-10-09",
-    "station": "EGLC",
-    "bucket": "20\u00b0C",
-    "side": "NO",
-    "token": "60056468618886906803737575869786053430939558718073116912264655709257799318179",
-    "price": 0.65,
-    "cost": 0.6714,
-    "prob": 0.7337,
-    "edge": 0.0623,
-    "shares": 19.9888,
-    "stake_usd": 13.42,
-    "mu": 19.54,
-    "sigma": 1.39,
-    "opened": "2026-10-09T05:01:23.574522+00:00",
-    "won": false,
-    "pnl_usd": -13.42,
-    "settled": "2026-10-10T00:01:35.861691+00:00"
-   }
-  ],
+  "ts": "2026-10-10T00:04:32.517822+00:00",
+  "settled": [],
   "opened": [],
   "logged": 0,
-  "skipped": {
-   "Buenos Aires": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=-34.8222&longitude=-58.5358&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=celsius",
-   "Chicago": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=41.9742&longitude=-87.9073&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=fahrenheit",
-   "NYC": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=40.7769&longitude=-73.874&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=fahrenheit",
-   "Houston": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=29.6454&longitude=-95.2789&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=fahrenheit",
-   "Karachi": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=24.9065&longitude=67.1608&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=celsius",
-   "Qingdao": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=36.362&longitude=120.0882&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=celsius"
-  }
+  "skipped": {}
  },
  "mode": "trading",
  "gates_ignored": true,

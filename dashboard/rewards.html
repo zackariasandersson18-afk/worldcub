@@ -523,19 +523,17 @@ function pickView() {
   S.st = S.view === 'v3' ? asV1(S.v3) : S.view === 'v4' ? asV1(S.v4) : S.v1;
   for (const b of $('ver').children) b.classList.toggle('on', b.dataset.v === S.view);
   document.title = S.view === 'v1' ? 'Rewards desk live' : `Rewards desk ${S.view}`;
+  $('logo').textContent = S.view === 'v1' ? '$' : S.view.toUpperCase();
+  $('brand').textContent = S.view === 'v1' ? 'TRADEBOT × REWARDS' : `TRADEBOT × REWARDS ${S.view.toUpperCase()}`;
 }
-S.view = (() => { const q = qs.get('v'); if (q === '3' || q === 'v3') return 'v3'; if (q === '4' || q === 'v4') return 'v4'; try { return localStorage.getItem('rewardsView') || 'v1'; } catch { return 'v1'; } })();
+S.view = ({'3': 'v3', 'v3': 'v3', '4': 'v4', 'v4': 'v4'})[qs.get('v')] || 'v1';   // rewards.html is version 1; ?v=3 / ?v=4 open the others
 $('ver').addEventListener('click', e => {
   const b = e.target.closest('button'); if (!b || b.dataset.v === S.view) return;
-  S.view = b.dataset.v; try { localStorage.setItem('rewardsView', S.view); } catch {}
+  S.view = b.dataset.v;
+  try { const u = new URL(location.href); u.searchParams.set('v', S.view.slice(1)); u.searchParams.delete('only'); history.replaceState(null, '', u); } catch {}
   pickView(); S.live = {}; renderAll(); loadBooks().then(renderAll);
 });
 
-// ?only=1 (rewards_v3.html): a page of its own for the viewed version, without the switch or the comparison
-if (qs.get('only')) {
-  $('ver').style.display = 'none';
-  if (S.view !== 'v1') { $('logo').textContent = S.view.toUpperCase(); $('brand').textContent = `TRADEBOT × REWARDS ${S.view.toUpperCase()}`; }
-}
 </script>
 </body>
 </html>

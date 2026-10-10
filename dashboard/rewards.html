@@ -141,8 +141,8 @@ canvas{display:block;width:100%}
 <body>
 <div class="wrap">
 <header>
-  <div class="logo" style="background:var(--green)">$</div>
-  <div class="brand"><b>TRADEBOT × REWARDS</b><div class="s">POLYMARKET · LIKVIDITETSBELÖNINGAR · VIRTUELL MÄTNING</div></div>
+  <div class="logo" id="logo" style="background:var(--green)">$</div>
+  <div class="brand"><b id="brand">TRADEBOT × REWARDS</b><div class="s">POLYMARKET · LIKVIDITETSBELÖNINGAR · VIRTUELL MÄTNING</div></div>
   <div class="mid">QMIN · MARKET MAKING · pUSD</div>
   <div class="clock"><div class="v" id="clock">--:--:--</div><div class="k9" id="scanmeta">UTC</div></div>
 </header>
@@ -197,7 +197,7 @@ canvas{display:block;width:100%}
   <div class="pb"><canvas id="c-sh" height="120"></canvas></div>
 </section>
 
-<section class="panel">
+<section class="panel" id="cmp">
   <div class="ph">⇄ Version 2 och 3 · byter marknader varje dygn<span class="r" id="v2-sub">startar vid nästa mätning</span></div>
   <div class="pb">
     <div class="tw"><table class="ctd" id="v23"></table></div>
@@ -549,6 +549,12 @@ $('ver').addEventListener('click', e => {
   S.view = b.dataset.v; try { localStorage.setItem('rewardsView', S.view); } catch {}
   pickView(); S.live = {}; renderAll(); loadBooks().then(renderAll);
 });
+
+// ?only=1 (rewards_v3.html): a page of its own for the viewed version, without the switch or the comparison
+if (qs.get('only')) {
+  $('ver').style.display = 'none'; $('cmp').style.display = 'none';
+  if (S.view === 'v3') { $('logo').textContent = 'V3'; $('brand').textContent = 'TRADEBOT × REWARDS V3'; }
+}
 </script>
 </body>
 </html>

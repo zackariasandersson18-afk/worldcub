@@ -205,3 +205,17 @@ def test_listing_cache_is_read_once(tmp_path, monkeypatch):
     monkeypatch.setattr(bt, 'LISTING_CACHE', str(tmp_path / 'c.json'))
     assert bt.reward_markets(None) == bt.reward_markets(None) == [{'condition_id': 'a'}]
     assert len(calls) == 1
+
+
+def test_v3_backtest_replay_rules():
+    from rewardbot import v3_backtest as vb
+    t0 = 20718 * 86400                                   # 00:00 UTC
+    c = {'d': 0.02, 'min_size': 10.0, 'v': 4.0, 'rate': 24.0, 'share': 1.0}
+    # steady trades at 0.50 for a day, then one at 0.48 (a touch of our bid) and a later 0.60 mark
+    trades = [(t0 + 60 * i, 0.50, 5) for i in range(0, 1440, 30)] + [(t0 + 86400 + 100, 0.48, 50), (t0 + 2 * 86400 - 60, 0.60, 1)]
+    rew, mm = vb.replay(sorted(trades), t0, t0 + 2 * 86400, c)
+    day1 = min(rew)
+    assert abs(rew[day1] - 23.0) < 1e-9                    # first hour has no reference yet: 23 paid hours
+    assert sum(mm.values()) > 0                             # bought 10 at 0.48, marked at 0.60
+    res = vb.run([{**c, 'question': 'q', 'cond': 'c', 'yes': 'y'}], lambda c: sorted(trades), t0 + 2 * 86400)
+    assert res['B_tenth_share']['reward'] == round(res['A_full_share']['reward'] * 0.1, 2)

@@ -15,6 +15,9 @@ else
 fi
 mkdir -p "$STATE_DIR/rewards"
 
+# the full rewards listing (~19k markets, ~190 pages) is read once per tick and shared by the three versions
+export REWARDS_LISTING_CACHE="${RUNNER_TEMP:-/tmp}/rewards_listing_cache.json"
+rm -f "$REWARDS_LISTING_CACHE"
 python -m rewardbot.live --state "$STATE_DIR/rewards"
 code=$?
 # version 2 (rotating portfolio) beside it; its failure must not lose version 1's tick

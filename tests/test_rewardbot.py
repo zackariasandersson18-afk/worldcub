@@ -196,3 +196,12 @@ def test_reward_listing_follows_the_cursor_spelling_that_works():
             body = pages.get(key, pages[None])                              # unknown params: first page again
             return type('R', (), {'status_code': 200, 'json': lambda self: body})()
     assert [m['condition_id'] for m in bt.reward_markets(H(), lambda *_: None)] == ['a', 'b']
+
+
+def test_listing_cache_is_read_once(tmp_path, monkeypatch):
+    from rewardbot import backtest as bt
+    calls = []
+    monkeypatch.setattr(bt, '_reward_markets', lambda http, log=print: calls.append(1) or [{'condition_id': 'a'}])
+    monkeypatch.setattr(bt, 'LISTING_CACHE', str(tmp_path / 'c.json'))
+    assert bt.reward_markets(None) == bt.reward_markets(None) == [{'condition_id': 'a'}]
+    assert len(calls) == 1

@@ -219,3 +219,27 @@ def test_v3_backtest_replay_rules():
     assert sum(mm.values()) > 0                             # bought 10 at 0.48, marked at 0.60
     res = vb.run([{**c, 'question': 'q', 'cond': 'c', 'yes': 'y'}], lambda c: sorted(trades), t0 + 2 * 86400)
     assert res['B_tenth_share']['reward'] == round(res['A_full_share']['reward'] * 0.1, 2)
+
+
+def test_history_keeps_one_row_per_ten_minutes():
+    from rewardbot import live
+    st = {'history': []}
+    t0 = 1_790_000_400                                     # start of a 10-minute window
+    for i in range(12):                                    # 12 one-minute ticks -> 2 windows
+        live.add_history(st, {'ts': str(i), 'dt_h': 1 / 60, 'reward_tick': 1.0, 'net': float(i)}, t0 + 60 * i)
+    assert [r['net'] for r in st['history']] == [9.0, 11.0]
+    assert abs(st['history'][0]['reward_tick'] - 10.0) < 1e-9 and abs(st['history'][1]['reward_tick'] - 2.0) < 1e-9
+
+
+def test_loop_runs_every_version_even_if_one_fails(monkeypatch):
+    from rewardbot import live, live_v2, loop
+    calls = []
+    monkeypatch.setattr(live, 'step', lambda state, http=None, log=print: calls.append('v1') or {'net': 1, 'avg_share': 0.1})
+    def v2(state, http=None, log=print, version='v2'):
+        calls.append(version)
+        if version == 'v2':
+            raise RuntimeError('boom')
+        return {'net': 2, 'avg_share': 0.2}
+    monkeypatch.setattr(live_v2, 'step', v2)
+    loop.tick('x', None, log=lambda *_: None)
+    assert calls == ['v1', 'v2', 'v3']

@@ -32,7 +32,7 @@ from pathlib import Path
 import requests
 
 from rewardbot import backtest as bt
-from rewardbot.live import fill_row, load, refresh_rates, save
+from rewardbot.live import add_history, fill_row, load, refresh_rates, save
 
 VERSIONS = {'v2': {'trial': 62, 'max_range': 0.10, 'file': 'rewards_v2_state.json'},
             'v3': {'trial': 63, 'max_range': None, 'file': 'rewards_v3_state.json'}}
@@ -166,9 +166,8 @@ def step(state_dir: str | Path, now: float | None = None, http=None, log=print, 
                 mm_value=round(mm_value, 2), net=round(st['reward_total'] + mm_value, 2),
                 avg_share=round(sum(shares) / max(len(shares), 1), 4), n_markets=len(active),
                 fills_total=sum(p.get('fills', 0) for p in st['positions'].values()), rebalanced=rebalance)
-    st['history'].append({k: tick[k] for k in ('ts', 'dt_h', 'reward_tick', 'reward_total', 'mm_value', 'net',
-                                               'avg_share', 'n_markets', 'fills_total', 'rebalanced')})
-    st['history'] = st['history'][-3000:]
+    add_history(st, {k: tick[k] for k in ('ts', 'dt_h', 'reward_tick', 'reward_total', 'mm_value', 'net',
+                                          'avg_share', 'n_markets', 'fills_total', 'rebalanced')}, now)
     st['fills'] = st['fills'][-3000:]
     st['last_tick'] = tick
     save(path, st)

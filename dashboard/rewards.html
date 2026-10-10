@@ -295,10 +295,15 @@ async function loadFx() {
     try { S.fx = pick(await getJSON(url)); return; } catch {}
   }
 }
+// the minute-by-minute loop writes to its own branch (rewards-state); before its first push the
+// 30-minute state on tradebot-state is used
 async function stateBase() {
   if (CFG.stateOverride) return CFG.stateOverride.replace(/\/?$/, '/');
-  try { const c = await getJSON(`https://api.github.com/repos/${CFG.repo}/commits/${CFG.stateBranch}`); S.sha = c.sha; return `https://raw.githubusercontent.com/${CFG.repo}/${c.sha}/`; }
-  catch { return `https://raw.githubusercontent.com/${CFG.repo}/${CFG.stateBranch}/`; }
+  for (const br of ['rewards-state', CFG.stateBranch]) {
+    try { const c = await getJSON(`https://api.github.com/repos/${CFG.repo}/commits/${br}`); S.sha = c.sha; S.branch = br; return `https://raw.githubusercontent.com/${CFG.repo}/${c.sha}/`; }
+    catch {}
+  }
+  return `https://raw.githubusercontent.com/${CFG.repo}/${CFG.stateBranch}/`;
 }
 async function loadState() {
   const base = await stateBase();

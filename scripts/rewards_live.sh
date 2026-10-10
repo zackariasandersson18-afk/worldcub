@@ -18,7 +18,8 @@ mkdir -p "$STATE_DIR/rewards"
 python -m rewardbot.live --state "$STATE_DIR/rewards"
 code=$?
 # version 2 (rotating portfolio) beside it; its failure must not lose version 1's tick
-python -m rewardbot.live_v2 --state "$STATE_DIR/rewards" || echo "rewards v2 failed" >&2
+python -m rewardbot.live_v2 --state "$STATE_DIR/rewards" --version v2 || echo "rewards v2 failed" >&2
+python -m rewardbot.live_v2 --state "$STATE_DIR/rewards" --version v3 || echo "rewards v3 failed" >&2
 
 git -C "$STATE_DIR" add -A
 git -C "$STATE_DIR" -c user.name="tradebot" -c user.email="tradebot@users.noreply.github.com" \

@@ -16,6 +16,11 @@ Pre-registered BEFORE any result was seen (+1 trial -> 62):
              current best bid (long) / best ask (short); kept markets keep theirs
   inventory  at most 1 x min size per market (version 1: 3 x)
   ledger     realistic only, the same R1-R5 rules as version 1's realistic ledger
+
+Version 3 (trial 63, registered 2026-10-10 after version 2's first selection, which
+estimated only 1.65 USD/day because the trend rule removed the two markets that pay;
+no profit or loss of version 2 had been seen): identical to version 2 except that the
+trend rule is off. Both versions refresh reward rates every tick (rewardbot.live.refresh_rates).
 """
 from __future__ import annotations
 
@@ -27,19 +32,19 @@ from pathlib import Path
 import requests
 
 from rewardbot import backtest as bt
-from rewardbot.live import fill_row, load, save
+from rewardbot.live import fill_row, load, refresh_rates, save
 
-N_TRIAL = 62
+VERSIONS = {'v2': {'trial': 62, 'max_range': 0.10, 'file': 'rewards_v2_state.json'},
+            'v3': {'trial': 63, 'max_range': None, 'file': 'rewards_v3_state.json'}}
 CAPITAL = 1000.0
 REBALANCE_S = 86400
 MID_BAND = (0.15, 0.85)
 TREND_LOOKBACK_S = 72 * 3600
-MAX_RANGE = 0.10
 INV_CAP_MULT = 1
 SCREEN_TOP = 80          # trend check only for the best candidates (each needs a trades call)
 
 
-def choose(http, now: float, log) -> list[dict]:
+def choose(http, now: float, log, max_range: float | None = 0.10) -> list[dict]:
     rows = []
     for c in bt.candidates(http, log):
         if not MID_BAND[0] <= c['mid'] <= MID_BAND[1]:
@@ -54,17 +59,18 @@ def choose(http, now: float, log) -> list[dict]:
     for r in rows[:SCREEN_TOP]:
         if used + r['collateral'] > CAPITAL:
             continue
-        try:
-            px = [p for _, p, _ in bt.fetch_trades(r['cond'], r['yes'], int(now - TREND_LOOKBACK_S), http)]
-        except requests.RequestException:
-            continue
-        if px and max(px) - min(px) > MAX_RANGE:
-            trending += 1
-            continue
+        if max_range is not None:
+            try:
+                px = [p for _, p, _ in bt.fetch_trades(r['cond'], r['yes'], int(now - TREND_LOOKBACK_S), http)]
+            except requests.RequestException:
+                continue
+            if px and max(px) - min(px) > max_range:
+                trending += 1
+                continue
         chosen.append({k: r[k] for k in ('cond', 'question', 'yes', 'no', 'rate', 'v', 'min_size', 'd',
                                          'collateral', 'est_reward_day', 'end')})
         used += r['collateral']
-    log(f'v2 portfolio: {len(chosen)} markets, collateral {used:.2f} USD, {trending} trending skipped, '
+    log(f'portfolio (max range {max_range}): {len(chosen)} markets, collateral {used:.2f} USD, {trending} trending skipped, '
         f'estimated {sum(c["est_reward_day"] for c in chosen):.2f}/day')
     return chosen
 
@@ -82,20 +88,21 @@ def close_out(pos: dict, yb: dict | None) -> None:
     pos['closed_at'] = px
 
 
-def step(state_dir: str | Path, now: float | None = None, http=None, log=print) -> dict:
+def step(state_dir: str | Path, now: float | None = None, http=None, log=print, version: str = 'v2') -> dict:
+    cfg = VERSIONS[version]
     d = Path(state_dir)
     d.mkdir(parents=True, exist_ok=True)
     http = http or requests.Session()
     now = now or time.time()
-    path = d / 'rewards_v2_state.json'
+    path = d / cfg['file']
     st = load(path, {})
     if not st:
-        st = {'started': datetime.fromtimestamp(now, timezone.utc).isoformat(), 'trial': N_TRIAL,
+        st = {'started': datetime.fromtimestamp(now, timezone.utc).isoformat(), 'trial': cfg['trial'], 'version': version,
               'portfolio': [], 'positions': {}, 'history': [], 'fills': [], 'reward_total': 0.0,
               'last_ts': now, 'chosen_at': 0, 'rebalances': []}
     rebalance = now - st['chosen_at'] >= REBALANCE_S or not st['portfolio']
     if rebalance:
-        new = choose(http, now, log)
+        new = choose(http, now, log, cfg['max_range'])
         if new:
             old = {c['cond']: c for c in st['portfolio']}
             dropped = [c for k, c in old.items() if k not in {n['cond'] for n in new}]
@@ -110,6 +117,8 @@ def step(state_dir: str | Path, now: float | None = None, http=None, log=print) 
                                      'added': len([n for n in new if n['cond'] not in old]), 'dropped': len(dropped)})
             st['portfolio'], st['chosen_at'] = new, now
     dt = max(0.0, now - st['last_ts'])
+    if not rebalance:
+        refresh_rates(st['portfolio'], http, log)
     books = bt.fetch_books([c[k] for c in st['portfolio'] for k in ('yes', 'no')], http)
     tick = {'ts': datetime.fromtimestamp(now, timezone.utc).isoformat(), 'dt_h': round(dt / 3600, 3), 'markets': []}
     reward_tick, shares = 0.0, []
@@ -139,10 +148,10 @@ def step(state_dir: str | Path, now: float | None = None, http=None, log=print) 
                     continue
                 if bq > 0 and p <= bid + 1e-9:                                             # R4: touches fill
                     q = min(bq, z); bq -= q; pos['inv'] += q; pos['cash'] -= q * bid; pos['fills'] += 1   # noqa: E702
-                    st['fills'].append(fill_row(t, c, 'BUY', bid, q, 'v2'))
+                    st['fills'].append(fill_row(t, c, 'BUY', bid, q, version))
                 elif aq > 0 and p >= ask - 1e-9:
                     q = min(aq, z); aq -= q; pos['inv'] -= q; pos['cash'] += q * ask; pos['fills'] += 1   # noqa: E702
-                    st['fills'].append(fill_row(t, c, 'SELL', ask, q, 'v2'))
+                    st['fills'].append(fill_row(t, c, 'SELL', ask, q, version))
         pos.update(mid=mid, share=share)
         pos['reward'] += earned
         reward_tick += earned
@@ -170,8 +179,9 @@ def main(argv=None) -> int:
     import argparse
     ap = argparse.ArgumentParser(prog='rewardbot.live_v2')
     ap.add_argument('--state', default='state/rewards')
+    ap.add_argument('--version', default='v2', choices=sorted(VERSIONS))
     a = ap.parse_args(argv)
-    t = step(a.state)
+    t = step(a.state, version=a.version)
     print(json.dumps({k: t[k] for k in ('ts', 'dt_h', 'reward_tick', 'reward_total', 'mm_value', 'net',
                                         'avg_share', 'n_markets', 'rebalanced')}))
     return 0

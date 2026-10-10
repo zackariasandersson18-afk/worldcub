@@ -135,7 +135,7 @@ def test_v2_selection_skips_edges_and_trending_markets(monkeypatch):
     from rewardbot import backtest as bt, live_v2
     monkeypatch.setattr(bt, 'candidates', lambda http, log: [_cand('ok', 0.5), _cand('edge', 0.12), _cand('trend', 0.5)])
     monkeypatch.setattr(bt, 'fetch_trades', lambda c, y, since, http: [(1, 0.3, 5), (2, 0.6, 5)] if c == 'trend' else [(1, 0.5, 5)])
-    got = [c['cond'] for c in live_v2.choose(object(), 1_790_000_000, lambda *_: None)]
+    got = [c['cond'] for c in live_v2.choose(object(), 1_790_000_000, lambda *_: None, 0.10)]
     assert got == ['ok']
 
 
@@ -143,7 +143,7 @@ def test_v2_rebalances_daily_and_closes_dropped_inventory(tmp_path, monkeypatch)
     from rewardbot import backtest as bt, live_v2
     t0 = 1_790_000_000
     pick = [[_cand('a', 0.5)]]
-    monkeypatch.setattr(live_v2, 'choose', lambda http, now, log: [{k: v for k, v in c.items() if k not in ('mid', 'rest_q')}
+    monkeypatch.setattr(live_v2, 'choose', lambda http, now, log, mr=None: [{k: v for k, v in c.items() if k not in ('mid', 'rest_q')}
                                                                  | {'d': 0.02, 'collateral': 9.6, 'est_reward_day': 24.0}
                                                                  for c in pick[0]])
     def books(toks, http):
@@ -164,3 +164,35 @@ def test_v2_rebalances_daily_and_closes_dropped_inventory(tmp_path, monkeypatch)
     st = __import__('json').loads((tmp_path / 'rewards_v2_state.json').read_text())
     assert t2['rebalanced'] and st['positions']['a']['inv'] == 0 and abs(st['positions']['a']['cash'] - 0.1) < 1e-9
     assert [c['cond'] for c in st['portfolio']] == ['b'] and st['rebalances'][-1]['dropped'] == 1
+
+
+def test_v3_keeps_trending_markets(monkeypatch):
+    from rewardbot import backtest as bt, live_v2
+    monkeypatch.setattr(bt, 'candidates', lambda http, log: [_cand('ok', 0.5), _cand('trend', 0.5, rate=48.0)])
+    monkeypatch.setattr(bt, 'fetch_trades', lambda c, y, since, http: [(1, 0.3, 5), (2, 0.6, 5)])
+    got = [c['cond'] for c in live_v2.choose(object(), 1_790_000_000, lambda *_: None, live_v2.VERSIONS['v3']['max_range'])]
+    assert got == ['trend', 'ok']
+
+
+def test_refresh_rates_uses_todays_rate(monkeypatch):
+    from rewardbot import backtest as bt, live
+    port = [{'cond': 'a', 'rate': 5.0}, {'cond': 'b', 'rate': 3.0}]
+    monkeypatch.setattr(bt, 'reward_markets', lambda http, log: [{'condition_id': 'a', 'rewards_config': [{'rate_per_day': 50.0}]}])
+    live.refresh_rates(port, object(), lambda *_: None)
+    assert port == [{'cond': 'a', 'rate': 50.0, 'rate0': 5.0}, {'cond': 'b', 'rate': 0.0, 'rate0': 3.0}]
+    monkeypatch.setattr(bt, 'reward_markets', lambda http, log: [])            # failed listing: unchanged
+    live.refresh_rates(port, object(), lambda *_: None)
+    assert port[0]['rate'] == 50.0
+
+
+def test_reward_listing_follows_the_cursor_spelling_that_works():
+    from rewardbot import backtest as bt
+    pages = {None: {'data': [{'condition_id': 'a'}], 'next_cursor': 'MQ==', 'total_count': 2},
+             ('offset', 1): {'data': [{'condition_id': 'b'}], 'next_cursor': 'LTE='}}
+
+    class H:
+        def get(self, url, params=None, timeout=None):
+            key = None if not params else next(iter(params.items()))
+            body = pages.get(key, pages[None])                              # unknown params: first page again
+            return type('R', (), {'status_code': 200, 'json': lambda self: body})()
+    assert [m['condition_id'] for m in bt.reward_markets(H(), lambda *_: None)] == ['a', 'b']

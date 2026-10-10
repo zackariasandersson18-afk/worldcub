@@ -198,7 +198,7 @@ canvas{display:block;width:100%}
 </section>
 
 <section class="panel">
-  <div class="ph">◆ Version 3 · konto (start 1 000 $) · i kronor · bara realistiska siffror<span class="r" id="v3-sub">startar vid nästa mätning</span></div>
+  <div class="ph">◆ Version 3 · konto 10 000 kr · bara realistiska siffror<span class="r" id="v3-sub">startar vid nästa mätning</span></div>
   <div class="pb">
     <div class="pnl" id="v3-bal">—</div>
     <div class="k9" style="margin-top:4px" id="v3-balsub">SALDO</div>
@@ -217,7 +217,7 @@ canvas{display:block;width:100%}
     <div class="tw" style="max-height:240px"><table class="ctd" id="v3-days"></table></div>
     <div class="k9" style="margin:10px 0 4px">Marknaderna just nu</div>
     <div class="tw" style="max-height:360px"><table class="ctd" id="v3-mkt"></table></div>
-    <div class="note" style="padding:6px 0 0">Saldo = startkapital 1 000 $ omräknat till kronor med dagens kurs + intjänad belöning + värdet av market making (lager värderat till mittpriset). Allt räknas med de realistiska reglerna: den lägre av två mätningars andel, ingen belöning om priset rört sig för mycket eller ligger utanför 0,10–0,90, fyllning redan när någon handlar på vårt pris. Version 3 väljer om sina marknader varje dygn. Virtuella pengar, inga riktiga order.</div>
+    <div class="note" style="padding:6px 0 0">Saldo = 10 000 kr + intjänad belöning + värdet av market making (lager värderat till mittpriset). Allt räknas med de realistiska reglerna: den lägre av två mätningars andel, ingen belöning om priset rört sig för mycket eller ligger utanför 0,10–0,90, fyllning redan när någon handlar på vårt pris. Version 3 väljer om sina marknader varje dygn. Mätningen körs på 1 000 $; kontot visar resultatet skalat till 10 000 kr (10 kr per mätt dollar), alltså som om vinst och förlust växer i proportion till kapitalet. Virtuella pengar, inga riktiga order.</div>
   </div>
 </section>
 
@@ -549,17 +549,18 @@ function renderV3Account() {
   const v = S.v3, h = v?.history || [];
   if (!h.length) return;
   const START = 1000, l = h[h.length - 1], bal = START + l.net, c = x => x > 0 ? 'up' : x < 0 ? 'down' : '';
-  // kronor at today's rate; dollars only while the rate has not loaded
-  const K = usd => S.fx ? usd * S.fx : usd, unit = S.fx ? 'kr' : '$';
+  // an account of 10 000 kr: the measurement runs on 1000 USD, so every measured dollar is scaled to
+  // 10 kr (results assumed proportional to capital; at today's rate that is slightly more than 1000 USD)
+  const KR_START = 10000, PER_USD = KR_START / START, K = usd => usd * PER_USD, unit = 'kr';
   const sk = (usd, d = 0) => `${usd >= 0 ? '+' : '−'}${fmt(Math.abs(K(usd)), d)} ${unit}`, k = (usd, d = 0) => `${fmt(K(usd), d)} ${unit}`;
   $('v3-bal').innerHTML = `${fmt(K(bal), 0)}<small>${unit}</small>`; $('v3-bal').style.color = l.net >= 0 ? COL.green : COL.red;
   const days = (Date.now() - new Date(v.started)) / 864e5;
-  $('v3-balsub').textContent = `SALDO · START ${k(START)} (1 000 $) · ${fmt(l.net / START * 100, 2)}% · ${fmt(days, days < 2 ? 1 : 0)} DAGAR`;
+  $('v3-balsub').textContent = `SALDO · START 10 000 kr · ${fmt(l.net / START * 100, 2)}% · ${fmt(days, days < 2 ? 1 : 0)} DAGAR`;
   for (const [id, x] of [['v3-net', l.net], ['v3-mm', l.mm_value]]) { $(id).textContent = sk(x); $(id).className = 'v ' + c(x); }
   $('v3-rew').textContent = sk(l.reward_total);
   $('v3-mk').textContent = `${l.n_markets} · ${pct(l.avg_share, 0)}`;
   $('v3-sub').textContent = `sedan ${v.started.slice(5, 16).replace('T', ' ')} UTC · ${(v.rebalances || []).length} byten · ${l.fills_total} affärer` +
-    (S.fx ? ` · 1 $ = ${fmt(S.fx, 2)} kr` : '');
+    ' · mätt på 1 000 $, skalat till 10 000 kr';
   const byDay = new Map(); for (const x of h) byDay.set(x.ts.slice(0, 10), x);
   let prev = {net: 0, reward_total: 0, mm_value: 0, fills_total: 0};
   const today = new Date().toISOString().slice(0, 10), start = v.started.slice(0, 10);

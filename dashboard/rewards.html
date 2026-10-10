@@ -198,6 +198,24 @@ canvas{display:block;width:100%}
 </section>
 
 <section class="panel">
+  <div class="ph">⇄ Version 2 · byter marknader varje dygn<span class="r" id="v2-sub">startar vid nästa mätning</span></div>
+  <div class="pb">
+    <div class="kv3" style="margin-top:0">
+      <div><div class="k9">V2 netto</div><div class="v" id="v2-net">—</div></div>
+      <div><div class="k9">V1 realistiskt samma tid</div><div class="v" id="v2-v1">—</div></div>
+      <div><div class="k9">Skillnad</div><div class="v" id="v2-diff">—</div></div>
+    </div>
+    <div class="kv3">
+      <div><div class="k9">V2 belöning</div><div class="v up" id="v2-rew">—</div></div>
+      <div><div class="k9">V2 market making</div><div class="v" id="v2-mm">—</div></div>
+      <div><div class="k9">V2 andel · marknader</div><div class="v" id="v2-sh">—</div></div>
+    </div>
+    <canvas id="c-v2" height="130" style="margin-top:8px"></canvas>
+    <div class="note" style="padding:6px 0 0">Gul = version 2, cyan = version 1 realistiskt, båda räknade från version 2:s start. Version 2 (test nr 62, regler bestämda i förväg): väljer om marknader varje dygn mot dagens konkurrens, bara mittpris 0,15–0,85, hoppar över marknader som rört sig mer än 10 cent på 3 dygn, högst 1 × minsta storlek i lager, säljer av lagret i marknader som byts ut. Samma realistiska regler som version 1.</div>
+  </div>
+</section>
+
+<section class="panel">
   <div class="ph">◉ Mina affärer · vinst och förlust<span class="r" id="af-sub">—</span></div>
   <div class="pb">
     <div class="wlrow"><div class="wl" id="af-wl">—</div><div class="wlinfo" id="af-info"></div></div>
@@ -294,6 +312,7 @@ async function loadState() {
   const base = await stateBase();
   if (S.sha && S.sha === S.loadedSha) return;
   try { S.st = await getJSON(base + 'rewards/rewards_state.json'); S.loadedSha = S.sha; } catch {}
+  try { S.v2 = await getJSON(base + 'rewards/rewards_v2_state.json'); } catch {}
 }
 async function loadBooks() {
   const toks = (S.st?.portfolio || []).flatMap(c => [c.yes, c.no]);
@@ -439,7 +458,7 @@ function renderDays() {
   $('avgday').className = 'v ' + cls(tot);
   $('posdays').textContent = done.length ? `${pos}/${done.length}` : '—';
 }
-function renderAll() { renderMine(); renderDays(); renderAccount(); renderComp(); renderMeta(); renderTable(); renderCharts(); renderTickers(); }
+function renderAll() { renderV2(); renderMine(); renderDays(); renderAccount(); renderComp(); renderMeta(); renderTable(); renderCharts(); renderTickers(); }
 
 (async function init() {
   setInterval(() => { $('clock').textContent = new Date().toISOString().slice(11, 19); }, 1000);
@@ -487,6 +506,23 @@ for (const [id, key] of [['af-f', 'afF'], ['af-led', 'afLed']]) {
     const b = e.target.closest('button'); if (!b) return;
     S[key] = b.dataset.v; for (const x of $(id).children) x.classList.toggle('on', x === b); renderMine();
   });
+}
+
+// ---- version 2 beside version 1 (realistic), both from version 2's start
+function renderV2() {
+  const v2 = S.v2, h2 = v2?.history || [], h1 = S.st?.history || [];
+  if (!h2.length) return;
+  const t0 = h2[0].ts, base = [...h1].reverse().find(x => x.ts <= t0) || h1[0];
+  const l2 = h2[h2.length - 1], l1 = h1[h1.length - 1];
+  const v1since = l1 && base ? (l1.real_net ?? 0) - (base.real_net ?? 0) : null, diff = v1since == null ? null : l2.net - v1since;
+  const set = (id, v) => { $(id).textContent = skr(sek(v), 0); $(id).className = 'v ' + (v > 0 ? 'up' : v < 0 ? 'down' : ''); };
+  set('v2-net', l2.net); set('v2-v1', v1since); set('v2-diff', diff); set('v2-mm', l2.mm_value);
+  $('v2-rew').textContent = skr(sek(l2.reward_total), 0);
+  $('v2-sh').textContent = `${pct(l2.avg_share, 0)} · ${l2.n_markets}`;
+  $('v2-sub').textContent = `sedan ${v2.started.slice(5, 16).replace('T', ' ')} UTC · ${(v2.rebalances || []).length} byten · ${l2.fills_total} affärer`;
+  if (!S.fx) return;
+  const at = ts => { const x = [...h1].reverse().find(y => y.ts <= ts); return x && base ? (x.real_net ?? 0) - (base.real_net ?? 0) : 0; };
+  drawLines('c-v2', [h2.map(x => x.net * S.fx), h2.map(x => at(x.ts) * S.fx)], [COL.yellow, COL.cyan], v => kr(v, 0));
 }
 </script>
 </body>

@@ -198,20 +198,11 @@ canvas{display:block;width:100%}
 </section>
 
 <section class="panel">
-  <div class="ph">⇄ Version 2 · byter marknader varje dygn<span class="r" id="v2-sub">startar vid nästa mätning</span></div>
+  <div class="ph">⇄ Version 2 och 3 · byter marknader varje dygn<span class="r" id="v2-sub">startar vid nästa mätning</span></div>
   <div class="pb">
-    <div class="kv3" style="margin-top:0">
-      <div><div class="k9">V2 netto</div><div class="v" id="v2-net">—</div></div>
-      <div><div class="k9">V1 realistiskt samma tid</div><div class="v" id="v2-v1">—</div></div>
-      <div><div class="k9">Skillnad</div><div class="v" id="v2-diff">—</div></div>
-    </div>
-    <div class="kv3">
-      <div><div class="k9">V2 belöning</div><div class="v up" id="v2-rew">—</div></div>
-      <div><div class="k9">V2 market making</div><div class="v" id="v2-mm">—</div></div>
-      <div><div class="k9">V2 andel · marknader</div><div class="v" id="v2-sh">—</div></div>
-    </div>
+    <div class="tw"><table class="ctd" id="v23"></table></div>
     <canvas id="c-v2" height="130" style="margin-top:8px"></canvas>
-    <div class="note" style="padding:6px 0 0">Gul = version 2, cyan = version 1 realistiskt, båda räknade från version 2:s start. Version 2 (test nr 62, regler bestämda i förväg): väljer om marknader varje dygn mot dagens konkurrens, bara mittpris 0,15–0,85, hoppar över marknader som rört sig mer än 10 cent på 3 dygn, högst 1 × minsta storlek i lager, säljer av lagret i marknader som byts ut. Samma realistiska regler som version 1.</div>
+    <div class="note" style="padding:6px 0 0">Gul = version 2, grön = version 3, cyan = version 1 realistiskt, alla räknade från version 2:s start. "V1 samma tid" = version 1:s realistiska resultat sedan just den versionens start. Version 2 (test 62) och 3 (test 63), regler bestämda i förväg: väljer om marknader varje dygn mot dagens konkurrens och pottar, bara mittpris 0,15–0,85, högst 1 × minsta storlek i lager, säljer av lagret i marknader som byts ut. Version 2 hoppar dessutom över marknader som rört sig mer än 10 cent på 3 dygn; version 3 gör det inte. Samma realistiska regler som version 1.</div>
   </div>
 </section>
 
@@ -313,6 +304,7 @@ async function loadState() {
   if (S.sha && S.sha === S.loadedSha) return;
   try { S.st = await getJSON(base + 'rewards/rewards_state.json'); S.loadedSha = S.sha; } catch {}
   try { S.v2 = await getJSON(base + 'rewards/rewards_v2_state.json'); } catch {}
+  try { S.v3 = await getJSON(base + 'rewards/rewards_v3_state.json'); } catch {}
 }
 async function loadBooks() {
   const toks = (S.st?.portfolio || []).flatMap(c => [c.yes, c.no]);
@@ -508,21 +500,24 @@ for (const [id, key] of [['af-f', 'afF'], ['af-led', 'afLed']]) {
   });
 }
 
-// ---- version 2 beside version 1 (realistic), both from version 2's start
+// ---- versions 2 and 3 beside version 1 (realistic)
 function renderV2() {
-  const v2 = S.v2, h2 = v2?.history || [], h1 = S.st?.history || [];
-  if (!h2.length) return;
-  const t0 = h2[0].ts, base = [...h1].reverse().find(x => x.ts <= t0) || h1[0];
-  const l2 = h2[h2.length - 1], l1 = h1[h1.length - 1];
-  const v1since = l1 && base ? (l1.real_net ?? 0) - (base.real_net ?? 0) : null, diff = v1since == null ? null : l2.net - v1since;
-  const set = (id, v) => { $(id).textContent = skr(sek(v), 0); $(id).className = 'v ' + (v > 0 ? 'up' : v < 0 ? 'down' : ''); };
-  set('v2-net', l2.net); set('v2-v1', v1since); set('v2-diff', diff); set('v2-mm', l2.mm_value);
-  $('v2-rew').textContent = skr(sek(l2.reward_total), 0);
-  $('v2-sh').textContent = `${pct(l2.avg_share, 0)} · ${l2.n_markets}`;
-  $('v2-sub').textContent = `sedan ${v2.started.slice(5, 16).replace('T', ' ')} UTC · ${(v2.rebalances || []).length} byten · ${l2.fills_total} affärer`;
+  const h1 = S.st?.history || [], vs = [['V2', S.v2, COL.yellow], ['V3', S.v3, COL.green]].filter(([, v]) => v?.history?.length);
+  if (!vs.length) return;
+  const v1at = ts => { const x = [...h1].reverse().find(y => y.ts <= ts) || h1[0]; return x?.real_net ?? 0; };
+  const l1 = h1[h1.length - 1]?.real_net ?? 0, c = v => v > 0 ? 'up' : v < 0 ? 'down' : '';
+  $('v23').innerHTML = '<tr><th>Version</th><th>Netto</th><th>V1 samma tid</th><th>Skillnad</th><th>Belöning</th><th>MM</th><th>Andel</th><th>Marknader</th></tr>' +
+    vs.map(([name, v]) => {
+      const h = v.history, l = h[h.length - 1], v1 = l1 - v1at(h[0].ts), diff = l.net - v1;
+      return `<tr><td><b>${name}</b> <span class="mute">${v.started.slice(5, 10)}</span></td><td class="${c(l.net)}"><b>${skr(sek(l.net), 0)}</b></td>` +
+        `<td class="${c(v1)}">${skr(sek(v1), 0)}</td><td class="${c(diff)}">${skr(sek(diff), 0)}</td><td class="up">${skr(sek(l.reward_total), 0)}</td>` +
+        `<td class="${c(l.mm_value)}">${skr(sek(l.mm_value), 0)}</td><td>${pct(l.avg_share, 0)}</td><td>${l.n_markets} · ${(v.rebalances || []).length} byten</td></tr>`;
+    }).join('');
+  $('v2-sub').textContent = vs.map(([n, v]) => `${n} ${(v.history.slice(-1)[0].fills_total)} affärer`).join(' · ');
   if (!S.fx) return;
-  const at = ts => { const x = [...h1].reverse().find(y => y.ts <= ts); return x && base ? (x.real_net ?? 0) - (base.real_net ?? 0) : 0; };
-  drawLines('c-v2', [h2.map(x => x.net * S.fx), h2.map(x => at(x.ts) * S.fx)], [COL.yellow, COL.cyan], v => kr(v, 0));
+  const base = vs[0][1].history, t0 = base[0].ts, b1 = v1at(t0);
+  const series = vs.map(([, v]) => base.map(x => { const y = [...v.history].reverse().find(z => z.ts <= x.ts); return (y ? y.net : 0) * S.fx; }));
+  drawLines('c-v2', [...series, base.map(x => (v1at(x.ts) - b1) * S.fx)], [...vs.map(([, , col]) => col), COL.cyan], v => kr(v, 0));
 }
 </script>
 </body>

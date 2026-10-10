@@ -30,6 +30,8 @@ Pre-registered BEFORE any result was seen (+2 trials -> 60):
 """
 from __future__ import annotations
 
+import base64
+
 import json
 import time
 from concurrent.futures import ThreadPoolExecutor
@@ -148,26 +150,42 @@ def _get(http, url, params=None, tries=4):
 
 
 def reward_markets(http, log=print) -> list[dict]:
+    """Every market in the rewards programme. The listing pages with an opaque
+    next_cursor (base64 of the offset); which query parameter the endpoint honours is
+    not documented, so each page tries the known spellings until one returns markets
+    not seen yet (a repeated page means that spelling was ignored)."""
     out, seen, cursor = [], set(), None
+    first = _get(http, REWARDS_API, None)
+    total = (first or {}).get('total_count')
+    page = first
     for _ in range(200):
-        d = _get(http, REWARDS_API, {'next_cursor': cursor} if cursor else None)
-        if not d:
+        if not page:
             break
-        new = [m for m in d.get('data') or [] if m.get('condition_id') not in seen]
+        new = [m for m in page.get('data') or [] if m.get('condition_id') not in seen]
         if not new:
-            break                                   # the API repeated a page
+            break
         for m in new:
             seen.add(m['condition_id'])
         out += new
-        nxt = d.get('next_cursor')
-        if not nxt or nxt in ('LTE=', '') or nxt == cursor:
+        nxt = page.get('next_cursor')
+        if not nxt or nxt in ('LTE=', '') or nxt == cursor or (total and len(out) >= total):
             break
-        cursor = nxt
+        cursor, page = nxt, None
+        try:
+            offset = int(base64.b64decode(nxt).decode())
+        except (ValueError, UnicodeDecodeError):
+            offset = None
+        for params in ({'next_cursor': nxt}, {'cursor': nxt}, {'nextCursor': nxt},
+                       *([{'offset': offset}] if offset is not None else [])):
+            cand = _get(http, REWARDS_API, params)
+            if cand and any(m.get('condition_id') not in seen for m in cand.get('data') or []):
+                page = cand
+                break
     assets = {}
     for m in out:
         for c in m.get('rewards_config') or []:
             assets[c.get('asset_address')] = assets.get(c.get('asset_address'), 0) + 1
-    log(f'{len(out)} unique markets in the rewards programme; reward assets {assets}')
+    log(f'{len(out)} unique markets in the rewards programme (listing says {total}); reward assets {assets}')
     return out
 
 

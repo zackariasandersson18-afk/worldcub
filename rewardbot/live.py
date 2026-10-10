@@ -77,6 +77,23 @@ def token_info(address: str, http) -> dict:
     return {'address': address, 'symbol': None, 'error': 'no RPC answered'}
 
 
+def refresh_rates(portfolio: list[dict], http, log=print) -> None:
+    """Rewards are paid at today's rate_per_day, not the one seen when the market was
+    chosen. A market no longer in a successful listing earns nothing (rate 0); if the
+    listing fails, the rates are left as they were."""
+    try:
+        rm = bt.reward_markets(http, log)
+    except Exception as exc:                                  # noqa: BLE001
+        log(f'rate refresh failed: {exc}')
+        return
+    if not rm:
+        return
+    now = {m['condition_id']: float(sum(c.get('rate_per_day', 0) for c in m.get('rewards_config') or [])) for m in rm}
+    for c in portfolio:
+        c.setdefault('rate0', c['rate'])
+        c['rate'] = now.get(c['cond'], 0.0)
+
+
 def fill_row(t: int, c: dict, side: str, price: float, size: float, ledger: str) -> dict:
     """One virtual fill of the YES token at our quote."""
     return {'ts': datetime.fromtimestamp(t, timezone.utc).isoformat(), 'cond': c['cond'], 'q': c['question'][:80],
@@ -152,6 +169,7 @@ def step(state_dir: str | Path, now: float | None = None, http=None, log=print) 
         if a and a not in st['tokens']:
             st['tokens'][a] = token_info(c['asset'], http) if a != USDC_E else {'symbol': 'USDC.e', 'decimals': 6}
     dt = max(0.0, now - st['last_ts'])
+    refresh_rates(st['portfolio'], http, log)
     books = bt.fetch_books([c[k] for c in st['portfolio'] for k in ('yes', 'no')], http)
     tick = {'ts': datetime.fromtimestamp(now, timezone.utc).isoformat(), 'dt_h': round(dt / 3600, 3), 'markets': []}
     reward_tick = mm_value = r_tick = r_mm = 0.0

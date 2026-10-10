@@ -197,15 +197,6 @@ canvas{display:block;width:100%}
   <div class="pb"><canvas id="c-sh" height="120"></canvas></div>
 </section>
 
-<section class="panel" id="cmp">
-  <div class="ph">⇄ Version 2 och 3 · byter marknader varje dygn<span class="r" id="v2-sub">startar vid nästa mätning</span></div>
-  <div class="pb">
-    <div class="tw"><table class="ctd" id="v23"></table></div>
-    <canvas id="c-v2" height="130" style="margin-top:8px"></canvas>
-    <div class="note" style="padding:6px 0 0">Gul = version 2, grön = version 3, cyan = version 1 realistiskt, alla räknade från version 2:s start. "V1 samma tid" = version 1:s realistiska resultat sedan just den versionens start. Version 2 (test 62) och 3 (test 63), regler bestämda i förväg: väljer om marknader varje dygn mot dagens konkurrens och pottar, bara mittpris 0,15–0,85, högst 1 × minsta storlek i lager, säljer av lagret i marknader som byts ut. Version 2 hoppar dessutom över marknader som rört sig mer än 10 cent på 3 dygn; version 3 gör det inte. Samma realistiska regler som version 1.</div>
-  </div>
-</section>
-
 <section class="panel">
   <div class="ph">◉ Mina affärer · vinst och förlust<span class="r" id="af-sub">—</span></div>
   <div class="pb">
@@ -309,7 +300,6 @@ async function loadState() {
   const base = await stateBase();
   if (S.sha && S.sha === S.loadedSha) return;
   try { S.v1 = await getJSON(base + 'rewards/rewards_state.json'); S.loadedSha = S.sha; } catch {}
-  try { S.v2 = await getJSON(base + 'rewards/rewards_v2_state.json'); } catch {}
   try { S.v3 = await getJSON(base + 'rewards/rewards_v3_state.json'); } catch {}
   pickView();
 }
@@ -460,7 +450,7 @@ function renderDays() {
   $('avgday').className = 'v ' + cls(tot);
   $('posdays').textContent = done.length ? `${pos}/${done.length}` : '—';
 }
-function renderAll() { renderV2(); renderMine(); renderDays(); renderAccount(); renderComp(); renderMeta(); renderTable(); renderCharts(); renderTickers(); }
+function renderAll() { renderMine(); renderDays(); renderAccount(); renderComp(); renderMeta(); renderTable(); renderCharts(); renderTickers(); }
 
 (async function init() {
   setInterval(() => { $('clock').textContent = new Date().toISOString().slice(11, 19); }, 1000);
@@ -510,26 +500,6 @@ for (const [id, key] of [['af-f', 'afF'], ['af-led', 'afLed']]) {
   });
 }
 
-// ---- versions 2 and 3 beside version 1 (realistic)
-function renderV2() {
-  const fxk = usd => usd == null || S.fx == null ? null : usd * S.fx;   // real kronor, whichever version is viewed
-  const h1 = S.v1?.history || [], vs = [['V2', S.v2, COL.yellow], ['V3', S.v3, COL.green]].filter(([, v]) => v?.history?.length);
-  if (!vs.length) return;
-  const v1at = ts => { const x = [...h1].reverse().find(y => y.ts <= ts) || h1[0]; return x?.real_net ?? 0; };
-  const l1 = h1[h1.length - 1]?.real_net ?? 0, c = v => v > 0 ? 'up' : v < 0 ? 'down' : '';
-  $('v23').innerHTML = '<tr><th>Version</th><th>Netto</th><th>V1 samma tid</th><th>Skillnad</th><th>Belöning</th><th>MM</th><th>Andel</th><th>Marknader</th></tr>' +
-    vs.map(([name, v]) => {
-      const h = v.history, l = h[h.length - 1], v1 = l1 - v1at(h[0].ts), diff = l.net - v1;
-      return `<tr><td><b>${name}</b> <span class="mute">${v.started.slice(5, 10)}</span></td><td class="${c(l.net)}"><b>${skr(fxk(l.net), 0)}</b></td>` +
-        `<td class="${c(v1)}">${skr(fxk(v1), 0)}</td><td class="${c(diff)}">${skr(fxk(diff), 0)}</td><td class="up">${skr(fxk(l.reward_total), 0)}</td>` +
-        `<td class="${c(l.mm_value)}">${skr(fxk(l.mm_value), 0)}</td><td>${pct(l.avg_share, 0)}</td><td>${l.n_markets} · ${(v.rebalances || []).length} byten</td></tr>`;
-    }).join('');
-  $('v2-sub').textContent = vs.map(([n, v]) => `${n} ${(v.history.slice(-1)[0].fills_total)} affärer`).join(' · ');
-  if (!S.fx) return;
-  const base = vs[0][1].history, t0 = base[0].ts, b1 = v1at(t0);
-  const series = vs.map(([, v]) => base.map(x => { const y = [...v.history].reverse().find(z => z.ts <= x.ts); return (y ? y.net : 0) * S.fx; }));
-  drawLines('c-v2', [...series, base.map(x => (v1at(x.ts) - b1) * S.fx)], [...vs.map(([, , col]) => col), COL.cyan], v => kr(v, 0));
-}
 
 
 // ---- version switch: version 3 rendered with version 1's panels. Version 3 keeps only the realistic
@@ -557,7 +527,7 @@ $('ver').addEventListener('click', e => {
 
 // ?only=1 (rewards_v3.html): a page of its own for the viewed version, without the switch or the comparison
 if (qs.get('only')) {
-  $('ver').style.display = 'none'; $('cmp').style.display = 'none';
+  $('ver').style.display = 'none';
   if (S.view === 'v3') { $('logo').textContent = 'V3'; $('brand').textContent = 'TRADEBOT × REWARDS V3'; }
 }
 </script>

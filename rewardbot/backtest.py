@@ -149,7 +149,27 @@ def _get(http, url, params=None, tries=4):
     return None
 
 
+LISTING_CACHE = __import__('os').environ.get('REWARDS_LISTING_CACHE')   # set by scripts/rewards_live.sh: one read per tick
+LISTING_MAX_AGE_S = 20 * 60
+
+
 def reward_markets(http, log=print) -> list[dict]:
+    """Cached wrapper: the full listing is ~190 pages; the live runners share one copy per tick."""
+    import os
+    if LISTING_CACHE and os.path.exists(LISTING_CACHE) and time.time() - os.path.getmtime(LISTING_CACHE) < LISTING_MAX_AGE_S:
+        try:
+            with open(LISTING_CACHE) as f:
+                return json.load(f)
+        except (OSError, ValueError):
+            pass
+    out = _reward_markets(http, log)
+    if LISTING_CACHE and out:
+        with open(LISTING_CACHE, 'w') as f:
+            json.dump(out, f)
+    return out
+
+
+def _reward_markets(http, log=print) -> list[dict]:
     """Every market in the rewards programme. The listing pages with an opaque
     next_cursor (base64 of the offset); which query parameter the endpoint honours is
     not documented, so each page tries the known spellings until one returns markets

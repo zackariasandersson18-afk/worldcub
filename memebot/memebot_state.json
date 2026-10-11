@@ -2,7 +2,7 @@
  "started": "2026-10-11T15:45:16.964945+00:00",
  "trial": 66,
  "start_kr": 5000.0,
- "cash": 5468.3317264864945,
+ "cash": 5577.787157477845,
  "open": [
   {
    "pool": "6iep3EgqksbZwgzMBCyAJtiVtVYkCgL9BnPBEwLR8AGQ",
@@ -15,7 +15,7 @@
    "stake": 250.0,
    "stake_left": 125.0,
    "peak": 0.001781,
-   "last": 0.001299,
+   "last": 0.001584,
    "half_sold": true,
    "realised": 321.173681549528,
    "liq_at_entry": 67205.1351,
@@ -39,27 +39,11 @@
    "stake": 250.0,
    "stake_left": 250.0,
    "peak": 0.000141,
-   "last": 8.114e-05,
+   "last": 7.029e-05,
    "half_sold": false,
    "realised": 0.0,
    "liq_at_entry": 26126.6602,
    "missing": 0
-  },
-  {
-   "pool": "6jJjDBf6pUvxWK8Mh2azUnG7ApQ55Eth4SJQHGQZY8EG",
-   "mint": "BnhQ3ARhYJZwHNLnfJ7sA1moCFkstWaFsqni94TRpump",
-   "name": "Rocky / SOL",
-   "opened": "2026-10-11T18:47:20.103418+00:00",
-   "opened_ts": 1791744440.1034184,
-   "entry": 7.326132588737167e-05,
-   "entry_seen": 7.182482930134477e-05,
-   "stake": 250.0,
-   "stake_left": 250.0,
-   "peak": 7.182482930134477e-05,
-   "last": 7.182482930134477e-05,
-   "half_sold": false,
-   "realised": 0.0,
-   "liq_at_entry": 21944.3457
   }
  ],
  "closed": [
@@ -120,13 +104,35 @@
    "reason": "5x",
    "pnl": 749.11,
    "won": true
+  },
+  {
+   "pool": "6jJjDBf6pUvxWK8Mh2azUnG7ApQ55Eth4SJQHGQZY8EG",
+   "mint": "BnhQ3ARhYJZwHNLnfJ7sA1moCFkstWaFsqni94TRpump",
+   "name": "Rocky / SOL",
+   "opened": "2026-10-11T18:47:20.103418+00:00",
+   "opened_ts": 1791744440.1034184,
+   "entry": 7.326132588737167e-05,
+   "entry_seen": 7.182482930134477e-05,
+   "stake": 250.0,
+   "stake_left": 0.0,
+   "peak": 9.378e-05,
+   "last": 3.273e-05,
+   "half_sold": false,
+   "realised": 109.45543099134983,
+   "liq_at_entry": 21944.3457,
+   "missing": 0,
+   "closed": "2026-10-11T18:57:34.300631+00:00",
+   "exit_price": 3.273e-05,
+   "reason": "stop -40 %",
+   "pnl": -140.54,
+   "won": false
   }
  ],
  "seen": [
   "33jENUQnjoitkMFpvNJcSHyLAHFWJuHwT6E3E8CNpump",
   "BnhQ3ARhYJZwHNLnfJ7sA1moCFkstWaFsqni94TRpump",
-  "DF2itwPUjUpA41SXY6SBF8iC2uZDvAoJt7gbXhSBA9e",
   "BXuuLQQsHsAjweVvTXHAgJSnTj9MLKpiK5cLP7c3wLxB",
+  "DF2itwPUjUpA41SXY6SBF8iC2uZDvAoJt7gbXhSBA9e",
   "FdZRSoq4MfUPkqAi8mipJ9UaFYu8gfDCwCfw76YZpump",
   "GLwKimCH2ds3tFffm3482hdtSkgBGEvXFmXrcxn9e6wW",
   "FiLRrZ7Bt2HHGfs83RFJdGmp3mLceycq3zkDN6Apump"
@@ -259,21 +265,28 @@
    "w": 2986239
   },
   {
-   "ts": "2026-10-11T18:47:20.103418+00:00",
-   "equity": 6292.8,
+   "ts": "2026-10-11T18:49:28.838455+00:00",
+   "equity": 6330.04,
    "cash": 5468.33,
    "open": 3,
    "w": 2986240
+  },
+  {
+   "ts": "2026-10-11T18:57:34.300631+00:00",
+   "equity": 6216.29,
+   "cash": 5577.79,
+   "open": 2,
+   "w": 2986241
   }
  ],
  "skips": {
-  "age": 9976,
+  "age": 10594,
   "buy pressure": 222,
-  "quote": 1072,
+  "quote": 1122,
   "liquidity": 329,
   "price change": 28,
   "volume": 2,
   "danger risk": 2
  },
- "last_run": "2026-10-11T18:47:20.103418+00:00"
+ "last_run": "2026-10-11T18:57:34.300631+00:00"
 }

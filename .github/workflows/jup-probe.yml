@@ -1,0 +1,16 @@
+name: jupiter probe (temporary)
+on:
+  push:
+    branches: [claude/great-rubin-cbww8t]
+    paths: ['.github/workflows/jup-probe.yml']
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          USDC=EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v; BONK=DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263
+          curl -s "https://lite-api.jup.ag/swap/v1/quote?inputMint=$USDC&outputMint=$BONK&amount=25000000&slippageBps=1500" | head -c 1500; echo
+          curl -s "https://lite-api.jup.ag/swap/v1/quote?inputMint=$BONK&outputMint=$USDC&amount=100000000000&slippageBps=1500" | head -c 600; echo
+          curl -s "https://lite-api.jup.ag/swap/v1/quote?inputMint=$USDC&outputMint=So11111111111111111111111111111111111111112&amount=1&slippageBps=50" | head -c 300; echo
+          curl -s "https://lite-api.jup.ag/swap/v1/quote?inputMint=$USDC&outputMint=11111111111111111111111111111112&amount=25000000" -w ' HTTP %{http_code}' | head -c 300; echo
+          curl -s "https://api.rugcheck.xyz/v1/tokens/$BONK/report" | python3 -c "import json,sys; d=json.load(sys.stdin); print('token', d.get('token')); print('keys', list(d)[:40])"

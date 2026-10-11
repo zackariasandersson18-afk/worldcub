@@ -2,8 +2,49 @@
  "started": "2026-10-11T15:45:16.964945+00:00",
  "trial": 66,
  "start_kr": 5000.0,
- "cash": 6107.742671457941,
- "open": [],
+ "cash": 5857.742671457941,
+ "open": [
+  {
+   "pool": "7XhejrcUgjh6S5dZ91GsXcWUk41vMDg6bnJ9tEe5wZ5q",
+   "mint": "CnvQ6v525Mx4FSNNYwXVaiH2wboEMVdjxPhUjkpqpump",
+   "name": "DOGEUS / SOL",
+   "opened": "2026-10-11T22:27:42.252249+00:00",
+   "opened_ts": 1791757662.2522485,
+   "entry": 0.00017975473678316837,
+   "entry_seen": 0.00017817943081371453,
+   "stake": 250.0,
+   "stake_left": 250.0,
+   "peak": 0.00017817943081371453,
+   "last": 0.0001642,
+   "half_sold": false,
+   "tranches": 0,
+   "realised": 0.0,
+   "liq_at_entry": 38487.7043,
+   "trail": [
+    [
+     1791757662,
+     0.000178179
+    ],
+    [
+     1791757908,
+     0.0001642
+    ]
+   ],
+   "tokens": 139078393412,
+   "tokens_left": 139078393412,
+   "decimals": 6,
+   "entry_impact": 0.010319366016793464,
+   "entry_cost": 0.0088,
+   "fills": "jupiter",
+   "missing": 0,
+   "liq_now": 35400.97,
+   "quote_kr": 221.4225,
+   "quote_px": 0.0001642,
+   "exit_impact": 0.015767292429266687,
+   "quote_ts": "2026-10-11T22:31:48.411052+00:00",
+   "nosell": 0
+  }
+ ],
  "closed": [
   {
    "pool": "H68Z3uxoJjezyqt5uSvEAeq6JftMWKz6RKXaw2S2pRBa",
@@ -551,6 +592,7 @@
   "GLwKimCH2ds3tFffm3482hdtSkgBGEvXFmXrcxn9e6wW",
   "AqUPRnyFCRuMqKYgY5Tf64CFshFecuaGSGXx4cqqpump",
   "BnhQ3ARhYJZwHNLnfJ7sA1moCFkstWaFsqni94TRpump",
+  "CnvQ6v525Mx4FSNNYwXVaiH2wboEMVdjxPhUjkpqpump",
   "BXuuLQQsHsAjweVvTXHAgJSnTj9MLKpiK5cLP7c3wLxB",
   "FdZRSoq4MfUPkqAi8mipJ9UaFYu8gfDCwCfw76YZpump",
   "BxxP7bHQSPBmPWUsVW6Atsipwp3vCkTTnGhqhprrgXXq",
@@ -819,21 +861,35 @@
    "w": 2986260
   },
   {
-   "ts": "2026-10-11T22:19:12.239437+00:00",
+   "ts": "2026-10-11T22:19:52.991574+00:00",
    "equity": 6107.74,
    "cash": 6107.74,
    "open": 0,
    "w": 2986261
+  },
+  {
+   "ts": "2026-10-11T22:27:42.252249+00:00",
+   "equity": 6098.6,
+   "cash": 5857.74,
+   "open": 1,
+   "w": 2986262
+  },
+  {
+   "ts": "2026-10-11T22:31:48.411052+00:00",
+   "equity": 6079.17,
+   "cash": 5857.74,
+   "open": 1,
+   "w": 2986263
   }
  ],
  "skips": {
-  "age": 18451,
-  "buy pressure": 265,
-  "quote": 2058,
+  "age": 18935,
+  "buy pressure": 274,
+  "quote": 2095,
   "liquidity": 671,
-  "price change": 51,
+  "price change": 57,
   "volume": 4,
   "danger risk": 4
  },
- "last_run": "2026-10-11T22:19:12.239437+00:00"
+ "last_run": "2026-10-11T22:31:48.411052+00:00"
 }

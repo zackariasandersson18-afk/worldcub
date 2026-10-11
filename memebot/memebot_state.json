@@ -14,11 +14,12 @@
    "entry_seen": 0.0004161895115507644,
    "stake": 250.0,
    "stake_left": 250.0,
-   "peak": 0.0004161895115507644,
-   "last": 0.0004161895115507644,
+   "peak": 0.0004805,
+   "last": 0.0004003,
    "half_sold": false,
    "realised": 0.0,
-   "liq_at_entry": 67205.1351
+   "liq_at_entry": 67205.1351,
+   "missing": 0
   },
   {
    "pool": "EdV32pDiDmuFSsEbA9DB97VziSfSRXDdUQ7WCPRJwzEP",
@@ -31,10 +32,11 @@
    "stake": 250.0,
    "stake_left": 250.0,
    "peak": 9.306307521617255e-05,
-   "last": 9.306307521617255e-05,
+   "last": 6.019e-05,
    "half_sold": false,
    "realised": 0.0,
-   "liq_at_entry": 26126.6602
+   "liq_at_entry": 26126.6602,
+   "missing": 0
   }
  ],
  "closed": [],
@@ -86,20 +88,27 @@
    "w": 2986227
   },
   {
-   "ts": "2026-10-11T16:46:54.440343+00:00",
-   "equity": 4980.39,
+   "ts": "2026-10-11T16:49:38.714538+00:00",
+   "equity": 4907.89,
    "cash": 4500.0,
    "open": 2,
    "w": 2986228
+  },
+  {
+   "ts": "2026-10-11T16:57:43.165650+00:00",
+   "equity": 4886.38,
+   "cash": 4500.0,
+   "open": 2,
+   "w": 2986229
   }
  ],
  "skips": {
-  "age": 3355,
-  "buy pressure": 136,
-  "quote": 350,
+  "age": 3935,
+  "buy pressure": 144,
+  "quote": 401,
   "liquidity": 32,
   "price change": 25,
   "volume": 1
  },
- "last_run": "2026-10-11T16:46:54.440343+00:00"
+ "last_run": "2026-10-11T16:57:43.165650+00:00"
 }

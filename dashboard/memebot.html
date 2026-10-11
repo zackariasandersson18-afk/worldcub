@@ -277,12 +277,37 @@ const BOOKS = {'66': ['memebot_state.json', 'Test 66', 'originalet, startade fö
   A: ['memebot_A.json', 'A · tidsstopp', 'sälj om inte +30 % inom 2 h'], B: ['memebot_B.json', 'B · likviditetsflykt', 'sälj om likviditeten faller 30 %'],
   C: ['memebot_C.json', 'C · sälj i steg', '⅓ vid 2×, ⅓ vid 4×, resten 10× eller −50 % från toppen']};
 const BOOK = (() => { const b = new URLSearchParams(location.search).get('bok'); return BOOKS[b] ? b : '66'; })();
+// the full books are pushed every 10 minutes, memebot/live.json (open + just-closed trades, no trails) every minute;
+// the newer live file is laid over the books so a stop shows up within about a minute
 async function load() {
   let base = `https://raw.githubusercontent.com/${CFG.repo}/rewards-state/memebot/`;
-  try { const c = await getJSON(`https://api.github.com/repos/${CFG.repo}/commits/rewards-state`); base = `https://raw.githubusercontent.com/${CFG.repo}/${c.sha}/memebot/`; } catch {}
-  const got = await Promise.all(Object.entries(BOOKS).map(([k, [f]]) => getJSON(base + f).then(j => [k, j]).catch(() => [k, null])));
-  S.books = Object.fromEntries(got);
+  try {
+    const h = tok.get() ? {headers: {Authorization: `Bearer ${tok.get()}`}} : {};
+    const r = await fetch(`https://api.github.com/repos/${CFG.repo}/commits/rewards-state`, {cache: 'no-store', ...h});
+    if (r.ok) base = `https://raw.githubusercontent.com/${CFG.repo}/${(await r.json()).sha}/memebot/`;
+  } catch {}
+  if (base !== S.base || !S.books) {             // full books only change every 10 min; the live file every minute
+    const got = await Promise.all(Object.entries(BOOKS).map(([k, [f]]) => getJSON(base + f).then(j => [k, j]).catch(() => [k, null])));
+    S.full = Object.fromEntries(got); S.base = base;
+  }
+  let live = null; try { live = await getJSON(base + 'live.json'); } catch {}
+  S.books = Object.fromEntries(Object.entries(S.full).map(([k, st]) => [k, overlay(st, live?.books?.[k])]));
   if (S.books[BOOK]) S.st = S.books[BOOK];
+}
+function overlay(st, lv) {
+  if (!st || !lv || !lv.last_run || String(lv.last_run) <= String(st.last_run)) return st;
+  const trails = new Map([...st.open, ...st.closed].map(p => [p.pool + p.opened, p.trail]));
+  const withTrail = p => ({...p, trail: [...(trails.get(p.pool + p.opened) || [[p.opened_ts, p.entry_seen]]), [Date.parse(lv.last_run) / 1000, p.last]]});
+  const have = new Set(st.closed.map(p => p.pool + p.opened));
+  const hist = [...(st.history || [])]; if (lv.equity != null) hist.push({ts: lv.last_run, equity: lv.equity});
+  return {...st, cash: lv.cash, last_run: lv.last_run, open: lv.open.map(withTrail), history: hist,
+    closed: [...st.closed, ...lv.closed_recent.filter(p => !have.has(p.pool + p.opened)).map(withTrail)]};
+}
+// would the bot's price rules sell at this live price? (it acts on its next minute; the page shows "säljs nu")
+function wouldExit(p, px) {
+  const r = px / p.entry, sold = (p.tranches ?? (p.half_sold ? 1 : 0)) > 0;
+  return p.exit_wait ? 'säljs nu – väntar på köpare' : !sold && r <= 0.6 ? 'säljs nu – stop −40 %' : sold && r >= RULES.final ? `säljs nu – ${RULES.final}×`
+    : sold && px <= 0.5 * Math.max(p.peak, px) ? 'säljs nu – −50 % från toppen' : '';
 }
 function maxDD(hist) { let pk = -Infinity, dd = 0; for (const h of hist || []) { pk = Math.max(pk, h.equity); dd = Math.max(dd, (pk - h.equity) / pk); } return dd; }
 function experiment() {
@@ -550,7 +575,7 @@ function render() {
     const was = S.prev[p.pool]; S.prev[p.pool] = v;
     const fl = was == null || Math.abs(v - was) < 0.005 ? '' : v > was ? ' flash-up' : ' flash-down';
     return `<div class="row trade${fl}" data-pool="${esc(p.pool)}" tabindex="0" role="button" aria-label="Visa ${sym(p.name)}"><div class="av">${sym(p.name).slice(0, 2).toUpperCase()}</div>` +
-      `<div class="main"><b>${sym(p.name)}</b><span>köpt ${ago(p.opened)} · likviditet vid köp <b style="display:inline;font-size:12px;color:var(--text)">${liq(p.liq_at_entry)}</b>${(S.live[p.pool]?.liq || p.liq_now) ? ` · nu ${liq(S.live[p.pool]?.liq || p.liq_now)}` : ''}</span>${p.half_sold ? ' <span class="pill b">halva såld</span>' : ''}</div>` +
+      `<div class="main"><b>${sym(p.name)}</b><span>köpt ${ago(p.opened)} · likviditet vid köp <b style="display:inline;font-size:12px;color:var(--text)">${liq(p.liq_at_entry)}</b>${(S.live[p.pool]?.liq || p.liq_now) ? ` · nu ${liq(S.live[p.pool]?.liq || p.liq_now)}` : ''}</span>${p.half_sold ? ` <span class="pill b">${BOOK === 'C' ? 'delvis såld' : 'halva såld'}</span>` : ''}${wouldExit(p, px) ? ` <span class="pill r">${wouldExit(p, px)}</span>` : ''}<span style="display:block">boten kollade ${new Date(st.last_run).toLocaleTimeString('sv-SE', {hour: '2-digit', minute: '2-digit'})}</span></div>` +
       `<div class="end"><span style="font-size:13.5px;font-weight:700;color:var(--text)">${kr(v)}</span><span class="${cls(d)}">${skr(d)} · ${fmt(r, 2)}×</span></div>` +
       btn(p) + `</div>`;
   }).join('') || '<div class="empty">Inga öppna affärer just nu – boten väntar på en token som klarar alla filter.</div>';
@@ -607,7 +632,7 @@ $('c-eq').addEventListener('mouseleave', () => { $('tip').style.display = 'none'
 $('c-eq').addEventListener('touchmove', e => hover(e.touches[0]), {passive: true});
 (async function init() {
   await load(); await livePrices(); render();
-  setInterval(() => load().then(render), 60_000);
+  setInterval(() => load().then(render), tok.get() ? 30_000 : 60_000);
   setInterval(() => livePrices().then(render), 10_000);
   setInterval(checkPending, 10_000);
   setInterval(() => { if (S.st) $('days-run').textContent = `${fmt((Date.now() - new Date(S.st.started)) / 864e5, 1)} dagar sedan start`; }, 30_000);

@@ -448,7 +448,32 @@ def step_all(state_dir: str | Path, now: float | None = None, http=None, log=pri
         except Exception as e:                         # noqa: BLE001  one book must not stop the others
             log(f'meme[{b}] failed: {e!r}')
     try:
+        write_live(state_dir, now)
+    except Exception as e:                             # noqa: BLE001
+        log(f'meme live file failed: {e!r}')
+    try:
         shadow.update(state_dir, m, now, log=log)
     except Exception as e:                             # noqa: BLE001
         log(f'meme shadow failed: {e!r}')
     return out.get('66') or {'net': None, 'avg_share': None}
+
+
+LIVE_FILE = 'live.json'
+LIVE_CLOSED_S = 1800
+
+
+def write_live(state_dir, now: float) -> None:
+    """Small file pushed every minute (the full books only every 10): open positions and trades closed in the
+    last 30 minutes per book, without price trails, so the dashboard shows a stop within about a minute."""
+    d, out = Path(state_dir), {}
+    for b, R in BOOKS.items():
+        st = load(d / R['file'], None)
+        if not st:
+            continue
+        strip = lambda p: {k: v for k, v in p.items() if k != 'trail'}
+        recent = [strip(p) for p in st['closed'][-20:]
+                  if datetime.fromisoformat(p['closed']).timestamp() >= now - LIVE_CLOSED_S]
+        out[b] = {'last_run': st.get('last_run'), 'cash': st['cash'], 'open': [strip(p) for p in st['open']],
+                  'closed_recent': recent, 'equity': (st.get('history') or [{}])[-1].get('equity')}
+    (d / LIVE_FILE).write_text(json.dumps({'ts': datetime.fromtimestamp(now, timezone.utc).isoformat(), 'books': out},
+                                          separators=(',', ':'), default=str))

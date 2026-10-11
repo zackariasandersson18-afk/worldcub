@@ -2,32 +2,8 @@
  "started": "2026-10-11T15:45:16.964945+00:00",
  "trial": 66,
  "start_kr": 5000.0,
- "cash": 5577.787157477845,
+ "cash": 6057.383436665011,
  "open": [
-  {
-   "pool": "6iep3EgqksbZwgzMBCyAJtiVtVYkCgL9BnPBEwLR8AGQ",
-   "mint": "33jENUQnjoitkMFpvNJcSHyLAHFWJuHwT6E3E8CNpump",
-   "name": "DOPE / SOL",
-   "opened": "2026-10-11T16:46:54.440343+00:00",
-   "opened_ts": 1791737214.4403434,
-   "entry": 0.0004245133017817797,
-   "entry_seen": 0.0004161895115507644,
-   "stake": 250.0,
-   "stake_left": 125.0,
-   "peak": 0.001781,
-   "last": 0.001584,
-   "half_sold": true,
-   "realised": 321.173681549528,
-   "liq_at_entry": 67205.1351,
-   "missing": 0,
-   "events": [
-    {
-     "ts": "2026-10-11T17:45:17.507261+00:00",
-     "what": "sold half at 2x",
-     "kr": 321.17
-    }
-   ]
-  },
   {
    "pool": "EdV32pDiDmuFSsEbA9DB97VziSfSRXDdUQ7WCPRJwzEP",
    "mint": "FdZRSoq4MfUPkqAi8mipJ9UaFYu8gfDCwCfw76YZpump",
@@ -39,11 +15,46 @@
    "stake": 250.0,
    "stake_left": 250.0,
    "peak": 0.000141,
-   "last": 7.029e-05,
+   "last": 9.098e-05,
    "half_sold": false,
    "realised": 0.0,
    "liq_at_entry": 26126.6602,
-   "missing": 0
+   "missing": 0,
+   "trail": [
+    [
+     1791746651,
+     8.706e-05
+    ],
+    [
+     1791746663,
+     8.706e-05
+    ],
+    [
+     1791746719,
+     8.827e-05
+    ],
+    [
+     1791746779,
+     8.973e-05
+    ],
+    [
+     1791746849,
+     9.059e-05
+    ],
+    [
+     1791746906,
+     9.059e-05
+    ],
+    [
+     1791746960,
+     9.059e-05
+    ],
+    [
+     1791747022,
+     9.098e-05
+    ]
+   ],
+   "liq_now": 27122.32
   }
  ],
  "closed": [
@@ -126,16 +137,65 @@
    "reason": "stop -40 %",
    "pnl": -140.54,
    "won": false
+  },
+  {
+   "pool": "6iep3EgqksbZwgzMBCyAJtiVtVYkCgL9BnPBEwLR8AGQ",
+   "mint": "33jENUQnjoitkMFpvNJcSHyLAHFWJuHwT6E3E8CNpump",
+   "name": "DOPE / SOL",
+   "opened": "2026-10-11T16:46:54.440343+00:00",
+   "opened_ts": 1791737214.4403434,
+   "entry": 0.0004245133017817797,
+   "entry_seen": 0.0004161895115507644,
+   "stake": 250.0,
+   "stake_left": 0.0,
+   "peak": 0.001781,
+   "last": 0.001662,
+   "half_sold": true,
+   "realised": 800.769960736694,
+   "liq_at_entry": 67205.1351,
+   "missing": 0,
+   "events": [
+    {
+     "ts": "2026-10-11T17:45:17.507261+00:00",
+     "what": "sold half at 2x",
+     "kr": 321.17
+    }
+   ],
+   "trail": [
+    [
+     1791746651,
+     0.001728
+    ],
+    [
+     1791746663,
+     0.001728
+    ],
+    [
+     1791746719,
+     0.001703
+    ],
+    [
+     1791746779,
+     0.001662
+    ]
+   ],
+   "liq_now": 140250.59,
+   "closed": "2026-10-11T19:26:19.605919+00:00",
+   "exit_price": 0.001662,
+   "reason": "manuellt st\u00e4ngd",
+   "pnl": 550.77,
+   "won": true,
+   "manual": true
   }
  ],
  "seen": [
-  "33jENUQnjoitkMFpvNJcSHyLAHFWJuHwT6E3E8CNpump",
-  "BnhQ3ARhYJZwHNLnfJ7sA1moCFkstWaFsqni94TRpump",
-  "BXuuLQQsHsAjweVvTXHAgJSnTj9MLKpiK5cLP7c3wLxB",
-  "DF2itwPUjUpA41SXY6SBF8iC2uZDvAoJt7gbXhSBA9e",
   "FdZRSoq4MfUPkqAi8mipJ9UaFYu8gfDCwCfw76YZpump",
   "GLwKimCH2ds3tFffm3482hdtSkgBGEvXFmXrcxn9e6wW",
-  "FiLRrZ7Bt2HHGfs83RFJdGmp3mLceycq3zkDN6Apump"
+  "33jENUQnjoitkMFpvNJcSHyLAHFWJuHwT6E3E8CNpump",
+  "DF2itwPUjUpA41SXY6SBF8iC2uZDvAoJt7gbXhSBA9e",
+  "FiLRrZ7Bt2HHGfs83RFJdGmp3mLceycq3zkDN6Apump",
+  "BXuuLQQsHsAjweVvTXHAgJSnTj9MLKpiK5cLP7c3wLxB",
+  "BnhQ3ARhYJZwHNLnfJ7sA1moCFkstWaFsqni94TRpump"
  ],
  "history": [
   {
@@ -277,16 +337,30 @@
    "cash": 5577.79,
    "open": 2,
    "w": 2986241
+  },
+  {
+   "ts": "2026-10-11T19:29:20.314327+00:00",
+   "equity": 6291.2,
+   "cash": 6057.38,
+   "open": 1,
+   "w": 2986244
+  },
+  {
+   "ts": "2026-10-11T19:30:22.610659+00:00",
+   "equity": 6292.2,
+   "cash": 6057.38,
+   "open": 1,
+   "w": 2986245
   }
  ],
  "skips": {
-  "age": 10594,
-  "buy pressure": 222,
-  "quote": 1122,
-  "liquidity": 329,
+  "age": 11023,
+  "buy pressure": 227,
+  "quote": 1181,
+  "liquidity": 331,
   "price change": 28,
   "volume": 2,
   "danger risk": 2
  },
- "last_run": "2026-10-11T18:57:34.300631+00:00"
+ "last_run": "2026-10-11T19:30:22.610659+00:00"
 }

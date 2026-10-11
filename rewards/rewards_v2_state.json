@@ -314,8 +314,8 @@
   "0x43462bdf6104c5784a50813938d7fd945bbcd8ed3f4d41c9fd4c36434ca49f92": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.375,
-   "share": 1.0,
+   "mid": 0.26,
+   "share": 0.7012448132780088,
    "reward": 15.21120735735465,
    "fills": 0,
    "q": "Will GPT Sol's output price be at or above $15 in 2026?"
@@ -324,7 +324,7 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.23,
-   "share": 0.17733473242392447,
+   "share": 0.12565055762081784,
    "reward": 1.5242803898459463,
    "fills": 0,
    "q": "Will GPT Astra's output price be at or below $25 in 2026?"
@@ -341,8 +341,8 @@
   "0x8ece245b7afe4328ac803cdf84aa2446300200271cb0c36612b4f2169dd293ff": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.318,
-   "share": 1.0,
+   "mid": 0.032,
+   "share": 0.013622218544783814,
    "reward": 7.3823135446232735,
    "fills": 0,
    "q": "Will Caleb Malhotra win the 2026-27 Calder Trophy?"
@@ -350,7 +350,7 @@
   "0xd290d0ce68bea178bc6fcecb04a539702bb603518dc41dfc71e2844dfeb7a99d": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.26,
+   "mid": 0.195,
    "share": 1.0,
    "reward": 11.764420874369911,
    "fills": 0,
@@ -359,7 +359,7 @@
   "0x838d204febc4748544b9d06b05c7e92e93fe4a7729f2b49b353567edca3b80dc": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.425,
+   "mid": 0.465,
    "share": 1.0,
    "reward": 13.763128435410659,
    "fills": 0,
@@ -369,7 +369,7 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.20500000000000002,
-   "share": 0.1215510514416054,
+   "share": 0.038047174738930545,
    "reward": 7.2734975791851975,
    "fills": 0,
    "q": "Will Paulo Dybala (Roma) record the most assists in the 2026-27 Serie A season?"
@@ -3428,17 +3428,30 @@
    "w": 2986222
   },
   {
-   "ts": "2026-10-11T15:53:19.337231+00:00",
-   "dt_h": 0.066,
+   "ts": "2026-10-11T15:59:19.363735+00:00",
+   "dt_h": 0.167,
    "reward_tick": 0.0,
    "reward_total": 107.96,
    "mm_value": -1.05,
    "net": 106.91,
-   "avg_share": 0.7333,
+   "avg_share": 0.6183,
    "n_markets": 9,
    "fills_total": 2,
    "rebalanced": false,
    "w": 2986223
+  },
+  {
+   "ts": "2026-10-11T16:04:19.339175+00:00",
+   "dt_h": 0.083,
+   "reward_tick": 0.0,
+   "reward_total": 107.96,
+   "mm_value": -1.05,
+   "net": 106.91,
+   "avg_share": 0.5755,
+   "n_markets": 9,
+   "fills_total": 2,
+   "rebalanced": false,
+   "w": 2986224
   }
  ],
  "fills": [
@@ -3462,7 +3475,7 @@
   }
  ],
  "reward_total": 107.96195052965825,
- "last_ts": 1791733999.3372314,
+ "last_ts": 1791734659.339175,
  "chosen_at": 1791677342.7947838,
  "rebalances": [
   {
@@ -3479,8 +3492,8 @@
   }
  ],
  "last_tick": {
-  "ts": "2026-10-11T15:53:19.337231+00:00",
-  "dt_h": 0.016,
+  "ts": "2026-10-11T16:04:19.339175+00:00",
+  "dt_h": 0.017,
   "markets": [
    {
     "q": "Will GPT Sol's output price be at or below $5 in 2",
@@ -3498,15 +3511,15 @@
    },
    {
     "q": "Will GPT Sol's output price be at or above $15 in ",
-    "mid": 0.375,
-    "share": 1.0,
+    "mid": 0.26,
+    "share": 0.7012,
     "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will GPT Astra's output price be at or below $25 i",
     "mid": 0.23,
-    "share": 0.1773,
+    "share": 0.1257,
     "earned": 0.0,
     "inv": 0.0
    },
@@ -3519,21 +3532,21 @@
    },
    {
     "q": "Will Caleb Malhotra win the 2026-27 Calder Trophy?",
-    "mid": 0.318,
-    "share": 1.0,
+    "mid": 0.032,
+    "share": 0.0136,
     "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will global temperature increase by between 1.35\u00baC",
-    "mid": 0.26,
+    "mid": 0.195,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will Morena win the most seats in the 2027 Campech",
-    "mid": 0.425,
+    "mid": 0.465,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -3541,7 +3554,7 @@
    {
     "q": "Will Paulo Dybala (Roma) record the most assists i",
     "mid": 0.205,
-    "share": 0.1216,
+    "share": 0.038,
     "earned": 0.0,
     "inv": 0.0
    }
@@ -3550,7 +3563,7 @@
   "reward_total": 107.96,
   "mm_value": -1.05,
   "net": 106.91,
-  "avg_share": 0.7333,
+  "avg_share": 0.5755,
   "n_markets": 9,
   "fills_total": 2,
   "rebalanced": false

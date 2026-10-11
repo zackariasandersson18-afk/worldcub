@@ -296,9 +296,9 @@
   "0x2e1d12640524b792ae728c785e79a31144f5242e43fba6ace0452e6aff55f67f": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.31,
+   "mid": 0.32,
    "share": 1.0,
-   "reward": 0.34041945249946026,
+   "reward": 0.5721224067387757,
    "fills": 0,
    "q": "Will GPT Sol's output price be at or below $5 in 2026?"
   },
@@ -307,7 +307,7 @@
    "cash": 0.0,
    "mid": 0.295,
    "share": 1.0,
-   "reward": 0.36810696588622194,
+   "reward": 0.654739255927227,
    "fills": 0,
    "q": "Will the next Fable model (5.2+) debut with a Humanity's Last Exam score of 60% "
   },
@@ -316,16 +316,16 @@
    "cash": 0.0,
    "mid": 0.255,
    "share": 1.0,
-   "reward": 0.36810696588622194,
+   "reward": 0.654739255927227,
    "fills": 0,
    "q": "Will GPT Sol's output price be at or above $15 in 2026?"
   },
   "0x7f3fb04a30c4d70ddae82b9e2f81cec6f07180574d3633ad6a7fce11b3396156": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.25,
-   "share": 1.0,
-   "reward": 0.24820831406429092,
+   "mid": 0.275,
+   "share": 0.3976470588235299,
+   "reward": 0.5114415366282191,
    "fills": 0,
    "q": "Will GPT Astra's output price be at or below $25 in 2026?"
   },
@@ -334,16 +334,16 @@
    "cash": 0.0,
    "mid": 0.45999999999999996,
    "share": 1.0,
-   "reward": 0.28528289856182204,
+   "reward": 0.5074229233436011,
    "fills": 0,
    "q": "Will global temperature increase by between 1.40\u00baC and 1.44\u00baC in October 2026?"
   },
   "0x8ece245b7afe4328ac803cdf84aa2446300200271cb0c36612b4f2169dd293ff": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.164,
+   "mid": 0.163,
    "share": 1.0,
-   "reward": 0.39194416505871,
+   "reward": 0.6069183825894638,
    "fills": 0,
    "q": "Will Caleb Malhotra win the 2026-27 Calder Trophy?"
   },
@@ -352,16 +352,16 @@
    "cash": 0.0,
    "mid": 0.39,
    "share": 1.0,
-   "reward": 0.2194390879240301,
+   "reward": 0.4129158837017086,
    "fills": 0,
    "q": "Will global temperature increase by between 1.35\u00baC and 1.39\u00baC in October 2026?"
   },
   "0x838d204febc4748544b9d06b05c7e92e93fe4a7729f2b49b353567edca3b80dc": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.45,
+   "mid": 0.46,
    "share": 1.0,
-   "reward": 0.18405348294311097,
+   "reward": 0.3273696279636135,
    "fills": 0,
    "q": "Will Morena win the most seats in the 2027 Campeche Congress election?"
   },
@@ -370,7 +370,7 @@
    "cash": 0.0,
    "mid": 0.255,
    "share": 1.0,
-   "reward": 0.15592615647448435,
+   "reward": 0.23062165572963378,
    "fills": 0,
    "q": "Will Paulo Dybala (Roma) record the most assists in the 2026-27 Serie A season?"
   }
@@ -2245,17 +2245,30 @@
    "w": 2986131
   },
   {
-   "ts": "2026-10-11T00:43:20.776395+00:00",
-   "dt_h": 0.064,
-   "reward_tick": 0.5116,
-   "reward_total": 4.42,
+   "ts": "2026-10-11T00:49:32.150142+00:00",
+   "dt_h": 0.167,
+   "reward_tick": 1.653,
+   "reward_total": 5.56,
    "mm_value": -1.05,
-   "net": 3.37,
+   "net": 4.51,
    "avg_share": 1.0,
    "n_markets": 9,
    "fills_total": 2,
    "rebalanced": false,
    "w": 2986132
+  },
+  {
+   "ts": "2026-10-11T00:53:39.902142+00:00",
+   "dt_h": 0.069,
+   "reward_tick": 0.7754,
+   "reward_total": 6.34,
+   "mm_value": -1.05,
+   "net": 5.29,
+   "avg_share": 0.9331,
+   "n_markets": 9,
+   "fills_total": 2,
+   "rebalanced": false,
+   "w": 2986133
   }
  ],
  "fills": [
@@ -2278,8 +2291,8 @@
    "ledger": "v2"
   }
  ],
- "reward_total": 4.423252801224693,
- "last_ts": 1791679400.7763953,
+ "reward_total": 6.340056240475809,
+ "last_ts": 1791680019.9021418,
  "chosen_at": 1791677342.7947838,
  "rebalances": [
   {
@@ -2296,78 +2309,78 @@
   }
  ],
  "last_tick": {
-  "ts": "2026-10-11T00:43:20.776395+00:00",
-  "dt_h": 0.047,
+  "ts": "2026-10-11T00:53:39.902142+00:00",
+  "dt_h": 0.017,
   "markets": [
    {
     "q": "Will GPT Sol's output price be at or below $5 in 2",
-    "mid": 0.31,
+    "mid": 0.32,
     "share": 1.0,
-    "earned": 0.0778,
+    "earned": 0.0281,
     "inv": 0.0
    },
    {
     "q": "Will the next Fable model (5.2+) debut with a Huma",
     "mid": 0.295,
     "share": 1.0,
-    "earned": 0.0778,
+    "earned": 0.0281,
     "inv": 0.0
    },
    {
     "q": "Will GPT Sol's output price be at or above $15 in ",
     "mid": 0.255,
     "share": 1.0,
-    "earned": 0.0778,
+    "earned": 0.0281,
     "inv": 0.0
    },
    {
     "q": "Will GPT Astra's output price be at or below $25 i",
-    "mid": 0.25,
-    "share": 1.0,
-    "earned": 0.0358,
+    "mid": 0.275,
+    "share": 0.3976,
+    "earned": 0.0112,
     "inv": 0.0
    },
    {
     "q": "Will global temperature increase by between 1.40\u00baC",
     "mid": 0.46,
     "share": 1.0,
-    "earned": 0.0603,
+    "earned": 0.0218,
     "inv": 0.0
    },
    {
     "q": "Will Caleb Malhotra win the 2026-27 Calder Trophy?",
-    "mid": 0.164,
+    "mid": 0.163,
     "share": 1.0,
-    "earned": 0.0583,
+    "earned": 0.0211,
     "inv": 0.0
    },
    {
     "q": "Will global temperature increase by between 1.35\u00baC",
     "mid": 0.39,
     "share": 1.0,
-    "earned": 0.0525,
+    "earned": 0.019,
     "inv": 0.0
    },
    {
     "q": "Will Morena win the most seats in the 2027 Campech",
-    "mid": 0.45,
+    "mid": 0.46,
     "share": 1.0,
-    "earned": 0.0389,
+    "earned": 0.014,
     "inv": 0.0
    },
    {
     "q": "Will Paulo Dybala (Roma) record the most assists i",
     "mid": 0.255,
     "share": 1.0,
-    "earned": 0.0253,
+    "earned": 0.0091,
     "inv": 0.0
    }
   ],
-  "reward_tick": 0.5044,
-  "reward_total": 4.42,
+  "reward_tick": 0.1805,
+  "reward_total": 6.34,
   "mm_value": -1.05,
-  "net": 3.37,
-  "avg_share": 1.0,
+  "net": 5.29,
+  "avg_share": 0.9331,
   "n_markets": 9,
   "fills_total": 2,
   "rebalanced": false

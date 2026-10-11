@@ -24,15 +24,16 @@ def git(repo: Path, *args: str) -> bool:
     return subprocess.run(['git', '-C', str(repo), *args], capture_output=True, text=True).returncode == 0
 
 
-def push(repo: Path, branch: str, log=print) -> bool:
-    git(repo, 'add', '-A')
+def push(repo: Path, branch: str, log=print, only: str | None = None) -> bool:
+    """Commit and push the state branch: everything, or just the file `only` (the memecoin live file every minute)."""
+    git(repo, 'add', only or '-A')
     git(repo, '-c', 'user.name=tradebot', '-c', 'user.email=tradebot@users.noreply.github.com',
-        'commit', '-q', '-m', f'rewards loop {time.strftime("%Y-%m-%dT%H:%MZ", time.gmtime())}')
+        'commit', '-q', '-m', f'{"meme live" if only else "rewards loop"} {time.strftime("%Y-%m-%dT%H:%MZ", time.gmtime())}')
     for _ in range(3):
         if git(repo, 'push', '-q', 'origin', branch):
             return True
         git(repo, 'fetch', '-q', 'origin', branch)
-        git(repo, 'rebase', '-q', f'origin/{branch}')
+        git(repo, 'rebase', '-q', '--autostash', f'origin/{branch}')
     log('state push failed')
     return False
 
@@ -116,6 +117,8 @@ def main(argv=None) -> int:
         if time.time() - pushed >= a.push_every * 60:
             push(Path(a.repo), a.branch)
             pushed = time.time()
+        elif (Path(a.state).parent / 'memebot' / memebot_paper.LIVE_FILE).exists():
+            push(Path(a.repo), a.branch, only=f'memebot/{memebot_paper.LIVE_FILE}')
         time.sleep(max(1.0, 60 - (time.time() - t0)))
     push(Path(a.repo), a.branch)
     return 0

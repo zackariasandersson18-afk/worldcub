@@ -239,3 +239,17 @@ def test_step_all_shares_one_market_and_fills_the_shadow_book(tmp_path):
     paper.step_all(tmp_path, now=t0 + 48 * 3600, http=h, log=lambda *_: None)
     assert not paper.load(tmp_path / 'shadow.json', {})['live'] or all(y['t0'] > t0 for y in paper.load(tmp_path / 'shadow.json', {})['live'])
     assert len(list((tmp_path / 'shadow').glob('*.json'))) == 1
+
+
+def test_live_file_has_open_and_recently_closed_without_trails(tmp_path):
+    t0, price = 1_791_000_000, {'v': 1.0}
+    h = FakeHTTP(routes_for(price, t0))
+    paper.step_all(tmp_path, now=t0, http=h, log=lambda *_: None)
+    price['v'] = 0.5                                               # every book hits its stop
+    paper.step_all(tmp_path, now=t0 + 60, http=h, log=lambda *_: None)
+    live = paper.load(tmp_path / paper.LIVE_FILE, {})
+    assert set(live['books']) == set(paper.BOOKS)
+    b = live['books']['66']
+    assert not b['open'] and b['closed_recent'][0]['reason'] == 'stop -40 %' and 'trail' not in b['closed_recent'][0]
+    paper.step_all(tmp_path, now=t0 + 60 + paper.LIVE_CLOSED_S + 60, http=h, log=lambda *_: None)
+    assert not paper.load(tmp_path / paper.LIVE_FILE, {})['books']['66']['closed_recent']

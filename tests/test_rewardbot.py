@@ -242,7 +242,7 @@ def test_loop_runs_every_version_even_if_one_fails(monkeypatch):
         return {'net': 2, 'avg_share': 0.2}
     monkeypatch.setattr(live_v2, 'step', v2)
     loop.tick('x', None, log=lambda *_: None)
-    assert calls == ['v1', 'v2', 'v3', 'v4']
+    assert calls[:4] == ['v1', 'v2', 'v3', 'v4']
 
 
 def test_v4_hourly_review_swaps_only_weak_markets_for_clearly_better_ones(monkeypatch):

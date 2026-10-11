@@ -2,7 +2,7 @@
  "started": "2026-10-11T15:45:16.964945+00:00",
  "trial": 66,
  "start_kr": 5000.0,
- "cash": 4969.222188231626,
+ "cash": 5066.028614068105,
  "open": [
   {
    "pool": "6iep3EgqksbZwgzMBCyAJtiVtVYkCgL9BnPBEwLR8AGQ",
@@ -14,8 +14,8 @@
    "entry_seen": 0.0004161895115507644,
    "stake": 250.0,
    "stake_left": 125.0,
-   "peak": 0.001498,
-   "last": 0.001498,
+   "peak": 0.001768,
+   "last": 0.001641,
    "half_sold": true,
    "realised": 321.173681549528,
    "liq_at_entry": 67205.1351,
@@ -39,11 +39,35 @@
    "stake": 250.0,
    "stake_left": 250.0,
    "peak": 0.000141,
-   "last": 0.0001046,
+   "last": 0.0001125,
    "half_sold": false,
    "realised": 0.0,
    "liq_at_entry": 26126.6602,
    "missing": 0
+  },
+  {
+   "pool": "5Q4H88BRnBLtrqcB6s7yeoXb5SKjaMaRZ4emATKCHpf5",
+   "mint": "BXuuLQQsHsAjweVvTXHAgJSnTj9MLKpiK5cLP7c3wLxB",
+   "name": "Nuts / SOL",
+   "opened": "2026-10-11T18:04:47.175758+00:00",
+   "opened_ts": 1791741887.1757584,
+   "entry": 8.777591109097058e-05,
+   "entry_seen": 8.60548147950692e-05,
+   "stake": 250.0,
+   "stake_left": 125.0,
+   "peak": 0.0002801,
+   "last": 0.0002801,
+   "half_sold": true,
+   "realised": 346.8064258364783,
+   "liq_at_entry": 24330.1452,
+   "missing": 0,
+   "events": [
+    {
+     "ts": "2026-10-11T18:09:55.829905+00:00",
+     "what": "sold half at 2x",
+     "kr": 346.81
+    }
+   ]
   }
  ],
  "closed": [
@@ -79,6 +103,7 @@
  ],
  "seen": [
   "33jENUQnjoitkMFpvNJcSHyLAHFWJuHwT6E3E8CNpump",
+  "BXuuLQQsHsAjweVvTXHAgJSnTj9MLKpiK5cLP7c3wLxB",
   "DF2itwPUjUpA41SXY6SBF8iC2uZDvAoJt7gbXhSBA9e",
   "FdZRSoq4MfUPkqAi8mipJ9UaFYu8gfDCwCfw76YZpump",
   "GLwKimCH2ds3tFffm3482hdtSkgBGEvXFmXrcxn9e6wW",
@@ -184,21 +209,28 @@
    "w": 2986235
   },
   {
-   "ts": "2026-10-11T18:02:43.019275+00:00",
-   "equity": 5671.47,
-   "cash": 4969.22,
-   "open": 2,
+   "ts": "2026-10-11T18:09:55.829905+00:00",
+   "equity": 6057.32,
+   "cash": 5066.03,
+   "open": 3,
    "w": 2986236
+  },
+  {
+   "ts": "2026-10-11T18:12:55.603977+00:00",
+   "equity": 6220.84,
+   "cash": 5066.03,
+   "open": 3,
+   "w": 2986237
   }
  ],
  "skips": {
-  "age": 7368,
-  "buy pressure": 212,
-  "quote": 803,
-  "liquidity": 317,
+  "age": 7957,
+  "buy pressure": 213,
+  "quote": 876,
+  "liquidity": 329,
   "price change": 27,
   "volume": 2,
   "danger risk": 2
  },
- "last_run": "2026-10-11T18:02:43.019275+00:00"
+ "last_run": "2026-10-11T18:12:55.603977+00:00"
 }

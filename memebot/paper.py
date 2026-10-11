@@ -180,6 +180,8 @@ def step(state_dir: str | Path, now: float | None = None, http=None, log=print) 
         p['missing'] = 0
         px = o['price']
         p['last'], p['peak'] = px, max(p['peak'], px)
+        if o['liq']:
+            p['liq_now'] = o['liq']                    # liquidity in USD right now (shown beside the one at entry)
         r = px / p['entry']
         if not p['half_sold'] and r >= 2:
             got = value(p, px) / 2

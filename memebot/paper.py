@@ -46,6 +46,7 @@ GT = 'https://api.geckoterminal.com/api/v2/networks/solana'
 RC = 'https://api.rugcheck.xyz/v1/tokens'
 DS = 'https://api.dexscreener.com/latest/dex/pairs/solana'
 HISTORY_EVERY_S = 600
+TRAIL_MAX = 2880                                   # one price per minute for 48 h (dashboard chart per trade)
 MARKET_SKIPS = ('quote', 'age', 'liquidity', 'buy pressure', 'volume', 'price change', 'price')
 
 
@@ -153,7 +154,17 @@ def value(p: dict, price: float) -> float:
     return p['stake_left'] * price / p['entry'] * (1 - COST)
 
 
+def track(p: dict, ts: float, price: float) -> None:
+    """Price trail [unix s, USD] for the dashboard's per-trade chart; display only, never read by the rules."""
+    t = p.setdefault('trail', [])
+    t.append([int(ts), float(f'{price:.6g}')])
+    del t[:-TRAIL_MAX]
+
+
 def exit_all(st: dict, p: dict, price: float, why: str, iso: str) -> None:
+    if len(p.get('trail') or []) > 300:              # keep closed trades small: every n-th point plus the last
+        t = p['trail']
+        p['trail'] = t[::len(t) // 250 + 1] + [t[-1]]
     got = value(p, price) if price > 0 else 0.0
     st['cash'] += got
     p['realised'] += got
@@ -184,6 +195,7 @@ def step(state_dir: str | Path, now: float | None = None, http=None, log=print, 
             continue
         p['missing'] = 0
         px = o['price']
+        track(p, now, px)
         if close and p['pool'] in close:
             p['last'] = px
             exit_all(st, p, px, 'manuellt stängd', iso)
@@ -227,7 +239,7 @@ def step(state_dir: str | Path, now: float | None = None, http=None, log=print, 
             st['open'].append({'pool': c['pool'], 'mint': c['mint'], 'name': c['name'], 'opened': iso, 'opened_ts': now,
                                'entry': c['price'] * (1 + COST), 'entry_seen': c['price'], 'stake': STAKE_KR,
                                'stake_left': STAKE_KR, 'peak': c['price'], 'last': c['price'], 'half_sold': False,
-                               'realised': 0.0, 'liq_at_entry': c['liq']})
+                               'realised': 0.0, 'liq_at_entry': c['liq'], 'trail': [[int(now), float(f"{c['price']:.6g}")]]})
             log(f"meme buy {c['name']} at {c['price']:.3g} USD, liquidity {c['liq']:.0f}")
         st['seen'] = list(seen)[-20000:]
     # 3. equity

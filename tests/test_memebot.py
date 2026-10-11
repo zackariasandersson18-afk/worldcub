@@ -86,6 +86,17 @@ def test_manual_close(tmp_path):
     assert c['manual'] and c['reason'] == 'manuellt stängd' and abs(c['realised'] - 250 * 1.5 / 1.02 * 0.98) < 1e-6
 
 
+def test_price_trail_for_chart():
+    p = {'trail': []}
+    for i in range(paper.TRAIL_MAX + 5):
+        paper.track(p, 1000 + 60 * i, 1.234567891)
+    assert len(p['trail']) == paper.TRAIL_MAX and p['trail'][0] == [1000 + 60 * 5, 1.23457]
+    st = {'cash': 0, 'open': [p], 'closed': []}
+    p.update(stake=250, stake_left=250, entry=1.0, realised=0.0)
+    paper.exit_all(st, p, 1.0, 'x', 'iso')
+    assert len(p['trail']) <= 300 and p['trail'][-1][0] == 1000 + 60 * (paper.TRAIL_MAX + 4)
+
+
 def test_close_requests_only_from_owner(monkeypatch):
     from rewardbot import loop
     monkeypatch.setenv('GITHUB_REPOSITORY', 'me/repo')

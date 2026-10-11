@@ -107,6 +107,34 @@ a{color:inherit;text-decoration:none}
 .days .d{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;gap:6px;min-width:0}
 .days .d i{display:block;width:100%;max-width:26px;border-radius:6px 6px 2px 2px}
 .days .d span{font-size:10.5px;color:var(--muted)}
+/* live values + trade detail */
+.row.trade{cursor:pointer;border-radius:12px;transition:background .15s}
+.row.trade:hover{background:rgba(120,140,255,.07)}
+.flash-up{animation:fu 1.2s}.flash-down{animation:fd 1.2s}
+@keyframes fu{0%{background:rgba(34,197,94,.22)}100%{background:transparent}}
+@keyframes fd{0%{background:rgba(239,68,68,.22)}100%{background:transparent}}
+@media (prefers-reduced-motion:reduce){.flash-up,.flash-down{animation:none}}
+.modal{position:fixed;inset:0;z-index:50;display:none;align-items:center;justify-content:center;padding:16px;background:rgba(3,6,18,.72);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.modal.on{display:flex}
+.sheet{width:100%;max-width:760px;max-height:calc(100vh - 32px);overflow:auto;border:1px solid var(--border2);border-radius:22px;padding:18px;
+  background:linear-gradient(180deg,rgba(24,31,68,.96),rgba(12,17,42,.97));box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.sheet .hd{display:flex;align-items:center;gap:12px}
+.sheet .hd .x{margin-left:auto;width:34px;height:34px;border-radius:50%;border:1px solid var(--border);background:var(--card);color:var(--text2);font-size:18px;cursor:pointer}
+.sheet .now{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:14px 0 4px}
+.sheet .now b{font-size:30px;font-weight:800;letter-spacing:-.6px}
+.sheet .chart canvas{height:260px}
+.lv{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));gap:10px;margin-top:14px}
+.lv>div{border:1px solid var(--border);border-radius:14px;padding:11px 12px;background:var(--card2)}
+.lv .k{font-size:11.5px;color:var(--muted);display:flex;align-items:center;gap:6px}
+.lv .k i{width:9px;height:9px;border-radius:3px;flex:none}
+.lv .v{font-size:15px;font-weight:700;margin-top:5px}
+.lv .s{font-size:12px;color:var(--text2);margin-top:2px}
+.lv>.done{opacity:.55}
+.track{position:relative;height:10px;border-radius:999px;margin:22px 4px 6px;background:linear-gradient(90deg,rgba(239,68,68,.55),rgba(120,140,255,.25) 45%,rgba(34,197,94,.6))}
+.track i{position:absolute;top:-5px;width:20px;height:20px;margin-left:-10px;border-radius:50%;background:#fff;box-shadow:0 0 0 4px rgba(155,92,255,.55),0 0 18px rgba(155,92,255,.8);transition:left .6s}
+.track span{position:absolute;top:16px;font-size:11px;color:var(--muted);transform:translateX(-50%);white-space:nowrap}
+.sheet .acts{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+.sheet .acts a{font-size:12.5px;font-weight:600;padding:9px 14px;border-radius:999px;border:1px solid var(--border2);background:var(--card)}
 .foot{color:var(--muted);font-size:12px;line-height:1.6;margin-top:18px}
 </style>
 </head>
@@ -146,7 +174,7 @@ a{color:inherit;text-decoration:none}
 
     <section class="card s6">
       <div class="ch"><h3>Öppna affärer</h3><span class="sub" id="open-sub">—</span></div>
-      <div class="note2" style="color:var(--muted);font-size:12px;margin:-4px 0 6px">"Stäng" öppnar ett färdigt ärende på GitHub – tryck Submit så säljer boten till aktuellt pris inom ungefär en minut. Bara ditt konto godtas.</div>
+      <div class="note2" style="color:var(--muted);font-size:12px;margin:-4px 0 6px">Tryck på en affär för graf, mål och stop-nivå. Värdet uppdateras live var 10:e sekund. "Stäng" öppnar ett färdigt ärende på GitHub – tryck Submit så säljer boten till aktuellt pris inom ungefär en minut. Bara ditt konto godtas.</div>
       <div class="list" id="open"></div>
     </section>
 
@@ -174,10 +202,21 @@ a{color:inherit;text-decoration:none}
   <div class="foot">Virtuell handel med riktiga priser från GeckoTerminal och DexScreener och säkerhetsdata från RugCheck. Regler bestämda innan start (test 66): köper 250 kr i nya Solana-tokens (10 min–6 h gamla) med minst 20 000 $ likviditet, köptryck och stigande pris, och bara om RugCheck inte hittar allvarliga risker, likviditeten är låst och de 10 största ägarna har högst 30 %. Säljer halva vid 2×, allt vid −40 % innan dess, resten vid 5× eller −50 % från toppen, allt efter 48 h. 2 % kostnad per köp och sälj. Försvinner handeln räknas det som total förlust. Kollas varje minut, så ett fall mellan två minuter kan bli större än −40 %. Ingen finansiell rådgivning.</div>
 </div>
 
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="m-name">
+  <div class="sheet">
+    <div class="hd"><div class="av" id="m-av">—</div><div class="title"><b id="m-name">—</b><div id="m-sub">—</div></div><button class="x" id="m-x" aria-label="Stäng rutan">×</button></div>
+    <div class="now"><b id="m-val">—</b><span class="delta" id="m-pnl">—</span><span class="muted" id="m-px">—</span></div>
+    <div class="track" id="m-track"></div>
+    <div class="chart"><canvas id="c-tr" height="260" aria-label="Pris sedan köp med mål och stop"></canvas><div class="tip" id="tip2"></div></div>
+    <div class="lv" id="m-lv"></div>
+    <div class="acts" id="m-acts"></div>
+  </div>
+</div>
+
 <script>
 'use strict';
 const CFG = {repo: 'zackariasandersson18-afk/worldcub', START: 5000};
-const S = {st: null, pts: []};
+const S = {st: null, pts: [], live: {}, liveTs: null, prev: {}, sel: null, tpts: []};
 const $ = id => document.getElementById(id);
 const nf = d => new Intl.NumberFormat('sv-SE', {minimumFractionDigits: d, maximumFractionDigits: d});
 const fmt = (x, d = 0) => x == null || !isFinite(x) ? '—' : nf(d).format(x);
@@ -195,6 +234,25 @@ async function load() {
   try { const c = await getJSON(`https://api.github.com/repos/${CFG.repo}/commits/rewards-state`); S.st = await getJSON(`https://raw.githubusercontent.com/${CFG.repo}/${c.sha}/memebot/memebot_state.json`); return; } catch {}
   try { S.st = await getJSON(`https://raw.githubusercontent.com/${CFG.repo}/rewards-state/memebot/memebot_state.json`); } catch {}
 }
+
+// ---- live prices straight from DexScreener every 10 s (the bot itself still decides once a minute)
+async function livePrices() {
+  const pools = (S.st?.open || []).map(p => p.pool);
+  if (!pools.length) return;
+  try {
+    for (let i = 0; i < pools.length; i += 30) {
+      const d = await getJSON(`https://api.dexscreener.com/latest/dex/pairs/solana/${pools.slice(i, i + 30).join(',')}`);
+      for (const q of d.pairs || []) {
+        const px = +q.priceUsd;
+        if (!(px > 0)) continue;
+        const L = S.live[q.pairAddress] ||= {trail: []};
+        L.price = px; L.liq = +(q.liquidity?.usd || 0) || null; L.trail.push([Date.now() / 1000, px]); L.trail = L.trail.slice(-2000);
+      }
+    }
+    S.liveTs = new Date();
+  } catch {}
+}
+const pxOf = p => S.live[p.pool]?.price || p.last;
 
 // ---- equity area chart: one series (no legend), 2px line, gradient fill, crosshair + tooltip
 function chart(hist) {
@@ -239,13 +297,103 @@ function ring(w, l, o) {
     (tot ? seg(w, 'var(--good)', 0) + seg(l, 'var(--bad)', w) + seg(o, 'var(--a1)', w + l) : '');
 }
 
+const closeUrl = p => `https://github.com/${CFG.repo}/issues/new?title=${encodeURIComponent('memebot: stäng ' + p.pool)}&body=${encodeURIComponent(
+  `Stäng ${p.name} (köpt ${p.opened.slice(0, 16).replace('T', ' ')} UTC) till aktuellt pris.\n\nTryck på "Submit new issue". Boten stänger affären inom ungefär en minut och svarar här.`)}`;
+const usd = x => !(x > 0) ? '—' : '$' + (x >= 1 ? fmt(x, x >= 100 ? 0 : 2) : x.toPrecision(3).replace(/e-(\d+)/, (m, e) => `e−${e}`).replace('.', ','));
+const pct = x => (x >= 0 ? '+' : '−') + fmt(Math.abs(x) * 100, Math.abs(x) < 0.1 ? 1 : 0) + ' %';
+const when = iso => new Date(iso).toLocaleString('sv-SE', {weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit'});
+
+// levels the bot acts on, in USD; ratios are against the entry price including the 2 % buy cost, exactly like the bot
+function levels(p) {
+  const E = p.entry, L = [];
+  L.push({k: 'Mål 1 · sälj halva', at: 2 * E, col: '--good', done: p.half_sold});
+  L.push({k: 'Mål 2 · sälj resten', at: 5 * E, col: '--good', done: false, after: !p.half_sold});
+  if (!p.half_sold) L.push({k: 'Stop · sälj allt (−40 %)', at: 0.6 * E, col: '--bad'});
+  else L.push({k: 'Stop · −50 % från toppen', at: 0.5 * Math.max(p.peak, pxOf(p)), col: '--bad'});
+  return L;
+}
+
+function detail() {
+  const p = (S.st?.open || []).find(x => x.pool === S.sel);
+  if (!p) { closeDetail(); return; }
+  const px = pxOf(p), v = val(p, px) + (p.realised || 0), d = v - p.stake, r = px / p.entry;
+  $('m-av').textContent = sym(p.name).slice(0, 2).toUpperCase();
+  $('m-name').textContent = String(p.name || '?');
+  $('m-sub').textContent = `köpt ${when(p.opened)} · ${ago(p.opened)} · insats ${kr(p.stake)}`;
+  $('m-val').textContent = kr(v, 2);
+  $('m-pnl').className = 'delta ' + (d >= 0 ? 'up' : 'down');
+  $('m-pnl').textContent = `${d >= 0 ? '▲' : '▼'} ${skr(d, 2)} · ${pct(v / p.stake - 1)}`;
+  $('m-px').textContent = `pris ${usd(px)} · ${fmt(r, 2)}× köppriset${S.live[p.pool]?.price ? ` · live ${S.liveTs.toLocaleTimeString('sv-SE')}` : ' · senaste minutmätning'}`;
+  const L = levels(p), stop = L.find(l => l.col === '--bad'), goal = L.find(l => !l.done && !l.after);
+  // progress track: stop on the left, next goal on the right, log scale so -40 % and 2x feel equally far
+  const lo = Math.log(stop.at), hi = Math.log(goal.at), f = Math.min(1, Math.max(0, (Math.log(px) - lo) / (hi - lo)));
+  const fe = Math.min(1, Math.max(0, (Math.log(p.entry) - lo) / (hi - lo)));
+  $('m-track').innerHTML = `<i style="left:${f * 100}%" title="nu"></i><span style="left:0;transform:none">stop ${usd(stop.at)}</span>` +
+    (fe > .15 && fe < .85 ? `<span style="left:${fe * 100}%">köp</span>` : '') + `<span style="left:100%;transform:translateX(-100%)">${goal.k.split(' · ')[0].toLowerCase()} ${usd(goal.at)}</span>`;
+  const left = 48 * 3600 - (Date.now() / 1000 - p.opened_ts);
+  const cards = [
+    {k: 'Köpt', col: '--text2', v: when(p.opened), s: `${usd(p.entry_seen)} (${usd(p.entry)} med 2 % kostnad) · likviditet ${liq(p.liq_at_entry)}`},
+    ...L.map(l => ({k: l.k, col: l.col, done: l.done, v: usd(l.at),
+      s: l.done ? 'klart – halva är redan såld' : l.after ? `gäller efter mål 1 · ${pct(l.at / px - 1)} härifrån` :
+        l.col === '--bad' ? `priset måste falla ${pct(l.at / px - 1)} härifrån` : `priset måste stiga ${pct(l.at / px - 1)} härifrån`})),
+    {k: 'Tidsgräns · sälj allt', col: '--warn', v: left > 0 ? `${fmt(Math.floor(left / 3600))} h ${fmt(Math.floor(left % 3600 / 60))} min kvar` : 'nu', s: `48 h efter köp · ${when(new Date((p.opened_ts + 48 * 3600) * 1000))}`},
+  ];
+  $('m-lv').innerHTML = cards.map(c => `<div class="${c.done ? 'done' : ''}"><div class="k"><i style="background:var(${c.col})"></i>${esc(c.k)}</div><div class="v">${esc(c.v)}</div><div class="s">${esc(c.s)}</div></div>`).join('');
+  $('m-acts').innerHTML = `<a href="https://dexscreener.com/solana/${esc(p.pool)}" target="_blank" rel="noopener">Öppna på DexScreener ↗</a>` +
+    `<a href="${closeUrl(p)}" target="_blank" rel="noopener" style="color:#fca5a5;border-color:rgba(239,68,68,.4)">Stäng affären</a>`;
+  tradeChart(p, L);
+}
+
+function tradeChart(p, L) {
+  const cv = $('c-tr'), dpr = Math.min(devicePixelRatio || 1, 2), w = cv.clientWidth, h = 260;
+  cv.width = w * dpr; cv.height = h * dpr;
+  const g = cv.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); g.clearRect(0, 0, w, h);
+  const live = S.live[p.pool]?.trail || [], t0 = p.opened_ts;
+  let pts = [[t0, p.entry_seen || p.entry], ...(p.trail || []), ...live].filter(x => x[0] >= t0 && x[1] > 0).sort((a, b) => a[0] - b[0]);
+  if (pts.length < 2) pts = [[t0, p.entry_seen || p.entry], [Date.now() / 1000, pxOf(p)]];
+  const shown = L.filter(l => !l.after), vals = [...pts.map(x => x[1]), ...shown.map(l => l.at), p.entry];
+  const lo = Math.log(Math.min(...vals)) - .08, hi = Math.log(Math.max(...vals)) + .08, padR = 74, padY = 14;
+  const ta = pts[0][0], tb = Math.max(pts[pts.length - 1][0], ta + 60);
+  const X = t => (t - ta) / (tb - ta) * (w - padR), Y = v => padY + (hi - Math.log(v)) / (hi - lo) * (h - 2 * padY);
+  g.font = '11px Inter, system-ui, sans-serif'; g.textAlign = 'left';
+  const hline = (v, col, label, dash) => {
+    g.strokeStyle = col; g.setLineDash(dash); g.lineWidth = 1.2; g.beginPath(); g.moveTo(0, Y(v)); g.lineTo(w - padR + 4, Y(v)); g.stroke(); g.setLineDash([]);
+    g.fillStyle = col; g.fillText(label, w - padR + 8, Y(v) + 4);
+  };
+  hline(p.entry, 'rgba(233,237,255,.55)', 'köp', [2, 4]);
+  for (const l of shown) hline(l.at, l.done ? 'rgba(170,179,217,.35)' : css(l.col), l.col === '--bad' ? 'stop' : l.k.startsWith('Mål 1') ? '2× mål' : '5× mål', [6, 4]);
+  // buy marker
+  g.fillStyle = css('--a3'); g.beginPath(); g.arc(X(t0), Y(p.entry_seen || p.entry), 4, 0, 7); g.fill();
+  const line = new Path2D(); pts.forEach(([t, v], i) => i ? line.lineTo(X(t), Y(v)) : line.moveTo(X(t), Y(v)));
+  const area = new Path2D(line); area.lineTo(X(pts[pts.length - 1][0]), h); area.lineTo(X(pts[0][0]), h); area.closePath();
+  const fill = g.createLinearGradient(0, 0, 0, h); fill.addColorStop(0, 'rgba(155,92,255,.30)'); fill.addColorStop(1, 'rgba(79,124,255,0)');
+  g.fillStyle = fill; g.fill(area);
+  const stroke = g.createLinearGradient(0, 0, w, 0); stroke.addColorStop(0, css('--a1')); stroke.addColorStop(1, css('--a2'));
+  g.save(); g.shadowColor = 'rgba(155,92,255,.8)'; g.shadowBlur = 12; g.strokeStyle = stroke; g.lineWidth = 2; g.lineJoin = 'round'; g.stroke(line); g.restore();
+  const [lt, lv] = pts[pts.length - 1];
+  g.fillStyle = '#fff'; g.beginPath(); g.arc(X(lt), Y(lv), 4, 0, 7); g.fill();
+  g.fillStyle = css('--muted'); g.fillText(new Date(t0 * 1000).toLocaleTimeString('sv-SE', {hour: '2-digit', minute: '2-digit'}), 2, h - 2);
+  S.tpts = pts.map(([t, v]) => ({x: X(t), y: Y(v), v, t, r: v / p.entry}));
+}
+function hover2(e) {
+  const tip = $('tip2'), r = $('c-tr').getBoundingClientRect(), x = e.clientX - r.left;
+  if (!S.tpts.length || x < 0 || x > r.width) { tip.style.display = 'none'; return; }
+  const q = S.tpts.reduce((a, b) => Math.abs(b.x - x) < Math.abs(a.x - x) ? b : a);
+  tip.innerHTML = `<b>${usd(q.v)}</b>${fmt(q.r, 2)}× köppriset · ${new Date(q.t * 1000).toLocaleString('sv-SE', {hour: '2-digit', minute: '2-digit', day: 'numeric', month: 'short'})}`;
+  tip.style.display = 'block';
+  tip.style.left = Math.min(Math.max(q.x - tip.offsetWidth / 2, 0), r.width - tip.offsetWidth) + 'px';
+  tip.style.top = Math.max(q.y - 54, 0) + 'px';
+}
+function openDetail(pool) { S.sel = pool; $('modal').classList.add('on'); detail(); $('m-x').focus(); }
+function closeDetail() { S.sel = null; $('modal').classList.remove('on'); }
+
 function render() {
   const st = S.st;
   if (!st) { $('live').textContent = 'väntar på första mätningen'; chart([]); return; }
   const open = st.open || [], closed = st.closed || [];
-  const inOpen = open.reduce((a, p) => a + val(p, p.last), 0), bal = st.cash + inOpen, net = bal - CFG.START;
+  const inOpen = open.reduce((a, p) => a + val(p, pxOf(p)), 0), bal = st.cash + inOpen, net = bal - CFG.START;
   const W = closed.filter(p => p.won).length, L = closed.length - W;
-  $('live').textContent = `live · senast ${String(st.last_run || '').slice(11, 16)} UTC`;
+  $('live').textContent = S.liveTs && open.length ? `live-pris ${S.liveTs.toLocaleTimeString('sv-SE')}` : `live · senast ${String(st.last_run || '').slice(11, 16)} UTC`;
   const days = (Date.now() - new Date(st.started)) / 864e5;
   $('days-run').textContent = `${fmt(days, days < 2 ? 1 : 0)} dagar sedan start`;
   $('bal').innerHTML = `${fmt(bal)}<small>kr</small>`;
@@ -266,14 +414,16 @@ function render() {
   // open positions
   $('open-sub').textContent = `${open.length} av 10`;
   $('open').innerHTML = open.map(p => {
-    const v = val(p, p.last) + (p.realised || 0), r = p.last / p.entry, d = v - p.stake;
-    const close = `https://github.com/${CFG.repo}/issues/new?title=${encodeURIComponent('memebot: stäng ' + p.pool)}&body=${encodeURIComponent(
-      `Stäng ${p.name} (köpt ${p.opened.slice(0, 16).replace('T', ' ')} UTC) till aktuellt pris.\n\nTryck på "Submit new issue". Boten stänger affären inom ungefär en minut och svarar här.`)}`;
-    return `<div class="row"><a href="https://dexscreener.com/solana/${esc(p.pool)}" target="_blank" rel="noopener" class="av">${sym(p.name).slice(0, 2).toUpperCase()}</a>` +
-      `<div class="main"><a href="https://dexscreener.com/solana/${esc(p.pool)}" target="_blank" rel="noopener"><b>${sym(p.name)}</b></a><span>köpt ${ago(p.opened)} · likviditet vid köp <b style="display:inline;font-size:12px;color:var(--text)">${liq(p.liq_at_entry)}</b>${p.liq_now ? ` · nu ${liq(p.liq_now)}` : ''}</span>${p.half_sold ? ' <span class="pill b">halva såld</span>' : ''}</div>` +
-      `<div class="end"><span class="${cls(r - 1)}" style="font-size:13px;font-weight:600">${fmt(r, 2)}×</span><span class="${cls(d)}">${skr(d)}</span></div>` +
+    const px = pxOf(p), v = val(p, px) + (p.realised || 0), r = px / p.entry, d = v - p.stake;
+    const was = S.prev[p.pool]; S.prev[p.pool] = v;
+    const fl = was == null || Math.abs(v - was) < 0.005 ? '' : v > was ? ' flash-up' : ' flash-down';
+    const close = closeUrl(p);
+    return `<div class="row trade${fl}" data-pool="${esc(p.pool)}" tabindex="0" role="button" aria-label="Visa ${sym(p.name)}"><div class="av">${sym(p.name).slice(0, 2).toUpperCase()}</div>` +
+      `<div class="main"><b>${sym(p.name)}</b><span>köpt ${ago(p.opened)} · likviditet vid köp <b style="display:inline;font-size:12px;color:var(--text)">${liq(p.liq_at_entry)}</b>${(S.live[p.pool]?.liq || p.liq_now) ? ` · nu ${liq(S.live[p.pool]?.liq || p.liq_now)}` : ''}</span>${p.half_sold ? ' <span class="pill b">halva såld</span>' : ''}</div>` +
+      `<div class="end"><span style="font-size:13.5px;font-weight:700;color:var(--text)">${kr(v)}</span><span class="${cls(d)}">${skr(d)} · ${fmt(r, 2)}×</span></div>` +
       `<a class="closebtn" href="${close}" target="_blank" rel="noopener" title="Stäng affären till aktuellt pris">Stäng</a></div>`;
   }).join('') || '<div class="empty">Inga öppna affärer just nu – boten väntar på en token som klarar alla filter.</div>';
+  if (S.sel) detail();
   // live feed from buys, half sales and exits
   const ev = [];
   for (const p of [...open, ...closed]) {
@@ -308,12 +458,21 @@ function render() {
   $('skips').innerHTML = sk.map(([k, v]) => `<div class="b"><span>${esc(names[k] || k)}</span><div class="t"><i style="width:${v / top * 100}%"></i></div><span class="n">${fmt(v)}</span></div>`).join('') ||
     '<div class="empty">Inget bortvalt än.</div>';
 }
+$('open').addEventListener('click', e => { if (e.target.closest('a')) return; const r = e.target.closest('[data-pool]'); if (r) openDetail(r.dataset.pool); });
+$('open').addEventListener('keydown', e => { const r = e.target.closest('[data-pool]'); if (r && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); openDetail(r.dataset.pool); } });
+$('m-x').addEventListener('click', closeDetail);
+$('modal').addEventListener('click', e => { if (e.target === $('modal')) closeDetail(); });
+addEventListener('keydown', e => { if (e.key === 'Escape') closeDetail(); });
+$('c-tr').addEventListener('mousemove', hover2);
+$('c-tr').addEventListener('mouseleave', () => { $('tip2').style.display = 'none'; });
+$('c-tr').addEventListener('touchmove', e => hover2(e.touches[0]), {passive: true});
 $('c-eq').addEventListener('mousemove', hover);
 $('c-eq').addEventListener('mouseleave', () => { $('tip').style.display = 'none'; });
 $('c-eq').addEventListener('touchmove', e => hover(e.touches[0]), {passive: true});
 (async function init() {
-  await load(); render();
+  await load(); await livePrices(); render();
   setInterval(() => load().then(render), 60_000);
+  setInterval(() => livePrices().then(render), 10_000);
   setInterval(() => { if (S.st) $('days-run').textContent = `${fmt((Date.now() - new Date(S.st.started)) / 864e5, 1)} dagar sedan start`; }, 30_000);
   addEventListener('resize', render);
 })();

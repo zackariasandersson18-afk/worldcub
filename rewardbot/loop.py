@@ -17,7 +17,7 @@ from pathlib import Path
 import requests
 
 from memebot import paper as memebot_paper
-from rewardbot import live, live_v2
+from rewardbot import census, live, live_v2
 
 
 def git(repo: Path, *args: str) -> bool:
@@ -93,7 +93,8 @@ def tick(state: str, http, log=print) -> None:
                      ('v2', lambda: live_v2.step(state, http=http, log=log, version='v2')),
                      ('v3', lambda: live_v2.step(state, http=http, log=log, version='v3')),
                      ('v4', lambda: live_v2.step(state, http=http, log=log, version='v4')),
-                     ('meme', lambda: meme_tick(state, http, log))):
+                     ('meme', lambda: meme_tick(state, http, log)),
+                     ('census', lambda: census.maybe_run(state, log=log) or {})):
         try:
             t = fn()
             log(f"{time.strftime('%H:%M:%S', time.gmtime())} {name} net {t.get('net')} share {t.get('avg_share')}")

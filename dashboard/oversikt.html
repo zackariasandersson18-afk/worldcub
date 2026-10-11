@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Botöversikt</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* tokens: deep navy surface, glass cards, blue -> violet accent; gain/loss always carry a sign, never colour alone */
+:root{
+  --bg:#060a18; --bg2:#0a1030; --card:rgba(20,27,58,.62); --card2:rgba(28,36,76,.55);
+  --border:rgba(120,140,255,.16); --border2:rgba(150,165,255,.28);
+  --text:#e9edff; --text2:#aab3d9; --muted:#7480ab;
+  --a1:#4f7cff; --a2:#9b5cff; --a3:#22d3ee;
+  --good:#22c55e; --bad:#ef4444; --warn:#f59e0b;
+  --r:18px; color-scheme:dark;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;font-size:14px;-webkit-font-smoothing:antialiased}
+body{min-height:100vh;background:
+  radial-gradient(900px 500px at 15% -10%,rgba(79,124,255,.22),transparent 60%),
+  radial-gradient(800px 500px at 100% 10%,rgba(155,92,255,.20),transparent 60%),
+  radial-gradient(700px 600px at 50% 110%,rgba(34,211,238,.10),transparent 60%),var(--bg)}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1180px;margin:0 auto;padding:18px 16px 40px}
+/* header */
+.top{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.logo{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;font-weight:800;
+  background:linear-gradient(135deg,var(--a1),var(--a2));box-shadow:0 0 24px rgba(155,92,255,.55),inset 0 0 12px rgba(255,255,255,.25)}
+.title b{font-size:17px;letter-spacing:.2px}.title div{color:var(--muted);font-size:12px;margin-top:2px}
+.live{margin-left:auto;display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text2);
+  padding:7px 12px;border:1px solid var(--border);border-radius:999px;background:var(--card)}
+.live i{width:8px;height:8px;border-radius:50%;background:var(--good);box-shadow:0 0 10px var(--good);animation:pulse 2s infinite}
+@keyframes pulse{50%{opacity:.35}}
+@media (prefers-reduced-motion:reduce){.live i{animation:none}}
+.tabs{display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap}
+.tabs a,.tabs b{font-size:12.5px;padding:8px 14px;border-radius:999px;border:1px solid var(--border);background:var(--card);color:var(--text2)}
+.tabs b{color:#fff;font-weight:600;background:linear-gradient(135deg,rgba(79,124,255,.35),rgba(155,92,255,.35));border-color:var(--border2)}
+/* grid + cards */
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+.card{grid-column:span 12;position:relative;border:1px solid var(--border);border-radius:var(--r);padding:18px;
+  background:linear-gradient(180deg,var(--card),rgba(14,19,44,.62));backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  box-shadow:0 10px 40px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.04);min-width:0}
+.ch{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.ch h3{font-size:14.5px;font-weight:600}.ch .sub{color:var(--muted);font-size:12px}
+.ch .more{margin-left:auto;color:var(--muted);font-size:12px}
+@media (min-width:900px){.s8{grid-column:span 8}.s4{grid-column:span 4}.s6{grid-column:span 6}.s3{grid-column:span 3}}
+@media (max-width:899px){.s3{grid-column:span 6}}
+@media (max-width:480px){.tile .v{font-size:19px}.card.tile{padding:14px}.live span{font-size:11px}}
+/* hero */
+.hero .big{font-size:40px;font-weight:800;letter-spacing:-1px;line-height:1.05}
+.hero .big small{font-size:18px;font-weight:600;color:var(--text2);margin-left:6px}
+.delta{display:inline-flex;align-items:center;gap:6px;margin-top:8px;font-size:13px;font-weight:600;padding:4px 10px;border-radius:999px}
+.delta.up{color:var(--good);background:rgba(34,197,94,.12)}.delta.down{color:var(--bad);background:rgba(239,68,68,.12)}
+.muted{color:var(--muted)}
+.chart{position:relative;margin-top:14px}
+.chart canvas{display:block;width:100%;height:220px}
+.tip{position:absolute;pointer-events:none;display:none;padding:8px 10px;border-radius:10px;font-size:12px;white-space:nowrap;
+  background:rgba(10,14,36,.92);border:1px solid var(--border2);box-shadow:0 8px 24px rgba(0,0,0,.4)}
+.tip b{display:block;font-size:13px}
+/* stat tiles */
+.tile .k{color:var(--muted);font-size:12px;display:flex;align-items:center;gap:8px}
+.tile .v{font-size:24px;font-weight:700;margin-top:8px;letter-spacing:-.4px}
+.tile .s{color:var(--text2);font-size:12px;margin-top:4px}
+.ico{width:30px;height:30px;border-radius:10px;display:grid;place-items:center;font-size:14px;flex:none}
+.ico.b{background:rgba(79,124,255,.18);color:#9db4ff;box-shadow:inset 0 0 0 1px rgba(79,124,255,.35)}
+.ico.p{background:rgba(155,92,255,.18);color:#c9a8ff;box-shadow:inset 0 0 0 1px rgba(155,92,255,.35)}
+.ico.c{background:rgba(34,211,238,.15);color:#8ee8f7;box-shadow:inset 0 0 0 1px rgba(34,211,238,.35)}
+.ico.g{background:rgba(34,197,94,.15);color:#86efac;box-shadow:inset 0 0 0 1px rgba(34,197,94,.35)}
+.ico.r{background:rgba(239,68,68,.15);color:#fca5a5;box-shadow:inset 0 0 0 1px rgba(239,68,68,.35)}
+.ico.o{background:rgba(245,158,11,.15);color:#fcd34d;box-shadow:inset 0 0 0 1px rgba(245,158,11,.35)}
+/* donut */
+.donut{display:flex;align-items:center;gap:18px}
+.ring{position:relative;width:118px;height:118px;flex:none}
+.ring svg{transform:rotate(-90deg)}
+.ring .c{position:absolute;inset:0;display:grid;place-items:center;text-align:center}
+.ring .c b{font-size:24px;display:block}.ring .c span{font-size:11px;color:var(--muted)}
+.legend div{display:flex;align-items:center;gap:8px;font-size:13px;margin:6px 0;color:var(--text2)}
+.legend i{width:9px;height:9px;border-radius:50%}
+.legend b{margin-left:auto;color:var(--text);padding-left:18px}
+/* lists */
+.list{display:flex;flex-direction:column}
+.row{display:flex;align-items:center;gap:12px;padding:11px 4px;border-top:1px solid rgba(120,140,255,.08)}
+.row:first-child{border-top:0}
+.row .main{min-width:0;flex:1}
+.row .main b{font-size:13.5px;font-weight:600;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.row .main span{font-size:12px;color:var(--muted)}
+.row .end{text-align:right;font-size:13px;font-weight:600;white-space:nowrap}
+.row .end span{display:block;font-size:11.5px;font-weight:500;color:var(--muted);margin-top:2px}
+.av{width:34px;height:34px;border-radius:11px;display:grid;place-items:center;font-weight:700;font-size:13px;flex:none;
+  background:linear-gradient(135deg,rgba(79,124,255,.35),rgba(155,92,255,.35));box-shadow:inset 0 0 0 1px var(--border2)}
+.pill{display:inline-block;font-size:11px;font-weight:600;padding:3px 9px;border-radius:999px;margin-top:4px}
+.pill.g{color:#86efac;background:rgba(34,197,94,.14)}.pill.r{color:#fca5a5;background:rgba(239,68,68,.14)}
+.pill.o{color:#fcd34d;background:rgba(245,158,11,.14)}.pill.b{color:#9db4ff;background:rgba(79,124,255,.16)}
+.up,.row .end .up{color:var(--good)}.down,.row .end .down{color:var(--bad)}
+.empty{color:var(--muted);font-size:13px;padding:18px 4px;text-align:center}
+/* bars */
+.bars .b{display:grid;grid-template-columns:minmax(0,1fr) 120px 44px;align-items:center;gap:10px;margin:9px 0;font-size:12.5px;color:var(--text2)}
+.bars .t{height:8px;border-radius:999px;background:rgba(120,140,255,.10);overflow:hidden}
+.bars .t i{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--a1),var(--a2))}
+.bars .n{text-align:right;color:var(--text)}
+.days{display:flex;align-items:flex-end;gap:6px;height:130px;margin-top:6px}
+.days .d{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;gap:6px;min-width:0}
+.days .d i{display:block;width:100%;max-width:26px;border-radius:6px 6px 2px 2px}
+.days .d span{font-size:10.5px;color:var(--muted)}
+.foot{color:var(--muted);font-size:12px;line-height:1.6;margin-top:18px}
+
+.botgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(260px,100%),1fr));gap:14px}
+.bot{grid-column:auto;display:block;transition:transform .15s,border-color .15s}
+.bot:hover{transform:translateY(-2px);border-color:var(--border2)}
+.bot .top2{display:flex;align-items:center;gap:10px}
+.bot .top2 b{font-size:14.5px}.bot .top2 span{display:block;color:var(--muted);font-size:12px;margin-top:2px}
+.bot .num{font-size:28px;font-weight:800;letter-spacing:-.6px;margin-top:14px}
+.bot .row2{display:flex;justify-content:space-between;align-items:center;margin-top:6px;font-size:12.5px;color:var(--text2)}
+.spark{display:block;width:100%;height:46px;margin-top:10px}
+.tag{font-size:11px;font-weight:600;padding:3px 9px;border-radius:999px}
+.tag.g{color:#86efac;background:rgba(34,197,94,.14)}.tag.r{color:#fca5a5;background:rgba(239,68,68,.14)}.tag.b{color:#9db4ff;background:rgba(79,124,255,.16)}.tag.o{color:#fcd34d;background:rgba(245,158,11,.14)}
+.total{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <div class="logo">Σ</div>
+    <div class="title"><b>Alla botar</b><div>Hur mycket varje bot har tjänat · virtuella pengar</div></div>
+    <div class="live"><i></i><span id="live">laddar…</span></div>
+  </div>
+  <div class="tabs"><b>Översikt</b><a href="rewards.html">Belöningar</a><a href="memebot.html">Memecoins</a><a href="index.html">Väder 06:00</a><a href="nowcast.html">Nowcast 16:00</a></div>
+
+  <section class="card hero" style="margin-bottom:14px">
+    <div class="total">
+      <div>
+        <div class="ch" style="margin-bottom:6px"><h3>Totalt netto, alla botar</h3><span class="sub">i kronor</span></div>
+        <div class="big" id="total">—</div>
+        <div class="delta" id="total-d">—</div>
+      </div>
+      <div class="legend" style="min-width:220px">
+        <div><i style="background:var(--good)"></i>Botar på plus<b id="nplus">—</b></div>
+        <div><i style="background:var(--bad)"></i>Botar på minus<b id="nminus">—</b></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="botgrid" id="bots"></div>
+
+  <div class="foot">Allt är virtuella pengar mot riktiga marknadspriser. Väderbotarna och belöningsbot version 1 mäts i dollar (1 000 $ var) och räknas om med dagens kurs; version 3 och 4 visas som konton på 10 000 kr; memecoin-boten har 5 000 kr. Totalen är summan av alla botars netto. Siffrorna uppdateras automatiskt. Ingen finansiell rådgivning.</div>
+</div>
+<script>
+'use strict';
+const REPO = 'zackariasandersson18-afk/worldcub';
+const $ = id => document.getElementById(id);
+const nf = d => new Intl.NumberFormat('sv-SE', {minimumFractionDigits: d, maximumFractionDigits: d});
+const fmt = (x, d = 0) => x == null || !isFinite(x) ? '—' : nf(d).format(x);
+const skr = x => x == null || !isFinite(x) ? '—' : (x >= 0 ? '+' : '−') + fmt(Math.abs(x)) + ' kr';
+const cls = v => v > 0 ? 'up' : v < 0 ? 'down' : '';
+const S = {fx: null, files: {}};
+async function getJSON(u) { const r = await fetch(u, {cache: 'no-store'}); if (!r.ok) throw new Error(r.status); return r.json(); }
+async function branchBase(br) {
+  try { const c = await getJSON(`https://api.github.com/repos/${REPO}/commits/${br}`); return `https://raw.githubusercontent.com/${REPO}/${c.sha}/`; }
+  catch { return `https://raw.githubusercontent.com/${REPO}/${br}/`; }
+}
+async function load() {
+  try { S.fx = (await getJSON('https://api.frankfurter.app/latest?from=USD&to=SEK')).rates.SEK; } catch { try { S.fx = (await getJSON('https://open.er-api.com/v6/latest/USD')).rates.SEK; } catch {} }
+  const [rs, ts] = await Promise.all([branchBase('rewards-state'), branchBase('tradebot-state')]);
+  const want = {v1: rs + 'rewards/rewards_state.json', v3: rs + 'rewards/rewards_v3_state.json', v4: rs + 'rewards/rewards_v4_state.json',
+                meme: rs + 'memebot/memebot_state.json', w06: ts + 'weather/weather_state.json', n16: ts + 'nowcast/nowcast_state.json'};
+  await Promise.all(Object.entries(want).map(async ([k, u]) => { try { S.files[k] = await getJSON(u); } catch {} }));
+}
+// one row per bot: net in kronor and a series for the sparkline
+function bots() {
+  const f = S.files, usd = x => S.fx ? x * S.fx : null, out = [];
+  const realNet = x => x.real_net ?? x.net;
+  if (f.v1) out.push({k: 'Belöningar · version 1', s: '24 fasta marknader · 1 000 $', href: 'rewards.html', icon: 'b', i: 'V1',
+    net: usd(realNet(f.v1.history.slice(-1)[0])), series: f.v1.history.map(x => realNet(x)), since: f.v1.started, base: 1000});
+  for (const [k, n, txt] of [['v3', '3', 'byter marknader varje dygn'], ['v4', '4', 'timkontroll av marknader']])
+    if (f[k]) out.push({k: `Belöningar · version ${n}`, s: `${txt} · 10 000 kr`, href: `rewards.html?v=${n}`, icon: 'p', i: 'V' + n,
+      net: f[k].history.slice(-1)[0].net * 10, series: f[k].history.map(x => x.net), since: f[k].started, base: 10000, extra: '⚠ för bra för att vara sant – obekräftat'});
+  if (f.meme) { const st = f.meme, eq = st.history.length ? st.history.slice(-1)[0].equity : 5000;
+    out.push({k: 'Memecoins', s: 'Solana · 5 000 kr', href: 'memebot.html', icon: 'c', i: 'M', net: eq - 5000, series: st.history.map(x => x.equity), since: st.started, base: 5000,
+      extra: `${(st.closed || []).filter(p => p.won).length}/${(st.closed || []).filter(p => !p.won).length} V/F · ${(st.open || []).length} öppna`}); }
+  for (const [k, name, sub, href, i] of [['w06', 'Väder 06:00', 'temperaturmarknader · 1 000 $', 'index.html', '06'], ['n16', 'Nowcast 16:00', 'temperatur sent på dagen · 1 000 $', 'nowcast.html', '16']])
+    if (f[k]) { const h = f[k].history || [], c = f[k].closed || [];
+      out.push({k: name, s: sub, href, icon: 'o', i, net: usd(h.length ? h.slice(-1)[0].equity - 1000 : 0), series: h.map(x => x.equity), since: h[0]?.ts, base: 1000,
+        extra: `${c.filter(p => p.won).length}/${c.filter(p => !p.won).length} V/F`}); }
+  return out;
+}
+function spark(cv, vals, up) {
+  const dpr = Math.min(devicePixelRatio || 1, 2), w = cv.clientWidth, h = 46;
+  cv.width = w * dpr; cv.height = h * dpr; const g = cv.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0);
+  if (vals.length < 2) return;
+  const lo = Math.min(...vals), hi = Math.max(...vals), X = i => i / (vals.length - 1) * w, Y = v => h - 4 - (v - lo) / Math.max(hi - lo, 1e-9) * (h - 8);
+  const p = new Path2D(); vals.forEach((v, i) => i ? p.lineTo(X(i), Y(v)) : p.moveTo(X(i), Y(v)));
+  const a = new Path2D(p); a.lineTo(w, h); a.lineTo(0, h); a.closePath();
+  const f = g.createLinearGradient(0, 0, 0, h); f.addColorStop(0, up ? 'rgba(34,197,94,.28)' : 'rgba(239,68,68,.28)'); f.addColorStop(1, 'rgba(0,0,0,0)');
+  g.fillStyle = f; g.fill(a); g.strokeStyle = up ? '#22c55e' : '#ef4444'; g.lineWidth = 1.8; g.stroke(p);
+}
+function render() {
+  const bs = bots(), known = bs.filter(b => b.net != null), tot = known.reduce((a, b) => a + b.net, 0);
+  $('total').innerHTML = `${tot >= 0 ? '+' : '−'}${fmt(Math.abs(tot))}<small>kr</small>`; $('total').style.color = tot >= 0 ? 'var(--good)' : 'var(--bad)';
+  $('total-d').className = 'delta ' + (tot >= 0 ? 'up' : 'down');
+  $('total-d').textContent = `${tot >= 0 ? '▲' : '▼'} ${known.length} botar · 1 USD = ${S.fx ? fmt(S.fx, 2) : '—'} kr`;
+  $('nplus').textContent = known.filter(b => b.net > 0).length; $('nminus').textContent = known.filter(b => b.net < 0).length;
+  $('live').textContent = 'uppdaterad ' + new Date().toISOString().slice(11, 16) + ' UTC';
+  $('bots').innerHTML = bs.sort((a, b) => (b.net ?? -1e9) - (a.net ?? -1e9)).map((b, k) => {
+    const days = b.since ? (Date.now() - new Date(b.since)) / 864e5 : null;
+    return `<a class="card bot" href="${b.href}"><div class="top2"><div class="ico ${b.icon}" style="width:38px;height:38px;border-radius:12px;font-weight:700;font-size:12px">${b.i}</div>` +
+      `<div><b>${b.k}</b><span>${b.s}</span></div></div>` +
+      `<div class="num ${cls(b.net)}">${skr(b.net)}</div>` +
+      `<div class="row2"><span>${days == null ? '' : fmt(days, days < 2 ? 1 : 0) + ' dagar'}${b.extra ? ' · ' + b.extra : ''}</span>` +
+      `<span class="tag ${b.net > 0 ? 'g' : b.net < 0 ? 'r' : 'b'}">${b.net > 0 ? '▲ plus' : b.net < 0 ? '▼ minus' : '± 0'}</span></div>` +
+      `<canvas class="spark" id="sp${k}"></canvas></a>`;
+  }).join('') || '<div class="empty">Laddar…</div>';
+  bs.forEach((b, k) => spark($('sp' + k), b.series || [], (b.net ?? 0) >= 0));
+}
+(async function init() { await load(); render(); setInterval(() => load().then(render), 120_000); addEventListener('resize', render); })();
+</script>
+</body>
+</html>

@@ -3,302 +3,249 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Rewards desk live</title>
+<title>Rewards desk</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-/* layout: one portrait column of boxed terminal panels, like a trading desk on a phone */
+/* tokens: deep navy surface, glass cards, blue -> violet accent; gain/loss always carry a sign, never colour alone */
 :root{
-  --bg:#000; --panel:#070707; --line:#2a2a2a; --line2:#3a3a3a;
-  --ink:#f2f2f2; --ink2:#a8a8a8; --mute:#6b6b6b;
-  --green:#39ff6a; --red:#ff3b3b; --yellow:#ffd400; --cyan:#3ad7ff; --blue:#2f6bff; --orange:#ff9a1f; --purple:#8a3dff;
-  --mono:'JetBrains Mono',ui-monospace,Menlo,monospace; --pix:'Silkscreen','JetBrains Mono',monospace;
-  color-scheme:dark;
+  --bg:#060a18; --bg2:#0a1030; --card:rgba(20,27,58,.62); --card2:rgba(28,36,76,.55);
+  --border:rgba(120,140,255,.16); --border2:rgba(150,165,255,.28);
+  --text:#e9edff; --text2:#aab3d9; --muted:#7480ab;
+  --a1:#4f7cff; --a2:#9b5cff; --a3:#22d3ee;
+  --good:#22c55e; --bad:#ef4444; --warn:#f59e0b;
+  --r:18px; color-scheme:dark;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{background:var(--bg);color:var(--ink);font-family:var(--mono);font-size:11px}
-body{padding-bottom:28px}
-.wrap{max-width:780px;margin:0 auto;padding:0 8px}
-.up{color:var(--green)} .down{color:var(--red)} .warn{color:var(--yellow)} .cy{color:var(--cyan)} .mute{color:var(--mute)} .ink2{color:var(--ink2)}
-.k9{color:var(--mute);font-size:9px;letter-spacing:1.4px;text-transform:uppercase}
-.badge{display:inline-block;font-size:9px;font-weight:800;padding:2px 6px;letter-spacing:1px}
-.b-green{background:var(--green);color:#000} .b-yellow{background:var(--yellow);color:#000} .b-red{background:var(--red);color:#000} .b-cyan{background:var(--cyan);color:#000}
-
+html,body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;font-size:14px;-webkit-font-smoothing:antialiased}
+body{min-height:100vh;background:
+  radial-gradient(900px 500px at 15% -10%,rgba(79,124,255,.22),transparent 60%),
+  radial-gradient(800px 500px at 100% 10%,rgba(155,92,255,.20),transparent 60%),
+  radial-gradient(700px 600px at 50% 110%,rgba(34,211,238,.10),transparent 60%),var(--bg)}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1180px;margin:0 auto;padding:18px 16px 40px}
 /* header */
-header{display:grid;grid-template-columns:auto minmax(0,1fr) auto auto;align-items:center;gap:12px;padding:10px 0 8px}
-.logo{width:30px;height:30px;background:var(--yellow);color:#000;font-weight:800;display:grid;place-items:center;font-size:15px}
-.brand b{font-size:15px;letter-spacing:1px}
-.brand .s{color:var(--mute);font-size:9px;letter-spacing:1.2px}
-.mid{text-align:center;color:var(--ink2);letter-spacing:2px;font-size:11px}
-.clock{text-align:right}
-.clock .v{font-size:17px;font-weight:800}
-@media (max-width:640px){header{grid-template-columns:auto minmax(0,1fr) auto}.mid{display:none}}
+.top{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.logo{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;font-weight:800;
+  background:linear-gradient(135deg,var(--a1),var(--a2));box-shadow:0 0 24px rgba(155,92,255,.55),inset 0 0 12px rgba(255,255,255,.25)}
+.title b{font-size:17px;letter-spacing:.2px}.title div{color:var(--muted);font-size:12px;margin-top:2px}
+.live{margin-left:auto;display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text2);
+  padding:7px 12px;border:1px solid var(--border);border-radius:999px;background:var(--card)}
+.live i{width:8px;height:8px;border-radius:50%;background:var(--good);box-shadow:0 0 10px var(--good);animation:pulse 2s infinite}
+@keyframes pulse{50%{opacity:.35}}
+@media (prefers-reduced-motion:reduce){.live i{animation:none}}
+.tabs{display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap}
+.tabs a,.tabs b{font-size:12.5px;padding:8px 14px;border-radius:999px;border:1px solid var(--border);background:var(--card);color:var(--text2)}
+.tabs b{color:#fff;font-weight:600;background:linear-gradient(135deg,rgba(79,124,255,.35),rgba(155,92,255,.35));border-color:var(--border2)}
+/* grid + cards */
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+.card{grid-column:span 12;position:relative;border:1px solid var(--border);border-radius:var(--r);padding:18px;
+  background:linear-gradient(180deg,var(--card),rgba(14,19,44,.62));backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  box-shadow:0 10px 40px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.04);min-width:0}
+.ch{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.ch h3{font-size:14.5px;font-weight:600}.ch .sub{color:var(--muted);font-size:12px}
+.ch .more{margin-left:auto;color:var(--muted);font-size:12px}
+@media (min-width:900px){.s8{grid-column:span 8}.s4{grid-column:span 4}.s6{grid-column:span 6}.s3{grid-column:span 3}}
+@media (max-width:899px){.s3{grid-column:span 6}}
+@media (max-width:480px){.tile .v{font-size:19px}.card.tile{padding:14px}.live span{font-size:11px}}
+/* hero */
+.hero .big{font-size:40px;font-weight:800;letter-spacing:-1px;line-height:1.05}
+.hero .big small{font-size:18px;font-weight:600;color:var(--text2);margin-left:6px}
+.delta{display:inline-flex;align-items:center;gap:6px;margin-top:8px;font-size:13px;font-weight:600;padding:4px 10px;border-radius:999px}
+.delta.up{color:var(--good);background:rgba(34,197,94,.12)}.delta.down{color:var(--bad);background:rgba(239,68,68,.12)}
+.muted{color:var(--muted)}
+.chart{position:relative;margin-top:14px}
+.chart canvas{display:block;width:100%;height:220px}
+.tip{position:absolute;pointer-events:none;display:none;padding:8px 10px;border-radius:10px;font-size:12px;white-space:nowrap;
+  background:rgba(10,14,36,.92);border:1px solid var(--border2);box-shadow:0 8px 24px rgba(0,0,0,.4)}
+.tip b{display:block;font-size:13px}
+/* stat tiles */
+.tile .k{color:var(--muted);font-size:12px;display:flex;align-items:center;gap:8px}
+.tile .v{font-size:24px;font-weight:700;margin-top:8px;letter-spacing:-.4px}
+.tile .s{color:var(--text2);font-size:12px;margin-top:4px}
+.ico{width:30px;height:30px;border-radius:10px;display:grid;place-items:center;font-size:14px;flex:none}
+.ico.b{background:rgba(79,124,255,.18);color:#9db4ff;box-shadow:inset 0 0 0 1px rgba(79,124,255,.35)}
+.ico.p{background:rgba(155,92,255,.18);color:#c9a8ff;box-shadow:inset 0 0 0 1px rgba(155,92,255,.35)}
+.ico.c{background:rgba(34,211,238,.15);color:#8ee8f7;box-shadow:inset 0 0 0 1px rgba(34,211,238,.35)}
+.ico.g{background:rgba(34,197,94,.15);color:#86efac;box-shadow:inset 0 0 0 1px rgba(34,197,94,.35)}
+.ico.r{background:rgba(239,68,68,.15);color:#fca5a5;box-shadow:inset 0 0 0 1px rgba(239,68,68,.35)}
+.ico.o{background:rgba(245,158,11,.15);color:#fcd34d;box-shadow:inset 0 0 0 1px rgba(245,158,11,.35)}
+/* donut */
+.donut{display:flex;align-items:center;gap:18px}
+.ring{position:relative;width:118px;height:118px;flex:none}
+.ring svg{transform:rotate(-90deg)}
+.ring .c{position:absolute;inset:0;display:grid;place-items:center;text-align:center}
+.ring .c b{font-size:24px;display:block}.ring .c span{font-size:11px;color:var(--muted)}
+.legend div{display:flex;align-items:center;gap:8px;font-size:13px;margin:6px 0;color:var(--text2)}
+.legend i{width:9px;height:9px;border-radius:50%}
+.legend b{margin-left:auto;color:var(--text);padding-left:18px}
+/* lists */
+.list{display:flex;flex-direction:column}
+.row{display:flex;align-items:center;gap:12px;padding:11px 4px;border-top:1px solid rgba(120,140,255,.08)}
+.row:first-child{border-top:0}
+.row .main{min-width:0;flex:1}
+.row .main b{font-size:13.5px;font-weight:600;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.row .main span{font-size:12px;color:var(--muted)}
+.row .end{text-align:right;font-size:13px;font-weight:600;white-space:nowrap}
+.row .end span{display:block;font-size:11.5px;font-weight:500;color:var(--muted);margin-top:2px}
+.av{width:34px;height:34px;border-radius:11px;display:grid;place-items:center;font-weight:700;font-size:13px;flex:none;
+  background:linear-gradient(135deg,rgba(79,124,255,.35),rgba(155,92,255,.35));box-shadow:inset 0 0 0 1px var(--border2)}
+.pill{display:inline-block;font-size:11px;font-weight:600;padding:3px 9px;border-radius:999px;margin-top:4px}
+.pill.g{color:#86efac;background:rgba(34,197,94,.14)}.pill.r{color:#fca5a5;background:rgba(239,68,68,.14)}
+.pill.o{color:#fcd34d;background:rgba(245,158,11,.14)}.pill.b{color:#9db4ff;background:rgba(79,124,255,.16)}
+.up,.row .end .up{color:var(--good)}.down,.row .end .down{color:var(--bad)}
+.empty{color:var(--muted);font-size:13px;padding:18px 4px;text-align:center}
+/* bars */
+.bars .b{display:grid;grid-template-columns:minmax(0,1fr) 120px 44px;align-items:center;gap:10px;margin:9px 0;font-size:12.5px;color:var(--text2)}
+.bars .t{height:8px;border-radius:999px;background:rgba(120,140,255,.10);overflow:hidden}
+.bars .t i{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--a1),var(--a2))}
+.bars .n{text-align:right;color:var(--text)}
+.days{display:flex;align-items:flex-end;gap:6px;height:130px;margin-top:6px}
+.days .d{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;gap:6px;min-width:0}
+.days .d i{display:block;width:100%;max-width:26px;border-radius:6px 6px 2px 2px}
+.days .d span{font-size:10.5px;color:var(--muted)}
+.foot{color:var(--muted);font-size:12px;line-height:1.6;margin-top:18px}
 
-.banner{color:var(--yellow);font-size:10px;letter-spacing:1px;padding:5px 0;border-top:1px solid var(--line);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.ticker{display:flex;align-items:center;height:24px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;white-space:nowrap;margin-bottom:8px}
-.ticker .tag{flex:none;background:var(--red);color:#fff;font-weight:800;font-size:10px;padding:0 8px;height:100%;display:flex;align-items:center;gap:6px}
-.ticker .tag i{width:6px;height:6px;border-radius:50%;background:#fff;animation:blink 1s infinite}
-.track{flex:1;overflow:hidden;position:relative;height:100%}
-.run{position:absolute;left:0;top:0;height:100%;display:flex;align-items:center;gap:26px;padding-left:16px;animation:marquee 70s linear infinite}
-.run b{color:var(--ink)}
-.foot{position:fixed;left:0;right:0;bottom:0;background:#000;margin:0;z-index:5}
-.foot .run{animation-duration:90s;color:var(--ink2)}
-@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-@keyframes blink{50%{opacity:.2}}
-@media (prefers-reduced-motion:reduce){.run{animation:none}}
-
-/* panels */
-.panel{border:1px solid var(--line2);background:var(--panel);margin-bottom:8px;min-width:0}
-.ph{display:flex;align-items:center;gap:6px;padding:6px 8px;border-bottom:1px solid var(--line);font-size:10px;letter-spacing:1.4px;text-transform:uppercase;font-weight:600;white-space:nowrap;overflow:hidden}
-.ph .r{margin-left:auto;color:var(--ink2);font-weight:400}
-.ph .dot{width:7px;height:7px;background:var(--green)}
-.pb{padding:8px}
-canvas{display:block;width:100%}
-.row3{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:8px}
-.row3 .panel{margin-bottom:8px}
-@media (max-width:640px){.row3{grid-template-columns:1fr}}
-
-/* account */
-.who{display:flex;align-items:center;gap:6px;font-weight:800;font-size:13px}
-.addr{color:var(--mute);font-size:9px;letter-spacing:1px;margin:2px 0 6px}
-.pnl{font-family:var(--pix);font-size:40px;line-height:1;color:var(--green);letter-spacing:-1px;white-space:nowrap}
-.pnl small{font-size:18px;margin-left:4px}
-.kv3{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:8px}
-.kv3 .v{font-family:var(--pix);font-size:17px;margin-top:2px}
-.bar{height:6px;background:#1a1a1a;margin-top:4px}
-.bar i{display:block;height:100%;background:var(--green)}
-
-/* best edge */
-.mult{font-family:var(--pix);font-size:38px;color:var(--yellow);text-align:center;line-height:1.1}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:4px 10px;margin-top:6px;font-size:10px}
-.grid2 .k9{font-size:8.5px}
-
-/* execution cycle */
-.steps{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}
-.step{border:1px solid var(--line2);padding:5px 6px;min-width:0}
-.step .n{color:var(--mute);font-size:9px}
-.step .t{font-weight:800;margin-top:2px}
-.step .d{color:var(--ink2);font-size:9px;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.step.on{color:#000;border-color:transparent}
-.step.on .n,.step.on .d{color:#000}
-@media (max-width:560px){.steps{grid-template-columns:repeat(3,1fr)}}
-
-/* matrix */
-.mx-wrap{display:grid;grid-template-columns:minmax(0,1fr) 120px;gap:8px;align-items:center}
-.mx{width:100%;border-collapse:separate;border-spacing:3px;font-size:10px;font-variant-numeric:tabular-nums}
-.mx th{color:var(--yellow);font-weight:600;font-size:9px;text-align:center;border:1px solid var(--line2);padding:2px}
-.mx td{text-align:center;padding:3px 2px;font-weight:700;color:#000;white-space:nowrap}
-.mx td.city{color:var(--ink);background:none;text-align:left;font-weight:600;border:1px solid var(--line2)}
-.mx td.na{background:#151515;color:var(--mute);font-weight:400}
-.gauge{text-align:center}
-.gauge .lbl{display:grid;grid-template-columns:auto auto;justify-content:space-between;font-size:9px;color:var(--ink2);margin-top:6px;gap:2px 8px}
-@media (max-width:560px){.mx-wrap{grid-template-columns:1fr}}
-
-/* monte carlo */
-.mc{display:grid;grid-template-columns:minmax(0,1fr) 130px;gap:8px}
-.boxes{display:flex;flex-direction:column;gap:6px}
-.box{border:1px solid var(--line2);padding:5px 8px;text-align:right}
-.box .v{font-family:var(--pix);font-size:18px;margin-top:2px}
-@media (max-width:560px){.mc{grid-template-columns:1fr}.boxes{flex-direction:row}.box{flex:1}}
-
-.trades{width:100%;border-collapse:collapse;font-size:10.5px;font-variant-numeric:tabular-nums}
-.trades th{color:var(--mute);font-weight:400;font-size:9px;letter-spacing:1.2px;text-transform:uppercase;text-align:right;padding:4px 6px;border-bottom:1px solid var(--line);white-space:nowrap}
-.trades td{padding:5px 6px;border-bottom:1px solid #161616;text-align:right;white-space:nowrap}
-.trades th:nth-child(-n+3),.trades td:nth-child(-n+3){text-align:left}
-.trades tr.pos:hover td{background:#101010;cursor:pointer}
-.trades .flash-up{animation:fu .9s} .trades .flash-dn{animation:fd .9s}
-@keyframes fu{from{background:rgba(57,255,106,.35)}} @keyframes fd{from{background:rgba(255,59,59,.35)}}
-.tsum{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:8px}
-.tsum .box{text-align:left}
-.tw{overflow-x:auto;max-height:420px;overflow-y:auto}
-@media (max-width:560px){.tsum{grid-template-columns:repeat(2,1fr)}}
-.ctd{width:100%;border-collapse:collapse;font-size:10.5px;font-variant-numeric:tabular-nums}
-.ctd th{color:var(--mute);font-weight:400;font-size:9px;letter-spacing:1.2px;text-transform:uppercase;text-align:right;padding:4px 6px;border-bottom:1px solid var(--line);white-space:nowrap}
-.ctd td{padding:5px 6px;border-bottom:1px solid #161616;text-align:right;white-space:nowrap}
-.ctd th:first-child,.ctd td:first-child{text-align:left}
-<style>
-.ctd{width:100%;border-collapse:collapse;font-size:10.5px;font-variant-numeric:tabular-nums}
-.ctd th{color:var(--mute);font-weight:400;font-size:9px;letter-spacing:1.2px;text-transform:uppercase;text-align:right;padding:4px 6px;border-bottom:1px solid var(--line);white-space:nowrap}
-.ctd td{padding:5px 6px;border-bottom:1px solid #161616;text-align:right;white-space:nowrap}
-.ctd th:first-child,.ctd td:first-child{text-align:left;white-space:normal;min-width:150px}
-@media (max-width:480px){.ctd td,.ctd th{padding:4px 3px}.ctd{font-size:10px}}
-.kv{display:grid;grid-template-columns:1fr auto;gap:3px 10px;font-size:10.5px}
-.kv span{color:var(--ink2)}
-.nav{display:flex;gap:10px;font-size:10px;letter-spacing:1px;padding:4px 0}
-.shbar{display:inline-block;width:46px;height:6px;background:#1a1a1a;vertical-align:middle;margin-left:4px}
-.shbar i{display:block;height:100%;background:var(--green)}
-
-.wlrow{display:flex;align-items:flex-end;gap:14px;flex-wrap:wrap;margin-bottom:8px}
-.wl{font-family:var(--pix);font-size:34px;line-height:1;white-space:nowrap}
-.wl .w{color:var(--green)} .wl .l{color:var(--red)} .wl .s{color:var(--mute);margin:0 2px}
-.wlinfo{font-size:10px;color:var(--ink2);line-height:1.6}
-.filters{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
-.filters button{background:none;border:1px solid var(--line2);color:var(--ink2);font:inherit;font-size:10px;letter-spacing:1px;padding:4px 8px;cursor:pointer}
-.filters button.on{background:var(--yellow);color:#000;border-color:var(--yellow);font-weight:800}
+/* rewards additions */
+.filters{display:flex;gap:6px;flex-wrap:wrap}
+.filters button{font:inherit;font-size:12px;padding:6px 11px;border-radius:999px;border:1px solid var(--border);background:var(--card);color:var(--text2);cursor:pointer}
+.filters button.on{color:#fff;font-weight:600;background:linear-gradient(135deg,rgba(79,124,255,.4),rgba(155,92,255,.4));border-color:var(--border2)}
+.tabs button{font:inherit;font-size:12.5px;padding:8px 14px;border-radius:999px;border:1px solid var(--border);background:var(--card);color:var(--text2);cursor:pointer}
+.tabs button.on{color:#fff;font-weight:600;background:linear-gradient(135deg,rgba(79,124,255,.35),rgba(155,92,255,.35));border-color:var(--border2)}
+.kv{display:grid;grid-template-columns:1fr auto;gap:8px 14px;font-size:13px}
+.kv span{color:var(--muted)}.kv b{font-weight:600;text-align:right}
+.share{height:6px;border-radius:999px;background:rgba(120,140,255,.10);overflow:hidden;margin-top:6px;width:110px}
+.share i{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--a1),var(--a2))}
+.mk .main b{white-space:normal;line-height:1.35}
+.mk .mid{display:flex;flex-direction:column;align-items:flex-end;min-width:118px;font-size:12px;color:var(--text2)}
+@media (max-width:560px){.mk .mid{display:none}}
+.big2{font-size:30px;font-weight:800;letter-spacing:-.6px}
+.mini canvas{display:block;width:100%;height:110px;margin-top:10px}
+.note2{color:var(--muted);font-size:12px;margin-top:10px;line-height:1.5}
 </style>
 </head>
 <body>
 <div class="wrap">
-<header>
-  <div class="logo" id="logo" style="background:var(--green)">$</div>
-  <div class="brand"><b id="brand">TRADEBOT × REWARDS</b><div class="s">POLYMARKET · LIKVIDITETSBELÖNINGAR · VIRTUELL MÄTNING</div></div>
-  <div class="mid">QMIN · MARKET MAKING · pUSD</div>
-  <div class="clock"><div class="v" id="clock">--:--:--</div><div class="k9" id="scanmeta">UTC</div></div>
-</header>
-<div class="nav"><a href="index.html">← väderboten (06:00)</a><span class="mute">·</span><a href="nowcast.html">nowcast 16:00</a><span class="mute">·</span><b class="warn">belöningar</b><span class="mute">·</span><a href="memebot.html">memecoins →</a><span style="margin-left:auto" class="filters" id="ver"><button data-v="v1">VERSION 1</button><button data-v="v3">VERSION 3 · 10 000 KR</button><button data-v="v4">VERSION 4 · 10 000 KR</button></span></div>
-<div class="banner" id="banner">◆ laddar…</div>
-<div class="ticker"><div class="tag"><i></i>LIVE</div><div class="track"><div class="run" id="feed"></div></div></div>
-
-<div class="row3">
-  <section class="panel">
-    <div class="ph">◆ Konto · netto<span class="r"><span class="dot"></span></span></div>
-    <div class="pb">
-      <div class="who">rewards-boten <span class="badge b-yellow">VIRTUELL · MÄTER</span></div>
-      <div class="addr">KAPITAL 1 000 USD · <span id="nmk">—</span> MARKNADER</div>
-      <div class="pnl" id="pnl">—</div>
-      <div class="k9" style="margin-top:4px" id="pnlsub">NETTO SEDAN START</div>
-      <div class="kv3">
-        <div><div class="k9">Belöning</div><div class="v up" id="rew">—</div></div>
-        <div><div class="k9">Market making</div><div class="v" id="mm">—</div></div>
-        <div><div class="k9">Netto senaste 24 h</div><div class="v" id="perday">—</div></div>
-      </div>
-      <div class="kv3">
-        <div><div class="k9">Affärer</div><div class="v" id="fills">—</div></div>
-        <div><div class="k9">Snitt/dag</div><div class="v" id="avgday">—</div></div>
-        <div><div class="k9">Plusdagar</div><div class="v" id="posdays">—</div></div>
-      </div>
-      <div class="k9" style="margin-top:10px">REALISTISKT · SOM MED RIKTIGA PENGAR (SÅ NÄRA PUBLIK DATA TILLÅTER)</div>
-      <div class="kv3">
-        <div><div class="k9">Netto</div><div class="v" id="rnet">—</div></div>
-        <div><div class="k9">Belöning</div><div class="v up" id="rrew">—</div></div>
-        <div><div class="k9">Market making</div><div class="v" id="rmm">—</div></div>
-      </div>
-      <div class="k9" style="margin-top:4px" id="rsub">startar vid nästa mätning</div>
-    </div>
-  </section>
-  <section class="panel">
-    <div class="ph">⚖ Konkurrens just nu</div>
-    <div class="pb"><div class="kv" id="comp"></div></div>
-  </section>
-  <section class="panel">
-    <div class="ph">ⓘ Vad mäts</div>
-    <div class="pb"><div class="kv" id="meta"></div></div>
-  </section>
-</div>
-
-<section class="panel">
-  <div class="ph">▲ Netto över tid · kr<span class="r" id="eq-sub">—</span></div>
-  <div class="pb"><canvas id="c-eq" height="170"></canvas></div>
-</section>
-
-<section class="panel">
-  <div class="ph">◎ Vår andel av belöningen · snitt över portföljen<span class="r" id="sh-sub">—</span></div>
-  <div class="pb"><canvas id="c-sh" height="120"></canvas></div>
-</section>
-
-<section class="panel">
-  <div class="ph">◉ Mina affärer · vinst och förlust<span class="r" id="af-sub">—</span></div>
-  <div class="pb">
-    <div class="wlrow"><div class="wl" id="af-wl">—</div><div class="wlinfo" id="af-info"></div></div>
-    <div class="filters" id="af-led"><button data-v="opt" class="on">OPTIMISTISK</button><button data-v="real">REALISTISK</button></div>
-    <div class="filters" id="af-f"><button data-v="all" class="on">ALLA</button><button data-v="win">I VINST</button><button data-v="loss">I FÖRLUST</button></div>
-    <div class="tw" style="max-height:420px"><table class="ctd" id="af"></table></div>
-    <div class="note" style="padding:6px 0 0">Stora siffran: marknader i vinst / förlust (belöning + market making per marknad). Tabellen: varje fyllt virtuellt bud, värderat mot mittpriset just nu — ett köp vinner om priset gått upp sedan, en sälj om det gått ned. Enskilda affärer sparas från 5 okt.</div>
+  <div class="top">
+    <div class="logo" id="logo">V1</div>
+    <div class="title"><b id="brand">Rewards Desk</b><div id="tagline">Polymarket · likviditetsbelöningar · virtuell mätning</div></div>
+    <div class="live"><i></i><span id="live">laddar…</span></div>
   </div>
-</section>
+  <div class="tabs" id="ver"><button data-v="v1">Version 1</button><button data-v="v3">Version 3 · 10 000 kr</button><button data-v="v4">Version 4 · 10 000 kr</button><a href="memebot.html">Memecoins</a></div>
 
-<section class="panel">
-  <div class="ph">Σ Per dag · vinst och förlust<span class="r" id="day-sub">—</span></div>
-  <div class="tw" style="max-height:420px"><table class="ctd" id="days"></table></div>
-  <div class="note" style="padding:6px 8px" id="day-avg"></div>
-</section>
+  <div class="grid">
+    <section class="card hero s8">
+      <div class="ch"><h3 id="hero-t">Netto sedan start</h3><span class="sub" id="hero-s">realistiskt</span><span class="more" id="days-run">—</span></div>
+      <div class="big" id="bal">—</div>
+      <div class="delta" id="delta">—</div>
+      <div class="note2" id="hero-note"></div>
+      <div class="chart"><canvas id="c-eq" height="220" aria-label="Netto över tid"></canvas><div class="tip" id="tip"></div></div>
+    </section>
 
-<section class="panel">
-  <div class="ph">◉ Marknaderna · live mot orderboken<span class="r" id="tb-sub">—</span></div>
-  <div class="tw" style="max-height:560px"><table class="ctd" id="mk"></table></div>
-</section>
+    <section class="card s4">
+      <div class="ch"><h3>Marknader i vinst / förlust</h3></div>
+      <div class="donut">
+        <div class="ring"><svg width="118" height="118" viewBox="0 0 118 118" id="ring"></svg><div class="c"><div><b id="nmk">—</b><span>marknader</span></div></div></div>
+        <div class="legend">
+          <div><i style="background:var(--good)"></i>I vinst<b id="mw">—</b></div>
+          <div><i style="background:var(--bad)"></i>I förlust<b id="ml">—</b></div>
+          <div><i style="background:var(--a1)"></i>±0<b id="m0">—</b></div>
+        </div>
+      </div>
+      <div class="note2">Belöning + market making per marknad, realistiskt räknat.</div>
+    </section>
 
-<div class="note">Polymarket betalar en daglig pott per marknad till dem som har köp- och säljbud nära mittpriset. Varje minut får ett bud poängen ((v − avstånd)/v)² × storlek, där v är max-avståndet. Potten delas efter poäng. Den här sidan räknar live med samma formel mot de riktiga orderböckerna: vår andel om vi låg med minsta storlek på halva max-avståndet. Market making-delen är virtuella bud som fylls av riktiga affärer. Belöningar betalas bara för riktiga bud, så allt här är uppskattningar. Den realistiska kalkylen är strängare: den använder den lägre av två mätningars andel (konkurrenter kan ha funnits hela tiden), ger ingen belöning om priset rört sig så mycket att budet hade hamnat utanför poängzonen, och räknar att vi blir fyllda redan när någon handlar på vårt pris (fler dåliga affärer). Den kan fortfarande inte se driftstopp, fördröjning eller exakt köplats, så exakt blir det bara med riktiga order. Belöningen betalas i pUSD (Polymarkets dollartoken). Belopp i kronor via ECB:s dagskurs. Ingen finansiell rådgivning.</div>
+    <section class="card tile s3"><div class="k"><span class="ico g">＋</span>Belöning</div><div class="v up" id="rew">—</div><div class="s">intjänad hittills</div></section>
+    <section class="card tile s3"><div class="k"><span class="ico r">⇅</span>Market making</div><div class="v" id="mm">—</div><div class="s" id="mm-s">fyllda bud mot mittpriset</div></section>
+    <section class="card tile s3"><div class="k"><span class="ico b">◷</span>Netto senaste 24 h</div><div class="v" id="n24">—</div><div class="s">uppmätt, inte uppskattat</div></section>
+    <section class="card tile s3"><div class="k"><span class="ico p">Σ</span>Snitt per hel dag</div><div class="v" id="avgday">—</div><div class="s" id="posdays">—</div></section>
+
+    <section class="card s6">
+      <div class="ch"><h3>Konkurrens just nu</h3><span class="sub" id="books-at">—</span></div>
+      <div style="display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap">
+        <div><div class="muted" style="font-size:12px">Vår snittandel av potten</div><div class="big2" id="avgshare">—</div></div>
+        <div class="kv" style="flex:1;min-width:220px" id="comp"></div>
+      </div>
+      <div class="mini"><canvas id="c-sh" height="110" aria-label="Vår andel över tid"></canvas></div>
+    </section>
+
+    <section class="card s6">
+      <div class="ch"><h3>Live-flöde</h3><span class="sub" id="feed-sub">fyllda bud</span></div>
+      <div class="filters" id="af-f" style="margin-bottom:6px"><button data-v="all" class="on">Alla</button><button data-v="win">I vinst</button><button data-v="loss">I förlust</button></div>
+      <div class="list" id="feed" style="max-height:340px;overflow:auto"></div>
+    </section>
+
+    <section class="card s8">
+      <div class="ch"><h3>Resultat per dag</h3><span class="sub" id="day-sub">UTC</span></div>
+      <div class="days" id="days"></div>
+      <div class="list" id="dayrows" style="margin-top:10px"></div>
+    </section>
+
+    <section class="card s4">
+      <div class="ch"><h3>Om mätningen</h3></div>
+      <div class="kv" id="meta"></div>
+      <div class="note2" id="about"></div>
+    </section>
+
+    <section class="card" style="grid-column:span 12">
+      <div class="ch"><h3>Marknaderna</h3><span class="sub" id="mk-sub">—</span></div>
+      <div class="list mk" id="mk"></div>
+    </section>
+  </div>
+
+  <div class="foot">Polymarket betalar en daglig pott per marknad till dem som har köp- och säljbud nära mittpriset. Varje minut får ett bud poängen ((v − avstånd)/v)² × storlek, där v är max-avståndet, och potten delas efter poäng. Sidan visar den realistiska kalkylen: lägsta andelen av två mätningar, ingen belöning när priset rört sig för mycket eller ligger utanför 0,10–0,90, och fyllning redan när någon handlar på vårt pris. Version 3 och 4 mäts på 1 000 $ och visas som ett konto på 10 000 kr (10 kr per dollar); version 1 räknas om med dagens dollarkurs. Belöningar betalas bara för riktiga bud, så allt här är uppskattningar. Virtuella pengar, ingen finansiell rådgivning.</div>
 </div>
-<div class="ticker foot"><div class="tag" style="background:var(--green);color:#000">REWARDS</div><div class="track"><div class="run" id="foot"></div></div></div>
 
 <script>
 'use strict';
 const qs = new URLSearchParams(location.search);
-const CFG = {repo: 'zackariasandersson18-afk/worldcub', stateBranch: 'tradebot-state', stateOverride: qs.get('state'),
-             clob: 'https://clob.polymarket.com', CAPITAL: 1000, C: 3.0};
-const COL = {green:'#39ff6a', red:'#ff3b3b', yellow:'#ffd400', cyan:'#3ad7ff', ink2:'#a8a8a8', mute:'#6b6b6b', line:'#2a2a2a'};
-const S = {fx: null, st: null, books: {}, live: {}, booksAt: null};
+const CFG = {repo: 'zackariasandersson18-afk/worldcub', clob: 'https://clob.polymarket.com', CAPITAL: 1000, C: 3.0, KR_V34: 10, START_V34: 10000};
+const S = {fx: null, books: {}, live: {}, booksAt: null, afF: 'all', pts: []};
 const $ = id => document.getElementById(id);
 const nf = d => new Intl.NumberFormat('sv-SE', {minimumFractionDigits: d, maximumFractionDigits: d});
 const fmt = (x, d = 0) => x == null || !isFinite(x) ? '—' : nf(d).format(x);
 const kr = (x, d = 0) => x == null || !isFinite(x) ? '—' : fmt(x, d) + ' kr';
 const skr = (x, d = 0) => x == null || !isFinite(x) ? '—' : (x >= 0 ? '+' : '−') + fmt(Math.abs(x), d) + ' kr';
-const pct = (x, d = 0) => x == null || !isFinite(x) ? '—' : fmt(x * 100, d) + '%';
+const pct = (x, d = 0) => x == null || !isFinite(x) ? '—' : fmt(x * 100, d) + ' %';
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]));
-const KR_PER_USD_V3 = 10;   // version 3 is shown as a 10 000 kr account: the 1000 USD measurement scaled 10 kr per dollar
-const sek = usd => usd == null ? null : (S.view === 'v3' || S.view === 'v4') ? usd * KR_PER_USD_V3 : S.fx == null ? null : usd * S.fx;
+const cls = v => v > 0 ? 'up' : v < 0 ? 'down' : '';
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const v34 = () => S.view === 'v3' || S.view === 'v4';
+const sek = usd => usd == null ? null : v34() ? usd * CFG.KR_V34 : S.fx == null ? null : usd * S.fx;
+const ago = iso => { const m = Math.max(0, (Date.now() - new Date(iso)) / 6e4); return m < 60 ? `${fmt(m)} min sedan` : m < 1440 ? `${fmt(m / 60)} h sedan` : `${fmt(m / 1440)} d sedan`; };
+const initials = q => esc(String(q).replace(/^Will (the )?/i, '').split(/\s+/).slice(0, 2).map(w => w[0] || '').join('').toUpperCase());
 async function getJSON(url, opts) { const r = await fetch(url, {cache: 'no-store', ...opts}); if (!r.ok) throw new Error(r.status); return r.json(); }
-function canvas(id) {
-  const cv = $(id), dpr = Math.min(devicePixelRatio || 1, 2);
-  if (!cv.dataset.h) { cv.dataset.h = cv.getAttribute('height'); cv.style.height = cv.dataset.h + 'px'; }
-  const w = cv.clientWidth, h = +cv.dataset.h;
-  if (cv.width !== Math.round(w * dpr) || cv.height !== Math.round(h * dpr)) { cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr); }
-  const g = cv.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); g.clearRect(0, 0, w, h);
-  g.font = '10px JetBrains Mono, monospace'; g.textBaseline = 'middle';
-  return {g, w, h};
-}
 
 // ---- Polymarket reward scoring (mirrors rewardbot/backtest.py)
 const score = (distC, v, size) => distC >= 0 && distC < v ? ((v - distC) / v) ** 2 * size : 0;
 const qmin = (q1, q2) => Math.max(Math.min(q1, q2), Math.max(q1, q2) / CFG.C);
 function bookQ(yes, no, mid, v, minSize) {
-  const side = (levels, conv) => (levels || []).reduce((a, lv) => {
-    const p = +lv.price, z = +lv.size;
-    return z < minSize ? a : a + score(Math.abs(conv(p) - mid) * 100, v, z);
-  }, 0);
-  const q1 = side(yes?.bids, p => p) + side(no?.asks, p => 1 - p);
-  const q2 = side(yes?.asks, p => p) + side(no?.bids, p => 1 - p);
-  return [q1, q2];
+  const side = (levels, conv) => (levels || []).reduce((a, lv) => { const p = +lv.price, z = +lv.size; return z < minSize ? a : a + score(Math.abs(conv(p) - mid) * 100, v, z); }, 0);
+  return [side(yes?.bids, p => p) + side(no?.asks, p => 1 - p), side(yes?.asks, p => p) + side(no?.bids, p => 1 - p)];
 }
 function liveShare(c) {
   const yb = S.books[c.yes], nb = S.books[c.no];
   if (!yb?.bids?.length || !yb?.asks?.length) return null;
   const mid = (Math.max(...yb.bids.map(x => +x.price)) + Math.min(...yb.asks.map(x => +x.price))) / 2;
-  const rest = bookQ(yb, nb, mid, c.v, c.min_size);
   const ours = qmin(score(c.d * 100, c.v, c.min_size), score(c.d * 100, c.v, c.min_size));
-  const share = ours / (ours + qmin(...rest));
+  const share = ours / (ours + qmin(...bookQ(yb, nb, mid, c.v, c.min_size)));
   const inBand = mid >= 0.10 && mid <= 0.90;
-  return {mid, rest, share, perDay: inBand ? c.rate * share : 0, inBand};
+  return {mid, share, perDay: inBand ? c.rate * share : 0, inBand};
 }
 
-// estimated rewards per day from the live books; null while no book has loaded
-function liveTotal() {
-  const xs = Object.values(S.live).filter(Boolean);
-  return xs.length ? xs.reduce((a, x) => a + x.perDay, 0) : null;
-}
-
-// ---- data
+// ---- data: the minute loop writes to rewards-state; tradebot-state holds the older 30-minute state
 async function loadFx() {
-  for (const [url, pick] of [['https://api.frankfurter.app/latest?from=USD&to=SEK', d => d.rates.SEK],
-                             ['https://open.er-api.com/v6/latest/USD', d => d.rates.SEK]]) {
+  for (const [url, pick] of [['https://api.frankfurter.app/latest?from=USD&to=SEK', d => d.rates.SEK], ['https://open.er-api.com/v6/latest/USD', d => d.rates.SEK]]) {
     try { S.fx = pick(await getJSON(url)); return; } catch {}
   }
 }
-// the minute-by-minute loop writes to its own branch (rewards-state); before its first push the
-// 30-minute state on tradebot-state is used
-async function stateBase() {
-  if (CFG.stateOverride) return CFG.stateOverride.replace(/\/?$/, '/');
-  for (const br of ['rewards-state', CFG.stateBranch]) {
-    try { const c = await getJSON(`https://api.github.com/repos/${CFG.repo}/commits/${br}`); S.sha = c.sha; S.branch = br; return `https://raw.githubusercontent.com/${CFG.repo}/${c.sha}/`; }
-    catch {}
-  }
-  return `https://raw.githubusercontent.com/${CFG.repo}/${CFG.stateBranch}/`;
-}
 async function loadState() {
-  const base = await stateBase();
-  if (S.sha && S.sha === S.loadedSha) return;
+  let base = null;
+  for (const br of ['rewards-state', 'tradebot-state']) {
+    try { const c = await getJSON(`https://api.github.com/repos/${CFG.repo}/commits/${br}`); if (c.sha === S.loadedSha) return; S.sha = c.sha; base = `https://raw.githubusercontent.com/${CFG.repo}/${c.sha}/`; break; } catch {}
+  }
+  base = base || `https://raw.githubusercontent.com/${CFG.repo}/rewards-state/`;
   try { S.v1 = await getJSON(base + 'rewards/rewards_state.json'); S.loadedSha = S.sha; } catch {}
   try { S.v3 = await getJSON(base + 'rewards/rewards_v3_state.json'); } catch {}
   try { S.v4 = await getJSON(base + 'rewards/rewards_v4_state.json'); } catch {}
@@ -308,232 +255,195 @@ async function loadBooks() {
   const toks = (S.st?.portfolio || []).flatMap(c => [c.yes, c.no]);
   for (let i = 0; i < toks.length; i += 100) {
     try {
-      const books = await getJSON(`${CFG.clob}/books`, {method: 'POST', headers: {'content-type': 'application/json'},
-        body: JSON.stringify(toks.slice(i, i + 100).map(t => ({token_id: t})))});
+      const books = await getJSON(`${CFG.clob}/books`, {method: 'POST', headers: {'content-type': 'application/json'}, body: JSON.stringify(toks.slice(i, i + 100).map(t => ({token_id: t})))});
       for (const b of books) S.books[String(b.asset_id)] = b;
     } catch {}
   }
   S.booksAt = Date.now();
   for (const c of S.st?.portfolio || []) S.live[c.cond] = liveShare(c);
 }
-
-// ---- render
-function renderAccount() {
-  const st = S.st, h = st?.history || [], last = h[h.length - 1];
-  const rew = st?.reward_total ?? 0, mm = last?.mm_value ?? 0, net = rew + mm;
-  $('pnl').innerHTML = sek(net) == null ? '—' : `${net >= 0 ? '+' : '−'}${fmt(Math.abs(sek(net)), 0)}<small>kr</small>`;
-  $('pnl').style.color = net >= 0 ? COL.green : COL.red;
-  const days = st?.started ? (Date.now() - new Date(st.started)) / 864e5 : 0;
-  $('pnlsub').textContent = `NETTO SEDAN START · ${fmt(days, days < 2 ? 1 : 0)} DAGAR · ${fmt(net / CFG.CAPITAL * 100, 2)}%` +
-    (S.view !== 'v1' ? ` · SALDO ${kr(10000 + sek(net), 0)} AV 10 000 KR` : '');
-  $('rew').textContent = skr(sek(rew), 0);
-  $('mm').textContent = skr(sek(mm), 0); $('mm').className = 'v ' + (mm >= 0 ? 'up' : 'down');
-  const perDay = liveTotal();
-  // measured, not estimated: realistic net over the last 24 h of history (the live snapshot below
-  // assumes today's books and pots hold all day, which they do not)
-  const t24 = Date.now() - 864e5, base24 = h.find(x => new Date(x.ts) >= t24) || h[0];
-  const n24 = last && base24 ? (last.real_net ?? last.net) - (base24.real_net ?? base24.net) : null;
-  $('perday').textContent = n24 == null ? '—' : skr(sek(n24), 0); $('perday').className = 'v ' + (n24 > 0 ? 'up' : n24 < 0 ? 'down' : '');
-  $('nmk').textContent = (st?.portfolio || []).length;
-  // realistic ledger (rewardbot/live.py R1-R5); started later than the optimistic one
-  const r = [...h].reverse().find(x => x.real_net != null);
-  if (r) {
-    const optAtStart = h.find(x => x.real_net != null), optSince = (last?.net ?? 0) - (optAtStart?.net ?? 0);
-    $('rnet').textContent = skr(sek(r.real_net), 0); $('rnet').className = 'v ' + (r.real_net >= 0 ? 'up' : 'down');
-    $('rrew').textContent = skr(sek(r.real_reward_total), 0);
-    $('rmm').textContent = skr(sek(r.real_mm_value), 0); $('rmm').className = 'v ' + (r.real_mm_value >= 0 ? 'up' : 'down');
-    $('rsub').textContent = `sedan ${st.real_started?.slice(0, 16).replace('T', ' ')} UTC · ${fmt(r.real_fills_total ?? 0)} affärer · ` +
-      `optimistiskt samma period ${skr(sek(optSince), 0)}` + (optSince > 0 ? ` · realistiskt = ${pct(r.real_net / optSince, 0)} av det` : '') +
-      (st.real_backfill ? ` · fram till ${st.real_backfill.until.slice(5, 16).replace('T', ' ')} UTC uppskattad i efterhand` : '');
-    if (S.view !== 'v1') $('rsub').textContent = `${S.view === 'v4' ? 'version 4' : 'version 3'} räknar bara realistiskt · ${fmt(r.real_fills_total ?? 0)} affärer · ` +
-      `mätt på 1 000 $, visat som 10 000 kr (10 kr per dollar) · ` +
-      (S.view === 'v4' ? `${(S.v4?.reviews || []).reduce((a, x) => a + x.swapped, 0)} byten vid timkontroller` : `${(S.v3?.rebalances || []).length} marknadsbyten`);
-  }
-}
-function renderComp() {
-  const port = S.st?.portfolio || [];
-  const lv = port.map(c => ({c, x: S.live[c.cond]})).filter(o => o.x);
-  const alone = lv.filter(o => o.x.share > 0.9).length, crowded = lv.filter(o => o.x.share < 0.1).length;
-  const startEst = port.reduce((a, c) => a + c.est_reward_day, 0);
-  const now = lv.length ? lv.reduce((a, o) => a + o.x.perDay, 0) : null;
-  const avg = lv.length ? lv.reduce((a, o) => a + o.x.share, 0) / lv.length : null;
-  $('comp').innerHTML = [
-    ['Snittandel nu', pct(avg, 1)], ['Marknader nästan ensam (>90 %)', `${alone}`], ['Trängsel (<10 %)', `${crowded}`],
-    ['Uppskattat/dag vid start', kr(sek(startEst), 0)], ['Ögonblicksbild/dag (om allt stod still)', kr(sek(now), 0)],
-    ['Förändring', startEst && now != null ? pct(now / startEst - 1, 0) : '—'],
-  ].map(([k, v]) => `<span>${k}</span><b>${v}</b>`).join('');
-}
-function renderMeta() {
-  const st = S.st, tok = Object.values(st?.tokens || {})[0];
-  $('meta').innerHTML = [
-    ['Start', st?.started ? st.started.slice(0, 16).replace('T', ' ') + ' UTC' : '—'],
-    ['Senaste mätning', st?.last_tick?.ts ? st.last_tick.ts.slice(11, 16) + ' UTC' : '—'],
-    ['Mätningar', fmt((st?.history || []).length)], ['Bud', 'min.storlek, halva max-avståndet'],
-    ['Belöningstoken', tok ? `${tok.symbol} (${tok.decimals} dec)` : '—'], ['Orderböcker', S.booksAt ? new Date(S.booksAt).toISOString().slice(11, 19) + ' UTC' : '—'],
-  ].map(([k, v]) => `<span>${k}</span><b>${esc(v)}</b>`).join('');
-}
-function renderTable() {
-  const port = (S.st?.portfolio || []).slice();
-  const pos = S.st?.positions || {};
-  port.sort((a, b) => (S.live[b.cond]?.perDay || 0) - (S.live[a.cond]?.perDay || 0));
-  $('tb-sub').textContent = S.booksAt ? 'uppdaterad ' + new Date(S.booksAt).toISOString().slice(11, 19) + ' UTC' : 'laddar orderböcker';
-  $('mk').innerHTML = '<tr><th>Marknad</th><th>Pott/dag</th><th>Mitt</th><th>Andel nu</th><th>Kr/dag nu</th><th>Vid start</th><th>Intjänat</th><th>Lager</th><th>MM-värde</th></tr>' +
-    port.map(c => {
-      const x = S.live[c.cond], p = pos[c.cond] || {}, mmv = (p.cash || 0) + (p.inv || 0) * (x?.mid ?? p.mid ?? 0);
-      return `<tr><td>${esc(c.question)}</td><td>${kr(sek(c.rate), 0)}</td><td>${x ? fmt(x.mid, 3) : '—'}</td>` +
-        `<td>${x ? pct(x.share, 0) + `<span class="shbar"><i style="width:${Math.round(x.share * 100)}%"></i></span>` : '—'}</td>` +
-        `<td class="up">${x ? kr(sek(x.perDay), 1) : '—'}${x && !x.inBand ? ' <span class="warn">(utanför 0,10–0,90)</span>' : ''}</td>` +
-        `<td class="mute">${kr(sek(c.est_reward_day), 1)}</td><td class="up">${kr(sek(p.reward || 0), 1)}</td>` +
-        `<td>${fmt(p.inv || 0, 0)}</td><td class="${mmv >= 0 ? 'up' : 'down'}">${skr(sek(mmv), 0)}</td></tr>`;
-    }).join('');
-}
-function drawLines(id, series, colors, fmtY, ref = 0) {
-  const {g, w, h} = canvas(id);
-  const pts = series[0] || [];
-  if (pts.length < 2) { g.fillStyle = COL.mute; g.textAlign = 'center'; g.fillText('kurvan byggs upp efter några mätningar', w / 2, h / 2); return; }
-  const all = series.flat(), lo = Math.min(ref, ...all), hi = Math.max(ref, ...all), pad = 16;
-  const X = i => pad + i / (pts.length - 1) * (w - 2 * pad), Y = v => h - pad - (v - lo) / Math.max(hi - lo, 1e-9) * (h - 2 * pad);
-  g.strokeStyle = COL.line; g.setLineDash([2, 4]); g.beginPath(); g.moveTo(pad, Y(ref)); g.lineTo(w - pad, Y(ref)); g.stroke(); g.setLineDash([]);
-  series.forEach((s, k) => { g.strokeStyle = colors[k]; g.lineWidth = 2; g.beginPath(); s.forEach((v, i) => i ? g.lineTo(X(i), Y(v)) : g.moveTo(X(i), Y(v))); g.stroke(); });
-  g.fillStyle = COL.ink2; g.textAlign = 'left'; g.fillText(fmtY(hi), 2, 8); g.fillText(fmtY(lo), 2, h - 6);
-}
-function renderCharts() {
-  const h = S.st?.history || [];
-  if (sek(1) != null) {
-    drawLines('c-eq', [h.map(x => sek(x.net)), h.map(x => sek(x.reward_total)), h.map(x => sek(x.mm_value)),
-                       h.map(x => sek((x.real_net ?? 0)))],
-              [COL.yellow, COL.green, COL.red, COL.cyan], v => kr(v, 0));
-    const last = h[h.length - 1];
-    $('eq-sub').innerHTML = last ? `<span class="warn">netto ${skr(sek(last.net))}</span> · <span class="up">belöning ${skr(sek(last.reward_total))}</span> · <span class="down">MM ${skr(sek(last.mm_value))}</span>` +
-      (last.real_net != null ? ` · <span style="color:${COL.cyan}">realistiskt ${skr(sek(last.real_net))}</span>` : '') : '—';
-  }
-  drawLines('c-sh', [h.map(x => x.avg_share * 100)], [COL.cyan], v => fmt(v, 0) + '%');
-  $('sh-sub').textContent = h.length ? `start ${pct(h[0].avg_share, 0)} · nu ${pct(h[h.length - 1].avg_share, 0)}` : '—';
-}
-function renderTickers() {
-  const st = S.st;
-  const perDay = liveTotal();
-  $('banner').textContent = `◆ ${S.view === 'v1' ? 'VERSION 1 · ' : `VERSION ${S.view.slice(1)} · KONTO 10 000 KR · `}VIRTUELL MÄTNING · INGA RIKTIGA ORDER · ${(st?.portfolio || []).length} MARKNADER · ÖGONBLICKSBILD ${kr(sek(perDay), 0)}/DAG OM ORDERBÖCKERNA SÅG UT SÅ HÄR HELA DAGEN · 1 USD = ${S.fx ? fmt(S.fx, 2) : '—'} KR`;
-  const items = (st?.portfolio || []).map(c => { const x = S.live[c.cond]; return `<span><b>${esc(c.question.slice(0, 40))}</b> andel ${x ? pct(x.share, 0) : '—'} · ${x ? kr(sek(x.perDay), 1) : '—'}/dag</span>`; }).join('');
-  for (const [id, html] of [['feed', items || '<span>laddar…</span>'], ['foot', items || '<span>laddar…</span>']]) {
-    const el = $(id); if (el.dataset.h !== html) { el.innerHTML = html + '<span class="mute">·</span>' + html; el.dataset.h = html; }
-  }
-}
-// one row per UTC day: change in net, rewards and market making, and fills, from the tick history
-function dayRows() {
-  const h = S.st?.history || [];
-  const byDay = new Map();
-  for (const x of h) byDay.set(x.ts.slice(0, 10), x);               // last tick of each day
-  const days = [...byDay.keys()].sort();
-  const start = S.st?.started?.slice(0, 10);
-  let prev = {net: 0, reward_total: 0, mm_value: 0, fills_total: 0, real_net: 0};
-  return days.map(d => {
-    const x = byDay.get(d);
-    const row = {day: d, net: x.net - prev.net, reward: x.reward_total - prev.reward_total,
-                 mm: x.mm_value - prev.mm_value, fills: (x.fills_total ?? 0) - (prev.fills_total ?? 0),
-                 real: x.real_net == null ? null : x.real_net - (prev.real_net ?? 0),
-                 // the start day and today are not whole days: kept out of the per-day average
-                 share: x.avg_share, partial: d === new Date().toISOString().slice(0, 10) || d === start};
-    prev = x;
-    return row;
-  });
-}
-function renderDays() {
-  const rows = dayRows(), done = rows.filter(r => !r.partial);
-  const cls = v => v > 0 ? 'up' : v < 0 ? 'down' : '';
-  $('days').innerHTML = '<tr><th>Dag</th><th>Affärer</th><th>Belöning</th><th>Market making</th><th>Netto</th><th>Realistiskt</th><th>Andel</th></tr>' +
-    (rows.slice().reverse().map(r => `<tr><td><b>${r.day.slice(5)}</b>${r.partial ? ` <span class="mute">(${r.day === S.st?.started?.slice(0, 10) ? 'startdag, del av dag' : 'pågår'})</span>` : ''}</td>` +
-      `<td>${fmt(r.fills)}</td><td class="up">${skr(sek(r.reward), 0)}</td><td class="${cls(r.mm)}">${skr(sek(r.mm), 0)}</td>` +
-      `<td class="${cls(r.net)}"><b>${skr(sek(r.net), 0)}</b></td>` +
-      `<td class="${cls(r.real)}">${r.real == null ? '—' : skr(sek(r.real), 0)}</td><td>${pct(r.share, 0)}</td></tr>`).join('') ||
-     '<tr><td colspan="7" class="mute" style="text-align:center;padding:10px">fylls i efter första dagen</td></tr>');
-  const tot = done.reduce((a, r) => a + r.net, 0), pos = done.filter(r => r.net > 0).length;
-  $('day-sub').textContent = `${done.length} hela dagar`;
-  $('day-avg').innerHTML = done.length ? `Snitt per hel dag: <b class="${cls(tot)}">${skr(sek(tot / done.length), 0)}</b> · bästa ${skr(sek(Math.max(...done.map(r => r.net))), 0)} · sämsta ${skr(sek(Math.min(...done.map(r => r.net))), 0)} · plusdagar ${pos}/${done.length}` : 'Snittet per dag visas när första hela dagen är klar.';
-  const fills = (S.st?.history || []).slice(-1)[0]?.fills_total ?? Object.values(S.st?.positions || {}).reduce((a, p) => a + (p.fills || 0), 0);
-  $('fills').textContent = fmt(fills);
-  $('avgday').textContent = done.length ? skr(sek(tot / done.length), 0) : '—';
-  $('avgday').className = 'v ' + cls(tot);
-  $('posdays').textContent = done.length ? `${pos}/${done.length}` : '—';
-}
-function renderAll() { renderMine(); renderDays(); renderAccount(); renderComp(); renderMeta(); renderTable(); renderCharts(); renderTickers(); }
-
-(async function init() {
-  setInterval(() => { $('clock').textContent = new Date().toISOString().slice(11, 19); }, 1000);
-  await Promise.allSettled([loadFx(), loadState()]);
-  renderAll();
-  await loadBooks(); renderAll();
-  setInterval(() => loadBooks().then(renderAll), 30_000);
-  setInterval(() => loadState().then(renderAll).catch(() => {}), 75_000);
-  setInterval(() => loadFx().catch(() => {}), 3600_000);
-  addEventListener('resize', renderAll);
-})();
-
-// ---- my trades: markets in profit / loss, and every virtual fill marked to the current midpoint
-S.afF = 'all'; S.afLed = 'opt';
-function midOf(cond) { return S.live[cond]?.mid ?? S.st?.positions?.[cond]?.mid ?? null; }
-function renderMine() {
-  const st = S.st; if (!st) return;
-  const real = S.afLed === 'real';
-  const mk = (st.portfolio || []).map(c => {
-    const p = st.positions?.[c.cond] || {}, mid = midOf(c.cond) ?? 0;
-    const rew = real ? (p.r_reward || 0) : (p.reward || 0);
-    const mm = real ? (p.r_cash || 0) + (p.r_inv || 0) * mid : (p.cash || 0) + (p.inv || 0) * mid;
-    return rew + mm;
-  });
-  const W = mk.filter(x => x > 0.005).length, L = mk.filter(x => x < -0.005).length;
-  const fills = (st.fills || []).filter(f => f.ledger === S.afLed).map(f => {
-    const mid = midOf(f.cond), pnl = mid == null ? null : (f.side === 'BUY' ? mid - f.price : f.price - mid) * f.size;
-    return {...f, mid, pnl};
-  });
-  const fw = fills.filter(f => f.pnl > 0).length, fl = fills.filter(f => f.pnl < 0).length;
-  const fsum = fills.reduce((a, f) => a + (f.pnl || 0), 0);
-  $('af-wl').innerHTML = `<span class="w">${W}</span><span class="s">/</span><span class="l">${L}</span>`;
-  $('af-info').innerHTML = `marknader i vinst / förlust · ${mk.length} marknader${real ? ' · realistisk' : ''}<br>` +
-    `fyllda bud: <b class="up">${fw} i vinst</b> / <b class="down">${fl} i förlust</b> · ${skr(sek(fsum), 1)} mot mittpriset nu`;
-  const rows = fills.filter(f => S.afF === 'all' || (S.afF === 'win' ? f.pnl > 0 : f.pnl < 0)).reverse();
-  $('af-sub').textContent = `${fills.length} fyllda bud`;
-  $('af').innerHTML = '<tr><th>Tid</th><th>Marknad</th><th>Sida</th><th>Pris</th><th>Antal</th><th>Mitt nu</th><th>Vinst/förlust</th></tr>' +
-    (rows.map(f => `<tr><td class="mute">${f.ts.slice(5, 16).replace('T', ' ')}</td><td>${esc(f.q.slice(0, 44))}</td>` +
-      `<td class="${f.side === 'BUY' ? 'up' : 'cy'}">${f.side === 'BUY' ? 'KÖP' : 'SÄLJ'}</td><td>${fmt(f.price, 3)}</td><td>${fmt(f.size, 0)}</td>` +
-      `<td>${f.mid == null ? '—' : fmt(f.mid, 3)}</td><td class="${f.pnl > 0 ? 'up' : f.pnl < 0 ? 'down' : ''}"><b>${f.pnl == null ? '—' : skr(sek(f.pnl), 1)}</b></td></tr>`).join('') ||
-     `<tr><td colspan="7" class="mute" style="text-align:center;padding:10px">${(st.fills || []).length ? 'inga affärer här' : 'enskilda affärer visas från nästa mätning'}</td></tr>`);
-}
-for (const [id, key] of [['af-f', 'afF'], ['af-led', 'afLed']]) {
-  $(id).addEventListener('click', e => {
-    const b = e.target.closest('button'); if (!b) return;
-    S[key] = b.dataset.v; for (const x of $(id).children) x.classList.toggle('on', x === b); renderMine();
-  });
-}
-
-
-
-// ---- version switch: version 3 rendered with version 1's panels. Version 3 keeps only the realistic
-// ledger, so its numbers fill both the optimistic and the realistic fields.
+// versions 3 and 4 keep only the realistic ledger: map them onto version 1's fields
 function asV1(v) {
   if (!v) return null;
-  const pos = Object.fromEntries(Object.entries(v.positions || {}).map(([k, p]) =>
-    [k, {...p, r_reward: p.reward, r_cash: p.cash, r_inv: p.inv, r_fills: p.fills}]));
+  const pos = Object.fromEntries(Object.entries(v.positions || {}).map(([k, p]) => [k, {...p, r_reward: p.reward, r_cash: p.cash, r_inv: p.inv, r_fills: p.fills}]));
   return {...v, positions: pos, real_started: v.started, real_reward_total: v.reward_total,
-          history: (v.history || []).map(x => ({...x, real_reward_total: x.reward_total, real_mm_value: x.mm_value,
-                                               real_net: x.net, real_fills_total: x.fills_total})),
-          fills: (v.fills || []).flatMap(f => [{...f, ledger: 'opt'}, {...f, ledger: 'real'}])};
+          history: (v.history || []).map(x => ({...x, real_reward_total: x.reward_total, real_mm_value: x.mm_value, real_net: x.net, real_fills_total: x.fills_total})),
+          fills: (v.fills || []).map(f => ({...f, ledger: 'real'}))};
 }
 function pickView() {
   S.st = S.view === 'v3' ? asV1(S.v3) : S.view === 'v4' ? asV1(S.v4) : S.v1;
-  for (const b of $('ver').children) b.classList.toggle('on', b.dataset.v === S.view);
-  document.title = S.view === 'v1' ? 'Rewards desk live' : `Rewards desk ${S.view}`;
-  $('logo').textContent = S.view === 'v1' ? '$' : S.view.toUpperCase();
-  $('brand').textContent = S.view === 'v1' ? 'TRADEBOT × REWARDS' : `TRADEBOT × REWARDS ${S.view.toUpperCase()}`;
+  for (const b of $('ver').querySelectorAll('button')) b.classList.toggle('on', b.dataset.v === S.view);
+  const n = S.view.slice(1);
+  document.title = `Rewards desk v${n}`;
+  $('logo').textContent = 'V' + n;
+  $('brand').textContent = `Rewards Desk · version ${n}`;
+  $('tagline').textContent = S.view === 'v1' ? 'Polymarket · 24 fasta marknader · virtuell mätning' :
+    S.view === 'v3' ? 'Polymarket · väljer om marknader varje dygn · konto 10 000 kr' : 'Polymarket · timkontroll byter svaga marknader · konto 10 000 kr';
 }
-S.view = ({'3': 'v3', 'v3': 'v3', '4': 'v4', 'v4': 'v4'})[qs.get('v')] || 'v1';   // rewards.html is version 1; ?v=3 / ?v=4 open the others
+
+// ---- charts
+function area(id, values, ref, fmtY, opts = {}) {
+  const cv = $(id), dpr = Math.min(devicePixelRatio || 1, 2), w = cv.clientWidth, h = +cv.getAttribute('height');
+  cv.style.height = h + 'px'; cv.width = w * dpr; cv.height = h * dpr;
+  const g = cv.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); g.clearRect(0, 0, w, h);
+  const font = '11px Inter, system-ui, sans-serif';
+  if (values.length < 2) { g.fillStyle = css('--muted'); g.font = font; g.textAlign = 'center'; g.fillText('Kurvan byggs upp efter några mätningar', w / 2, h / 2); return []; }
+  const lo = Math.min(ref, ...values), hi = Math.max(ref, ...values), span = Math.max(hi - lo, 1e-9), pad = 14;
+  const X = i => i / (values.length - 1) * w, Y = v => h - pad - (v - lo + span * .08) / (span * 1.16) * (h - 2 * pad);
+  g.strokeStyle = 'rgba(150,165,255,.22)'; g.setLineDash([3, 5]); g.lineWidth = 1; g.beginPath(); g.moveTo(0, Y(ref)); g.lineTo(w, Y(ref)); g.stroke(); g.setLineDash([]);
+  if (opts.refLabel) { g.fillStyle = css('--muted'); g.font = font; g.textAlign = 'right'; g.fillText(opts.refLabel, w - 4, Y(ref) - 7); }
+  const line = new Path2D(); values.forEach((v, i) => i ? line.lineTo(X(i), Y(v)) : line.moveTo(X(i), Y(v)));
+  const ar = new Path2D(line); ar.lineTo(w, h); ar.lineTo(0, h); ar.closePath();
+  const f = g.createLinearGradient(0, 0, 0, h); f.addColorStop(0, opts.fill || 'rgba(155,92,255,.32)'); f.addColorStop(1, 'rgba(79,124,255,0)');
+  g.fillStyle = f; g.fill(ar);
+  const s = g.createLinearGradient(0, 0, w, 0); s.addColorStop(0, css('--a1')); s.addColorStop(1, opts.end || css('--a2'));
+  g.save(); g.shadowColor = 'rgba(155,92,255,.75)'; g.shadowBlur = 12; g.strokeStyle = s; g.lineWidth = 2; g.lineJoin = 'round'; g.stroke(line); g.restore();
+  const lx = X(values.length - 1), ly = Y(values[values.length - 1]);
+  g.fillStyle = '#fff'; g.beginPath(); g.arc(lx - 1, ly, 3.5, 0, 7); g.fill();
+  return values.map((v, i) => ({x: X(i), y: Y(v), v}));
+}
+function hover(e) {
+  const tip = $('tip'), r = $('c-eq').getBoundingClientRect(), x = e.clientX - r.left;
+  if (!S.pts.length || x < 0 || x > r.width) { tip.style.display = 'none'; return; }
+  let i = 0; S.pts.forEach((p, k) => { if (Math.abs(p.x - x) < Math.abs(S.pts[i].x - x)) i = k; });
+  const p = S.pts[i], ts = S.hist[i]?.ts || '';
+  tip.innerHTML = `<b>${v34() ? kr(p.v) : skr(p.v)}</b>${v34() ? skr(p.v - CFG.START_V34) + ' · ' : ''}${String(ts).slice(5, 16).replace('T', ' ')} UTC`;
+  tip.style.display = 'block';
+  tip.style.left = Math.min(Math.max(p.x - tip.offsetWidth / 2, 0), r.width - tip.offsetWidth) + 'px';
+  tip.style.top = Math.max(p.y - 54, 0) + 'px';
+}
+function ring(a, b, c) {
+  const tot = a + b + c, R = 50, C = 2 * Math.PI * R;
+  const seg = (n, col, off) => n ? `<circle cx="59" cy="59" r="${R}" fill="none" stroke="${col}" stroke-width="10" stroke-linecap="round" stroke-dasharray="${Math.max(n / tot * C - 4, .1)} ${C}" stroke-dashoffset="${-off / tot * C}"/>` : '';
+  $('ring').innerHTML = `<circle cx="59" cy="59" r="${R}" fill="none" stroke="rgba(120,140,255,.12)" stroke-width="10"/>` + (tot ? seg(a, 'var(--good)', 0) + seg(b, 'var(--bad)', a) + seg(c, 'var(--a1)', a + b) : '');
+}
+
+// ---- per-day rows from the last tick of each UTC day (start day and today are partial)
+function dayRows() {
+  const h = S.st?.history || [], byDay = new Map();
+  for (const x of h) byDay.set(x.ts.slice(0, 10), x);
+  const start = S.st?.started?.slice(0, 10), today = new Date().toISOString().slice(0, 10);
+  let prev = {real_net: 0, real_reward_total: 0, real_mm_value: 0, fills_total: 0, real_fills_total: 0};
+  return [...byDay.keys()].sort().map(d => {
+    const x = byDay.get(d), rn = x.real_net ?? x.net, pn = prev.real_net ?? prev.net ?? 0;
+    const row = {day: d, net: rn - pn, reward: (x.real_reward_total ?? x.reward_total) - (prev.real_reward_total ?? prev.reward_total ?? 0),
+                 mm: (x.real_mm_value ?? x.mm_value) - (prev.real_mm_value ?? prev.mm_value ?? 0),
+                 fills: (x.real_fills_total ?? x.fills_total ?? 0) - (prev.real_fills_total ?? prev.fills_total ?? 0),
+                 share: x.avg_share, partial: d === today || d === start};
+    prev = x; return row;
+  });
+}
+const midOf = cond => S.live[cond]?.mid ?? S.st?.positions?.[cond]?.mid ?? null;
+
+function render() {
+  const st = S.st;
+  if (!st) { $('live').textContent = 'väntar på data'; return; }
+  const h = st.history || [], last = h[h.length - 1] || {};
+  const rn = last.real_net ?? last.net ?? 0, rr = last.real_reward_total ?? last.reward_total ?? 0, rm = last.real_mm_value ?? last.mm_value ?? 0;
+  const days = (Date.now() - new Date(st.started)) / 864e5;
+  $('live').textContent = `live · senast ${String(st.last_tick?.ts || last.ts || '').slice(11, 16)} UTC`;
+  $('days-run').textContent = `${fmt(days, days < 2 ? 1 : 0)} dagar sedan start`;
+  // hero
+  if (v34()) {
+    $('hero-t').textContent = 'Saldo'; $('hero-s').textContent = 'start 10 000 kr';
+    $('bal').innerHTML = `${fmt(CFG.START_V34 + sek(rn))}<small>kr</small>`;
+  } else {
+    $('hero-t').textContent = 'Netto sedan start'; $('hero-s').textContent = 'realistiskt';
+    $('bal').innerHTML = sek(rn) == null ? '—' : `${rn >= 0 ? '+' : '−'}${fmt(Math.abs(sek(rn)))}<small>kr</small>`;
+  }
+  $('delta').className = 'delta ' + (rn >= 0 ? 'up' : 'down');
+  $('delta').textContent = `${rn >= 0 ? '▲' : '▼'} ${skr(sek(rn))} · ${rn >= 0 ? '+' : '−'}${fmt(Math.abs(rn) / CFG.CAPITAL * 100, 2)} % av kapitalet`;
+  $('hero-note').textContent = S.view === 'v1' && last.net != null ? `Optimistiskt ${skr(sek(last.net))} · realistiskt är ${pct(last.net > 0 ? rn / last.net : null)} av det` +
+    (st.real_backfill ? ' · första 7 timmarna uppskattade i efterhand' : '') : (S.view === 'v3' ? `${(S.v3?.rebalances || []).length} dygnsval av marknader` : `${(S.v4?.reviews || []).reduce((a, x) => a + (x.swapped || 0), 0)} byten vid ${(S.v4?.reviews || []).length} timkontroller`);
+  S.hist = h;
+  S.pts = area('c-eq', h.map(x => v34() ? CFG.START_V34 + sek(x.real_net ?? x.net) : sek(x.real_net ?? x.net) ?? 0), v34() ? CFG.START_V34 : 0, v => kr(v),
+               {refLabel: v34() ? 'start 10 000 kr' : '0 kr'});
+  // tiles
+  $('rew').textContent = skr(sek(rr));
+  $('mm').textContent = skr(sek(rm)); $('mm').className = 'v ' + cls(rm);
+  $('mm-s').textContent = `${fmt(last.real_fills_total ?? last.fills_total ?? 0)} fyllda bud`;
+  const base24 = h.find(x => new Date(x.ts) >= Date.now() - 864e5) || h[0], n24 = base24 ? rn - (base24.real_net ?? base24.net) : null;
+  $('n24').textContent = skr(sek(n24)); $('n24').className = 'v ' + cls(n24);
+  const rows = dayRows(), done = rows.filter(r => !r.partial), tot = done.reduce((a, r) => a + r.net, 0);
+  $('avgday').textContent = done.length ? skr(sek(tot / done.length)) : '—'; $('avgday').className = 'v ' + cls(tot);
+  $('posdays').textContent = done.length ? `${done.filter(r => r.net > 0).length} av ${done.length} hela dagar plus` : 'visas efter första hela dagen';
+  // markets ring
+  const port = st.portfolio || [], pos = st.positions || {};
+  const mk = port.map(c => { const p = pos[c.cond] || {}, mid = midOf(c.cond) ?? 0; return (p.r_reward || 0) + (p.r_cash || 0) + (p.r_inv || 0) * mid; });
+  const mw = mk.filter(x => x > .005).length, ml = mk.filter(x => x < -.005).length;
+  ring(mw, ml, mk.length - mw - ml);
+  $('nmk').textContent = mk.length; $('mw').textContent = mw; $('ml').textContent = ml; $('m0').textContent = mk.length - mw - ml;
+  // competition
+  const lv = port.map(c => S.live[c.cond]).filter(Boolean);
+  const avg = lv.length ? lv.reduce((a, x) => a + x.share, 0) / lv.length : last.avg_share;
+  $('avgshare').textContent = pct(avg, 0);
+  const snap = lv.length ? lv.reduce((a, x) => a + x.perDay, 0) : null;
+  $('comp').innerHTML = [['Nästan ensamma (> 90 %)', lv.length ? lv.filter(x => x.share > .9).length : '—'], ['Trängsel (< 10 %)', lv.length ? lv.filter(x => x.share < .1).length : '—'],
+    ['Utanför betald zon', lv.length ? lv.filter(x => !x.inBand).length : '—'], ['Ögonblicksbild/dag', kr(sek(snap))]].map(([k, v]) => `<span>${k}</span><b>${v}</b>`).join('');
+  $('books-at').textContent = S.booksAt ? `orderböcker ${new Date(S.booksAt).toISOString().slice(11, 16)} UTC` : 'laddar orderböcker';
+  area('c-sh', h.map(x => (x.avg_share || 0) * 100), 0, v => fmt(v) + ' %', {fill: 'rgba(34,211,238,.22)', end: css('--a3')});
+  // live feed of realistic fills marked to the current midpoint
+  const fills = (st.fills || []).filter(f => f.ledger === 'real' || f.ledger === 'v3' || f.ledger === 'v4').map(f => {
+    const mid = midOf(f.cond); return {...f, mid, pnl: mid == null ? null : (f.side === 'BUY' ? mid - f.price : f.price - mid) * f.size};
+  });
+  const fr = fills.filter(f => S.afF === 'all' || (S.afF === 'win' ? f.pnl > 0 : f.pnl < 0)).reverse().slice(0, 60);
+  $('feed-sub').textContent = `${fills.length} fyllda bud · ${fills.filter(f => f.pnl > 0).length} i vinst / ${fills.filter(f => f.pnl < 0).length} i förlust`;
+  $('feed').innerHTML = fr.map(f => `<div class="row"><div class="ico ${f.side === 'BUY' ? 'b' : 'p'}">${f.side === 'BUY' ? '↗' : '↘'}</div>` +
+    `<div class="main"><b>${f.side === 'BUY' ? 'Köp' : 'Sälj'} · ${esc(f.q.slice(0, 48))}</b><span>${fmt(f.size)} st à ${fmt(f.price, 3)} · mitt nu ${f.mid == null ? '—' : fmt(f.mid, 3)}</span></div>` +
+    `<div class="end"><span class="${cls(f.pnl)}" style="font-size:13px;font-weight:600">${f.pnl == null ? '—' : skr(sek(f.pnl), 1)}</span><span>${ago(f.ts)}</span></div></div>`).join('') ||
+    `<div class="empty">${fills.length ? 'Inga affärer i det här filtret.' : 'Inga fyllda bud än.'}</div>`;
+  // per day
+  const ds = rows.slice(-12), mx = Math.max(1e-9, ...ds.map(r => Math.abs(sek(r.net) || 0)));
+  $('day-sub').textContent = `${done.length} hela dagar · UTC`;
+  $('days').innerHTML = ds.map(r => { const v = sek(r.net) || 0; return `<div class="d" title="${r.day}: ${skr(v)}"><span class="${cls(v)}">${v >= 0 ? '+' : '−'}${fmt(Math.abs(v))}</span>` +
+    `<i style="height:${Math.max(4, Math.abs(v) / mx * 80)}px;background:${v >= 0 ? 'linear-gradient(180deg,#4ade80,#16a34a)' : 'linear-gradient(180deg,#f87171,#b91c1c)'};opacity:${r.partial ? .55 : 1}"></i><span>${r.day.slice(5)}</span></div>`; }).join('') ||
+    '<div class="empty" style="width:100%">Fylls i efter första dagen.</div>';
+  $('dayrows').innerHTML = rows.slice().reverse().slice(0, 7).map(r => `<div class="row"><div class="main"><b>${r.day.slice(5)}${r.partial ? ` <span class="pill b">${r.day === st.started.slice(0, 10) ? 'startdag' : 'pågår'}</span>` : ''}</b>` +
+    `<span>belöning ${skr(sek(r.reward))} · market making ${skr(sek(r.mm))} · ${fmt(r.fills)} affärer · andel ${pct(r.share)}</span></div>` +
+    `<div class="end"><span class="${cls(r.net)}" style="font-size:14px;font-weight:700">${skr(sek(r.net))}</span></div></div>`).join('');
+  // meta
+  const tok = Object.values(S.v1?.tokens || {})[0];
+  $('meta').innerHTML = [['Start', st.started.slice(0, 16).replace('T', ' ') + ' UTC'], ['Kapital', v34() ? '1 000 $ (visas som 10 000 kr)' : '1 000 $'],
+    ['Marknader', port.length], ['Bud', 'minsta storlek, halva max-avståndet'], ['Belöningstoken', tok ? tok.symbol : 'pUSD'],
+    ['1 USD', S.fx ? fmt(S.fx, 2) + ' kr' : '—']].map(([k, v]) => `<span>${k}</span><b>${esc(v)}</b>`).join('');
+  $('about').textContent = S.view === 'v1' ? 'Version 1 valde 24 marknader den 4 oktober och har aldrig bytt, så att mätningen blir ärlig.' :
+    S.view === 'v3' ? 'Version 3 (test 63) väljer om alla marknader varje dygn mot dagens konkurrens och pottar.' :
+    'Version 4 (test 65) kontrollerar varje timme och byter bara en marknad om vår andel halverats och en ny är minst 30 % bättre.';
+  // markets
+  const sorted = port.slice().sort((a, b) => (S.live[b.cond]?.perDay ?? 0) - (S.live[a.cond]?.perDay ?? 0));
+  $('mk-sub').textContent = `${port.length} st · sorterade efter belöning per dag just nu`;
+  $('mk').innerHTML = sorted.map(c => { const x = S.live[c.cond], p = pos[c.cond] || {}, mm = (p.r_cash || 0) + (p.r_inv || 0) * (x?.mid ?? p.mid ?? 0), earned = p.r_reward || 0, tot = earned + mm;
+    return `<div class="row"><div class="av">${initials(c.question)}</div>` +
+      `<div class="main"><b>${esc(c.question)}</b><span>pott ${kr(sek(c.rate))}/dag · mitt ${x ? fmt(x.mid, 3) : '—'}</span>${x && !x.inBand ? ' <span class="pill o">utanför 0,10–0,90</span>' : ''}</div>` +
+      `<div class="mid"><span>andel ${x ? pct(x.share) : '—'}</span><div class="share"><i style="width:${x ? Math.round(x.share * 100) : 0}%"></i></div><span style="margin-top:4px">${x ? kr(sek(x.perDay), 1) + '/dag nu' : ''}</span></div>` +
+      `<div class="end"><span class="${cls(tot)}" style="font-size:13.5px;font-weight:700">${skr(sek(tot), 1)}</span><span>belöning ${kr(sek(earned), 1)} · MM ${skr(sek(mm), 1)}</span></div></div>`; }).join('') ||
+    '<div class="empty">Inga marknader än.</div>';
+}
+
 $('ver').addEventListener('click', e => {
   const b = e.target.closest('button'); if (!b || b.dataset.v === S.view) return;
   S.view = b.dataset.v;
   try { const u = new URL(location.href); u.searchParams.set('v', S.view.slice(1)); u.searchParams.delete('only'); history.replaceState(null, '', u); } catch {}
-  pickView(); S.live = {}; renderAll(); loadBooks().then(renderAll);
+  pickView(); S.live = {}; render(); loadBooks().then(render);
 });
-
+$('af-f').addEventListener('click', e => {
+  const b = e.target.closest('button'); if (!b) return;
+  S.afF = b.dataset.v; for (const x of $('af-f').children) x.classList.toggle('on', x === b); render();
+});
+$('c-eq').addEventListener('mousemove', hover);
+$('c-eq').addEventListener('mouseleave', () => { $('tip').style.display = 'none'; });
+$('c-eq').addEventListener('touchmove', e => hover(e.touches[0]), {passive: true});
+S.view = ({'3': 'v3', 'v3': 'v3', '4': 'v4', 'v4': 'v4'})[qs.get('v')] || 'v1';   // rewards.html is version 1; ?v=3 / ?v=4 open the others
+(async function init() {
+  pickView();
+  await Promise.allSettled([loadFx(), loadState()]);
+  render();
+  await loadBooks(); render();
+  setInterval(() => loadBooks().then(render), 30_000);
+  setInterval(() => loadState().then(render).catch(() => {}), 75_000);
+  setInterval(() => loadFx().catch(() => {}), 3600_000);
+  addEventListener('resize', render);
+})();
 </script>
 </body>
 </html>

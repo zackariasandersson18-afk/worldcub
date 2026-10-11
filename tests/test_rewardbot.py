@@ -231,9 +231,10 @@ def test_history_keeps_one_row_per_ten_minutes():
     assert abs(st['history'][0]['reward_tick'] - 10.0) < 1e-9 and abs(st['history'][1]['reward_tick'] - 2.0) < 1e-9
 
 
-def test_loop_runs_every_version_even_if_one_fails(monkeypatch):
+def test_loop_runs_every_version_even_if_one_fails(monkeypatch, tmp_path):
     from rewardbot import live, live_v2, loop
     calls = []
+    monkeypatch.setattr(loop, 'meme_tick', lambda state, http, log=print: calls.append('meme') or {'net': 0})
     monkeypatch.setattr(live, 'step', lambda state, http=None, log=print: calls.append('v1') or {'net': 1, 'avg_share': 0.1})
     def v2(state, http=None, log=print, version='v2'):
         calls.append(version)
@@ -241,8 +242,8 @@ def test_loop_runs_every_version_even_if_one_fails(monkeypatch):
             raise RuntimeError('boom')
         return {'net': 2, 'avg_share': 0.2}
     monkeypatch.setattr(live_v2, 'step', v2)
-    loop.tick('x', None, log=lambda *_: None)
-    assert calls[:4] == ['v1', 'v2', 'v3', 'v4']
+    loop.tick(str(tmp_path), None, log=lambda *_: None)
+    assert calls == ['v1', 'v2', 'v3', 'v4', 'meme']
 
 
 def test_v4_hourly_review_swaps_only_weak_markets_for_clearly_better_ones(monkeypatch):

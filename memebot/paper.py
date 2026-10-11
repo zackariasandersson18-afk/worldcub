@@ -21,6 +21,17 @@ Rules fixed BEFORE any result was seen:
   equity     cash + open positions at the current price, after the exit cost
 Gaps between minutes are real: a stop fills at the price seen, which can be far below -40 %.
 
+Fills from Jupiter (amended 11 Oct 2026 ~20 UTC, AFTER the first 5 trades had been seen: 4 closed, +1 308 kr,
+1 open). Only the cost model changed, no entry or exit rule. Trades bought before the switch keep the flat
+2 % and have no 'fills' key; trades with fills='jupiter' use the new model, so the two can be judged apart.
+Instead of a flat
+2 % per side, every buy and sell is priced with Jupiter's real quote for exactly that size (lite-api.jup.ag,
+USDC in/out, 10 kr per USD), minus 0.5 % for the price moving before the swap lands and 2 kr network +
+priority fee per swap. A buy without a route is skipped; an exit without a route is retried every minute
+and after three minutes without any route the position is worth 0 (it cannot be sold). If Jupiter does
+not answer at all, the 2 % estimate is used and the trade is marked estimated. Entry = USD actually paid per
+token, so the 2x / -40 % levels are measured from the real fill like before.
+
 Manual close (added on request, not part of the pre-registered rules): the owner can close an
 open position by hand; it is sold at the current price with the same 2 % cost and marked
 reason "manuellt stängd" / manual=True, so test 66 can be judged with or without them.
@@ -45,6 +56,11 @@ QUOTES = {'So11111111111111111111111111111111111111112', 'EPjFWdd5AufqSSqeM2qN1x
 GT = 'https://api.geckoterminal.com/api/v2/networks/solana'
 RC = 'https://api.rugcheck.xyz/v1/tokens'
 DS = 'https://api.dexscreener.com/latest/dex/pairs/solana'
+JUP = 'https://lite-api.jup.ag/swap/v1/quote'
+USDC = 'EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v'
+KR_PER_USD = 10.0                                  # same fixed rate as the rewards pages
+FEE_KR = 2.0                                       # network + priority fee per swap (about 0.2 USD)
+LATENCY = 0.005                                    # 0.5 % worse than the quote: the price moves before the swap lands
 HISTORY_EVERY_S = 600
 TRAIL_MAX = 2880                                   # one price per minute for 48 h (dashboard chart per trade)
 MARKET_SKIPS = ('quote', 'age', 'liquidity', 'buy pressure', 'volume', 'price change', 'price')
@@ -149,9 +165,44 @@ def quotes(http, pools: list[str]) -> dict:
     return out
 
 
+def jup(http, in_mint: str, out_mint: str, amount: int):
+    """Jupiter's best route for an exact-in swap: ('ok', out_raw, impact) | ('noroute', 0, None) | ('down', 0, None).
+    'noroute' means Jupiter answered and nobody will take the trade (unsellable); 'down' means no answer."""
+    if amount <= 0:
+        return 'noroute', 0, None
+    try:
+        r = http.get(JUP, params={'inputMint': in_mint, 'outputMint': out_mint, 'amount': str(int(amount)),
+                                  'slippageBps': 1500, 'swapMode': 'ExactIn'}, timeout=20, headers={'accept': 'application/json'})
+        b = r.json()
+    except (requests.RequestException, ValueError):
+        return 'down', 0, None
+    if r.status_code == 200 and int(b.get('outAmount') or 0) > 0:
+        return 'ok', int(b['outAmount']), float(b.get('priceImpactPct') or 0)
+    if r.status_code in (400, 404) and isinstance(b, dict) and b.get('errorCode'):
+        return 'noroute', 0, None
+    return 'down', 0, None
+
+
+def ui(p: dict, raw: int | None = None) -> float:
+    return (p['tokens_left'] if raw is None else raw) / 10 ** p['decimals']
+
+
+def sell_quote(http, p: dict, raw: int):
+    """Kronor received for selling `raw` token units now: (status, kr, impact). Includes the latency haircut and fee."""
+    status, out, imp = jup(http, p['mint'], USDC, raw)
+    if status != 'ok':
+        return status, 0.0, None
+    return 'ok', max(0.0, out / 1e6 * (1 - LATENCY) * KR_PER_USD - FEE_KR), imp
+
+
 def value(p: dict, price: float) -> float:
-    """Kronor received if the remaining position were sold at `price`."""
-    return p['stake_left'] * price / p['entry'] * (1 - COST)
+    """Kronor received if the remaining position were sold at `price`: the last Jupiter sell quote scaled to
+    the price, or a 2 % estimate when there is no quote yet (and for positions opened before Jupiter)."""
+    if 'tokens_left' not in p:
+        return p['stake_left'] * price / p['entry'] * (1 - COST)
+    if p.get('quote_kr') is not None and p.get('quote_px'):
+        return p['quote_kr'] * price / p['quote_px']
+    return max(0.0, ui(p) * price * KR_PER_USD * (1 - COST) - FEE_KR)
 
 
 def track(p: dict, ts: float, price: float) -> None:
@@ -161,15 +212,19 @@ def track(p: dict, ts: float, price: float) -> None:
     del t[:-TRAIL_MAX]
 
 
-def exit_all(st: dict, p: dict, price: float, why: str, iso: str) -> None:
+def exit_all(st: dict, p: dict, price: float, why: str, iso: str, got: float | None = None) -> None:
     if len(p.get('trail') or []) > 300:              # keep closed trades small: every n-th point plus the last
         t = p['trail']
         p['trail'] = t[::len(t) // 250 + 1] + [t[-1]]
-    got = value(p, price) if price > 0 else 0.0
+    if got is None:
+        got = value(p, price) if price > 0 else 0.0
     st['cash'] += got
     p['realised'] += got
     p.update(closed=iso, exit_price=price, reason=why, pnl=round(p['realised'] - p['stake'], 2),
              won=p['realised'] > p['stake'], stake_left=0.0)
+    if 'tokens_left' in p:
+        p['tokens_left'] = 0
+    p.pop('exit_wait', None)
     st['open'].remove(p)
     st['closed'].append(p)
 
@@ -191,33 +246,69 @@ def step(state_dir: str | Path, now: float | None = None, http=None, log=print, 
         if not o or o['price'] <= 0 or (o['liq'] and o['liq'] < 1000):
             p['missing'] = p.get('missing', 0) + 1
             if p['missing'] >= 3:                      # one empty answer is not a rug; three in a row are
-                exit_all(st, p, 0.0, 'rug / pair gone', iso)
+                exit_all(st, p, 0.0, 'rug / pair gone', iso, got=0.0)
             continue
         p['missing'] = 0
         px = o['price']
         track(p, now, px)
-        if close and p['pool'] in close:
-            p['last'] = px
-            exit_all(st, p, px, 'manuellt stängd', iso)
-            p['manual'] = True
-            continue
         p['last'], p['peak'] = px, max(p['peak'], px)
         if o['liq']:
             p['liq_now'] = o['liq']                    # liquidity in USD right now (shown beside the one at entry)
+        jq = None                                      # this minute's Jupiter quote for selling everything
+        if 'tokens_left' in p:
+            jq = sell_quote(http, p, p['tokens_left'])
+            if jq[0] == 'ok':
+                p.update(quote_kr=round(jq[1], 4), quote_px=px, exit_impact=jq[2], quote_ts=iso, nosell=0)
+            elif jq[0] == 'noroute':
+                p['nosell'] = p.get('nosell', 0) + 1
+                p.update(quote_kr=0.0, quote_px=px)
+        def out(why: str) -> None:
+            """Sell everything; with Jupiter, at its quote. No route three minutes in a row = unsellable = worth 0."""
+            if jq is None or jq[0] == 'down':          # legacy position, or Jupiter silent: 2 % estimate
+                exit_all(st, p, px, why, iso)
+                if jq is not None:
+                    p['estimated'] = True
+            elif jq[0] == 'ok':
+                exit_all(st, p, px, why, iso, got=jq[1])
+            elif p['nosell'] >= 3:
+                exit_all(st, p, px, 'ingen säljväg (kan inte säljas)', iso, got=0.0)
+            else:
+                p['exit_wait'] = why                   # try again next minute whatever the price does
+        if p.get('exit_wait'):
+            out(p['exit_wait'])
+            continue
+        if close and p['pool'] in close:
+            p['manual'] = True
+            out('manuellt stängd')
+            continue
         r = px / p['entry']
         if not p['half_sold'] and r >= 2:
-            got = value(p, px) / 2
-            st['cash'] += got
-            p['realised'] += got
-            p['stake_left'] /= 2
-            p['half_sold'] = True
-            p.setdefault('events', []).append({'ts': iso, 'what': 'sold half at 2x', 'kr': round(got, 2)})
+            if 'tokens_left' in p:
+                half = p['tokens_left'] // 2
+                hs, got, imp = sell_quote(http, p, half)
+                if hs == 'down':
+                    got, imp = value(p, px) / 2, None
+            else:
+                hs, got, imp, half = 'legacy', value(p, px) / 2, None, 0
+            if hs != 'noroute':                        # no buyer for half: try again next minute
+                st['cash'] += got
+                p['realised'] += got
+                p['stake_left'] /= 2
+                p['half_sold'] = True
+                if 'tokens_left' in p:
+                    p['tokens_left'] -= half
+                    p.pop('quote_kr', None)            # the quote was for the whole bag
+                p.setdefault('events', []).append({'ts': iso, 'what': 'sold half at 2x', 'kr': round(got, 2), 'impact': imp})
+                if 'tokens_left' in p:
+                    jq = sell_quote(http, p, p['tokens_left'])
+                    if jq[0] == 'ok':
+                        p.update(quote_kr=round(jq[1], 4), quote_px=px, exit_impact=jq[2], quote_ts=iso)
         if not p['half_sold'] and r <= 0.6:
-            exit_all(st, p, px, 'stop -40 %', iso)
+            out('stop -40 %')
         elif p['half_sold'] and (r >= 5 or px <= 0.5 * p['peak']):
-            exit_all(st, p, px, '5x' if r >= 5 else 'trailing -50 % from peak', iso)
+            out('5x' if r >= 5 else 'trailing -50 % from peak')
         elif now - p['opened_ts'] >= 48 * 3600:
-            exit_all(st, p, px, '48 h', iso)
+            out('48 h')
     # 2. entries
     if len(st['open']) < MAX_OPEN and st['cash'] >= STAKE_KR:
         seen = set(st['seen'])
@@ -226,21 +317,34 @@ def step(state_dir: str | Path, now: float | None = None, http=None, log=print, 
                 break
             if c['mint'] in seen:
                 continue
-            why = market_ok(c)
+            why, report = market_ok(c), None
             if why is None:
-                why = safety(_get(http, f"{RC}/{c['mint']}/report"))
+                report = _get(http, f"{RC}/{c['mint']}/report")
+                why = safety(report)
+            dec = ((report or {}).get('token') or {}).get('decimals')
+            if why is None and not isinstance(dec, int):
+                why = 'no decimals'
+            buy = None
+            if why is None:                            # a real buy: what Jupiter gives for 250 kr minus the fee
+                buy = jup(http, USDC, c['mint'], int((STAKE_KR - FEE_KR) / KR_PER_USD * 1e6))
+                if buy[0] != 'ok':
+                    why = 'no route' if buy[0] == 'noroute' else 'jupiter down'
             if why:
                 st['skips'][why] = st['skips'].get(why, 0) + 1
-                if why not in MARKET_SKIPS:
+                if why not in MARKET_SKIPS + ('jupiter down',):
                     seen.add(c['mint'])                # failed the safety check: never look again
                 continue
             seen.add(c['mint'])
+            tokens = int(buy[1] * (1 - LATENCY))
+            entry = STAKE_KR / KR_PER_USD / (tokens / 10 ** dec)   # USD per token actually paid, all costs in
             st['cash'] -= STAKE_KR
             st['open'].append({'pool': c['pool'], 'mint': c['mint'], 'name': c['name'], 'opened': iso, 'opened_ts': now,
-                               'entry': c['price'] * (1 + COST), 'entry_seen': c['price'], 'stake': STAKE_KR,
+                               'entry': entry, 'entry_seen': c['price'], 'stake': STAKE_KR,
                                'stake_left': STAKE_KR, 'peak': c['price'], 'last': c['price'], 'half_sold': False,
-                               'realised': 0.0, 'liq_at_entry': c['liq'], 'trail': [[int(now), float(f"{c['price']:.6g}")]]})
-            log(f"meme buy {c['name']} at {c['price']:.3g} USD, liquidity {c['liq']:.0f}")
+                               'realised': 0.0, 'liq_at_entry': c['liq'], 'trail': [[int(now), float(f"{c['price']:.6g}")]],
+                               'tokens': tokens, 'tokens_left': tokens, 'decimals': dec, 'entry_impact': buy[2],
+                               'entry_cost': round(entry / c['price'] - 1, 4) if c['price'] else None, 'fills': 'jupiter'})
+            log(f"meme buy {c['name']} at {entry:.3g} USD (screen {c['price']:.3g}), liquidity {c['liq']:.0f}")
         st['seen'] = list(seen)[-20000:]
     # 3. equity
     eq = st['cash'] + sum(value(p, p['last']) for p in st['open'])

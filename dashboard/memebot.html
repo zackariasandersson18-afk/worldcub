@@ -206,7 +206,7 @@ button.closebtn{cursor:pointer;font-family:inherit}
     </section>
   </div>
 
-  <div class="foot">Virtuell handel med riktiga priser från GeckoTerminal och DexScreener och säkerhetsdata från RugCheck. Regler bestämda innan start (test 66): köper 250 kr i nya Solana-tokens (10 min–6 h gamla) med minst 20 000 $ likviditet, köptryck och stigande pris, och bara om RugCheck inte hittar allvarliga risker, likviditeten är låst och de 10 största ägarna har högst 30 %. Säljer halva vid 2×, allt vid −40 % innan dess, resten vid 5× eller −50 % från toppen, allt efter 48 h. 2 % kostnad per köp och sälj. Försvinner handeln räknas det som total förlust. Kollas varje minut, så ett fall mellan två minuter kan bli större än −40 %. Ingen finansiell rådgivning. <a href="#" id="unlink" style="text-decoration:underline;display:none">Koppla från GitHub</a></div>
+  <div class="foot">Virtuell handel med riktiga priser från GeckoTerminal och DexScreener och säkerhetsdata från RugCheck. Regler bestämda innan start (test 66): köper 250 kr i nya Solana-tokens (10 min–6 h gamla) med minst 20 000 $ likviditet, köptryck och stigande pris, och bara om RugCheck inte hittar allvarliga risker, likviditeten är låst och de 10 största ägarna har högst 30 %. Säljer halva vid 2×, allt vid −40 % innan dess, resten vid 5× eller −50 % från toppen, allt efter 48 h. Varje köp och sälj prissätts med Jupiters riktiga offert för exakt den storleken (10 kr per dollar), minus 0,5 % för att priset hinner röra sig och 2 kr i nätverks- och prioritetsavgift. Finns ingen köpväg köps inget; finns ingen säljväg på tre minuter räknas affären som värdelös. Svarar Jupiter inte alls används 2 % som uppskattning och affären märks "uppskattad". Försvinner handeln räknas det som total förlust. Kollas varje minut, så ett fall mellan två minuter kan bli större än −40 %. Ingen finansiell rådgivning. <a href="#" id="unlink" style="text-decoration:underline;display:none">Koppla från GitHub</a></div>
 </div>
 
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="m-name">
@@ -249,7 +249,12 @@ const skr = (x, d = 0) => x == null || !isFinite(x) ? '—' : (x >= 0 ? '+' : '�
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]));
 const cls = v => v > 0 ? 'up' : v < 0 ? 'down' : '';
 const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
-const COST = 0.02, val = (p, px) => p.stake_left * px / p.entry * (1 - COST);
+// what the rest of a position would sell for, exactly like memebot/paper.py value(): the bot's last Jupiter sell quote
+// scaled to the live price, else a 2 % estimate (and the old flat 2 % for positions from before Jupiter)
+const COST = 0.02, KR_PER_USD = 10, FEE_KR = 2;
+const val = (p, px) => p.tokens_left == null ? p.stake_left * px / p.entry * (1 - COST)
+  : p.quote_kr != null && p.quote_px ? p.quote_kr * px / p.quote_px
+  : Math.max(0, p.tokens_left / 10 ** p.decimals * px * KR_PER_USD * (1 - COST) - FEE_KR);
 const liq = usd => usd == null || !isFinite(usd) ? '—' : usd >= 1e6 ? `${fmt(usd / 1e6, 2)} M$` : `${fmt(usd / 1000, usd < 1e5 ? 1 : 0)} k$`;
 const sym = n => esc(String(n || '?').split('/')[0].trim());
 const ago = iso => { const m = Math.max(0, (Date.now() - new Date(iso)) / 6e4); return m < 60 ? `${fmt(m)} min sedan` : m < 1440 ? `${fmt(m / 60)} h sedan` : `${fmt(m / 1440)} d sedan`; };
@@ -327,7 +332,7 @@ const usd = x => !(x > 0) ? '—' : '$' + (x >= 1 ? fmt(x, x >= 100 ? 0 : 2) : x
 const pct = x => (x >= 0 ? '+' : '−') + fmt(Math.abs(x) * 100, Math.abs(x) < 0.1 ? 1 : 0) + ' %';
 const when = iso => new Date(iso).toLocaleString('sv-SE', {weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit'});
 
-// levels the bot acts on, in USD; ratios are against the entry price including the 2 % buy cost, exactly like the bot
+// levels the bot acts on, in USD; ratios are against the real entry (what Jupiter gave for 250 kr), exactly like the bot
 function levels(p) {
   const E = p.entry, L = [];
   L.push({k: 'Mål 1 · sälj halva', at: 2 * E, col: '--good', done: p.half_sold});
@@ -356,7 +361,13 @@ function detail() {
     (fe > .15 && fe < .85 ? `<span style="left:${fe * 100}%">köp</span>` : '') + `<span style="left:100%;transform:translateX(-100%)">${goal.k.split(' · ')[0].toLowerCase()} ${usd(goal.at)}</span>`;
   const left = 48 * 3600 - (Date.now() / 1000 - p.opened_ts);
   const cards = [
-    {k: 'Köpt', col: '--text2', v: when(p.opened), s: `${usd(p.entry_seen)} (${usd(p.entry)} med 2 % kostnad) · likviditet ${liq(p.liq_at_entry)}`},
+    {k: 'Köpt', col: '--text2', v: when(p.opened), s: p.tokens != null
+      ? `skärmpris ${usd(p.entry_seen)}, betalt ${usd(p.entry)} via Jupiter (${pct(p.entry_cost ?? 0)} inkl. prispåverkan och avgift) · likviditet ${liq(p.liq_at_entry)}`
+      : `${usd(p.entry_seen)} (${usd(p.entry)} med 2 % kostnad) · likviditet ${liq(p.liq_at_entry)}`},
+    ...(p.tokens != null ? [{k: 'Säljvärde nu enligt Jupiter', col: '--a3', v: p.quote_kr != null ? kr(val(p, px), 2) : '—',
+      s: p.exit_wait ? `försöker sälja (${p.exit_wait}) – ingen köpare hittad än, nytt försök varje minut`
+        : p.quote_kr != null ? `prispåverkan om allt säljs nu ${fmt((p.exit_impact || 0) * 100, 2)} % · 0,5 % marginal + 2 kr avgift dragna`
+        : 'väntar på första säljofferten'}] : []),
     ...L.map(l => ({k: l.k, col: l.col, done: l.done, v: usd(l.at),
       s: l.done ? 'klart – halva är redan såld' : l.after ? `gäller efter mål 1 · ${pct(l.at / px - 1)} härifrån` :
         l.col === '--bad' ? `priset måste falla ${pct(l.at / px - 1)} härifrån` : `priset måste stiga ${pct(l.at / px - 1)} härifrån`})),
@@ -515,10 +526,10 @@ function render() {
     '<div class="empty">Inget har hänt än.</div>';
   // closed trades
   $('closed-sub').textContent = `${closed.length} st`;
-  const pill = r => /manuellt/.test(r) ? ['o', 'stängd av dig'] : /rug/.test(r) ? ['r', 'rug'] : /stop/.test(r) ? ['o', 'stop −40 %'] : /5x/.test(r) ? ['g', '5×'] : /trailing/.test(r) ? ['b', 'från toppen'] : ['b', esc(r)];
+  const pill = r => /säljväg/.test(r) ? ['r', 'kunde inte säljas'] : /manuellt/.test(r) ? ['o', 'stängd av dig'] : /rug/.test(r) ? ['r', 'rug'] : /stop/.test(r) ? ['o', 'stop −40 %'] : /5x/.test(r) ? ['g', '5×'] : /trailing/.test(r) ? ['b', 'från toppen'] : ['b', esc(r)];
   $('closed').innerHTML = closed.slice().reverse().slice(0, 30).map(p => { const [c, t] = pill(p.reason || '');
     return `<a class="row" href="https://dexscreener.com/solana/${esc(p.pool)}" target="_blank" rel="noopener"><div class="av">${sym(p.name).slice(0, 2).toUpperCase()}</div>` +
-      `<div class="main"><b>${sym(p.name)}</b><span>${ago(p.closed)} · likviditet vid köp <b style="display:inline;font-size:12px;color:var(--text)">${liq(p.liq_at_entry)}</b></span> <span class="pill ${c}">${t}</span></div>` +
+      `<div class="main"><b>${sym(p.name)}</b><span>${ago(p.closed)} · likviditet vid köp <b style="display:inline;font-size:12px;color:var(--text)">${liq(p.liq_at_entry)}</b></span> <span class="pill ${c}">${t}</span>${p.estimated ? ' <span class="pill o">uppskattad</span>' : ''}</div>` +
       `<div class="end"><span class="${cls(p.pnl)}" style="font-size:13.5px;font-weight:700">${skr(p.pnl)}</span><span>insats ${kr(p.stake)}</span></div></a>`; }).join('') ||
     '<div class="empty">Inga avslutade affärer än.</div>';
   // per day bars (sign + colour)

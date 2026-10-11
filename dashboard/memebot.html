@@ -98,6 +98,13 @@ a{color:inherit;text-decoration:none}
 .empty{color:var(--muted);font-size:13px;padding:18px 4px;text-align:center}
 .closebtn{flex:none;font-size:12px;font-weight:600;padding:7px 12px;border-radius:999px;color:#fca5a5;background:rgba(239,68,68,.12);border:1px solid rgba(239,68,68,.35)}
 .closebtn:hover{background:rgba(239,68,68,.22)}
+button.closebtn{cursor:pointer;font-family:inherit}
+.closebtn[disabled]{cursor:default;color:var(--text2);background:rgba(120,140,255,.10);border-color:var(--border)}
+.setup ol{margin:10px 0 0 18px;color:var(--text2);font-size:13px;line-height:1.7}
+.setup ol b{color:var(--text)}
+.setup input{width:100%;margin-top:14px;padding:11px 12px;border-radius:12px;border:1px solid var(--border2);background:rgba(6,10,24,.7);color:var(--text);font:13px ui-monospace,monospace}
+.setup .err{color:#fca5a5;font-size:12.5px;margin-top:8px;min-height:1em}
+.setup .acts button{font:600 12.5px Inter,system-ui,sans-serif;padding:9px 16px;border-radius:999px;border:0;color:#fff;cursor:pointer;background:linear-gradient(135deg,var(--a1),var(--a2))}
 /* bars */
 .bars .b{display:grid;grid-template-columns:minmax(0,1fr) 120px 44px;align-items:center;gap:10px;margin:9px 0;font-size:12.5px;color:var(--text2)}
 .bars .t{height:8px;border-radius:999px;background:rgba(120,140,255,.10);overflow:hidden}
@@ -174,7 +181,7 @@ a{color:inherit;text-decoration:none}
 
     <section class="card s6">
       <div class="ch"><h3>Öppna affärer</h3><span class="sub" id="open-sub">—</span></div>
-      <div class="note2" style="color:var(--muted);font-size:12px;margin:-4px 0 6px">Tryck på en affär för graf, mål och stop-nivå. Värdet uppdateras live var 10:e sekund. "Stäng" öppnar ett färdigt ärende på GitHub – tryck Submit så säljer boten till aktuellt pris inom ungefär en minut. Bara ditt konto godtas.</div>
+      <div class="note2" style="color:var(--muted);font-size:12px;margin:-4px 0 6px">Tryck på en affär för graf, mål och stop-nivå. Värdet uppdateras live var 10:e sekund. "Stäng" säljer till aktuellt pris – boten genomför det inom ungefär en minut. På din github.io-sida räcker ett tryck (koppla GitHub en gång); på andra adresser öppnas ett färdigt ärende på GitHub som du skickar.</div>
       <div class="list" id="open"></div>
     </section>
 
@@ -199,7 +206,7 @@ a{color:inherit;text-decoration:none}
     </section>
   </div>
 
-  <div class="foot">Virtuell handel med riktiga priser från GeckoTerminal och DexScreener och säkerhetsdata från RugCheck. Regler bestämda innan start (test 66): köper 250 kr i nya Solana-tokens (10 min–6 h gamla) med minst 20 000 $ likviditet, köptryck och stigande pris, och bara om RugCheck inte hittar allvarliga risker, likviditeten är låst och de 10 största ägarna har högst 30 %. Säljer halva vid 2×, allt vid −40 % innan dess, resten vid 5× eller −50 % från toppen, allt efter 48 h. 2 % kostnad per köp och sälj. Försvinner handeln räknas det som total förlust. Kollas varje minut, så ett fall mellan två minuter kan bli större än −40 %. Ingen finansiell rådgivning.</div>
+  <div class="foot">Virtuell handel med riktiga priser från GeckoTerminal och DexScreener och säkerhetsdata från RugCheck. Regler bestämda innan start (test 66): köper 250 kr i nya Solana-tokens (10 min–6 h gamla) med minst 20 000 $ likviditet, köptryck och stigande pris, och bara om RugCheck inte hittar allvarliga risker, likviditeten är låst och de 10 största ägarna har högst 30 %. Säljer halva vid 2×, allt vid −40 % innan dess, resten vid 5× eller −50 % från toppen, allt efter 48 h. 2 % kostnad per köp och sälj. Försvinner handeln räknas det som total förlust. Kollas varje minut, så ett fall mellan två minuter kan bli större än −40 %. Ingen finansiell rådgivning. <a href="#" id="unlink" style="text-decoration:underline;display:none">Koppla från GitHub</a></div>
 </div>
 
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="m-name">
@@ -210,6 +217,23 @@ a{color:inherit;text-decoration:none}
     <div class="chart"><canvas id="c-tr" height="260" aria-label="Pris sedan köp med mål och stop"></canvas><div class="tip" id="tip2"></div></div>
     <div class="lv" id="m-lv"></div>
     <div class="acts" id="m-acts"></div>
+  </div>
+</div>
+
+<div class="modal" id="setup" role="dialog" aria-modal="true" aria-labelledby="s-h">
+  <div class="sheet setup" style="max-width:560px">
+    <div class="hd"><div class="title"><b id="s-h">Koppla GitHub för stäng-knappen</b><div>görs en gång – sedan stänger knappen direkt</div></div><button class="x" id="s-x" aria-label="Stäng rutan">×</button></div>
+    <ol>
+      <li>Öppna <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener" style="color:#9db4ff;text-decoration:underline">GitHub → ny fine-grained token</a>.</li>
+      <li>Namn: <b>memebot stäng</b>, utgång t.ex. <b>90 dagar</b>.</li>
+      <li>Repository access: <b>Only select repositories → worldcub</b>.</li>
+      <li>Permissions → Repository: <b>Issues → Read and write</b>. Inget annat.</li>
+      <li>Tryck <b>Generate token</b>, kopiera den och klistra in här.</li>
+    </ol>
+    <input id="s-tok" type="password" autocomplete="off" spellcheck="false" placeholder="github_pat_…" aria-label="GitHub-token">
+    <div class="err" id="s-err"></div>
+    <div class="muted" style="font-size:12px;line-height:1.55">Nyckeln sparas bara i den här webbläsaren på din egen github.io-adress och skickas bara till api.github.com. Ge den aldrig till någon, inte heller i chatten. Den kan bara skapa och läsa ärenden i worldcub – inte ändra koden. Du kan ta bort den med "Koppla från" längst ner.</div>
+    <div class="acts"><button id="s-save">Spara och stäng affären</button><a id="s-alt" href="#" target="_blank" rel="noopener">Stäng via GitHub-sidan i stället</a></div>
   </div>
 </div>
 
@@ -340,7 +364,7 @@ function detail() {
   ];
   $('m-lv').innerHTML = cards.map(c => `<div class="${c.done ? 'done' : ''}"><div class="k"><i style="background:var(${c.col})"></i>${esc(c.k)}</div><div class="v">${esc(c.v)}</div><div class="s">${esc(c.s)}</div></div>`).join('');
   $('m-acts').innerHTML = `<a href="https://dexscreener.com/solana/${esc(p.pool)}" target="_blank" rel="noopener">Öppna på DexScreener ↗</a>` +
-    `<a href="${closeUrl(p)}" target="_blank" rel="noopener" style="color:#fca5a5;border-color:rgba(239,68,68,.4)">Stäng affären</a>`;
+    btn(p, "Stäng affären");
   tradeChart(p, L);
 }
 
@@ -387,8 +411,63 @@ function hover2(e) {
 function openDetail(pool) { S.sel = pool; $('modal').classList.add('on'); detail(); $('m-x').focus(); }
 function closeDetail() { S.sel = null; $('modal').classList.remove('on'); }
 
+// ---- one-click close: on the owner's own github.io origin the page opens the "memebot: stäng <pool>" issue itself
+// with the owner's fine-grained token (Issues only). raw.githack.com is shared by every repo, so the token is never
+// stored there; that origin keeps the prefilled-issue link. The bot only obeys issues by the repo owner.
+const ONE_CLICK = location.hostname === `${CFG.repo.split('/')[0]}.github.io`;
+const TK = 'memebot-close-token', PK = 'memebot-close-pending';
+const tok = { get: () => { if (!ONE_CLICK) return ''; try { return localStorage.getItem(TK) || ''; } catch { return ''; } },
+  set: v => { if (!ONE_CLICK) return; try { v ? localStorage.setItem(TK, v) : localStorage.removeItem(TK); } catch {} } };
+S.pending = (() => { try { return JSON.parse(localStorage.getItem(PK) || '{}'); } catch { return {}; } })();
+const savePending = () => { try { localStorage.setItem(PK, JSON.stringify(S.pending)); } catch {} };
+const gh = (path, opt = {}) => fetch(`https://api.github.com/repos/${CFG.repo}${path}`, {...opt, headers: {
+  Authorization: `Bearer ${tok.get()}`, Accept: 'application/vnd.github+json', 'Content-Type': 'application/json'}});
+function btn(p, label = 'Stäng') {
+  if (!ONE_CLICK) return `<a class="closebtn" href="${closeUrl(p)}" target="_blank" rel="noopener" title="Öppnar ett färdigt ärende på GitHub">${label}</a>`;
+  const st = S.pending[p.pool];
+  return st ? `<button class="closebtn" disabled>${st === 'fail' ? 'Misslyckades' : 'Stänger…'}</button>`
+    : `<button class="closebtn" data-close="${esc(p.pool)}" title="Sälj till aktuellt pris">${label}</button>`;
+}
+async function closeTrade(pool) {
+  const p = (S.st?.open || []).find(x => x.pool === pool);
+  if (!p || S.pending[pool]) return;
+  if (!tok.get()) { S.wantClose = pool; $('s-alt').href = closeUrl(p); $('setup').classList.add('on'); $('s-tok').focus(); return; }
+  S.pending[pool] = 'sending'; render();
+  try {
+    const r = await gh('/issues', {method: 'POST', body: JSON.stringify({title: 'memebot: stäng ' + pool,
+      body: `Stäng ${p.name} (köpt ${p.opened.slice(0, 16).replace('T', ' ')} UTC) till aktuellt pris. Skapad med Stäng-knappen.`})});
+    if ([401, 403, 404].includes(r.status)) {
+      tok.set(''); delete S.pending[pool]; render(); closeTrade(pool);
+      $('s-err').textContent = 'Nyckeln fungerade inte (saknar Issues: Read and write för worldcub, eller har gått ut). Gör en ny.'; return;
+    }
+    if (!r.ok) throw new Error(r.status);
+    S.pending[pool] = (await r.json()).number;
+  } catch { S.pending[pool] = 'fail'; setTimeout(() => { delete S.pending[pool]; savePending(); render(); }, 8000); }
+  savePending(); render();
+}
+// done once the bot has closed the issue or the trade has left the open list
+async function checkPending() {
+  for (const [pool, n] of Object.entries(S.pending)) {
+    if (typeof n !== 'number') continue;
+    const still = (S.st?.open || []).some(x => x.pool === pool);
+    let done = !still;
+    if (!done && tok.get()) { try { const r = await gh(`/issues/${n}`); if (r.ok && (await r.json()).state === 'closed') done = true; } catch {} }
+    if (done) { delete S.pending[pool]; savePending(); if (still) await load(); render(); }
+  }
+}
+async function saveToken() {
+  const v = $('s-tok').value.trim();
+  if (!v) { $('s-err').textContent = 'Klistra in nyckeln först.'; return; }
+  tok.set(v);
+  const r = await gh('').catch(() => null);
+  if (!r || !r.ok) { tok.set(''); $('s-err').textContent = 'GitHub godtog inte nyckeln – kolla att den gäller worldcub.'; return; }
+  $('s-tok').value = ''; $('s-err').textContent = ''; $('setup').classList.remove('on'); render();
+  if (S.wantClose) { const w = S.wantClose; S.wantClose = null; closeTrade(w); }
+}
+
 function render() {
   const st = S.st;
+  $('unlink').style.display = tok.get() ? 'inline' : 'none';
   if (!st) { $('live').textContent = 'väntar på första mätningen'; chart([]); return; }
   const open = st.open || [], closed = st.closed || [];
   const inOpen = open.reduce((a, p) => a + val(p, pxOf(p)), 0), bal = st.cash + inOpen, net = bal - CFG.START;
@@ -417,11 +496,10 @@ function render() {
     const px = pxOf(p), v = val(p, px) + (p.realised || 0), r = px / p.entry, d = v - p.stake;
     const was = S.prev[p.pool]; S.prev[p.pool] = v;
     const fl = was == null || Math.abs(v - was) < 0.005 ? '' : v > was ? ' flash-up' : ' flash-down';
-    const close = closeUrl(p);
     return `<div class="row trade${fl}" data-pool="${esc(p.pool)}" tabindex="0" role="button" aria-label="Visa ${sym(p.name)}"><div class="av">${sym(p.name).slice(0, 2).toUpperCase()}</div>` +
       `<div class="main"><b>${sym(p.name)}</b><span>köpt ${ago(p.opened)} · likviditet vid köp <b style="display:inline;font-size:12px;color:var(--text)">${liq(p.liq_at_entry)}</b>${(S.live[p.pool]?.liq || p.liq_now) ? ` · nu ${liq(S.live[p.pool]?.liq || p.liq_now)}` : ''}</span>${p.half_sold ? ' <span class="pill b">halva såld</span>' : ''}</div>` +
       `<div class="end"><span style="font-size:13.5px;font-weight:700;color:var(--text)">${kr(v)}</span><span class="${cls(d)}">${skr(d)} · ${fmt(r, 2)}×</span></div>` +
-      `<a class="closebtn" href="${close}" target="_blank" rel="noopener" title="Stäng affären till aktuellt pris">Stäng</a></div>`;
+      btn(p) + `</div>`;
   }).join('') || '<div class="empty">Inga öppna affärer just nu – boten väntar på en token som klarar alla filter.</div>';
   if (S.sel) detail();
   // live feed from buys, half sales and exits
@@ -458,11 +536,16 @@ function render() {
   $('skips').innerHTML = sk.map(([k, v]) => `<div class="b"><span>${esc(names[k] || k)}</span><div class="t"><i style="width:${v / top * 100}%"></i></div><span class="n">${fmt(v)}</span></div>`).join('') ||
     '<div class="empty">Inget bortvalt än.</div>';
 }
-$('open').addEventListener('click', e => { if (e.target.closest('a')) return; const r = e.target.closest('[data-pool]'); if (r) openDetail(r.dataset.pool); });
+document.addEventListener('click', e => { const b = e.target.closest('button[data-close]'); if (b) { e.stopPropagation(); closeTrade(b.dataset.close); } }, true);
+$('s-x').addEventListener('click', () => { $('setup').classList.remove('on'); S.wantClose = null; });
+$('s-save').addEventListener('click', saveToken);
+$('s-tok').addEventListener('keydown', e => { if (e.key === 'Enter') saveToken(); });
+$('unlink').addEventListener('click', e => { e.preventDefault(); tok.set(''); render(); });
+$('open').addEventListener('click', e => { if (e.target.closest('a,button')) return; const r = e.target.closest('[data-pool]'); if (r) openDetail(r.dataset.pool); });
 $('open').addEventListener('keydown', e => { const r = e.target.closest('[data-pool]'); if (r && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); openDetail(r.dataset.pool); } });
 $('m-x').addEventListener('click', closeDetail);
 $('modal').addEventListener('click', e => { if (e.target === $('modal')) closeDetail(); });
-addEventListener('keydown', e => { if (e.key === 'Escape') closeDetail(); });
+addEventListener('keydown', e => { if (e.key === 'Escape') { closeDetail(); $('setup').classList.remove('on'); } });
 $('c-tr').addEventListener('mousemove', hover2);
 $('c-tr').addEventListener('mouseleave', () => { $('tip2').style.display = 'none'; });
 $('c-tr').addEventListener('touchmove', e => hover2(e.touches[0]), {passive: true});
@@ -473,6 +556,7 @@ $('c-eq').addEventListener('touchmove', e => hover(e.touches[0]), {passive: true
   await load(); await livePrices(); render();
   setInterval(() => load().then(render), 60_000);
   setInterval(() => livePrices().then(render), 10_000);
+  setInterval(checkPending, 10_000);
   setInterval(() => { if (S.st) $('days-run').textContent = `${fmt((Date.now() - new Date(S.st.started)) / 864e5, 1)} dagar sedan start`; }, 30_000);
   addEventListener('resize', render);
 })();

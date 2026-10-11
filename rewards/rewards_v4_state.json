@@ -169,21 +169,6 @@
    "rate0": 40.0
   },
   {
-   "cond": "0x2165d400eded7fafc302e51db491953dc802ffbdbc644ca2ee934bf590f74a7c",
-   "question": "Will OpenAI's frontier output token price be at or below $45 in 2026?",
-   "yes": "75657610617315068647041000745078171245766959588626255156957348079325936546172",
-   "no": "100556405590581087849310983001795021848451147905227803922191935782120109393172",
-   "rate": 3.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.700000000000003,
-   "est_reward_day": 40.0,
-   "end": "2027-01-01T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 40.0
-  },
-  {
    "cond": "0x515c043189cfb777c8c5307f91e9767aa78d3d477452d90e3fb877f790d01946",
    "question": "Will Anthropic's frontier output token price be at or above $75 in 2026?",
    "yes": "14959331677750175490790385523930578044350270216337346272695067642696731655940",
@@ -454,21 +439,6 @@
    "rate0": 40.0
   },
   {
-   "cond": "0xd574e42b80e4de882bbd1a4b0d4fb9499989a5a0c3a4494c1c050b5f9ba9375a",
-   "question": "Will OpenAI's frontier output token price be at or below $40 in 2026?",
-   "yes": "52515308989919436531401182511278356890830436407885199407744566898342854712299",
-   "no": "104444976117775031858513043968327422908697794225490615959998874985223040663271",
-   "rate": 40.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.7,
-   "est_reward_day": 40.0,
-   "end": "2027-01-01T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 40.0
-  },
-  {
    "cond": "0x0ceb01b478b109062e6d7d69f060d44a5773a98b1c5faedd65119d3594245314",
    "question": "Will GPT Astra's output price be at or below $40 in 2026?",
    "yes": "89102308300481270715463990040557098268609418601613917507531776345195452221389",
@@ -602,36 +572,6 @@
    "end": "2026-12-02T04:59:00Z",
    "share0": 1.0,
    "rate0": 41.0
-  },
-  {
-   "cond": "0xec8b96d42ea940a5990d11f37c67df475db44142b336b256ce7f67f929fa79b6",
-   "question": "Will Claude Opus's output price be at or below $10 in 2026?",
-   "yes": "50719518365629532985368096094138385312675306683328351862663015274533635381885",
-   "no": "92830182006933630882578551995137331849576093581402729710899594620554825117222",
-   "rate": 3.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.7,
-   "est_reward_day": 40.0,
-   "end": "2027-01-01T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 40.0
-  },
-  {
-   "cond": "0x0863b945b8b9491900d46bc54fddc89b7219433c267bbaf03445a3364309a9df",
-   "question": "Will there be between 60 and 89 tornadoes in the US in October 2026?",
-   "yes": "29064198010263690925160467138207391323657107241431504117365137657145691186004",
-   "no": "47409910668838440905897501839047795762448514516496225538211618433278326956840",
-   "rate": 55.0,
-   "v": 4.5,
-   "min_size": 20.0,
-   "d": 0.0225,
-   "collateral": 19.1,
-   "est_reward_day": 40.0,
-   "end": "2026-11-11T16:00:00Z",
-   "share0": 1.0,
-   "rate0": 40.0
   },
   {
    "cond": "0x7bfdd55194c737159daf95b5ea95b6977b778663496e9b447a007a30fd1da2ab",
@@ -797,6 +737,66 @@
    "end": "2027-01-08T04:59:00Z",
    "share0": 1.0,
    "rate0": 39.0
+  },
+  {
+   "cond": "0xda67aa9d45d5dcfd5f4e7a2b002dbf5d91bd84b1db64381a85ddb341e39a350b",
+   "question": "Will Anthropic have the best AI model on LiveBench (Mathematics) at the end of November 2026?",
+   "yes": "102030418699220403937646636591958169315933608909859297407389079844723531600139",
+   "no": "56721875673179507732916614702082613033775714447410571728997479752987340882146",
+   "rate": 96.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.700000000000003,
+   "est_reward_day": 96.0,
+   "end": "2026-12-01T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 96.0
+  },
+  {
+   "cond": "0x96e9ee9536dc0419d4b5ac0075c2d6ea3b8405687ee1bc2152c575b1cddb8cd5",
+   "question": "Will Mexico\u2019s 2026 Annual Inflation be between 3.50% and 3.99%?",
+   "yes": "32953564756732610384858611032093333502422758481593576083085471500970758530593",
+   "no": "77289066263085185188841885009348336838951428438009637799577378562514860557504",
+   "rate": 87.0,
+   "v": 4.5,
+   "min_size": 20.0,
+   "d": 0.0225,
+   "collateral": 19.1,
+   "est_reward_day": 87.0,
+   "end": "2027-01-09T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 87.0
+  },
+  {
+   "cond": "0x92db92b0c2a161440cb8500db98b5883c475e5a5e3b869990fb4276bd1f70a04",
+   "question": "Will Mexico\u2019s 2026 Annual Inflation be between 4.00% and 4.49%?",
+   "yes": "79402468117150049985541869481803337023372823866628213782593630232147374951131",
+   "no": "41838913932541828561897820972772297490970389046701828827596658443777194835564",
+   "rate": 68.0,
+   "v": 4.5,
+   "min_size": 20.0,
+   "d": 0.0225,
+   "collateral": 19.1,
+   "est_reward_day": 68.0,
+   "end": "2027-01-09T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 68.0
+  },
+  {
+   "cond": "0x647d3c947697d10717343b7fc7f2476a59c7e71077ca9a0fc3f93135b15f4f97",
+   "question": "Will Natalia Silva fight Alexa Grasso next?",
+   "yes": "75148549466817021580971760258300674868318080178749152898215212819425361499785",
+   "no": "40019372294171429121326157024209710337682425110805747819037683608570408814411",
+   "rate": 60.0,
+   "v": 4.5,
+   "min_size": 20.0,
+   "d": 0.0225,
+   "collateral": 19.1,
+   "est_reward_day": 60.0,
+   "end": "2027-10-05T03:59:00Z",
+   "share0": 1.0,
+   "rate0": 60.0
   }
  ],
  "positions": {
@@ -812,18 +812,18 @@
   "0x96e9ee9536dc0419d4b5ac0075c2d6ea3b8405687ee1bc2152c575b1cddb8cd5": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.3365,
-   "share": null,
-   "reward": 2.5689278670746316,
+   "mid": 0.2905,
+   "share": 1.0,
+   "reward": 3.1235243356408247,
    "fills": 0,
    "q": "Will Mexico\u2019s 2026 Annual Inflation be between 3.50% and 3.99%?"
   },
   "0xb9f2b295e7d9e5ea1c18ca4cfb21cf35a891373917b88dabf22b13644a414736": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.3,
-   "share": 1.0,
-   "reward": 5.706590994996176,
+   "mid": 0.30000000000000004,
+   "share": 0.1772428884026264,
+   "reward": 5.822251216820964,
    "fills": 0,
    "q": "Will London have less than 35mm of precipitation in October?"
   },
@@ -832,7 +832,7 @@
    "cash": 0.0,
    "mid": 0.245,
    "share": 1.0,
-   "reward": 25.422067206214955,
+   "reward": 25.783406766752385,
    "fills": 0,
    "q": "Will a hurricane make landfall in Alabama by November 30, 2026?"
   },
@@ -857,9 +857,9 @@
   "0xff816886d06036a0f7703eed7ee74e3c9ab15ae02a0143ab9ec794f5ef9afb4c": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.5449999999999999,
-   "share": 1.0,
-   "reward": 23.852534536281333,
+   "mid": 0.5249999999999999,
+   "share": 0.5690235690235712,
+   "reward": 24.09200643563684,
    "fills": 0,
    "q": "Will Somali pirates successfully seize a vessel by November 30, 2026?"
   },
@@ -868,16 +868,16 @@
    "cash": 0.0,
    "mid": 0.265,
    "share": 1.0,
-   "reward": 26.44616100840544,
+   "reward": 26.80750056894287,
    "fills": 0,
    "q": "Next Mistral Medium (3.6+) released by November 30, 2026?"
   },
   "0xdb2058727e8daee5ce55097efaf026fd3cf293339edfd862092fd7c3ce2f56cb": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.21500000000000002,
+   "mid": 0.185,
    "share": 1.0,
-   "reward": 5.149152931546624,
+   "reward": 5.366705871020655,
    "fills": 0,
    "q": "Will Seattle have less than 1.75 inches of precipitation in October?"
   },
@@ -938,9 +938,9 @@
   "0xf3d7426f3f7f4f054d4ae90f1ccead6789452049199051d018270c7ddf4081b8": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.33499999999999996,
+   "mid": 0.31,
    "share": 1.0,
-   "reward": 19.9942889021029,
+   "reward": 20.28336055053284,
    "fills": 0,
    "q": "Will the Ornn H100 Index hit $3.50 (HIGH) by December 31, 2026?"
   },
@@ -949,16 +949,16 @@
    "cash": 0.0,
    "mid": 0.29000000000000004,
    "share": 1.0,
-   "reward": 19.887587172896765,
+   "reward": 20.127544282431945,
    "fills": 0,
    "q": "Will the next Google Gemini Pro model debut with a Humanity\u2019s Last Exam score of"
   },
   "0xaee30c779a493cb475a7c54108ce40102619e3634850c4ad7cb6726d84e70cab": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.3,
-   "share": 1.0,
-   "reward": 9.832120187595015,
+   "mid": 0.29500000000000004,
+   "share": 0.13196114564137745,
+   "reward": 9.90094355789042,
    "fills": 0,
    "q": "Will OpenAI's frontier output token price be at or below $30 in 2026?"
   },
@@ -976,7 +976,7 @@
    "cash": 0.0,
    "mid": 0.45,
    "share": 1.0,
-   "reward": 20.212676751723993,
+   "reward": 20.501748400153932,
    "fills": 0,
    "q": "Will GPT Astra's output price be at or above $60 in 2026?"
   },
@@ -985,7 +985,7 @@
    "cash": 0.0,
    "mid": 0.265,
    "share": 1.0,
-   "reward": 21.075957376316744,
+   "reward": 21.365029024746683,
    "fills": 0,
    "q": "Will GPT Sol's output price be at or above $15 in 2026?"
   },
@@ -994,16 +994,16 @@
    "cash": 0.0,
    "mid": 0.32,
    "share": 1.0,
-   "reward": 18.624401360199624,
+   "reward": 18.913473008629563,
    "fills": 0,
    "q": "Will GPT Sol's output price be at or below $5 in 2026?"
   },
   "0xa8818217726c5c55fdb16c01afd175ba825fd2d7be77ca06773694907989e1b6": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.565,
+   "mid": 0.5549999999999999,
    "share": 1.0,
-   "reward": 20.737927644009943,
+   "reward": 21.026999292439882,
    "fills": 0,
    "q": "Will the Ornn H100 Index hit $2.25 (LOW) by December 31, 2026?"
   },
@@ -1012,16 +1012,16 @@
    "cash": 0.0,
    "mid": 0.5255,
    "share": 1.0,
-   "reward": 20.48908979787936,
+   "reward": 20.51077017151161,
    "fills": 0,
    "q": "Will the Ornn H200 Index hit $7.00 (HIGH) by December 31, 2026?"
   },
   "0xf7699db92f899f7577f55c0dc9db490d6a17d1eced1c07d3860b4ae80a13b175": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.4395,
+   "mid": 0.569,
    "share": 1.0,
-   "reward": 20.855076308168776,
+   "reward": 21.137858556162456,
    "fills": 0,
    "q": "Will the Ornn H200 Index hit $4.00 (LOW) by December 31, 2026?"
   },
@@ -1030,7 +1030,7 @@
    "cash": 0.0,
    "mid": 0.5075,
    "share": 0.9790290812188617,
-   "reward": 14.996470287728172,
+   "reward": 15.017717906499868,
    "fills": 0,
    "q": "Will the Ornn B200 Index hit $5.50 (LOW) by December 31, 2026?"
   },
@@ -1039,7 +1039,7 @@
    "cash": 5.75,
    "mid": 0.335,
    "share": 1.0,
-   "reward": 17.286638532850883,
+   "reward": 17.493460610725666,
    "fills": 1,
    "q": "Will the next Google Gemini Pro model debut with a Humanity\u2019s Last Exam score of"
   },
@@ -1047,8 +1047,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.45499999999999996,
-   "share": 0.11948732161744778,
-   "reward": 19.52396161653043,
+   "share": null,
+   "reward": 19.524008444111722,
    "fills": 0,
    "q": "Will OpenAI's frontier output token price be at or below $45 in 2026?"
   },
@@ -1056,17 +1056,17 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.375,
-   "share": 0.305605786618445,
-   "reward": 16.04631268668548,
+   "share": null,
+   "reward": 16.04823476385316,
    "fills": 0,
    "q": "Will OpenAI's frontier output token price be at or below $40 in 2026?"
   },
   "0x515c043189cfb777c8c5307f91e9767aa78d3d477452d90e3fb877f790d01946": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.285,
+   "mid": 0.27,
    "share": 1.0,
-   "reward": 17.66136848935407,
+   "reward": 17.95044013778401,
    "fills": 0,
    "q": "Will Anthropic's frontier output token price be at or above $75 in 2026?"
   },
@@ -1082,9 +1082,9 @@
   "0x09f84da61783a51335c028bc00aff39a8953f69d35d573301b5b91d6cb35710b": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.46499999999999997,
-   "share": 0.840796019900499,
-   "reward": 11.585983908331732,
+   "mid": 0.485,
+   "share": 0.6377358490566042,
+   "reward": 11.601024778744176,
    "fills": 0,
    "q": "Will Claude Fable's output price be at or below $40 in 2026?"
   },
@@ -1102,7 +1102,7 @@
    "cash": 0.0,
    "mid": 0.34,
    "share": 1.0,
-   "reward": 21.12813849605212,
+   "reward": 21.41721014448206,
    "fills": 0,
    "q": "Will GPT Sol's output price be at or below $8 in 2026?"
   },
@@ -1111,7 +1111,7 @@
    "cash": 0.0,
    "mid": 0.475,
    "share": 1.0,
-   "reward": 17.910645867177568,
+   "reward": 18.199717515607507,
    "fills": 0,
    "q": "Will Claude Fable 5.2+ debut at an output token price of at least $50 by June 30"
   },
@@ -1120,7 +1120,7 @@
    "cash": 0.0,
    "mid": 0.54,
    "share": 1.0,
-   "reward": 19.140337194226404,
+   "reward": 19.429408842656343,
    "fills": 0,
    "q": "Will Claude Opus 5.6+ debut at an output token price of at least $20 by June 30,"
   },
@@ -1137,29 +1137,30 @@
   "0x0a3c973c0992ec5716334926494d8dd3387feb6f4a5548776985de7f6d815fa3": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.615,
+   "mid": 0.61,
    "share": 1.0,
-   "reward": 20.634167473956385,
+   "reward": 20.923239122386324,
    "fills": 0,
    "q": "Will the next Fable model (5.2+) debut with a Humanity's Last Exam score of 55% "
   },
   "0x0bec89d24daab7e6171ecca3178a8483bb7012e1ef5227c230d81ae5bffa9bd4": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.315,
+   "mid": 0.305,
    "share": 1.0,
-   "reward": 21.190489688184527,
+   "reward": 21.479561336614466,
    "fills": 0,
    "q": "Will the next Fable model (5.2+) debut with a Humanity's Last Exam score of 60% "
   },
   "0x0863b945b8b9491900d46bc54fddc89b7219433c267bbaf03445a3364309a9df": {
-   "inv": 20.0,
-   "cash": -9.65,
+   "inv": 0.0,
+   "cash": -0.6500000000000004,
    "mid": 0.48,
-   "share": 0.16831658479415554,
-   "reward": 9.238183446088124,
+   "share": null,
+   "reward": 9.239639035390645,
    "fills": 1,
-   "q": "Will there be between 60 and 89 tornadoes in the US in October 2026?"
+   "q": "Will there be between 60 and 89 tornadoes in the US in October 2026?",
+   "closed_at": 0.45
   },
   "0x759cd336abc64817f7ccef7f0a5799e74a86c527b65d85d485156887b4eebeb5": {
    "inv": 0.0,
@@ -1182,9 +1183,9 @@
   "0xe6cf1356fad9a1cc1dfa23e95191303a87adb5c6598fc08c2ab33668e7961eec": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.17,
+   "mid": 0.165,
    "share": 1.0,
-   "reward": 11.418373404370845,
+   "reward": 11.68576467916854,
    "fills": 0,
    "q": "Will London have between 70-85mm of precipitation in October?"
   },
@@ -1200,9 +1201,9 @@
   "0xedbb94bf8057c5bda2688672bec938655db358210dceb38d2eb666c3de262cb1": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.55,
-   "share": 1.0,
-   "reward": 17.13922177364298,
+   "mid": 0.56,
+   "share": 0.9548022598870065,
+   "reward": 17.31837622836472,
    "fills": 0,
    "q": "Will Morena win the most seats in the 2027 Hidalgo Congress election?"
   },
@@ -1227,9 +1228,9 @@
   "0xa0ab5c59632b54575ce8c4425687cf91a4e0a0abea5947c186342d576c9b7743": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.42,
+   "mid": 0.33499999999999996,
    "share": 1.0,
-   "reward": 8.188664101357032,
+   "reward": 8.395486179231817,
    "fills": 0,
    "q": "Will Claude Sonnet's output price be at or below $8 in 2026?"
   },
@@ -1256,7 +1257,7 @@
    "cash": 0.0,
    "mid": 0.54,
    "share": 1.0,
-   "reward": 14.70314859948224,
+   "reward": 14.862138006118709,
    "fills": 0,
    "q": "Will Morena win the most seats in the 2027 Quintana Roo Congress election?"
   },
@@ -1265,7 +1266,7 @@
    "cash": 0.0,
    "mid": 0.505,
    "share": 1.0,
-   "reward": 14.597988326050054,
+   "reward": 14.807565271161762,
    "fills": 0,
    "q": "Will Morena win the most seats in the 2027 Nayarit Congress election?"
   },
@@ -1281,9 +1282,9 @@
   "0xfbbce75beae646d6cc63684b8b0683e3912bd7345fff32691cc2ff8af39ada17": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.37,
+   "mid": 0.365,
    "share": 1.0,
-   "reward": 9.618492223918006,
+   "reward": 9.832525869680536,
    "fills": 0,
    "q": "Will Seattle have between 2.5 and 3 inches of precipitation in October?"
   },
@@ -1299,9 +1300,9 @@
   "0x181844492041dcf54d4e6a0561621cbe086f9fc49d1f7cc33557e55c75c483c4": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.5800000000000001,
+   "mid": 0.575,
    "share": 1.0,
-   "reward": 12.809578755284459,
+   "reward": 13.019155700396167,
    "fills": 0,
    "q": "Will Morena win the most seats in the 2027 Guerrero Congress election?"
   },
@@ -1317,18 +1318,18 @@
   "0x9ca906dd60147c4ff891e2c175e622d1a465f9a11f6eefece53c359396456ee5": {
    "inv": -20.0,
    "cash": 14.049999999999997,
-   "mid": 0.665,
+   "mid": 0.645,
    "share": 1.0,
-   "reward": 11.648500011832192,
+   "reward": 11.829169792100908,
    "fills": 1,
    "q": "Will Morena win the most seats in the 2027 State of Mexico Congress election?"
   },
   "0x720ff99878aabf8ef5c0781d39641dbdb25bf6a99af438ff87edc3d55998b1d3": {
    "inv": 20.0,
    "cash": -13.250000000000002,
-   "mid": 0.625,
+   "mid": 0.64,
    "share": 1.0,
-   "reward": 11.237359822329934,
+   "reward": 11.45416355865239,
    "fills": 1,
    "q": "Will Labor hold the most seats in the New South Wales Legislative Council after "
   },
@@ -1337,7 +1338,7 @@
    "cash": 0.0,
    "mid": 0.63,
    "share": 1.0,
-   "reward": 11.700848552493593,
+   "reward": 11.71530213491509,
    "fills": 0,
    "q": "Will Morena win the most seats in the 2027 Sonora Congress election?"
   },
@@ -1355,7 +1356,7 @@
    "cash": 0.0,
    "mid": 0.382,
    "share": 1.0,
-   "reward": 12.308674859904025,
+   "reward": 12.518251805015733,
    "fills": 0,
    "q": "Will OXY play for Sentinels in 2027?"
   },
@@ -1416,9 +1417,9 @@
   "0x49005286a8e6ffffa0818463ff1eabb5d021aff96d02acd27895f52b0634e3ac": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.3,
+   "mid": 0.33,
    "share": 1.0,
-   "reward": 8.107113567517295,
+   "reward": 8.224687894658341,
    "fills": 0,
    "q": "Will Emma Myers be the live-action Gwen Stacy?"
   },
@@ -1427,7 +1428,7 @@
    "cash": 0.0,
    "mid": 0.35,
    "share": 1.0,
-   "reward": 12.961056400912769,
+   "reward": 13.165045906592288,
    "fills": 0,
    "q": "Will global temperature increase by between 1.40\u00baC and 1.44\u00baC in October 2026?"
   },
@@ -1461,9 +1462,9 @@
   "0x4db8c55db6d02654aa84c15ec45ec0011fa960c1405902ab0ea1d234daa05724": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.5345,
+   "mid": 0.5375,
    "share": 1.0,
-   "reward": 14.610582432702746,
+   "reward": 14.899654081132688,
    "fills": 0,
    "q": "Will the next Google Gemini Pro model debut with a Humanity\u2019s Last Exam score of"
   },
@@ -1508,7 +1509,7 @@
    "cash": 0.50095,
    "mid": 0.57,
    "share": 1.0,
-   "reward": 14.211375278786383,
+   "reward": 14.500446927216325,
    "fills": 1,
    "q": "Will GPT Astra's output price be at or below $40 in 2026?"
   },
@@ -1533,9 +1534,9 @@
   "0x92db92b0c2a161440cb8500db98b5883c475e5a5e3b869990fb4276bd1f70a04": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.32999999999999996,
-   "share": null,
-   "reward": 0.7480037709239511,
+   "mid": 0.295,
+   "share": 1.0,
+   "reward": 1.181481470492929,
    "fills": 0,
    "q": "Will Mexico\u2019s 2026 Annual Inflation be between 4.00% and 4.49%?"
   },
@@ -1553,16 +1554,16 @@
    "cash": 0.0,
    "mid": 0.32,
    "share": 1.0,
-   "reward": 12.54157105441446,
+   "reward": 12.830642702844402,
    "fills": 0,
    "q": "Will GPT Astra's output price be at or below $30 in 2026?"
   },
   "0x08b5498e0966c527cbc8854e43b01aa86feed6715d7992675df611643d841cce": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.2905,
+   "mid": 0.25,
    "share": 1.0,
-   "reward": 2.38538852632643,
+   "reward": 2.5226032136109264,
    "fills": 0,
    "q": "Will Yatoro have the most kills at BLAST Slam VIII Playoffs?"
   },
@@ -1571,7 +1572,7 @@
    "cash": 0.0,
    "mid": 0.164,
    "share": 1.0,
-   "reward": 7.310299196378496,
+   "reward": 7.484790141668029,
    "fills": 0,
    "q": "Will Caleb Malhotra win the 2026-27 Calder Trophy?"
   },
@@ -1614,9 +1615,9 @@
   "0x5dac385500e5beb2e4cf2db6fea3ae2f714547858485c708a7cd6cac20a86cdc": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.255,
+   "mid": 0.21500000000000002,
    "share": 1.0,
-   "reward": 4.988757954499004,
+   "reward": 5.001821768625787,
    "fills": 0,
    "q": "Will the Ornn H100 Index be between $2.50 and $2.75 on November 30, 2026?"
   },
@@ -1632,9 +1633,9 @@
   "0xc9dd327bd934f3836db3d5e2ef71cbe8deca92417fdc6dd757032c5b053ab6d1": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.3055,
+   "mid": 0.304,
    "share": 1.0,
-   "reward": 8.703766303343096,
+   "reward": 8.97838436935154,
    "fills": 0,
    "q": "Will the lowest Baton Rouge river level be 6.00 ft or more by November 30?"
   },
@@ -1679,17 +1680,17 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.20500000000000002,
-   "share": 0.05342569339595195,
-   "reward": 2.441594934236555,
+   "share": null,
+   "reward": 2.4416201354050067,
    "fills": 0,
    "q": "Will Claude Opus's output price be at or below $10 in 2026?"
   },
   "0x7bfdd55194c737159daf95b5ea95b6977b778663496e9b447a007a30fd1da2ab": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.605,
+   "mid": 0.535,
    "share": 1.0,
-   "reward": 5.10027420742944,
+   "reward": 5.400741932345448,
    "fills": 0,
    "q": "Will Morena win the most seats in the 2027 Tabasco Congress election?"
   },
@@ -1705,9 +1706,9 @@
   "0xc58b84ee1c1ebae34eb0d37f5efc0b41f3d5fd3de420a1b8c8b882e71a3f2c58": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.62,
+   "mid": 0.645,
    "share": 1.0,
-   "reward": 2.066932069359271,
+   "reward": 2.0819317974958635,
    "fills": 0,
    "q": "Will Morena win the most seats in the 2027 Puebla Congress election?"
   },
@@ -1716,7 +1717,7 @@
    "cash": 0.0,
    "mid": 0.3175,
    "share": 1.0,
-   "reward": 2.8474236132609967,
+   "reward": 3.165402426533932,
    "fills": 0,
    "q": "Will the cure (Olivia Rodrigo) win Song of the Year at the 69th Annual GRAMMY Aw"
   },
@@ -1734,7 +1735,7 @@
    "cash": 0.0,
    "mid": 0.4,
    "share": 1.0,
-   "reward": 2.3122836797353292,
+   "reward": 2.5074070424255397,
    "fills": 0,
    "q": "Will PAN win the most seats in the 2027 Aguascalientes Congress election?"
   },
@@ -1743,7 +1744,7 @@
    "cash": 0.0,
    "mid": 0.615,
    "share": 1.0,
-   "reward": 1.8480195199035931,
+   "reward": 1.9997821353293124,
    "fills": 0,
    "q": "Will Morena win the most seats in the 2027 Tlaxcala Congress election?"
   },
@@ -1752,9 +1753,27 @@
    "cash": 0.0,
    "mid": 0.36,
    "share": 1.0,
-   "reward": 2.2420857517476445,
+   "reward": 2.4083019495948608,
    "fills": 0,
    "q": "Will global temperature increase by between 1.35\u00baC and 1.39\u00baC in October 2026?"
+  },
+  "0xda67aa9d45d5dcfd5f4e7a2b002dbf5d91bd84b1db64381a85ddb341e39a350b": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.485,
+   "share": 1.0,
+   "reward": 0.6119685170385574,
+   "fills": 0,
+   "q": "Will Anthropic have the best AI model on LiveBench (Mathematics) at the end of N"
+  },
+  "0x647d3c947697d10717343b7fc7f2476a59c7e71077ca9a0fc3f93135b15f4f97": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.615,
+   "share": 0.02451188069674266,
+   "reward": 0.026471341725384918,
+   "fills": 0,
+   "q": "Will Natalia Silva fight Alexa Grasso next?"
   }
  },
  "history": [
@@ -2786,17 +2805,30 @@
    "w": 2986144
   },
   {
-   "ts": "2026-10-11T02:50:39.446809+00:00",
-   "dt_h": 0.085,
-   "reward_tick": 5.1655,
-   "reward_total": 913.42,
-   "mm_value": -1.79,
-   "net": 911.63,
-   "avg_share": 0.9333,
+   "ts": "2026-10-11T02:59:01.980732+00:00",
+   "dt_h": 0.226,
+   "reward_tick": 14.6613,
+   "reward_total": 922.92,
+   "mm_value": -1.69,
+   "net": 921.23,
+   "avg_share": 0.9399,
    "n_markets": 53,
    "fills_total": 7,
    "rebalanced": false,
    "w": 2986145
+  },
+  {
+   "ts": "2026-10-11T03:01:03.841570+00:00",
+   "dt_h": 0.034,
+   "reward_tick": 2.4674,
+   "reward_total": 925.39,
+   "mm_value": -1.69,
+   "net": 923.7,
+   "avg_share": 0.9335,
+   "n_markets": 53,
+   "fills_total": 7,
+   "rebalanced": false,
+   "w": 2986146
   }
  ],
  "fills": [
@@ -2864,8 +2896,8 @@
    "ledger": "v4"
   }
  ],
- "reward_total": 913.423848948411,
- "last_ts": 1791687039.4468093,
+ "reward_total": 925.3870821807532,
+ "last_ts": 1791687663.84157,
  "chosen_at": 1791639880.921448,
  "rebalances": [
   {
@@ -2876,252 +2908,238 @@
   }
  ],
  "last_tick": {
-  "ts": "2026-10-11T02:50:39.446809+00:00",
-  "dt_h": 0.085,
+  "ts": "2026-10-11T03:01:03.841570+00:00",
+  "dt_h": 0.017,
   "markets": [
    {
     "q": "Will a hurricane make landfall in Alabama by Novem",
     "mid": 0.245,
     "share": 1.0,
-    "earned": 0.1775,
+    "earned": 0.0358,
     "inv": 0.0
    },
    {
     "q": "Next Mistral Medium (3.6+) released by November 30",
     "mid": 0.265,
     "share": 1.0,
-    "earned": 0.1775,
+    "earned": 0.0358,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H100 Index hit $3.50 (HIGH) by Decem",
-    "mid": 0.335,
+    "mid": 0.31,
     "share": 1.0,
-    "earned": 0.142,
+    "earned": 0.0286,
     "inv": 0.0
    },
    {
     "q": "Will the next Google Gemini Pro model debut with a",
     "mid": 0.29,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0286,
     "inv": 0.0
    },
    {
     "q": "Will GPT Astra's output price be at or above $60 i",
     "mid": 0.45,
     "share": 1.0,
-    "earned": 0.142,
+    "earned": 0.0286,
     "inv": 0.0
    },
    {
     "q": "Will GPT Sol's output price be at or above $15 in ",
     "mid": 0.265,
     "share": 1.0,
-    "earned": 0.142,
+    "earned": 0.0286,
     "inv": 0.0
    },
    {
     "q": "Will GPT Sol's output price be at or below $5 in 2",
     "mid": 0.32,
     "share": 1.0,
-    "earned": 0.142,
+    "earned": 0.0286,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H100 Index hit $2.25 (LOW) by Decemb",
-    "mid": 0.565,
+    "mid": 0.555,
     "share": 1.0,
-    "earned": 0.142,
+    "earned": 0.0286,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index hit $7.00 (HIGH) by Decem",
     "mid": 0.525,
     "share": 1.0,
-    "earned": 0.0106,
+    "earned": 0.0021,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index hit $4.00 (LOW) by Decemb",
-    "mid": 0.44,
+    "mid": 0.569,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0286,
     "inv": 0.0
    },
    {
     "q": "Will the next Google Gemini Pro model debut with a",
     "mid": 0.335,
     "share": 1.0,
-    "earned": 0.142,
+    "earned": 0.0286,
     "inv": -20.0
    },
    {
-    "q": "Will OpenAI's frontier output token price be at or",
-    "mid": 0.455,
-    "share": 0.1195,
-    "earned": 0.0009,
-    "inv": 0.0
-   },
-   {
     "q": "Will Anthropic's frontier output token price be at",
-    "mid": 0.285,
+    "mid": 0.27,
     "share": 1.0,
-    "earned": 0.142,
+    "earned": 0.0286,
     "inv": 0.0
    },
    {
     "q": "Will Claude Fable's output price be at or below $4",
-    "mid": 0.465,
-    "share": 0.8408,
-    "earned": 0.009,
+    "mid": 0.485,
+    "share": 0.6377,
+    "earned": 0.0014,
     "inv": 0.0
    },
    {
     "q": "Will GPT Sol's output price be at or below $8 in 2",
     "mid": 0.34,
     "share": 1.0,
-    "earned": 0.142,
+    "earned": 0.0286,
     "inv": 0.0
    },
    {
     "q": "Will Claude Opus 5.6+ debut at an output token pri",
     "mid": 0.54,
     "share": 1.0,
-    "earned": 0.142,
+    "earned": 0.0286,
     "inv": 0.0
    },
    {
     "q": "Will the next Fable model (5.2+) debut with a Huma",
-    "mid": 0.615,
+    "mid": 0.61,
     "share": 1.0,
-    "earned": 0.142,
+    "earned": 0.0286,
     "inv": 0.0
    },
    {
     "q": "Will the next Fable model (5.2+) debut with a Huma",
-    "mid": 0.315,
+    "mid": 0.305,
     "share": 1.0,
-    "earned": 0.142,
+    "earned": 0.0286,
     "inv": 0.0
    },
    {
     "q": "Will London have between 70-85mm of precipitation ",
-    "mid": 0.17,
+    "mid": 0.165,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0265,
     "inv": 0.0
    },
    {
     "q": "Will Morena win the most seats in the 2027 Hidalgo",
-    "mid": 0.55,
-    "share": 1.0,
-    "earned": 0.0994,
+    "mid": 0.56,
+    "share": 0.9548,
+    "earned": 0.0191,
     "inv": 0.0
    },
    {
     "q": "Will Morena win the most seats in the 2027 Quintan",
     "mid": 0.54,
     "share": 1.0,
-    "earned": 0.0781,
+    "earned": 0.0157,
     "inv": 0.0
    },
    {
     "q": "Will Morena win the most seats in the 2027 Nayarit",
     "mid": 0.505,
     "share": 1.0,
-    "earned": 0.1029,
+    "earned": 0.0207,
     "inv": 0.0
    },
    {
     "q": "Will Morena win the most seats in the 2027 Guerrer",
-    "mid": 0.58,
+    "mid": 0.575,
     "share": 1.0,
-    "earned": 0.1029,
+    "earned": 0.0207,
     "inv": 0.0
    },
    {
     "q": "Will Morena win the most seats in the 2027 State o",
-    "mid": 0.665,
+    "mid": 0.645,
     "share": 1.0,
-    "earned": 0.0887,
+    "earned": 0.0179,
     "inv": -20.0
    },
    {
     "q": "Will Labor hold the most seats in the New South Wa",
-    "mid": 0.625,
+    "mid": 0.64,
     "share": 1.0,
-    "earned": 0.1065,
+    "earned": 0.0215,
     "inv": 20.0
    },
    {
     "q": "Will Morena win the most seats in the 2027 Sonora ",
     "mid": 0.63,
     "share": 1.0,
-    "earned": 0.0071,
+    "earned": 0.0014,
     "inv": 0.0
    },
    {
     "q": "Will OXY play for Sentinels in 2027?",
     "mid": 0.382,
     "share": 1.0,
-    "earned": 0.1029,
+    "earned": 0.0207,
     "inv": 0.0
    },
    {
     "q": "Will global temperature increase by between 1.40\u00baC",
     "mid": 0.35,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0229,
     "inv": 0.0
    },
    {
     "q": "Will Somali pirates successfully seize a vessel by",
-    "mid": 0.545,
-    "share": 1.0,
-    "earned": 0.1775,
+    "mid": 0.525,
+    "share": 0.569,
+    "earned": 0.0203,
     "inv": 0.0
    },
    {
     "q": "Will the next Google Gemini Pro model debut with a",
-    "mid": 0.534,
+    "mid": 0.537,
     "share": 1.0,
-    "earned": 0.142,
-    "inv": 0.0
-   },
-   {
-    "q": "Will OpenAI's frontier output token price be at or",
-    "mid": 0.375,
-    "share": 0.3056,
-    "earned": 0.0434,
+    "earned": 0.0286,
     "inv": 0.0
    },
    {
     "q": "Will GPT Astra's output price be at or below $40 i",
     "mid": 0.57,
     "share": 1.0,
-    "earned": 0.142,
+    "earned": 0.0286,
     "inv": -0.86
    },
    {
     "q": "Will OpenAI's frontier output token price be at or",
-    "mid": 0.3,
-    "share": 1.0,
-    "earned": 0.142,
+    "mid": 0.295,
+    "share": 0.132,
+    "earned": 0.0038,
     "inv": 0.0
    },
    {
     "q": "Will GPT Astra's output price be at or below $30 i",
     "mid": 0.32,
     "share": 1.0,
-    "earned": 0.142,
+    "earned": 0.0286,
     "inv": 0.0
    },
    {
     "q": "Will Yatoro have the most kills at BLAST Slam VIII",
-    "mid": 0.29,
+    "mid": 0.25,
     "share": 1.0,
-    "earned": 0.0745,
+    "earned": 0.015,
     "inv": 0.0
    },
    {
@@ -3135,127 +3153,141 @@
     "q": "Will the Ornn B200 Index hit $5.50 (LOW) by Decemb",
     "mid": 0.507,
     "share": 0.979,
-    "earned": 0.0104,
+    "earned": 0.0021,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H100 Index be between $2.50 and $2.7",
-    "mid": 0.255,
+    "mid": 0.215,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0014,
     "inv": 0.0
    },
    {
     "q": "Will Emma Myers be the live-action Gwen Stacy?",
-    "mid": 0.3,
+    "mid": 0.33,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0129,
     "inv": 0.0
    },
    {
     "q": "Will the lowest Baton Rouge river level be 6.00 ft",
-    "mid": 0.305,
+    "mid": 0.304,
     "share": 1.0,
-    "earned": 0.1349,
+    "earned": 0.0272,
     "inv": 0.0
-   },
-   {
-    "q": "Will Claude Opus's output price be at or below $10",
-    "mid": 0.205,
-    "share": 0.0534,
-    "earned": 0.0006,
-    "inv": 0.0
-   },
-   {
-    "q": "Will there be between 60 and 89 tornadoes in the U",
-    "mid": 0.48,
-    "share": 0.1683,
-    "earned": 0.0329,
-    "inv": 20.0
    },
    {
     "q": "Will Morena win the most seats in the 2027 Tabasco",
-    "mid": 0.605,
+    "mid": 0.535,
     "share": 1.0,
-    "earned": 0.1633,
+    "earned": 0.0329,
     "inv": 0.0
    },
    {
     "q": "Will Seattle have between 2.5 and 3 inches of prec",
-    "mid": 0.37,
+    "mid": 0.365,
     "share": 1.0,
-    "earned": 0.2768,
+    "earned": 0.0558,
     "inv": 0.0
    },
    {
     "q": "Will Morena win the most seats in the 2027 Puebla ",
-    "mid": 0.62,
+    "mid": 0.645,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0021,
     "inv": 0.0
    },
    {
     "q": "Will the cure (Olivia Rodrigo) win Song of the Yea",
     "mid": 0.318,
     "share": 1.0,
-    "earned": 0.1562,
+    "earned": 0.0315,
     "inv": 0.0
    },
    {
     "q": "Will PAN win the most seats in the 2027 Aguascalie",
     "mid": 0.4,
     "share": 1.0,
-    "earned": 0.0958,
+    "earned": 0.0193,
     "inv": 0.0
    },
    {
     "q": "Will Morena win the most seats in the 2027 Tlaxcal",
     "mid": 0.615,
     "share": 1.0,
-    "earned": 0.0745,
+    "earned": 0.015,
     "inv": 0.0
    },
    {
     "q": "Will global temperature increase by between 1.35\u00baC",
     "mid": 0.36,
     "share": 1.0,
-    "earned": 0.0816,
+    "earned": 0.0164,
     "inv": 0.0
    },
    {
     "q": "Will London have less than 35mm of precipitation i",
     "mid": 0.3,
-    "share": 1.0,
-    "earned": 0.2201,
+    "share": 0.1772,
+    "earned": 0.0079,
     "inv": 0.0
    },
    {
     "q": "Will Claude Sonnet's output price be at or below $",
-    "mid": 0.42,
+    "mid": 0.335,
     "share": 1.0,
-    "earned": 0.142,
+    "earned": 0.0286,
     "inv": 0.0
    },
    {
     "q": "Will Claude Fable 5.2+ debut at an output token pr",
     "mid": 0.475,
     "share": 1.0,
-    "earned": 0.142,
+    "earned": 0.0286,
     "inv": 0.0
    },
    {
     "q": "Will Seattle have less than 1.75 inches of precipi",
-    "mid": 0.215,
+    "mid": 0.185,
     "share": 1.0,
-    "earned": 0.1455,
+    "earned": 0.0293,
+    "inv": 0.0
+   },
+   {
+    "q": "Will Anthropic have the best AI model on LiveBench",
+    "mid": 0.485,
+    "share": 1.0,
+    "earned": 0.0687,
+    "inv": 0.0
+   },
+   {
+    "q": "Will Mexico\u2019s 2026 Annual Inflation be between 3.5",
+    "mid": 0.29,
+    "share": 1.0,
+    "earned": 0.0622,
+    "inv": 0.0
+   },
+   {
+    "q": "Will Mexico\u2019s 2026 Annual Inflation be between 4.0",
+    "mid": 0.295,
+    "share": 1.0,
+    "earned": 0.0486,
+    "inv": 0.0
+   },
+   {
+    "q": "Will Natalia Silva fight Alexa Grasso next?",
+    "mid": 0.615,
+    "share": 0.0245,
+    "earned": 0.0011,
     "inv": 0.0
    }
   ],
-  "reward_tick": 5.1655,
-  "reward_total": 913.42,
-  "mm_value": -1.79,
-  "net": 911.63,
-  "avg_share": 0.9333,
+  "reward_tick": 1.2506,
+  "reward_total": 925.39,
+  "mm_value": -1.69,
+  "net": 923.7,
+  "avg_share": 0.9335,
   "n_markets": 53,
   "fills_total": 7,
   "rebalanced": false
@@ -3500,7 +3532,23 @@
     "Will Claude Fable 5.2+ debut at an output token pr",
     "Will Seattle have less than 1.75 inches of precipi"
    ]
+  },
+  {
+   "ts": "2026-10-11T02:51:53.069905+00:00",
+   "swapped": 4,
+   "out": [
+    "Will Claude Opus's output price be at or below $10",
+    "Will OpenAI's frontier output token price be at or",
+    "Will there be between 60 and 89 tornadoes in the U",
+    "Will OpenAI's frontier output token price be at or"
+   ],
+   "in": [
+    "Will Anthropic have the best AI model on LiveBench",
+    "Will Mexico\u2019s 2026 Annual Inflation be between 3.5",
+    "Will Mexico\u2019s 2026 Annual Inflation be between 4.0",
+    "Will Natalia Silva fight Alexa Grasso next?"
+   ]
   }
  ],
- "reviewed_at": 1791683455.0623524
+ "reviewed_at": 1791687113.0699046
 }

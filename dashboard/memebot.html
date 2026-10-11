@@ -184,6 +184,7 @@ const esc = s => String(s).replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', 
 const cls = v => v > 0 ? 'up' : v < 0 ? 'down' : '';
 const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
 const COST = 0.02, val = (p, px) => p.stake_left * px / p.entry * (1 - COST);
+const liq = usd => usd == null || !isFinite(usd) ? '—' : usd >= 1e6 ? `${fmt(usd / 1e6, 2)} M$` : `${fmt(usd / 1000, usd < 1e5 ? 1 : 0)} k$`;
 const sym = n => esc(String(n || '?').split('/')[0].trim());
 const ago = iso => { const m = Math.max(0, (Date.now() - new Date(iso)) / 6e4); return m < 60 ? `${fmt(m)} min sedan` : m < 1440 ? `${fmt(m / 60)} h sedan` : `${fmt(m / 1440)} d sedan`; };
 async function getJSON(url) { const r = await fetch(url, {cache: 'no-store'}); if (!r.ok) throw new Error(r.status); return r.json(); }
@@ -264,13 +265,13 @@ function render() {
   $('open').innerHTML = open.map(p => {
     const v = val(p, p.last) + (p.realised || 0), r = p.last / p.entry, d = v - p.stake;
     return `<a class="row" href="https://dexscreener.com/solana/${esc(p.pool)}" target="_blank" rel="noopener"><div class="av">${sym(p.name).slice(0, 2).toUpperCase()}</div>` +
-      `<div class="main"><b>${sym(p.name)}</b><span>köpt ${ago(p.opened)}</span>${p.half_sold ? ' <span class="pill b">halva såld</span>' : ''}</div>` +
+      `<div class="main"><b>${sym(p.name)}</b><span>köpt ${ago(p.opened)} · likviditet vid köp <b style="display:inline;font-size:12px;color:var(--text)">${liq(p.liq_at_entry)}</b>${p.liq_now ? ` · nu ${liq(p.liq_now)}` : ''}</span>${p.half_sold ? ' <span class="pill b">halva såld</span>' : ''}</div>` +
       `<div class="end"><span class="${cls(r - 1)}" style="font-size:13px;font-weight:600">${fmt(r, 2)}×</span><span class="${cls(d)}">${skr(d)}</span></div></a>`;
   }).join('') || '<div class="empty">Inga öppna affärer just nu – boten väntar på en token som klarar alla filter.</div>';
   // live feed from buys, half sales and exits
   const ev = [];
   for (const p of [...open, ...closed]) {
-    ev.push({ts: p.opened, ico: 'b', t: `Köpte ${sym(p.name)}`, s: `${kr(p.stake)} · likviditet ${fmt(p.liq_at_entry / 1000)} k$`});
+    ev.push({ts: p.opened, ico: 'b', t: `Köpte ${sym(p.name)}`, s: `${kr(p.stake)} · likviditet vid köp ${liq(p.liq_at_entry)}`});
     for (const e of p.events || []) ev.push({ts: e.ts, ico: 'p', t: `Sålde halva ${sym(p.name)}`, s: `vid 2× · ${skr(e.kr)}`});
     if (p.closed) ev.push({ts: p.closed, ico: p.won ? 'g' : 'r', t: `Stängde ${sym(p.name)}`, s: `${esc(p.reason)} · ${skr(p.pnl)}`});
   }
@@ -283,7 +284,7 @@ function render() {
   const pill = r => /rug/.test(r) ? ['r', 'rug'] : /stop/.test(r) ? ['o', 'stop −40 %'] : /5x/.test(r) ? ['g', '5×'] : /trailing/.test(r) ? ['b', 'från toppen'] : ['b', esc(r)];
   $('closed').innerHTML = closed.slice().reverse().slice(0, 30).map(p => { const [c, t] = pill(p.reason || '');
     return `<a class="row" href="https://dexscreener.com/solana/${esc(p.pool)}" target="_blank" rel="noopener"><div class="av">${sym(p.name).slice(0, 2).toUpperCase()}</div>` +
-      `<div class="main"><b>${sym(p.name)}</b><span>${ago(p.closed)}</span> <span class="pill ${c}">${t}</span></div>` +
+      `<div class="main"><b>${sym(p.name)}</b><span>${ago(p.closed)} · likviditet vid köp <b style="display:inline;font-size:12px;color:var(--text)">${liq(p.liq_at_entry)}</b></span> <span class="pill ${c}">${t}</span></div>` +
       `<div class="end"><span class="${cls(p.pnl)}" style="font-size:13.5px;font-weight:700">${skr(p.pnl)}</span><span>insats ${kr(p.stake)}</span></div></a>`; }).join('') ||
     '<div class="empty">Inga avslutade affärer än.</div>';
   // per day bars (sign + colour)

@@ -2,7 +2,7 @@
  "started": "2026-10-11T15:45:16.964945+00:00",
  "trial": 66,
  "start_kr": 5000.0,
- "cash": 4250.0,
+ "cash": 4571.173681549528,
  "open": [
   {
    "pool": "6iep3EgqksbZwgzMBCyAJtiVtVYkCgL9BnPBEwLR8AGQ",
@@ -13,13 +13,20 @@
    "entry": 0.0004245133017817797,
    "entry_seen": 0.0004161895115507644,
    "stake": 250.0,
-   "stake_left": 250.0,
-   "peak": 0.0007862,
-   "last": 0.000697,
-   "half_sold": false,
-   "realised": 0.0,
+   "stake_left": 125.0,
+   "peak": 0.001138,
+   "last": 0.001138,
+   "half_sold": true,
+   "realised": 321.173681549528,
    "liq_at_entry": 67205.1351,
-   "missing": 0
+   "missing": 0,
+   "events": [
+    {
+     "ts": "2026-10-11T17:45:17.507261+00:00",
+     "what": "sold half at 2x",
+     "kr": 321.17
+    }
+   ]
   },
   {
    "pool": "EdV32pDiDmuFSsEbA9DB97VziSfSRXDdUQ7WCPRJwzEP",
@@ -32,7 +39,7 @@
    "stake": 250.0,
    "stake_left": 250.0,
    "peak": 0.000141,
-   "last": 9.08e-05,
+   "last": 8.747e-05,
    "half_sold": false,
    "realised": 0.0,
    "liq_at_entry": 26126.6602,
@@ -48,8 +55,8 @@
    "entry_seen": 0.00018471120572891188,
    "stake": 250.0,
    "stake_left": 250.0,
-   "peak": 0.000232,
-   "last": 0.000232,
+   "peak": 0.0002632,
+   "last": 0.0002452,
    "half_sold": false,
    "realised": 0.0,
    "liq_at_entry": 39848.4374,
@@ -147,16 +154,23 @@
    "cash": 4250.0,
    "open": 3,
    "w": 2986233
+  },
+  {
+   "ts": "2026-10-11T17:49:56.064733+00:00",
+   "equity": 5444.18,
+   "cash": 4571.17,
+   "open": 3,
+   "w": 2986234
   }
  ],
  "skips": {
-  "age": 5992,
+  "age": 6731,
   "buy pressure": 209,
-  "quote": 680,
-  "liquidity": 310,
+  "quote": 732,
+  "liquidity": 313,
   "price change": 27,
   "volume": 2,
   "danger risk": 1
  },
- "last_run": "2026-10-11T17:39:54.204909+00:00"
+ "last_run": "2026-10-11T17:49:56.064733+00:00"
 }

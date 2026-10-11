@@ -2,7 +2,7 @@
  "started": "2026-10-11T15:45:16.964945+00:00",
  "trial": 66,
  "start_kr": 5000.0,
- "cash": 4500.0,
+ "cash": 4250.0,
  "open": [
   {
    "pool": "6iep3EgqksbZwgzMBCyAJtiVtVYkCgL9BnPBEwLR8AGQ",
@@ -15,7 +15,7 @@
    "stake": 250.0,
    "stake_left": 250.0,
    "peak": 0.0007862,
-   "last": 0.0007862,
+   "last": 0.000697,
    "half_sold": false,
    "realised": 0.0,
    "liq_at_entry": 67205.1351,
@@ -32,10 +32,27 @@
    "stake": 250.0,
    "stake_left": 250.0,
    "peak": 0.000141,
-   "last": 0.0001248,
+   "last": 9.08e-05,
    "half_sold": false,
    "realised": 0.0,
    "liq_at_entry": 26126.6602,
+   "missing": 0
+  },
+  {
+   "pool": "H68Z3uxoJjezyqt5uSvEAeq6JftMWKz6RKXaw2S2pRBa",
+   "mint": "FiLRrZ7Bt2HHGfs83RFJdGmp3mLceycq3zkDN6Apump",
+   "name": "DOPE / SOL",
+   "opened": "2026-10-11T17:39:48.570944+00:00",
+   "opened_ts": 1791740388.570944,
+   "entry": 0.00018840542984349012,
+   "entry_seen": 0.00018471120572891188,
+   "stake": 250.0,
+   "stake_left": 250.0,
+   "peak": 0.000232,
+   "last": 0.000232,
+   "half_sold": false,
+   "realised": 0.0,
+   "liq_at_entry": 39848.4374,
    "missing": 0
   }
  ],
@@ -43,7 +60,8 @@
  "seen": [
   "33jENUQnjoitkMFpvNJcSHyLAHFWJuHwT6E3E8CNpump",
   "DF2itwPUjUpA41SXY6SBF8iC2uZDvAoJt7gbXhSBA9e",
-  "FdZRSoq4MfUPkqAi8mipJ9UaFYu8gfDCwCfw76YZpump"
+  "FdZRSoq4MfUPkqAi8mipJ9UaFYu8gfDCwCfw76YZpump",
+  "FiLRrZ7Bt2HHGfs83RFJdGmp3mLceycq3zkDN6Apump"
  ],
  "history": [
   {
@@ -122,16 +140,23 @@
    "cash": 4500.0,
    "open": 2,
    "w": 2986232
+  },
+  {
+   "ts": "2026-10-11T17:39:54.204909+00:00",
+   "equity": 5188.31,
+   "cash": 4250.0,
+   "open": 3,
+   "w": 2986233
   }
  ],
  "skips": {
-  "age": 5504,
-  "buy pressure": 200,
-  "quote": 614,
-  "liquidity": 308,
+  "age": 5992,
+  "buy pressure": 209,
+  "quote": 680,
+  "liquidity": 310,
   "price change": 27,
   "volume": 2,
   "danger risk": 1
  },
- "last_run": "2026-10-11T17:29:51.185899+00:00"
+ "last_run": "2026-10-11T17:39:54.204909+00:00"
 }

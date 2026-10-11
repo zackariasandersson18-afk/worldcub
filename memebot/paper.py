@@ -128,6 +128,26 @@ def market_ok(c: dict) -> str | None:
     return None
 
 
+def market_fails(c: dict) -> list[str]:
+    """Every cheap market filter the candidate fails (market_ok gives only the first)."""
+    m5, out = c['m5'], []
+    if c['quote'] not in QUOTES:
+        out.append('quote')
+    if not AGE_MIN_S <= c['age_s'] <= AGE_MAX_S:
+        out.append('age')
+    if c['liq'] < MIN_LIQ:
+        out.append('liquidity')
+    if (m5.get('buys') or 0) < 1.5 * (m5.get('sells') or 0) or (m5.get('buyers') or 0) < 20:
+        out.append('buy pressure')
+    if c['vol_h1'] < 0.5 * c['liq']:
+        out.append('volume')
+    if not 0 <= c['chg_h1'] <= 100:
+        out.append('price change')
+    if c['price'] <= 0:
+        out.append('price')
+    return out
+
+
 def safety(report: dict | None) -> str | None:
     """Reason to reject from a RugCheck report, or None if safe enough."""
     if not report:
@@ -229,15 +249,59 @@ def exit_all(st: dict, p: dict, price: float, why: str, iso: str, got: float | N
     st['closed'].append(p)
 
 
-def step(state_dir: str | Path, now: float | None = None, http=None, log=print, close: set | None = None) -> dict:
-    """close: pool addresses the owner asked to close by hand (sold at the current price this minute)."""
+# Books: test 66 plus a control and three variants, all fed the same candidates every minute.
+# Pre-registered 11 Oct 2026 ~21 UTC before any variant had traded (see EXPERIMENT below).
+BASE = {'tranches': ((2.0, 0.5),), 'final': 5.0, 'trail': 0.5, 'stop': 0.6, 'time_stop': None, 'liq_exit': None}
+BOOKS = {
+    '66': {**BASE, 'file': 'memebot_state.json', 'trial': 66, 'name': 'Test 66 (original)'},
+    'K': {**BASE, 'file': 'memebot_K.json', 'trial': None, 'name': 'Kontroll (samma regler, ny start)'},
+    'A': {**BASE, 'file': 'memebot_A.json', 'trial': 67, 'name': 'A: tidsstopp',
+          'time_stop': (2 * 3600, 1.3)},             # not >= 1.3x entry within 2 h (and nothing sold yet): sell all
+    'B': {**BASE, 'file': 'memebot_B.json', 'trial': 68, 'name': 'B: likviditetsflykt',
+          'liq_exit': 0.7},                          # liquidity <= 70 % of the liquidity at entry: sell all
+    'C': {**BASE, 'file': 'memebot_C.json', 'trial': 69, 'name': 'C: sälj i steg',
+          'tranches': ((2.0, 1 / 3), (4.0, 0.5)), 'final': 10.0},   # 1/3 at 2x, 1/3 at 4x, rest at 10x or -50 % from peak
+}
+EXPERIMENT = {'started': '2026-10-11', 'judge_on': '2026-10-25', 'min_closed': 30,
+              'rule': 'a variant beats the control K only if, on 25 Oct 2026, it has >= 30 closed trades and both a higher '
+                      'net result and a smaller max drawdown than K; otherwise it is not shown to be better'}
+
+
+class Market:
+    """Everything fetched once per minute and shared by all books: candidates, RugCheck reports, buy quotes."""
+
+    def __init__(self, http, now: float):
+        self.http, self.now, self._cands, self.reports, self.buys = http, now, None, {}, {}
+
+    def cands(self) -> list[dict]:
+        if self._cands is None:
+            self._cands = candidates(self.http, self.now)
+        return self._cands
+
+    def report(self, mint: str):
+        if mint not in self.reports:
+            self.reports[mint] = _get(self.http, f"{RC}/{mint}/report")
+        return self.reports[mint]
+
+    def buy(self, mint: str):
+        if mint not in self.buys:
+            self.buys[mint] = jup(self.http, USDC, mint, int((STAKE_KR - FEE_KR) / KR_PER_USD * 1e6))
+        return self.buys[mint]
+
+
+def step(state_dir: str | Path, now: float | None = None, http=None, log=print, close: set | None = None,
+         book: str = '66', market: Market | None = None) -> dict:
+    """One minute for one book. close: pool addresses the owner asked to close by hand (sold at the current price)."""
+    R = BOOKS[book]
     d = Path(state_dir)
     d.mkdir(parents=True, exist_ok=True)
     http = http or requests.Session()
     now = now or time.time()
-    path = d / 'memebot_state.json'
-    st = load(path, {'started': datetime.fromtimestamp(now, timezone.utc).isoformat(), 'trial': N_TRIAL,
-                     'start_kr': START_KR, 'cash': START_KR, 'open': [], 'closed': [], 'seen': [], 'history': [], 'skips': {}})
+    market = market or Market(http, now)
+    path = d / R['file']
+    st = load(path, {'started': datetime.fromtimestamp(now, timezone.utc).isoformat(), 'trial': R['trial'], 'book': book,
+                     'name': R['name'], 'start_kr': START_KR, 'cash': START_KR, 'open': [], 'closed': [], 'seen': [],
+                     'history': [], 'skips': {}})
     iso = datetime.fromtimestamp(now, timezone.utc).isoformat()
     # 1. exits
     q = quotes(http, [p['pool'] for p in st['open']])
@@ -255,13 +319,18 @@ def step(state_dir: str | Path, now: float | None = None, http=None, log=print, 
         if o['liq']:
             p['liq_now'] = o['liq']                    # liquidity in USD right now (shown beside the one at entry)
         jq = None                                      # this minute's Jupiter quote for selling everything
-        if 'tokens_left' in p:
+
+        def requote() -> None:
+            nonlocal jq
             jq = sell_quote(http, p, p['tokens_left'])
             if jq[0] == 'ok':
                 p.update(quote_kr=round(jq[1], 4), quote_px=px, exit_impact=jq[2], quote_ts=iso, nosell=0)
             elif jq[0] == 'noroute':
                 p['nosell'] = p.get('nosell', 0) + 1
                 p.update(quote_kr=0.0, quote_px=px)
+        if 'tokens_left' in p:
+            requote()
+
         def out(why: str) -> None:
             """Sell everything; with Jupiter, at its quote. No route three minutes in a row = unsellable = worth 0."""
             if jq is None or jq[0] == 'down':          # legacy position, or Jupiter silent: 2 % estimate
@@ -282,51 +351,58 @@ def step(state_dir: str | Path, now: float | None = None, http=None, log=print, 
             out('manuellt stängd')
             continue
         r = px / p['entry']
-        if not p['half_sold'] and r >= 2:
+        done = p.get('tranches', 1 if p['half_sold'] else 0)
+        if done < len(R['tranches']) and r >= R['tranches'][done][0]:
+            at, frac = R['tranches'][done]
             if 'tokens_left' in p:
-                half = p['tokens_left'] // 2
-                hs, got, imp = sell_quote(http, p, half)
+                raw = int(p['tokens_left'] * frac)
+                hs, got, imp = sell_quote(http, p, raw)
                 if hs == 'down':
-                    got, imp = value(p, px) / 2, None
+                    got, imp = value(p, px) * frac, None
             else:
-                hs, got, imp, half = 'legacy', value(p, px) / 2, None, 0
-            if hs != 'noroute':                        # no buyer for half: try again next minute
+                hs, got, imp, raw = 'legacy', value(p, px) * frac, None, 0
+            if hs != 'noroute':                        # no buyer: try again next minute
                 st['cash'] += got
                 p['realised'] += got
-                p['stake_left'] /= 2
-                p['half_sold'] = True
+                p['stake_left'] *= 1 - frac
+                p['tranches'] = done + 1
+                p['half_sold'] = True                  # "something has been sold" (name kept for the dashboard)
                 if 'tokens_left' in p:
-                    p['tokens_left'] -= half
+                    p['tokens_left'] -= raw
                     p.pop('quote_kr', None)            # the quote was for the whole bag
-                p.setdefault('events', []).append({'ts': iso, 'what': 'sold half at 2x', 'kr': round(got, 2), 'impact': imp})
+                p.setdefault('events', []).append({'ts': iso, 'what': f'sold {frac:.0%} of the rest at {at:g}x',
+                                                   'kr': round(got, 2), 'impact': imp})
                 if 'tokens_left' in p:
-                    jq = sell_quote(http, p, p['tokens_left'])
-                    if jq[0] == 'ok':
-                        p.update(quote_kr=round(jq[1], 4), quote_px=px, exit_impact=jq[2], quote_ts=iso)
-        if not p['half_sold'] and r <= 0.6:
+                    requote()
+        sold = p.get('tranches', 1 if p['half_sold'] else 0) > 0
+        if not sold and r <= R['stop']:
             out('stop -40 %')
-        elif p['half_sold'] and (r >= 5 or px <= 0.5 * p['peak']):
-            out('5x' if r >= 5 else 'trailing -50 % from peak')
+        elif sold and (r >= R['final'] or px <= R['trail'] * p['peak']):
+            out(f"{R['final']:g}x" if r >= R['final'] else 'trailing -50 % from peak')
+        elif R['time_stop'] and not sold and now - p['opened_ts'] >= R['time_stop'][0] and p['peak'] / p['entry'] < R['time_stop'][1]:
+            out('tidsstopp 2 h')
+        elif R['liq_exit'] and p.get('liq_now') and p.get('liq_at_entry') and p['liq_now'] <= R['liq_exit'] * p['liq_at_entry']:
+            out('likviditetsflykt')
         elif now - p['opened_ts'] >= 48 * 3600:
             out('48 h')
     # 2. entries
     if len(st['open']) < MAX_OPEN and st['cash'] >= STAKE_KR:
         seen = set(st['seen'])
-        for c in candidates(http, now):
+        for c in market.cands():
             if len(st['open']) >= MAX_OPEN or st['cash'] < STAKE_KR:
                 break
             if c['mint'] in seen:
                 continue
             why, report = market_ok(c), None
             if why is None:
-                report = _get(http, f"{RC}/{c['mint']}/report")
+                report = market.report(c['mint'])
                 why = safety(report)
             dec = ((report or {}).get('token') or {}).get('decimals')
             if why is None and not isinstance(dec, int):
                 why = 'no decimals'
             buy = None
             if why is None:                            # a real buy: what Jupiter gives for 250 kr minus the fee
-                buy = jup(http, USDC, c['mint'], int((STAKE_KR - FEE_KR) / KR_PER_USD * 1e6))
+                buy = market.buy(c['mint'])
                 if buy[0] != 'ok':
                     why = 'no route' if buy[0] == 'noroute' else 'jupiter down'
             if why:
@@ -340,11 +416,11 @@ def step(state_dir: str | Path, now: float | None = None, http=None, log=print, 
             st['cash'] -= STAKE_KR
             st['open'].append({'pool': c['pool'], 'mint': c['mint'], 'name': c['name'], 'opened': iso, 'opened_ts': now,
                                'entry': entry, 'entry_seen': c['price'], 'stake': STAKE_KR,
-                               'stake_left': STAKE_KR, 'peak': c['price'], 'last': c['price'], 'half_sold': False,
+                               'stake_left': STAKE_KR, 'peak': c['price'], 'last': c['price'], 'half_sold': False, 'tranches': 0,
                                'realised': 0.0, 'liq_at_entry': c['liq'], 'trail': [[int(now), float(f"{c['price']:.6g}")]],
                                'tokens': tokens, 'tokens_left': tokens, 'decimals': dec, 'entry_impact': buy[2],
                                'entry_cost': round(entry / c['price'] - 1, 4) if c['price'] else None, 'fills': 'jupiter'})
-            log(f"meme buy {c['name']} at {entry:.3g} USD (screen {c['price']:.3g}), liquidity {c['liq']:.0f}")
+            log(f"meme[{book}] buy {c['name']} at {entry:.3g} USD (screen {c['price']:.3g}), liquidity {c['liq']:.0f}")
         st['seen'] = list(seen)[-20000:]
     # 3. equity
     eq = st['cash'] + sum(value(p, p['last']) for p in st['open'])
@@ -357,3 +433,22 @@ def step(state_dir: str | Path, now: float | None = None, http=None, log=print, 
     st['last_run'] = iso
     save(path, st)
     return {'net': round(eq - START_KR, 2), 'avg_share': None, 'open': len(st['open']), 'closed': len(st['closed'])}
+
+
+def step_all(state_dir: str | Path, now: float | None = None, http=None, log=print, close: set | None = None) -> dict:
+    """Every book once, sharing one Market; the owner's manual closes only apply to test 66. Then the shadow book."""
+    from memebot import shadow
+    http = http or requests.Session()
+    now = now or time.time()
+    m = Market(http, now)
+    out = {}
+    for b in BOOKS:
+        try:
+            out[b] = step(state_dir, now=now, http=http, log=log, close=close if b == '66' else None, book=b, market=m)
+        except Exception as e:                         # noqa: BLE001  one book must not stop the others
+            log(f'meme[{b}] failed: {e!r}')
+    try:
+        shadow.update(state_dir, m, now, log=log)
+    except Exception as e:                             # noqa: BLE001
+        log(f'meme shadow failed: {e!r}')
+    return out.get('66') or {'net': None, 'avg_share': None}

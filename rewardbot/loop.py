@@ -8,6 +8,7 @@ the weather bots on tradebot-state. History keeps one row per 10 minutes.
 """
 from __future__ import annotations
 
+import os
 import subprocess
 import time
 import traceback
@@ -36,12 +37,62 @@ def push(repo: Path, branch: str, log=print) -> bool:
     return False
 
 
+CLOSE_PREFIX = 'memebot: stäng '
+
+
+def close_requests(http, log=print) -> list[dict]:
+    """Open issues titled 'memebot: stäng <pool>' written by the repository owner (anyone can open
+    an issue on a public repository, so nobody else is obeyed)."""
+    repo, token = os.environ.get('GITHUB_REPOSITORY'), os.environ.get('GITHUB_TOKEN')
+    if not repo or not token:
+        return []
+    owner = repo.split('/')[0]
+    try:
+        r = http.get(f'https://api.github.com/repos/{repo}/issues', params={'state': 'open', 'per_page': 50},
+                     headers={'Authorization': f'Bearer {token}', 'Accept': 'application/vnd.github+json'}, timeout=20)
+        issues = r.json() if r.status_code == 200 else []
+    except Exception:                                       # noqa: BLE001
+        return []
+    return [{'number': i['number'], 'pool': i['title'][len(CLOSE_PREFIX):].strip()} for i in issues
+            if isinstance(i, dict) and 'pull_request' not in i and (i.get('title') or '').startswith(CLOSE_PREFIX)
+            and (i.get('user') or {}).get('login') == owner]
+
+
+def answer(http, number: int, text: str) -> None:
+    repo, token = os.environ.get('GITHUB_REPOSITORY'), os.environ.get('GITHUB_TOKEN')
+    h = {'Authorization': f'Bearer {token}', 'Accept': 'application/vnd.github+json'}
+    try:
+        http.post(f'https://api.github.com/repos/{repo}/issues/{number}/comments', json={'body': text}, headers=h, timeout=20)
+        http.patch(f'https://api.github.com/repos/{repo}/issues/{number}', json={'state': 'closed'}, headers=h, timeout=20)
+    except Exception:                                       # noqa: BLE001
+        pass
+
+
+def meme_tick(state: str, http, log=print) -> dict:
+    d = Path(state).parent / 'memebot'
+    reqs = close_requests(http, log)
+    t = memebot_paper.step(d, http=http, log=log, close={q['pool'] for q in reqs})
+    if reqs:
+        st = memebot_paper.load(d / 'memebot_state.json', {})
+        done = {p['pool']: p for p in st.get('closed', []) if p.get('manual')}
+        still = {p['pool'] for p in st.get('open', [])}
+        for q in reqs:
+            if q['pool'] in done:
+                p = done[q['pool']]
+                answer(http, q['number'], f"Stängd {p['closed'][:16].replace('T', ' ')} UTC: fick tillbaka {p['realised']:.0f} kr "
+                                          f"av {p['stake']:.0f} kr ({p['pnl']:+.0f} kr).")
+            elif q['pool'] not in still:
+                answer(http, q['number'], 'Hittade ingen öppen affär med den poolen – den kan redan vara stängd.')
+            # still open but no price this minute: try again next minute
+    return t
+
+
 def tick(state: str, http, log=print) -> None:
     for name, fn in (('v1', lambda: live.step(state, http=http, log=log)),
                      ('v2', lambda: live_v2.step(state, http=http, log=log, version='v2')),
                      ('v3', lambda: live_v2.step(state, http=http, log=log, version='v3')),
                      ('v4', lambda: live_v2.step(state, http=http, log=log, version='v4')),
-                     ('meme', lambda: memebot_paper.step(Path(state).parent / 'memebot', http=http, log=log))):
+                     ('meme', lambda: meme_tick(state, http, log))):
         try:
             t = fn()
             log(f"{time.strftime('%H:%M:%S', time.gmtime())} {name} net {t.get('net')} share {t.get('avg_share')}")

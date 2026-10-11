@@ -70,3 +70,29 @@ def test_rug_after_three_missing_quotes(tmp_path):
         paper.step(tmp_path, now=t0 + 60 * i, http=h, log=lambda *_: None)
     st = paper.load(tmp_path / 'memebot_state.json', {})
     assert st['closed'][0]['reason'] == 'rug / pair gone' and st['closed'][0]['pnl'] == -250
+
+
+def test_manual_close(tmp_path):
+    t0 = 1_791_000_000
+    import datetime as dt
+    created = dt.datetime.fromtimestamp(t0 - 3600, dt.timezone.utc).isoformat().replace('+00:00', 'Z')
+    routes = {'trending_pools': {'data': [pool('A', 'm1', created)]}, 'new_pools': {'data': []}, 'rugcheck': SAFE,
+              'dexscreener': {'pairs': [{'pairAddress': 'A', 'priceUsd': '1.5', 'liquidity': {'usd': 50000}}]}}
+    h = FakeHTTP(routes)
+    paper.step(tmp_path, now=t0, http=h, log=lambda *_: None)
+    paper.step(tmp_path, now=t0 + 60, http=h, log=lambda *_: None, close={'A'})
+    st = paper.load(tmp_path / 'memebot_state.json', {})
+    c = st['closed'][0]
+    assert c['manual'] and c['reason'] == 'manuellt stängd' and abs(c['realised'] - 250 * 1.5 / 1.02 * 0.98) < 1e-6
+
+
+def test_close_requests_only_from_owner(monkeypatch):
+    from rewardbot import loop
+    monkeypatch.setenv('GITHUB_REPOSITORY', 'me/repo')
+    monkeypatch.setenv('GITHUB_TOKEN', 't')
+    issues = [{'number': 1, 'title': 'memebot: stäng POOL1', 'user': {'login': 'me'}},
+              {'number': 2, 'title': 'memebot: stäng POOL2', 'user': {'login': 'stranger'}},
+              {'number': 3, 'title': 'something else', 'user': {'login': 'me'}},
+              {'number': 4, 'title': 'memebot: stäng POOL4', 'user': {'login': 'me'}, 'pull_request': {}}]
+    h = type('H', (), {'get': lambda self, *a, **k: type('R', (), {'status_code': 200, 'json': lambda s: issues})()})()
+    assert loop.close_requests(h) == [{'number': 1, 'pool': 'POOL1'}]

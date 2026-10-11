@@ -82,7 +82,7 @@
    "question": "Will Caleb Malhotra win the 2026-27 Calder Trophy?",
    "yes": "47450104704514391791580746546349699405028927034297867093064921283240928526748",
    "no": "65168873068794344677968462337849361146462339800294364981939593766479974557932",
-   "rate": 22.0,
+   "rate": 0.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -112,7 +112,7 @@
    "question": "Will Morena win the most seats in the 2027 Campeche Congress election?",
    "yes": "105456728960019268680451345633311793872469862177719836392029895987945180172143",
    "no": "43214736097552694523857951099660418705920084043349993148839002786413383209586",
-   "rate": 23.0,
+   "rate": 25.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -296,9 +296,9 @@
   "0x2e1d12640524b792ae728c785e79a31144f5242e43fba6ace0452e6aff55f67f": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.27,
-   "share": 0.9135135135135147,
-   "reward": 14.584406679263086,
+   "mid": 0.315,
+   "share": 1.0,
+   "reward": 14.596008347918199,
    "fills": 0,
    "q": "Will GPT Sol's output price be at or below $5 in 2026?"
   },
@@ -307,7 +307,7 @@
    "cash": 0.0,
    "mid": 0.28500000000000003,
    "share": 0.038192090395480195,
-   "reward": 11.974619388465902,
+   "reward": 11.975439521237506,
    "fills": 0,
    "q": "Will the next Fable model (5.2+) debut with a Humanity's Last Exam score of 60% "
   },
@@ -316,16 +316,16 @@
    "cash": 0.0,
    "mid": 0.27,
    "share": 1.0,
-   "reward": 14.625271339727,
+   "reward": 14.64674523034449,
    "fills": 0,
    "q": "Will GPT Sol's output price be at or above $15 in 2026?"
   },
   "0x7f3fb04a30c4d70ddae82b9e2f81cec6f07180574d3633ad6a7fce11b3396156": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.23,
-   "share": 0.24433734939759036,
-   "reward": 1.4236204741687242,
+   "mid": 0.225,
+   "share": 0.3456032719836404,
+   "reward": 1.4294076768401742,
    "fills": 0,
    "q": "Will GPT Astra's output price be at or below $25 in 2026?"
   },
@@ -334,15 +334,15 @@
    "cash": 0.0,
    "mid": 0.5,
    "share": 1.0,
-   "reward": 17.230446765825683,
+   "reward": 17.502449380313887,
    "fills": 0,
    "q": "Will global temperature increase by between 1.40\u00baC and 1.44\u00baC in October 2026?"
   },
   "0x8ece245b7afe4328ac803cdf84aa2446300200271cb0c36612b4f2169dd293ff": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.03,
-   "share": 0.06999380137199371,
+   "mid": 0.321,
+   "share": 1.0,
    "reward": 7.3823135446232735,
    "fills": 0,
    "q": "Will Caleb Malhotra win the 2026-27 Calder Trophy?"
@@ -350,18 +350,18 @@
   "0xd290d0ce68bea178bc6fcecb04a539702bb603518dc41dfc71e2844dfeb7a99d": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.195,
+   "mid": 0.26,
    "share": 1.0,
-   "reward": 10.808698439462862,
+   "reward": 10.88810813279339,
    "fills": 0,
    "q": "Will global temperature increase by between 1.35\u00baC and 1.39\u00baC in October 2026?"
   },
   "0x838d204febc4748544b9d06b05c7e92e93fe4a7729f2b49b353567edca3b80dc": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.445,
+   "mid": 0.45,
    "share": 1.0,
-   "reward": 11.507298861008387,
+   "reward": 11.686247949487466,
    "fills": 0,
    "q": "Will Morena win the most seats in the 2027 Campeche Congress election?"
   },
@@ -370,7 +370,7 @@
    "cash": 0.0,
    "mid": 0.2,
    "share": 1.0,
-   "reward": 6.8375240860437865,
+   "reward": 6.930577612052908,
    "fills": 0,
    "q": "Will Paulo Dybala (Roma) record the most assists in the 2026-27 Serie A season?"
   }
@@ -3218,6 +3218,19 @@
    "fills_total": 2,
    "rebalanced": false,
    "w": 2986206
+  },
+  {
+   "ts": "2026-10-11T13:16:44.170361+00:00",
+   "dt_h": 0.173,
+   "reward_tick": 0.6631,
+   "reward_total": 98.9,
+   "mm_value": -1.05,
+   "net": 97.85,
+   "avg_share": 0.8204,
+   "n_markets": 9,
+   "fills_total": 2,
+   "rebalanced": false,
+   "w": 2986207
   }
  ],
  "fills": [
@@ -3240,8 +3253,8 @@
    "ledger": "v2"
   }
  ],
- "reward_total": 98.23596489051506,
- "last_ts": 1791723985.7223115,
+ "reward_total": 98.89906270753764,
+ "last_ts": 1791724604.1703613,
  "chosen_at": 1791677342.7947838,
  "rebalances": [
   {
@@ -3258,14 +3271,14 @@
   }
  ],
  "last_tick": {
-  "ts": "2026-10-11T13:06:25.722311+00:00",
-  "dt_h": 0.017,
+  "ts": "2026-10-11T13:16:44.170361+00:00",
+  "dt_h": 0.016,
   "markets": [
    {
     "q": "Will GPT Sol's output price be at or below $5 in 2",
-    "mid": 0.27,
-    "share": 0.9135,
-    "earned": 0.0019,
+    "mid": 0.315,
+    "share": 1.0,
+    "earned": 0.0,
     "inv": 0.0
    },
    {
@@ -3279,57 +3292,57 @@
     "q": "Will GPT Sol's output price be at or above $15 in ",
     "mid": 0.27,
     "share": 1.0,
-    "earned": 0.0021,
+    "earned": 0.002,
     "inv": 0.0
    },
    {
     "q": "Will GPT Astra's output price be at or below $25 i",
-    "mid": 0.23,
-    "share": 0.2443,
-    "earned": 0.0005,
+    "mid": 0.225,
+    "share": 0.3456,
+    "earned": 0.0007,
     "inv": 0.0
    },
    {
     "q": "Will global temperature increase by between 1.40\u00baC",
     "mid": 0.5,
     "share": 1.0,
-    "earned": 0.0264,
+    "earned": 0.025,
     "inv": 0.0
    },
    {
     "q": "Will Caleb Malhotra win the 2026-27 Calder Trophy?",
-    "mid": 0.03,
-    "share": 0.07,
+    "mid": 0.321,
+    "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will global temperature increase by between 1.35\u00baC",
-    "mid": 0.195,
+    "mid": 0.26,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0118,
     "inv": 0.0
    },
    {
     "q": "Will Morena win the most seats in the 2027 Campech",
-    "mid": 0.445,
+    "mid": 0.45,
     "share": 1.0,
-    "earned": 0.016,
+    "earned": 0.0164,
     "inv": 0.0
    },
    {
     "q": "Will Paulo Dybala (Roma) record the most assists i",
     "mid": 0.2,
     "share": 1.0,
-    "earned": 0.009,
+    "earned": 0.0085,
     "inv": 0.0
    }
   ],
-  "reward_tick": 0.0559,
-  "reward_total": 98.24,
+  "reward_tick": 0.0645,
+  "reward_total": 98.9,
   "mm_value": -1.05,
-  "net": 97.19,
-  "avg_share": 0.6962,
+  "net": 97.85,
+  "avg_share": 0.8204,
   "n_markets": 9,
   "fills_total": 2,
   "rebalanced": false

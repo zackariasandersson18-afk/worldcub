@@ -4,8 +4,90 @@
  "book": "C",
  "name": "C: s\u00e4lj i steg",
  "start_kr": 5000.0,
- "cash": 4500.0,
+ "cash": 4510.5890584,
  "open": [
+  {
+   "pool": "5Q4H88BRnBLtrqcB6s7yeoXb5SKjaMaRZ4emATKCHpf5",
+   "mint": "BXuuLQQsHsAjweVvTXHAgJSnTj9MLKpiK5cLP7c3wLxB",
+   "name": "Nuts / SOL",
+   "opened": "2026-10-11T20:11:42.981804+00:00",
+   "opened_ts": 1791749502.981804,
+   "entry": 0.00046381523199798437,
+   "entry_seen": 0.00045550258576847804,
+   "stake": 250.0,
+   "stake_left": 250.0,
+   "peak": 0.00045550258576847804,
+   "last": 0.0003987,
+   "half_sold": false,
+   "tranches": 0,
+   "realised": 0.0,
+   "liq_at_entry": 63585.2899,
+   "trail": [
+    [
+     1791749502,
+     0.000455503
+    ],
+    [
+     1791749559,
+     0.0004288
+    ],
+    [
+     1791749620,
+     0.0003994
+    ],
+    [
+     1791749682,
+     0.0004029
+    ],
+    [
+     1791749748,
+     0.0004054
+    ],
+    [
+     1791749803,
+     0.0004003
+    ],
+    [
+     1791749859,
+     0.0004008
+    ],
+    [
+     1791749921,
+     0.000386
+    ],
+    [
+     1791749980,
+     0.0003611
+    ],
+    [
+     1791750054,
+     0.000374
+    ],
+    [
+     1791750105,
+     0.0003686
+    ],
+    [
+     1791750436,
+     0.0003987
+    ]
+   ],
+   "tokens": 53900774005,
+   "tokens_left": 53900774005,
+   "decimals": 6,
+   "entry_impact": 0.004547964457353215,
+   "entry_cost": 0.0182,
+   "fills": "jupiter",
+   "missing": 0,
+   "liq_now": 59498.44,
+   "quote_kr": 220.6982,
+   "quote_px": 0.0003987,
+   "exit_impact": 0.0011044338727431353,
+   "quote_ts": "2026-10-11T20:27:16.295354+00:00",
+   "nosell": 0
+  }
+ ],
+ "closed": [
   {
    "pool": "ENtnEE6cmK1nfqKd6keZe1eGL6HmRBqYVyXRsWcBeQJP",
    "mint": "AqUPRnyFCRuMqKYgY5Tf64CFshFecuaGSGXx4cqqpump",
@@ -15,12 +97,12 @@
    "entry": 7.121484094129568e-05,
    "entry_seen": 6.0178205242644405e-05,
    "stake": 250.0,
-   "stake_left": 250.0,
+   "stake_left": 0.0,
    "peak": 0.0001095,
-   "last": 0.0001017,
+   "last": 3.585e-06,
    "half_sold": false,
    "tranches": 0,
-   "realised": 0.0,
+   "realised": 10.589058399999999,
    "liq_at_entry": 21058.2977,
    "trail": [
     [
@@ -62,64 +144,40 @@
     [
      1791749559,
      0.0001017
+    ],
+    [
+     1791749620,
+     9.179e-05
+    ],
+    [
+     1791749682,
+     9.928e-05
+    ],
+    [
+     1791749748,
+     3.585e-06
     ]
    ],
    "tokens": 351050422490,
-   "tokens_left": 351050422490,
+   "tokens_left": 0,
    "decimals": 6,
    "entry_impact": 0.05441215579230755,
    "entry_cost": 0.1834,
    "fills": "jupiter",
    "missing": 0,
-   "liq_now": 27043.58,
-   "quote_kr": 365.0215,
-   "quote_px": 0.0001017,
-   "exit_impact": 0.002930841883053655,
-   "quote_ts": "2026-10-11T20:12:39.738759+00:00",
-   "nosell": 0
-  },
-  {
-   "pool": "5Q4H88BRnBLtrqcB6s7yeoXb5SKjaMaRZ4emATKCHpf5",
-   "mint": "BXuuLQQsHsAjweVvTXHAgJSnTj9MLKpiK5cLP7c3wLxB",
-   "name": "Nuts / SOL",
-   "opened": "2026-10-11T20:11:42.981804+00:00",
-   "opened_ts": 1791749502.981804,
-   "entry": 0.00046381523199798437,
-   "entry_seen": 0.00045550258576847804,
-   "stake": 250.0,
-   "stake_left": 250.0,
-   "peak": 0.00045550258576847804,
-   "last": 0.0004288,
-   "half_sold": false,
-   "tranches": 0,
-   "realised": 0.0,
-   "liq_at_entry": 63585.2899,
-   "trail": [
-    [
-     1791749502,
-     0.000455503
-    ],
-    [
-     1791749559,
-     0.0004288
-    ]
-   ],
-   "tokens": 53900774005,
-   "tokens_left": 53900774005,
-   "decimals": 6,
-   "entry_impact": 0.004547964457353215,
-   "entry_cost": 0.0182,
-   "fills": "jupiter",
-   "missing": 0,
-   "liq_now": 61699.03,
-   "quote_kr": 232.6201,
-   "quote_px": 0.0004288,
-   "exit_impact": 0.0,
-   "quote_ts": "2026-10-11T20:12:39.738759+00:00",
-   "nosell": 0
+   "liq_now": 3506.67,
+   "quote_kr": 10.5891,
+   "quote_px": 3.585e-06,
+   "exit_impact": 0.008056147491262775,
+   "quote_ts": "2026-10-11T20:15:48.718935+00:00",
+   "nosell": 0,
+   "closed": "2026-10-11T20:15:48.718935+00:00",
+   "exit_price": 3.585e-06,
+   "reason": "stop -40 %",
+   "pnl": -239.41,
+   "won": false
   }
  ],
- "closed": [],
  "seen": [
   "BXuuLQQsHsAjweVvTXHAgJSnTj9MLKpiK5cLP7c3wLxB",
   "AqUPRnyFCRuMqKYgY5Tf64CFshFecuaGSGXx4cqqpump"
@@ -133,18 +191,25 @@
    "w": 2986248
   },
   {
-   "ts": "2026-10-11T20:12:39.738759+00:00",
-   "equity": 5097.64,
-   "cash": 4500.0,
-   "open": 2,
+   "ts": "2026-10-11T20:19:40.932028+00:00",
+   "equity": 4713.86,
+   "cash": 4510.59,
+   "open": 1,
    "w": 2986249
+  },
+  {
+   "ts": "2026-10-11T20:27:16.295354+00:00",
+   "equity": 4731.29,
+   "cash": 4510.59,
+   "open": 1,
+   "w": 2986250
   }
  ],
  "skips": {
-  "age": 624,
+  "age": 1331,
   "buy pressure": 7,
-  "quote": 99,
+  "quote": 187,
   "liquidity": 3
  },
- "last_run": "2026-10-11T20:12:39.738759+00:00"
+ "last_run": "2026-10-11T20:27:16.295354+00:00"
 }

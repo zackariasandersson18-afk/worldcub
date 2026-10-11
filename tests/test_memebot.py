@@ -169,3 +169,73 @@ def test_jupiter_silent_falls_back_to_estimate(tmp_path):
     paper.step(tmp_path, now=t0 + 60, http=h, log=lambda *_: None)
     c = paper.load(tmp_path / 'memebot_state.json', {})['closed'][0]
     assert c['reason'] == 'stop -40 %' and c['estimated'] and c['pnl'] < -100
+
+
+def run(tmp_path, h, t, book='66', **kw):
+    paper.step(tmp_path, now=t, http=h, log=lambda *_: None, book=book, **kw)
+    return paper.load(tmp_path / paper.BOOKS[book]['file'], {})
+
+
+def test_variant_a_time_stop_after_two_hours_without_progress(tmp_path):
+    t0, price = 1_791_000_000, {'v': 1.0}
+    h = FakeHTTP(routes_for(price, t0))
+    run(tmp_path, h, t0, 'A')
+    price['v'] = 1.2                                               # up, but peak < 1.3 x entry
+    assert run(tmp_path, h, t0 + 3600, 'A')['open']
+    st = run(tmp_path, h, t0 + 2 * 3600, 'A')
+    assert not st['open'] and st['closed'][0]['reason'] == 'tidsstopp 2 h'
+    assert run(tmp_path, h, t0, 'K')['open'] and run(tmp_path, h, t0 + 2 * 3600, 'K')['open']   # control keeps it
+
+
+def test_variant_b_sells_when_liquidity_flees(tmp_path):
+    t0, price, liq = 1_791_000_000, {'v': 1.0}, {'v': 50000}
+    r = routes_for(price, t0)
+    r['dexscreener'] = lambda u, p: {'pairs': [{'pairAddress': 'A', 'priceUsd': str(price['v']), 'liquidity': {'usd': liq['v']}}]}
+    h = FakeHTTP(r)
+    run(tmp_path, h, t0, 'B')
+    liq['v'] = 36000                                               # 72 % of the 50 000 at entry: hold
+    assert run(tmp_path, h, t0 + 60, 'B')['open']
+    liq['v'] = 34000                                               # 68 %: out
+    st = run(tmp_path, h, t0 + 120, 'B')
+    assert not st['open'] and st['closed'][0]['reason'] == 'likviditetsflykt'
+
+
+def test_variant_c_sells_in_steps(tmp_path):
+    t0, price = 1_791_000_000, {'v': 1.0}
+    h = FakeHTTP(routes_for(price, t0))
+    st = run(tmp_path, h, t0, 'C')
+    tokens = st['open'][0]['tokens']
+    price['v'] = 2.2
+    p = run(tmp_path, h, t0 + 60, 'C')['open'][0]
+    assert p['tranches'] == 1 and p['tokens_left'] == tokens - int(tokens / 3)
+    price['v'] = 4.5
+    p = run(tmp_path, h, t0 + 120, 'C')['open'][0]
+    left = tokens - int(tokens / 3)
+    assert p['tranches'] == 2 and p['tokens_left'] == left - int(left * 0.5)
+    price['v'] = 6.0                                               # 5x would end the base rules, not C
+    assert run(tmp_path, h, t0 + 180, 'C')['open']
+    price['v'] = 2.9                                               # < half the 6.0 peak
+    st = run(tmp_path, h, t0 + 240, 'C')
+    assert st['closed'][0]['reason'].startswith('trailing') and st['closed'][0]['won']
+
+
+def test_step_all_shares_one_market_and_fills_the_shadow_book(tmp_path):
+    t0, price, calls = 1_791_000_000, {'v': 1.0}, []
+    r = routes_for(price, t0)
+    r['rugcheck'] = lambda u, p: calls.append('rc') or SAFE
+    r['trending_pools'] = lambda u, p: calls.append('gt') or {'data': [pool('A', 'm1', created_at(t0)),
+                                                                       pool('Z', 'm9', created_at(t0), buys=10, sells=30)]}
+    h = FakeHTTP(r)
+    paper.step_all(tmp_path, now=t0, http=h, log=lambda *_: None)
+    assert calls.count('gt') == 2 and calls.count('rc') == 2       # 2 trending pages, 2 mints: once each, not per book
+    for b in paper.BOOKS.values():
+        assert len(paper.load(tmp_path / b['file'], {})['open']) == 1
+    sh = paper.load(tmp_path / 'shadow.json', {})
+    assert {x['pool']: x['fails'] for x in sh['live']} == {'A': [], 'Z': ['buy pressure']}
+    price['v'] = 1.4
+    paper.step_all(tmp_path, now=t0 + 1800, http=h, log=lambda *_: None)
+    x = paper.load(tmp_path / 'shadow.json', {})['live'][0]
+    assert x['path'][-1] == [30, 1.4, 50]
+    paper.step_all(tmp_path, now=t0 + 48 * 3600, http=h, log=lambda *_: None)
+    assert not paper.load(tmp_path / 'shadow.json', {})['live'] or all(y['t0'] > t0 for y in paper.load(tmp_path / 'shadow.json', {})['live'])
+    assert len(list((tmp_path / 'shadow').glob('*.json'))) == 1

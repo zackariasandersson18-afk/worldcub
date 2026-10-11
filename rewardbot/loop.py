@@ -71,7 +71,7 @@ def answer(http, number: int, text: str) -> None:
 def meme_tick(state: str, http, log=print) -> dict:
     d = Path(state).parent / 'memebot'
     reqs = close_requests(http, log)
-    t = memebot_paper.step(d, http=http, log=log, close={q['pool'] for q in reqs})
+    t = memebot_paper.step_all(d, http=http, log=log, close={q["pool"] for q in reqs})
     if reqs:
         st = memebot_paper.load(d / 'memebot_state.json', {})
         done = {p['pool']: p for p in st.get('closed', []) if p.get('manual')}

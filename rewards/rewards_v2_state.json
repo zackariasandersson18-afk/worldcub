@@ -296,7 +296,7 @@
   "0x2e1d12640524b792ae728c785e79a31144f5242e43fba6ace0452e6aff55f67f": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.38,
+   "mid": 0.23,
    "share": 1.0,
    "reward": 0.26264362710493583,
    "fills": 0,
@@ -305,7 +305,7 @@
   "0x0bec89d24daab7e6171ecca3178a8483bb7012e1ef5227c230d81ae5bffa9bd4": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.315,
+   "mid": 0.305,
    "share": 1.0,
    "reward": 0.2903311404916975,
    "fills": 0,
@@ -323,7 +323,7 @@
   "0x7f3fb04a30c4d70ddae82b9e2f81cec6f07180574d3633ad6a7fce11b3396156": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.32499999999999996,
+   "mid": 0.33999999999999997,
    "share": 1.0,
    "reward": 0.21243228115281937,
    "fills": 0,
@@ -332,7 +332,7 @@
   "0x9153cfdd1fcf05e9ec52e965558f4395818ddeac31cbadd0eddfe2b7299338c7": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.49,
+   "mid": 0.45999999999999996,
    "share": 1.0,
    "reward": 0.22500663388106557,
    "fills": 0,
@@ -341,16 +341,16 @@
   "0x8ece245b7afe4328ac803cdf84aa2446300200271cb0c36612b4f2169dd293ff": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.1635,
+   "mid": 0.1625,
    "share": 1.0,
-   "reward": 0.20134295236181332,
+   "reward": 0.2777330814688294,
    "fills": 0,
    "q": "Will Caleb Malhotra win the 2026-27 Calder Trophy?"
   },
   "0xd290d0ce68bea178bc6fcecb04a539702bb603518dc41dfc71e2844dfeb7a99d": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.42,
+   "mid": 0.4,
    "share": 1.0,
    "reward": 0.1669404057827261,
    "fills": 0,
@@ -2219,17 +2219,30 @@
    "w": 2986129
   },
   {
-   "ts": "2026-10-11T00:21:29.973483+00:00",
-   "dt_h": 0.033,
-   "reward_tick": 0.0044,
-   "reward_total": 3.79,
+   "ts": "2026-10-11T00:29:32.063956+00:00",
+   "dt_h": 0.168,
+   "reward_tick": 0.0603,
+   "reward_total": 3.84,
    "mm_value": -1.05,
-   "net": 2.74,
+   "net": 2.79,
    "avg_share": 1.0,
    "n_markets": 9,
    "fills_total": 2,
    "rebalanced": false,
    "w": 2986130
+  },
+  {
+   "ts": "2026-10-11T00:32:29.984199+00:00",
+   "dt_h": 0.05,
+   "reward_tick": 0.0206,
+   "reward_total": 3.86,
+   "mm_value": -1.05,
+   "net": 2.81,
+   "avg_share": 1.0,
+   "n_markets": 9,
+   "fills_total": 2,
+   "rebalanced": false,
+   "w": 2986131
   }
  ],
  "fills": [
@@ -2252,8 +2265,8 @@
    "ledger": "v2"
   }
  ],
- "reward_total": 3.7866080766602077,
- "last_ts": 1791678089.9734833,
+ "reward_total": 3.862998205767224,
+ "last_ts": 1791678749.9841988,
  "chosen_at": 1791677342.7947838,
  "rebalances": [
   {
@@ -2270,19 +2283,19 @@
   }
  ],
  "last_tick": {
-  "ts": "2026-10-11T00:21:29.973483+00:00",
-  "dt_h": 0.01,
+  "ts": "2026-10-11T00:32:29.984199+00:00",
+  "dt_h": 0.017,
   "markets": [
    {
     "q": "Will GPT Sol's output price be at or below $5 in 2",
-    "mid": 0.38,
+    "mid": 0.23,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will the next Fable model (5.2+) debut with a Huma",
-    "mid": 0.315,
+    "mid": 0.305,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -2296,28 +2309,28 @@
    },
    {
     "q": "Will GPT Astra's output price be at or below $25 i",
-    "mid": 0.325,
+    "mid": 0.34,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will global temperature increase by between 1.40\u00baC",
-    "mid": 0.49,
+    "mid": 0.46,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will Caleb Malhotra win the 2026-27 Calder Trophy?",
-    "mid": 0.164,
+    "mid": 0.163,
     "share": 1.0,
-    "earned": 0.0044,
+    "earned": 0.0069,
     "inv": 0.0
    },
    {
     "q": "Will global temperature increase by between 1.35\u00baC",
-    "mid": 0.42,
+    "mid": 0.4,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -2337,10 +2350,10 @@
     "inv": 0.0
    }
   ],
-  "reward_tick": 0.0044,
-  "reward_total": 3.79,
+  "reward_tick": 0.0069,
+  "reward_total": 3.86,
   "mm_value": -1.05,
-  "net": 2.74,
+  "net": 2.81,
   "avg_share": 1.0,
   "n_markets": 9,
   "fills_total": 2,

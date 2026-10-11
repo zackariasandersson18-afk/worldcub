@@ -20,6 +20,10 @@ Rules fixed BEFORE any result was seen:
              pair gone or liquidity < 1000 USD (3 minutes in a row) -> total loss (rug)
   equity     cash + open positions at the current price, after the exit cost
 Gaps between minutes are real: a stop fills at the price seen, which can be far below -40 %.
+
+Manual close (added on request, not part of the pre-registered rules): the owner can close an
+open position by hand; it is sold at the current price with the same 2 % cost and marked
+reason "manuellt stängd" / manual=True, so test 66 can be judged with or without them.
 """
 from __future__ import annotations
 
@@ -159,7 +163,8 @@ def exit_all(st: dict, p: dict, price: float, why: str, iso: str) -> None:
     st['closed'].append(p)
 
 
-def step(state_dir: str | Path, now: float | None = None, http=None, log=print) -> dict:
+def step(state_dir: str | Path, now: float | None = None, http=None, log=print, close: set | None = None) -> dict:
+    """close: pool addresses the owner asked to close by hand (sold at the current price this minute)."""
     d = Path(state_dir)
     d.mkdir(parents=True, exist_ok=True)
     http = http or requests.Session()
@@ -179,6 +184,11 @@ def step(state_dir: str | Path, now: float | None = None, http=None, log=print) 
             continue
         p['missing'] = 0
         px = o['price']
+        if close and p['pool'] in close:
+            p['last'] = px
+            exit_all(st, p, px, 'manuellt stängd', iso)
+            p['manual'] = True
+            continue
         p['last'], p['peak'] = px, max(p['peak'], px)
         if o['liq']:
             p['liq_now'] = o['liq']                    # liquidity in USD right now (shown beside the one at entry)

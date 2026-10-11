@@ -21,7 +21,10 @@ Rules fixed BEFORE any result was seen:
   equity     cash + open positions at the current price, after the exit cost
 Gaps between minutes are real: a stop fills at the price seen, which can be far below -40 %.
 
-Fills from Jupiter (amended 11 Oct 2026, before the bot had made a single trade): instead of a flat
+Fills from Jupiter (amended 11 Oct 2026 ~20 UTC, AFTER the first 5 trades had been seen: 4 closed, +1 308 kr,
+1 open). Only the cost model changed, no entry or exit rule. Trades bought before the switch keep the flat
+2 % and have no 'fills' key; trades with fills='jupiter' use the new model, so the two can be judged apart.
+Instead of a flat
 2 % per side, every buy and sell is priced with Jupiter's real quote for exactly that size (lite-api.jup.ag,
 USDC in/out, 10 kr per USD), minus 0.5 % for the price moving before the swap lands and 2 kr network +
 priority fee per swap. A buy without a route is skipped; an exit without a route is retried every minute

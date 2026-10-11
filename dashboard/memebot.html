@@ -6,200 +6,175 @@
 <title>Memecoin desk</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-/* layout: one portrait column of boxed terminal panels, like a trading desk on a phone */
+/* tokens: deep navy surface, glass cards, blue -> violet accent; gain/loss always carry a sign, never colour alone */
 :root{
-  --bg:#000; --panel:#070707; --line:#2a2a2a; --line2:#3a3a3a;
-  --ink:#f2f2f2; --ink2:#a8a8a8; --mute:#6b6b6b;
-  --green:#39ff6a; --red:#ff3b3b; --yellow:#ffd400; --cyan:#3ad7ff; --blue:#2f6bff; --orange:#ff9a1f; --purple:#8a3dff;
-  --mono:'JetBrains Mono',ui-monospace,Menlo,monospace; --pix:'Silkscreen','JetBrains Mono',monospace;
-  color-scheme:dark;
+  --bg:#060a18; --bg2:#0a1030; --card:rgba(20,27,58,.62); --card2:rgba(28,36,76,.55);
+  --border:rgba(120,140,255,.16); --border2:rgba(150,165,255,.28);
+  --text:#e9edff; --text2:#aab3d9; --muted:#7480ab;
+  --a1:#4f7cff; --a2:#9b5cff; --a3:#22d3ee;
+  --good:#22c55e; --bad:#ef4444; --warn:#f59e0b;
+  --r:18px; color-scheme:dark;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{background:var(--bg);color:var(--ink);font-family:var(--mono);font-size:11px}
-body{padding-bottom:28px}
-.wrap{max-width:780px;margin:0 auto;padding:0 8px}
-.up{color:var(--green)} .down{color:var(--red)} .warn{color:var(--yellow)} .cy{color:var(--cyan)} .mute{color:var(--mute)} .ink2{color:var(--ink2)}
-.k9{color:var(--mute);font-size:9px;letter-spacing:1.4px;text-transform:uppercase}
-.badge{display:inline-block;font-size:9px;font-weight:800;padding:2px 6px;letter-spacing:1px}
-.b-green{background:var(--green);color:#000} .b-yellow{background:var(--yellow);color:#000} .b-red{background:var(--red);color:#000} .b-cyan{background:var(--cyan);color:#000}
-
+html,body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;font-size:14px;-webkit-font-smoothing:antialiased}
+body{min-height:100vh;background:
+  radial-gradient(900px 500px at 15% -10%,rgba(79,124,255,.22),transparent 60%),
+  radial-gradient(800px 500px at 100% 10%,rgba(155,92,255,.20),transparent 60%),
+  radial-gradient(700px 600px at 50% 110%,rgba(34,211,238,.10),transparent 60%),var(--bg)}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1180px;margin:0 auto;padding:18px 16px 40px}
 /* header */
-header{display:grid;grid-template-columns:auto minmax(0,1fr) auto auto;align-items:center;gap:12px;padding:10px 0 8px}
-.logo{width:30px;height:30px;background:var(--yellow);color:#000;font-weight:800;display:grid;place-items:center;font-size:15px}
-.brand b{font-size:15px;letter-spacing:1px}
-.brand .s{color:var(--mute);font-size:9px;letter-spacing:1.2px}
-.mid{text-align:center;color:var(--ink2);letter-spacing:2px;font-size:11px}
-.clock{text-align:right}
-.clock .v{font-size:17px;font-weight:800}
-@media (max-width:640px){header{grid-template-columns:auto minmax(0,1fr) auto}.mid{display:none}}
-
-.banner{color:var(--yellow);font-size:10px;letter-spacing:1px;padding:5px 0;border-top:1px solid var(--line);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.ticker{display:flex;align-items:center;height:24px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;white-space:nowrap;margin-bottom:8px}
-.ticker .tag{flex:none;background:var(--red);color:#fff;font-weight:800;font-size:10px;padding:0 8px;height:100%;display:flex;align-items:center;gap:6px}
-.ticker .tag i{width:6px;height:6px;border-radius:50%;background:#fff;animation:blink 1s infinite}
-.track{flex:1;overflow:hidden;position:relative;height:100%}
-.run{position:absolute;left:0;top:0;height:100%;display:flex;align-items:center;gap:26px;padding-left:16px;animation:marquee 70s linear infinite}
-.run b{color:var(--ink)}
-.foot{position:fixed;left:0;right:0;bottom:0;background:#000;margin:0;z-index:5}
-.foot .run{animation-duration:90s;color:var(--ink2)}
-@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-@keyframes blink{50%{opacity:.2}}
-@media (prefers-reduced-motion:reduce){.run{animation:none}}
-
-/* panels */
-.panel{border:1px solid var(--line2);background:var(--panel);margin-bottom:8px;min-width:0}
-.ph{display:flex;align-items:center;gap:6px;padding:6px 8px;border-bottom:1px solid var(--line);font-size:10px;letter-spacing:1.4px;text-transform:uppercase;font-weight:600;white-space:nowrap;overflow:hidden}
-.ph .r{margin-left:auto;color:var(--ink2);font-weight:400}
-.ph .dot{width:7px;height:7px;background:var(--green)}
-.pb{padding:8px}
-canvas{display:block;width:100%}
-.row3{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:8px}
-.row3 .panel{margin-bottom:8px}
-@media (max-width:640px){.row3{grid-template-columns:1fr}}
-
-/* account */
-.who{display:flex;align-items:center;gap:6px;font-weight:800;font-size:13px}
-.addr{color:var(--mute);font-size:9px;letter-spacing:1px;margin:2px 0 6px}
-.pnl{font-family:var(--pix);font-size:40px;line-height:1;color:var(--green);letter-spacing:-1px;white-space:nowrap}
-.pnl small{font-size:18px;margin-left:4px}
-.kv3{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:8px}
-.kv3 .v{font-family:var(--pix);font-size:17px;margin-top:2px}
-.bar{height:6px;background:#1a1a1a;margin-top:4px}
-.bar i{display:block;height:100%;background:var(--green)}
-
-/* best edge */
-.mult{font-family:var(--pix);font-size:38px;color:var(--yellow);text-align:center;line-height:1.1}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:4px 10px;margin-top:6px;font-size:10px}
-.grid2 .k9{font-size:8.5px}
-
-/* execution cycle */
-.steps{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}
-.step{border:1px solid var(--line2);padding:5px 6px;min-width:0}
-.step .n{color:var(--mute);font-size:9px}
-.step .t{font-weight:800;margin-top:2px}
-.step .d{color:var(--ink2);font-size:9px;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.step.on{color:#000;border-color:transparent}
-.step.on .n,.step.on .d{color:#000}
-@media (max-width:560px){.steps{grid-template-columns:repeat(3,1fr)}}
-
-/* matrix */
-.mx-wrap{display:grid;grid-template-columns:minmax(0,1fr) 120px;gap:8px;align-items:center}
-.mx{width:100%;border-collapse:separate;border-spacing:3px;font-size:10px;font-variant-numeric:tabular-nums}
-.mx th{color:var(--yellow);font-weight:600;font-size:9px;text-align:center;border:1px solid var(--line2);padding:2px}
-.mx td{text-align:center;padding:3px 2px;font-weight:700;color:#000;white-space:nowrap}
-.mx td.city{color:var(--ink);background:none;text-align:left;font-weight:600;border:1px solid var(--line2)}
-.mx td.na{background:#151515;color:var(--mute);font-weight:400}
-.gauge{text-align:center}
-.gauge .lbl{display:grid;grid-template-columns:auto auto;justify-content:space-between;font-size:9px;color:var(--ink2);margin-top:6px;gap:2px 8px}
-@media (max-width:560px){.mx-wrap{grid-template-columns:1fr}}
-
-/* monte carlo */
-.mc{display:grid;grid-template-columns:minmax(0,1fr) 130px;gap:8px}
-.boxes{display:flex;flex-direction:column;gap:6px}
-.box{border:1px solid var(--line2);padding:5px 8px;text-align:right}
-.box .v{font-family:var(--pix);font-size:18px;margin-top:2px}
-@media (max-width:560px){.mc{grid-template-columns:1fr}.boxes{flex-direction:row}.box{flex:1}}
-
-.trades{width:100%;border-collapse:collapse;font-size:10.5px;font-variant-numeric:tabular-nums}
-.trades th{color:var(--mute);font-weight:400;font-size:9px;letter-spacing:1.2px;text-transform:uppercase;text-align:right;padding:4px 6px;border-bottom:1px solid var(--line);white-space:nowrap}
-.trades td{padding:5px 6px;border-bottom:1px solid #161616;text-align:right;white-space:nowrap}
-.trades th:nth-child(-n+3),.trades td:nth-child(-n+3){text-align:left}
-.trades tr.pos:hover td{background:#101010;cursor:pointer}
-.trades .flash-up{animation:fu .9s} .trades .flash-dn{animation:fd .9s}
-@keyframes fu{from{background:rgba(57,255,106,.35)}} @keyframes fd{from{background:rgba(255,59,59,.35)}}
-.tsum{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:8px}
-.tsum .box{text-align:left}
-.tw{overflow-x:auto;max-height:420px;overflow-y:auto}
-@media (max-width:560px){.tsum{grid-template-columns:repeat(2,1fr)}}
-.ctd{width:100%;border-collapse:collapse;font-size:10.5px;font-variant-numeric:tabular-nums}
-.ctd th{color:var(--mute);font-weight:400;font-size:9px;letter-spacing:1.2px;text-transform:uppercase;text-align:right;padding:4px 6px;border-bottom:1px solid var(--line);white-space:nowrap}
-.ctd td{padding:5px 6px;border-bottom:1px solid #161616;text-align:right;white-space:nowrap}
-.ctd th:first-child,.ctd td:first-child{text-align:left}
-<style>
-.ctd{width:100%;border-collapse:collapse;font-size:10.5px;font-variant-numeric:tabular-nums}
-.ctd th{color:var(--mute);font-weight:400;font-size:9px;letter-spacing:1.2px;text-transform:uppercase;text-align:right;padding:4px 6px;border-bottom:1px solid var(--line);white-space:nowrap}
-.ctd td{padding:5px 6px;border-bottom:1px solid #161616;text-align:right;white-space:nowrap}
-.ctd th:first-child,.ctd td:first-child{text-align:left;white-space:normal;min-width:150px}
-@media (max-width:480px){.ctd td,.ctd th{padding:4px 3px}.ctd{font-size:10px}}
-.kv{display:grid;grid-template-columns:1fr auto;gap:3px 10px;font-size:10.5px}
-.kv span{color:var(--ink2)}
-.nav{display:flex;gap:10px;font-size:10px;letter-spacing:1px;padding:4px 0}
-.shbar{display:inline-block;width:46px;height:6px;background:#1a1a1a;vertical-align:middle;margin-left:4px}
-.shbar i{display:block;height:100%;background:var(--green)}
-
-.wlrow{display:flex;align-items:flex-end;gap:14px;flex-wrap:wrap;margin-bottom:8px}
-.wl{font-family:var(--pix);font-size:34px;line-height:1;white-space:nowrap}
-.wl .w{color:var(--green)} .wl .l{color:var(--red)} .wl .s{color:var(--mute);margin:0 2px}
-.wlinfo{font-size:10px;color:var(--ink2);line-height:1.6}
-.filters{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
-.filters button{background:none;border:1px solid var(--line2);color:var(--ink2);font:inherit;font-size:10px;letter-spacing:1px;padding:4px 8px;cursor:pointer}
-.filters button.on{background:var(--yellow);color:#000;border-color:var(--yellow);font-weight:800}
+.top{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.logo{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;font-weight:800;
+  background:linear-gradient(135deg,var(--a1),var(--a2));box-shadow:0 0 24px rgba(155,92,255,.55),inset 0 0 12px rgba(255,255,255,.25)}
+.title b{font-size:17px;letter-spacing:.2px}.title div{color:var(--muted);font-size:12px;margin-top:2px}
+.live{margin-left:auto;display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text2);
+  padding:7px 12px;border:1px solid var(--border);border-radius:999px;background:var(--card)}
+.live i{width:8px;height:8px;border-radius:50%;background:var(--good);box-shadow:0 0 10px var(--good);animation:pulse 2s infinite}
+@keyframes pulse{50%{opacity:.35}}
+@media (prefers-reduced-motion:reduce){.live i{animation:none}}
+.tabs{display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap}
+.tabs a,.tabs b{font-size:12.5px;padding:8px 14px;border-radius:999px;border:1px solid var(--border);background:var(--card);color:var(--text2)}
+.tabs b{color:#fff;font-weight:600;background:linear-gradient(135deg,rgba(79,124,255,.35),rgba(155,92,255,.35));border-color:var(--border2)}
+/* grid + cards */
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+.card{grid-column:span 12;position:relative;border:1px solid var(--border);border-radius:var(--r);padding:18px;
+  background:linear-gradient(180deg,var(--card),rgba(14,19,44,.62));backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  box-shadow:0 10px 40px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.04);min-width:0}
+.ch{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.ch h3{font-size:14.5px;font-weight:600}.ch .sub{color:var(--muted);font-size:12px}
+.ch .more{margin-left:auto;color:var(--muted);font-size:12px}
+@media (min-width:900px){.s8{grid-column:span 8}.s4{grid-column:span 4}.s6{grid-column:span 6}.s3{grid-column:span 3}}
+@media (max-width:899px){.s3{grid-column:span 6}}
+@media (max-width:480px){.tile .v{font-size:19px}.card.tile{padding:14px}.live span{font-size:11px}}
+/* hero */
+.hero .big{font-size:40px;font-weight:800;letter-spacing:-1px;line-height:1.05}
+.hero .big small{font-size:18px;font-weight:600;color:var(--text2);margin-left:6px}
+.delta{display:inline-flex;align-items:center;gap:6px;margin-top:8px;font-size:13px;font-weight:600;padding:4px 10px;border-radius:999px}
+.delta.up{color:var(--good);background:rgba(34,197,94,.12)}.delta.down{color:var(--bad);background:rgba(239,68,68,.12)}
+.muted{color:var(--muted)}
+.chart{position:relative;margin-top:14px}
+.chart canvas{display:block;width:100%;height:220px}
+.tip{position:absolute;pointer-events:none;display:none;padding:8px 10px;border-radius:10px;font-size:12px;white-space:nowrap;
+  background:rgba(10,14,36,.92);border:1px solid var(--border2);box-shadow:0 8px 24px rgba(0,0,0,.4)}
+.tip b{display:block;font-size:13px}
+/* stat tiles */
+.tile .k{color:var(--muted);font-size:12px;display:flex;align-items:center;gap:8px}
+.tile .v{font-size:24px;font-weight:700;margin-top:8px;letter-spacing:-.4px}
+.tile .s{color:var(--text2);font-size:12px;margin-top:4px}
+.ico{width:30px;height:30px;border-radius:10px;display:grid;place-items:center;font-size:14px;flex:none}
+.ico.b{background:rgba(79,124,255,.18);color:#9db4ff;box-shadow:inset 0 0 0 1px rgba(79,124,255,.35)}
+.ico.p{background:rgba(155,92,255,.18);color:#c9a8ff;box-shadow:inset 0 0 0 1px rgba(155,92,255,.35)}
+.ico.c{background:rgba(34,211,238,.15);color:#8ee8f7;box-shadow:inset 0 0 0 1px rgba(34,211,238,.35)}
+.ico.g{background:rgba(34,197,94,.15);color:#86efac;box-shadow:inset 0 0 0 1px rgba(34,197,94,.35)}
+.ico.r{background:rgba(239,68,68,.15);color:#fca5a5;box-shadow:inset 0 0 0 1px rgba(239,68,68,.35)}
+.ico.o{background:rgba(245,158,11,.15);color:#fcd34d;box-shadow:inset 0 0 0 1px rgba(245,158,11,.35)}
+/* donut */
+.donut{display:flex;align-items:center;gap:18px}
+.ring{position:relative;width:118px;height:118px;flex:none}
+.ring svg{transform:rotate(-90deg)}
+.ring .c{position:absolute;inset:0;display:grid;place-items:center;text-align:center}
+.ring .c b{font-size:24px;display:block}.ring .c span{font-size:11px;color:var(--muted)}
+.legend div{display:flex;align-items:center;gap:8px;font-size:13px;margin:6px 0;color:var(--text2)}
+.legend i{width:9px;height:9px;border-radius:50%}
+.legend b{margin-left:auto;color:var(--text);padding-left:18px}
+/* lists */
+.list{display:flex;flex-direction:column}
+.row{display:flex;align-items:center;gap:12px;padding:11px 4px;border-top:1px solid rgba(120,140,255,.08)}
+.row:first-child{border-top:0}
+.row .main{min-width:0;flex:1}
+.row .main b{font-size:13.5px;font-weight:600;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.row .main span{font-size:12px;color:var(--muted)}
+.row .end{text-align:right;font-size:13px;font-weight:600;white-space:nowrap}
+.row .end span{display:block;font-size:11.5px;font-weight:500;color:var(--muted);margin-top:2px}
+.av{width:34px;height:34px;border-radius:11px;display:grid;place-items:center;font-weight:700;font-size:13px;flex:none;
+  background:linear-gradient(135deg,rgba(79,124,255,.35),rgba(155,92,255,.35));box-shadow:inset 0 0 0 1px var(--border2)}
+.pill{display:inline-block;font-size:11px;font-weight:600;padding:3px 9px;border-radius:999px;margin-top:4px}
+.pill.g{color:#86efac;background:rgba(34,197,94,.14)}.pill.r{color:#fca5a5;background:rgba(239,68,68,.14)}
+.pill.o{color:#fcd34d;background:rgba(245,158,11,.14)}.pill.b{color:#9db4ff;background:rgba(79,124,255,.16)}
+.up,.row .end .up{color:var(--good)}.down,.row .end .down{color:var(--bad)}
+.empty{color:var(--muted);font-size:13px;padding:18px 4px;text-align:center}
+/* bars */
+.bars .b{display:grid;grid-template-columns:minmax(0,1fr) 120px 44px;align-items:center;gap:10px;margin:9px 0;font-size:12.5px;color:var(--text2)}
+.bars .t{height:8px;border-radius:999px;background:rgba(120,140,255,.10);overflow:hidden}
+.bars .t i{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--a1),var(--a2))}
+.bars .n{text-align:right;color:var(--text)}
+.days{display:flex;align-items:flex-end;gap:6px;height:130px;margin-top:6px}
+.days .d{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;gap:6px;min-width:0}
+.days .d i{display:block;width:100%;max-width:26px;border-radius:6px 6px 2px 2px}
+.days .d span{font-size:10.5px;color:var(--muted)}
+.foot{color:var(--muted);font-size:12px;line-height:1.6;margin-top:18px}
 </style>
 </head>
 <body>
 <div class="wrap">
-<header>
-  <div class="logo" style="background:var(--purple)">M</div>
-  <div class="brand"><b>TRADEBOT × MEMECOINS</b><div class="s">SOLANA · VIRTUELLA PENGAR · TEST 66</div></div>
-  <div class="mid">FILTER · 2× HALVA · STOP −40 %</div>
-  <div class="clock"><div class="v" id="clock">--:--:--</div><div class="k9">UTC</div></div>
-</header>
-<div class="nav"><a href="rewards.html">belöningar</a><span class="mute">·</span><b class="warn">memecoins</b></div>
-<div class="banner" id="banner">◆ laddar…</div>
-
-<section class="panel">
-  <div class="ph">◆ Konto · start 5 000 kr<span class="r" id="sub">—</span></div>
-  <div class="pb">
-    <div class="pnl" id="bal">—</div>
-    <div class="k9" style="margin-top:4px" id="balsub">SALDO</div>
-    <div class="kv3">
-      <div><div class="k9">Netto</div><div class="v" id="net">—</div></div>
-      <div><div class="k9">Vinster / förluster</div><div class="v" id="wl">—</div></div>
-      <div><div class="k9">Öppna nu</div><div class="v" id="nopen">—</div></div>
-    </div>
-    <div class="kv3">
-      <div><div class="k9">Kassa</div><div class="v" id="cash">—</div></div>
-      <div><div class="k9">I öppna affärer</div><div class="v" id="inopen">—</div></div>
-      <div><div class="k9">Bästa / sämsta</div><div class="v" id="bw">—</div></div>
-    </div>
+  <div class="top">
+    <div class="logo">M</div>
+    <div class="title"><b>Memecoin Desk</b><div>Solana · virtuella pengar · test 66</div></div>
+    <div class="live"><i></i><span id="live">laddar…</span></div>
   </div>
-</section>
+  <div class="tabs"><b>Översikt</b><a href="rewards.html">Belöningar</a><a href="rewards_v3.html">Belöningar v3</a><a href="rewards_v4.html">Belöningar v4</a></div>
 
-<section class="panel">
-  <div class="ph">▲ Saldo över tid<span class="r" id="eq-sub">—</span></div>
-  <div class="pb"><canvas id="c-eq" height="160"></canvas></div>
-</section>
+  <div class="grid">
+    <section class="card hero s8">
+      <div class="ch"><h3>Portfölj</h3><span class="sub">start 5 000 kr</span><span class="more" id="days-run">—</span></div>
+      <div class="big" id="bal">—</div>
+      <div class="delta" id="delta">—</div>
+      <div class="chart"><canvas id="c-eq" height="220" aria-label="Saldo över tid"></canvas><div class="tip" id="tip"></div></div>
+    </section>
 
-<section class="panel">
-  <div class="ph">◉ Öppna affärer</div>
-  <div class="tw" style="max-height:420px"><table class="ctd" id="open"></table></div>
-</section>
+    <section class="card s4">
+      <div class="ch"><h3>Vinster / förluster</h3><span class="sub">avslutade affärer</span></div>
+      <div class="donut">
+        <div class="ring"><svg width="118" height="118" viewBox="0 0 118 118" id="ring"></svg><div class="c"><div><b id="hit">—</b><span>träffsäkerhet</span></div></div></div>
+        <div class="legend">
+          <div><i style="background:var(--good)"></i>Vinster<b id="w">—</b></div>
+          <div><i style="background:var(--bad)"></i>Förluster<b id="l">—</b></div>
+          <div><i style="background:var(--a1)"></i>Öppna<b id="o">—</b></div>
+        </div>
+      </div>
+    </section>
 
-<section class="panel">
-  <div class="ph">✓ Avslutade affärer<span class="r" id="closed-sub">—</span></div>
-  <div class="tw" style="max-height:480px"><table class="ctd" id="closed"></table></div>
-</section>
+    <section class="card tile s3"><div class="k"><span class="ico b">◆</span>Netto</div><div class="v" id="net">—</div><div class="s" id="net-s">—</div></section>
+    <section class="card tile s3"><div class="k"><span class="ico p">◎</span>Kassa</div><div class="v" id="cash">—</div><div class="s">redo för nya köp</div></section>
+    <section class="card tile s3"><div class="k"><span class="ico c">▲</span>I öppna affärer</div><div class="v" id="inopen">—</div><div class="s" id="inopen-s">—</div></section>
+    <section class="card tile s3"><div class="k"><span class="ico o">★</span>Bästa / sämsta</div><div class="v" id="best">—</div><div class="s" id="worst">—</div></section>
 
-<section class="panel">
-  <div class="ph">Σ Per dag<span class="r">efter avslutsdag, UTC</span></div>
-  <div class="tw" style="max-height:300px"><table class="ctd" id="days"></table></div>
-</section>
+    <section class="card s6">
+      <div class="ch"><h3>Öppna affärer</h3><span class="sub" id="open-sub">—</span></div>
+      <div class="list" id="open"></div>
+    </section>
 
-<section class="panel">
-  <div class="ph">⚠ Varför tokens valdes bort</div>
-  <div class="pb"><div class="kv" id="skips"></div></div>
-</section>
+    <section class="card s6">
+      <div class="ch"><h3>Live-flöde</h3><span class="sub">köp och sälj</span></div>
+      <div class="list" id="feed"></div>
+    </section>
 
-<div class="note">Virtuell handel med riktiga priser från GeckoTerminal och DexScreener och säkerhetsdata från RugCheck. Regler bestämda innan start (test 66): köper 250 kr i nya Solana-tokens (10 min–6 h gamla) med minst 20 000 $ likviditet, köptryck och stigande pris, och bara om RugCheck inte hittar allvarliga risker, likviditeten är låst och de 10 största ägarna har högst 30 %. Säljer halva vid 2×, allt vid −40 % innan dess, resten vid 5× eller −50 % från toppen, allt efter 48 h. 2 % kostnad per köp och sälj. Försvinner handeln räknas det som total förlust. Kollas varje minut, så ett fall mellan två minuter kan bli större än −40 %. Ingen finansiell rådgivning.</div>
+    <section class="card s8">
+      <div class="ch"><h3>Avslutade affärer</h3><span class="sub" id="closed-sub">—</span></div>
+      <div class="list" id="closed"></div>
+    </section>
+
+    <section class="card s4">
+      <div class="ch"><h3>Resultat per dag</h3><span class="sub">UTC</span></div>
+      <div class="days" id="days"></div>
+    </section>
+
+    <section class="card s12" style="grid-column:span 12">
+      <div class="ch"><h3>Varför tokens valdes bort</h3><span class="sub">filter som skyddar kassan</span></div>
+      <div class="bars" id="skips"></div>
+    </section>
+  </div>
+
+  <div class="foot">Virtuell handel med riktiga priser från GeckoTerminal och DexScreener och säkerhetsdata från RugCheck. Regler bestämda innan start (test 66): köper 250 kr i nya Solana-tokens (10 min–6 h gamla) med minst 20 000 $ likviditet, köptryck och stigande pris, och bara om RugCheck inte hittar allvarliga risker, likviditeten är låst och de 10 största ägarna har högst 30 %. Säljer halva vid 2×, allt vid −40 % innan dess, resten vid 5× eller −50 % från toppen, allt efter 48 h. 2 % kostnad per köp och sälj. Försvinner handeln räknas det som total förlust. Kollas varje minut, så ett fall mellan två minuter kan bli större än −40 %. Ingen finansiell rådgivning.</div>
 </div>
 
 <script>
 'use strict';
 const CFG = {repo: 'zackariasandersson18-afk/worldcub', START: 5000};
-const COL = {green:'#39ff6a', red:'#ff3b3b', yellow:'#ffd400', cyan:'#3ad7ff', ink2:'#a8a8a8', mute:'#6b6b6b', line:'#2a2a2a'};
-const S = {st: null};
+const S = {st: null, pts: []};
 const $ = id => document.getElementById(id);
 const nf = d => new Intl.NumberFormat('sv-SE', {minimumFractionDigits: d, maximumFractionDigits: d});
 const fmt = (x, d = 0) => x == null || !isFinite(x) ? '—' : nf(d).format(x);
@@ -207,79 +182,132 @@ const kr = (x, d = 0) => x == null || !isFinite(x) ? '—' : fmt(x, d) + ' kr';
 const skr = (x, d = 0) => x == null || !isFinite(x) ? '—' : (x >= 0 ? '+' : '−') + fmt(Math.abs(x), d) + ' kr';
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]));
 const cls = v => v > 0 ? 'up' : v < 0 ? 'down' : '';
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
 const COST = 0.02, val = (p, px) => p.stake_left * px / p.entry * (1 - COST);
+const sym = n => esc(String(n || '?').split('/')[0].trim());
+const ago = iso => { const m = Math.max(0, (Date.now() - new Date(iso)) / 6e4); return m < 60 ? `${fmt(m)} min sedan` : m < 1440 ? `${fmt(m / 60)} h sedan` : `${fmt(m / 1440)} d sedan`; };
 async function getJSON(url) { const r = await fetch(url, {cache: 'no-store'}); if (!r.ok) throw new Error(r.status); return r.json(); }
 async function load() {
-  for (const br of ['rewards-state']) {
-    try { const c = await getJSON(`https://api.github.com/repos/${CFG.repo}/commits/${br}`); S.st = await getJSON(`https://raw.githubusercontent.com/${CFG.repo}/${c.sha}/memebot/memebot_state.json`); return; }
-    catch {}
-    try { S.st = await getJSON(`https://raw.githubusercontent.com/${CFG.repo}/${br}/memebot/memebot_state.json`); } catch {}
-  }
+  try { const c = await getJSON(`https://api.github.com/repos/${CFG.repo}/commits/rewards-state`); S.st = await getJSON(`https://raw.githubusercontent.com/${CFG.repo}/${c.sha}/memebot/memebot_state.json`); return; } catch {}
+  try { S.st = await getJSON(`https://raw.githubusercontent.com/${CFG.repo}/rewards-state/memebot/memebot_state.json`); } catch {}
 }
-function canvas(id) {
-  const cv = $(id), dpr = Math.min(devicePixelRatio || 1, 2);
-  if (!cv.dataset.h) { cv.dataset.h = cv.getAttribute('height'); cv.style.height = cv.dataset.h + 'px'; }
-  const w = cv.clientWidth, h = +cv.dataset.h;
-  cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr);
+
+// ---- equity area chart: one series (no legend), 2px line, gradient fill, crosshair + tooltip
+function chart(hist) {
+  const cv = $('c-eq'), dpr = Math.min(devicePixelRatio || 1, 2), w = cv.clientWidth, h = 220;
+  cv.width = w * dpr; cv.height = h * dpr;
   const g = cv.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); g.clearRect(0, 0, w, h);
-  g.font = '10px JetBrains Mono, monospace'; g.textBaseline = 'middle';
-  return {g, w, h};
+  const pts = hist.map(x => x.equity);
+  S.pts = [];
+  if (pts.length < 2) { g.fillStyle = css('--muted'); g.font = '13px Inter, system-ui, sans-serif'; g.textAlign = 'center'; g.fillText('Kurvan byggs upp efter några mätningar', w / 2, h / 2); return; }
+  const lo = Math.min(CFG.START, ...pts), hi = Math.max(CFG.START, ...pts), span = Math.max(hi - lo, 1), padY = 18, padL = 0;
+  const X = i => padL + i / (pts.length - 1) * (w - padL), Y = v => h - padY - (v - lo + span * .08) / (span * 1.16) * (h - 2 * padY);
+  // start line, recessive
+  g.strokeStyle = 'rgba(150,165,255,.22)'; g.setLineDash([3, 5]); g.lineWidth = 1;
+  g.beginPath(); g.moveTo(0, Y(CFG.START)); g.lineTo(w, Y(CFG.START)); g.stroke(); g.setLineDash([]);
+  g.fillStyle = css('--muted'); g.font = '11px Inter, system-ui, sans-serif'; g.textAlign = 'right'; g.fillText('start 5 000 kr', w - 4, Y(CFG.START) - 7);
+  const line = new Path2D(); pts.forEach((v, i) => i ? line.lineTo(X(i), Y(v)) : line.moveTo(X(i), Y(v)));
+  const area = new Path2D(line); area.lineTo(X(pts.length - 1), h); area.lineTo(X(0), h); area.closePath();
+  const fill = g.createLinearGradient(0, 0, 0, h); fill.addColorStop(0, 'rgba(155,92,255,.35)'); fill.addColorStop(1, 'rgba(79,124,255,0)');
+  g.fillStyle = fill; g.fill(area);
+  const stroke = g.createLinearGradient(0, 0, w, 0); stroke.addColorStop(0, css('--a1')); stroke.addColorStop(1, css('--a2'));
+  g.save(); g.shadowColor = 'rgba(155,92,255,.8)'; g.shadowBlur = 14; g.strokeStyle = stroke; g.lineWidth = 2.2; g.lineJoin = 'round'; g.stroke(line); g.restore();
+  const lx = X(pts.length - 1), ly = Y(pts[pts.length - 1]);
+  g.fillStyle = '#fff'; g.beginPath(); g.arc(lx, ly, 4, 0, 7); g.fill();
+  g.strokeStyle = css('--a2'); g.lineWidth = 2; g.beginPath(); g.arc(lx, ly, 7, 0, 7); g.stroke();
+  S.pts = pts.map((v, i) => ({x: X(i), y: Y(v), v, ts: hist[i].ts}));
 }
-function chart(pts) {
-  const {g, w, h} = canvas('c-eq');
-  if (pts.length < 2) { g.fillStyle = COL.mute; g.textAlign = 'center'; g.fillText('kurvan byggs upp efter några mätningar', w / 2, h / 2); return; }
-  const lo = Math.min(CFG.START, ...pts), hi = Math.max(CFG.START, ...pts), pad = 16;
-  const X = i => pad + i / (pts.length - 1) * (w - 2 * pad), Y = v => h - pad - (v - lo) / Math.max(hi - lo, 1e-9) * (h - 2 * pad);
-  g.strokeStyle = COL.line; g.setLineDash([2, 4]); g.beginPath(); g.moveTo(pad, Y(CFG.START)); g.lineTo(w - pad, Y(CFG.START)); g.stroke(); g.setLineDash([]);
-  g.strokeStyle = pts[pts.length - 1] >= CFG.START ? COL.green : COL.red; g.lineWidth = 2; g.beginPath();
-  pts.forEach((v, i) => i ? g.lineTo(X(i), Y(v)) : g.moveTo(X(i), Y(v))); g.stroke();
-  g.fillStyle = COL.ink2; g.textAlign = 'left'; g.fillText(kr(hi), 2, 8); g.fillText(kr(lo), 2, h - 6);
+function hover(e) {
+  const tip = $('tip'), r = $('c-eq').getBoundingClientRect(), x = e.clientX - r.left;
+  if (!S.pts.length || x < 0 || x > r.width) { tip.style.display = 'none'; return; }
+  const p = S.pts.reduce((a, b) => Math.abs(b.x - x) < Math.abs(a.x - x) ? b : a);
+  tip.innerHTML = `<b>${kr(p.v)}</b>${skr(p.v - CFG.START)} · ${String(p.ts).slice(5, 16).replace('T', ' ')} UTC`;
+  tip.style.display = 'block';
+  tip.style.left = Math.min(Math.max(p.x - tip.offsetWidth / 2, 0), r.width - tip.offsetWidth) + 'px';
+  tip.style.top = Math.max(p.y - 54, 0) + 'px';
 }
+
+function ring(w, l, o) {
+  const tot = w + l + o, R = 50, C = 2 * Math.PI * R;
+  const seg = (n, col, off) => n ? `<circle cx="59" cy="59" r="${R}" fill="none" stroke="${col}" stroke-width="10" stroke-linecap="round"
+    stroke-dasharray="${Math.max(n / tot * C - 4, 0.1)} ${C}" stroke-dashoffset="${-off / tot * C}"/>` : '';
+  $('ring').innerHTML = `<circle cx="59" cy="59" r="${R}" fill="none" stroke="rgba(120,140,255,.12)" stroke-width="10"/>` +
+    (tot ? seg(w, 'var(--good)', 0) + seg(l, 'var(--bad)', w) + seg(o, 'var(--a1)', w + l) : '');
+}
+
 function render() {
   const st = S.st;
-  if (!st) { $('banner').textContent = '◆ ingen data än — boten startar vid nästa minutmätning'; return; }
+  if (!st) { $('live').textContent = 'väntar på första mätningen'; chart([]); return; }
   const open = st.open || [], closed = st.closed || [];
   const inOpen = open.reduce((a, p) => a + val(p, p.last), 0), bal = st.cash + inOpen, net = bal - CFG.START;
   const W = closed.filter(p => p.won).length, L = closed.length - W;
-  $('bal').innerHTML = `${fmt(bal, 0)}<small>kr</small>`; $('bal').style.color = net >= 0 ? COL.green : COL.red;
+  $('live').textContent = `live · senast ${String(st.last_run || '').slice(11, 16)} UTC`;
   const days = (Date.now() - new Date(st.started)) / 864e5;
-  $('balsub').textContent = `SALDO · START 5 000 KR · ${fmt(net / CFG.START * 100, 2)}% · ${fmt(days, days < 2 ? 1 : 0)} DAGAR`;
+  $('days-run').textContent = `${fmt(days, days < 2 ? 1 : 0)} dagar sedan start`;
+  $('bal').innerHTML = `${fmt(bal)}<small>kr</small>`;
+  $('delta').className = 'delta ' + (net >= 0 ? 'up' : 'down');
+  $('delta').textContent = `${net >= 0 ? '▲' : '▼'} ${skr(net)} · ${net >= 0 ? '+' : '−'}${fmt(Math.abs(net) / CFG.START * 100, 2)} %`;
+  chart(st.history || []);
+  ring(W, L, open.length);
+  $('w').textContent = W; $('l').textContent = L; $('o').textContent = open.length;
+  $('hit').textContent = closed.length ? `${fmt(W / closed.length * 100)} %` : '—';
   $('net').textContent = skr(net); $('net').className = 'v ' + cls(net);
-  $('wl').innerHTML = `<span class="up">${W}</span>/<span class="down">${L}</span>`;
-  $('nopen').textContent = open.length; $('cash').textContent = kr(st.cash); $('inopen').textContent = kr(inOpen);
-  const pn = closed.map(p => p.pnl); $('bw').textContent = pn.length ? `${skr(Math.max(...pn))} / ${skr(Math.min(...pn))}` : '—';
-  $('sub').textContent = `senaste körning ${String(st.last_run || '').slice(11, 16)} UTC`;
-  $('banner').textContent = `◆ VIRTUELL MEMECOIN-HANDEL · SALDO ${kr(bal)} · ${W}/${L} VINSTER/FÖRLUSTER · ${open.length} ÖPPNA · INGA RIKTIGA PENGAR`;
-  const h = st.history || []; chart(h.map(x => x.equity));
-  $('eq-sub').textContent = h.length ? `start ${kr(CFG.START)} · nu ${kr(bal)}` : '—';
-  $('open').innerHTML = '<tr><th>Token</th><th>Köpt</th><th>Insats</th><th>Nu</th><th>Värde</th><th>Vinst/förlust</th><th>Halva såld</th></tr>' +
-    (open.map(p => { const v = val(p, p.last) + (p.realised || 0), r = p.last / p.entry;
-      return `<tr><td><a href="https://dexscreener.com/solana/${esc(p.pool)}" target="_blank" rel="noopener">${esc(p.name.slice(0, 22))}</a></td>` +
-        `<td class="mute">${p.opened.slice(5, 16).replace('T', ' ')}</td><td>${kr(p.stake)}</td><td class="${cls(r - 1)}">${fmt(r, 2)}×</td>` +
-        `<td>${kr(val(p, p.last))}</td><td class="${cls(v - p.stake)}"><b>${skr(v - p.stake)}</b></td><td>${p.half_sold ? 'ja' : '—'}</td></tr>`; }).join('') ||
-     '<tr><td colspan="7" class="mute" style="text-align:center;padding:10px">inga öppna affärer just nu</td></tr>');
+  $('net-s').textContent = `${closed.length} avslutade · ${open.length} öppna`;
+  $('cash').textContent = kr(st.cash);
+  $('inopen').textContent = kr(inOpen);
+  const oc = open.reduce((a, p) => a + p.stake_left, 0); $('inopen-s').textContent = open.length ? `${skr(inOpen - oc)} orealiserat` : 'inga just nu';
+  const pn = closed.map(p => p.pnl);
+  $('best').textContent = pn.length ? skr(Math.max(...pn)) : '—'; $('best').className = 'v ' + (pn.length ? cls(Math.max(...pn)) : '');
+  $('worst').textContent = pn.length ? `sämsta ${skr(Math.min(...pn))}` : 'inga avslutade än';
+  // open positions
+  $('open-sub').textContent = `${open.length} av 10`;
+  $('open').innerHTML = open.map(p => {
+    const v = val(p, p.last) + (p.realised || 0), r = p.last / p.entry, d = v - p.stake;
+    return `<a class="row" href="https://dexscreener.com/solana/${esc(p.pool)}" target="_blank" rel="noopener"><div class="av">${sym(p.name).slice(0, 2).toUpperCase()}</div>` +
+      `<div class="main"><b>${sym(p.name)}</b><span>köpt ${ago(p.opened)}</span>${p.half_sold ? ' <span class="pill b">halva såld</span>' : ''}</div>` +
+      `<div class="end"><span class="${cls(r - 1)}" style="font-size:13px;font-weight:600">${fmt(r, 2)}×</span><span class="${cls(d)}">${skr(d)}</span></div></a>`;
+  }).join('') || '<div class="empty">Inga öppna affärer just nu – boten väntar på en token som klarar alla filter.</div>';
+  // live feed from buys, half sales and exits
+  const ev = [];
+  for (const p of [...open, ...closed]) {
+    ev.push({ts: p.opened, ico: 'b', t: `Köpte ${sym(p.name)}`, s: `${kr(p.stake)} · likviditet ${fmt(p.liq_at_entry / 1000)} k$`});
+    for (const e of p.events || []) ev.push({ts: e.ts, ico: 'p', t: `Sålde halva ${sym(p.name)}`, s: `vid 2× · ${skr(e.kr)}`});
+    if (p.closed) ev.push({ts: p.closed, ico: p.won ? 'g' : 'r', t: `Stängde ${sym(p.name)}`, s: `${esc(p.reason)} · ${skr(p.pnl)}`});
+  }
+  $('feed').innerHTML = ev.sort((a, b) => String(b.ts).localeCompare(String(a.ts))).slice(0, 8).map(e =>
+    `<div class="row"><div class="ico ${e.ico}">${e.ico === 'b' ? '↗' : e.ico === 'p' ? '½' : e.ico === 'g' ? '✓' : '✕'}</div>` +
+    `<div class="main"><b>${e.t}</b><span>${e.s}</span></div><div class="end"><span>${ago(e.ts)}</span></div></div>`).join('') ||
+    '<div class="empty">Inget har hänt än.</div>';
+  // closed trades
   $('closed-sub').textContent = `${closed.length} st`;
-  $('closed').innerHTML = '<tr><th>Token</th><th>Stängd</th><th>Insats</th><th>Fick tillbaka</th><th>Vinst/förlust</th><th>Varför</th></tr>' +
-    (closed.slice().reverse().map(p => `<tr><td><a href="https://dexscreener.com/solana/${esc(p.pool)}" target="_blank" rel="noopener">${esc(p.name.slice(0, 22))}</a></td>` +
-      `<td class="mute">${p.closed.slice(5, 16).replace('T', ' ')}</td><td>${kr(p.stake)}</td><td>${kr(p.realised)}</td>` +
-      `<td class="${cls(p.pnl)}"><b>${skr(p.pnl)}</b></td><td class="mute">${esc(p.reason)}</td></tr>`).join('') ||
-     '<tr><td colspan="6" class="mute" style="text-align:center;padding:10px">inga avslutade affärer än</td></tr>');
-  const byDay = new Map();
-  for (const p of closed) { const d = p.closed.slice(0, 10), o = byDay.get(d) || {w: 0, l: 0, n: 0}; p.won ? o.w++ : o.l++; o.n += p.pnl; byDay.set(d, o); }
-  $('days').innerHTML = '<tr><th>Dag</th><th>V/F</th><th>Netto</th></tr>' +
-    ([...byDay.entries()].sort((a, b) => b[0].localeCompare(a[0])).map(([d, o]) =>
-      `<tr><td><b>${d.slice(5)}</b></td><td><span class="up">${o.w}</span>/<span class="down">${o.l}</span></td><td class="${cls(o.n)}"><b>${skr(o.n)}</b></td></tr>`).join('') ||
-     '<tr><td colspan="3" class="mute" style="text-align:center;padding:10px">fylls i när affärer avslutas</td></tr>');
-  const names = {'quote': 'fel motvaluta', 'age': 'för ny eller för gammal', 'liquidity': 'för lite likviditet', 'buy pressure': 'för svagt köptryck',
-                 'volume': 'för låg volym', 'price change': 'pris faller eller har redan rusat', 'price': 'inget pris', 'no rugcheck': 'ingen säkerhetsdata',
-                 'danger risk': 'RugCheck: allvarlig risk', 'authority': 'skaparen kan skapa/frysa tokens', 'transfer fee': 'avgift vid överföring',
-                 'lp not locked': 'likviditeten inte låst', 'concentrated holders': 'för få ägare äger för mycket'};
-  $('skips').innerHTML = Object.entries(st.skips || {}).sort((a, b) => b[1] - a[1]).map(([k, v]) => `<span>${esc(names[k] || k)}</span><b>${fmt(v)}</b>`).join('') || '<span class="mute">inget än</span>';
+  const pill = r => /rug/.test(r) ? ['r', 'rug'] : /stop/.test(r) ? ['o', 'stop −40 %'] : /5x/.test(r) ? ['g', '5×'] : /trailing/.test(r) ? ['b', 'från toppen'] : ['b', esc(r)];
+  $('closed').innerHTML = closed.slice().reverse().slice(0, 30).map(p => { const [c, t] = pill(p.reason || '');
+    return `<a class="row" href="https://dexscreener.com/solana/${esc(p.pool)}" target="_blank" rel="noopener"><div class="av">${sym(p.name).slice(0, 2).toUpperCase()}</div>` +
+      `<div class="main"><b>${sym(p.name)}</b><span>${ago(p.closed)}</span> <span class="pill ${c}">${t}</span></div>` +
+      `<div class="end"><span class="${cls(p.pnl)}" style="font-size:13.5px;font-weight:700">${skr(p.pnl)}</span><span>insats ${kr(p.stake)}</span></div></a>`; }).join('') ||
+    '<div class="empty">Inga avslutade affärer än.</div>';
+  // per day bars (sign + colour)
+  const byDay = new Map(); for (const p of closed) { const d = p.closed.slice(0, 10); byDay.set(d, (byDay.get(d) || 0) + p.pnl); }
+  const ds = [...byDay.entries()].sort((a, b) => a[0].localeCompare(b[0])).slice(-10), mx = Math.max(1, ...ds.map(([, v]) => Math.abs(v)));
+  $('days').innerHTML = ds.map(([d, v]) => `<div class="d" title="${d}: ${skr(v)}"><span class="${cls(v)}">${v >= 0 ? '+' : '−'}${fmt(Math.abs(v))}</span>` +
+    `<i style="height:${Math.max(4, Math.abs(v) / mx * 80)}px;background:${v >= 0 ? 'linear-gradient(180deg,#4ade80,#16a34a)' : 'linear-gradient(180deg,#f87171,#b91c1c)'}"></i><span>${d.slice(5)}</span></div>`).join('') ||
+    '<div class="empty" style="width:100%">Fylls i när affärer avslutas.</div>';
+  // skip reasons
+  const names = {'quote': 'Fel motvaluta', 'age': 'För ny eller för gammal', 'liquidity': 'För lite likviditet', 'buy pressure': 'För svagt köptryck',
+    'volume': 'För låg volym', 'price change': 'Priset faller eller har redan rusat', 'price': 'Inget pris', 'no rugcheck': 'Ingen säkerhetsdata',
+    'danger risk': 'RugCheck: allvarlig risk', 'authority': 'Skaparen kan skapa eller frysa tokens', 'transfer fee': 'Avgift vid överföring',
+    'lp not locked': 'Likviditeten är inte låst', 'concentrated holders': 'För få ägare äger för mycket'};
+  const sk = Object.entries(st.skips || {}).sort((a, b) => b[1] - a[1]), top = Math.max(1, ...sk.map(([, v]) => v));
+  $('skips').innerHTML = sk.map(([k, v]) => `<div class="b"><span>${esc(names[k] || k)}</span><div class="t"><i style="width:${v / top * 100}%"></i></div><span class="n">${fmt(v)}</span></div>`).join('') ||
+    '<div class="empty">Inget bortvalt än.</div>';
 }
+$('c-eq').addEventListener('mousemove', hover);
+$('c-eq').addEventListener('mouseleave', () => { $('tip').style.display = 'none'; });
+$('c-eq').addEventListener('touchmove', e => hover(e.touches[0]), {passive: true});
 (async function init() {
-  setInterval(() => { $('clock').textContent = new Date().toISOString().slice(11, 19); }, 1000);
   await load(); render();
   setInterval(() => load().then(render), 60_000);
+  setInterval(() => { if (S.st) $('days-run').textContent = `${fmt((Date.now() - new Date(S.st.started)) / 864e5, 1)} dagar sedan start`; }, 30_000);
   addEventListener('resize', render);
 })();
 </script>

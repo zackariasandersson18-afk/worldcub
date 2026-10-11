@@ -15,6 +15,7 @@ from pathlib import Path
 
 import requests
 
+from memebot import paper as memebot_paper
 from rewardbot import live, live_v2
 
 
@@ -39,7 +40,8 @@ def tick(state: str, http, log=print) -> None:
     for name, fn in (('v1', lambda: live.step(state, http=http, log=log)),
                      ('v2', lambda: live_v2.step(state, http=http, log=log, version='v2')),
                      ('v3', lambda: live_v2.step(state, http=http, log=log, version='v3')),
-                     ('v4', lambda: live_v2.step(state, http=http, log=log, version='v4'))):
+                     ('v4', lambda: live_v2.step(state, http=http, log=log, version='v4')),
+                     ('meme', lambda: memebot_paper.step(Path(state).parent / 'memebot', http=http, log=log))):
         try:
             t = fn()
             log(f"{time.strftime('%H:%M:%S', time.gmtime())} {name} net {t.get('net')} share {t.get('avg_share')}")

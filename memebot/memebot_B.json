@@ -4,49 +4,8 @@
  "book": "B",
  "name": "B: likviditetsflykt",
  "start_kr": 5000.0,
- "cash": 4408.087143172371,
- "open": [
-  {
-   "pool": "7XhejrcUgjh6S5dZ91GsXcWUk41vMDg6bnJ9tEe5wZ5q",
-   "mint": "CnvQ6v525Mx4FSNNYwXVaiH2wboEMVdjxPhUjkpqpump",
-   "name": "DOGEUS / SOL",
-   "opened": "2026-10-11T22:27:42.252249+00:00",
-   "opened_ts": 1791757662.2522485,
-   "entry": 0.00017975473678316837,
-   "entry_seen": 0.00017817943081371453,
-   "stake": 250.0,
-   "stake_left": 250.0,
-   "peak": 0.00017817943081371453,
-   "last": 0.0001642,
-   "half_sold": false,
-   "tranches": 0,
-   "realised": 0.0,
-   "liq_at_entry": 38487.7043,
-   "trail": [
-    [
-     1791757662,
-     0.000178179
-    ],
-    [
-     1791757908,
-     0.0001642
-    ]
-   ],
-   "tokens": 139078393412,
-   "tokens_left": 139078393412,
-   "decimals": 6,
-   "entry_impact": 0.010319366016793464,
-   "entry_cost": 0.0088,
-   "fills": "jupiter",
-   "missing": 0,
-   "liq_now": 35400.97,
-   "quote_kr": 221.4231,
-   "quote_px": 0.0001642,
-   "exit_impact": 0.015764706325240664,
-   "quote_ts": "2026-10-11T22:31:48.411052+00:00",
-   "nosell": 0
-  }
- ],
+ "cash": 4530.773916472371,
+ "open": [],
  "closed": [
   {
    "pool": "ENtnEE6cmK1nfqKd6keZe1eGL6HmRBqYVyXRsWcBeQJP",
@@ -270,6 +229,67 @@
    "pnl": -102.5,
    "won": false,
    "estimated": true
+  },
+  {
+   "pool": "7XhejrcUgjh6S5dZ91GsXcWUk41vMDg6bnJ9tEe5wZ5q",
+   "mint": "CnvQ6v525Mx4FSNNYwXVaiH2wboEMVdjxPhUjkpqpump",
+   "name": "DOGEUS / SOL",
+   "opened": "2026-10-11T22:27:42.252249+00:00",
+   "opened_ts": 1791757662.2522485,
+   "entry": 0.00017975473678316837,
+   "entry_seen": 0.00017817943081371453,
+   "stake": 250.0,
+   "stake_left": 0.0,
+   "peak": 0.00017817943081371453,
+   "last": 0.0001053,
+   "half_sold": false,
+   "tranches": 0,
+   "realised": 122.68677329999998,
+   "liq_at_entry": 38487.7043,
+   "trail": [
+    [
+     1791757662,
+     0.000178179
+    ],
+    [
+     1791757908,
+     0.0001642
+    ],
+    [
+     1791757927,
+     0.0001642
+    ],
+    [
+     1791757977,
+     0.0001393
+    ],
+    [
+     1791758039,
+     0.0001218
+    ],
+    [
+     1791758097,
+     0.0001053
+    ]
+   ],
+   "tokens": 139078393412,
+   "tokens_left": 0,
+   "decimals": 6,
+   "entry_impact": 0.010319366016793464,
+   "entry_cost": 0.0088,
+   "fills": "jupiter",
+   "missing": 0,
+   "liq_now": 28024.55,
+   "quote_kr": 122.6868,
+   "quote_px": 0.0001053,
+   "exit_impact": 0.0,
+   "quote_ts": "2026-10-11T22:34:57.100346+00:00",
+   "nosell": 0,
+   "closed": "2026-10-11T22:34:57.100346+00:00",
+   "exit_price": 0.0001053,
+   "reason": "stop -40 %",
+   "pnl": -127.31,
+   "won": false
   }
  ],
  "seen": [
@@ -386,21 +406,28 @@
    "w": 2986262
   },
   {
-   "ts": "2026-10-11T22:31:48.411052+00:00",
-   "equity": 4629.51,
-   "cash": 4408.09,
-   "open": 1,
+   "ts": "2026-10-11T22:38:57.863547+00:00",
+   "equity": 4530.77,
+   "cash": 4530.77,
+   "open": 0,
    "w": 2986263
+  },
+  {
+   "ts": "2026-10-11T22:41:57.854479+00:00",
+   "equity": 4530.77,
+   "cash": 4530.77,
+   "open": 0,
+   "w": 2986264
   }
  ],
  "skips": {
-  "age": 7022,
-  "buy pressure": 44,
-  "quote": 723,
+  "age": 7642,
+  "buy pressure": 48,
+  "quote": 780,
   "liquidity": 155,
   "price change": 28,
   "danger risk": 2,
   "volume": 1
  },
- "last_run": "2026-10-11T22:31:48.411052+00:00"
+ "last_run": "2026-10-11T22:41:57.854479+00:00"
 }

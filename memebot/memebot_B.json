@@ -4,7 +4,7 @@
  "book": "B",
  "name": "B: likviditetsflykt",
  "start_kr": 5000.0,
- "cash": 4051.056549204149,
+ "cash": 3801.056549204149,
  "open": [
   {
    "pool": "CnVst3sUYmo1GFYgnaNgygpQhwTNZzmb59wyyzQF1nvJ",
@@ -16,8 +16,8 @@
    "entry_seen": 0.001687505517535181,
    "stake": 250.0,
    "stake_left": 250.0,
-   "peak": 0.001804,
-   "last": 0.00175,
+   "peak": 0.001859,
+   "last": 0.001486,
    "half_sold": false,
    "tranches": 0,
    "realised": 0.0,
@@ -110,6 +110,46 @@
     [
      1791771551,
      0.00175
+    ],
+    [
+     1791771562,
+     0.001738
+    ],
+    [
+     1791771623,
+     0.001771
+    ],
+    [
+     1791771685,
+     0.001794
+    ],
+    [
+     1791771741,
+     0.001859
+    ],
+    [
+     1791771803,
+     0.001799
+    ],
+    [
+     1791771878,
+     0.001758
+    ],
+    [
+     1791771922,
+     0.001763
+    ],
+    [
+     1791771986,
+     0.001643
+    ],
+    [
+     1791772041,
+     0.001487
+    ],
+    [
+     1791772245,
+     0.001486
     ]
    ],
    "tokens": 13852054585,
@@ -119,11 +159,79 @@
    "entry_cost": 0.0695,
    "fills": "jupiter",
    "missing": 0,
-   "liq_now": 121777.77,
-   "quote_kr": 218.2897,
-   "quote_px": 0.001698,
-   "exit_impact": 0.00876151205102414,
-   "quote_ts": "2026-10-12T02:15:48.387149+00:00",
+   "liq_now": 112147.41,
+   "quote_kr": 210.6682,
+   "quote_px": 0.001486,
+   "exit_impact": 0.01119195299991113,
+   "quote_ts": "2026-10-12T02:30:45.898100+00:00",
+   "nosell": 0
+  },
+  {
+   "pool": "9axwUn5sPyFfZSENYcWg7SRJjoSfpbdXXBXRdzVVTR2c",
+   "mint": "7KKUmUG4p8kta1sBbMHnRUNoBfXX4zYbUFHspdHwpump",
+   "name": "DOGELON / SOL",
+   "opened": "2026-10-12T02:20:23.028187+00:00",
+   "opened_ts": 1791771623.0281868,
+   "entry": 0.00019122892843015333,
+   "entry_seen": 0.0001786726681721823,
+   "stake": 250.0,
+   "stake_left": 250.0,
+   "peak": 0.0002055,
+   "last": 0.0001995,
+   "half_sold": false,
+   "tranches": 0,
+   "realised": 0.0,
+   "liq_at_entry": 36637.0668,
+   "trail": [
+    [
+     1791771623,
+     0.000178673
+    ],
+    [
+     1791771685,
+     0.0001889
+    ],
+    [
+     1791771741,
+     0.0001985
+    ],
+    [
+     1791771803,
+     0.0001773
+    ],
+    [
+     1791771878,
+     0.0002003
+    ],
+    [
+     1791771922,
+     0.0001993
+    ],
+    [
+     1791771986,
+     0.000172
+    ],
+    [
+     1791772041,
+     0.0002055
+    ],
+    [
+     1791772245,
+     0.0001995
+    ]
+   ],
+   "tokens": 130733358207,
+   "tokens_left": 130733358207,
+   "decimals": 6,
+   "entry_impact": 0.014214738508850251,
+   "entry_cost": 0.0703,
+   "fills": "jupiter",
+   "missing": 0,
+   "liq_now": 38552.61,
+   "quote_kr": 261.0456,
+   "quote_px": 0.0001995,
+   "exit_impact": 0.0,
+   "quote_ts": "2026-10-12T02:30:45.898100+00:00",
    "nosell": 0
   }
  ],
@@ -1459,6 +1567,7 @@
   "3iLwe7YVysJBhbPJ8Fk31DDEj1i9s8NVdvvQN6hKpump",
   "hKyXZVKmrBDPhKKhdSaaGf1qrFwUkwjqrdzRc63farm",
   "BSrvEGzSw6CAgA7cfoUY7NPydkPHUxrzTEUMGtVkzy8j",
+  "7KKUmUG4p8kta1sBbMHnRUNoBfXX4zYbUFHspdHwpump",
   "8PGyHCKvSUjezHkV7KLwMacnmSJLe1YbRM1zvDVApump",
   "CnvQ6v525Mx4FSNNYwXVaiH2wboEMVdjxPhUjkpqpump",
   "Gehy8kgWX2Y2s7DsUuJ1CrZNDVvhdBab8PueZPX3CiG",
@@ -1729,23 +1838,37 @@
    "w": 2986284
   },
   {
-   "ts": "2026-10-12T02:19:11.341694+00:00",
-   "equity": 4276.03,
+   "ts": "2026-10-12T02:19:22.508224+00:00",
+   "equity": 4274.49,
    "cash": 4051.06,
    "open": 1,
    "w": 2986285
+  },
+  {
+   "ts": "2026-10-12T02:27:21.554361+00:00",
+   "equity": 4307.47,
+   "cash": 3801.06,
+   "open": 2,
+   "w": 2986286
+  },
+  {
+   "ts": "2026-10-12T02:30:45.898100+00:00",
+   "equity": 4272.77,
+   "cash": 3801.06,
+   "open": 2,
+   "w": 2986287
   }
  ],
  "skips": {
-  "age": 17617,
-  "buy pressure": 198,
-  "quote": 2078,
-  "liquidity": 480,
-  "price change": 101,
+  "age": 18154,
+  "buy pressure": 208,
+  "quote": 2130,
+  "liquidity": 482,
+  "price change": 107,
   "danger risk": 5,
   "volume": 3,
   "lp not locked": 1,
   "jupiter down": 3
  },
- "last_run": "2026-10-12T02:19:11.341694+00:00"
+ "last_run": "2026-10-12T02:30:45.898100+00:00"
 }

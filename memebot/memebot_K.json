@@ -4,8 +4,38 @@
  "book": "K",
  "name": "Kontroll (samma regler, ny start)",
  "start_kr": 5000.0,
- "cash": 4530.771664119309,
- "open": [],
+ "cash": 4280.771664119309,
+ "open": [
+  {
+   "pool": "3k7nHTJ2j62wYniwya7jk44pPTEwqUKiPttJKKeVZJCt",
+   "mint": "ryyNwL83YJka5do85jka16gA2aBuVLE4cSU7z1QRbWQ",
+   "name": "coal / SOL",
+   "opened": "2026-10-12T00:08:03.760048+00:00",
+   "opened_ts": 1791763683.7600484,
+   "entry": 7.816989829400608e-05,
+   "entry_seen": 7.298256765601934e-05,
+   "stake": 250.0,
+   "stake_left": 250.0,
+   "peak": 7.298256765601934e-05,
+   "last": 7.298256765601934e-05,
+   "half_sold": false,
+   "tranches": 0,
+   "realised": 0.0,
+   "liq_at_entry": 21756.1209,
+   "trail": [
+    [
+     1791763683,
+     7.29826e-05
+    ]
+   ],
+   "tokens": 319816202216,
+   "tokens_left": 319816202216,
+   "decimals": 6,
+   "entry_impact": 0.011632066856691261,
+   "entry_cost": 0.0711,
+   "fills": "jupiter"
+  }
+ ],
  "closed": [
   {
    "pool": "ENtnEE6cmK1nfqKd6keZe1eGL6HmRBqYVyXRsWcBeQJP",
@@ -294,11 +324,14 @@
  ],
  "seen": [
   "AqUPRnyFCRuMqKYgY5Tf64CFshFecuaGSGXx4cqqpump",
-  "CnvQ6v525Mx4FSNNYwXVaiH2wboEMVdjxPhUjkpqpump",
-  "2kZmj9SZ8TJYrQjD1GQekAC84xviGzcxgujNdLBCQXRi",
-  "BXuuLQQsHsAjweVvTXHAgJSnTj9MLKpiK5cLP7c3wLxB",
   "BxxP7bHQSPBmPWUsVW6Atsipwp3vCkTTnGhqhprrgXXq",
-  "3iLwe7YVysJBhbPJ8Fk31DDEj1i9s8NVdvvQN6hKpump"
+  "ryyNwL83YJka5do85jka16gA2aBuVLE4cSU7z1QRbWQ",
+  "3iLwe7YVysJBhbPJ8Fk31DDEj1i9s8NVdvvQN6hKpump",
+  "hKyXZVKmrBDPhKKhdSaaGf1qrFwUkwjqrdzRc63farm",
+  "CnvQ6v525Mx4FSNNYwXVaiH2wboEMVdjxPhUjkpqpump",
+  "Gehy8kgWX2Y2s7DsUuJ1CrZNDVvhdBab8PueZPX3CiG",
+  "BXuuLQQsHsAjweVvTXHAgJSnTj9MLKpiK5cLP7c3wLxB",
+  "2kZmj9SZ8TJYrQjD1GQekAC84xviGzcxgujNdLBCQXRi"
  ],
  "history": [
   {
@@ -468,16 +501,24 @@
    "cash": 4530.77,
    "open": 0,
    "w": 2986271
+  },
+  {
+   "ts": "2026-10-12T00:08:03.760048+00:00",
+   "equity": 4507.51,
+   "cash": 4280.77,
+   "open": 1,
+   "w": 2986272
   }
  ],
  "skips": {
-  "age": 11008,
-  "buy pressure": 74,
-  "quote": 1270,
-  "liquidity": 383,
-  "price change": 37,
-  "danger risk": 3,
-  "volume": 3
+  "age": 11350,
+  "buy pressure": 84,
+  "quote": 1338,
+  "liquidity": 406,
+  "price change": 53,
+  "danger risk": 4,
+  "volume": 3,
+  "lp not locked": 1
  },
- "last_run": "2026-10-11T23:52:56.120084+00:00"
+ "last_run": "2026-10-12T00:08:03.760048+00:00"
 }

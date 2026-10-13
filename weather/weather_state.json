@@ -21240,40 +21240,20 @@
    "equity": 358.32,
    "cash": 194.7,
    "open": 36
+  },
+  {
+   "ts": "2026-10-13T20:31:18.018925+00:00",
+   "equity": 358.32,
+   "cash": 194.7,
+   "open": 36
   }
  ],
  "last_run": {
-  "ts": "2026-10-13T20:01:33.855236+00:00",
-  "settled": [
-   {
-    "event_id": "1168848",
-    "slug": "highest-temperature-in-karachi-on-october-13-2026",
-    "city": "Karachi",
-    "date": "2026-10-13",
-    "station": "OPKC",
-    "bucket": "38\u00b0C",
-    "side": "NO",
-    "token": "40298373309758569475234973371794352879716443760932763539442136538832901855967",
-    "price": 0.71,
-    "cost": 0.7303,
-    "prob": 0.8551,
-    "edge": 0.1248,
-    "shares": 5.4909,
-    "stake_usd": 4.01,
-    "mu": 36.37,
-    "sigma": 1.37,
-    "opened": "2026-10-13T01:01:28.702153+00:00",
-    "won": false,
-    "pnl_usd": -4.01,
-    "settled": "2026-10-13T20:01:33.855236+00:00"
-   }
-  ],
+  "ts": "2026-10-13T20:31:18.018925+00:00",
+  "settled": [],
   "opened": [],
   "logged": 0,
-  "skipped": {
-   "Helsinki": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=60.3172&longitude=24.9633&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=celsius",
-   "Amsterdam": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=52.3086&longitude=4.7639&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=celsius"
-  }
+  "skipped": {}
  },
  "mode": "trading",
  "gates_ignored": true,

@@ -15,7 +15,7 @@
    "stake": 250.0,
    "stake_left": 250.0,
    "peak": 0.004292,
-   "last": 0.004292,
+   "last": 0.00399,
    "half_sold": false,
    "tranches": 0,
    "realised": 0.0,
@@ -1236,6 +1236,42 @@
     [
      1791864558,
      0.004292
+    ],
+    [
+     1791864634,
+     0.004218
+    ],
+    [
+     1791864680,
+     0.00386
+    ],
+    [
+     1791864738,
+     0.004149
+    ],
+    [
+     1791864799,
+     0.004094
+    ],
+    [
+     1791864859,
+     0.004111
+    ],
+    [
+     1791864918,
+     0.004187
+    ],
+    [
+     1791864994,
+     0.004007
+    ],
+    [
+     1791865040,
+     0.004001
+    ],
+    [
+     1791865097,
+     0.00399
     ]
    ],
    "tokens": 10400955039,
@@ -1244,12 +1280,12 @@
    "entry_impact": 0.018372489649860192,
    "entry_cost": -0.0493,
    "fills": "jupiter",
-   "missing": 0,
-   "liq_now": 187848.73,
-   "quote_kr": 440.9315,
-   "quote_px": 0.004292,
-   "exit_impact": 0.002411708654592036,
-   "quote_ts": "2026-10-13T04:09:18.859018+00:00",
+   "missing": 1,
+   "liq_now": 181054.65,
+   "quote_kr": 409.2163,
+   "quote_px": 0.00399,
+   "exit_impact": 0.00262525370731713,
+   "quote_ts": "2026-10-13T04:18:17.870118+00:00",
    "nosell": 0
   }
  ],
@@ -12108,6 +12144,7 @@
   "HgTGdc29D5bDMrDvsCLnorxz899VyDj7ZN7FPa6vpump",
   "9HMuBjwKh3ZemM5k6EC43JiqYyMhaGLeTvuYycfUpump",
   "98AG3zJUawbvDnpgbDhmxpMKva43vtgPLLPSXqo1pump",
+  "Gewjnxj3ew1nKDZiGimSzsiyXPovhoZHQbZj316T3zT5",
   "EF8hU2RHaxJid6ey4LrYViYhrdiPRjp2aPeADw8dpump",
   "317FCQ6W6UUyVUGUc1oNFFR7GxyM3aFZ2P8s77nCpump",
   "CnvQ6v525Mx4FSNNYwXVaiH2wboEMVdjxPhUjkpqpump",
@@ -13689,19 +13726,33 @@
    "cash": 2860.96,
    "open": 1,
    "w": 2986440
+  },
+  {
+   "ts": "2026-10-13T04:18:17.870118+00:00",
+   "equity": 3270.18,
+   "cash": 2860.96,
+   "open": 1,
+   "w": 2986441
+  },
+  {
+   "ts": "2026-10-13T04:24:30.376632+00:00",
+   "equity": 3270.18,
+   "cash": 2860.96,
+   "open": 1,
+   "w": 2986442
   }
  ],
  "skips": {
-  "age": 92915,
-  "buy pressure": 1798,
-  "quote": 11617,
+  "age": 93421,
+  "buy pressure": 1805,
+  "quote": 11703,
   "liquidity": 4625,
-  "price change": 502,
+  "price change": 504,
   "volume": 43,
-  "danger risk": 39,
+  "danger risk": 40,
   "lp not locked": 2,
   "jupiter down": 6,
   "no rugcheck": 4
  },
- "last_run": "2026-10-13T04:09:18.859018+00:00"
+ "last_run": "2026-10-13T04:24:30.376632+00:00"
 }

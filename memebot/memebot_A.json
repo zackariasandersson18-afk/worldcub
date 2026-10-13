@@ -4,7 +4,7 @@
  "book": "A",
  "name": "A: tidsstopp",
  "start_kr": 5000.0,
- "cash": 837.8287030716185,
+ "cash": 587.8287030716185,
  "open": [
   {
    "pool": "8KUSA63myw4NQjQQojk41YdEE5FgrgPPNxaoYuDSPYU2",
@@ -17,7 +17,7 @@
    "stake": 250.0,
    "stake_left": 250.0,
    "peak": 0.0004394,
-   "last": 0.0004248,
+   "last": 0.000434,
    "half_sold": false,
    "tranches": 0,
    "realised": 0.0,
@@ -1246,6 +1246,50 @@
     [
      1791911765,
      0.0004248
+    ],
+    [
+     1791911811,
+     0.0004279
+    ],
+    [
+     1791911877,
+     0.0004333
+    ],
+    [
+     1791911928,
+     0.0004372
+    ],
+    [
+     1791911990,
+     0.0004364
+    ],
+    [
+     1791912067,
+     0.0004332
+    ],
+    [
+     1791912111,
+     0.0004198
+    ],
+    [
+     1791912168,
+     0.0004151
+    ],
+    [
+     1791912235,
+     0.0004151
+    ],
+    [
+     1791912292,
+     0.000429
+    ],
+    [
+     1791912352,
+     0.000429
+    ],
+    [
+     1791912424,
+     0.000434
     ]
    ],
    "tokens": 88762559136,
@@ -1255,12 +1299,41 @@
    "entry_cost": 0.0407,
    "fills": "jupiter",
    "missing": 0,
-   "liq_now": 56330.32,
-   "quote_kr": 377.0391,
-   "quote_px": 0.0004248,
-   "exit_impact": 0.0,
-   "quote_ts": "2026-10-13T17:16:05.307724+00:00",
+   "liq_now": 56986.78,
+   "quote_kr": 374.8594,
+   "quote_px": 0.000434,
+   "exit_impact": 0.004392987909986689,
+   "quote_ts": "2026-10-13T17:27:04.657271+00:00",
    "nosell": 0
+  },
+  {
+   "pool": "EASJmizJiaAnM5gB6Yg5ZryUQdYDbAQSQ5jx5NueRkNm",
+   "mint": "FqBavrjQvo9NT9P2q8YAFXtmwiM1oFebgyT3ivZipump",
+   "name": "SFL / SOL",
+   "opened": "2026-10-13T17:27:04.657271+00:00",
+   "opened_ts": 1791912424.6572707,
+   "entry": 0.0005751923057185309,
+   "entry_seen": 0.00048226032442402305,
+   "stake": 250.0,
+   "stake_left": 250.0,
+   "peak": 0.00048226032442402305,
+   "last": 0.00048226032442402305,
+   "half_sold": false,
+   "tranches": 0,
+   "realised": 0.0,
+   "liq_at_entry": 67335.4029,
+   "trail": [
+    [
+     1791912424,
+     0.00048226
+    ]
+   ],
+   "tokens": 43463724656,
+   "tokens_left": 43463724656,
+   "decimals": 6,
+   "entry_impact": 0.01566420006948547,
+   "entry_cost": 0.1927,
+   "fills": "jupiter"
   }
  ],
  "closed": [
@@ -13540,10 +13613,10 @@
  ],
  "seen": [
   "9qj1HN5n227FeRnHiiHoyGjzDZqcGh3mCdFahywzpump",
-  "6CufRbcpQ6WMUQu3vDoz3Jy36BsnKbtqfyawvURGpump",
+  "2HGQMcyfTSfvjBJ55cc1KWnPFYGqBbSeZ9yMXV8yfWwo",
   "291HZmFgynd2MY2YTzbZ7sjoZbKnuZgdJAi9oq7Kpump",
   "69wF53CKyLbeeG1KJhKH22iiuZMmEtREqMeu4zXq8kpc",
-  "2HGQMcyfTSfvjBJ55cc1KWnPFYGqBbSeZ9yMXV8yfWwo",
+  "6CufRbcpQ6WMUQu3vDoz3Jy36BsnKbtqfyawvURGpump",
   "7qb9SHKCD6rFEso3xHWjARbrLgxg6MZF6wZZMAGqpump",
   "DTBkv3GrfmUGtBHy5guQm2FmbYuWgtaDkW7XfJokpump",
   "5v44XTW2jCQ2oM4bnxx5mo1cZPCESNQWK4BMsVBwdpad",
@@ -13627,6 +13700,7 @@
   "8jvtXPTG9TcHVVpU5b4N4iq5TXaqq6VocLk47z5ahD6d",
   "J4KLuM9XXSbH9LzSaFj1xCqFh4xieLscaspJm6jR6QN2",
   "98AG3zJUawbvDnpgbDhmxpMKva43vtgPLLPSXqo1pump",
+  "FqBavrjQvo9NT9P2q8YAFXtmwiM1oFebgyT3ivZipump",
   "9NjWur1VhYteCaRnmUQu6kA6SuemdKHFM5vqRGHM3Qcd",
   "2CEFKqVv4kZbRTz9QoExyX1Tea4gUoxdDYmdDZAeaRcG",
   "9XxtEBjxj2Z7DZ775foA1iq2zeZdYMKXD6fq8qCNpump",
@@ -15554,24 +15628,31 @@
    "w": 2986518
   },
   {
-   "ts": "2026-10-13T17:16:05.307724+00:00",
-   "equity": 1214.87,
+   "ts": "2026-10-13T17:19:50.987921+00:00",
+   "equity": 1221.47,
    "cash": 837.83,
    "open": 1,
    "w": 2986519
+  },
+  {
+   "ts": "2026-10-13T17:27:04.657271+00:00",
+   "equity": 1166.1,
+   "cash": 587.83,
+   "open": 2,
+   "w": 2986520
   }
  ],
  "skips": {
-  "age": 116652,
-  "buy pressure": 2118,
-  "quote": 13605,
+  "age": 117290,
+  "buy pressure": 2139,
+  "quote": 13688,
   "liquidity": 6177,
-  "price change": 587,
+  "price change": 592,
   "danger risk": 56,
   "volume": 70,
   "lp not locked": 2,
   "jupiter down": 7,
   "no rugcheck": 4
  },
- "last_run": "2026-10-13T17:16:05.307724+00:00"
+ "last_run": "2026-10-13T17:27:04.657271+00:00"
 }

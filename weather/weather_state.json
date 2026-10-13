@@ -2,25 +2,6 @@
  "cash": 194.69920000000042,
  "open": [
   {
-   "event_id": "1168848",
-   "slug": "highest-temperature-in-karachi-on-october-13-2026",
-   "city": "Karachi",
-   "date": "2026-10-13",
-   "station": "OPKC",
-   "bucket": "38\u00b0C",
-   "side": "NO",
-   "token": "40298373309758569475234973371794352879716443760932763539442136538832901855967",
-   "price": 0.71,
-   "cost": 0.7303,
-   "prob": 0.8551,
-   "edge": 0.1248,
-   "shares": 5.4909,
-   "stake_usd": 4.01,
-   "mu": 36.37,
-   "sigma": 1.37,
-   "opened": "2026-10-13T01:01:28.702153+00:00"
-  },
-  {
    "event_id": "1168844",
    "slug": "highest-temperature-in-jeddah-on-october-13-2026",
    "city": "Jeddah",
@@ -16611,68 +16592,31 @@
    "won": false,
    "pnl_usd": -3.12,
    "settled": "2026-10-13T19:31:24.654871+00:00"
+  },
+  {
+   "event_id": "1168848",
+   "slug": "highest-temperature-in-karachi-on-october-13-2026",
+   "city": "Karachi",
+   "date": "2026-10-13",
+   "station": "OPKC",
+   "bucket": "38\u00b0C",
+   "side": "NO",
+   "token": "40298373309758569475234973371794352879716443760932763539442136538832901855967",
+   "price": 0.71,
+   "cost": 0.7303,
+   "prob": 0.8551,
+   "edge": 0.1248,
+   "shares": 5.4909,
+   "stake_usd": 4.01,
+   "mu": 36.37,
+   "sigma": 1.37,
+   "opened": "2026-10-13T01:01:28.702153+00:00",
+   "won": false,
+   "pnl_usd": -4.01,
+   "settled": "2026-10-13T20:01:33.855236+00:00"
   }
  ],
  "forecast_log": {
-  "1168848": {
-   "date": "2026-10-13",
-   "mu_raw": 35.73333333333334,
-   "unit": "C",
-   "city": "Karachi",
-   "spread": 4.5,
-   "labels": [
-    "31\u00b0C or below",
-    "32\u00b0C",
-    "33\u00b0C",
-    "34\u00b0C",
-    "35\u00b0C",
-    "36\u00b0C",
-    "37\u00b0C",
-    "38\u00b0C",
-    "39\u00b0C",
-    "40\u00b0C",
-    "41\u00b0C or higher"
-   ],
-   "probs": [
-    0.0002,
-    0.0022,
-    0.0159,
-    0.0684,
-    0.1765,
-    0.2744,
-    0.2569,
-    0.1449,
-    0.0492,
-    0.01,
-    0.0013
-   ],
-   "market": [
-    null,
-    null,
-    null,
-    0.0015,
-    0.025,
-    0.1,
-    0.425,
-    0.37,
-    0.055,
-    0.0075,
-    0.0015
-   ],
-   "gfs": [
-    0.05,
-    0.05,
-    0.05,
-    0.05,
-    0.0968,
-    0.3871,
-    0.4194,
-    0.0645,
-    0.05,
-    0.05,
-    0.05
-   ]
-  },
   "1168844": {
    "date": "2026-10-13",
    "mu_raw": 34.550000000000004,
@@ -21290,69 +21234,56 @@
    "equity": 362.33,
    "cash": 194.7,
    "open": 37
+  },
+  {
+   "ts": "2026-10-13T20:01:33.855236+00:00",
+   "equity": 358.32,
+   "cash": 194.7,
+   "open": 36
   }
  ],
  "last_run": {
-  "ts": "2026-10-13T19:31:24.654871+00:00",
+  "ts": "2026-10-13T20:01:33.855236+00:00",
   "settled": [
    {
-    "event_id": "1168814",
-    "slug": "highest-temperature-in-lucknow-on-october-13-2026",
-    "city": "Lucknow",
+    "event_id": "1168848",
+    "slug": "highest-temperature-in-karachi-on-october-13-2026",
+    "city": "Karachi",
     "date": "2026-10-13",
-    "station": "VILK",
-    "bucket": "32\u00b0C",
+    "station": "OPKC",
+    "bucket": "38\u00b0C",
     "side": "NO",
-    "token": "17536342291024467391793926118794762341788695584218317457150847923294518261008",
-    "price": 0.34,
-    "cost": 0.3612,
-    "prob": 0.7465,
-    "edge": 0.3852,
-    "shares": 9.9939,
-    "stake_usd": 3.61,
-    "mu": 32.67,
+    "token": "40298373309758569475234973371794352879716443760932763539442136538832901855967",
+    "price": 0.71,
+    "cost": 0.7303,
+    "prob": 0.8551,
+    "edge": 0.1248,
+    "shares": 5.4909,
+    "stake_usd": 4.01,
+    "mu": 36.37,
     "sigma": 1.37,
-    "opened": "2026-10-13T00:31:24.561835+00:00",
+    "opened": "2026-10-13T01:01:28.702153+00:00",
     "won": false,
-    "pnl_usd": -3.61,
-    "settled": "2026-10-13T19:31:24.654871+00:00"
-   },
-   {
-    "event_id": "1168814",
-    "slug": "highest-temperature-in-lucknow-on-october-13-2026",
-    "city": "Lucknow",
-    "date": "2026-10-13",
-    "station": "VILK",
-    "bucket": "33\u00b0C",
-    "side": "YES",
-    "token": "51973776162996106145254612135064302463544711414337592296334859850248813993688",
-    "price": 0.14,
-    "cost": 0.156,
-    "prob": 0.2763,
-    "edge": 0.1203,
-    "shares": 19.9974,
-    "stake_usd": 3.12,
-    "mu": 32.67,
-    "sigma": 1.37,
-    "opened": "2026-10-13T00:31:24.561835+00:00",
-    "won": false,
-    "pnl_usd": -3.12,
-    "settled": "2026-10-13T19:31:24.654871+00:00"
+    "pnl_usd": -4.01,
+    "settled": "2026-10-13T20:01:33.855236+00:00"
    }
   ],
   "opened": [],
   "logged": 0,
-  "skipped": {}
+  "skipped": {
+   "Helsinki": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=60.3172&longitude=24.9633&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=celsius",
+   "Amsterdam": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=52.3086&longitude=4.7639&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=celsius"
+  }
  },
  "mode": "trading",
  "gates_ignored": true,
  "score": {
-  "n": 2785,
-  "model": 943.9192022578569,
-  "market": 776.0628013314818,
-  "events": 397,
-  "gfs": 1259.7637028535514,
-  "n_gfs": 2753,
-  "market_gfs": 766.4140106241366
+  "n": 2793,
+  "model": 946.7954409169314,
+  "market": 777.8082180368142,
+  "events": 398,
+  "gfs": 1263.8450240683107,
+  "n_gfs": 2761,
+  "market_gfs": 768.159427329469
  }
 }

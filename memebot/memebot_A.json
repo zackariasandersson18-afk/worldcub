@@ -4,7 +4,7 @@
  "book": "A",
  "name": "A: tidsstopp",
  "start_kr": 5000.0,
- "cash": 1767.9265449716183,
+ "cash": 1769.7679016716183,
  "open": [
   {
    "pool": "AnrCHvfJUzMtos8DGjpT2XKurVPPYAVLDturASNwXcd4",
@@ -16,8 +16,8 @@
    "entry_seen": 0.004243832978711932,
    "stake": 250.0,
    "stake_left": 125.0,
-   "peak": 0.01172,
-   "last": 0.009974,
+   "peak": 0.01512,
+   "last": 0.01512,
    "half_sold": true,
    "tranches": 1,
    "realised": 250.05234529999998,
@@ -770,6 +770,46 @@
     [
      1791856932,
      0.009974
+    ],
+    [
+     1791857011,
+     0.01166
+    ],
+    [
+     1791857050,
+     0.01144
+    ],
+    [
+     1791857111,
+     0.01154
+    ],
+    [
+     1791857170,
+     0.01137
+    ],
+    [
+     1791857230,
+     0.01342
+    ],
+    [
+     1791857297,
+     0.01404
+    ],
+    [
+     1791857365,
+     0.01486
+    ],
+    [
+     1791857410,
+     0.01459
+    ],
+    [
+     1791857472,
+     0.01485
+    ],
+    [
+     1791857749,
+     0.01512
     ]
    ],
    "tokens": 5734488667,
@@ -779,10 +819,10 @@
    "entry_cost": 0.0273,
    "fills": "jupiter",
    "missing": 0,
-   "liq_now": 284051.97,
-   "quote_px": 0.009974,
-   "exit_impact": 0.005921318804349492,
-   "quote_ts": "2026-10-13T02:02:12.020526+00:00",
+   "liq_now": 351412.26,
+   "quote_px": 0.01512,
+   "exit_impact": 0.0009245778374016425,
+   "quote_ts": "2026-10-13T02:15:49.630666+00:00",
    "nosell": 0,
    "events": [
     {
@@ -792,51 +832,7 @@
      "impact": 0.0003285756745959983
     }
    ],
-   "quote_kr": 278.1635
-  },
-  {
-   "pool": "GFoLxN24wxsCqGbNAy2wE6BvaoatopXag8KjiA5r412J",
-   "mint": "9HMuBjwKh3ZemM5k6EC43JiqYyMhaGLeTvuYycfUpump",
-   "name": "MARVIN / SOL",
-   "opened": "2026-10-13T02:00:12.385340+00:00",
-   "opened_ts": 1791856812.3853405,
-   "entry": 0.00016470676901203125,
-   "entry_seen": 0.00015776275313157608,
-   "stake": 250.0,
-   "stake_left": 250.0,
-   "peak": 0.0001692,
-   "last": 0.0001514,
-   "half_sold": false,
-   "tranches": 0,
-   "realised": 0.0,
-   "liq_at_entry": 32139.178,
-   "trail": [
-    [
-     1791856812,
-     0.000157763
-    ],
-    [
-     1791856871,
-     0.0001692
-    ],
-    [
-     1791856932,
-     0.0001514
-    ]
-   ],
-   "tokens": 151784897184,
-   "tokens_left": 151784897184,
-   "decimals": 6,
-   "entry_impact": 0.011022400175407567,
-   "entry_cost": 0.044,
-   "fills": "jupiter",
-   "missing": 0,
-   "liq_now": 32404.72,
-   "quote_kr": 232.3674,
-   "quote_px": 0.0001514,
-   "exit_impact": 0.0,
-   "quote_ts": "2026-10-13T02:02:12.020526+00:00",
-   "nosell": 0
+   "quote_kr": 450.7492
   }
  ],
  "closed": [
@@ -10063,6 +10059,83 @@
    "reason": "stop -40 %",
    "pnl": -245.49,
    "won": false
+  },
+  {
+   "pool": "GFoLxN24wxsCqGbNAy2wE6BvaoatopXag8KjiA5r412J",
+   "mint": "9HMuBjwKh3ZemM5k6EC43JiqYyMhaGLeTvuYycfUpump",
+   "name": "MARVIN / SOL",
+   "opened": "2026-10-13T02:00:12.385340+00:00",
+   "opened_ts": 1791856812.3853405,
+   "entry": 0.00016470676901203125,
+   "entry_seen": 0.00015776275313157608,
+   "stake": 250.0,
+   "stake_left": 0.0,
+   "peak": 0.0001692,
+   "last": 2.585e-06,
+   "half_sold": false,
+   "tranches": 0,
+   "realised": 1.8413567000000004,
+   "liq_at_entry": 32139.178,
+   "trail": [
+    [
+     1791856812,
+     0.000157763
+    ],
+    [
+     1791856871,
+     0.0001692
+    ],
+    [
+     1791856932,
+     0.0001514
+    ],
+    [
+     1791857011,
+     0.000163
+    ],
+    [
+     1791857050,
+     0.0001667
+    ],
+    [
+     1791857111,
+     0.0001193
+    ],
+    [
+     1791857170,
+     0.0001464
+    ],
+    [
+     1791857230,
+     0.0001487
+    ],
+    [
+     1791857297,
+     0.0001546
+    ],
+    [
+     1791857365,
+     2.585e-06
+    ]
+   ],
+   "tokens": 151784897184,
+   "tokens_left": 0,
+   "decimals": 6,
+   "entry_impact": 0.011022400175407567,
+   "entry_cost": 0.044,
+   "fills": "jupiter",
+   "missing": 0,
+   "liq_now": 2647.01,
+   "quote_kr": 1.8414,
+   "quote_px": 2.585e-06,
+   "exit_impact": 0.0030232387520397895,
+   "quote_ts": "2026-10-13T02:09:25.796034+00:00",
+   "nosell": 0,
+   "closed": "2026-10-13T02:09:25.796034+00:00",
+   "exit_price": 2.585e-06,
+   "reason": "stop -40 %",
+   "pnl": -248.16,
+   "won": false
   }
  ],
  "seen": [
@@ -10082,8 +10155,8 @@
   "2kZmj9SZ8TJYrQjD1GQekAC84xviGzcxgujNdLBCQXRi",
   "NL6NMbnbPBpyWL4cU1EuUDFrqizHoKvJ5seYHimg8W2",
   "8AecmwGp8DXu94MXtAfZjNNcvmTcU9TwuB3VSp3homzP",
-  "HgTGdc29D5bDMrDvsCLnorxz899VyDj7ZN7FPa6vpump",
   "Aj7K8zcZCS8ZPb89KwoxWEPkagaPjWk5HQJ8zpvhpump",
+  "HgTGdc29D5bDMrDvsCLnorxz899VyDj7ZN7FPa6vpump",
   "2HGQMcyfTSfvjBJ55cc1KWnPFYGqBbSeZ9yMXV8yfWwo",
   "3iLwe7YVysJBhbPJ8Fk31DDEj1i9s8NVdvvQN6hKpump",
   "FrPrxWsHMwqs3bvrLsNiN2RPbX7xNuwNwq4mkKEq9PFo",
@@ -10100,6 +10173,7 @@
   "14mU8okTi8KHhYu9jwKeDu8hCrNgYxiB9JaAs5Ax29fS",
   "5v44XTW2jCQ2oM4bnxx5mo1cZPCESNQWK4BMsVBwdpad",
   "HtRfvJ6M89MvoFCAHFFiDNA4gJWuj9cPxi8Ugo8kpump",
+  "955Hqs52xT5MMXNfS5Hm2HtT8k1EfThQWBfK14bqALCN",
   "EH8UxWnpMukpq48NF1hGV6hBGdo9EKGq1YzcXaUPpump",
   "8ZP5CzbPL1fmP8dn1GEmLd8xw1JdudUF5Dk7EpLxpump",
   "2CEFKqVv4kZbRTz9QoExyX1Tea4gUoxdDYmdDZAeaRcG",
@@ -11404,24 +11478,31 @@
    "w": 2986427
   },
   {
-   "ts": "2026-10-13T02:02:12.020526+00:00",
-   "equity": 2278.46,
-   "cash": 1767.93,
-   "open": 2,
+   "ts": "2026-10-13T02:09:25.796034+00:00",
+   "equity": 2191.9,
+   "cash": 1769.77,
+   "open": 1,
    "w": 2986428
+  },
+  {
+   "ts": "2026-10-13T02:15:49.630666+00:00",
+   "equity": 2220.52,
+   "cash": 1769.77,
+   "open": 1,
+   "w": 2986429
   }
  ],
  "skips": {
-  "age": 78199,
-  "buy pressure": 1452,
-  "quote": 9813,
-  "liquidity": 3009,
-  "price change": 406,
-  "danger risk": 28,
+  "age": 78726,
+  "buy pressure": 1463,
+  "quote": 9848,
+  "liquidity": 3026,
+  "price change": 407,
+  "danger risk": 29,
   "volume": 29,
   "lp not locked": 2,
   "jupiter down": 4,
   "no rugcheck": 4
  },
- "last_run": "2026-10-13T02:02:12.020526+00:00"
+ "last_run": "2026-10-13T02:15:49.630666+00:00"
 }

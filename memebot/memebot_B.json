@@ -4,7 +4,7 @@
  "book": "B",
  "name": "B: likviditetsflykt",
  "start_kr": 5000.0,
- "cash": 1138.5410118391244,
+ "cash": 1372.9062963391243,
  "open": [
   {
    "pool": "4MWjp1aBQqE9Y6iC5cd3NrVvWWcHsN2LgpjWYMDK7u7E",
@@ -16,8 +16,8 @@
    "entry_seen": 0.0025283017256722156,
    "stake": 250.0,
    "stake_left": 250.0,
-   "peak": 0.00362,
-   "last": 0.00362,
+   "peak": 0.004106,
+   "last": 0.004023,
    "half_sold": false,
    "tranches": 0,
    "realised": 0.0,
@@ -1174,6 +1174,34 @@
     [
      1791863111,
      0.00362
+    ],
+    [
+     1791863132,
+     0.003612
+    ],
+    [
+     1791863185,
+     0.003914
+    ],
+    [
+     1791863247,
+     0.003516
+    ],
+    [
+     1791863304,
+     0.003778
+    ],
+    [
+     1791863364,
+     0.004106
+    ],
+    [
+     1791863430,
+     0.004013
+    ],
+    [
+     1791863944,
+     0.004023
     ]
    ],
    "tokens": 10400955039,
@@ -1183,101 +1211,12 @@
    "entry_cost": -0.0493,
    "fills": "jupiter",
    "missing": 0,
-   "liq_now": 172046.76,
-   "quote_kr": 371.1789,
-   "quote_px": 0.00362,
-   "exit_impact": 0.002665598923492966,
-   "quote_ts": "2026-10-13T03:45:11.500202+00:00",
+   "liq_now": 181719.18,
+   "quote_kr": 410.2703,
+   "quote_px": 0.004023,
+   "exit_impact": 0.014251350678379803,
+   "quote_ts": "2026-10-13T03:59:04.694298+00:00",
    "nosell": 0
-  },
-  {
-   "pool": "12BWPNNECBnkrmwiR9y5Pbb9yMPHLYUaKr8gc8bH8HVr",
-   "mint": "43itHQ85P7t7UWAZgFjYHe4FLV8HSSDPqBiaVDnmpump",
-   "name": "CATBOT / SOL",
-   "opened": "2026-10-13T03:36:08.184042+00:00",
-   "opened_ts": 1791862568.184042,
-   "entry": 0.0002984513999363477,
-   "entry_seen": 0.0002845842807260663,
-   "stake": 250.0,
-   "stake_left": 250.0,
-   "peak": 0.0004315,
-   "last": 0.0004315,
-   "half_sold": false,
-   "tranches": 0,
-   "realised": 0.0,
-   "liq_at_entry": 45991.4394,
-   "trail": [
-    [
-     1791862568,
-     0.000284584
-    ],
-    [
-     1791862646,
-     0.0003613
-    ],
-    [
-     1791862687,
-     0.0003165
-    ],
-    [
-     1791862749,
-     0.0003159
-    ],
-    [
-     1791862808,
-     0.0003259
-    ],
-    [
-     1791862869,
-     0.0003676
-    ],
-    [
-     1791863111,
-     0.0004315
-    ]
-   ],
-   "tokens": 83765732060,
-   "tokens_left": 83765732060,
-   "decimals": 6,
-   "entry_impact": 0.011257056514240192,
-   "entry_cost": 0.0487,
-   "fills": "jupiter",
-   "missing": 0,
-   "liq_now": 57902.8,
-   "quote_kr": 263.7548,
-   "quote_px": 0.0004315,
-   "exit_impact": 0.014841446981514943,
-   "quote_ts": "2026-10-13T03:45:11.500202+00:00",
-   "nosell": 0
-  },
-  {
-   "pool": "G746vQAC2PBjzayY8zCNgb4o3chdmz3KyXtwJxQaPg8w",
-   "mint": "F9QL6w3RyEoY4LKtKPCUZ62wmTjPaD7wdb1VR3Nppump",
-   "name": "SUKI / SOL",
-   "opened": "2026-10-13T03:45:11.500202+00:00",
-   "opened_ts": 1791863111.500202,
-   "entry": 0.000169172878848793,
-   "entry_seen": 0.00016054627336845804,
-   "stake": 250.0,
-   "stake_left": 250.0,
-   "peak": 0.00016054627336845804,
-   "last": 0.00016054627336845804,
-   "half_sold": false,
-   "tranches": 0,
-   "realised": 0.0,
-   "liq_at_entry": 33211.8795,
-   "trail": [
-    [
-     1791863111,
-     0.000160546
-    ]
-   ],
-   "tokens": 147777824496,
-   "tokens_left": 147777824496,
-   "decimals": 6,
-   "entry_impact": 0.00974809596068868,
-   "entry_cost": 0.0537,
-   "fills": "jupiter"
   }
  ],
  "closed": [
@@ -12097,6 +12036,164 @@
    "reason": "5x",
    "pnl": 624.88,
    "won": true
+  },
+  {
+   "pool": "G746vQAC2PBjzayY8zCNgb4o3chdmz3KyXtwJxQaPg8w",
+   "mint": "F9QL6w3RyEoY4LKtKPCUZ62wmTjPaD7wdb1VR3Nppump",
+   "name": "SUKI / SOL",
+   "opened": "2026-10-13T03:45:11.500202+00:00",
+   "opened_ts": 1791863111.500202,
+   "entry": 0.000169172878848793,
+   "entry_seen": 0.00016054627336845804,
+   "stake": 250.0,
+   "stake_left": 0.0,
+   "peak": 0.0001616,
+   "last": 9.795e-05,
+   "half_sold": false,
+   "tranches": 0,
+   "realised": 135.6853538,
+   "liq_at_entry": 33211.8795,
+   "trail": [
+    [
+     1791863111,
+     0.000160546
+    ],
+    [
+     1791863132,
+     0.0001616
+    ],
+    [
+     1791863185,
+     0.0001126
+    ],
+    [
+     1791863247,
+     0.0001265
+    ],
+    [
+     1791863304,
+     0.0001296
+    ],
+    [
+     1791863364,
+     0.0001335
+    ],
+    [
+     1791863430,
+     9.795e-05
+    ]
+   ],
+   "tokens": 147777824496,
+   "tokens_left": 0,
+   "decimals": 6,
+   "entry_impact": 0.00974809596068868,
+   "entry_cost": 0.0537,
+   "fills": "jupiter",
+   "missing": 0,
+   "liq_now": 25970.9,
+   "quote_kr": 135.6854,
+   "quote_px": 9.795e-05,
+   "exit_impact": 0.014408358869798094,
+   "quote_ts": "2026-10-13T03:50:30.980383+00:00",
+   "nosell": 0,
+   "closed": "2026-10-13T03:50:30.980383+00:00",
+   "exit_price": 9.795e-05,
+   "reason": "stop -40 %",
+   "pnl": -114.31,
+   "won": false
+  },
+  {
+   "pool": "12BWPNNECBnkrmwiR9y5Pbb9yMPHLYUaKr8gc8bH8HVr",
+   "mint": "43itHQ85P7t7UWAZgFjYHe4FLV8HSSDPqBiaVDnmpump",
+   "name": "CATBOT / SOL",
+   "opened": "2026-10-13T03:36:08.184042+00:00",
+   "opened_ts": 1791862568.184042,
+   "entry": 0.0002984513999363477,
+   "entry_seen": 0.0002845842807260663,
+   "stake": 250.0,
+   "stake_left": 0.0,
+   "peak": 0.0004315,
+   "last": 0.0001178,
+   "half_sold": false,
+   "tranches": 0,
+   "realised": 98.6799307,
+   "liq_at_entry": 45991.4394,
+   "trail": [
+    [
+     1791862568,
+     0.000284584
+    ],
+    [
+     1791862646,
+     0.0003613
+    ],
+    [
+     1791862687,
+     0.0003165
+    ],
+    [
+     1791862749,
+     0.0003159
+    ],
+    [
+     1791862808,
+     0.0003259
+    ],
+    [
+     1791862869,
+     0.0003676
+    ],
+    [
+     1791863111,
+     0.0004315
+    ],
+    [
+     1791863132,
+     0.0004219
+    ],
+    [
+     1791863185,
+     0.0002584
+    ],
+    [
+     1791863247,
+     0.0002763
+    ],
+    [
+     1791863304,
+     0.0002821
+    ],
+    [
+     1791863364,
+     0.000218
+    ],
+    [
+     1791863430,
+     0.0002363
+    ],
+    [
+     1791863944,
+     0.0001178
+    ]
+   ],
+   "tokens": 83765732060,
+   "tokens_left": 0,
+   "decimals": 6,
+   "entry_impact": 0.011257056514240192,
+   "entry_cost": 0.0487,
+   "fills": "jupiter",
+   "missing": 0,
+   "liq_now": 29508.69,
+   "quote_kr": 98.6799,
+   "quote_px": 0.0001178,
+   "exit_impact": 0.014767722295910758,
+   "quote_ts": "2026-10-13T03:59:04.694298+00:00",
+   "nosell": 0,
+   "closed": "2026-10-13T03:59:04.694298+00:00",
+   "exit_price": 0.0001178,
+   "reason": "stop -40 %",
+   "pnl": -151.32,
+   "won": false
   }
  ],
  "seen": [
@@ -13521,24 +13618,31 @@
    "w": 2986437
   },
   {
-   "ts": "2026-10-13T03:45:11.500202+00:00",
-   "equity": 2003.98,
+   "ts": "2026-10-13T03:49:24.622460+00:00",
+   "equity": 1940.35,
    "cash": 1138.54,
    "open": 3,
    "w": 2986438
+  },
+  {
+   "ts": "2026-10-13T03:59:04.694298+00:00",
+   "equity": 1783.18,
+   "cash": 1372.91,
+   "open": 1,
+   "w": 2986439
   }
  ],
  "skips": {
-  "age": 81372,
-  "buy pressure": 1559,
-  "quote": 10150,
-  "liquidity": 4078,
-  "price change": 468,
+  "age": 81726,
+  "buy pressure": 1567,
+  "quote": 10183,
+  "liquidity": 4102,
+  "price change": 472,
   "danger risk": 37,
   "volume": 40,
   "lp not locked": 2,
   "jupiter down": 6,
   "no rugcheck": 4
  },
- "last_run": "2026-10-13T03:45:11.500202+00:00"
+ "last_run": "2026-10-13T03:59:04.694298+00:00"
 }

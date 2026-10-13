@@ -4,106 +4,8 @@
  "book": "A",
  "name": "A: tidsstopp",
  "start_kr": 5000.0,
- "cash": 1662.7149694716184,
- "open": [
-  {
-   "pool": "12BWPNNECBnkrmwiR9y5Pbb9yMPHLYUaKr8gc8bH8HVr",
-   "mint": "43itHQ85P7t7UWAZgFjYHe4FLV8HSSDPqBiaVDnmpump",
-   "name": "CATBOT / SOL",
-   "opened": "2026-10-13T03:36:08.184042+00:00",
-   "opened_ts": 1791862568.184042,
-   "entry": 0.0002984513999363477,
-   "entry_seen": 0.0002845842807260663,
-   "stake": 250.0,
-   "stake_left": 125.0,
-   "peak": 0.0005974,
-   "last": 0.0005974,
-   "half_sold": true,
-   "tranches": 1,
-   "realised": 130.9464076,
-   "liq_at_entry": 45991.4394,
-   "trail": [
-    [
-     1791862568,
-     0.000284584
-    ],
-    [
-     1791862646,
-     0.0003533
-    ],
-    [
-     1791862687,
-     0.0003251
-    ],
-    [
-     1791862749,
-     0.0003093
-    ],
-    [
-     1791862808,
-     0.0003234
-    ],
-    [
-     1791862869,
-     0.0004556
-    ],
-    [
-     1791863111,
-     0.0005974
-    ]
-   ],
-   "tokens": 83765732060,
-   "tokens_left": 41882866030,
-   "decimals": 6,
-   "entry_impact": 0.011257056514240192,
-   "entry_cost": 0.0487,
-   "fills": "jupiter",
-   "missing": 0,
-   "liq_now": 68434.93,
-   "quote_px": 0.0005974,
-   "exit_impact": 0.01432668194418539,
-   "quote_ts": "2026-10-13T03:45:11.500202+00:00",
-   "nosell": 0,
-   "events": [
-    {
-     "ts": "2026-10-13T03:45:11.500202+00:00",
-     "what": "sold 50% of the rest at 2x",
-     "kr": 130.95,
-     "impact": 0.014329854041721242
-    }
-   ],
-   "quote_kr": 130.9468
-  },
-  {
-   "pool": "G746vQAC2PBjzayY8zCNgb4o3chdmz3KyXtwJxQaPg8w",
-   "mint": "F9QL6w3RyEoY4LKtKPCUZ62wmTjPaD7wdb1VR3Nppump",
-   "name": "SUKI / SOL",
-   "opened": "2026-10-13T03:45:11.500202+00:00",
-   "opened_ts": 1791863111.500202,
-   "entry": 0.000169172878848793,
-   "entry_seen": 0.00016054627336845804,
-   "stake": 250.0,
-   "stake_left": 250.0,
-   "peak": 0.00016054627336845804,
-   "last": 0.00016054627336845804,
-   "half_sold": false,
-   "tranches": 0,
-   "realised": 0.0,
-   "liq_at_entry": 33211.8795,
-   "trail": [
-    [
-     1791863111,
-     0.000160546
-    ]
-   ],
-   "tokens": 147777824496,
-   "tokens_left": 147777824496,
-   "decimals": 6,
-   "entry_impact": 0.00974809596068868,
-   "entry_cost": 0.0537,
-   "fills": "jupiter"
-  }
- ],
+ "cash": 1914.2626303716183,
+ "open": [],
  "closed": [
   {
    "pool": "ENtnEE6cmK1nfqKd6keZe1eGL6HmRBqYVyXRsWcBeQJP",
@@ -10692,6 +10594,152 @@
    "reason": "5x",
    "pnl": 624.87,
    "won": true
+  },
+  {
+   "pool": "12BWPNNECBnkrmwiR9y5Pbb9yMPHLYUaKr8gc8bH8HVr",
+   "mint": "43itHQ85P7t7UWAZgFjYHe4FLV8HSSDPqBiaVDnmpump",
+   "name": "CATBOT / SOL",
+   "opened": "2026-10-13T03:36:08.184042+00:00",
+   "opened_ts": 1791862568.184042,
+   "entry": 0.0002984513999363477,
+   "entry_seen": 0.0002845842807260663,
+   "stake": 250.0,
+   "stake_left": 0.0,
+   "peak": 0.0005974,
+   "last": 0.0002584,
+   "half_sold": true,
+   "tranches": 1,
+   "realised": 246.9336071,
+   "liq_at_entry": 45991.4394,
+   "trail": [
+    [
+     1791862568,
+     0.000284584
+    ],
+    [
+     1791862646,
+     0.0003533
+    ],
+    [
+     1791862687,
+     0.0003251
+    ],
+    [
+     1791862749,
+     0.0003093
+    ],
+    [
+     1791862808,
+     0.0003234
+    ],
+    [
+     1791862869,
+     0.0004556
+    ],
+    [
+     1791863111,
+     0.0005974
+    ],
+    [
+     1791863132,
+     0.0003644
+    ],
+    [
+     1791863185,
+     0.0002584
+    ]
+   ],
+   "tokens": 83765732060,
+   "tokens_left": 0,
+   "decimals": 6,
+   "entry_impact": 0.011257056514240192,
+   "entry_cost": 0.0487,
+   "fills": "jupiter",
+   "missing": 0,
+   "liq_now": 44425.52,
+   "quote_px": 0.0002584,
+   "exit_impact": 0.014874434508038688,
+   "quote_ts": "2026-10-13T03:46:25.343949+00:00",
+   "nosell": 0,
+   "events": [
+    {
+     "ts": "2026-10-13T03:45:11.500202+00:00",
+     "what": "sold 50% of the rest at 2x",
+     "kr": 130.95,
+     "impact": 0.014329854041721242
+    }
+   ],
+   "quote_kr": 115.9872,
+   "closed": "2026-10-13T03:46:25.343949+00:00",
+   "exit_price": 0.0002584,
+   "reason": "trailing -50 % from peak",
+   "pnl": -3.07,
+   "won": false
+  },
+  {
+   "pool": "G746vQAC2PBjzayY8zCNgb4o3chdmz3KyXtwJxQaPg8w",
+   "mint": "F9QL6w3RyEoY4LKtKPCUZ62wmTjPaD7wdb1VR3Nppump",
+   "name": "SUKI / SOL",
+   "opened": "2026-10-13T03:45:11.500202+00:00",
+   "opened_ts": 1791863111.500202,
+   "entry": 0.000169172878848793,
+   "entry_seen": 0.00016054627336845804,
+   "stake": 250.0,
+   "stake_left": 0.0,
+   "peak": 0.0001717,
+   "last": 9.795e-05,
+   "half_sold": false,
+   "tranches": 0,
+   "realised": 135.5604614,
+   "liq_at_entry": 33211.8795,
+   "trail": [
+    [
+     1791863111,
+     0.000160546
+    ],
+    [
+     1791863132,
+     0.0001717
+    ],
+    [
+     1791863185,
+     0.0001126
+    ],
+    [
+     1791863247,
+     0.0001265
+    ],
+    [
+     1791863304,
+     0.0001292
+    ],
+    [
+     1791863364,
+     0.0001312
+    ],
+    [
+     1791863430,
+     9.795e-05
+    ]
+   ],
+   "tokens": 147777824496,
+   "tokens_left": 0,
+   "decimals": 6,
+   "entry_impact": 0.00974809596068868,
+   "entry_cost": 0.0537,
+   "fills": "jupiter",
+   "missing": 0,
+   "liq_now": 25970.9,
+   "quote_kr": 135.5605,
+   "quote_px": 9.795e-05,
+   "exit_impact": 0.014142137994074993,
+   "quote_ts": "2026-10-13T03:50:30.980383+00:00",
+   "nosell": 0,
+   "closed": "2026-10-13T03:50:30.980383+00:00",
+   "exit_price": 9.795e-05,
+   "reason": "stop -40 %",
+   "pnl": -114.44,
+   "won": false
   }
  ],
  "seen": [
@@ -12116,24 +12164,31 @@
    "w": 2986437
   },
   {
-   "ts": "2026-10-13T03:45:11.500202+00:00",
-   "equity": 2024.17,
-   "cash": 1662.71,
-   "open": 2,
+   "ts": "2026-10-13T03:49:24.622460+00:00",
+   "equity": 1983.81,
+   "cash": 1778.7,
+   "open": 1,
    "w": 2986438
+  },
+  {
+   "ts": "2026-10-13T03:59:04.694298+00:00",
+   "equity": 1914.26,
+   "cash": 1914.26,
+   "open": 0,
+   "w": 2986439
   }
  ],
  "skips": {
-  "age": 81372,
-  "buy pressure": 1559,
-  "quote": 10150,
-  "liquidity": 4078,
-  "price change": 468,
+  "age": 81726,
+  "buy pressure": 1567,
+  "quote": 10183,
+  "liquidity": 4102,
+  "price change": 472,
   "danger risk": 37,
   "volume": 40,
   "lp not locked": 2,
   "jupiter down": 6,
   "no rugcheck": 4
  },
- "last_run": "2026-10-13T03:45:11.500202+00:00"
+ "last_run": "2026-10-13T03:59:04.694298+00:00"
 }

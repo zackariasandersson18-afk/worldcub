@@ -16,8 +16,8 @@
    "entry_seen": 0.004243832978711932,
    "stake": 250.0,
    "stake_left": 125.0,
-   "peak": 0.01069,
-   "last": 0.01069,
+   "peak": 0.01128,
+   "last": 0.00978,
    "half_sold": true,
    "tranches": 1,
    "realised": 250.05234529999998,
@@ -610,6 +610,46 @@
     [
      1791854110,
      0.01069
+    ],
+    [
+     1791854185,
+     0.01068
+    ],
+    [
+     1791854227,
+     0.01128
+    ],
+    [
+     1791854288,
+     0.01024
+    ],
+    [
+     1791854349,
+     0.01027
+    ],
+    [
+     1791854408,
+     0.01056
+    ],
+    [
+     1791854488,
+     0.01096
+    ],
+    [
+     1791854528,
+     0.01075
+    ],
+    [
+     1791854586,
+     0.01054
+    ],
+    [
+     1791854647,
+     0.01063
+    ],
+    [
+     1791854923,
+     0.00978
     ]
    ],
    "tokens": 5734488667,
@@ -619,10 +659,10 @@
    "entry_cost": 0.0273,
    "fills": "jupiter",
    "missing": 0,
-   "liq_now": 291923.57,
-   "quote_px": 0.01069,
-   "exit_impact": 0.004795037666115523,
-   "quote_ts": "2026-10-13T01:15:10.246453+00:00",
+   "liq_now": 279689.99,
+   "quote_px": 0.00978,
+   "exit_impact": 0.006001941179348255,
+   "quote_ts": "2026-10-13T01:28:43.868727+00:00",
    "nosell": 0,
    "events": [
     {
@@ -632,7 +672,7 @@
      "impact": 0.0003285756745959983
     }
    ],
-   "quote_kr": 304.7065
+   "quote_kr": 273.748
   }
  ],
  "closed": [
@@ -9876,6 +9916,8 @@
   "6t3hf1Ue4fppeV5CA8Q9YbFbtNzm1SpwgCdBMNKcRAZp",
   "8Tq4hpxkc4Syv9p2dWb7yqn4idciSJhpZQMFNnE6pump",
   "2kZmj9SZ8TJYrQjD1GQekAC84xviGzcxgujNdLBCQXRi",
+  "NL6NMbnbPBpyWL4cU1EuUDFrqizHoKvJ5seYHimg8W2",
+  "8AecmwGp8DXu94MXtAfZjNNcvmTcU9TwuB3VSp3homzP",
   "Aj7K8zcZCS8ZPb89KwoxWEPkagaPjWk5HQJ8zpvhpump",
   "HgTGdc29D5bDMrDvsCLnorxz899VyDj7ZN7FPa6vpump",
   "2HGQMcyfTSfvjBJ55cc1KWnPFYGqBbSeZ9yMXV8yfWwo",
@@ -11162,24 +11204,31 @@
    "w": 2986422
   },
   {
-   "ts": "2026-10-13T01:15:10.246453+00:00",
-   "equity": 2322.63,
+   "ts": "2026-10-13T01:19:09.968353+00:00",
+   "equity": 2314.38,
    "cash": 2017.93,
    "open": 1,
    "w": 2986423
+  },
+  {
+   "ts": "2026-10-13T01:28:43.868727+00:00",
+   "equity": 2291.67,
+   "cash": 2017.93,
+   "open": 1,
+   "w": 2986424
   }
  ],
  "skips": {
-  "age": 76008,
-  "buy pressure": 1445,
-  "quote": 9660,
-  "liquidity": 2920,
-  "price change": 402,
-  "danger risk": 26,
+  "age": 76444,
+  "buy pressure": 1447,
+  "quote": 9703,
+  "liquidity": 3009,
+  "price change": 403,
+  "danger risk": 28,
   "volume": 29,
   "lp not locked": 2,
   "jupiter down": 4,
   "no rugcheck": 4
  },
- "last_run": "2026-10-13T01:15:10.246453+00:00"
+ "last_run": "2026-10-13T01:28:43.868727+00:00"
 }

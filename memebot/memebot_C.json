@@ -4,8 +4,38 @@
  "book": "C",
  "name": "C: s\u00e4lj i steg",
  "start_kr": 5000.0,
- "cash": 481.47171572757503,
- "open": [],
+ "cash": 231.47171572757503,
+ "open": [
+  {
+   "pool": "AmJYXEDj5Q9BJscXMXXnDcNKrT39ZX4JqZ9NWp8hudrn",
+   "mint": "AMQ8BusAhpwbt3ufSCTi4k3BEQ7AecX9u12Jnk6Spump",
+   "name": "DIKSHIT / SOL",
+   "opened": "2026-10-14T17:14:55.298401+00:00",
+   "opened_ts": 1791998095.298401,
+   "entry": 0.00029832228025848776,
+   "entry_seen": 0.000290261722458335,
+   "stake": 250.0,
+   "stake_left": 250.0,
+   "peak": 0.000290261722458335,
+   "last": 0.000290261722458335,
+   "half_sold": false,
+   "tranches": 0,
+   "realised": 0.0,
+   "liq_at_entry": 46001.2285,
+   "trail": [
+    [
+     1791998095,
+     0.000290262
+    ]
+   ],
+   "tokens": 83801987496,
+   "tokens_left": 83801987496,
+   "decimals": 6,
+   "entry_impact": 0.008575836804992484,
+   "entry_cost": 0.0278,
+   "fills": "jupiter"
+  }
+ ],
  "closed": [
   {
    "pool": "ENtnEE6cmK1nfqKd6keZe1eGL6HmRBqYVyXRsWcBeQJP",
@@ -16560,6 +16590,7 @@
   "4qp4GS3wnuEPzM2wqLwwubSKdMk5T6mmK2KocxoX5SPh",
   "Gewjnxj3ew1nKDZiGimSzsiyXPovhoZHQbZj316T3zT5",
   "14mU8okTi8KHhYu9jwKeDu8hCrNgYxiB9JaAs5Ax29fS",
+  "AMQ8BusAhpwbt3ufSCTi4k3BEQ7AecX9u12Jnk6Spump",
   "AqUPRnyFCRuMqKYgY5Tf64CFshFecuaGSGXx4cqqpump",
   "DpwXMRF5Hcwtq9EcAD9Cv4ZHwmsr94SXfKK9ynuLESWZ",
   "Fak3rJEBfR4Vb8DoFpecf6yoxbkkr1gGUH5tdj2rpump",
@@ -19529,13 +19560,27 @@
    "cash": 481.47,
    "open": 0,
    "w": 2986661
+  },
+  {
+   "ts": "2026-10-14T17:08:28.833764+00:00",
+   "equity": 481.47,
+   "cash": 481.47,
+   "open": 0,
+   "w": 2986662
+  },
+  {
+   "ts": "2026-10-14T17:14:55.298401+00:00",
+   "equity": 467.85,
+   "cash": 231.47,
+   "open": 1,
+   "w": 2986663
   }
  ],
  "skips": {
-  "age": 121050,
-  "buy pressure": 2174,
-  "quote": 14059,
-  "liquidity": 6122,
+  "age": 121589,
+  "buy pressure": 2196,
+  "quote": 14113,
+  "liquidity": 6149,
   "price change": 609,
   "danger risk": 58,
   "volume": 70,
@@ -19543,5 +19588,5 @@
   "jupiter down": 7,
   "no rugcheck": 4
  },
- "last_run": "2026-10-14T16:59:29.895548+00:00"
+ "last_run": "2026-10-14T17:14:55.298401+00:00"
 }

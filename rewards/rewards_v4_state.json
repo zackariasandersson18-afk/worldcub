@@ -439,21 +439,6 @@
    "rate0": 41.0
   },
   {
-   "cond": "0xeaf463a1a9353009d8d9c50839bcc56afe7a043cacb131fccf908dfa26b10769",
-   "question": "Will Claude Opus 5.6+ debut at an output token price of at least $20 by June 30, 2027?",
-   "yes": "34406909594482333927984047760660551490404909940994768660774601505610237127407",
-   "no": "98077558473488447275699271611467797665706113363730753123459793844095146984580",
-   "rate": 40.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.7,
-   "est_reward_day": 40.0,
-   "end": "2027-07-01T03:59:00Z",
-   "share0": 1.0,
-   "rate0": 40.0
-  },
-  {
    "cond": "0xb795db3fc2806e016825af44b56836def3b5cff806706ed840415b9b26d14bf0",
    "question": "Will the Ornn H200 Index hit $3.75 (LOW) by December 31, 2026?",
    "yes": "26870198385198361507767511159764200017755587304370123217260382243829693130844",
@@ -797,6 +782,21 @@
    "end": "2027-03-15T03:59:00Z",
    "share0": 1.0,
    "rate0": 50.0
+  },
+  {
+   "cond": "0xbf26ed8be72c4f9281a2a1b562f817cf01ec5fc34948f3517e888c200c7a5c40",
+   "question": "Will Julianne Moore be nominated for Best Actress at the 99th Academy Awards?",
+   "yes": "62810278303699948544908514973005604445541664203559143868066954096775709879394",
+   "no": "8670225010165620687529466538247861989581927844018193143985343604575475987770",
+   "rate": 50.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.7,
+   "est_reward_day": 50.0,
+   "end": "2027-03-15T03:59:00Z",
+   "share0": 1.0,
+   "rate0": 50.0
   }
  ],
  "positions": {
@@ -943,7 +943,7 @@
    "cash": 0.0,
    "mid": 0.59,
    "share": 1.0,
-   "reward": 89.37333086804112,
+   "reward": 89.6548349274309,
    "fills": 0,
    "q": "Will the Ornn H100 Index hit $3.50 (HIGH) by December 31, 2026?"
   },
@@ -1018,7 +1018,7 @@
    "cash": 0.040000000000000924,
    "mid": 0.6455,
    "share": 1.0,
-   "reward": 122.81844552234493,
+   "reward": 123.0999495817347,
    "fills": 1,
    "q": "Will the Ornn H200 Index hit $7.00 (HIGH) by December 31, 2026?",
    "closed_at": 0.457
@@ -1026,9 +1026,9 @@
   "0xf7699db92f899f7577f55c0dc9db490d6a17d1eced1c07d3860b4ae80a13b175": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.589,
+   "mid": 0.588,
    "share": 1.0,
-   "reward": 153.47213239457128,
+   "reward": 153.75363645396104,
    "fills": 0,
    "q": "Will the Ornn H200 Index hit $4.00 (LOW) by December 31, 2026?"
   },
@@ -1103,9 +1103,9 @@
   "0x99d9453aca5df03d043bd3eb812eded6dcf8e0e8314a8f87e91fd2fb4fb246ed": {
    "inv": 20.0,
    "cash": -12.100000000000003,
-   "mid": 0.315,
+   "mid": 0.325,
    "share": 1.0,
-   "reward": 88.27149193538214,
+   "reward": 88.55299599477192,
    "fills": 2,
    "q": "Will Claude Opus's output price be at or below $15 in 2026?",
    "closed_at": 0.25
@@ -1124,7 +1124,7 @@
    "cash": -13.900000000000002,
    "mid": 0.56,
    "share": 1.0,
-   "reward": 83.63043071634223,
+   "reward": 83.98231079057946,
    "fills": 2,
    "q": "Will Claude Fable 5.2+ debut at an output token price of at least $50 by June 30",
    "closed_at": 0.53
@@ -1132,9 +1132,9 @@
   "0xeaf463a1a9353009d8d9c50839bcc56afe7a043cacb131fccf908dfa26b10769": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.5900000000000001,
-   "share": 0.6787148594377487,
-   "reward": 101.76056585003042,
+   "mid": 0.585,
+   "share": null,
+   "reward": 101.79351065446471,
    "fills": 0,
    "q": "Will Claude Opus 5.6+ debut at an output token price of at least $20 by June 30,"
   },
@@ -1143,7 +1143,7 @@
    "cash": -0.9500000000000011,
    "mid": 0.535,
    "share": 1.0,
-   "reward": 48.778411904109525,
+   "reward": 49.05991596349931,
    "fills": 1,
    "q": "Will GPT Astra 6.1+ debut at an output token price of at least $50 by June 30, 2",
    "closed_at": 0.51
@@ -1153,7 +1153,7 @@
    "cash": -12.491274999999998,
    "mid": 0.755,
    "share": 0.8880901332660708,
-   "reward": 80.41729276690444,
+   "reward": 80.43640702999444,
    "fills": 2,
    "q": "Will the next Fable model (5.2+) debut with a Humanity's Last Exam score of 55% ",
    "closed_at": 0.67
@@ -1218,7 +1218,7 @@
    "cash": -8.499999999999998,
    "mid": 0.625,
    "share": 1.0,
-   "reward": 60.13571273954551,
+   "reward": 60.38202879151158,
    "fills": 2,
    "q": "Will Morena win the most seats in the 2027 Hidalgo Congress election?",
    "closed_at": 0.76
@@ -1264,7 +1264,7 @@
    "cash": 0.24999999999999822,
    "mid": 0.505,
    "share": 1.0,
-   "reward": 28.64583038332879,
+   "reward": 28.927334442718575,
    "fills": 1,
    "q": "Will Morena win the most seats in the 2027 Chiapas Congress election?",
    "closed_at": 0.53
@@ -1284,7 +1284,7 @@
    "cash": -1.6500000000000004,
    "mid": 0.61,
    "share": 1.0,
-   "reward": 80.20260901866327,
+   "reward": 80.49115067953778,
    "fills": 3,
    "q": "Will Morena win the most seats in the 2027 Nayarit Congress election?",
    "closed_at": 0.53
@@ -1321,7 +1321,7 @@
    "cash": -2.549999999999999,
    "mid": 0.5800000000000001,
    "share": 1.0,
-   "reward": 82.398600221028,
+   "reward": 82.56046505517713,
    "fills": 1,
    "q": "Will Morena win the most seats in the 2027 Guerrero Congress election?",
    "closed_at": 0.52
@@ -1424,7 +1424,7 @@
    "cash": -7.450000000000001,
    "mid": 0.3,
    "share": 0.5399361022364215,
-   "reward": 34.21781610705154,
+   "reward": 34.230519518285455,
    "fills": 1,
    "q": "Will Claude Opus's output price be at or above $25 in 2026?"
   },
@@ -1534,7 +1534,7 @@
    "cash": -3.582250000000001,
    "mid": 0.54,
    "share": 1.0,
-   "reward": 50.01451859650707,
+   "reward": 50.291136870577304,
    "fills": 2,
    "q": "Will GPT Astra's output price be at or below $40 in 2026?",
    "closed_at": 0.55
@@ -1581,7 +1581,7 @@
    "cash": 0.0,
    "mid": 0.365,
    "share": 1.0,
-   "reward": 38.01666899889605,
+   "reward": 38.29817305828583,
    "fills": 0,
    "q": "Will GPT Astra's output price be at or below $30 in 2026?"
   },
@@ -1762,9 +1762,9 @@
   "0x6608cbf75936a7a2b2f7e30a1566207ea156de645c618501384c9552eac96931": {
    "inv": -20.0,
    "cash": 9.05,
-   "mid": 0.525,
+   "mid": 0.545,
    "share": 1.0,
-   "reward": 84.92460845584328,
+   "reward": 85.14277410187039,
    "fills": 1,
    "q": "Will PAN win the most seats in the 2027 Aguascalientes Congress election?"
   },
@@ -1819,7 +1819,7 @@
    "cash": -1.1500000000000004,
    "mid": 0.56,
    "share": 1.0,
-   "reward": 54.04520711804967,
+   "reward": 54.32671117743945,
    "fills": 1,
    "q": "Will Anthropic have a #1 AI model by December 31, 2026?",
    "closed_at": 0.6
@@ -1847,7 +1847,7 @@
    "cash": 0.0,
    "mid": 0.405,
    "share": 1.0,
-   "reward": 48.74127114793715,
+   "reward": 48.91721118505576,
    "fills": 0,
    "q": "Will Morena win the most seats in the 2027 Campeche Congress election?"
   },
@@ -1913,7 +1913,7 @@
    "cash": -1.3000000000000007,
    "mid": 0.55,
    "share": 1.0,
-   "reward": 58.141835481791446,
+   "reward": 58.37407633078802,
    "fills": 2,
    "q": "Will Morena win the most seats in the 2027 Mexico City Congress election?",
    "closed_at": 0.57
@@ -1932,7 +1932,7 @@
    "cash": -2.9499999999999993,
    "mid": 0.515,
    "share": 1.0,
-   "reward": 22.20256207715915,
+   "reward": 22.469990933579446,
    "fills": 1,
    "q": "Will Morena win the most seats in the 2027 Tamaulipas Congress election?",
    "closed_at": 0.69
@@ -1961,7 +1961,7 @@
    "cash": 0.0,
    "mid": 0.43000000000000005,
    "share": 1.0,
-   "reward": 42.1727763722865,
+   "reward": 42.39094201831358,
    "fills": 0,
    "q": "Will Morena win the most seats in the 2027 Sinaloa Congress election?"
   },
@@ -2061,7 +2061,7 @@
    "cash": -8.85,
    "mid": 0.255,
    "share": 1.0,
-   "reward": 52.71383249342261,
+   "reward": 52.81235891420904,
    "fills": 1,
    "q": "Will Chicago Bears finish the 2026-27 NFL regular season with the most rushing y"
   },
@@ -2198,9 +2198,9 @@
   "0xb102377223f7f00494244e94c29993e4210d40d19b7d281ed3bec7e98884a1f6": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.094,
+   "mid": 0.1925,
    "share": 1.0,
-   "reward": 26.592333250200323,
+   "reward": 26.661431186977374,
    "fills": 0,
    "q": "Will PRI win the most seats in the 2027 Guerrero Congress election?"
   },
@@ -2255,7 +2255,7 @@
    "cash": -5.337499999999999,
    "mid": 0.645,
    "share": 1.0,
-   "reward": 48.91528316191032,
+   "reward": 49.27420083763229,
    "fills": 3,
    "q": "Will October be Melbourne's wettest month of 2026?",
    "closed_at": 0.69
@@ -2300,9 +2300,9 @@
   "0xcb123af9c027e132d795f7f044e0f7173336d4957dd845c9edffcdbfa4a987fd": {
    "inv": 0.0,
    "cash": -1.1500000000000004,
-   "mid": 0.665,
+   "mid": 0.6699999999999999,
    "share": 1.0,
-   "reward": 19.481169713081947,
+   "reward": 19.495244916051433,
    "fills": 1,
    "q": "Will Morena win the most seats in the 2027 Morelos Congress election?",
    "closed_at": 0.66
@@ -2519,9 +2519,9 @@
   "0xc7ed127084bb2181e7f2715850ba5fb96d63a52fbc81c20969a36b5565c44379": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.247,
+   "mid": 0.2465,
    "share": 1.0,
-   "reward": 29.236536397333026,
+   "reward": 29.32802521663471,
    "fills": 0,
    "q": "Will PT win the most seats in the 2027 Guerrero Congress election?"
   },
@@ -2567,7 +2567,7 @@
    "cash": 0.0,
    "mid": 0.5,
    "share": 1.0,
-   "reward": 26.61219003202995,
+   "reward": 26.823318076572285,
    "fills": 0,
    "q": "Will PVEM win the most seats in the 2027 San Luis Potos\u00ed Congress election?"
   },
@@ -2666,9 +2666,9 @@
   "0x67149ed116195f771956d2f230434a5ed706eaa6174d5e3e035b345f7d0435ed": {
    "inv": 8.9,
    "cash": -0.7209000000000001,
-   "mid": 0.1465,
+   "mid": 0.2765,
    "share": 1.0,
-   "reward": 19.654342821762263,
+   "reward": 19.692447094660967,
    "fills": 2,
    "q": "Will Anna Leigh Waters win exactly five Triple Crowns in the 2026-27 PPA Tour se"
   },
@@ -2788,7 +2788,7 @@
    "cash": 8.049999999999999,
    "mid": 0.405,
    "share": 1.0,
-   "reward": 20.800533336942497,
+   "reward": 20.87090935178994,
    "fills": 1,
    "q": "Will PAN win the most seats in the 2027 Nuevo Le\u00f3n Congress election?"
   },
@@ -2817,7 +2817,7 @@
    "cash": 0.0,
    "mid": 0.52,
    "share": 1.0,
-   "reward": 44.79134849184175,
+   "reward": 45.07989015271629,
    "fills": 0,
    "q": "Will Meta\u2019s market capitalization be between $1.75T and $2.00T at the end of Nov"
   },
@@ -3241,7 +3241,7 @@
    "cash": 0.0,
    "mid": 0.4925,
    "share": 1.0,
-   "reward": 17.56274205809956,
+   "reward": 17.844246117489345,
    "fills": 0,
    "q": "Will the Ornn H200 Index hit $3.75 (LOW) by December 31, 2026?"
   },
@@ -3259,7 +3259,7 @@
    "cash": -8.085000000000003,
    "mid": 0.275,
    "share": 1.0,
-   "reward": 53.68201544472618,
+   "reward": 53.963519504115965,
    "fills": 4,
    "q": "Will Trump's approval rating hit 40% by June 30, 2027?"
   },
@@ -3278,7 +3278,7 @@
    "cash": -3.150000000000002,
    "mid": 0.745,
    "share": 1.0,
-   "reward": 50.84741806608524,
+   "reward": 51.12892212547502,
    "fills": 1,
    "q": "Will Trump's approval rating hit 36% by June 30, 2027?",
    "closed_at": 0.88
@@ -3288,16 +3288,16 @@
    "cash": 0.0,
    "mid": 0.495,
    "share": 1.0,
-   "reward": 39.40245082206519,
+   "reward": 39.68395488145497,
    "fills": 0,
    "q": "Will Trump's approval rating hit 35% by June 30, 2027?"
   },
   "0xe3ffc6e9666c89d1eb2f77326282447a436ba013704f785416482a9af600536f": {
    "inv": 20.0,
    "cash": -13.55,
-   "mid": 0.32,
+   "mid": 0.35000000000000003,
    "share": 1.0,
-   "reward": 56.34396850388823,
+   "reward": 56.62547256327801,
    "fills": 1,
    "q": "Will Trump's approval rating hit 34% by June 30, 2027?"
   },
@@ -3712,9 +3712,9 @@
   "0xe76d941d5ee1d9110b1068ca298d27c2fb840d653af02a47b723c33fb73bf2d8": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.335,
+   "mid": 0.495,
    "share": 1.0,
-   "reward": 31.210901355853828,
+   "reward": 31.354247076091983,
    "fills": 0,
    "q": "Will \"Elsinore\" be nominated for Best Picture at the 99th Academy Awards?"
   },
@@ -3796,7 +3796,7 @@
    "cash": 0.0,
    "mid": 0.44499999999999995,
    "share": 1.0,
-   "reward": 5.575845659289647,
+   "reward": 5.707487868357588,
    "fills": 0,
    "q": "Will \"007: First Light\" win Ultimate Game of the Year at the 2026 Golden Joystic"
   },
@@ -3814,7 +3814,7 @@
    "cash": 0.0,
    "mid": 0.375,
    "share": 1.0,
-   "reward": 16.744995310726658,
+   "reward": 17.096875384963887,
    "fills": 0,
    "q": "Will LOUD keep their starting five for 2027?"
   },
@@ -3930,9 +3930,9 @@
   "0x6a57f797374375cc63db50ef8bba44c8581c6b5b9ae93110d84bdebadcabac85": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.4,
+   "mid": 0.39,
    "share": 1.0,
-   "reward": 7.25025082574227,
+   "reward": 7.982161380155713,
    "fills": 0,
    "q": "Will no one dissent the December Fed decision?"
   },
@@ -3950,7 +3950,7 @@
    "cash": 0.0,
    "mid": 0.14500000000000002,
    "share": 1.0,
-   "reward": 4.156933446311288,
+   "reward": 4.508813520548519,
    "fills": 0,
    "q": "Will Charles Melton be nominated for Best Supporting Actor at the 99th Academy A"
   },
@@ -3968,7 +3968,7 @@
    "cash": 0.0,
    "mid": 0.135,
    "share": 1.0,
-   "reward": 4.061792472032486,
+   "reward": 4.413672546269717,
    "fills": 0,
    "q": "Will Guy Pearce be nominated for Best Supporting Actor at the 99th Academy Award"
   },
@@ -3977,16 +3977,16 @@
    "cash": 0.0,
    "mid": 0.135,
    "share": 1.0,
-   "reward": 4.122272352515547,
+   "reward": 4.474152426752778,
    "fills": 0,
    "q": "Will Robert De Niro be nominated for Best Supporting Actor at the 99th Academy A"
   },
   "0xa4afdd0a66537792f6ef7a15d1d32481cb10bddf875aaf1293619b798d0afe57": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.53,
+   "mid": 0.33999999999999997,
    "share": 1.0,
-   "reward": 1.701608506341775,
+   "reward": 2.0105692530395807,
    "fills": 0,
    "q": "Will \"The Invite\" be nominated for Best Casting at the 99th Academy Awards?"
   },
@@ -3995,7 +3995,7 @@
    "cash": 0.0,
    "mid": 0.265,
    "share": 1.0,
-   "reward": 1.9140542909778924,
+   "reward": 2.265934365215125,
    "fills": 0,
    "q": "Will Inde Navarrette be nominated for Best Actress at the 99th Academy Awards?"
   },
@@ -4004,7 +4004,7 @@
    "cash": 0.0,
    "mid": 0.505,
    "share": 1.0,
-   "reward": 1.9488589883678482,
+   "reward": 2.3007390626050808,
    "fills": 0,
    "q": "Will Cynthia Erivo be nominated for Best Actress at the 99th Academy Awards?"
   },
@@ -4013,7 +4013,7 @@
    "cash": 0.0,
    "mid": 0.8049999999999999,
    "share": 1.0,
-   "reward": 1.9488589883678482,
+   "reward": 2.3007390626050808,
    "fills": 0,
    "q": "Will Andrew Garfield be nominated for Best Supporting Actor at the 99th Academy "
   },
@@ -4022,7 +4022,7 @@
    "cash": 0.0,
    "mid": 0.26,
    "share": 1.0,
-   "reward": 1.9488589883678482,
+   "reward": 2.3007390626050808,
    "fills": 0,
    "q": "Will Skyler Gisondo be nominated for Best Supporting Actor at the 99th Academy A"
   },
@@ -4031,7 +4031,7 @@
    "cash": 0.0,
    "mid": 0.26,
    "share": 1.0,
-   "reward": 1.9488589883678482,
+   "reward": 2.3007390626050808,
    "fills": 0,
    "q": "Will Michael Fassbender be nominated for Best Supporting Actor at the 99th Acade"
   },
@@ -4040,7 +4040,7 @@
    "cash": 0.0,
    "mid": 0.26,
    "share": 1.0,
-   "reward": 1.9488589883678482,
+   "reward": 2.3007390626050808,
    "fills": 0,
    "q": "Will Adam Scott be nominated for Best Supporting Actor at the 99th Academy Award"
   },
@@ -4049,7 +4049,7 @@
    "cash": 0.0,
    "mid": 0.26,
    "share": 1.0,
-   "reward": 1.9488589883678482,
+   "reward": 2.3007390626050808,
    "fills": 0,
    "q": "Will James Ortiz be nominated for Best Supporting Actor at the 99th Academy Awar"
   },
@@ -4058,9 +4058,18 @@
    "cash": 0.0,
    "mid": 0.26,
    "share": 1.0,
-   "reward": 1.9488589883678482,
+   "reward": 2.3007390626050808,
    "fills": 0,
    "q": "Will Daniel Craig be nominated for Best Supporting Actor at the 99th Academy Awa"
+  },
+  "0xbf26ed8be72c4f9281a2a1b562f817cf01ec5fc34948f3517e888c200c7a5c40": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.675,
+   "share": 1.0,
+   "reward": 0.18528442705670994,
+   "fills": 0,
+   "q": "Will Julianne Moore be nominated for Best Actress at the 99th Academy Awards?"
   }
  },
  "history": [
@@ -11709,17 +11718,30 @@
    "w": 2986655
   },
   {
-   "ts": "2026-10-14T16:06:50.043959+00:00",
-   "dt_h": 0.134,
-   "reward_tick": 10.4598,
-   "reward_total": 5544.69,
-   "mm_value": -170.04,
-   "net": 5374.65,
-   "avg_share": 0.9831,
+   "ts": "2026-10-14T16:09:51.635183+00:00",
+   "dt_h": 0.185,
+   "reward_tick": 14.3079,
+   "reward_total": 5548.54,
+   "mm_value": -169.86,
+   "net": 5378.69,
+   "avg_share": 0.9801,
    "n_markets": 53,
    "fills_total": 128,
    "rebalanced": false,
    "w": 2986656
+  },
+  {
+   "ts": "2026-10-14T16:16:58.092728+00:00",
+   "dt_h": 0.119,
+   "reward_tick": 9.2774,
+   "reward_total": 5557.82,
+   "mm_value": -168.48,
+   "net": 5389.33,
+   "avg_share": 0.9892,
+   "n_markets": 53,
+   "fills_total": 128,
+   "rebalanced": false,
+   "w": 2986657
   }
  ],
  "fills": [
@@ -12876,8 +12898,8 @@
    "ledger": "v4"
   }
  ],
- "reward_total": 5544.693242871377,
- "last_ts": 1791994010.0439594,
+ "reward_total": 5557.818680649129,
+ "last_ts": 1791994618.0927277,
  "chosen_at": 1791639880.921448,
  "rebalances": [
   {
@@ -12888,8 +12910,8 @@
   }
  ],
  "last_tick": {
-  "ts": "2026-10-14T16:06:50.043959+00:00",
-  "dt_h": 0.017,
+  "ts": "2026-10-14T16:16:58.092728+00:00",
+  "dt_h": 0.016,
   "markets": [
    {
     "q": "Will global temperature increase by between 1.35\u00baC",
@@ -12907,9 +12929,9 @@
    },
    {
     "q": "Will PRI win the most seats in the 2027 Guerrero C",
-    "mid": 0.094,
+    "mid": 0.193,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0096,
     "inv": 0.0
    },
    {
@@ -12921,23 +12943,23 @@
    },
    {
     "q": "Will PT win the most seats in the 2027 Guerrero Co",
-    "mid": 0.247,
+    "mid": 0.246,
     "share": 1.0,
     "earned": 0.0089,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index hit $4.00 (LOW) by Decemb",
-    "mid": 0.589,
+    "mid": 0.588,
     "share": 1.0,
     "earned": 0.0275,
     "inv": 0.0
    },
    {
     "q": "Will Anna Leigh Waters win exactly five Triple Cro",
-    "mid": 0.146,
+    "mid": 0.277,
     "share": 1.0,
-    "earned": 0.0041,
+    "earned": 0.0,
     "inv": 8.9
    },
    {
@@ -12956,7 +12978,7 @@
    },
    {
     "q": "Will Trump's approval rating hit 34% by June 30, 2",
-    "mid": 0.32,
+    "mid": 0.35,
     "share": 1.0,
     "earned": 0.0275,
     "inv": 20.0
@@ -12970,7 +12992,7 @@
    },
    {
     "q": "Will PAN win the most seats in the 2027 Aguascalie",
-    "mid": 0.525,
+    "mid": 0.545,
     "share": 1.0,
     "earned": 0.0213,
     "inv": -20.0
@@ -13007,12 +13029,12 @@
     "q": "Will Claude Fable 5.2+ debut at an output token pr",
     "mid": 0.56,
     "share": 1.0,
-    "earned": 0.0344,
+    "earned": 0.0343,
     "inv": 20.0
    },
    {
     "q": "Will Claude Opus's output price be at or below $15",
-    "mid": 0.315,
+    "mid": 0.325,
     "share": 1.0,
     "earned": 0.0275,
     "inv": 20.0
@@ -13035,14 +13057,14 @@
     "q": "Will PVEM win the most seats in the 2027 San Luis ",
     "mid": 0.5,
     "share": 1.0,
-    "earned": 0.0207,
+    "earned": 0.0206,
     "inv": 0.0
    },
    {
     "q": "Will \"Elsinore\" be nominated for Best Picture at t",
-    "mid": 0.335,
+    "mid": 0.495,
     "share": 1.0,
-    "earned": 0.0344,
+    "earned": 0.0,
     "inv": 0.0
    },
    {
@@ -13056,7 +13078,7 @@
     "q": "Will \"007: First Light\" win Ultimate Game of the Y",
     "mid": 0.445,
     "share": 1.0,
-    "earned": 0.0186,
+    "earned": 0.0185,
     "inv": 0.0
    },
    {
@@ -13070,14 +13092,14 @@
     "q": "Will LOUD keep their starting five for 2027?",
     "mid": 0.375,
     "share": 1.0,
-    "earned": 0.0344,
+    "earned": 0.0343,
     "inv": 0.0
    },
    {
     "q": "Will October be Melbourne's wettest month of 2026?",
     "mid": 0.645,
     "share": 1.0,
-    "earned": 0.0351,
+    "earned": 0.035,
     "inv": 5.0
    },
    {
@@ -13091,14 +13113,7 @@
     "q": "Will Morena win the most seats in the 2027 Tamauli",
     "mid": 0.515,
     "share": 1.0,
-    "earned": 0.0262,
-    "inv": 0.0
-   },
-   {
-    "q": "Will Claude Opus 5.6+ debut at an output token pri",
-    "mid": 0.59,
-    "share": 0.6787,
-    "earned": 0.0109,
+    "earned": 0.0261,
     "inv": 0.0
    },
    {
@@ -13117,7 +13132,7 @@
    },
    {
     "q": "Will Morena win the most seats in the 2027 Morelos",
-    "mid": 0.665,
+    "mid": 0.67,
     "share": 1.0,
     "earned": 0.0014,
     "inv": 0.0
@@ -13126,7 +13141,7 @@
     "q": "Will Morena win the most seats in the 2027 Hidalgo",
     "mid": 0.625,
     "share": 1.0,
-    "earned": 0.0241,
+    "earned": 0.024,
     "inv": 0.0
    },
    {
@@ -13173,101 +13188,108 @@
    },
    {
     "q": "Will no one dissent the December Fed decision?",
-    "mid": 0.4,
+    "mid": 0.39,
     "share": 1.0,
-    "earned": 0.0716,
+    "earned": 0.0714,
     "inv": 0.0
    },
    {
     "q": "Will Charles Melton be nominated for Best Supporti",
     "mid": 0.145,
     "share": 1.0,
-    "earned": 0.0344,
+    "earned": 0.0343,
     "inv": 0.0
    },
    {
     "q": "Will Guy Pearce be nominated for Best Supporting A",
     "mid": 0.135,
     "share": 1.0,
-    "earned": 0.0344,
+    "earned": 0.0343,
     "inv": 0.0
    },
    {
     "q": "Will Robert De Niro be nominated for Best Supporti",
     "mid": 0.135,
     "share": 1.0,
-    "earned": 0.0344,
+    "earned": 0.0343,
     "inv": 0.0
    },
    {
     "q": "Will \"The Invite\" be nominated for Best Casting at",
-    "mid": 0.53,
+    "mid": 0.34,
     "share": 1.0,
-    "earned": 0.0344,
+    "earned": 0.0343,
     "inv": 0.0
    },
    {
     "q": "Will Inde Navarrette be nominated for Best Actress",
     "mid": 0.265,
     "share": 1.0,
-    "earned": 0.0344,
+    "earned": 0.0343,
     "inv": 0.0
    },
    {
     "q": "Will Cynthia Erivo be nominated for Best Actress a",
     "mid": 0.505,
     "share": 1.0,
-    "earned": 0.0344,
+    "earned": 0.0343,
     "inv": 0.0
    },
    {
     "q": "Will Andrew Garfield be nominated for Best Support",
     "mid": 0.805,
     "share": 1.0,
-    "earned": 0.0344,
+    "earned": 0.0343,
     "inv": 0.0
    },
    {
     "q": "Will Skyler Gisondo be nominated for Best Supporti",
     "mid": 0.26,
     "share": 1.0,
-    "earned": 0.0344,
+    "earned": 0.0343,
     "inv": 0.0
    },
    {
     "q": "Will Michael Fassbender be nominated for Best Supp",
     "mid": 0.26,
     "share": 1.0,
-    "earned": 0.0344,
+    "earned": 0.0343,
     "inv": 0.0
    },
    {
     "q": "Will Adam Scott be nominated for Best Supporting A",
     "mid": 0.26,
     "share": 1.0,
-    "earned": 0.0344,
+    "earned": 0.0343,
     "inv": 0.0
    },
    {
     "q": "Will James Ortiz be nominated for Best Supporting ",
     "mid": 0.26,
     "share": 1.0,
-    "earned": 0.0344,
+    "earned": 0.0343,
     "inv": 0.0
    },
    {
     "q": "Will Daniel Craig be nominated for Best Supporting",
     "mid": 0.26,
     "share": 1.0,
-    "earned": 0.0344,
+    "earned": 0.0343,
+    "inv": 0.0
+   },
+   {
+    "q": "Will Julianne Moore be nominated for Best Actress ",
+    "mid": 0.675,
+    "share": 1.0,
+    "earned": 0.0343,
     "inv": 0.0
    }
   ],
-  "reward_tick": 1.2978,
-  "reward_total": 5544.69,
-  "mm_value": -170.04,
-  "net": 5374.65,
-  "avg_share": 0.9831,
+  "reward_tick": 1.2895,
+  "reward_total": 5557.82,
+  "mm_value": -168.48,
+  "net": 5389.33,
+  "avg_share": 0.9892,
   "n_markets": 53,
   "fills_total": 128,
   "rebalanced": false
@@ -15366,7 +15388,17 @@
     "Will James Ortiz be nominated for Best Supporting ",
     "Will Daniel Craig be nominated for Best Supporting"
    ]
+  },
+  {
+   "ts": "2026-10-14T16:10:52.658709+00:00",
+   "swapped": 1,
+   "out": [
+    "Will Claude Opus 5.6+ debut at an output token pri"
+   ],
+   "in": [
+    "Will Julianne Moore be nominated for Best Actress "
+   ]
   }
  ],
- "reviewed_at": 1791990642.4156275
+ "reviewed_at": 1791994252.6587088
 }

@@ -4,7 +4,7 @@
  "book": "B",
  "name": "B: likviditetsflykt",
  "start_kr": 5000.0,
- "cash": 759.0855326391245,
+ "cash": 509.0855326391245,
  "open": [
   {
    "pool": "8KUSA63myw4NQjQQojk41YdEE5FgrgPPNxaoYuDSPYU2",
@@ -17,7 +17,7 @@
    "stake": 250.0,
    "stake_left": 250.0,
    "peak": 0.0004498,
-   "last": 0.0002654,
+   "last": 0.0002825,
    "half_sold": false,
    "tranches": 0,
    "realised": 0.0,
@@ -2918,6 +2918,34 @@
     [
      1791939341,
      0.0002654
+    ],
+    [
+     1791939404,
+     0.0002894
+    ],
+    [
+     1791939462,
+     0.0002942
+    ],
+    [
+     1791939521,
+     0.0002896
+    ],
+    [
+     1791939811,
+     0.000284
+    ],
+    [
+     1791939822,
+     0.000284
+    ],
+    [
+     1791939880,
+     0.0002879
+    ],
+    [
+     1791939946,
+     0.0002825
     ]
    ],
    "tokens": 88762559136,
@@ -2927,11 +2955,11 @@
    "entry_cost": 0.0407,
    "fills": "jupiter",
    "missing": 0,
-   "liq_now": 44371.26,
-   "quote_kr": 253.7234,
-   "quote_px": 0.0002654,
-   "exit_impact": 0.011054045077051648,
-   "quote_ts": "2026-10-14T00:55:41.299741+00:00",
+   "liq_now": 45805.5,
+   "quote_kr": 241.4423,
+   "quote_px": 0.0002825,
+   "exit_impact": 0.023883640620619904,
+   "quote_ts": "2026-10-14T01:05:46.927990+00:00",
    "nosell": 0
   },
   {
@@ -2945,7 +2973,7 @@
    "stake": 250.0,
    "stake_left": 125.0,
    "peak": 0.0002988,
-   "last": 0.0001929,
+   "last": 0.0001769,
    "half_sold": true,
    "tranches": 1,
    "realised": 319.6616697,
@@ -3274,6 +3302,34 @@
     [
      1791939341,
      0.0001929
+    ],
+    [
+     1791939404,
+     0.0001958
+    ],
+    [
+     1791939462,
+     0.000185
+    ],
+    [
+     1791939521,
+     0.0001972
+    ],
+    [
+     1791939811,
+     0.0001709
+    ],
+    [
+     1791939822,
+     0.0001731
+    ],
+    [
+     1791939880,
+     0.0001842
+    ],
+    [
+     1791939946,
+     0.0001769
     ]
    ],
    "tokens": 311265243801,
@@ -3283,10 +3339,10 @@
    "entry_cost": -0.0232,
    "fills": "jupiter",
    "missing": 0,
-   "liq_now": 38731.79,
-   "quote_px": 0.0001929,
-   "exit_impact": 0.02287406156594552,
-   "quote_ts": "2026-10-14T00:55:41.299741+00:00",
+   "liq_now": 36807.23,
+   "quote_px": 0.0001769,
+   "exit_impact": 0.003934954040801439,
+   "quote_ts": "2026-10-14T01:05:46.927990+00:00",
    "nosell": 0,
    "events": [
     {
@@ -3296,7 +3352,55 @@
      "impact": 0.0014111078645893333
     }
    ],
-   "quote_kr": 287.6801
+   "quote_kr": 260.3221
+  },
+  {
+   "pool": "2BB9sHQztfcj9rpx3U4GDpZ6YQfddL8Q83WoD7NQCRed",
+   "mint": "E5468CXrwDaiU1pyf5pQ3cYECZhMJQQQZixsyRMXpump",
+   "name": "Stryker / SOL",
+   "opened": "2026-10-14T01:03:31.436459+00:00",
+   "opened_ts": 1791939811.436459,
+   "entry": 0.0001658766844904272,
+   "entry_seen": 0.0001616274520749737,
+   "stake": 250.0,
+   "stake_left": 250.0,
+   "peak": 0.0001638,
+   "last": 0.0001626,
+   "half_sold": false,
+   "tranches": 0,
+   "realised": 0.0,
+   "liq_at_entry": 34443.6858,
+   "trail": [
+    [
+     1791939811,
+     0.000161627
+    ],
+    [
+     1791939822,
+     0.0001638
+    ],
+    [
+     1791939880,
+     0.0001607
+    ],
+    [
+     1791939946,
+     0.0001626
+    ]
+   ],
+   "tokens": 150714369996,
+   "tokens_left": 150714369996,
+   "decimals": 6,
+   "entry_impact": 0.02320993909230368,
+   "entry_cost": 0.0263,
+   "fills": "jupiter",
+   "missing": 0,
+   "liq_now": 34354.79,
+   "quote_kr": 246.7843,
+   "quote_px": 0.0001626,
+   "exit_impact": 0.01615968220625637,
+   "quote_ts": "2026-10-14T01:05:46.927990+00:00",
+   "nosell": 0
   }
  ],
  "closed": [
@@ -17715,6 +17819,7 @@
   "9qj1HN5n227FeRnHiiHoyGjzDZqcGh3mCdFahywzpump",
   "49rD7gKncuc1GN1KCxLXyTvjNDRJrD8C6V3iUUwyoYvs",
   "EJe4FMVNLjWLXjbe1juyJG2gghGpSD5Z8fjQi7Xrpump",
+  "E5468CXrwDaiU1pyf5pQ3cYECZhMJQQQZixsyRMXpump",
   "9bYFFJriAXa8zDe8kmayXb8aFt6Hyc1ELVViwXWLorqH",
   "EGp2qiFw13vACn2DyZzZUT48dLiAdHL91pci9bAGgYjw",
   "9FFnRxtLTFndvH1qVUgV1rjmhmPck5MH7pi4Gzh9whqC",
@@ -17735,6 +17840,7 @@
   "ASEE4uqr7nFTX7wFPdDXV2NF9thPspnmGBe7bZPFovrs",
   "DN556vbGZZYCqUmFcKGVbMVTPopo3ZbSWqdRk4SLpump",
   "CQCDTp8rsFV3PhaPeYjcCW5LdGTxi6jFx7eC3UXnpump",
+  "CLrFZt7o6bE3xFXkYQHVkQBoRZXidZ82xAixUnfoogym",
   "7qb9SHKCD6rFEso3xHWjARbrLgxg6MZF6wZZMAGqpump",
   "5v44XTW2jCQ2oM4bnxx5mo1cZPCESNQWK4BMsVBwdpad",
   "CMvp8gwSwincGntbzEWs16f9Hi3EKU3RZfSAXqPaTZSD",
@@ -20027,25 +20133,32 @@
    "w": 2986564
   },
   {
-   "ts": "2026-10-14T00:55:41.299741+00:00",
-   "equity": 1300.49,
+   "ts": "2026-10-14T00:58:41.669346+00:00",
+   "equity": 1315.5,
    "cash": 759.09,
    "open": 2,
    "w": 2986565
+  },
+  {
+   "ts": "2026-10-14T01:05:46.927990+00:00",
+   "equity": 1257.63,
+   "cash": 509.09,
+   "open": 3,
+   "w": 2986566
   }
  ],
  "skips": {
-  "age": 121260,
-  "buy pressure": 2177,
-  "quote": 14110,
+  "age": 121652,
+  "buy pressure": 2189,
+  "quote": 14147,
   "liquidity": 6411,
-  "price change": 614,
+  "price change": 618,
   "danger risk": 57,
   "volume": 77,
-  "lp not locked": 2,
+  "lp not locked": 3,
   "jupiter down": 7,
   "no rugcheck": 4,
   "concentrated holders": 1
  },
- "last_run": "2026-10-14T00:55:41.299741+00:00"
+ "last_run": "2026-10-14T01:05:46.927990+00:00"
 }

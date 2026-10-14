@@ -2,8 +2,61 @@
  "started": "2026-10-11T15:45:16.964945+00:00",
  "trial": 66,
  "start_kr": 5000.0,
- "cash": 302.8908275964708,
- "open": [],
+ "cash": 52.890827596470785,
+ "open": [
+  {
+   "pool": "EmriynNEtBVhhMfNr9FVKwmYXY7kGKpmvXKNjAMaW2cc",
+   "mint": "5ZxkhR5QzsBYRCEg7WS15559qxCyLSBmD5LBBHAypump",
+   "name": "Polarpine / SOL",
+   "opened": "2026-10-14T14:09:06.028455+00:00",
+   "opened_ts": 1791986946.0284553,
+   "entry": 0.0001103886774511432,
+   "entry_seen": 0.00011060075778810068,
+   "stake": 250.0,
+   "stake_left": 250.0,
+   "peak": 0.0001128,
+   "last": 0.0001127,
+   "half_sold": false,
+   "tranches": 0,
+   "realised": 0.0,
+   "liq_at_entry": 26443.9639,
+   "trail": [
+    [
+     1791986946,
+     0.000110601
+    ],
+    [
+     1791986965,
+     0.0001044
+    ],
+    [
+     1791987017,
+     0.0001084
+    ],
+    [
+     1791987076,
+     0.0001128
+    ],
+    [
+     1791987137,
+     0.0001127
+    ]
+   ],
+   "tokens": 226472502228,
+   "tokens_left": 226472502228,
+   "decimals": 6,
+   "entry_impact": 0.014878583229251327,
+   "entry_cost": -0.0019,
+   "fills": "jupiter",
+   "missing": 0,
+   "liq_now": 28724.08,
+   "quote_kr": 212.796,
+   "quote_px": 0.0001127,
+   "exit_impact": 0.028178923736380247,
+   "quote_ts": "2026-10-14T14:12:17.733264+00:00",
+   "nosell": 0
+  }
+ ],
  "closed": [
   {
    "pool": "H68Z3uxoJjezyqt5uSvEAeq6JftMWKz6RKXaw2S2pRBa",
@@ -19520,8 +19573,8 @@
  ],
  "seen": [
   "4oYPKkNWL5qKWGMvKHqQMRsTfL4UMcGi4TgSadD8qA9i",
-  "9qj1HN5n227FeRnHiiHoyGjzDZqcGh3mCdFahywzpump",
   "BXuuLQQsHsAjweVvTXHAgJSnTj9MLKpiK5cLP7c3wLxB",
+  "9qj1HN5n227FeRnHiiHoyGjzDZqcGh3mCdFahywzpump",
   "HyAFqotQ89hQymtX3T1SYUp2C9yo7Vbf6WUfvbpBpump",
   "EH4cP8K1qDYZZH5ezVJFCnTQmsXXPjhF6Tbx8w6Kpump",
   "HiKvLcxPVY3C1f1mBHwR39y1Pw9XHoT25jTdpHaYqgh2",
@@ -19635,6 +19688,7 @@
   "AqUPRnyFCRuMqKYgY5Tf64CFshFecuaGSGXx4cqqpump",
   "EZ7RFLpHv14NK8b6wQuRefLvspYTy1TFpj5756TKpump",
   "JAoeqyd4vjQtoQhZBqmDyTfVzLjQCUt4ddLZwDgwxykf",
+  "5ZxkhR5QzsBYRCEg7WS15559qxCyLSBmD5LBBHAypump",
   "jq4yKhqGNzWCQhgQYB89CDEYQYjLHGcvDy9WNJHpump",
   "VTtPk5KG2FrHYXUwv7YvmRjxk66tuSutxvptFZAJAGP",
   "91kanuh1MEsHy1JYRmrePidpzNfkohv3Xc5uQCfQLFzv",
@@ -22609,19 +22663,26 @@
    "w": 2986643
   },
   {
-   "ts": "2026-10-14T14:02:00.570969+00:00",
-   "equity": 302.89,
-   "cash": 302.89,
-   "open": 0,
+   "ts": "2026-10-14T14:09:25.492213+00:00",
+   "equity": 301.26,
+   "cash": 52.89,
+   "open": 1,
    "w": 2986644
+  },
+  {
+   "ts": "2026-10-14T14:12:17.733264+00:00",
+   "equity": 265.69,
+   "cash": 52.89,
+   "open": 1,
+   "w": 2986645
   }
  ],
  "skips": {
-  "age": 150008,
-  "buy pressure": 2711,
-  "quote": 17466,
+  "age": 150112,
+  "buy pressure": 2716,
+  "quote": 17472,
   "liquidity": 7866,
-  "price change": 718,
+  "price change": 720,
   "volume": 96,
   "danger risk": 64,
   "lp not locked": 3,
@@ -22629,5 +22690,5 @@
   "no rugcheck": 4,
   "concentrated holders": 1
  },
- "last_run": "2026-10-14T14:02:00.570969+00:00"
+ "last_run": "2026-10-14T14:12:17.733264+00:00"
 }

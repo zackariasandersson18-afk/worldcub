@@ -1,25 +1,6 @@
 {
- "cash": 148.09430000000043,
+ "cash": 156.82940000000042,
  "open": [
-  {
-   "event_id": "1175269",
-   "slug": "highest-temperature-in-lucknow-on-october-14-2026",
-   "city": "Lucknow",
-   "date": "2026-10-14",
-   "station": "VILK",
-   "bucket": "31\u00b0C",
-   "side": "NO",
-   "token": "53471233260249155263493802181608296657527622240581440394086047947105426274283",
-   "price": 0.81,
-   "cost": 0.8277,
-   "prob": 0.8981,
-   "edge": 0.0704,
-   "shares": 8.7351,
-   "stake_usd": 7.23,
-   "mu": 33.01,
-   "sigma": 1.37,
-   "opened": "2026-10-14T00:31:21.335268+00:00"
-  },
   {
    "event_id": "1175303",
    "slug": "highest-temperature-in-karachi-on-october-14-2026",
@@ -18183,68 +18164,31 @@
    "won": true,
    "pnl_usd": 2.839,
    "settled": "2026-10-14T19:31:19.671459+00:00"
+  },
+  {
+   "event_id": "1175269",
+   "slug": "highest-temperature-in-lucknow-on-october-14-2026",
+   "city": "Lucknow",
+   "date": "2026-10-14",
+   "station": "VILK",
+   "bucket": "31\u00b0C",
+   "side": "NO",
+   "token": "53471233260249155263493802181608296657527622240581440394086047947105426274283",
+   "price": 0.81,
+   "cost": 0.8277,
+   "prob": 0.8981,
+   "edge": 0.0704,
+   "shares": 8.7351,
+   "stake_usd": 7.23,
+   "mu": 33.01,
+   "sigma": 1.37,
+   "opened": "2026-10-14T00:31:21.335268+00:00",
+   "won": true,
+   "pnl_usd": 1.5051,
+   "settled": "2026-10-14T20:31:16.921396+00:00"
   }
  ],
  "forecast_log": {
-  "1175269": {
-   "date": "2026-10-14",
-   "mu_raw": 32.36666666666667,
-   "unit": "C",
-   "city": "Lucknow",
-   "spread": 2.8000000000000007,
-   "labels": [
-    "27\u00b0C or below",
-    "28\u00b0C",
-    "29\u00b0C",
-    "30\u00b0C",
-    "31\u00b0C",
-    "32\u00b0C",
-    "33\u00b0C",
-    "34\u00b0C",
-    "35\u00b0C",
-    "36\u00b0C",
-    "37\u00b0C or higher"
-   ],
-   "probs": [
-    0.0,
-    0.0005,
-    0.0047,
-    0.0282,
-    0.1019,
-    0.2203,
-    0.2854,
-    0.2217,
-    0.1032,
-    0.0288,
-    0.0053
-   ],
-   "market": [
-    null,
-    null,
-    0.0015,
-    0.004,
-    0.245,
-    0.405,
-    0.335,
-    0.0125,
-    0.01,
-    null,
-    null
-   ],
-   "gfs": [
-    0.05,
-    0.05,
-    0.05,
-    0.05,
-    0.2903,
-    0.5484,
-    0.1613,
-    0.05,
-    0.05,
-    0.05,
-    0.05
-   ]
-  },
   "1175303": {
    "date": "2026-10-14",
    "mu_raw": 35.166666666666664,
@@ -23245,28 +23189,53 @@
    "equity": 332.03,
    "cash": 148.09,
    "open": 41
+  },
+  {
+   "ts": "2026-10-14T20:31:16.921396+00:00",
+   "equity": 333.54,
+   "cash": 156.83,
+   "open": 40
   }
  ],
  "last_run": {
-  "ts": "2026-10-14T20:01:36.506575+00:00",
-  "settled": [],
+  "ts": "2026-10-14T20:31:16.921396+00:00",
+  "settled": [
+   {
+    "event_id": "1175269",
+    "slug": "highest-temperature-in-lucknow-on-october-14-2026",
+    "city": "Lucknow",
+    "date": "2026-10-14",
+    "station": "VILK",
+    "bucket": "31\u00b0C",
+    "side": "NO",
+    "token": "53471233260249155263493802181608296657527622240581440394086047947105426274283",
+    "price": 0.81,
+    "cost": 0.8277,
+    "prob": 0.8981,
+    "edge": 0.0704,
+    "shares": 8.7351,
+    "stake_usd": 7.23,
+    "mu": 33.01,
+    "sigma": 1.37,
+    "opened": "2026-10-14T00:31:21.335268+00:00",
+    "won": true,
+    "pnl_usd": 1.5051,
+    "settled": "2026-10-14T20:31:16.921396+00:00"
+   }
+  ],
   "opened": [],
   "logged": 0,
-  "skipped": {
-   "Milan": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=45.6306&longitude=8.7281&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=celsius",
-   "Shanghai": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=31.1434&longitude=121.8052&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=celsius",
-   "Miami": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=25.7959&longitude=-80.287&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=fahrenheit"
-  }
+  "skipped": {}
  },
  "mode": "trading",
  "gates_ignored": true,
  "score": {
-  "n": 3109,
-  "model": 1045.255340440598,
-  "market": 856.1840424189265,
-  "events": 441,
-  "gfs": 1402.883596051023,
-  "n_gfs": 3077,
-  "market_gfs": 846.5352517115814
+  "n": 3116,
+  "model": 1047.2584058904908,
+  "market": 858.1060368348375,
+  "events": 442,
+  "gfs": 1406.0511299025818,
+  "n_gfs": 3084,
+  "market_gfs": 848.4572461274923
  }
 }

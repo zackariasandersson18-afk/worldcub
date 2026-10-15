@@ -45,12 +45,19 @@ def enabled() -> bool:
     return env('REAL_TRADING').lower() == 'on' and bool(env('POLY_PRIVATE_KEY')) and bool(env('POLY_FUNDER'))
 
 
+def _num(name: str, default: float) -> float:
+    try:
+        return float(env(name) or default)
+    except ValueError:                                  # a mistyped variable falls back to the safe default
+        return default
+
+
 def capital() -> float:
-    return float(env('REAL_CAPITAL', '50') or 50)
+    return _num('REAL_CAPITAL', 50.0)
 
 
 def loss_limit() -> float:
-    return float(env('REAL_LOSS_LIMIT', '10') or 10)
+    return _num('REAL_LOSS_LIMIT', 10.0)
 
 
 def client():

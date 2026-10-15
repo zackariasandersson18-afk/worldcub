@@ -23,7 +23,10 @@ from rewardbot import backtest as bt
 
 FILE = 'real_plan.json'
 EVERY_S = 600
-CAPITAL = float(os.environ.get('REAL_CAPITAL', '50'))
+try:                                                   # GitHub passes an unset variable as '' - never crash the loop on it
+    CAPITAL = float((os.environ.get('REAL_CAPITAL') or '').strip() or 50)
+except ValueError:
+    CAPITAL = 50.0
 BAND = (0.10, 0.90)
 
 

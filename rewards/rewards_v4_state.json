@@ -244,21 +244,6 @@
    "rate0": 38.0
   },
   {
-   "cond": "0x410358cd0241456e97a0bc16e1abbfa57a76c61bdc816dd658b9e6e3fb15f37e",
-   "question": "Will PVEM win the most seats in the 2027 San Luis Potos\u00ed Congress election?",
-   "yes": "87211283740166387717457414767427863350787448471052806400338252496918404938631",
-   "no": "63157836720611285247166518257241685141665490696382565710609583956072369097355",
-   "rate": 2.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.700000000000003,
-   "est_reward_day": 30.0,
-   "end": "2027-06-07T03:59:00Z",
-   "share0": 1.0,
-   "rate0": 30.0
-  },
-  {
    "cond": "0xe92733fce79be68129f37108af68c3ad6308a39091ada9465c2b8cc34d26a2c9",
    "question": "Will \"007: First Light\" win Ultimate Game of the Year at the 2026 Golden Joystick Awards?",
    "yes": "11935515846489112278964352653664293487969725065001066955131366082569933767726",
@@ -649,21 +634,6 @@
    "rate0": 27.0
   },
   {
-   "cond": "0x76b935732340457f31c89e5ad50f2ad823fea79ebc8ed3e4ba7a1ca07af9a42f",
-   "question": "Will Alphabet\u2019s market capitalization be between $4.50T and $5.00T at the end of 2026?",
-   "yes": "83777723126644357400212605918157128561921767937501707230379500571460801927182",
-   "no": "57081494460739127762169279580723466398134151267799150817188669865270990051407",
-   "rate": 24.0,
-   "v": 5.5,
-   "min_size": 20.0,
-   "d": 0.0275,
-   "collateral": 18.9,
-   "est_reward_day": 26.0,
-   "end": "2026-12-31T23:59:00Z",
-   "share0": 1.0,
-   "rate0": 26.0
-  },
-  {
    "cond": "0x5d15579a3a31d6220eb8d33d167788db82976f14c856768a5e37e51afdaeb279",
    "question": "Will Denver Broncos finish the 2026-27 NFL regular season with the most special teams and defensive touchdowns?",
    "yes": "79254903698101882853088650583094504161545213861726088625093614097657759795749",
@@ -797,6 +767,36 @@
    "end": "2027-03-14T23:59:00Z",
    "share0": 1.0,
    "rate0": 26.0
+  },
+  {
+   "cond": "0x13e6a1ea5372748fdcc529a5aae76b513734ed039bfed04a4e9331a77d5f0bb5",
+   "question": "Will Morena win the most seats in the 2027 Quintana Roo Congress election?",
+   "yes": "45499397517158427712311914312059281722933648760724888742447299265757913627811",
+   "no": "4596752627424853856775515416342514550775564420145371490175848586885790237362",
+   "rate": 45.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.7,
+   "est_reward_day": 45.0,
+   "end": "2027-06-07T03:59:00Z",
+   "share0": 1.0,
+   "rate0": 45.0
+  },
+  {
+   "cond": "0x2e1d12640524b792ae728c785e79a31144f5242e43fba6ace0452e6aff55f67f",
+   "question": "Will GPT Sol's output price be at or below $5 in 2026?",
+   "yes": "18663565033535942752306682284117058560944023539034231449027149786835819930906",
+   "no": "101571239544049675601286852385546626999371505655196926283291634682257183686962",
+   "rate": 40.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.7,
+   "est_reward_day": 40.0,
+   "end": "2027-01-01T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 40.0
   }
  ],
  "positions": {
@@ -941,9 +941,9 @@
   "0xf3d7426f3f7f4f054d4ae90f1ccead6789452049199051d018270c7ddf4081b8": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.365,
+   "mid": 0.38,
    "share": 1.0,
-   "reward": 110.84059444100772,
+   "reward": 111.13316223012079,
    "fills": 0,
    "q": "Will the Ornn H100 Index hit $3.50 (HIGH) by December 31, 2026?"
   },
@@ -981,25 +981,25 @@
    "cash": 0.0,
    "mid": 0.315,
    "share": 1.0,
-   "reward": 86.40136588180212,
+   "reward": 86.69393367091519,
    "fills": 0,
    "q": "Will GPT Astra's output price be at or above $60 in 2026?"
   },
   "0x43462bdf6104c5784a50813938d7fd945bbcd8ed3f4d41c9fd4c36434ca49f92": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.305,
+   "mid": 0.31,
    "share": 1.0,
-   "reward": 81.49805193647035,
+   "reward": 81.73481955797426,
    "fills": 0,
    "q": "Will GPT Sol's output price be at or above $15 in 2026?"
   },
   "0x2e1d12640524b792ae728c785e79a31144f5242e43fba6ace0452e6aff55f67f": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.26,
-   "share": null,
-   "reward": 33.217370569091415,
+   "mid": 0.3,
+   "share": 1.0,
+   "reward": 33.32648055204996,
    "fills": 0,
    "q": "Will GPT Sol's output price be at or below $5 in 2026?"
   },
@@ -1026,18 +1026,18 @@
   "0xf7699db92f899f7577f55c0dc9db490d6a17d1eced1c07d3860b4ae80a13b175": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.457,
+   "mid": 0.4565,
    "share": 1.0,
-   "reward": 175.10008191143314,
+   "reward": 175.3926497005462,
    "fills": 0,
    "q": "Will the Ornn H200 Index hit $4.00 (LOW) by December 31, 2026?"
   },
   "0xa5642e1ff4a1eab7a1752b3176bf8301ddeb6baee3c85f615e810d1b7eeedb00": {
    "inv": 0.0,
    "cash": 0.46499999999999897,
-   "mid": 0.617,
+   "mid": 0.5980000000000001,
    "share": 1.0,
-   "reward": 61.398045144943495,
+   "reward": 61.41998772912698,
    "fills": 3,
    "q": "Will the Ornn B200 Index hit $5.50 (LOW) by December 31, 2026?",
    "closed_at": 0.466
@@ -1085,7 +1085,7 @@
    "cash": -4.75,
    "mid": 0.5,
    "share": 1.0,
-   "reward": 119.66199743999638,
+   "reward": 119.95456522910945,
    "fills": 1,
    "q": "Will Anthropic's frontier output token price be at or above $50 in 2026?",
    "closed_at": 0.63
@@ -1103,9 +1103,9 @@
   "0x99d9453aca5df03d043bd3eb812eded6dcf8e0e8314a8f87e91fd2fb4fb246ed": {
    "inv": 20.0,
    "cash": -12.100000000000003,
-   "mid": 0.335,
+   "mid": 0.355,
    "share": 1.0,
-   "reward": 108.74542347024644,
+   "reward": 109.0379912593595,
    "fills": 2,
    "q": "Will Claude Opus's output price be at or below $15 in 2026?",
    "closed_at": 0.25
@@ -1124,7 +1124,7 @@
    "cash": -13.900000000000002,
    "mid": 0.72,
    "share": 1.0,
-   "reward": 96.65047084105227,
+   "reward": 96.76881259068286,
    "fills": 2,
    "q": "Will Claude Fable 5.2+ debut at an output token price of at least $50 by June 30",
    "closed_at": 0.53
@@ -1272,9 +1272,9 @@
   "0x13e6a1ea5372748fdcc529a5aae76b513734ed039bfed04a4e9331a77d5f0bb5": {
    "inv": 0.0,
    "cash": -0.05000000000000071,
-   "mid": 0.665,
-   "share": null,
-   "reward": 65.85549900432972,
+   "mid": 0.76,
+   "share": 1.0,
+   "reward": 65.97824773515808,
    "fills": 1,
    "q": "Will Morena win the most seats in the 2027 Quintana Roo Congress election?",
    "closed_at": 0.65
@@ -1321,7 +1321,7 @@
    "cash": -2.549999999999999,
    "mid": 0.69,
    "share": 1.0,
-   "reward": 95.76403194279753,
+   "reward": 95.96151520044886,
    "fills": 1,
    "q": "Will Morena win the most seats in the 2027 Guerrero Congress election?",
    "closed_at": 0.52
@@ -1535,7 +1535,7 @@
    "cash": -14.43225,
    "mid": 0.355,
    "share": 1.0,
-   "reward": 65.82619377634774,
+   "reward": 66.1187615654608,
    "fills": 3,
    "q": "Will GPT Astra's output price be at or below $40 in 2026?",
    "closed_at": 0.55
@@ -1763,9 +1763,9 @@
   "0x6608cbf75936a7a2b2f7e30a1566207ea156de645c618501384c9552eac96931": {
    "inv": -20.0,
    "cash": 9.05,
-   "mid": 0.525,
+   "mid": 0.5549999999999999,
    "share": 1.0,
-   "reward": 100.30325131948287,
+   "reward": 100.54461974550115,
    "fills": 1,
    "q": "Will PAN win the most seats in the 2027 Aguascalientes Congress election?"
   },
@@ -1846,9 +1846,9 @@
   "0x838d204febc4748544b9d06b05c7e92e93fe4a7729f2b49b353567edca3b80dc": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.37,
+   "mid": 0.375,
    "share": 1.0,
-   "reward": 52.10146700254418,
+   "reward": 52.11609539199984,
    "fills": 0,
    "q": "Will Morena win the most seats in the 2027 Campeche Congress election?"
   },
@@ -1896,7 +1896,7 @@
    "cash": 0.0,
    "mid": 0.41000000000000003,
    "share": 1.0,
-   "reward": 22.381828636575165,
+   "reward": 22.67439642568825,
    "fills": 0,
    "q": "Will any AI model reach 1575 Math Arena Score by December 31, 2026?"
   },
@@ -1914,7 +1914,7 @@
    "cash": -1.3000000000000007,
    "mid": 0.585,
    "share": 1.0,
-   "reward": 75.39838298243438,
+   "reward": 75.62512301899703,
    "fills": 2,
    "q": "Will Morena win the most seats in the 2027 Mexico City Congress election?",
    "closed_at": 0.57
@@ -1962,7 +1962,7 @@
    "cash": 0.0,
    "mid": 0.46,
    "share": 1.0,
-   "reward": 50.8540544273899,
+   "reward": 50.87111949663356,
    "fills": 0,
    "q": "Will Morena win the most seats in the 2027 Sinaloa Congress election?"
   },
@@ -2062,7 +2062,7 @@
    "cash": -8.85,
    "mid": 0.24,
    "share": 1.0,
-   "reward": 60.18382030973926,
+   "reward": 60.27890484120101,
    "fills": 1,
    "q": "Will Chicago Bears finish the 2026-27 NFL regular season with the most rushing y"
   },
@@ -2199,9 +2199,9 @@
   "0xb102377223f7f00494244e94c29993e4210d40d19b7d281ed3bec7e98884a1f6": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.142,
+   "mid": 0.1425,
    "share": 1.0,
-   "reward": 31.17796575107232,
+   "reward": 31.24379350362276,
    "fills": 0,
    "q": "Will PRI win the most seats in the 2027 Guerrero Congress election?"
   },
@@ -2218,8 +2218,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.22,
-   "share": 0.011896568675646457,
-   "reward": 6.208939005308452,
+   "share": null,
+   "reward": 6.210399483106268,
    "fills": 0,
    "q": "Will Alphabet\u2019s market capitalization be between $4.50T and $5.00T at the end of"
   },
@@ -2254,9 +2254,9 @@
   "0x1d61bc2829aa04e1cb2dd5897f6128ea2e85608068147f88a6d280eef6d63d04": {
    "inv": 5.0,
    "cash": -5.337499999999999,
-   "mid": 0.575,
+   "mid": 0.5900000000000001,
    "share": 1.0,
-   "reward": 74.43924286582774,
+   "reward": 74.8112873419632,
    "fills": 3,
    "q": "Will October be Melbourne's wettest month of 2026?",
    "closed_at": 0.69
@@ -2378,7 +2378,7 @@
    "cash": 0.0,
    "mid": 0.37,
    "share": 1.0,
-   "reward": 7.8150763780687935,
+   "reward": 8.019873830447949,
    "fills": 0,
    "q": "Will Will Anderson Jr. finish the 2026-27 NFL regular season with the most sacks"
   },
@@ -2547,9 +2547,9 @@
   "0x258247b02970dc7a6bd8b9185aa3274937a897ef192a46cc499396b69b02f86c": {
    "inv": 0.0,
    "cash": -2.049999999999999,
-   "mid": 0.475,
+   "mid": 0.465,
    "share": 1.0,
-   "reward": 14.117391105211157,
+   "reward": 14.336816947045968,
    "fills": 1,
    "q": "Will Morena win the most seats in the 2027 Yucat\u00e1n Congress election?",
    "closed_at": 0.4
@@ -2567,8 +2567,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.47,
-   "share": 0.3194706994328911,
-   "reward": 38.5037122507166,
+   "share": null,
+   "reward": 38.5062914625521,
    "fills": 0,
    "q": "Will PVEM win the most seats in the 2027 San Luis Potos\u00ed Congress election?"
   },
@@ -2621,9 +2621,9 @@
   "0xfbd043738e36d992eba1fddc69f9094403419d8420bab07d9710b917cfb888e9": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.4135,
+   "mid": 0.40449999999999997,
    "share": 1.0,
-   "reward": 13.314997779639587,
+   "reward": 13.344254558550896,
    "fills": 0,
    "q": "Will Seoul have between 70-85mm of precipitation in October?"
   },
@@ -2669,7 +2669,7 @@
    "cash": -0.7209000000000001,
    "mid": 0.146,
    "share": 1.0,
-   "reward": 22.656175270075384,
+   "reward": 22.70737463317017,
    "fills": 2,
    "q": "Will Anna Leigh Waters win exactly five Triple Crowns in the 2026-27 PPA Tour se"
   },
@@ -2787,9 +2787,9 @@
   "0x6c10b4f4c60b2c9001702166ad126450c05c9dfc51a938c042b9c965d922a2fe": {
    "inv": -20.0,
    "cash": 8.049999999999999,
-   "mid": 0.4,
+   "mid": 0.365,
    "share": 1.0,
-   "reward": 29.17113947848848,
+   "reward": 29.273538204678058,
    "fills": 1,
    "q": "Will PAN win the most seats in the 2027 Nuevo Le\u00f3n Congress election?"
   },
@@ -2818,7 +2818,7 @@
    "cash": 0.0,
    "mid": 0.56,
    "share": 1.0,
-   "reward": 67.45565085807968,
+   "reward": 67.79210381555971,
    "fills": 0,
    "q": "Will Meta\u2019s market capitalization be between $1.75T and $2.00T at the end of Nov"
   },
@@ -3242,7 +3242,7 @@
    "cash": 0.0,
    "mid": 0.4655,
    "share": 1.0,
-   "reward": 39.12973375452351,
+   "reward": 39.42230154363658,
    "fills": 0,
    "q": "Will the Ornn H200 Index hit $3.75 (LOW) by December 31, 2026?"
   },
@@ -3260,16 +3260,16 @@
    "cash": 3.1149999999999975,
    "mid": 0.48,
    "share": 1.0,
-   "reward": 73.85797235568515,
+   "reward": 74.15054014479821,
    "fills": 7,
    "q": "Will Trump's approval rating hit 40% by June 30, 2027?"
   },
   "0x645e6824a815af4fa7f9c82dbb09fcec9d94a93d3285b0c626879024d51fd6ee": {
    "inv": 0.0,
    "cash": -0.8525000250000012,
-   "mid": 0.27999999999999997,
+   "mid": 0.265,
    "share": 1.0,
-   "reward": 32.663153624171386,
+   "reward": 32.93373142499717,
    "fills": 2,
    "q": "Will Trump's approval rating hit 39% by June 30, 2027?",
    "closed_at": 0.41
@@ -3279,7 +3279,7 @@
    "cash": -3.150000000000002,
    "mid": 0.775,
    "share": 1.0,
-   "reward": 72.58329980229749,
+   "reward": 72.87586759141055,
    "fills": 1,
    "q": "Will Trump's approval rating hit 36% by June 30, 2027?",
    "closed_at": 0.88
@@ -3289,7 +3289,7 @@
    "cash": 0.0,
    "mid": 0.36,
    "share": 1.0,
-   "reward": 60.60597727557341,
+   "reward": 60.89854506468648,
    "fills": 0,
    "q": "Will Trump's approval rating hit 35% by June 30, 2027?"
   },
@@ -3298,7 +3298,7 @@
    "cash": -13.55,
    "mid": 0.35500000000000004,
    "share": 1.0,
-   "reward": 75.6924041837389,
+   "reward": 75.98497197285197,
    "fills": 1,
    "q": "Will Trump's approval rating hit 34% by June 30, 2027?"
   },
@@ -3396,9 +3396,9 @@
   "0x050e3ec9e25f9fc7c8b4105c25108487d25a352059ab75f7a0e75ac2d38ed07b": {
    "inv": 10.0,
    "cash": -7.6000000000000005,
-   "mid": 0.39,
+   "mid": 0.385,
    "share": 1.0,
-   "reward": 40.552816833183755,
+   "reward": 40.97704012739772,
    "fills": 5,
    "q": "Will there be 35 to 49 West Nile neuroinvasive disease cases among NYC residents",
    "closed_at": 0.49
@@ -3426,7 +3426,7 @@
    "cash": 0.0,
    "mid": 0.545,
    "share": 1.0,
-   "reward": 3.058065619431043,
+   "reward": 3.277491461265852,
    "fills": 0,
    "q": "Will Morena win the most seats in the 2027 Baja California Sur Congress election"
   },
@@ -3442,9 +3442,9 @@
   "0x061d29f94d903f0ebe6b878880c82870866327427d2173a8f54b5141700e3dd2": {
    "inv": 0.0,
    "cash": -2.799999999999999,
-   "mid": 0.42000000000000004,
+   "mid": 0.42500000000000004,
    "share": 1.0,
-   "reward": 7.555782494306617,
+   "reward": 7.767894141413599,
    "fills": 2,
    "q": "Will Ilse Aigner be the next President of Germany?"
   },
@@ -3795,9 +3795,9 @@
   "0xe92733fce79be68129f37108af68c3ad6308a39091ada9465c2b8cc34d26a2c9": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.38,
+   "mid": 0.34500000000000003,
    "share": 1.0,
-   "reward": 11.016543686770717,
+   "reward": 11.065972612020028,
    "fills": 0,
    "q": "Will \"007: First Light\" win Ultimate Game of the Year at the 2026 Golden Joystic"
   },
@@ -3815,7 +3815,7 @@
    "cash": 0.0,
    "mid": 0.38,
    "share": 1.0,
-   "reward": 44.05975987358292,
+   "reward": 44.425469609974265,
    "fills": 0,
    "q": "Will LOUD keep their starting five for 2027?"
   },
@@ -3878,7 +3878,7 @@
    "cash": -0.04999999999999982,
    "mid": 0.33499999999999996,
    "share": 1.0,
-   "reward": 5.0149412296894536,
+   "reward": 5.307509018802533,
    "fills": 1,
    "q": "Will Trump's approval rating hit 41% by June 30, 2027?",
    "closed_at": 0.29
@@ -4331,9 +4331,9 @@
   "0x15dc913b30c02250777bcea66df9fa893b2cb2cdd4b8dfd3c4f657396205306f": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.125,
+   "mid": 0.12000000000000001,
    "share": 1.0,
-   "reward": 3.8584505851759965,
+   "reward": 3.931592532454266,
    "fills": 0,
    "q": "Will The Black Ball win Best Film Editing at the 99th Academy Awards?"
   },
@@ -4351,7 +4351,7 @@
    "cash": 0.0,
    "mid": 0.69,
    "share": 1.0,
-   "reward": 13.583686484368863,
+   "reward": 13.879540858445344,
    "fills": 0,
    "q": "Will \"The Odyssey\" be nominated for Best Original Score at the 99th Academy Awar"
   },
@@ -4405,7 +4405,7 @@
    "cash": 0.0,
    "mid": 0.43000000000000005,
    "share": 1.0,
-   "reward": 9.123221943637837,
+   "reward": 9.488931680029188,
    "fills": 0,
    "q": "Will \"Behemoth!\" be nominated for Best Original Score at the 99th Academy Awards"
   },
@@ -4450,7 +4450,7 @@
    "cash": 0.0,
    "mid": 0.435,
    "share": 1.0,
-   "reward": 5.028976659191196,
+   "reward": 5.258298916884363,
    "fills": 0,
    "q": "Next Gemini Argon released by December 31, 2026?"
   },
@@ -4459,7 +4459,7 @@
    "cash": -1.3000000000000043,
    "mid": 0.655,
    "share": 1.0,
-   "reward": 5.399547663828668,
+   "reward": 5.765257400220017,
    "fills": 2,
    "q": "Will Trump pardon anyone by December 31?"
   },
@@ -4468,7 +4468,7 @@
    "cash": 0.0,
    "mid": 0.27249999999999996,
    "share": 1.0,
-   "reward": 2.814167720694785,
+   "reward": 3.0847929256243845,
    "fills": 0,
    "q": "Will there be 20 to 34 West Nile neuroinvasive disease cases among NYC residents"
   },
@@ -4477,7 +4477,7 @@
    "cash": 0.0,
    "mid": 0.175,
    "share": 1.0,
-   "reward": 0.75964960420281,
+   "reward": 0.86579149763601,
    "fills": 0,
    "q": "Will The Black Ball win Best Costume Design at the 99th Academy Awards?"
   },
@@ -4486,16 +4486,16 @@
    "cash": 0.0,
    "mid": 0.1855,
    "share": 1.0,
-   "reward": 0.9278985952999858,
+   "reward": 0.9937263478504287,
    "fills": 0,
    "q": "Will Denver Broncos finish the 2026-27 NFL regular season with the most special "
   },
   "0xbe11128153201109a703bcb695eda3d77ae351cde4e9e01a41bab75fbe4b3dd3": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.15000000000000002,
+   "mid": 0.17,
    "share": 1.0,
-   "reward": 0.7544478663498604,
+   "reward": 0.856287081906641,
    "fills": 0,
    "q": "Will Wuthering Heights win Best Costume Design at the 99th Academy Awards?"
   },
@@ -4504,25 +4504,25 @@
    "cash": 0.0,
    "mid": 0.42500000000000004,
    "share": 1.0,
-   "reward": 1.567318412479427,
+   "reward": 1.720916501763794,
    "fills": 0,
    "q": "Will Yashar win 18-20% of the vote in the 2026 Knesset elections?"
   },
   "0xfa6c2dddddef63aa9170a98ac2d1b3415028b5d0653a272191b321869234dfb3": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.16,
+   "mid": 0.22,
    "share": 1.0,
-   "reward": 0.6469238426260375,
+   "reward": 0.7529991284978612,
    "fills": 0,
    "q": "Will Werwulf win Best Costume Design at the 99th Academy Awards?"
   },
   "0x2381436502264829cc154065f9bb7043e84fcece1105d2969699c08aba209b52": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.15000000000000002,
+   "mid": 0.14500000000000002,
    "share": 1.0,
-   "reward": 0.7982977642118931,
+   "reward": 0.9372674640406063,
    "fills": 0,
    "q": "Will Dune: Part Three win Best Costume Design at the 99th Academy Awards?"
   }
@@ -13200,17 +13200,30 @@
    "w": 2986734
   },
   {
-   "ts": "2026-10-15T05:13:29.957124+00:00",
-   "dt_h": 0.082,
-   "reward_tick": 4.2339,
-   "reward_total": 6419.08,
-   "mm_value": -194.38,
-   "net": 6224.7,
-   "avg_share": 0.9685,
+   "ts": "2026-10-15T05:19:18.727611+00:00",
+   "dt_h": 0.178,
+   "reward_tick": 9.8371,
+   "reward_total": 6424.68,
+   "mm_value": -193.63,
+   "net": 6231.05,
+   "avg_share": 0.9686,
    "n_markets": 53,
    "fills_total": 141,
    "rebalanced": false,
    "w": 2986735
+  },
+  {
+   "ts": "2026-10-15T05:24:01.903548+00:00",
+   "dt_h": 0.078,
+   "reward_tick": 4.8012,
+   "reward_total": 6429.48,
+   "mm_value": -193.85,
+   "net": 6235.63,
+   "avg_share": 1.0,
+   "n_markets": 53,
+   "fills_total": 141,
+   "rebalanced": false,
+   "w": 2986736
   }
  ],
  "fills": [
@@ -14484,8 +14497,8 @@
    "ledger": "v4"
   }
  ],
- "reward_total": 6419.0753409874915,
- "last_ts": 1792041209.957124,
+ "reward_total": 6429.479738102577,
+ "last_ts": 1792041841.9035485,
  "chosen_at": 1791639880.921448,
  "rebalances": [
   {
@@ -14496,8 +14509,8 @@
   }
  ],
  "last_tick": {
-  "ts": "2026-10-15T05:13:29.957124+00:00",
-  "dt_h": 0.082,
+  "ts": "2026-10-15T05:24:01.903548+00:00",
+  "dt_h": 0.017,
   "markets": [
    {
     "q": "Will global temperature increase by between 1.35\u00baC",
@@ -14510,14 +14523,14 @@
     "q": "Will Chicago Bears finish the 2026-27 NFL regular ",
     "mid": 0.24,
     "share": 1.0,
-    "earned": 0.0445,
+    "earned": 0.0093,
     "inv": 20.0
    },
    {
     "q": "Will PRI win the most seats in the 2027 Guerrero C",
     "mid": 0.142,
     "share": 1.0,
-    "earned": 0.0308,
+    "earned": 0.0065,
     "inv": 0.0
    },
    {
@@ -14531,351 +14544,351 @@
     "q": "Will the Ornn H200 Index hit $4.00 (LOW) by Decemb",
     "mid": 0.457,
     "share": 1.0,
-    "earned": 0.137,
+    "earned": 0.0287,
     "inv": 0.0
    },
    {
     "q": "Will Anna Leigh Waters win exactly five Triple Cro",
     "mid": 0.146,
     "share": 1.0,
-    "earned": 0.024,
+    "earned": 0.005,
     "inv": 8.9
    },
    {
     "q": "Will PAN win the most seats in the 2027 Nuevo Le\u00f3n",
-    "mid": 0.4,
+    "mid": 0.365,
     "share": 1.0,
-    "earned": 0.048,
+    "earned": 0.01,
     "inv": -20.0
    },
    {
     "q": "Will Morena win the most seats in the 2027 Guerrer",
     "mid": 0.69,
     "share": 1.0,
-    "earned": 0.0925,
+    "earned": 0.0194,
     "inv": 0.0
    },
    {
     "q": "Will Trump's approval rating hit 34% by June 30, 2",
     "mid": 0.355,
     "share": 1.0,
-    "earned": 0.137,
+    "earned": 0.0287,
     "inv": 20.0
    },
    {
     "q": "Will Morena win the most seats in the 2027 Campech",
-    "mid": 0.37,
+    "mid": 0.375,
     "share": 1.0,
-    "earned": 0.0069,
+    "earned": 0.0014,
     "inv": 0.0
    },
    {
     "q": "Will PAN win the most seats in the 2027 Aguascalie",
-    "mid": 0.525,
+    "mid": 0.555,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0237,
     "inv": -20.0
    },
    {
     "q": "Will Trump's approval rating hit 40% by June 30, 2",
     "mid": 0.48,
     "share": 1.0,
-    "earned": 0.137,
+    "earned": 0.0287,
     "inv": -20.0
    },
    {
     "q": "Will the Ornn H100 Index hit $3.50 (HIGH) by Decem",
-    "mid": 0.365,
+    "mid": 0.38,
     "share": 1.0,
-    "earned": 0.137,
+    "earned": 0.0287,
     "inv": 0.0
    },
    {
     "q": "Will Claude Fable 5.2+ debut at an output token pr",
     "mid": 0.72,
     "share": 1.0,
-    "earned": 0.0685,
+    "earned": 0.0143,
     "inv": 20.0
    },
    {
     "q": "Will Claude Opus's output price be at or below $15",
-    "mid": 0.335,
+    "mid": 0.355,
     "share": 1.0,
-    "earned": 0.137,
+    "earned": 0.0287,
     "inv": 20.0
    },
    {
     "q": "Will Meta\u2019s market capitalization be between $1.75",
     "mid": 0.56,
     "share": 1.0,
-    "earned": 0.1576,
-    "inv": 0.0
-   },
-   {
-    "q": "Will PVEM win the most seats in the 2027 San Luis ",
-    "mid": 0.47,
-    "share": 0.3195,
-    "earned": 0.0022,
+    "earned": 0.033,
     "inv": 0.0
    },
    {
     "q": "Will \"007: First Light\" win Ultimate Game of the Y",
-    "mid": 0.38,
+    "mid": 0.345,
     "share": 1.0,
-    "earned": 0.0411,
+    "earned": 0.0086,
     "inv": 0.0
    },
    {
     "q": "Will Trump's approval rating hit 36% by June 30, 2",
     "mid": 0.775,
     "share": 1.0,
-    "earned": 0.137,
+    "earned": 0.0287,
     "inv": 0.0
    },
    {
     "q": "Will LOUD keep their starting five for 2027?",
     "mid": 0.38,
     "share": 1.0,
-    "earned": 0.1713,
+    "earned": 0.0359,
     "inv": 0.0
    },
    {
     "q": "Will October be Melbourne's wettest month of 2026?",
-    "mid": 0.575,
+    "mid": 0.59,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0395,
     "inv": 5.0
    },
    {
     "q": "Will the Ornn H200 Index hit $3.75 (LOW) by Decemb",
     "mid": 0.466,
     "share": 1.0,
-    "earned": 0.137,
+    "earned": 0.0287,
     "inv": 0.0
    },
    {
     "q": "Will Morena win the most seats in the 2027 Mexico ",
     "mid": 0.585,
     "share": 1.0,
-    "earned": 0.1062,
+    "earned": 0.0222,
     "inv": 0.0
    },
    {
     "q": "Will GPT Astra's output price be at or below $40 i",
     "mid": 0.355,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0287,
     "inv": 20.0
    },
    {
     "q": "Will Trump's approval rating hit 35% by June 30, 2",
     "mid": 0.36,
     "share": 1.0,
-    "earned": 0.137,
+    "earned": 0.0287,
     "inv": 0.0
    },
    {
     "q": "Will there be 35 to 49 West Nile neuroinvasive dis",
-    "mid": 0.39,
+    "mid": 0.385,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0416,
     "inv": 10.0
    },
    {
     "q": "Will The Black Ball win Best Film Editing at the 9",
-    "mid": 0.125,
+    "mid": 0.12,
     "share": 1.0,
-    "earned": 0.0343,
+    "earned": 0.0072,
     "inv": 0.0
    },
    {
     "q": "Will \"The Odyssey\" be nominated for Best Original ",
     "mid": 0.69,
     "share": 1.0,
-    "earned": 0.1713,
+    "earned": 0.0359,
     "inv": 0.0
    },
    {
     "q": "Will \"Wild Horse Nine\" be nominated for Best Origi",
     "mid": 0.27,
     "share": 1.0,
-    "earned": 0.1713,
+    "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will \"Behemoth!\" be nominated for Best Original Sc",
     "mid": 0.43,
     "share": 1.0,
-    "earned": 0.1713,
+    "earned": 0.0359,
     "inv": 0.0
    },
    {
     "q": "Will GPT Astra's output price be at or above $60 i",
     "mid": 0.315,
     "share": 1.0,
-    "earned": 0.137,
+    "earned": 0.0287,
     "inv": 0.0
    },
    {
     "q": "Will any AI model reach 1575 Math Arena Score by D",
     "mid": 0.41,
     "share": 1.0,
-    "earned": 0.137,
+    "earned": 0.0287,
     "inv": 0.0
    },
    {
     "q": "Will Anthropic's frontier output token price be at",
     "mid": 0.5,
     "share": 1.0,
-    "earned": 0.137,
+    "earned": 0.0287,
     "inv": 0.0
    },
    {
     "q": "Will GPT Sol's output price be at or above $15 in ",
-    "mid": 0.305,
+    "mid": 0.31,
     "share": 1.0,
-    "earned": 0.137,
+    "earned": 0.0287,
     "inv": 0.0
    },
    {
     "q": "Next Gemini Argon released by December 31, 2026?",
     "mid": 0.435,
     "share": 1.0,
-    "earned": 0.1713,
+    "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will Trump pardon anyone by December 31?",
     "mid": 0.655,
     "share": 1.0,
-    "earned": 0.1713,
+    "earned": 0.0359,
     "inv": 0.0
    },
    {
     "q": "Will Morena win the most seats in the 2027 Sinaloa",
     "mid": 0.46,
     "share": 1.0,
-    "earned": 0.0002,
+    "earned": 0.0022,
     "inv": 0.0
    },
    {
     "q": "Will Trump's approval rating hit 39% by June 30, 2",
-    "mid": 0.28,
+    "mid": 0.265,
     "share": 1.0,
-    "earned": 0.137,
+    "earned": 0.0287,
     "inv": 0.0
    },
    {
     "q": "Will there be 20 to 34 West Nile neuroinvasive dis",
     "mid": 0.272,
     "share": 1.0,
-    "earned": 0.1267,
+    "earned": 0.0265,
     "inv": 0.0
    },
    {
     "q": "Will Morena win the most seats in the 2027 Yucat\u00e1n",
-    "mid": 0.475,
+    "mid": 0.465,
     "share": 1.0,
-    "earned": 0.1028,
+    "earned": 0.0215,
     "inv": 0.0
    },
    {
     "q": "Will Will Anderson Jr. finish the 2026-27 NFL regu",
     "mid": 0.37,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0201,
     "inv": 0.0
    },
    {
     "q": "Will Ilse Aigner be the next President of Germany?",
-    "mid": 0.42,
+    "mid": 0.425,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0208,
     "inv": 0.0
    },
    {
     "q": "Will The Black Ball win Best Costume Design at the",
     "mid": 0.175,
     "share": 1.0,
-    "earned": 0.0,
-    "inv": 0.0
-   },
-   {
-    "q": "Will Alphabet\u2019s market capitalization be between $",
-    "mid": 0.22,
-    "share": 0.0119,
-    "earned": 0.001,
+    "earned": 0.0187,
     "inv": 0.0
    },
    {
     "q": "Will Denver Broncos finish the 2026-27 NFL regular",
     "mid": 0.185,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0065,
     "inv": 0.0
    },
    {
     "q": "Will Wuthering Heights win Best Costume Design at ",
-    "mid": 0.15,
+    "mid": 0.17,
     "share": 1.0,
-    "earned": 0.0685,
+    "earned": 0.0143,
     "inv": 0.0
    },
    {
     "q": "Will Morena win the most seats in the 2027 Baja Ca",
     "mid": 0.545,
     "share": 1.0,
-    "earned": 0.1028,
+    "earned": 0.0215,
     "inv": 0.0
    },
    {
     "q": "Will Yashar win 18-20% of the vote in the 2026 Kne",
     "mid": 0.425,
     "share": 1.0,
-    "earned": 0.0719,
+    "earned": 0.0151,
     "inv": 0.0
    },
    {
     "q": "Will Seoul have between 70-85mm of precipitation i",
-    "mid": 0.413,
+    "mid": 0.404,
     "share": 1.0,
-    "earned": 0.0137,
+    "earned": 0.0029,
     "inv": 0.0
    },
    {
     "q": "Will Trump's approval rating hit 41% by June 30, 2",
     "mid": 0.335,
     "share": 1.0,
-    "earned": 0.137,
+    "earned": 0.0287,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn B200 Index hit $5.50 (LOW) by Decemb",
-    "mid": 0.617,
+    "mid": 0.598,
     "share": 1.0,
-    "earned": 0.0103,
+    "earned": 0.0022,
     "inv": 0.0
    },
    {
     "q": "Will Werwulf win Best Costume Design at the 99th A",
-    "mid": 0.16,
+    "mid": 0.22,
     "share": 1.0,
-    "earned": 0.0685,
+    "earned": 0.0143,
     "inv": 0.0
    },
    {
     "q": "Will Dune: Part Three win Best Costume Design at t",
-    "mid": 0.15,
+    "mid": 0.145,
     "share": 1.0,
-    "earned": 0.0651,
+    "earned": 0.0136,
+    "inv": 0.0
+   },
+   {
+    "q": "Will Morena win the most seats in the 2027 Quintan",
+    "mid": 0.76,
+    "share": 1.0,
+    "earned": 0.0323,
+    "inv": 0.0
+   },
+   {
+    "q": "Will GPT Sol's output price be at or below $5 in 2",
+    "mid": 0.3,
+    "share": 1.0,
+    "earned": 0.0287,
     "inv": 0.0
    }
   ],
-  "reward_tick": 4.2339,
-  "reward_total": 6419.08,
-  "mm_value": -194.38,
-  "net": 6224.7,
-  "avg_share": 0.9685,
+  "reward_tick": 1.0767,
+  "reward_total": 6429.48,
+  "mm_value": -193.85,
+  "net": 6235.63,
+  "avg_share": 1.0,
   "n_markets": 53,
   "fills_total": 141,
   "rebalanced": false
@@ -17248,7 +17261,19 @@
     "Will Werwulf win Best Costume Design at the 99th A",
     "Will Dune: Part Three win Best Costume Design at t"
    ]
+  },
+  {
+   "ts": "2026-10-15T05:20:06.225985+00:00",
+   "swapped": 2,
+   "out": [
+    "Will Alphabet\u2019s market capitalization be between $",
+    "Will PVEM win the most seats in the 2027 San Luis "
+   ],
+   "in": [
+    "Will Morena win the most seats in the 2027 Quintan",
+    "Will GPT Sol's output price be at or below $5 in 2"
+   ]
   }
  ],
- "reviewed_at": 1792037970.063956
+ "reviewed_at": 1792041606.2259853
 }

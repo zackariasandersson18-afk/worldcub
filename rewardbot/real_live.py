@@ -54,6 +54,12 @@ def _num(name: str, default: float) -> float:
         return default
 
 
+def buying() -> bool:
+    """New buy orders only when the owner sets the variable REAL_BUY = on. Default: sell only - the shares
+    already held stay offered for sale (paused 15 Oct 2026 after three fills that went against us)."""
+    return env('REAL_BUY').lower() == 'on'
+
+
 def capital() -> float:
     return _num('REAL_CAPITAL', 50.0)
 
@@ -187,7 +193,10 @@ def tick(state: str, http, now: float | None = None, log=print, cli=None) -> dic
         for o in open_now:                              # our resting orders, so the planner does not compete with them
             own.setdefault(str(o.get('asset_id')), []).append(
                 (float(o.get('price') or 0), float(o.get('original_size') or 0) - float(o.get('size_matched') or 0)))
-        plan = real.compute(state, http, capital(), ticks, acc['held'], own, acc.get('avg'))   # Polymarket refuses orders beyond the balance
+        plan = real.compute(state, http, capital(), ticks, acc['held'], own, acc.get('avg'))
+        if not buying():                                # sell only: keep offering what we hold, buy nothing new
+            plan = {**plan, 'orders': [o for o in plan['orders'] if o.get('side') == 'SELL'], 'markets': [],
+                    'est_reward_day': 0.0, 'used': 0.0}   # Polymarket refuses orders beyond the balance
         key = lambda side, tok, price, size: (str(side).upper(), str(tok), round(float(price), 4), round(float(size), 2))   # noqa: E731
         want = {key(o.get('side', 'BUY'), o['token'], o['price'], o['size']): o for o in plan['orders']}
         have = {key(o.get('side', 'BUY'), o.get('asset_id'), o.get('price'), float(o.get('original_size') or 0)): o for o in open_now}
@@ -240,7 +249,7 @@ def tick(state: str, http, now: float | None = None, log=print, cli=None) -> dic
         hist[-1] = row
     else:
         hist.append(row)
-    st.update(mode='halted' if st['halted'] else 'live', ts=iso, capital=capital(), loss_limit=loss_limit(), equity=round(equity, 4),
+    st.update(mode='halted' if st['halted'] else ('live' if buying() else 'sell_only'), ts=iso, capital=capital(), loss_limit=loss_limit(), equity=round(equity, 4),
               pnl=round(pnl, 4), account={k: acc[k] for k in ('cash', 'positions_value', 'positions')},
               orders=[{'id': o['id'][:12], 'token': str(o.get('asset_id')), 'side': o.get('side', 'BUY'), 'price': o.get('price'), 'size': o.get('original_size'),
                        'filled': o.get('size_matched'), 'scoring': bool(scoring.get(o['id']))} for o in open_now],

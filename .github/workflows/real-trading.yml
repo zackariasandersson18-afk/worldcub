@@ -33,6 +33,7 @@ jobs:
       POLY_FUNDER: ${{ secrets.POLY_FUNDER }}
       POLY_SIGNATURE_TYPE: ${{ vars.POLY_SIGNATURE_TYPE }}
       REAL_TRADING: ${{ vars.REAL_TRADING }}
+      REAL_BUY: ${{ vars.REAL_BUY }}         # 'on' = also place new buy orders; anything else = only sell what is held
       REAL_CAPITAL: ${{ vars.REAL_CAPITAL }}
       REAL_LOSS_LIMIT: ${{ vars.REAL_LOSS_LIMIT }}
     steps:

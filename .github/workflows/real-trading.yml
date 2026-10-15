@@ -1,0 +1,43 @@
+name: real trading (owner's PC in Sweden)
+
+# Real orders for rewards v4 (rewardbot/real_runner.py -> rewardbot/real_live.py). Runs ONLY on the
+# owner's own Windows computer registered as a self-hosted runner, because Polymarket refuses orders
+# from GitHub's US servers. Off unless the secrets POLY_PRIVATE_KEY / POLY_FUNDER exist and the
+# variable REAL_TRADING is 'on'; the runner also checks Polymarket's geoblock and stops if blocked.
+# Each run lasts ~5h45m, cancels every order at the end and starts the next one.
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '41 */6 * * *'     # safety net if a hand-over is lost (queues until the PC is on)
+
+permissions:
+  contents: write              # save real_live.json on the rewards-state branch
+  actions: write               # start the next run
+  issues: write                # owner commands: 'riktiga pengar: stopp' / 'riktiga pengar: start'
+
+concurrency:
+  group: real-trading
+  cancel-in-progress: false
+
+jobs:
+  trade:
+    runs-on: [self-hosted, Windows]
+    timeout-minutes: 358
+    env:
+      PYTHONPATH: ${{ github.workspace }}
+      GITHUB_TOKEN: ${{ github.token }}
+      POLY_PRIVATE_KEY: ${{ secrets.POLY_PRIVATE_KEY }}
+      POLY_FUNDER: ${{ secrets.POLY_FUNDER }}
+      POLY_SIGNATURE_TYPE: ${{ vars.POLY_SIGNATURE_TYPE }}
+      REAL_TRADING: ${{ vars.REAL_TRADING }}
+      REAL_CAPITAL: ${{ vars.REAL_CAPITAL }}
+      REAL_LOSS_LIMIT: ${{ vars.REAL_LOSS_LIMIT }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: install
+        run: python -m pip install --quiet requests py-clob-client==0.34.6
+      - name: place v4's orders every minute
+        run: python -m rewardbot.real_runner --state real_state
+      - name: cancel every order (also after a crash or a cancelled run)
+        if: always()
+        run: python -m rewardbot.real_live --cancel-all

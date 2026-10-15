@@ -11,7 +11,7 @@ on:
 permissions:
   contents: write
   actions: write
-  issues: write        # owner commands by issue: 'memebot: stäng <pool>', 'riktiga pengar: stopp/start'
+  issues: write        # memecoin bot: read and close the owner's 'memebot: stäng <pool>' issues
 
 concurrency:
   group: rewards-loop
@@ -31,22 +31,10 @@ jobs:
       - name: measure every minute
         env:
           GITHUB_TOKEN: ${{ github.token }}
-          # real money with v4 (rewardbot/real_live.py): live only when the secret key exists AND the
-          # repository variable REAL_TRADING is 'on'; otherwise the dry run continues
-          POLY_PRIVATE_KEY: ${{ secrets.POLY_PRIVATE_KEY }}
-          POLY_FUNDER: ${{ secrets.POLY_FUNDER }}
-          POLY_SIGNATURE_TYPE: ${{ vars.POLY_SIGNATURE_TYPE }}
-          REAL_TRADING: ${{ vars.REAL_TRADING }}
+          # the dry run of real money uses the owner's capital; the key never comes here: GitHub's servers
+          # are in the US, where Polymarket refuses orders - real orders go from real-trading.yml instead
           REAL_CAPITAL: ${{ vars.REAL_CAPITAL }}
-          REAL_LOSS_LIMIT: ${{ vars.REAL_LOSS_LIMIT }}
         run: scripts/rewards_loop.sh
-      - name: cancel every real order (also after a crash or a cancelled run)
-        if: always()
-        env:
-          POLY_PRIVATE_KEY: ${{ secrets.POLY_PRIVATE_KEY }}
-          POLY_FUNDER: ${{ secrets.POLY_FUNDER }}
-          POLY_SIGNATURE_TYPE: ${{ vars.POLY_SIGNATURE_TYPE }}
-        run: PYTHONPATH=. python -m rewardbot.real_live --cancel-all || true
       - name: start the next loop
         if: always()
         env:

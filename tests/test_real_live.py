@@ -79,7 +79,7 @@ def on(monkeypatch):
     monkeypatch.setenv('POLY_FUNDER', '0xabc')
     monkeypatch.setenv('GITHUB_REPOSITORY', 'owner/repo')
     monkeypatch.setenv('GITHUB_TOKEN', 't')
-    monkeypatch.setattr(real_live.real, 'compute', lambda state, http, cap, ticks, held=None: json.loads(json.dumps(PLAN)))
+    monkeypatch.setattr(real_live.real, 'compute', lambda state, http, cap, ticks, held=None, own=None: json.loads(json.dumps(PLAN)))
 
 
 def test_off_unless_key_and_switch(monkeypatch):

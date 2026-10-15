@@ -24,7 +24,7 @@ from rewardbot import real_live
 
 REPO_API = 'https://api.github.com/repos/{repo}'
 BRANCH = 'rewards-state'
-SAVE_EVERY_S = 120
+SAVE_EVERY_S = 60                                 # the dashboard shows the bot within about a minute
 
 
 def gh(http, method: str, path: str, **kw):

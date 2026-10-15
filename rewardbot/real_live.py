@@ -181,7 +181,11 @@ def tick(state: str, http, now: float | None = None, log=print, cli=None) -> dic
         open_now = []
     else:
         ticks = st.setdefault('ticks', {})
-        plan = real.compute(state, http, capital(), ticks, acc['held'])   # Polymarket itself refuses orders beyond the balance
+        own = {}
+        for o in open_now:                              # our resting orders, so the planner does not compete with them
+            own.setdefault(str(o.get('asset_id')), []).append(
+                (float(o.get('price') or 0), float(o.get('original_size') or 0) - float(o.get('size_matched') or 0)))
+        plan = real.compute(state, http, capital(), ticks, acc['held'], own)   # Polymarket refuses orders beyond the balance
         key = lambda tok, price, size: (str(tok), round(float(price), 4), round(float(size), 2))   # noqa: E731
         want = {key(o['token'], o['price'], o['size']): o for o in plan['orders']}
         have = {key(o.get('asset_id'), o.get('price'), float(o.get('original_size') or 0)): o for o in open_now}
@@ -237,7 +241,8 @@ def tick(state: str, http, now: float | None = None, log=print, cli=None) -> dic
               pnl=round(pnl, 4), account={k: acc[k] for k in ('cash', 'positions_value', 'positions')},
               orders=[{'id': o['id'][:12], 'token': str(o.get('asset_id')), 'price': o.get('price'), 'size': o.get('original_size'),
                        'filled': o.get('size_matched'), 'scoring': bool(scoring.get(o['id']))} for o in open_now],
-              markets=plan['markets'], est_reward_day=plan['est_reward_day'])
+              markets=plan['markets'], est_reward_day=plan['est_reward_day'], alternatives=plan.get('alternatives', []),
+              n_priced=plan.get('n_priced'))
     st['history'], st['events'] = hist[-5000:], st['events'][-2000:]
     path.write_text(json.dumps(st, separators=(',', ':'), default=str))
     log(f"real LIVE {iso}: {len(open_now)} orders ({n_scoring} scoring), +{posted}/-{cancelled}, equity {equity:.2f}, pnl {pnl:+.2f}"

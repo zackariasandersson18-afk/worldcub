@@ -20,8 +20,14 @@ from memebot import paper as memebot_paper
 from rewardbot import census, live, live_v2, real, real_live
 
 
+_GIT_ERR = ['']
+
+
 def git(repo: Path, *args: str) -> bool:
-    return subprocess.run(['git', '-C', str(repo), *args], capture_output=True, text=True).returncode == 0
+    r = subprocess.run(['git', '-C', str(repo), *args], capture_output=True, text=True)
+    if r.returncode:
+        _GIT_ERR[0] = f"git {[a for a in args if not a.startswith('-') and '=' not in a][:1]}: {(r.stderr or r.stdout).strip()[-300:]}"
+    return r.returncode == 0
 
 
 def push(repo: Path, branch: str, log=print, only: str | None = None) -> bool:
@@ -41,9 +47,11 @@ def push(repo: Path, branch: str, log=print, only: str | None = None) -> bool:
         # rebase onto FETCH_HEAD: in GitHub's checkout the remote only tracks the checked-out branch, so
         # origin/<branch> does not exist (or is stale) and a rebase onto it never catches up
         git(repo, 'fetch', '-q', 'origin', branch)
-        if not git(repo, 'rebase', '-q', '--autostash', '-X', 'ours', 'FETCH_HEAD'):
+        # the rebase re-creates our commits, so it needs an identity too - GitHub's runners have none
+        if not git(repo, '-c', 'user.name=tradebot', '-c', 'user.email=tradebot@users.noreply.github.com',
+                   'rebase', '-q', '--autostash', '-X', 'ours', 'FETCH_HEAD'):
             git(repo, 'rebase', '--abort')
-    log('state push failed')
+    log(f'state push failed - last git error: {_GIT_ERR[0]}')
     return False
 
 

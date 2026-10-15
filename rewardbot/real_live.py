@@ -1,7 +1,9 @@
 """Real money with rewards v4, phase 2: LIVE orders on Polymarket. Off unless the owner turns it on.
 
 Runs only when BOTH are set: the secret POLY_PRIVATE_KEY (with POLY_FUNDER, the Polymarket wallet
-address) and the repository variable REAL_TRADING = on. Otherwise the dry run (rewardbot.real) goes on.
+address) and the repository variable REAL_TRADING = on. POLY_SIGNATURE_TYPE: accounts made at
+Polymarket sign-up today are 'deposit wallets' and need 3 (POLY_1271); with 1 Polymarket reads the
+balance as 0 and refuses every order with 'maker address not allowed, please use the deposit wallet flow'. Otherwise the dry run (rewardbot.real) goes on.
 The key is read from the environment, handed to Polymarket's own client and never logged or saved.
 
 Every minute
@@ -66,7 +68,12 @@ def client():
     from py_clob_client_v2 import ClobClient
     c = ClobClient(HOST, chain_id=137, key=env('POLY_PRIVATE_KEY'), signature_type=int(env('POLY_SIGNATURE_TYPE', '1') or 1),
                    funder=env('POLY_FUNDER'))
-    c.set_api_creds(c.create_or_derive_api_key())
+    c.set_api_creds(c.create_or_derive_api_key())   # derived by a client that already has the type and funder
+    try:                                               # Polymarket caches the balance per signature type: without this
+        from py_clob_client_v2 import AssetType, BalanceAllowanceParams   # a deposit wallet (type 3) reads as 0 USD
+        c.update_balance_allowance(BalanceAllowanceParams(asset_type=AssetType.COLLATERAL))
+    except Exception:                                  # noqa: BLE001
+        pass
     return c
 
 

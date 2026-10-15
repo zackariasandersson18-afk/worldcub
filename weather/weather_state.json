@@ -24295,38 +24295,20 @@
    "equity": 291.06,
    "cash": 72.68,
    "open": 48
+  },
+  {
+   "ts": "2026-10-15T01:31:10.488714+00:00",
+   "equity": 291.06,
+   "cash": 72.68,
+   "open": 48
   }
  ],
  "last_run": {
-  "ts": "2026-10-15T01:01:35.070188+00:00",
+  "ts": "2026-10-15T01:31:10.488714+00:00",
   "settled": [],
-  "opened": [
-   {
-    "event_id": "1181105",
-    "slug": "highest-temperature-in-karachi-on-october-15-2026",
-    "city": "Karachi",
-    "date": "2026-10-15",
-    "station": "OPKC",
-    "bucket": "36\u00b0C",
-    "side": "NO",
-    "token": "1390916247954795738756889798211282442005631031091943688633428118036172777820",
-    "price": 0.61,
-    "cost": 0.6319,
-    "prob": 0.7498,
-    "edge": 0.1179,
-    "shares": 9.2104,
-    "stake_usd": 5.82,
-    "mu": 35.28,
-    "sigma": 1.36,
-    "opened": "2026-10-15T01:01:35.070188+00:00"
-   }
-  ],
-  "logged": 1,
-  "skipped": {
-   "San Francisco": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=37.6213&longitude=-122.379&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=fahrenheit",
-   "Dallas": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=32.8471&longitude=-96.8518&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=fahrenheit",
-   "Paris": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=48.9694&longitude=2.4414&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=celsius"
-  }
+  "opened": [],
+  "logged": 0,
+  "skipped": {}
  },
  "mode": "trading",
  "gates_ignored": true,

@@ -1,5 +1,5 @@
 {
- "cash": 78.4978000000004,
+ "cash": 72.67780000000039,
  "open": [
   {
    "event_id": "1175264",
@@ -893,6 +893,25 @@
    "mu": 32.79,
    "sigma": 1.36,
    "opened": "2026-10-15T00:31:21.669241+00:00"
+  },
+  {
+   "event_id": "1181105",
+   "slug": "highest-temperature-in-karachi-on-october-15-2026",
+   "city": "Karachi",
+   "date": "2026-10-15",
+   "station": "OPKC",
+   "bucket": "36\u00b0C",
+   "side": "NO",
+   "token": "1390916247954795738756889798211282442005631031091943688633428118036172777820",
+   "price": 0.61,
+   "cost": 0.6319,
+   "prob": 0.7498,
+   "edge": 0.1179,
+   "shares": 9.2104,
+   "stake_usd": 5.82,
+   "mu": 35.28,
+   "sigma": 1.36,
+   "opened": "2026-10-15T01:01:35.070188+00:00"
   }
  ],
  "closed": [
@@ -20855,6 +20874,65 @@
     0.05,
     0.05
    ]
+  },
+  "1181105": {
+   "date": "2026-10-15",
+   "mu_raw": 34.63333333333334,
+   "unit": "C",
+   "city": "Karachi",
+   "spread": 6.300000000000004,
+   "labels": [
+    "30\u00b0C or below",
+    "31\u00b0C",
+    "32\u00b0C",
+    "33\u00b0C",
+    "34\u00b0C",
+    "35\u00b0C",
+    "36\u00b0C",
+    "37\u00b0C",
+    "38\u00b0C",
+    "39\u00b0C",
+    "40\u00b0C or higher"
+   ],
+   "probs": [
+    0.0002,
+    0.0026,
+    0.018,
+    0.0754,
+    0.1883,
+    0.2808,
+    0.2502,
+    0.1332,
+    0.0423,
+    0.008,
+    0.001
+   ],
+   "market": [
+    null,
+    null,
+    null,
+    0.003,
+    0.0705,
+    0.275,
+    0.4,
+    0.215,
+    0.065,
+    0.008,
+    0.0055
+   ],
+   "gfs": [
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.0645,
+    0.129,
+    0.3226,
+    0.1935,
+    0.2581,
+    0.05,
+    0.05
+   ]
   }
  },
  "history": [
@@ -24211,14 +24289,44 @@
    "equity": 291.06,
    "cash": 78.5,
    "open": 47
+  },
+  {
+   "ts": "2026-10-15T01:01:35.070188+00:00",
+   "equity": 291.06,
+   "cash": 72.68,
+   "open": 48
   }
  ],
  "last_run": {
-  "ts": "2026-10-15T00:35:02.630391+00:00",
+  "ts": "2026-10-15T01:01:35.070188+00:00",
   "settled": [],
-  "opened": [],
-  "logged": 0,
-  "skipped": {}
+  "opened": [
+   {
+    "event_id": "1181105",
+    "slug": "highest-temperature-in-karachi-on-october-15-2026",
+    "city": "Karachi",
+    "date": "2026-10-15",
+    "station": "OPKC",
+    "bucket": "36\u00b0C",
+    "side": "NO",
+    "token": "1390916247954795738756889798211282442005631031091943688633428118036172777820",
+    "price": 0.61,
+    "cost": 0.6319,
+    "prob": 0.7498,
+    "edge": 0.1179,
+    "shares": 9.2104,
+    "stake_usd": 5.82,
+    "mu": 35.28,
+    "sigma": 1.36,
+    "opened": "2026-10-15T01:01:35.070188+00:00"
+   }
+  ],
+  "logged": 1,
+  "skipped": {
+   "San Francisco": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=37.6213&longitude=-122.379&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=fahrenheit",
+   "Dallas": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=32.8471&longitude=-96.8518&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=fahrenheit",
+   "Paris": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=48.9694&longitude=2.4414&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=celsius"
+  }
  },
  "mode": "trading",
  "gates_ignored": true,

@@ -13,8 +13,11 @@ class FakeClient:
     def get_balance_allowance(self, params):
         return {'balance': str(int(self.cash * 1e6))}
 
-    def get_orders(self, params=None):
+    def get_open_orders(self, params=None):
         return list(self.orders)
+
+    def get_total_earnings_for_user_for_day(self, day):
+        return [{'date': day, 'earnings': 1.25}]
 
     def cancel_orders(self, ids):
         self.cancelled += ids
@@ -24,7 +27,8 @@ class FakeClient:
         self.cancel_all_calls += 1
         self.orders = []
 
-    def create_order(self, args):
+    def create_order(self, args, options=None):
+        assert options is not None and options.tick_size == '0.01'
         return args
 
     def post_order(self, signed, order_type, post_only=False):
@@ -63,7 +67,7 @@ class FakeHTTP:
         self.issues = []
 
 
-PLAN = {'used': 36.8, 'est_reward_day': 100.0, 'markets': [{'q': 'Q'}],
+PLAN = {'used': 36.8, 'est_reward_day': 100.0, 'markets': [{'q': 'Q', 'cond': 'c1', 'tick': 0.01}],
         'orders': [{'cond': 'c1', 'token': 'Y1', 'outcome': 'YES', 'side': 'BUY', 'price': 0.28, 'size': 20.0},
                    {'cond': 'c1', 'token': 'N1', 'outcome': 'NO', 'side': 'BUY', 'price': 0.64, 'size': 20.0}]}
 
@@ -162,3 +166,10 @@ def test_empty_or_mistyped_variables_never_crash(monkeypatch):
     assert importlib.reload(real).CAPITAL == 40.0 and real_live.capital() == 40.0
     monkeypatch.delenv('REAL_CAPITAL')
     importlib.reload(real)
+
+
+def test_reads_what_polymarket_paid_once_an_hour(tmp_path, on):
+    cli, http = FakeClient(), FakeHTTP()
+    real_live.tick(str(tmp_path), http, now=86400 * 20000 + 600, log=lambda *_: None, cli=cli)
+    st = json.loads((tmp_path / real_live.FILE).read_text())
+    assert set(st['earnings']) == {'2024-10-03', '2024-10-04'} and st['earnings']['2024-10-04'][0]['earnings'] == 1.25

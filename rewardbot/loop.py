@@ -36,10 +36,12 @@ def push(repo: Path, branch: str, log=print, only: str | None = None) -> bool:
     git(repo, '-c', 'user.name=tradebot', '-c', 'user.email=tradebot@users.noreply.github.com',
         'commit', '-q', '-m', f'{"meme live" if only else "rewards loop"} {time.strftime("%Y-%m-%dT%H:%MZ", time.gmtime())}')
     for _ in range(3):
-        if git(repo, 'push', '-q', 'origin', branch):
+        if git(repo, 'push', '-q', 'origin', f'HEAD:refs/heads/{branch}'):
             return True
+        # rebase onto FETCH_HEAD: in GitHub's checkout the remote only tracks the checked-out branch, so
+        # origin/<branch> does not exist (or is stale) and a rebase onto it never catches up
         git(repo, 'fetch', '-q', 'origin', branch)
-        if not git(repo, 'rebase', '-q', '--autostash', '-X', 'ours', f'origin/{branch}'):
+        if not git(repo, 'rebase', '-q', '--autostash', '-X', 'ours', 'FETCH_HEAD'):
             git(repo, 'rebase', '--abort')
     log('state push failed')
     return False

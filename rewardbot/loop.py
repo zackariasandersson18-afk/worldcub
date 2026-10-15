@@ -25,7 +25,13 @@ def git(repo: Path, *args: str) -> bool:
 
 
 def push(repo: Path, branch: str, log=print, only: str | None = None) -> bool:
-    """Commit and push the state branch: everything, or just the file `only` (the memecoin live file every minute)."""
+    """Commit and push the state branch: everything, or just the file `only` (the memecoin live file every minute).
+
+    Other writers commit to the same branch (the owner's PC saves rewards/real_live.json through the API).
+    A rebase that stops on a conflict would block every later push, so: never leave one half done, and on
+    a conflict keep the remote side ('-X ours' in a rebase is the branch being rebased onto) - this loop
+    only ever needs its own files, which nobody else writes."""
+    git(repo, 'rebase', '--abort')                     # a stuck rebase from an earlier failure
     git(repo, 'add', only or '-A')
     git(repo, '-c', 'user.name=tradebot', '-c', 'user.email=tradebot@users.noreply.github.com',
         'commit', '-q', '-m', f'{"meme live" if only else "rewards loop"} {time.strftime("%Y-%m-%dT%H:%MZ", time.gmtime())}')
@@ -33,7 +39,8 @@ def push(repo: Path, branch: str, log=print, only: str | None = None) -> bool:
         if git(repo, 'push', '-q', 'origin', branch):
             return True
         git(repo, 'fetch', '-q', 'origin', branch)
-        git(repo, 'rebase', '-q', '--autostash', f'origin/{branch}')
+        if not git(repo, 'rebase', '-q', '--autostash', '-X', 'ours', f'origin/{branch}'):
+            git(repo, 'rebase', '--abort')
     log('state push failed')
     return False
 

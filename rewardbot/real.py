@@ -58,44 +58,50 @@ def quote(c: dict, yb: dict, nb: dict, tick: float) -> dict | None:
             'cost': round(size * (yes + no), 2), 'est_day': round(c['rate'] * share, 2)}
 
 
+def compute(state: str, http, capital: float, ticks: dict, held: dict | None = None) -> dict:
+    """Markets and orders for `capital` USD from v4's current portfolio. held: token -> shares we own;
+    a bid is left out when we already hold min_size of that token (v4's inventory cap of 1 x min size)."""
+    d = Path(state)
+    v4 = json.loads((d / 'rewards_v4_state.json').read_text())
+    pos = v4.get('positions') or {}
+    ranked = sorted(v4.get('portfolio') or [], key=lambda c: -(c['rate'] * ((pos.get(c['cond']) or {}).get('share') or 0))
+                    / max(c['collateral'], 1e-9))[:30]
+    books = bt.fetch_books([c[k] for c in ranked for k in ('yes', 'no')], http)
+    held = held or {}
+    orders, markets, used = [], [], 0.0
+    for c in ranked:
+        if c['cond'] not in ticks:
+            m = bt._get(http, f"{bt.CLOB}/markets/{c['cond']}") or {}
+            ticks[c['cond']] = float(m.get('minimum_tick_size') or 0.01)
+        q = quote(c, books.get(c['yes']), books.get(c['no']), ticks[c['cond']])
+        if not q or q['est_day'] <= 0 or used + q['cost'] > capital:
+            continue
+        used += q['cost']
+        markets.append({'q': c['question'][:80], 'cond': c['cond'], 'rate': c['rate'], 'v_c': c['v'], 'tick': ticks[c['cond']], **q})
+        for tok, outcome, price in ((c['yes'], 'YES', q['yes_bid']), (c['no'], 'NO', q['no_bid'])):
+            if held.get(tok, 0) + 1e-9 >= q['size']:
+                continue                                    # inventory cap: do not buy more of what we hold
+            orders.append({'cond': c['cond'], 'token': tok, 'outcome': outcome, 'side': 'BUY', 'price': price, 'size': q['size']})
+    return {'used': round(used, 2), 'est_reward_day': round(sum(m['est_day'] for m in markets), 2), 'markets': markets, 'orders': orders}
+
+
 def maybe_plan(state: str, http, now: float | None = None, log=print) -> dict | None:
     now = now or time.time()
     d = Path(state)
     path = d / FILE
     old = json.loads(path.read_text()) if path.exists() else {}
-    if now - old.get('ts_unix', 0) < EVERY_S:
+    if now - old.get('ts_unix', 0) < EVERY_S or not (d / 'rewards_v4_state.json').exists():
         return None
-    v4p = d / 'rewards_v4_state.json'
-    if not v4p.exists():
-        return None
-    v4 = json.loads(v4p.read_text())
-    pos = v4.get('positions') or {}
-    ranked = sorted(v4.get('portfolio') or [], key=lambda c: -(c['rate'] * ((pos.get(c['cond']) or {}).get('share') or 0))
-                    / max(c['collateral'], 1e-9))
     ticks = dict(old.get('ticks') or {})
-    books = bt.fetch_books([c[k] for c in ranked[:30] for k in ('yes', 'no')], http)
-    orders, markets, used = [], [], 0.0
-    for c in ranked[:30]:
-        if c['cond'] not in ticks:
-            m = bt._get(http, f"{bt.CLOB}/markets/{c['cond']}") or {}
-            ticks[c['cond']] = float(m.get('minimum_tick_size') or 0.01)
-        q = quote(c, books.get(c['yes']), books.get(c['no']), ticks[c['cond']])
-        if not q or q['est_day'] <= 0 or used + q['cost'] > CAPITAL:
-            continue
-        used += q['cost']
-        markets.append({'q': c['question'][:80], 'cond': c['cond'], 'rate': c['rate'], 'v_c': c['v'], 'tick': ticks[c['cond']], **q})
-        orders += [{'cond': c['cond'], 'token': c['yes'], 'outcome': 'YES', 'side': 'BUY', 'price': q['yes_bid'], 'size': q['size']},
-                   {'cond': c['cond'], 'token': c['no'], 'outcome': 'NO', 'side': 'BUY', 'price': q['no_bid'], 'size': q['size']}]
+    c = compute(state, http, CAPITAL, ticks)
     key = lambda o: (o['token'], o['price'], o['size'])   # noqa: E731
     before = {key(o) for o in old.get('orders') or []}
-    after = {key(o) for o in orders}
+    after = {key(o) for o in c['orders']}
     plan = {'mode': 'dry-run', 'ts': time.strftime('%Y-%m-%dT%H:%MZ', time.gmtime(now)), 'ts_unix': now, 'capital': CAPITAL,
-            'used': round(used, 2), 'est_reward_day': round(sum(m['est_day'] for m in markets), 2), 'markets': markets,
-            'orders': orders, 'changes': {'new': len(after - before), 'cancelled': len(before - after)} if before else None,
-            'ticks': ticks}
+            **c, 'changes': {'new': len(after - before), 'cancelled': len(before - after)} if before else None, 'ticks': ticks}
     hist = (old.get('history') or []) + [{'ts': plan['ts'], 'est_reward_day': plan['est_reward_day'], 'used': plan['used'],
-                                          'n': len(markets), **(plan['changes'] or {})}]
+                                          'n': len(c['markets']), **(plan['changes'] or {})}]
     plan['history'] = hist[-1000:]
     path.write_text(json.dumps(plan, separators=(',', ':')))
-    log(f"real dry-run {plan['ts']}: {len(markets)} markets, {used:.0f}/{CAPITAL:.0f} USD, est {plan['est_reward_day']} USD/day")
+    log(f"real dry-run {plan['ts']}: {len(c['markets'])} markets, {c['used']:.0f}/{CAPITAL:.0f} USD, est {plan['est_reward_day']} USD/day")
     return plan

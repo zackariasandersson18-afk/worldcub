@@ -37,3 +37,11 @@ def test_plan_fits_the_capital_and_counts_changes(tmp_path, monkeypatch):
     books['Y1'] = book([(0.40, 50)], [(0.74, 50)])                                          # mid moves to 0.57
     p = real.maybe_plan(str(tmp_path), None, now=1700, log=lambda *_: None)
     assert p['changes'] == {'new': 2, 'cancelled': 2}
+
+
+def test_compute_leaves_out_bids_for_tokens_already_held(tmp_path, monkeypatch):
+    (tmp_path / 'rewards_v4_state.json').write_text(json.dumps({'portfolio': [C], 'positions': {'0xc1': {'share': 1.0}}}))
+    monkeypatch.setattr(real.bt, 'fetch_books', lambda toks, http: {'Y1': book([(0.38, 50)], [(0.72, 50)]),
+                                                                     'N1': book([(0.28, 50)], [(0.62, 50)])})
+    c = real.compute(str(tmp_path), None, 50.0, {'0xc1': 0.01}, held={'Y1': 20.0})
+    assert [o['outcome'] for o in c['orders']] == ['NO'] and len(c['markets']) == 1

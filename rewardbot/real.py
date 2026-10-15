@@ -80,17 +80,31 @@ def without_own(book: dict, own: list) -> dict:
     return out
 
 
-def compute(state: str, http, capital: float, ticks: dict, held: dict | None = None, own: dict | None = None) -> dict:
+def _up(p: float, tick: float) -> float:
+    return _round(p, tick, down=False)
+
+
+def sell_price(token_is_yes: bool, mid: float, d: float, avg: float, tick: float) -> float:
+    """Where to offer shares we hold: on the ask side at the quote distance (that order earns rewards
+    like the bid it replaces), never below what we paid - a fallen position waits at cost instead."""
+    target = (mid + d) if token_is_yes else ((1 - mid) + d)
+    return min(_up(max(target, avg), tick), round(1 - tick, 6))
+
+
+def compute(state: str, http, capital: float, ticks: dict, held: dict | None = None, own: dict | None = None,
+            avg: dict | None = None) -> dict:
     """Markets and orders for `capital` USD, chosen from v4's whole portfolio by the LIVE reward per dollar:
     every market is priced against the order book right now (our own orders taken out), and the best
     ones are taken until the capital is used. held: token -> shares we own (no more bids for those, v4's
     inventory cap of 1 x min size). own: token -> [(price, size)] of our resting orders; a market we already
-    quote keeps a 30 % head start so the bot does not hop between markets every minute."""
+    quote keeps a 30 % head start so the bot does not hop between markets every minute.
+    avg: token -> average price paid. Shares we hold are offered for sale (SELL orders, no cash needed) on
+    the ask side instead of buying the opposite token - see sell_price - in every market we hold them in."""
     d = Path(state)
     v4 = json.loads((d / 'rewards_v4_state.json').read_text())
     port = v4.get('portfolio') or []
     books = bt.fetch_books([c[k] for c in port for k in ('yes', 'no')], http)
-    held, own = held or {}, own or {}
+    held, own, avg = held or {}, own or {}, avg or {}
     cands = []
     for c in port:
         if c['cond'] not in ticks:
@@ -112,10 +126,25 @@ def compute(state: str, http, capital: float, ticks: dict, held: dict | None = N
             continue
         used += r['cost']
         markets.append(r)
-        for tok, outcome, price in ((r['yes'], 'YES', r['yes_bid']), (r['no'], 'NO', r['no_bid'])):
+        for tok, other, outcome, price in ((r['yes'], r['no'], 'YES', r['yes_bid']), (r['no'], r['yes'], 'NO', r['no_bid'])):
             if held.get(tok, 0) + 1e-9 >= r['size']:
                 continue                                    # inventory cap: do not buy more of what we hold
+            if held.get(other, 0) >= 1:
+                continue                                    # that side is covered by selling the shares we hold
             orders.append({'cond': r['cond'], 'token': tok, 'outcome': outcome, 'side': 'BUY', 'price': price, 'size': r['size']})
+    # offer every position we hold, in any market of v4's portfolio
+    for c in port:
+        for tok, is_yes, outcome in ((c['yes'], True, 'YES'), (c['no'], False, 'NO')):
+            size = round(held.get(tok, 0), 2)
+            if size < 1:
+                continue
+            yb = without_own(books.get(c['yes']), own.get(c['yes']))
+            if not yb or not yb.get('bids') or not yb.get('asks'):
+                continue
+            mid = (max(float(x['price']) for x in yb['bids']) + min(float(x['price']) for x in yb['asks'])) / 2
+            price = sell_price(is_yes, mid, c['d'], float(avg.get(tok) or 0), ticks.get(c['cond'], 0.01))
+            orders.append({'cond': c['cond'], 'token': tok, 'outcome': outcome, 'side': 'SELL', 'price': price, 'size': size,
+                           'q': c['question'][:80], 'avg': avg.get(tok), 'mid': round(mid, 4)})
     strip = lambda r: {k: v for k, v in r.items() if k != '_rank'}   # noqa: E731
     chosen = {r['cond'] for r in markets}
     return {'used': round(used, 2), 'est_reward_day': round(sum(m['est_day'] for m in markets), 2),

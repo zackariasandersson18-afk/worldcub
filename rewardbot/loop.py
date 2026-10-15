@@ -17,7 +17,7 @@ from pathlib import Path
 import requests
 
 from memebot import paper as memebot_paper
-from rewardbot import census, live, live_v2, real
+from rewardbot import census, live, live_v2, real, real_live
 
 
 def git(repo: Path, *args: str) -> bool:
@@ -88,6 +88,19 @@ def meme_tick(state: str, http, log=print) -> dict:
     return t
 
 
+_REAL_CLIENT = None
+
+
+def real_tick(state: str, http, log=print):
+    """Live orders when the owner has turned real trading on (key + REAL_TRADING=on), else the dry run."""
+    global _REAL_CLIENT
+    if not real_live.enabled():
+        return real.maybe_plan(state, http, log=log)
+    if _REAL_CLIENT is None:
+        _REAL_CLIENT = real_live.client()
+    return real_live.tick(state, http, log=log, cli=_REAL_CLIENT)
+
+
 def tick(state: str, http, log=print) -> None:
     for name, fn in (('v1', lambda: live.step(state, http=http, log=log)),
                      ('v2', lambda: live_v2.step(state, http=http, log=log, version='v2')),
@@ -95,7 +108,7 @@ def tick(state: str, http, log=print) -> None:
                      ('v4', lambda: live_v2.step(state, http=http, log=log, version='v4')),
                      ('meme', lambda: meme_tick(state, http, log)),
                      ('census', lambda: census.maybe_run(state, log=log) or {}),
-                     ('real', lambda: real.maybe_plan(state, http, log=log) or {})):
+                     ('real', lambda: real_tick(state, http, log) or {})):
         try:
             t = fn()
             log(f"{time.strftime('%H:%M:%S', time.gmtime())} {name} net {t.get('net')} share {t.get('avg_share')}")
@@ -122,6 +135,8 @@ def main(argv=None) -> int:
         elif (Path(a.state).parent / 'memebot' / memebot_paper.LIVE_FILE).exists():
             push(Path(a.repo), a.branch, only=f'memebot/{memebot_paper.LIVE_FILE}')
         time.sleep(max(1.0, 60 - (time.time() - t0)))
+    if _REAL_CLIENT is not None:                       # nothing rests unwatched until the next run
+        real_live.cancel_everything(_REAL_CLIENT)
     push(Path(a.repo), a.branch)
     return 0
 

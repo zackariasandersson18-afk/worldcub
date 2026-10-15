@@ -167,7 +167,7 @@ td:first-child{white-space:normal;max-width:340px}
 <div class="wrap">
   <div class="top">
     <div class="logo">$</div>
-    <div class="title"><b>Riktiga pengar · v4</b><div>Polymarket-belöningar · torrkörning – inga ordrar läggs</div></div>
+    <div class="title"><b>Riktiga pengar · v4</b><div id="subtitle">Polymarket-belöningar · torrkörning – inga ordrar läggs</div></div>
     <div class="live"><i></i><span id="live">laddar…</span></div>
   </div>
   <div class="tabs"><a href="oversikt.html">Alla botar</a><a href="rewards.html?v=4">Belöningar v4</a><b>Riktiga pengar</b><a href="memebot.html">Memecoins</a></div>
@@ -175,10 +175,22 @@ td:first-child{white-space:normal;max-width:340px}
     <section class="card s12" style="grid-column:span 12">
       <div class="ch"><h3>Var vi är</h3><span class="sub">tre faser</span></div>
       <div class="steps">
-        <div class="now"><b>1 · Torrkörning (nu)</b>Boten räknar ut exakt vilka ordrar v4 skulle lägga med din summa – priser, storlekar, kostnad – men lägger inga. Ingen nyckel behövs.</div>
-        <div><b>2 · Litet riktigt test</b>Kräver din nyckel i GitHub Secrets. Spärrar: stopp-ärende tar bort alla ordrar inom en minut, automatiskt stopp vid förlustgräns, alla ordrar bort vid omstart.</div>
+        <div class="now"><b>1 · Torrkörning</b>Boten räknar ut exakt vilka ordrar v4 skulle lägga med din summa – priser, storlekar, kostnad – men lägger inga. Ingen nyckel behövs.</div>
+        <div><b>2 · Litet riktigt test (inkopplat, av tills du slår på det)</b>Startar när nyckeln finns i GitHub Secrets och variabeln REAL_TRADING = on. Spärrar: stopp-ärende tar bort alla ordrar inom en minut, automatiskt stopp vid förlustgräns, alla ordrar bort vid omstart.</div>
         <div><b>3 · Avstämning</b>Varje dag: vad Polymarket faktiskt betalade mot vad boten räknade med. Det talet avgör om vi fortsätter.</div>
       </div>
+    </section>
+    <section class="card s12" id="livebox" style="grid-column:span 12;display:none">
+      <div class="ch"><h3 id="l-mode">Riktig handel</h3><span class="sub" id="l-ts">—</span>
+        <span class="more"><a class="closebtn" id="l-stop" target="_blank" rel="noopener" href="#">Stoppa allt</a> <a class="closebtn" id="l-start" target="_blank" rel="noopener" href="#" style="color:#86efac;background:rgba(34,197,94,.12);border-color:rgba(34,197,94,.35)">Starta igen</a></span></div>
+      <div class="grid" style="gap:10px">
+        <div class="card tile s3" style="padding:14px"><div class="k">Konto nu</div><div class="v" id="l-eq">—</div><div class="s" id="l-cash">—</div></div>
+        <div class="card tile s3" style="padding:14px"><div class="k">Resultat sedan start</div><div class="v" id="l-pnl">—</div><div class="s" id="l-limit">—</div></div>
+        <div class="card tile s3" style="padding:14px"><div class="k">Ordrar ute</div><div class="v" id="l-ord">—</div><div class="s" id="l-score">—</div></div>
+        <div class="card tile s3" style="padding:14px"><div class="k">Andelar du äger</div><div class="v" id="l-pos">—</div><div class="s">köpta när någon sålde till din order</div></div>
+      </div>
+      <div class="scroll" style="margin-top:12px"><table><thead><tr><th>Order</th><th>Pris</th><th>Andelar</th><th>Fylld</th><th>Räknas för belöning</th></tr></thead><tbody id="l-rows"></tbody></table></div>
+      <div class="foot" style="margin-top:10px">"Räknas för belöning" är Polymarkets eget svar, inte botens gissning. "Stoppa allt" öppnar ett färdigt ärende på GitHub – skicka det så tar boten bort alla ordrar inom ungefär en minut. Boten stoppar också själv vid förlustgränsen.</div>
     </section>
     <section class="card tile s3"><div class="k"><span class="ico b">$</span>Insats</div><div class="v" id="cap">—</div><div class="s" id="used">—</div></section>
     <section class="card tile s3"><div class="k"><span class="ico g">↗</span>Förväntad belöning</div><div class="v" id="est">—</div><div class="s">per dag enligt modellen – obekräftat</div></section>
@@ -201,8 +213,29 @@ const esc = s => String(s).replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', 
 async function load() {
   let base = `https://raw.githubusercontent.com/${REPO}/rewards-state/rewards/`;
   try { const r = await fetch(`https://api.github.com/repos/${REPO}/commits/rewards-state`, {cache: 'no-store'}); if (r.ok) base = `https://raw.githubusercontent.com/${REPO}/${(await r.json()).sha}/rewards/`; } catch {}
+  try { const r = await fetch(base + 'real_live.json', {cache: 'no-store'}); renderLive(r.ok ? await r.json() : null); } catch { renderLive(null); }
   try { const r = await fetch(base + 'real_plan.json', {cache: 'no-store'}); if (r.ok) return r.json(); } catch {}
   return null;
+}
+const issue = t => `https://github.com/${REPO}/issues/new?title=${encodeURIComponent(t)}&body=${encodeURIComponent('Skapad från sidan Riktiga pengar. Tryck "Submit new issue" – boten svarar här inom ungefär en minut.')}`;
+function renderLive(s) {
+  if (!s || !s.mode) { $('livebox').style.display = 'none'; return; }
+  $('livebox').style.display = '';
+  const halted = s.mode === 'halted';
+  $('subtitle').textContent = halted ? 'Polymarket-belöningar · riktiga pengar · STOPPAD' : 'Polymarket-belöningar · riktiga pengar · ordrar ute';
+  $('l-mode').textContent = halted ? `Stoppad – ${s.halt_reason || ''}` : 'Riktig handel pågår';
+  $('l-mode').style.color = halted ? 'var(--bad)' : 'var(--good)';
+  $('l-ts').textContent = `senast ${String(s.ts).replace('T', ' ').slice(0, 16)} UTC`;
+  $('l-stop').href = issue('riktiga pengar: stopp'); $('l-start').href = issue('riktiga pengar: start');
+  $('l-stop').style.display = halted ? 'none' : ''; $('l-start').style.display = halted ? '' : 'none';
+  $('l-eq').textContent = usd(s.equity); $('l-cash').textContent = `${usd(s.account?.cash)} fritt · ${usd(s.account?.positions_value)} i andelar`;
+  $('l-pnl').textContent = (s.pnl >= 0 ? '+' : '−') + usd(Math.abs(s.pnl)); $('l-pnl').className = 'v ' + (s.pnl > 0 ? 'up' : s.pnl < 0 ? 'down' : '');
+  $('l-limit').textContent = `stoppar själv vid −${usd(s.loss_limit, 0)}`;
+  const o = s.orders || [], sc = o.filter(x => x.scoring).length;
+  $('l-ord').textContent = o.length; $('l-score').textContent = o.length ? `${sc} av ${o.length} räknas för belöning` : '—';
+  $('l-pos').textContent = (s.account?.positions || []).length;
+  $('l-rows').innerHTML = o.map(x => `<tr><td>${esc(x.id)}…</td><td>${esc(x.price)}</td><td>${esc(x.size)}</td><td>${esc(x.filled || 0)}</td>` +
+    `<td class="${x.scoring ? 'up' : 'down'}">${x.scoring ? '✓ ja' : '✕ nej'}</td></tr>`).join('') || '<tr><td colspan="5" class="muted">Inga ordrar ute just nu.</td></tr>';
 }
 function render(p) {
   if (!p) { $('live').textContent = 'väntar på första planen'; $('rows').innerHTML = '<tr><td colspan="9" class="muted">Första planen kommer inom 10 minuter efter att boten startat.</td></tr>'; return; }

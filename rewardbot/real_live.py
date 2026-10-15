@@ -120,13 +120,15 @@ def account(http, cli) -> dict:
     except Exception:                                   # noqa: BLE001
         pos = []
     held = {str(p.get('asset')): float(p.get('size') or 0) for p in pos or [] if float(p.get('size') or 0) > 0}
+    avg = {str(p.get('asset')): float(p.get('avgPrice') or 0) for p in pos or [] if float(p.get('size') or 0) > 0}
     value = sum(float(p.get('currentValue') or 0) for p in pos or [])
     # trading result as Polymarket reports it per position (unrealised + realised); rewards are not in it,
     # so the loss limit only ever errs on the careful side
     trade_pnl = sum(float(p.get('cashPnl') or 0) + float(p.get('realizedPnl') or 0) for p in pos or [])
-    return {'cash': round(cash, 4), 'positions_value': round(value, 4), 'held': held, 'trade_pnl': round(trade_pnl, 4),
+    return {'cash': round(cash, 4), 'positions_value': round(value, 4), 'held': held, 'avg': avg, 'trade_pnl': round(trade_pnl, 4),
             'positions': [{'q': (p.get('title') or '')[:60], 'outcome': p.get('outcome'), 'size': p.get('size'),
-                           'avg': p.get('avgPrice'), 'now': p.get('curPrice'), 'pnl': p.get('cashPnl')} for p in pos or []]}
+                           'avg': p.get('avgPrice'), 'now': p.get('curPrice'), 'pnl': p.get('cashPnl'),
+                           'end': (p.get('endDate') or '')[:10]} for p in pos or []]}
 
 
 def _open_orders(cli) -> list[dict]:
@@ -185,10 +187,10 @@ def tick(state: str, http, now: float | None = None, log=print, cli=None) -> dic
         for o in open_now:                              # our resting orders, so the planner does not compete with them
             own.setdefault(str(o.get('asset_id')), []).append(
                 (float(o.get('price') or 0), float(o.get('original_size') or 0) - float(o.get('size_matched') or 0)))
-        plan = real.compute(state, http, capital(), ticks, acc['held'], own)   # Polymarket refuses orders beyond the balance
-        key = lambda tok, price, size: (str(tok), round(float(price), 4), round(float(size), 2))   # noqa: E731
-        want = {key(o['token'], o['price'], o['size']): o for o in plan['orders']}
-        have = {key(o.get('asset_id'), o.get('price'), float(o.get('original_size') or 0)): o for o in open_now}
+        plan = real.compute(state, http, capital(), ticks, acc['held'], own, acc.get('avg'))   # Polymarket refuses orders beyond the balance
+        key = lambda side, tok, price, size: (str(side).upper(), str(tok), round(float(price), 4), round(float(size), 2))   # noqa: E731
+        want = {key(o.get('side', 'BUY'), o['token'], o['price'], o['size']): o for o in plan['orders']}
+        have = {key(o.get('side', 'BUY'), o.get('asset_id'), o.get('price'), float(o.get('original_size') or 0)): o for o in open_now}
         stale = [o['id'] for k, o in have.items() if k not in want]
         if stale:
             try:
@@ -203,7 +205,8 @@ def tick(state: str, http, now: float | None = None, log=print, cli=None) -> dic
             if k in have or posted >= MAX_POSTS_PER_TICK:
                 continue
             try:
-                signed = cli.create_order(OrderArgs(token_id=o['token'], price=o['price'], size=o['size'], side=Side.BUY),
+                side = Side.SELL if o.get('side') == 'SELL' else Side.BUY
+                signed = cli.create_order(OrderArgs(token_id=o['token'], price=o['price'], size=o['size'], side=side),
                                           PartialCreateOrderOptions(tick_size=f"{tick_of.get(o['cond'], 0.01):g}"))
                 r = cli.post_order(signed, OrderType.GTC, post_only=True)
                 ok = bool((r or {}).get('success', True)) and not (r or {}).get('errorMsg')
@@ -239,9 +242,10 @@ def tick(state: str, http, now: float | None = None, log=print, cli=None) -> dic
         hist.append(row)
     st.update(mode='halted' if st['halted'] else 'live', ts=iso, capital=capital(), loss_limit=loss_limit(), equity=round(equity, 4),
               pnl=round(pnl, 4), account={k: acc[k] for k in ('cash', 'positions_value', 'positions')},
-              orders=[{'id': o['id'][:12], 'token': str(o.get('asset_id')), 'price': o.get('price'), 'size': o.get('original_size'),
+              orders=[{'id': o['id'][:12], 'token': str(o.get('asset_id')), 'side': o.get('side', 'BUY'), 'price': o.get('price'), 'size': o.get('original_size'),
                        'filled': o.get('size_matched'), 'scoring': bool(scoring.get(o['id']))} for o in open_now],
-              markets=plan['markets'], est_reward_day=plan['est_reward_day'], alternatives=plan.get('alternatives', []),
+              markets=plan['markets'], est_reward_day=plan['est_reward_day'],
+              sells=[o for o in plan['orders'] if o.get('side') == 'SELL'], alternatives=plan.get('alternatives', []),
               n_priced=plan.get('n_priced'))
     st['history'], st['events'] = hist[-5000:], st['events'][-2000:]
     path.write_text(json.dumps(st, separators=(',', ':'), default=str))

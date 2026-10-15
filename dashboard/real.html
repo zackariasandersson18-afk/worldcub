@@ -191,6 +191,8 @@ td:first-child{white-space:normal;max-width:340px}
       </div>
       <h4 style="margin:16px 0 6px;font-size:13.5px">Marknader boten ligger i just nu</h4>
       <div class="scroll"><table><thead><tr><th>Marknad</th><th>Mitt</th><th>Köp JA</th><th>Köp NEJ</th><th>Din andel</th><th>Pott/dag</th><th>Förväntat/dag</th><th>Ordrar</th></tr></thead><tbody id="l-mk"></tbody></table></div>
+      <h4 style="margin:16px 0 6px;font-size:13.5px">Andelar du äger – utlagda till försäljning</h4>
+      <div class="scroll"><table><thead><tr><th>Marknad</th><th>Sida</th><th>Andelar</th><th>Köpt för</th><th>Värde nu</th><th>Resultat</th><th>Säljs för</th><th>Avgörs</th></tr></thead><tbody id="l-sell"></tbody></table></div>
       <h4 style="margin:16px 0 6px;font-size:13.5px">Bästa andra marknader just nu <span class="muted" style="font-weight:400" id="l-npriced"></span></h4>
       <div class="scroll"><table><thead><tr><th>Marknad</th><th>Mitt</th><th>Andel du skulle få</th><th>Pott/dag</th><th>Förväntat/dag</th><th>Per insatt dollar</th></tr></thead><tbody id="l-alt"></tbody></table></div>
       <div class="foot" style="margin-top:10px">"Räknas för belöning" är Polymarkets eget svar, inte botens gissning. "Stoppa allt" öppnar ett färdigt ärende på GitHub – skicka det så tar boten bort alla ordrar inom ungefär en minut. Boten stoppar också själv vid förlustgränsen.</div>
@@ -254,6 +256,12 @@ function renderLive(s) {
       `<td><b>${pct(m.share)}</b></td><td>${usd(m.rate, 0)}</td><td>${usd(m.est_day)}</td>` +
       `<td class="${sc === mine.length && mine.length ? 'up' : 'down'}">${mine.length} ute · ${sc} räknas${filled ? ` · ${nf(0).format(filled)} fyllda` : ''}</td></tr>`;
   }).join('') || '<tr><td colspan="8" class="muted">Ingen marknad vald just nu.</td></tr>';
+  const sellOf = new Map((s.sells || []).map(x => [x.q, x]));
+  $('l-sell').innerHTML = (s.account?.positions || []).map(p => { const x = [...sellOf.values()].find(v => v.q && p.q && v.q.startsWith(p.q.slice(0, 40)));
+    return `<tr><td>${esc(p.q)}</td><td>${p.outcome === 'Yes' ? 'JA' : p.outcome === 'No' ? 'NEJ' : esc(p.outcome)}</td><td>${nf(0).format(p.size)}</td>` +
+      `<td>${nf(3).format(p.avg)}</td><td>${nf(3).format(p.now)}</td><td class="${p.pnl >= 0 ? 'up' : 'down'}">${(p.pnl >= 0 ? '+' : '−') + usd(Math.abs(p.pnl))}</td>` +
+      `<td>${x ? nf(3).format(x.price) : '—'}</td><td class="muted">${esc(p.end || '')}</td></tr>`; }).join('') ||
+    '<tr><td colspan="8" class="muted">Du äger inga andelar just nu.</td></tr>';
   $('l-npriced').textContent = s.n_priced ? `· ${s.n_priced} av v4:s marknader prissatta mot orderboken nu` : '';
   $('l-alt').innerHTML = (s.alternatives || []).map(m => `<tr><td>${esc(m.q)}</td><td>${nf(3).format(m.mid)}</td><td>${pct(m.share)}</td>` +
     `<td>${usd(m.rate, 0)}</td><td>${usd(m.est_day)}</td><td>${usd(m.per_dollar, 3)}</td></tr>`).join('') ||

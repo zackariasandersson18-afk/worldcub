@@ -35,6 +35,7 @@ class FakeClient:
         assert post_only, 'every order must be post-only'
         self.n += 1
         self.posted.append((signed.token_id, signed.price, signed.size))
+        self.sides = getattr(self, 'sides', []) + [signed.side]
         self.orders.append({'id': f'o{self.n}', 'asset_id': signed.token_id, 'price': str(signed.price),
                             'original_size': str(signed.size), 'size_matched': '0', 'status': 'LIVE'})
         return {'success': True}
@@ -79,7 +80,7 @@ def on(monkeypatch):
     monkeypatch.setenv('POLY_FUNDER', '0xabc')
     monkeypatch.setenv('GITHUB_REPOSITORY', 'owner/repo')
     monkeypatch.setenv('GITHUB_TOKEN', 't')
-    monkeypatch.setattr(real_live.real, 'compute', lambda state, http, cap, ticks, held=None, own=None: json.loads(json.dumps(PLAN)))
+    monkeypatch.setattr(real_live.real, 'compute', lambda *a, **k: json.loads(json.dumps(PLAN)))
 
 
 def test_off_unless_key_and_switch(monkeypatch):
@@ -173,3 +174,13 @@ def test_reads_what_polymarket_paid_once_an_hour(tmp_path, on):
     real_live.tick(str(tmp_path), http, now=86400 * 20000 + 600, log=lambda *_: None, cli=cli)
     st = json.loads((tmp_path / real_live.FILE).read_text())
     assert set(st['earnings']) == {'2024-10-03', '2024-10-04'} and st['earnings']['2024-10-04'][0]['earnings'] == 1.25
+
+
+def test_sell_orders_are_posted_as_sells(tmp_path, on, monkeypatch):
+    plan = json.loads(json.dumps(PLAN))
+    plan['orders'] = [{'cond': 'c1', 'token': 'Y1', 'outcome': 'YES', 'side': 'SELL', 'price': 0.59, 'size': 20.0}]
+    monkeypatch.setattr(real_live.real, 'compute', lambda *a, **k: json.loads(json.dumps(plan)))
+    cli = FakeClient()
+    real_live.tick(str(tmp_path), FakeHTTP(), now=1000, log=lambda *_: None, cli=cli)
+    from py_clob_client_v2 import Side
+    assert cli.posted == [('Y1', 0.59, 20.0)] and cli.sides == [Side.SELL]

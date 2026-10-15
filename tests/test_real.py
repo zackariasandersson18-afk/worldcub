@@ -44,7 +44,7 @@ def test_compute_leaves_out_bids_for_tokens_already_held(tmp_path, monkeypatch):
     monkeypatch.setattr(real.bt, 'fetch_books', lambda toks, http: {'Y1': book([(0.38, 50)], [(0.72, 50)]),
                                                                      'N1': book([(0.28, 50)], [(0.62, 50)])})
     c = real.compute(str(tmp_path), None, 50.0, {'0xc1': 0.01}, held={'Y1': 20.0})
-    assert [o['outcome'] for o in c['orders']] == ['NO'] and len(c['markets']) == 1
+    assert [(o['side'], o['outcome']) for o in c['orders']] == [('SELL', 'YES')] and len(c['markets']) == 1
 
 
 def _two_markets(tmp_path, monkeypatch, books):
@@ -73,3 +73,19 @@ def test_own_orders_are_not_competition_and_keep_a_head_start(tmp_path, monkeypa
     c = real.compute(str(tmp_path), None, 20.0, {'crowded': 0.01, 'empty': 0.01}, own=own)
     assert [m['cond'] for m in c['markets']] == ['crowded'] and c['markets'][0]['share'] == 1.0
     assert [(b['price'], float(b['size'])) for b in real.without_own(books['Yc'], own['Yc'])['bids']] == [('0.38', 50.0)]
+
+
+def test_sell_price_on_the_ask_side_never_below_cost():
+    assert real.sell_price(True, 0.55, 0.0325, 0.30, 0.01) == 0.59      # YES ask at mid + d (0.5825 rounded up)
+    assert real.sell_price(False, 0.55, 0.0325, 0.30, 0.01) == 0.49     # NO ask at (1 - mid) + d
+    assert real.sell_price(True, 0.40, 0.0325, 0.50, 0.01) == 0.50      # fallen: wait at what we paid
+    assert real.sell_price(True, 0.98, 0.0325, 0.50, 0.01) == 0.99      # never at 1 or above
+
+
+def test_held_shares_are_offered_instead_of_buying_the_other_side(tmp_path, monkeypatch):
+    (tmp_path / 'rewards_v4_state.json').write_text(json.dumps({'portfolio': [C], 'positions': {'0xc1': {'share': 1.0}}}))
+    monkeypatch.setattr(real.bt, 'fetch_books', lambda toks, http: {'Y1': book([(0.38, 50)], [(0.72, 50)]),
+                                                                     'N1': book([(0.28, 50)], [(0.62, 50)])})
+    c = real.compute(str(tmp_path), None, 50.0, {'0xc1': 0.01}, held={'Y1': 20.0}, avg={'Y1': 0.51})
+    sides = sorted((o['side'], o['outcome'], o['price']) for o in c['orders'])
+    assert sides == [('SELL', 'YES', 0.59)]          # no more YES (cap), no NO bid (the sell covers that side)

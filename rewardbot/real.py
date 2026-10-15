@@ -61,31 +61,66 @@ def quote(c: dict, yb: dict, nb: dict, tick: float) -> dict | None:
             'cost': round(size * (yes + no), 2), 'est_day': round(c['rate'] * share, 2)}
 
 
-def compute(state: str, http, capital: float, ticks: dict, held: dict | None = None) -> dict:
-    """Markets and orders for `capital` USD from v4's current portfolio. held: token -> shares we own;
-    a bid is left out when we already hold min_size of that token (v4's inventory cap of 1 x min size)."""
+KEEP_BONUS = 1.3      # a market we already quote must be beaten by 30 % before we move (no flip-flopping each minute)
+
+
+def without_own(book: dict, own: list) -> dict:
+    """The book minus our own resting orders (price, size), so we never count ourselves as competition."""
+    if not book or not own:
+        return book
+    left = {}
+    for p, z in own:
+        left[round(float(p), 4)] = left.get(round(float(p), 4), 0.0) + float(z)
+    out = {**book, 'bids': []}
+    for lv in book.get('bids') or []:
+        p = round(float(lv['price']), 4)
+        z = float(lv['size']) - left.pop(p, 0.0)
+        if z > 1e-9:
+            out['bids'].append({**lv, 'size': str(z)})
+    return out
+
+
+def compute(state: str, http, capital: float, ticks: dict, held: dict | None = None, own: dict | None = None) -> dict:
+    """Markets and orders for `capital` USD, chosen from v4's whole portfolio by the LIVE reward per dollar:
+    every market is priced against the order book right now (our own orders taken out), and the best
+    ones are taken until the capital is used. held: token -> shares we own (no more bids for those, v4's
+    inventory cap of 1 x min size). own: token -> [(price, size)] of our resting orders; a market we already
+    quote keeps a 30 % head start so the bot does not hop between markets every minute."""
     d = Path(state)
     v4 = json.loads((d / 'rewards_v4_state.json').read_text())
-    pos = v4.get('positions') or {}
-    ranked = sorted(v4.get('portfolio') or [], key=lambda c: -(c['rate'] * ((pos.get(c['cond']) or {}).get('share') or 0))
-                    / max(c['collateral'], 1e-9))[:30]
-    books = bt.fetch_books([c[k] for c in ranked for k in ('yes', 'no')], http)
-    held = held or {}
-    orders, markets, used = [], [], 0.0
-    for c in ranked:
+    port = v4.get('portfolio') or []
+    books = bt.fetch_books([c[k] for c in port for k in ('yes', 'no')], http)
+    held, own = held or {}, own or {}
+    cands = []
+    for c in port:
         if c['cond'] not in ticks:
             m = bt._get(http, f"{bt.CLOB}/markets/{c['cond']}") or {}
             ticks[c['cond']] = float(m.get('minimum_tick_size') or 0.01)
-        q = quote(c, books.get(c['yes']), books.get(c['no']), ticks[c['cond']])
-        if not q or q['est_day'] <= 0 or used + q['cost'] > capital:
+        yb = without_own(books.get(c['yes']), own.get(c['yes']))
+        nb = without_own(books.get(c['no']), own.get(c['no']))
+        q = quote(c, yb, nb, ticks[c['cond']])
+        if not q or q['est_day'] <= 0 or q['cost'] <= 0:
             continue
-        used += q['cost']
-        markets.append({'q': c['question'][:80], 'cond': c['cond'], 'rate': c['rate'], 'v_c': c['v'], 'tick': ticks[c['cond']], **q})
-        for tok, outcome, price in ((c['yes'], 'YES', q['yes_bid']), (c['no'], 'NO', q['no_bid'])):
-            if held.get(tok, 0) + 1e-9 >= q['size']:
+        mine = c['yes'] in own or c['no'] in own
+        cands.append({'q': c['question'][:80], 'cond': c['cond'], 'yes': c['yes'], 'no': c['no'], 'rate': c['rate'],
+                      'v_c': c['v'], 'tick': ticks[c['cond']], 'quoted': mine, 'per_dollar': round(q['est_day'] / q['cost'], 4),
+                      '_rank': q['est_day'] / q['cost'] * (KEEP_BONUS if mine else 1.0), **q})
+    cands.sort(key=lambda r: -r['_rank'])
+    orders, markets, used = [], [], 0.0
+    for r in cands:
+        if used + r['cost'] > capital:
+            continue
+        used += r['cost']
+        markets.append(r)
+        for tok, outcome, price in ((r['yes'], 'YES', r['yes_bid']), (r['no'], 'NO', r['no_bid'])):
+            if held.get(tok, 0) + 1e-9 >= r['size']:
                 continue                                    # inventory cap: do not buy more of what we hold
-            orders.append({'cond': c['cond'], 'token': tok, 'outcome': outcome, 'side': 'BUY', 'price': price, 'size': q['size']})
-    return {'used': round(used, 2), 'est_reward_day': round(sum(m['est_day'] for m in markets), 2), 'markets': markets, 'orders': orders}
+            orders.append({'cond': r['cond'], 'token': tok, 'outcome': outcome, 'side': 'BUY', 'price': price, 'size': r['size']})
+    strip = lambda r: {k: v for k, v in r.items() if k != '_rank'}   # noqa: E731
+    chosen = {r['cond'] for r in markets}
+    return {'used': round(used, 2), 'est_reward_day': round(sum(m['est_day'] for m in markets), 2),
+            'markets': [strip(r) for r in markets], 'orders': orders,
+            'alternatives': [strip(r) for r in cands if r['cond'] not in chosen][:8], 'n_priced': len(cands)}
 
 
 def maybe_plan(state: str, http, now: float | None = None, log=print) -> dict | None:

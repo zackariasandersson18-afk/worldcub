@@ -189,7 +189,10 @@ td:first-child{white-space:normal;max-width:340px}
         <div class="card tile s3" style="padding:14px"><div class="k">Ordrar ute</div><div class="v" id="l-ord">—</div><div class="s" id="l-score">—</div></div>
         <div class="card tile s3" style="padding:14px"><div class="k">Utbetalt av Polymarket</div><div class="v" id="l-paid">—</div><div class="s" id="l-paid-s">belöning enligt Polymarket själv</div></div>
       </div>
-      <div class="scroll" style="margin-top:12px"><table><thead><tr><th>Order</th><th>Pris</th><th>Andelar</th><th>Fylld</th><th>Räknas för belöning</th></tr></thead><tbody id="l-rows"></tbody></table></div>
+      <h4 style="margin:16px 0 6px;font-size:13.5px">Marknader boten ligger i just nu</h4>
+      <div class="scroll"><table><thead><tr><th>Marknad</th><th>Mitt</th><th>Köp JA</th><th>Köp NEJ</th><th>Din andel</th><th>Pott/dag</th><th>Förväntat/dag</th><th>Ordrar</th></tr></thead><tbody id="l-mk"></tbody></table></div>
+      <h4 style="margin:16px 0 6px;font-size:13.5px">Bästa andra marknader just nu <span class="muted" style="font-weight:400" id="l-npriced"></span></h4>
+      <div class="scroll"><table><thead><tr><th>Marknad</th><th>Mitt</th><th>Andel du skulle få</th><th>Pott/dag</th><th>Förväntat/dag</th><th>Per insatt dollar</th></tr></thead><tbody id="l-alt"></tbody></table></div>
       <div class="foot" style="margin-top:10px">"Räknas för belöning" är Polymarkets eget svar, inte botens gissning. "Stoppa allt" öppnar ett färdigt ärende på GitHub – skicka det så tar boten bort alla ordrar inom ungefär en minut. Boten stoppar också själv vid förlustgränsen.</div>
     </section>
     <section class="card tile s3"><div class="k"><span class="ico b">$</span>Insats</div><div class="v" id="cap">—</div><div class="s" id="used">—</div></section>
@@ -210,9 +213,13 @@ const $ = id => document.getElementById(id);
 const nf = d => new Intl.NumberFormat('sv-SE', {minimumFractionDigits: d, maximumFractionDigits: d});
 const usd = (x, d = 2) => x == null || !isFinite(x) ? '—' : nf(d).format(x) + ' $';
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]));
+// GitHub allows 60 API calls an hour without a key; with the key from the memecoin page's Stäng button
+// (same github.io origin) it allows 5000, so the page can refresh every 20 s
+const TOKEN = (() => { try { return location.hostname.endsWith('github.io') ? localStorage.getItem('memebot-close-token') || '' : ''; } catch { return ''; } })();
+let S_LIVE_TS = null;
 async function load() {
   let base = `https://raw.githubusercontent.com/${REPO}/rewards-state/rewards/`;
-  try { const r = await fetch(`https://api.github.com/repos/${REPO}/commits/rewards-state`, {cache: 'no-store'}); if (r.ok) base = `https://raw.githubusercontent.com/${REPO}/${(await r.json()).sha}/rewards/`; } catch {}
+  try { const r = await fetch(`https://api.github.com/repos/${REPO}/commits/rewards-state`, {cache: 'no-store', ...(TOKEN ? {headers: {Authorization: `Bearer ${TOKEN}`}} : {})}); if (r.ok) base = `https://raw.githubusercontent.com/${REPO}/${(await r.json()).sha}/rewards/`; } catch {}
   try { const r = await fetch(base + 'real_live.json', {cache: 'no-store'}); renderLive(r.ok ? await r.json() : null); } catch { renderLive(null); }
   try { const r = await fetch(base + 'real_plan.json', {cache: 'no-store'}); if (r.ok) return r.json(); } catch {}
   return null;
@@ -238,8 +245,20 @@ function renderLive(s) {
   const days = Object.entries(s.earnings || {}).sort((a, b) => a[0].localeCompare(b[0]));
   if (days.length) { const [d, v] = days[days.length - 1]; const tot = days.reduce((a, [, x]) => a + paidOf(x), 0);
     $('l-paid').textContent = usd(paidOf(v)); $('l-paid-s').textContent = `${d} · totalt ${usd(tot)} · ${(s.account?.positions || []).length} andelsposter`; }
-  $('l-rows').innerHTML = o.map(x => `<tr><td>${esc(x.id)}…</td><td>${esc(x.price)}</td><td>${esc(x.size)}</td><td>${esc(x.filled || 0)}</td>` +
-    `<td class="${x.scoring ? 'up' : 'down'}">${x.scoring ? '✓ ja' : '✕ nej'}</td></tr>`).join('') || '<tr><td colspan="5" class="muted">Inga ordrar ute just nu.</td></tr>';
+  // orders grouped under their market (by token); scoring is Polymarket's own answer
+  const pct = x => `${nf(x < 0.01 ? 2 : 1).format(x * 100)} %`;
+  $('l-mk').innerHTML = (s.markets || []).map(m => {
+    const mine = o.filter(x => x.token === m.yes || x.token === m.no);
+    const sc = mine.filter(x => x.scoring).length, filled = mine.reduce((a, x) => a + (+x.filled || 0), 0);
+    return `<tr><td>${esc(m.q)}</td><td>${nf(3).format(m.mid)}</td><td>${nf(3).format(m.yes_bid)}</td><td>${nf(3).format(m.no_bid)}</td>` +
+      `<td><b>${pct(m.share)}</b></td><td>${usd(m.rate, 0)}</td><td>${usd(m.est_day)}</td>` +
+      `<td class="${sc === mine.length && mine.length ? 'up' : 'down'}">${mine.length} ute · ${sc} räknas${filled ? ` · ${nf(0).format(filled)} fyllda` : ''}</td></tr>`;
+  }).join('') || '<tr><td colspan="8" class="muted">Ingen marknad vald just nu.</td></tr>';
+  $('l-npriced').textContent = s.n_priced ? `· ${s.n_priced} av v4:s marknader prissatta mot orderboken nu` : '';
+  $('l-alt').innerHTML = (s.alternatives || []).map(m => `<tr><td>${esc(m.q)}</td><td>${nf(3).format(m.mid)}</td><td>${pct(m.share)}</td>` +
+    `<td>${usd(m.rate, 0)}</td><td>${usd(m.est_day)}</td><td>${usd(m.per_dollar, 3)}</td></tr>`).join('') ||
+    '<tr><td colspan="6" class="muted">Visas efter nästa minut.</td></tr>';
+  S_LIVE_TS = Date.parse(s.ts);
 }
 function render(p) {
   if (!p) { $('live').textContent = 'väntar på första planen'; $('rows').innerHTML = '<tr><td colspan="9" class="muted">Första planen kommer inom 10 minuter efter att boten startat.</td></tr>'; return; }
@@ -253,7 +272,13 @@ function render(p) {
     `<td>${nf(0).format(m.size)}</td><td>${usd(m.cost)}</td><td>${usd(m.rate, 0)}</td><td>${nf(0).format(m.share * 100)} %</td><td>${usd(m.est_day)}</td></tr>`).join('') ||
     '<tr><td colspan="9" class="muted">Inga marknader passar just nu.</td></tr>';
 }
-(async function init() { render(await load()); setInterval(async () => render(await load()), 60_000); })();
+(async function init() {
+  render(await load());
+  setInterval(async () => render(await load()), TOKEN ? 20_000 : 60_000);
+  setInterval(() => { if (S_LIVE_TS) { const a = Math.max(0, Math.round((Date.now() - S_LIVE_TS) / 1000));
+    $('l-ts').textContent = `boten rapporterade för ${a < 90 ? a + ' s' : Math.round(a / 60) + ' min'} sedan`;
+    $('l-ts').style.color = a > 300 ? 'var(--bad)' : ''; } }, 1000);
+})();
 </script>
 </body>
 </html>

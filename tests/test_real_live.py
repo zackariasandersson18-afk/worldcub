@@ -77,6 +77,7 @@ PLAN = {'used': 36.8, 'est_reward_day': 100.0, 'markets': [{'q': 'Q', 'cond': 'c
 def on(monkeypatch):
     monkeypatch.setenv('REAL_TRADING', 'on')
     monkeypatch.setenv('POLY_PRIVATE_KEY', 'not-a-real-key')
+    monkeypatch.setenv('REAL_BUY', 'on')
     monkeypatch.setenv('POLY_FUNDER', '0xabc')
     monkeypatch.setenv('GITHUB_REPOSITORY', 'owner/repo')
     monkeypatch.setenv('GITHUB_TOKEN', 't')
@@ -184,3 +185,17 @@ def test_sell_orders_are_posted_as_sells(tmp_path, on, monkeypatch):
     real_live.tick(str(tmp_path), FakeHTTP(), now=1000, log=lambda *_: None, cli=cli)
     from py_clob_client_v2 import Side
     assert cli.posted == [('Y1', 0.59, 20.0)] and cli.sides == [Side.SELL]
+
+
+def test_sell_only_by_default_cancels_buys_keeps_sells(tmp_path, on, monkeypatch):
+    plan = json.loads(json.dumps(PLAN))
+    plan['orders'].append({'cond': 'c2', 'token': 'Y9', 'outcome': 'YES', 'side': 'SELL', 'price': 0.6, 'size': 20.0})
+    monkeypatch.setattr(real_live.real, 'compute', lambda *a, **k: json.loads(json.dumps(plan)))
+    cli, http = FakeClient(), FakeHTTP()
+    monkeypatch.setenv('REAL_BUY', 'on')
+    real_live.tick(str(tmp_path), http, now=1000, log=lambda *_: None, cli=cli)
+    assert len(cli.orders) == 3
+    monkeypatch.delenv('REAL_BUY')                                      # paused: the two buys go, the sell stays
+    real_live.tick(str(tmp_path), http, now=1060, log=lambda *_: None, cli=cli)
+    st = json.loads((tmp_path / real_live.FILE).read_text())
+    assert [o['asset_id'] for o in cli.orders] == ['Y9'] and st['mode'] == 'sell_only' and st['markets'] == []

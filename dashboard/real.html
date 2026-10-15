@@ -232,8 +232,9 @@ function renderLive(s) {
   $('livebox').style.display = '';
   const halted = s.mode === 'halted';
   $('subtitle').textContent = halted ? 'Polymarket-belöningar · riktiga pengar · STOPPAD' : 'Polymarket-belöningar · riktiga pengar · ordrar ute';
-  $('l-mode').textContent = halted ? `Stoppad – ${s.halt_reason || ''}` : 'Riktig handel pågår';
-  $('l-mode').style.color = halted ? 'var(--bad)' : 'var(--good)';
+  const sellOnly = s.mode === 'sell_only';
+  $('l-mode').textContent = halted ? `Stoppad – ${s.halt_reason || ''}` : sellOnly ? 'Pausad – säljer bara andelar du redan äger' : 'Riktig handel pågår';
+  $('l-mode').style.color = halted ? 'var(--bad)' : sellOnly ? 'var(--warn)' : 'var(--good)';
   $('l-ts').textContent = `senast ${String(s.ts).replace('T', ' ').slice(0, 16)} UTC`;
   $('l-stop').href = issue('riktiga pengar: stopp'); $('l-start').href = issue('riktiga pengar: start');
   $('l-stop').style.display = halted ? 'none' : ''; $('l-start').style.display = halted ? '' : 'none';

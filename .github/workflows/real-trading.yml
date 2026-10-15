@@ -38,7 +38,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: install
-        run: python -m pip install --quiet requests py-clob-client==0.34.6
+        run: python -m pip install --quiet -r requirements.txt
       - name: place v4's orders every minute
         run: python -m rewardbot.real_runner --state real_state
       - name: cancel every order (also after a crash or a cancelled run)

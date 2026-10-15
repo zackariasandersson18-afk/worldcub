@@ -23,6 +23,9 @@ jobs:
   trade:
     runs-on: [self-hosted, Windows]
     timeout-minutes: 358
+    defaults:
+      run:
+        shell: cmd             # Windows blocks PowerShell scripts by default; cmd needs no policy change
     env:
       PYTHONPATH: ${{ github.workspace }}
       GITHUB_TOKEN: ${{ github.token }}

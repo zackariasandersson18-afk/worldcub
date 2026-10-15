@@ -147,3 +147,18 @@ def test_cancel_all_command_is_harmless_without_a_key(monkeypatch, capsys):
     monkeypatch.delenv('POLY_PRIVATE_KEY', raising=False)
     assert real_live.main(['--cancel-all']) == 0
     assert 'nothing to cancel' in capsys.readouterr().out
+
+
+def test_empty_or_mistyped_variables_never_crash(monkeypatch):
+    import importlib
+
+    from rewardbot import real
+    for v in ('', '  ', 'femtio'):
+        monkeypatch.setenv('REAL_CAPITAL', v)
+        monkeypatch.setenv('REAL_LOSS_LIMIT', v)
+        assert importlib.reload(real).CAPITAL == 50.0                      # GitHub passes unset variables as ''
+        assert real_live.capital() == 50.0 and real_live.loss_limit() == 10.0
+    monkeypatch.setenv('REAL_CAPITAL', '40')
+    assert importlib.reload(real).CAPITAL == 40.0 and real_live.capital() == 40.0
+    monkeypatch.delenv('REAL_CAPITAL')
+    importlib.reload(real)

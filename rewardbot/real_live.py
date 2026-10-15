@@ -61,11 +61,12 @@ def loss_limit() -> float:
 
 
 def client():
-    """Polymarket's own client, with API credentials derived from the key (L2 auth)."""
-    from py_clob_client.client import ClobClient
+    """Polymarket's own client (CLOB v2 - the v1 client's orders are refused with 'invalid order version'),
+    with API credentials derived from the key (L2 auth)."""
+    from py_clob_client_v2 import ClobClient
     c = ClobClient(HOST, chain_id=137, key=env('POLY_PRIVATE_KEY'), signature_type=int(env('POLY_SIGNATURE_TYPE', '1') or 1),
                    funder=env('POLY_FUNDER'))
-    c.set_api_creds(c.create_or_derive_api_creds())
+    c.set_api_creds(c.create_or_derive_api_key())
     return c
 
 
@@ -103,9 +104,8 @@ def answer(http, number: int, text: str) -> None:
 # ---- account
 def account(http, cli) -> dict:
     """USDC balance (free cash), positions and their profit/loss as Polymarket reports them."""
-    from py_clob_client.clob_types import AssetType, BalanceAllowanceParams
-    bal = cli.get_balance_allowance(BalanceAllowanceParams(asset_type=AssetType.COLLATERAL,
-                                                           signature_type=int(env('POLY_SIGNATURE_TYPE', '1') or 1)))
+    from py_clob_client_v2 import AssetType, BalanceAllowanceParams
+    bal = cli.get_balance_allowance(BalanceAllowanceParams(asset_type=AssetType.COLLATERAL))
     cash = float((bal or {}).get('balance') or 0) / 1e6
     try:
         r = http.get(f'{DATA_API}/positions', params={'user': env('POLY_FUNDER'), 'sizeThreshold': 0}, timeout=20)
@@ -123,7 +123,7 @@ def account(http, cli) -> dict:
 
 
 def _open_orders(cli) -> list[dict]:
-    return [o for o in cli.get_orders() or [] if str(o.get('status', 'LIVE')).upper() in ('LIVE', 'OPEN', '')]
+    return [o for o in cli.get_open_orders() or [] if str(o.get('status', 'LIVE')).upper() in ('LIVE', 'OPEN', '')]
 
 
 def cancel_everything(cli, log=print) -> None:
@@ -186,13 +186,14 @@ def tick(state: str, http, now: float | None = None, log=print, cli=None) -> dic
             except Exception as e:                      # noqa: BLE001
                 ev('fel', msg=f'cancel: {type(e).__name__}')
                 cancel_everything(cli, log)             # when in doubt, nothing stays out
-        from py_clob_client.clob_types import OrderArgs, OrderType
-        from py_clob_client.order_builder.constants import BUY
+        from py_clob_client_v2 import OrderArgs, OrderType, PartialCreateOrderOptions, Side
+        tick_of = {m.get('cond'): m.get('tick') or 0.01 for m in plan['markets']}
         for k, o in want.items():
             if k in have or posted >= MAX_POSTS_PER_TICK:
                 continue
             try:
-                signed = cli.create_order(OrderArgs(token_id=o['token'], price=o['price'], size=o['size'], side=BUY))
+                signed = cli.create_order(OrderArgs(token_id=o['token'], price=o['price'], size=o['size'], side=Side.BUY),
+                                          PartialCreateOrderOptions(tick_size=f"{tick_of.get(o['cond'], 0.01):g}"))
                 r = cli.post_order(signed, OrderType.GTC, post_only=True)
                 ok = bool((r or {}).get('success', True)) and not (r or {}).get('errorMsg')
                 posted += ok
@@ -205,11 +206,19 @@ def tick(state: str, http, now: float | None = None, log=print, cli=None) -> dic
     scoring = {}
     if open_now:
         try:
-            from py_clob_client.clob_types import OrdersScoringParams
+            from py_clob_client_v2 import OrdersScoringParams
             scoring = cli.are_orders_scoring(OrdersScoringParams(orderIds=[o['id'] for o in open_now])) or {}
         except Exception as e:                          # noqa: BLE001
             log(f'real: scoring check failed: {type(e).__name__}')
     n_scoring = sum(1 for o in open_now if scoring.get(o['id']))
+    # 5. what Polymarket actually paid in rewards (phase 3): yesterday's and today's total, once an hour
+    if now - st.get('earnings_ts', 0) >= 3600:
+        for day in {time.strftime('%Y-%m-%d', time.gmtime(now - 86400)), time.strftime('%Y-%m-%d', time.gmtime(now))}:
+            try:
+                st.setdefault('earnings', {})[day] = cli.get_total_earnings_for_user_for_day(day)
+            except Exception as e:                      # noqa: BLE001
+                log(f'real: earnings check failed: {type(e).__name__}')
+        st['earnings_ts'] = now
     row = {'ts': iso, 'equity': round(equity, 4), 'pnl': round(pnl, 4), 'cash': acc['cash'], 'positions_value': acc['positions_value'],
            'orders': len(open_now), 'scoring': n_scoring, 'est_reward_day': plan['est_reward_day'], 'posted': posted, 'cancelled': cancelled}
     hist = st['history']

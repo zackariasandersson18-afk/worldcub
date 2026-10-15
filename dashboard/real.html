@@ -187,7 +187,7 @@ td:first-child{white-space:normal;max-width:340px}
         <div class="card tile s3" style="padding:14px"><div class="k">Konto nu</div><div class="v" id="l-eq">—</div><div class="s" id="l-cash">—</div></div>
         <div class="card tile s3" style="padding:14px"><div class="k">Resultat sedan start</div><div class="v" id="l-pnl">—</div><div class="s" id="l-limit">—</div></div>
         <div class="card tile s3" style="padding:14px"><div class="k">Ordrar ute</div><div class="v" id="l-ord">—</div><div class="s" id="l-score">—</div></div>
-        <div class="card tile s3" style="padding:14px"><div class="k">Andelar du äger</div><div class="v" id="l-pos">—</div><div class="s">köpta när någon sålde till din order</div></div>
+        <div class="card tile s3" style="padding:14px"><div class="k">Utbetalt av Polymarket</div><div class="v" id="l-paid">—</div><div class="s" id="l-paid-s">belöning enligt Polymarket själv</div></div>
       </div>
       <div class="scroll" style="margin-top:12px"><table><thead><tr><th>Order</th><th>Pris</th><th>Andelar</th><th>Fylld</th><th>Räknas för belöning</th></tr></thead><tbody id="l-rows"></tbody></table></div>
       <div class="foot" style="margin-top:10px">"Räknas för belöning" är Polymarkets eget svar, inte botens gissning. "Stoppa allt" öppnar ett färdigt ärende på GitHub – skicka det så tar boten bort alla ordrar inom ungefär en minut. Boten stoppar också själv vid förlustgränsen.</div>
@@ -233,7 +233,11 @@ function renderLive(s) {
   $('l-limit').textContent = `stoppar själv vid −${usd(s.loss_limit, 0)}`;
   const o = s.orders || [], sc = o.filter(x => x.scoring).length;
   $('l-ord').textContent = o.length; $('l-score').textContent = o.length ? `${sc} av ${o.length} räknas för belöning` : '—';
-  $('l-pos').textContent = (s.account?.positions || []).length;
+  // Polymarket's own reward figures per day (get_total_earnings_for_user_for_day); the answer is a list of rows
+  const paidOf = v => Array.isArray(v) ? v.reduce((a, r) => a + (+r.earnings || 0), 0) : +(v?.earnings ?? v?.total ?? 0) || 0;
+  const days = Object.entries(s.earnings || {}).sort((a, b) => a[0].localeCompare(b[0]));
+  if (days.length) { const [d, v] = days[days.length - 1]; const tot = days.reduce((a, [, x]) => a + paidOf(x), 0);
+    $('l-paid').textContent = usd(paidOf(v)); $('l-paid-s').textContent = `${d} · totalt ${usd(tot)} · ${(s.account?.positions || []).length} andelsposter`; }
   $('l-rows').innerHTML = o.map(x => `<tr><td>${esc(x.id)}…</td><td>${esc(x.price)}</td><td>${esc(x.size)}</td><td>${esc(x.filled || 0)}</td>` +
     `<td class="${x.scoring ? 'up' : 'down'}">${x.scoring ? '✓ ja' : '✕ nej'}</td></tr>`).join('') || '<tr><td colspan="5" class="muted">Inga ordrar ute just nu.</td></tr>';
 }

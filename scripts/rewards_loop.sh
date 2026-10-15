@@ -19,6 +19,7 @@ else
   done
 fi
 mkdir -p "$STATE_DIR/rewards"
+export PYTHONUNBUFFERED=1                       # log lines reach the Actions log as they happen
 export REWARDS_LISTING_CACHE="${RUNNER_TEMP:-/tmp}/rewards_listing_cache.json"
 python -m rewardbot.loop --state "$STATE_DIR/rewards" --repo "$STATE_DIR" --branch "$BRANCH" \
   --minutes "${LOOP_MINUTES:-345}"

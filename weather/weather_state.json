@@ -1,25 +1,6 @@
 {
- "cash": 81.74230000000031,
+ "cash": 90.81030000000031,
  "open": [
-  {
-   "event_id": "1181102",
-   "slug": "highest-temperature-in-cape-town-on-october-15-2026",
-   "city": "Cape Town",
-   "date": "2026-10-15",
-   "station": "FACT",
-   "bucket": "22\u00b0C",
-   "side": "NO",
-   "token": "92160607645023857972198286986794817532955452457051180785718170585329564110901",
-   "price": 0.61,
-   "cost": 0.6319,
-   "prob": 0.7143,
-   "edge": 0.0824,
-   "shares": 9.068,
-   "stake_usd": 5.73,
-   "mu": 22.09,
-   "sigma": 1.36,
-   "opened": "2026-10-15T04:01:35.057248+00:00"
-  },
   {
    "event_id": "1181098",
    "slug": "highest-temperature-in-amsterdam-on-october-15-2026",
@@ -188,25 +169,6 @@
    "shares": 43.698,
    "stake_usd": 5.73,
    "mu": 17.09,
-   "sigma": 1.36,
-   "opened": "2026-10-15T04:01:35.057248+00:00"
-  },
-  {
-   "event_id": "1181065",
-   "slug": "highest-temperature-in-paris-on-october-15-2026",
-   "city": "Paris",
-   "date": "2026-10-15",
-   "station": "LFPB",
-   "bucket": "22\u00b0C",
-   "side": "YES",
-   "token": "105673944712432318844318859032354713346262384186112671825077649168333143245559",
-   "price": 0.027,
-   "cost": 0.0383,
-   "prob": 0.256,
-   "edge": 0.2177,
-   "shares": 30.7985,
-   "stake_usd": 1.18,
-   "mu": 22.66,
    "sigma": 1.36,
    "opened": "2026-10-15T04:01:35.057248+00:00"
   },
@@ -19991,68 +19953,53 @@
    "won": false,
    "pnl_usd": -5.48,
    "settled": "2026-10-15T22:01:41.128137+00:00"
+  },
+  {
+   "event_id": "1181102",
+   "slug": "highest-temperature-in-cape-town-on-october-15-2026",
+   "city": "Cape Town",
+   "date": "2026-10-15",
+   "station": "FACT",
+   "bucket": "22\u00b0C",
+   "side": "NO",
+   "token": "92160607645023857972198286986794817532955452457051180785718170585329564110901",
+   "price": 0.61,
+   "cost": 0.6319,
+   "prob": 0.7143,
+   "edge": 0.0824,
+   "shares": 9.068,
+   "stake_usd": 5.73,
+   "mu": 22.09,
+   "sigma": 1.36,
+   "opened": "2026-10-15T04:01:35.057248+00:00",
+   "won": true,
+   "pnl_usd": 3.338,
+   "settled": "2026-10-16T00:01:50.119926+00:00"
+  },
+  {
+   "event_id": "1181065",
+   "slug": "highest-temperature-in-paris-on-october-15-2026",
+   "city": "Paris",
+   "date": "2026-10-15",
+   "station": "LFPB",
+   "bucket": "22\u00b0C",
+   "side": "YES",
+   "token": "105673944712432318844318859032354713346262384186112671825077649168333143245559",
+   "price": 0.027,
+   "cost": 0.0383,
+   "prob": 0.256,
+   "edge": 0.2177,
+   "shares": 30.7985,
+   "stake_usd": 1.18,
+   "mu": 22.66,
+   "sigma": 1.36,
+   "opened": "2026-10-15T04:01:35.057248+00:00",
+   "won": false,
+   "pnl_usd": -1.18,
+   "settled": "2026-10-16T00:01:50.119926+00:00"
   }
  ],
  "forecast_log": {
-  "1181102": {
-   "date": "2026-10-15",
-   "mu_raw": 21.45,
-   "unit": "C",
-   "city": "Cape Town",
-   "spread": 5.0,
-   "labels": [
-    "16\u00b0C or below",
-    "17\u00b0C",
-    "18\u00b0C",
-    "19\u00b0C",
-    "20\u00b0C",
-    "21\u00b0C",
-    "22\u00b0C",
-    "23\u00b0C",
-    "24\u00b0C",
-    "25\u00b0C",
-    "26\u00b0C or higher"
-   ],
-   "probs": [
-    0.0,
-    0.0004,
-    0.0038,
-    0.0243,
-    0.0926,
-    0.2105,
-    0.2857,
-    0.2318,
-    0.1123,
-    0.0325,
-    0.0062
-   ],
-   "market": [
-    null,
-    0.002,
-    0.0055,
-    0.0065,
-    0.0505,
-    0.23,
-    0.395,
-    0.235,
-    0.0645,
-    0.014,
-    0.0015
-   ],
-   "gfs": [
-    0.05,
-    0.05,
-    0.05,
-    0.2258,
-    0.7419,
-    0.05,
-    0.05,
-    0.05,
-    0.05,
-    0.05,
-    0.05
-   ]
-  },
   "1181098": {
    "date": "2026-10-15",
    "mu_raw": 19.03333333333333,
@@ -20346,65 +20293,6 @@
     0.05,
     0.0968,
     0.9032
-   ]
-  },
-  "1181065": {
-   "date": "2026-10-15",
-   "mu_raw": 22.016666666666666,
-   "unit": "C",
-   "city": "Paris",
-   "spread": 3.5,
-   "labels": [
-    "17\u00b0C or below",
-    "18\u00b0C",
-    "19\u00b0C",
-    "20\u00b0C",
-    "21\u00b0C",
-    "22\u00b0C",
-    "23\u00b0C",
-    "24\u00b0C",
-    "25\u00b0C",
-    "26\u00b0C",
-    "27\u00b0C or higher"
-   ],
-   "probs": [
-    0.0001,
-    0.0011,
-    0.009,
-    0.0462,
-    0.1408,
-    0.256,
-    0.278,
-    0.1804,
-    0.0699,
-    0.0161,
-    0.0024
-   ],
-   "market": [
-    null,
-    null,
-    null,
-    0.0015,
-    0.0065,
-    0.0265,
-    0.205,
-    0.59,
-    0.13,
-    0.0075,
-    0.002
-   ],
-   "gfs": [
-    0.05,
-    0.05,
-    0.05,
-    0.05,
-    0.05,
-    0.129,
-    0.5484,
-    0.3226,
-    0.05,
-    0.05,
-    0.05
    ]
   },
   "1181064": {
@@ -26015,24 +25903,79 @@
    "equity": 273.31,
    "cash": 81.74,
    "open": 47
+  },
+  {
+   "ts": "2026-10-16T00:01:50.119926+00:00",
+   "equity": 275.47,
+   "cash": 90.81,
+   "open": 45
   }
  ],
  "last_run": {
-  "ts": "2026-10-15T23:31:22.894707+00:00",
-  "settled": [],
+  "ts": "2026-10-16T00:01:50.119926+00:00",
+  "settled": [
+   {
+    "event_id": "1181102",
+    "slug": "highest-temperature-in-cape-town-on-october-15-2026",
+    "city": "Cape Town",
+    "date": "2026-10-15",
+    "station": "FACT",
+    "bucket": "22\u00b0C",
+    "side": "NO",
+    "token": "92160607645023857972198286986794817532955452457051180785718170585329564110901",
+    "price": 0.61,
+    "cost": 0.6319,
+    "prob": 0.7143,
+    "edge": 0.0824,
+    "shares": 9.068,
+    "stake_usd": 5.73,
+    "mu": 22.09,
+    "sigma": 1.36,
+    "opened": "2026-10-15T04:01:35.057248+00:00",
+    "won": true,
+    "pnl_usd": 3.338,
+    "settled": "2026-10-16T00:01:50.119926+00:00"
+   },
+   {
+    "event_id": "1181065",
+    "slug": "highest-temperature-in-paris-on-october-15-2026",
+    "city": "Paris",
+    "date": "2026-10-15",
+    "station": "LFPB",
+    "bucket": "22\u00b0C",
+    "side": "YES",
+    "token": "105673944712432318844318859032354713346262384186112671825077649168333143245559",
+    "price": 0.027,
+    "cost": 0.0383,
+    "prob": 0.256,
+    "edge": 0.2177,
+    "shares": 30.7985,
+    "stake_usd": 1.18,
+    "mu": 22.66,
+    "sigma": 1.36,
+    "opened": "2026-10-15T04:01:35.057248+00:00",
+    "won": false,
+    "pnl_usd": -1.18,
+    "settled": "2026-10-16T00:01:50.119926+00:00"
+   }
+  ],
   "opened": [],
   "logged": 0,
-  "skipped": {}
+  "skipped": {
+   "Sao Paulo": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=-23.4356&longitude=-46.4731&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=celsius",
+   "London": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=51.5048&longitude=0.0522&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=celsius",
+   "Panama City": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=8.9733&longitude=-79.5556&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=celsius"
+  }
  },
  "mode": "trading",
  "gates_ignored": true,
  "score": {
-  "n": 3440,
-  "model": 1159.6415934234317,
-  "market": 940.4939368301922,
-  "events": 491,
-  "gfs": 1541.045369353831,
-  "n_gfs": 3408,
-  "market_gfs": 930.845146122847
+  "n": 3458,
+  "model": 1164.7085553343654,
+  "market": 943.8228694393321,
+  "events": 493,
+  "gfs": 1548.3313682352584,
+  "n_gfs": 3426,
+  "market_gfs": 934.1740787319869
  }
 }

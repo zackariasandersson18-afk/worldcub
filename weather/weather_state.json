@@ -24054,6 +24054,65 @@
     0.05,
     0.05
    ]
+  },
+  "1192278": {
+   "date": "2026-10-17",
+   "mu_raw": 14.033333333333333,
+   "unit": "C",
+   "city": "London",
+   "spread": 0.5999999999999996,
+   "labels": [
+    "9\u00b0C or below",
+    "10\u00b0C",
+    "11\u00b0C",
+    "12\u00b0C",
+    "13\u00b0C",
+    "14\u00b0C",
+    "15\u00b0C",
+    "16\u00b0C",
+    "17\u00b0C",
+    "18\u00b0C",
+    "19\u00b0C or higher"
+   ],
+   "probs": [
+    0.0001,
+    0.0009,
+    0.0084,
+    0.0444,
+    0.1384,
+    0.2558,
+    0.2806,
+    0.1826,
+    0.0704,
+    0.0161,
+    0.0024
+   ],
+   "market": [
+    null,
+    null,
+    null,
+    0.0015,
+    0.0285,
+    0.485,
+    0.48,
+    0.0255,
+    0.0025,
+    null,
+    null
+   ],
+   "gfs": [
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.0645,
+    0.8387,
+    0.0968,
+    0.05,
+    0.05,
+    0.05,
+    0.05
+   ]
   }
  },
  "history": [
@@ -28106,14 +28165,27 @@
    "equity": 167.38,
    "cash": 22.58,
    "open": 45
+  },
+  {
+   "ts": "2026-10-17T05:01:33.940284+00:00",
+   "equity": 167.38,
+   "cash": 22.58,
+   "open": 45
   }
  ],
  "last_run": {
-  "ts": "2026-10-17T04:35:13.870612+00:00",
+  "ts": "2026-10-17T05:01:33.940284+00:00",
   "settled": [],
   "opened": [],
-  "logged": 0,
-  "skipped": {}
+  "logged": 1,
+  "skipped": {
+   "Chengdu": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=30.5785&longitude=103.9471&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=celsius",
+   "Wuhan": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=30.7838&longitude=114.2081&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=celsius",
+   "Beijing": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=40.0801&longitude=116.5846&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=celsius",
+   "Chongqing": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=29.7196&longitude=106.6416&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=celsius",
+   "Warsaw": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=52.1657&longitude=20.9671&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=celsius",
+   "Milan": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=45.6306&longitude=8.7281&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=celsius"
+  }
  },
  "mode": "trading",
  "gates_ignored": true,

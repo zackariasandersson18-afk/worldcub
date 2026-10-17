@@ -297,3 +297,23 @@ WARNING: --ignore-gates. This strategy did NOT pass the gates. Testnet/paper onl
   },
   "order": null
 }
+--- 2026-10-17T03:56:46Z broker=paper exit=0
+WARNING: --ignore-gates. This strategy did NOT pass the gates. Testnet/paper only -- never real money.
+{
+  "bar": "2026-10-17 00:00:00+00:00",
+  "action": "HOLD",
+  "executed": true,
+  "price": 81615.64,
+  "equity": 9929.72,
+  "signal": 1.0,
+  "stop": 78346.89,
+  "current_qty": 0.023664,
+  "target_qty": 0.024333,
+  "health": {
+    "live_sharpe": -3.12,
+    "current_dd": -5.7,
+    "alerts": [],
+    "action": "CONTINUE"
+  },
+  "order": null
+}

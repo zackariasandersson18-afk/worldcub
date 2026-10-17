@@ -1,5 +1,5 @@
 {
- "cash": 8.675300000000322,
+ "cash": 2.775300000000321,
  "open": [
   {
    "event_id": "1192310",
@@ -893,6 +893,44 @@
    "mu": 75.77,
    "sigma": 2.44,
    "opened": "2026-10-17T12:01:32.097730+00:00"
+  },
+  {
+   "event_id": "1193531",
+   "slug": "highest-temperature-in-san-francisco-on-october-17-2026",
+   "city": "San Francisco",
+   "date": "2026-10-17",
+   "station": "KSFO",
+   "bucket": "80-81\u00b0F",
+   "side": "YES",
+   "token": "113913233866167642992008153805800744398117218135016000261967952241897334084223",
+   "price": 0.11,
+   "cost": 0.1249,
+   "prob": 0.2459,
+   "edge": 0.121,
+   "shares": 23.6198,
+   "stake_usd": 2.95,
+   "mu": 82.3,
+   "sigma": 2.44,
+   "opened": "2026-10-17T13:01:35.521199+00:00"
+  },
+  {
+   "event_id": "1193529",
+   "slug": "highest-temperature-in-seattle-on-october-17-2026",
+   "city": "Seattle",
+   "date": "2026-10-17",
+   "station": "KSEA",
+   "bucket": "58-59\u00b0F",
+   "side": "YES",
+   "token": "112205269656177759175779287943286844012143744315529450904028625621426640076182",
+   "price": 0.07,
+   "cost": 0.0833,
+   "prob": 0.1628,
+   "edge": 0.0795,
+   "shares": 35.4333,
+   "stake_usd": 2.95,
+   "mu": 61.4,
+   "sigma": 2.44,
+   "opened": "2026-10-17T13:01:35.521199+00:00"
   }
  ],
  "closed": [
@@ -24216,6 +24254,183 @@
     0.05,
     0.05
    ]
+  },
+  "1193531": {
+   "date": "2026-10-17",
+   "mu_raw": 81.14999999999999,
+   "unit": "F",
+   "city": "San Francisco",
+   "spread": 19.19999999999999,
+   "labels": [
+    "73\u00b0F or below",
+    "74-75\u00b0F",
+    "76-77\u00b0F",
+    "78-79\u00b0F",
+    "80-81\u00b0F",
+    "82-83\u00b0F",
+    "84-85\u00b0F",
+    "86-87\u00b0F",
+    "88-89\u00b0F",
+    "90-91\u00b0F",
+    "92\u00b0F or higher"
+   ],
+   "probs": [
+    0.0002,
+    0.0025,
+    0.0217,
+    0.1006,
+    0.2459,
+    0.3177,
+    0.2169,
+    0.0782,
+    0.0149,
+    0.0015,
+    0.0001
+   ],
+   "market": [
+    null,
+    0.01,
+    0.0085,
+    0.057,
+    0.09,
+    0.335,
+    0.397,
+    0.1375,
+    0.0355,
+    0.002,
+    null
+   ],
+   "gfs": [
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.95,
+    0.05,
+    0.05,
+    0.05,
+    0.05
+   ]
+  },
+  "1193530": {
+   "date": "2026-10-17",
+   "mu_raw": 89.93333333333334,
+   "unit": "F",
+   "city": "Los Angeles",
+   "spread": 6.3999999999999915,
+   "labels": [
+    "77\u00b0F or below",
+    "78-79\u00b0F",
+    "80-81\u00b0F",
+    "82-83\u00b0F",
+    "84-85\u00b0F",
+    "86-87\u00b0F",
+    "88-89\u00b0F",
+    "90-91\u00b0F",
+    "92-93\u00b0F",
+    "94-95\u00b0F",
+    "96\u00b0F or higher"
+   ],
+   "probs": [
+    0.0,
+    0.0,
+    0.0,
+    0.0009,
+    0.01,
+    0.0595,
+    0.187,
+    0.3101,
+    0.2718,
+    0.1258,
+    0.035
+   ],
+   "market": [
+    null,
+    null,
+    null,
+    null,
+    0.007,
+    0.031,
+    0.185,
+    0.4,
+    0.335,
+    0.05,
+    0.008
+   ],
+   "gfs": [
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.4194,
+    0.5806,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05
+   ]
+  },
+  "1193529": {
+   "date": "2026-10-17",
+   "mu_raw": 60.25,
+   "unit": "F",
+   "city": "Seattle",
+   "spread": 3.299999999999997,
+   "labels": [
+    "51\u00b0F or below",
+    "52-53\u00b0F",
+    "54-55\u00b0F",
+    "56-57\u00b0F",
+    "58-59\u00b0F",
+    "60-61\u00b0F",
+    "62-63\u00b0F",
+    "64-65\u00b0F",
+    "66-67\u00b0F",
+    "68-69\u00b0F",
+    "70\u00b0F or higher"
+   ],
+   "probs": [
+    0.0,
+    0.0006,
+    0.0071,
+    0.0468,
+    0.1628,
+    0.2986,
+    0.2895,
+    0.1483,
+    0.0401,
+    0.0057,
+    0.0004
+   ],
+   "market": [
+    null,
+    null,
+    null,
+    null,
+    0.06,
+    0.39,
+    0.45,
+    0.085,
+    0.006,
+    null,
+    null
+   ],
+   "gfs": [
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.2903,
+    0.6129,
+    0.0968,
+    0.05,
+    0.05,
+    0.05,
+    0.05
+   ]
   }
  },
  "history": [
@@ -28370,19 +28585,59 @@
    "equity": 147.82,
    "cash": 8.68,
    "open": 47
+  },
+  {
+   "ts": "2026-10-17T13:01:35.521199+00:00",
+   "equity": 147.82,
+   "cash": 2.78,
+   "open": 49
   }
  ],
  "last_run": {
-  "ts": "2026-10-17T12:31:22.227833+00:00",
+  "ts": "2026-10-17T13:01:35.521199+00:00",
   "settled": [],
-  "opened": [],
-  "logged": 0,
-  "skipped": {
-   "Seattle": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=47.4502&longitude=-122.3088&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=fahrenheit",
-   "Dallas": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=32.8471&longitude=-96.8518&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=fahrenheit",
-   "Shenzhen": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=22.6393&longitude=113.8107&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=celsius",
-   "Chengdu": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=30.5785&longitude=103.9471&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=celsius"
-  }
+  "opened": [
+   {
+    "event_id": "1193531",
+    "slug": "highest-temperature-in-san-francisco-on-october-17-2026",
+    "city": "San Francisco",
+    "date": "2026-10-17",
+    "station": "KSFO",
+    "bucket": "80-81\u00b0F",
+    "side": "YES",
+    "token": "113913233866167642992008153805800744398117218135016000261967952241897334084223",
+    "price": 0.11,
+    "cost": 0.1249,
+    "prob": 0.2459,
+    "edge": 0.121,
+    "shares": 23.6198,
+    "stake_usd": 2.95,
+    "mu": 82.3,
+    "sigma": 2.44,
+    "opened": "2026-10-17T13:01:35.521199+00:00"
+   },
+   {
+    "event_id": "1193529",
+    "slug": "highest-temperature-in-seattle-on-october-17-2026",
+    "city": "Seattle",
+    "date": "2026-10-17",
+    "station": "KSEA",
+    "bucket": "58-59\u00b0F",
+    "side": "YES",
+    "token": "112205269656177759175779287943286844012143744315529450904028625621426640076182",
+    "price": 0.07,
+    "cost": 0.0833,
+    "prob": 0.1628,
+    "edge": 0.0795,
+    "shares": 35.4333,
+    "stake_usd": 2.95,
+    "mu": 61.4,
+    "sigma": 2.44,
+    "opened": "2026-10-17T13:01:35.521199+00:00"
+   }
+  ],
+  "logged": 3,
+  "skipped": {}
  },
  "mode": "trading",
  "gates_ignored": true,

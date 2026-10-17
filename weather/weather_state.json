@@ -1,5 +1,5 @@
 {
- "cash": 11.415300000000322,
+ "cash": 8.675300000000322,
  "open": [
   {
    "event_id": "1192310",
@@ -855,6 +855,44 @@
    "mu": 66.1,
    "sigma": 2.44,
    "opened": "2026-10-17T11:01:36.938812+00:00"
+  },
+  {
+   "event_id": "1192915",
+   "slug": "highest-temperature-in-denver-on-october-17-2026",
+   "city": "Denver",
+   "date": "2026-10-17",
+   "station": "KBKF",
+   "bucket": "74-75\u00b0F",
+   "side": "YES",
+   "token": "6829874682753413870269333012637055385925366489733526294460500415255670076092",
+   "price": 0.039,
+   "cost": 0.0509,
+   "prob": 0.2803,
+   "edge": 0.2294,
+   "shares": 24.9637,
+   "stake_usd": 1.27,
+   "mu": 75.77,
+   "sigma": 2.44,
+   "opened": "2026-10-17T12:01:32.097730+00:00"
+  },
+  {
+   "event_id": "1192915",
+   "slug": "highest-temperature-in-denver-on-october-17-2026",
+   "city": "Denver",
+   "date": "2026-10-17",
+   "station": "KBKF",
+   "bucket": "76-77\u00b0F",
+   "side": "YES",
+   "token": "36147195297146138712330651794637087526575062975476772804796060612384244913383",
+   "price": 0.22,
+   "cost": 0.2386,
+   "prob": 0.3054,
+   "edge": 0.0668,
+   "shares": 6.1615,
+   "stake_usd": 1.47,
+   "mu": 75.77,
+   "sigma": 2.44,
+   "opened": "2026-10-17T12:01:32.097730+00:00"
   }
  ],
  "closed": [
@@ -24060,6 +24098,124 @@
     0.05,
     0.05
    ]
+  },
+  "1194018": {
+   "date": "2026-10-17",
+   "mu_raw": 15.466666666666667,
+   "unit": "C",
+   "city": "Mexico City",
+   "spread": 3.3999999999999986,
+   "labels": [
+    "9\u00b0C or below",
+    "10\u00b0C",
+    "11\u00b0C",
+    "12\u00b0C",
+    "13\u00b0C",
+    "14\u00b0C",
+    "15\u00b0C",
+    "16\u00b0C",
+    "17\u00b0C",
+    "18\u00b0C",
+    "19\u00b0C or higher"
+   ],
+   "probs": [
+    0.0,
+    0.0,
+    0.0003,
+    0.0035,
+    0.0231,
+    0.0904,
+    0.2094,
+    0.2875,
+    0.2342,
+    0.1131,
+    0.0385
+   ],
+   "market": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    0.008,
+    0.108,
+    0.27,
+    0.34,
+    0.245,
+    0.095
+   ],
+   "gfs": [
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.1935,
+    0.3871,
+    0.2258,
+    0.1613,
+    0.05,
+    0.05,
+    0.05
+   ]
+  },
+  "1192915": {
+   "date": "2026-10-17",
+   "mu_raw": 74.61666666666666,
+   "unit": "F",
+   "city": "Denver",
+   "spread": 2.299999999999997,
+   "labels": [
+    "67\u00b0F or below",
+    "68-69\u00b0F",
+    "70-71\u00b0F",
+    "72-73\u00b0F",
+    "74-75\u00b0F",
+    "76-77\u00b0F",
+    "78-79\u00b0F",
+    "80-81\u00b0F",
+    "82-83\u00b0F",
+    "84-85\u00b0F",
+    "86\u00b0F or higher"
+   ],
+   "probs": [
+    0.0003,
+    0.0047,
+    0.0347,
+    0.1359,
+    0.2803,
+    0.3054,
+    0.1759,
+    0.0535,
+    0.0086,
+    0.0007,
+    0.0
+   ],
+   "market": [
+    null,
+    null,
+    0.0095,
+    0.014,
+    0.0285,
+    0.19,
+    0.57,
+    0.15,
+    0.005,
+    null,
+    null
+   ],
+   "gfs": [
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.7742,
+    0.2258,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05
+   ]
   }
  },
  "history": [
@@ -28202,37 +28358,62 @@
    "equity": 147.82,
    "cash": 11.42,
    "open": 45
+  },
+  {
+   "ts": "2026-10-17T12:01:32.097730+00:00",
+   "equity": 147.82,
+   "cash": 8.68,
+   "open": 47
   }
  ],
  "last_run": {
-  "ts": "2026-10-17T11:31:29.177187+00:00",
-  "settled": [
+  "ts": "2026-10-17T12:01:32.097730+00:00",
+  "settled": [],
+  "opened": [
    {
-    "event_id": "1192283",
-    "slug": "highest-temperature-in-wellington-on-october-17-2026",
-    "city": "Wellington",
+    "event_id": "1192915",
+    "slug": "highest-temperature-in-denver-on-october-17-2026",
+    "city": "Denver",
     "date": "2026-10-17",
-    "station": "NZWN",
-    "bucket": "13\u00b0C",
-    "side": "NO",
-    "token": "94486138003667300489426216857574012711080887601163942280801948368372949163199",
-    "price": 0.43,
-    "cost": 0.4523,
-    "prob": 0.7161,
-    "edge": 0.2639,
-    "shares": 10.525,
-    "stake_usd": 4.76,
-    "mu": 12.76,
-    "sigma": 1.35,
-    "opened": "2026-10-16T17:01:43.522508+00:00",
-    "won": false,
-    "pnl_usd": -4.76,
-    "settled": "2026-10-17T11:31:29.177187+00:00"
+    "station": "KBKF",
+    "bucket": "74-75\u00b0F",
+    "side": "YES",
+    "token": "6829874682753413870269333012637055385925366489733526294460500415255670076092",
+    "price": 0.039,
+    "cost": 0.0509,
+    "prob": 0.2803,
+    "edge": 0.2294,
+    "shares": 24.9637,
+    "stake_usd": 1.27,
+    "mu": 75.77,
+    "sigma": 2.44,
+    "opened": "2026-10-17T12:01:32.097730+00:00"
+   },
+   {
+    "event_id": "1192915",
+    "slug": "highest-temperature-in-denver-on-october-17-2026",
+    "city": "Denver",
+    "date": "2026-10-17",
+    "station": "KBKF",
+    "bucket": "76-77\u00b0F",
+    "side": "YES",
+    "token": "36147195297146138712330651794637087526575062975476772804796060612384244913383",
+    "price": 0.22,
+    "cost": 0.2386,
+    "prob": 0.3054,
+    "edge": 0.0668,
+    "shares": 6.1615,
+    "stake_usd": 1.47,
+    "mu": 75.77,
+    "sigma": 2.44,
+    "opened": "2026-10-17T12:01:32.097730+00:00"
    }
   ],
-  "opened": [],
-  "logged": 0,
-  "skipped": {}
+  "logged": 2,
+  "skipped": {
+   "San Francisco": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=37.6213&longitude=-122.379&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=fahrenheit",
+   "Los Angeles": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=33.9416&longitude=-118.4085&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=fahrenheit"
+  }
  },
  "mode": "trading",
  "gates_ignored": true,

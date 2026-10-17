@@ -21902,65 +21902,6 @@
   }
  ],
  "forecast_log": {
-  "1192284": {
-   "date": "2026-10-17",
-   "mu_raw": 31.36666666666667,
-   "unit": "C",
-   "city": "Lucknow",
-   "spread": 3.799999999999997,
-   "labels": [
-    "27\u00b0C or below",
-    "28\u00b0C",
-    "29\u00b0C",
-    "30\u00b0C",
-    "31\u00b0C",
-    "32\u00b0C",
-    "33\u00b0C",
-    "34\u00b0C",
-    "35\u00b0C",
-    "36\u00b0C",
-    "37\u00b0C or higher"
-   ],
-   "probs": [
-    0.0004,
-    0.0043,
-    0.027,
-    0.1005,
-    0.2211,
-    0.2885,
-    0.2232,
-    0.1023,
-    0.0278,
-    0.0045,
-    0.0004
-   ],
-   "market": [
-    null,
-    null,
-    0.0075,
-    0.252,
-    0.56,
-    0.185,
-    0.0235,
-    0.002,
-    null,
-    null,
-    null
-   ],
-   "gfs": [
-    0.05,
-    0.05,
-    0.05,
-    0.0645,
-    0.1613,
-    0.5161,
-    0.2581,
-    0.05,
-    0.05,
-    0.05,
-    0.05
-   ]
-  },
   "1192318": {
    "date": "2026-10-17",
    "mu_raw": 35.36666666666667,
@@ -27927,24 +27868,33 @@
    "equity": 140.28,
    "cash": 67.74,
    "open": 27
+  },
+  {
+   "ts": "2026-10-17T20:01:36.915868+00:00",
+   "equity": 140.28,
+   "cash": 67.74,
+   "open": 27
   }
  ],
  "last_run": {
-  "ts": "2026-10-17T19:31:19.381093+00:00",
+  "ts": "2026-10-17T20:01:36.915868+00:00",
   "settled": [],
   "opened": [],
   "logged": 0,
-  "skipped": {}
+  "skipped": {
+   "Lucknow": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=26.7606&longitude=80.8893&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=celsius",
+   "London": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=51.5048&longitude=0.0522&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=celsius"
+  }
  },
  "mode": "trading",
  "gates_ignored": true,
  "score": {
-  "n": 4001,
-  "model": 1355.4481111619941,
-  "market": 1085.1831436930493,
-  "events": 576,
-  "gfs": 1824.1780112432532,
-  "n_gfs": 3969,
-  "market_gfs": 1075.5343529857043
+  "n": 4007,
+  "model": 1357.7914103411772,
+  "market": 1086.2911924528082,
+  "events": 577,
+  "gfs": 1827.1961790801167,
+  "n_gfs": 3975,
+  "market_gfs": 1076.6424017454633
  }
 }

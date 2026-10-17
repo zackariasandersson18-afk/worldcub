@@ -27874,17 +27874,20 @@
    "equity": 140.28,
    "cash": 67.74,
    "open": 27
+  },
+  {
+   "ts": "2026-10-17T20:31:13.737595+00:00",
+   "equity": 140.28,
+   "cash": 67.74,
+   "open": 27
   }
  ],
  "last_run": {
-  "ts": "2026-10-17T20:01:36.915868+00:00",
+  "ts": "2026-10-17T20:31:13.737595+00:00",
   "settled": [],
   "opened": [],
   "logged": 0,
-  "skipped": {
-   "Lucknow": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=26.7606&longitude=80.8893&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=celsius",
-   "London": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=51.5048&longitude=0.0522&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=celsius"
-  }
+  "skipped": {}
  },
  "mode": "trading",
  "gates_ignored": true,

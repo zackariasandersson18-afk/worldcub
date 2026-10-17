@@ -28364,55 +28364,24 @@
    "equity": 147.82,
    "cash": 8.68,
    "open": 47
+  },
+  {
+   "ts": "2026-10-17T12:31:22.227833+00:00",
+   "equity": 147.82,
+   "cash": 8.68,
+   "open": 47
   }
  ],
  "last_run": {
-  "ts": "2026-10-17T12:01:32.097730+00:00",
+  "ts": "2026-10-17T12:31:22.227833+00:00",
   "settled": [],
-  "opened": [
-   {
-    "event_id": "1192915",
-    "slug": "highest-temperature-in-denver-on-october-17-2026",
-    "city": "Denver",
-    "date": "2026-10-17",
-    "station": "KBKF",
-    "bucket": "74-75\u00b0F",
-    "side": "YES",
-    "token": "6829874682753413870269333012637055385925366489733526294460500415255670076092",
-    "price": 0.039,
-    "cost": 0.0509,
-    "prob": 0.2803,
-    "edge": 0.2294,
-    "shares": 24.9637,
-    "stake_usd": 1.27,
-    "mu": 75.77,
-    "sigma": 2.44,
-    "opened": "2026-10-17T12:01:32.097730+00:00"
-   },
-   {
-    "event_id": "1192915",
-    "slug": "highest-temperature-in-denver-on-october-17-2026",
-    "city": "Denver",
-    "date": "2026-10-17",
-    "station": "KBKF",
-    "bucket": "76-77\u00b0F",
-    "side": "YES",
-    "token": "36147195297146138712330651794637087526575062975476772804796060612384244913383",
-    "price": 0.22,
-    "cost": 0.2386,
-    "prob": 0.3054,
-    "edge": 0.0668,
-    "shares": 6.1615,
-    "stake_usd": 1.47,
-    "mu": 75.77,
-    "sigma": 2.44,
-    "opened": "2026-10-17T12:01:32.097730+00:00"
-   }
-  ],
-  "logged": 2,
+  "opened": [],
+  "logged": 0,
   "skipped": {
-   "San Francisco": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=37.6213&longitude=-122.379&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=fahrenheit",
-   "Los Angeles": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=33.9416&longitude=-118.4085&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=fahrenheit"
+   "Seattle": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=47.4502&longitude=-122.3088&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=fahrenheit",
+   "Dallas": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=32.8471&longitude=-96.8518&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=fahrenheit",
+   "Shenzhen": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=22.6393&longitude=113.8107&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=celsius",
+   "Chengdu": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=30.5785&longitude=103.9471&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=celsius"
   }
  },
  "mode": "trading",

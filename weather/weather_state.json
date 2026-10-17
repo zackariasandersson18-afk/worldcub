@@ -23230,6 +23230,65 @@
     0.05,
     0.05
    ]
+  },
+  "1192284": {
+   "date": "2026-10-17",
+   "mu_raw": 31.36666666666667,
+   "unit": "C",
+   "city": "Lucknow",
+   "spread": 3.799999999999997,
+   "labels": [
+    "27\u00b0C or below",
+    "28\u00b0C",
+    "29\u00b0C",
+    "30\u00b0C",
+    "31\u00b0C",
+    "32\u00b0C",
+    "33\u00b0C",
+    "34\u00b0C",
+    "35\u00b0C",
+    "36\u00b0C",
+    "37\u00b0C or higher"
+   ],
+   "probs": [
+    0.0004,
+    0.0043,
+    0.027,
+    0.1005,
+    0.2211,
+    0.2885,
+    0.2232,
+    0.1023,
+    0.0278,
+    0.0045,
+    0.0004
+   ],
+   "market": [
+    null,
+    null,
+    0.0075,
+    0.252,
+    0.56,
+    0.185,
+    0.0235,
+    0.002,
+    null,
+    null,
+    null
+   ],
+   "gfs": [
+    0.05,
+    0.05,
+    0.05,
+    0.0645,
+    0.1613,
+    0.5161,
+    0.2581,
+    0.05,
+    0.05,
+    0.05,
+    0.05
+   ]
   }
  },
  "history": [
@@ -27222,53 +27281,20 @@
    "equity": 175.93,
    "cash": 56.44,
    "open": 35
+  },
+  {
+   "ts": "2026-10-17T00:31:18.726111+00:00",
+   "equity": 175.93,
+   "cash": 56.44,
+   "open": 35
   }
  ],
  "last_run": {
-  "ts": "2026-10-17T00:01:41.750453+00:00",
+  "ts": "2026-10-17T00:31:18.726111+00:00",
   "settled": [],
   "opened": [],
-  "logged": 0,
-  "skipped": {
-   "Panama City": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=8.9733&longitude=-79.5556&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=celsius",
-   "Mexico City": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=19.4363&longitude=-99.0721&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=celsius",
-   "Toronto": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=43.6777&longitude=-79.6248&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=celsius",
-   "Buenos Aires": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=-34.8222&longitude=-58.5358&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=celsius",
-   "Sao Paulo": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=-23.4356&longitude=-46.4731&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=celsius",
-   "San Francisco": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=37.6213&longitude=-122.379&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=fahrenheit",
-   "Los Angeles": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=33.9416&longitude=-118.4085&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=fahrenheit",
-   "Seattle": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=47.4502&longitude=-122.3088&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=fahrenheit",
-   "Houston": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=29.6454&longitude=-95.2789&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=fahrenheit",
-   "Denver": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=39.7017&longitude=-104.7518&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=fahrenheit",
-   "Chicago": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=41.9742&longitude=-87.9073&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=fahrenheit",
-   "Miami": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=25.7959&longitude=-80.287&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=fahrenheit",
-   "Atlanta": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=33.6407&longitude=-84.4277&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=fahrenheit",
-   "Dallas": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=32.8471&longitude=-96.8518&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=fahrenheit",
-   "Manila": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=14.5086&longitude=121.0198&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=celsius",
-   "Karachi": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=24.9065&longitude=67.1608&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=celsius",
-   "Qingdao": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=36.362&longitude=120.0882&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=celsius",
-   "Guangzhou": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=23.3924&longitude=113.2988&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=celsius",
-   "Cape Town": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=-33.9696&longitude=18.5972&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=celsius",
-   "Jeddah": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=21.6702&longitude=39.1525&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=celsius",
-   "Kuala Lumpur": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=2.7456&longitude=101.7072&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=celsius",
-   "Amsterdam": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=52.3086&longitude=4.7639&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=celsius",
-   "Busan": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=35.1795&longitude=128.9382&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=celsius",
-   "Shenzhen": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=22.6393&longitude=113.8107&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=celsius",
-   "Chengdu": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=30.5785&longitude=103.9471&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=celsius",
-   "Chongqing": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=29.7196&longitude=106.6416&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=celsius",
-   "Taipei": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=25.0377&longitude=121.5149&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=celsius",
-   "Warsaw": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=52.1657&longitude=20.9671&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=celsius",
-   "Madrid": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=40.4722&longitude=-3.5608&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=celsius",
-   "Munich": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=48.3538&longitude=11.7861&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=celsius",
-   "Wellington": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=-41.3272&longitude=174.8053&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=celsius",
-   "Paris": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=48.9694&longitude=2.4414&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=celsius",
-   "NYC": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=40.7769&longitude=-73.874&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=fahrenheit",
-   "Helsinki": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=60.3172&longitude=24.9633&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=celsius",
-   "Milan": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=45.6306&longitude=8.7281&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=celsius",
-   "Lucknow": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=26.7606&longitude=80.8893&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=celsius",
-   "Ankara": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=40.1281&longitude=32.9951&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=celsius",
-   "London": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=51.5048&longitude=0.0522&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=celsius"
-  }
+  "logged": 1,
+  "skipped": {}
  },
  "mode": "trading",
  "gates_ignored": true,

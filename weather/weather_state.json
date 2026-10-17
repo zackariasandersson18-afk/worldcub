@@ -2,25 +2,6 @@
  "cash": 41.455300000000314,
  "open": [
   {
-   "event_id": "1187137",
-   "slug": "highest-temperature-in-austin-on-october-16-2026",
-   "city": "Austin",
-   "date": "2026-10-16",
-   "station": "KAUS",
-   "bucket": "76-77\u00b0F",
-   "side": "YES",
-   "token": "20456724208946581291935015971609879866215366463057505891585222327400058805535",
-   "price": 0.084,
-   "cost": 0.0978,
-   "prob": 0.3008,
-   "edge": 0.203,
-   "shares": 15.0234,
-   "stake_usd": 1.47,
-   "mu": 77.34,
-   "sigma": 2.44,
-   "opened": "2026-10-16T11:01:36.553193+00:00"
-  },
-  {
    "event_id": "1187138",
    "slug": "highest-temperature-in-denver-on-october-16-2026",
    "city": "Denver",
@@ -21539,68 +21520,31 @@
    "won": false,
    "pnl_usd": -3.45,
    "settled": "2026-10-17T06:01:34.275189+00:00"
+  },
+  {
+   "event_id": "1187137",
+   "slug": "highest-temperature-in-austin-on-october-16-2026",
+   "city": "Austin",
+   "date": "2026-10-16",
+   "station": "KAUS",
+   "bucket": "76-77\u00b0F",
+   "side": "YES",
+   "token": "20456724208946581291935015971609879866215366463057505891585222327400058805535",
+   "price": 0.084,
+   "cost": 0.0978,
+   "prob": 0.3008,
+   "edge": 0.203,
+   "shares": 15.0234,
+   "stake_usd": 1.47,
+   "mu": 77.34,
+   "sigma": 2.44,
+   "opened": "2026-10-16T11:01:36.553193+00:00",
+   "won": false,
+   "pnl_usd": -1.47,
+   "settled": "2026-10-17T08:01:40.717344+00:00"
   }
  ],
  "forecast_log": {
-  "1187137": {
-   "date": "2026-10-16",
-   "mu_raw": 76.18333333333334,
-   "unit": "F",
-   "city": "Austin",
-   "spread": 8.5,
-   "labels": [
-    "65\u00b0F or below",
-    "66-67\u00b0F",
-    "68-69\u00b0F",
-    "70-71\u00b0F",
-    "72-73\u00b0F",
-    "74-75\u00b0F",
-    "76-77\u00b0F",
-    "78-79\u00b0F",
-    "80-81\u00b0F",
-    "82-83\u00b0F",
-    "84\u00b0F or higher"
-   ],
-   "probs": [
-    0.0,
-    0.0,
-    0.0006,
-    0.0077,
-    0.0493,
-    0.1675,
-    0.3008,
-    0.286,
-    0.144,
-    0.0383,
-    0.0058
-   ],
-   "market": [
-    null,
-    null,
-    null,
-    null,
-    null,
-    0.94,
-    0.0655,
-    0.0015,
-    0.0015,
-    null,
-    null
-   ],
-   "gfs": [
-    0.05,
-    0.05,
-    0.05,
-    0.05,
-    0.05,
-    0.05,
-    0.3548,
-    0.6452,
-    0.05,
-    0.05,
-    0.05
-   ]
-  },
   "1187134": {
    "date": "2026-10-16",
    "mu_raw": 69.11666666666666,
@@ -21654,124 +21598,6 @@
     0.3226,
     0.05,
     0.05,
-    0.05,
-    0.05,
-    0.05,
-    0.05
-   ]
-  },
-  "1186944": {
-   "date": "2026-10-16",
-   "mu_raw": 59.13333333333333,
-   "unit": "F",
-   "city": "Chicago",
-   "spread": 2.6000000000000014,
-   "labels": [
-    "49\u00b0F or below",
-    "50-51\u00b0F",
-    "52-53\u00b0F",
-    "54-55\u00b0F",
-    "56-57\u00b0F",
-    "58-59\u00b0F",
-    "60-61\u00b0F",
-    "62-63\u00b0F",
-    "64-65\u00b0F",
-    "66-67\u00b0F",
-    "68\u00b0F or higher"
-   ],
-   "probs": [
-    0.0,
-    0.0002,
-    0.0025,
-    0.0221,
-    0.1015,
-    0.2466,
-    0.3171,
-    0.2159,
-    0.0778,
-    0.0148,
-    0.0016
-   ],
-   "market": [
-    null,
-    null,
-    null,
-    null,
-    0.9465,
-    0.0455,
-    0.008,
-    0.0045,
-    null,
-    null,
-    null
-   ],
-   "gfs": [
-    0.05,
-    0.05,
-    0.05,
-    0.05,
-    0.05,
-    0.2258,
-    0.5806,
-    0.1935,
-    0.05,
-    0.05,
-    0.05
-   ]
-  },
-  "1188205": {
-   "date": "2026-10-16",
-   "mu_raw": 21.15,
-   "unit": "C",
-   "city": "Mexico City",
-   "spread": 2.3999999999999986,
-   "labels": [
-    "13\u00b0C or below",
-    "14\u00b0C",
-    "15\u00b0C",
-    "16\u00b0C",
-    "17\u00b0C",
-    "18\u00b0C",
-    "19\u00b0C",
-    "20\u00b0C",
-    "21\u00b0C",
-    "22\u00b0C",
-    "23\u00b0C or higher"
-   ],
-   "probs": [
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0007,
-    0.0068,
-    0.0377,
-    0.1247,
-    0.2444,
-    0.2847,
-    0.301
-   ],
-   "market": [
-    null,
-    null,
-    null,
-    null,
-    null,
-    0.0045,
-    0.0175,
-    0.15,
-    0.355,
-    0.385,
-    0.11
-   ],
-   "gfs": [
-    0.05,
-    0.05,
-    0.05,
-    0.05,
-    0.0968,
-    0.5806,
-    0.3226,
     0.05,
     0.05,
     0.05,
@@ -27812,24 +27638,55 @@
    "equity": 155.96,
    "cash": 41.46,
    "open": 37
+  },
+  {
+   "ts": "2026-10-17T08:01:40.717344+00:00",
+   "equity": 154.49,
+   "cash": 41.46,
+   "open": 36
   }
  ],
  "last_run": {
-  "ts": "2026-10-17T07:31:23.491866+00:00",
-  "settled": [],
+  "ts": "2026-10-17T08:01:40.717344+00:00",
+  "settled": [
+   {
+    "event_id": "1187137",
+    "slug": "highest-temperature-in-austin-on-october-16-2026",
+    "city": "Austin",
+    "date": "2026-10-16",
+    "station": "KAUS",
+    "bucket": "76-77\u00b0F",
+    "side": "YES",
+    "token": "20456724208946581291935015971609879866215366463057505891585222327400058805535",
+    "price": 0.084,
+    "cost": 0.0978,
+    "prob": 0.3008,
+    "edge": 0.203,
+    "shares": 15.0234,
+    "stake_usd": 1.47,
+    "mu": 77.34,
+    "sigma": 2.44,
+    "opened": "2026-10-16T11:01:36.553193+00:00",
+    "won": false,
+    "pnl_usd": -1.47,
+    "settled": "2026-10-17T08:01:40.717344+00:00"
+   }
+  ],
   "opened": [],
   "logged": 0,
-  "skipped": {}
+  "skipped": {
+   "Houston": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=29.6454&longitude=-95.2789&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=fahrenheit"
+  }
  },
  "mode": "trading",
  "gates_ignored": true,
  "score": {
-  "n": 3844,
-  "model": 1299.2792640159655,
-  "market": 1044.6979757833699,
-  "events": 552,
-  "gfs": 1735.4329275923158,
-  "n_gfs": 3812,
-  "market_gfs": 1035.049185076025
+  "n": 3858,
+  "model": 1307.184800451804,
+  "market": 1046.638926106102,
+  "events": 555,
+  "gfs": 1748.698023633688,
+  "n_gfs": 3826,
+  "market_gfs": 1036.990135398757
  }
 }

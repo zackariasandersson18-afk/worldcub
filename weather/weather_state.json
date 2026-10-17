@@ -28591,52 +28591,19 @@
    "equity": 147.82,
    "cash": 2.78,
    "open": 49
+  },
+  {
+   "ts": "2026-10-17T13:31:18.763162+00:00",
+   "equity": 147.82,
+   "cash": 2.78,
+   "open": 49
   }
  ],
  "last_run": {
-  "ts": "2026-10-17T13:01:35.521199+00:00",
+  "ts": "2026-10-17T13:31:18.763162+00:00",
   "settled": [],
-  "opened": [
-   {
-    "event_id": "1193531",
-    "slug": "highest-temperature-in-san-francisco-on-october-17-2026",
-    "city": "San Francisco",
-    "date": "2026-10-17",
-    "station": "KSFO",
-    "bucket": "80-81\u00b0F",
-    "side": "YES",
-    "token": "113913233866167642992008153805800744398117218135016000261967952241897334084223",
-    "price": 0.11,
-    "cost": 0.1249,
-    "prob": 0.2459,
-    "edge": 0.121,
-    "shares": 23.6198,
-    "stake_usd": 2.95,
-    "mu": 82.3,
-    "sigma": 2.44,
-    "opened": "2026-10-17T13:01:35.521199+00:00"
-   },
-   {
-    "event_id": "1193529",
-    "slug": "highest-temperature-in-seattle-on-october-17-2026",
-    "city": "Seattle",
-    "date": "2026-10-17",
-    "station": "KSEA",
-    "bucket": "58-59\u00b0F",
-    "side": "YES",
-    "token": "112205269656177759175779287943286844012143744315529450904028625621426640076182",
-    "price": 0.07,
-    "cost": 0.0833,
-    "prob": 0.1628,
-    "edge": 0.0795,
-    "shares": 35.4333,
-    "stake_usd": 2.95,
-    "mu": 61.4,
-    "sigma": 2.44,
-    "opened": "2026-10-17T13:01:35.521199+00:00"
-   }
-  ],
-  "logged": 3,
+  "opened": [],
+  "logged": 0,
   "skipped": {}
  },
  "mode": "trading",

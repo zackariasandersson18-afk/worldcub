@@ -53,7 +53,7 @@
    "question": "Will PAN win the most seats in the 2027 Nuevo Le\u00f3n Congress election?",
    "yes": "95061518882030674387294415650193141971601773782396876302607454729434509424674",
    "no": "113739883688361366936129846546680949400419907318156100786305955990515074331743",
-   "rate": 13.0,
+   "rate": 15.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -143,7 +143,7 @@
    "question": "Will Palo Alto Networks Q1 Next-Generation Security ARR be above $9.75B?",
    "yes": "68644513404902573697283154171070116375465759109975509602593591521728918970525",
    "no": "27440959910019969207942567915704290941086769435709957616102788568543038460306",
-   "rate": 40.0,
+   "rate": 0.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -233,7 +233,7 @@
    "question": "Will Labor win the most seats in the next New South Wales state election?",
    "yes": "22071892340393375182284122191968008340354719027018814774652408859541094854081",
    "no": "75578565774180525531570631478221889310330722401462801541655726920692777579881",
-   "rate": 2.0,
+   "rate": 3.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -244,26 +244,11 @@
    "rate0": 28.0
   },
   {
-   "cond": "0x6a4a9ec279b150e2c84773e403580d8fbe488e53897d019934dadef1054d9f1d",
-   "question": "Will Yashar win 16-18% of the vote in the 2026 Knesset elections?",
-   "yes": "70747137111910021412176701192703491847048328695346820112436088383146283863141",
-   "no": "65458486592671711821483943879826240529055401493074486027811289404123827132590",
-   "rate": 6.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.700000000000003,
-   "est_reward_day": 22.0,
-   "end": "2026-11-30T23:59:00Z",
-   "share0": 1.0,
-   "rate0": 22.0
-  },
-  {
    "cond": "0x0f85c0d101f011f260f269e529f3b57b3dab4b225e102df89d99ffb9f55c8269",
    "question": "Will Morena win the most seats in the 2027 Chihuahua Congress election?",
    "yes": "89933332762259433105052504598683177219031953441519160580407575591073374864903",
    "no": "27878110870665021593810382832011752478320806079510250595774581844468784787786",
-   "rate": 22.0,
+   "rate": 21.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -289,26 +274,11 @@
    "rate0": 13.0
   },
   {
-   "cond": "0xed39a352fe87e978d63a103468708211371284883e6e8be5c7fa3785d5300fb2",
-   "question": "Will Imelda Castro Castro win the 2027 Sinaloa Governor Election?",
-   "yes": "66936422140555732950907857263941789122611262487933097219950094048174761096774",
-   "no": "8210837630400736590509803474257929976626165020547071526017095096486741859816",
-   "rate": 12.0,
-   "v": 8.5,
-   "min_size": 20.0,
-   "d": 0.0425,
-   "collateral": 18.3,
-   "est_reward_day": 12.0,
-   "end": "2027-06-07T03:59:00Z",
-   "share0": 1.0,
-   "rate0": 12.0
-  },
-  {
    "cond": "0x99e11d81342308f9f44af3326ad292ad0c921f71286967987f509b8071d3036f",
    "question": "Will Pale Sun win Best Live Action Short Film at the 99th Academy Awards?",
    "yes": "56042369959060063305819022398214986303150681679689506887665615653046452666466",
    "no": "72565379429234409743536140574216652442430408026993362935626122559574275924257",
-   "rate": 0.0,
+   "rate": 1.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -317,36 +287,6 @@
    "end": "2027-03-14T23:59:00Z",
    "share0": 1.0,
    "rate0": 25.0
-  },
-  {
-   "cond": "0x6fdf44e3476622c75558b9ae3454068fd716fad82e7c0742076b80a8a0dc71b2",
-   "question": "Will Aneyas Williams be the 2026 D1 Rushing Yards Leader?",
-   "yes": "27070686300985911516524881744309315709213703397297949736869001629833682308424",
-   "no": "92947163443267983113121423315381144447510760737115982090644484041374495573176",
-   "rate": 15.0,
-   "v": 4.5,
-   "min_size": 20.0,
-   "d": 0.0225,
-   "collateral": 19.1,
-   "est_reward_day": 19.0,
-   "end": "2027-01-04T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 19.0
-  },
-  {
-   "cond": "0x9b77bca04ba9d2967805a28a72da2c7bae2466ee51bba17194527b76b4799869",
-   "question": "Will Yashar win less than 16% of the vote in the 2026 Knesset elections?",
-   "yes": "56186282514025700591847165765172627830475511546770798738204185480834343918872",
-   "no": "93568527345109373052759202665170436483093171651221199268390966678271400230066",
-   "rate": 17.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.7,
-   "est_reward_day": 16.0,
-   "end": "2026-11-30T23:59:00Z",
-   "share0": 1.0,
-   "rate0": 16.0
   },
   {
    "cond": "0x611e22b4533bd5ac4a577c94537827d9d62d7653a2fcb8a7a3c074fb9cf02727",
@@ -368,7 +308,7 @@
    "question": "Will Boaster play for Gentle Mates in 2027?",
    "yes": "26580239771399640523706428515472715291892341918372572478543010270690741492121",
    "no": "97890493775374736970693883566314043121759886871030125569041372532571462091630",
-   "rate": 6.0,
+   "rate": 11.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -383,7 +323,7 @@
    "question": "Will Together win 14-16 seats in the 2026 Knesset elections?",
    "yes": "6521856114432312494149231222879709071744153289077322171680186848065309611669",
    "no": "74322133039874524422516041426941598083697144661594319474729719970415657242008",
-   "rate": 1.0,
+   "rate": 17.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -398,7 +338,7 @@
    "question": "Will PAN win the most seats in the 2027 Chihuahua Congress election?",
    "yes": "60340724743118399365829753570488787834581123014952498569645235257533797598971",
    "no": "74808816014561214819966583885489652775033883221619569075491529279204731927838",
-   "rate": 13.0,
+   "rate": 16.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -424,26 +364,11 @@
    "rate0": 13.0
   },
   {
-   "cond": "0xfbd043738e36d992eba1fddc69f9094403419d8420bab07d9710b917cfb888e9",
-   "question": "Will Seoul have between 70-85mm of precipitation in October?",
-   "yes": "83372272345794454670140010348190599252067293568722202121522861238229453646941",
-   "no": "7135511778439560294921330810858317014852687729553049109090838305537186715933",
-   "rate": 15.0,
-   "v": 4.5,
-   "min_size": 20.0,
-   "d": 0.0225,
-   "collateral": 19.099999999999998,
-   "est_reward_day": 12.0,
-   "end": "2027-01-08T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 12.0
-  },
-  {
    "cond": "0x54f8efd0bd9bbb42e427f2a1b2e92c6351eebe883ee132840d65bec211b6177e",
    "question": "Will Arizona Cardinals finish the 2026-27 NFL regular season with the most sacks?",
    "yes": "13364134049883455281621168521731139017213782809143690572064785484017520450547",
    "no": "13125390754808868947740373104980576728072729604494240369707050956495571850443",
-   "rate": 17.0,
+   "rate": 10.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -454,26 +379,11 @@
    "rate0": 11.0
   },
   {
-   "cond": "0xbf5b7f2b593071f08c23ef0a3e2dd4460186970152a966c5237de938d374e520",
-   "question": "Will Chris Minns be the next Premier of New South Wales?",
-   "yes": "72943409563048660286495482444186258030496364528774274591856523725087599395555",
-   "no": "23880904800481099514631226134461069309397733326565360709053588080391592716364",
-   "rate": 33.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.700000000000003,
-   "est_reward_day": 33.0,
-   "end": "2027-03-28T03:59:00Z",
-   "share0": 1.0,
-   "rate0": 33.0
-  },
-  {
    "cond": "0x51868caa8278ae7cbfeeb407538f3d8c948626412c6ac5eb0a5cc71ab48f3d92",
    "question": "Will Claude Fable's output price be at or above $55 in 2026?",
    "yes": "94621243639929572504835561384632321890981487133313789249066395674289353450428",
    "no": "65021153286742082024158065487798794794811140908829476638733145835428654211117",
-   "rate": 3.0,
+   "rate": 40.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -503,7 +413,7 @@
    "question": "Will Morena win the most seats in the 2027 Sinaloa Congress election?",
    "yes": "60291990623513705982923776118630886806676362413304758173328625633660255813580",
    "no": "99973026969580456676784055105957631142903532311802357870711203361133358926681",
-   "rate": 38.0,
+   "rate": 37.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -518,7 +428,7 @@
    "question": "Will Bruno Fernandes (Man Utd) record the most assists in the 2026-27 Premier League season?",
    "yes": "17265254640312417580658673371084735970266193068292671974332834864174679391024",
    "no": "68321584800157381514484953847997622850050400526212367172629877524395555699941",
-   "rate": 29.99936,
+   "rate": 27.99936,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -533,7 +443,7 @@
    "question": "Will PCN win the third most seats in the 2027 Salvadoran legislative election?",
    "yes": "12759065929391846363150375586643874797541984407827173599444871933293226479088",
    "no": "56523288966788439592392681052930829106175370469947842367441899344176463796545",
-   "rate": 28.0,
+   "rate": 1.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -548,7 +458,7 @@
    "question": "Will PCN win the second most seats in the 2027 Salvadoran legislative election?",
    "yes": "113635936901267985077636179070066979031481458681267127511186052422498346586096",
    "no": "49645049790674567798769000809836773428156521423498184007243324745458633863803",
-   "rate": 1.0,
+   "rate": 16.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -563,7 +473,7 @@
    "question": "Will ARENA win the second most seats in the 2027 Salvadoran legislative election?",
    "yes": "70279472637143660730025781364020582569689858115580155198410516661992356515210",
    "no": "111252605397794769404641301507410949379791539699268257468537866082433289732367",
-   "rate": 1.0,
+   "rate": 24.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -578,7 +488,7 @@
    "question": "Will Reservists \u2013 New Economic Party win 3.25-3.75% of the vote in the 2026 Knesset elections?",
    "yes": "64927587975112308157300486430455871753886782337981891077971057852621645985501",
    "no": "5762780467180252843643973197097023531147621507666710950298052684178141946036",
-   "rate": 19.0,
+   "rate": 20.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -593,7 +503,7 @@
    "question": "Will Liberal\u2013National win the second-most seats in the next New South Wales state election?",
    "yes": "68252356850106663005030696519247913677658317063729354010821204760917096745519",
    "no": "41987441817963527374682240822786561960546976268743245354371030649363246892449",
-   "rate": 1.0,
+   "rate": 29.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -604,71 +514,11 @@
    "rate0": 30.0
   },
   {
-   "cond": "0xda67aa9d45d5dcfd5f4e7a2b002dbf5d91bd84b1db64381a85ddb341e39a350b",
-   "question": "Will Anthropic have the best AI model on LiveBench (Mathematics) at the end of November 2026?",
-   "yes": "102030418699220403937646636591958169315933608909859297407389079844723531600139",
-   "no": "56721875673179507732916614702082613033775714447410571728997479752987340882146",
-   "rate": 140.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.700000000000003,
-   "est_reward_day": 140.0,
-   "end": "2026-12-01T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 140.0
-  },
-  {
-   "cond": "0x2afbbf5a9c7d3d63e3a9da3908fb843d2dc84622ce18bd112f0422f7bb095227",
-   "question": "Will Stephen Wilson Jr. win New Artist of the Year at the 2026 CMA Awards?",
-   "yes": "39005867485233585777717226723199632933427969276045640259956714220252118216404",
-   "no": "71510032323458852686615762084649602342103666906608324976758648605182369433064",
-   "rate": 2.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.700000000000003,
-   "est_reward_day": 73.51977401129946,
-   "end": "2026-11-19T04:59:00Z",
-   "share0": 0.954802259887006,
-   "rate0": 77.0
-  },
-  {
-   "cond": "0x111c0f502a3cea58937c378dbfc2c515ce276f7d21b2a59d6e1c717441f3ceb5",
-   "question": "Will Amazon\u2019s market capitalization be between $2.50T and $3.00T at the end of 2026?",
-   "yes": "24211141763169938243169482118240964116488395289684070608088052007950524619463",
-   "no": "63041926624262787198057746462682213508255973514843776712229881243802550704210",
-   "rate": 50.0,
-   "v": 5.5,
-   "min_size": 20.0,
-   "d": 0.0275,
-   "collateral": 18.9,
-   "est_reward_day": 44.0,
-   "end": "2026-12-31T23:59:00Z",
-   "share0": 1.0,
-   "rate0": 44.0
-  },
-  {
-   "cond": "0x2165d400eded7fafc302e51db491953dc802ffbdbc644ca2ee934bf590f74a7c",
-   "question": "Will OpenAI's frontier output token price be at or below $45 in 2026?",
-   "yes": "75657610617315068647041000745078171245766959588626255156957348079325936546172",
-   "no": "100556405590581087849310983001795021848451147905227803922191935782120109393172",
-   "rate": 3.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.699999999999996,
-   "est_reward_day": 40.0,
-   "end": "2027-01-01T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 40.0
-  },
-  {
    "cond": "0xe2596f86e7af3a9de6d76ecc3fabe0c6ddcfbc0739c069b30748481462be3f64",
    "question": "Will GPT Astra's output price be at or above $60 in 2026?",
    "yes": "18455205206735497586059553527464262898328548045519377094099702370010900897453",
    "no": "103738468820728402974763620188459630759326018270425417552214109623732044178416",
-   "rate": 40.0,
+   "rate": 3.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -683,7 +533,7 @@
    "question": "Will PAN win the most seats in the 2027 Aguascalientes Congress election?",
    "yes": "87166849063313594978908559059602119547679348543080727391225728466837922158912",
    "no": "77083441436574028321967384565149894315574085753321014490441170057818158221757",
-   "rate": 35.0,
+   "rate": 3.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -698,7 +548,7 @@
    "question": "Will PAN win the most seats in the 2027 Guanajuato Congress election?",
    "yes": "52853206855735733793774293157002861140361857174121255809579873860362675176869",
    "no": "37343152785132735790900046060179067595943106491462536456700998681986180635829",
-   "rate": 0.0,
+   "rate": 3.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -707,36 +557,6 @@
    "end": "2027-06-07T03:59:00Z",
    "share0": 1.0,
    "rate0": 28.0
-  },
-  {
-   "cond": "0xb2ad739088586528cf5556f6074bd76152a47b8b82e661cab79596fd5533ddac",
-   "question": "Will OXY play for Cloud9 in 2027?",
-   "yes": "106116144399178131454556742496702674518996414100995882550922983072272768573610",
-   "no": "36196205023693487768996950854984935109244316785098516922622833263767794717694",
-   "rate": 27.0,
-   "v": 4.5,
-   "min_size": 20.0,
-   "d": 0.0225,
-   "collateral": 19.1,
-   "est_reward_day": 27.0,
-   "end": "2027-01-01T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 27.0
-  },
-  {
-   "cond": "0x483db1b12f83c4308d5f0e05f78319a0b9fb741b2ab10d9a3e677773fb72f277",
-   "question": "Will Liberty Flames Win the 2026 Conference USA Championship?",
-   "yes": "80335331974033180703568416302353516128894428943530429719174005509537867393351",
-   "no": "2524850722194406856912333215408188656668052034702001297812732712137607531143",
-   "rate": 23.0,
-   "v": 4.5,
-   "min_size": 20.0,
-   "d": 0.0225,
-   "collateral": 19.1,
-   "est_reward_day": 24.0,
-   "end": "2026-12-19T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 24.0
   },
   {
    "cond": "0xa95aae3fd0f8f5223f3909b5e940130f4a30e80b14153ff0a962053ab28b2365",
@@ -758,7 +578,7 @@
    "question": "Will Jacksonville Jaguars finish the 2026-27 NFL regular season with the most interceptions?",
    "yes": "2818207012924646286382620485328626573743613993718217337806864137229904648323",
    "no": "110457759188521237363280541472989457189993536060013050714762695957889934308001",
-   "rate": 8.0,
+   "rate": 10.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -769,26 +589,11 @@
    "rate0": 20.0
   },
   {
-   "cond": "0xcf1cc654615f7924951b8526cdefb6d9754b91abd4ae83f1d3d8d94280a11d07",
-   "question": "Will Morena win the most seats in the 2027 Guanajuato Congress election?",
-   "yes": "28453240230968493463616274801059831744223320383669679310476695135460545824220",
-   "no": "83318917398536251474222161119819112425780649968025159331716853387643573103768",
-   "rate": 0.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.7,
-   "est_reward_day": 16.0,
-   "end": "2027-06-07T03:59:00Z",
-   "share0": 1.0,
-   "rate0": 16.0
-  },
-  {
    "cond": "0x388672a9c7c066ee2a5b0c68ea8b8c3762e4ab73fab80162046814b5501169c7",
    "question": "Will the CPN-UML candidate win the 2027 Kathmandu mayoral election?",
    "yes": "64309632792239333866558388270140603683538711063320541380851369369251013264318",
    "no": "96554543047473900068389697504163240879368224268695922284262849983377758216829",
-   "rate": 1.0,
+   "rate": 17.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -797,6 +602,201 @@
    "end": "2028-01-01T04:59:00Z",
    "share0": 1.0,
    "rate0": 16.0
+  },
+  {
+   "cond": "0xfe8e8afc3842b7db979a1f3c05f4613864ad1329798b5f9060467df1ecc1c029",
+   "question": "Will Trump's approval rating hit 41% by June 30, 2027?",
+   "yes": "55181107977408208850305212932119064602551994679691338778755197281335257454229",
+   "no": "63059169857079336917049184614038464233483781490761971710812591874439691169891",
+   "rate": 40.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.7,
+   "est_reward_day": 40.0,
+   "end": "2027-07-01T03:59:00Z",
+   "share0": 1.0,
+   "rate0": 40.0
+  },
+  {
+   "cond": "0x0ce8bfcbda5a0ef4de7680d6839c887e0a1b2e1a33a4f8f9106b0821d5d7cf6c",
+   "question": "Will GPT Astra's output price be at or below $30 in 2026?",
+   "yes": "58693564100703301299738185392538237741719368571070883394076335885176827977863",
+   "no": "34597183582351919881004741074677737247674800015005968261609979253547773727729",
+   "rate": 3.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.700000000000003,
+   "est_reward_day": 40.0,
+   "end": "2027-01-01T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 40.0
+  },
+  {
+   "cond": "0x5c1ca64f372a0b36304ead231d81cc4bbbdbb153d21ac5f9a3c219928141233e",
+   "question": "Walmart (WMT) Q3 US eCommerce sales growth 25% to 29%?",
+   "yes": "33857824044370255126262694373277774454306802598410536448570435529369063112259",
+   "no": "82464480229683202415537965796561616305599705077776064222730312608979503479820",
+   "rate": 0.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.7,
+   "est_reward_day": 20.0,
+   "end": "2026-11-19T14:30:00Z",
+   "share0": 1.0,
+   "rate0": 20.0
+  },
+  {
+   "cond": "0x4ec9be824015fc912b069ed53f118c7e2d8b12ad35bc2b210e179dd1dcd490c8",
+   "question": "Will Salesforce Q3 current RPO growth (CC) be between 15% and 16%?",
+   "yes": "29286054665571179140198330340768198882908414556090224851597427490388769954433",
+   "no": "93883026497071242012645389764770686360910523742063018908269331995602212868330",
+   "rate": 26.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.7,
+   "est_reward_day": 20.0,
+   "end": "2026-12-02T23:00:00Z",
+   "share0": 1.0,
+   "rate0": 20.0
+  },
+  {
+   "cond": "0x9fc9a5c5c13a18ec43de3181b88710f27c3219a95886fb1ba10fd861e9a9f081",
+   "question": "Will Salesforce Q3 current RPO growth (CC) be above 17%?",
+   "yes": "43933718272572022921219045873878338353610417442284700830454508104194586909880",
+   "no": "61107938169673667927316711269527637579087166027171425629921560810176762799551",
+   "rate": 13.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.7,
+   "est_reward_day": 20.0,
+   "end": "2026-12-02T23:00:00Z",
+   "share0": 1.0,
+   "rate0": 20.0
+  },
+  {
+   "cond": "0x7906968a07f6e8d52400965cda542cbf7eecad2a01491a70163ee5d8def0a2e0",
+   "question": "Will Otzma win 8-9 seats in the 2026 Knesset elections?",
+   "yes": "72482178455337580678907673041256619263366305379880074804696138702001352525181",
+   "no": "20718075461659242536789773832991998734312612179708825185843322756981918747901",
+   "rate": 1.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.700000000000003,
+   "est_reward_day": 20.0,
+   "end": "2026-11-30T23:59:00Z",
+   "share0": 1.0,
+   "rate0": 20.0
+  },
+  {
+   "cond": "0x9ae897ad15eddcfbfd3d2e54618b10da87bb5efbb6c08a04a178d485ceae0023",
+   "question": "Will Together win 9-11% of the vote in the 2026 Knesset elections?",
+   "yes": "1954531851854308836334297361792747078485265254146771341908087714702792849677",
+   "no": "15874150304306101526294044105428297105658870608286977130956179054736019878490",
+   "rate": 1.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.700000000000003,
+   "est_reward_day": 20.0,
+   "end": "2026-11-30T23:59:00Z",
+   "share0": 1.0,
+   "rate0": 20.0
+  },
+  {
+   "cond": "0xf42d2731e8ae959d937c32eb2380bf46bf9d1fcd46b00581bf1a4e2986874d7b",
+   "question": "Will Salesforce Q3 current RPO growth (CC) be between 16% and 17%?",
+   "yes": "65194178464071141602712016338770155904888124513639516587396844625618615932966",
+   "no": "89757260014090775028657774545228913813596380617830133675727659352463984752811",
+   "rate": 23.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.700000000000003,
+   "est_reward_day": 19.0,
+   "end": "2026-12-02T23:00:00Z",
+   "share0": 1.0,
+   "rate0": 19.0
+  },
+  {
+   "cond": "0xdbc8bb83821f4225252c34822baf5f216e13480d59f911edacf6424bb1f65887",
+   "question": "Will The Joint List win 7.5% or more of the vote in the 2026 Knesset elections?",
+   "yes": "31456625552112484124712152575561207082555496403300264248422454735973869672096",
+   "no": "20196492396043728029417574053994066370622742717817269019634768016586311687626",
+   "rate": 14.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.700000000000003,
+   "est_reward_day": 17.0,
+   "end": "2026-11-30T23:59:00Z",
+   "share0": 1.0,
+   "rate0": 17.0
+  },
+  {
+   "cond": "0x1b73a0834a1ea23f809ba6ed19659bad140f2db96e200baf5d01e96a055f88aa",
+   "question": "Will The Joint List win 5.5-6.5% of the vote in the 2026 Knesset elections?",
+   "yes": "110099448734877567729221988522508516706680777100669185404918788030382243370074",
+   "no": "16251831567357292845963283785280619931983913104680593224702278826829149786823",
+   "rate": 17.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.7,
+   "est_reward_day": 15.0,
+   "end": "2026-11-30T23:59:00Z",
+   "share0": 1.0,
+   "rate0": 15.0
+  },
+  {
+   "cond": "0xa0e6c46ec6b8d8be9035c4f7f5b6703bc60a61aaf8dc6cd4e97e314c4e5f44f3",
+   "question": "Will PRI win the most seats in the 2027 Nuevo Le\u00f3n Congress election?",
+   "yes": "13797152570905432731129366035656471539024866251984687080803638989579540611996",
+   "no": "65414591641460718867150655491051125579411906326757804835892909120297660137516",
+   "rate": 14.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.7,
+   "est_reward_day": 15.0,
+   "end": "2027-06-07T03:59:00Z",
+   "share0": 1.0,
+   "rate0": 15.0
+  },
+  {
+   "cond": "0xbc0f8352360f41bf0c09f05fae925026b831037a44c97f8cf79060c3f92f4967",
+   "question": "Will NYC have less than 3 inches of precipitation in October?",
+   "yes": "80661091051749063508387406975974958394570541176883801978839695384991609062925",
+   "no": "104793682022655792555530370377866539751588312974070074836255092154694377462447",
+   "rate": 15.0,
+   "v": 4.5,
+   "min_size": 20.0,
+   "d": 0.0225,
+   "collateral": 19.1,
+   "est_reward_day": 15.0,
+   "end": "2027-01-08T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 15.0
+  },
+  {
+   "cond": "0x9446650e11b9d651300095e1d945ac1f90aa56892d6918e813e6b4427db1d317",
+   "question": "Will Otzma win 10 or more seats in the 2026 Knesset elections?",
+   "yes": "101936829922650486706395617778580184827661002747328387169808864828998709667237",
+   "no": "57082512825435822984833837881981267065518733815226130868892694797522095952955",
+   "rate": 1.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.7,
+   "est_reward_day": 14.0,
+   "end": "2026-11-30T23:59:00Z",
+   "share0": 1.0,
+   "rate0": 14.0
   }
  ],
  "positions": {
@@ -969,7 +969,7 @@
   "0xcbbae43baaba7d9622c2ba4c0485e1399f1836563bf105a3c4325aea4c3bbdaa": {
    "inv": 0.0,
    "cash": -1.7999806199999995,
-   "mid": 0.585,
+   "mid": 0.595,
    "share": 1.0,
    "reward": 18.870493714667962,
    "fills": 3,
@@ -979,9 +979,9 @@
   "0xe2596f86e7af3a9de6d76ecc3fabe0c6ddcfbc0739c069b30748481462be3f64": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.335,
+   "mid": 0.325,
    "share": 1.0,
-   "reward": 102.60297918057636,
+   "reward": 102.71070746814854,
    "fills": 0,
    "q": "Will GPT Astra's output price be at or above $60 in 2026?"
   },
@@ -1028,7 +1028,7 @@
    "cash": -2.70238177,
    "mid": 0.604,
    "share": 1.0,
-   "reward": 285.1058024574696,
+   "reward": 285.42419045627577,
    "fills": 5,
    "q": "Will the Ornn H200 Index hit $4.00 (LOW) by December 31, 2026?",
    "closed_at": 0.537
@@ -1057,8 +1057,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.485,
-   "share": 0.05661641541038526,
-   "reward": 47.50773447251424,
+   "share": null,
+   "reward": 47.508252610170395,
    "fills": 0,
    "q": "Will OpenAI's frontier output token price be at or below $45 in 2026?"
   },
@@ -1351,7 +1351,7 @@
    "cash": 0.14999999999999858,
    "mid": 0.54,
    "share": 1.0,
-   "reward": 76.98260439029755,
+   "reward": 77.17644361922618,
    "fills": 1,
    "q": "Will Labor hold the most seats in the New South Wales Legislative Council after ",
    "closed_at": 0.67
@@ -1581,9 +1581,9 @@
   "0x0ce8bfcbda5a0ef4de7680d6839c887e0a1b2e1a33a4f8f9106b0821d5d7cf6c": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.39,
-   "share": null,
-   "reward": 41.82882694741082,
+   "mid": 0.42,
+   "share": 1.0,
+   "reward": 41.91120222062691,
    "fills": 0,
    "q": "Will GPT Astra's output price be at or below $30 in 2026?"
   },
@@ -1764,9 +1764,9 @@
   "0x6608cbf75936a7a2b2f7e30a1566207ea156de645c618501384c9552eac96931": {
    "inv": 0.0,
    "cash": -0.9499999999999993,
-   "mid": 0.675,
+   "mid": 0.6799999999999999,
    "share": 1.0,
-   "reward": 155.07944016444984,
+   "reward": 155.29853075170652,
    "fills": 1,
    "q": "Will PAN win the most seats in the 2027 Aguascalientes Congress election?",
    "closed_at": 0.5
@@ -1784,7 +1784,7 @@
   "0xd290d0ce68bea178bc6fcecb04a539702bb603518dc41dfc71e2844dfeb7a99d": {
    "inv": -5.0,
    "cash": 1.2625,
-   "mid": 0.25,
+   "mid": 0.24,
    "share": 1.0,
    "reward": 46.55953813173782,
    "fills": 1,
@@ -1794,8 +1794,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.705,
-   "share": 0.007738081065785595,
-   "reward": 20.276244764889892,
+   "share": null,
+   "reward": 20.279786503658304,
    "fills": 0,
    "q": "Will Anthropic have the best AI model on LiveBench (Mathematics) at the end of N"
   },
@@ -1924,9 +1924,9 @@
   "0x58c2978287875f8f6c1d50ef39677686ad2a971069eddd36d12abd1209ae0d94": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.2475,
+   "mid": 0.287,
    "share": 1.0,
-   "reward": 3.491070532783655,
+   "reward": 3.534595478909312,
    "fills": 0,
    "q": "Will Jacksonville Jaguars finish the 2026-27 NFL regular season with the most in"
   },
@@ -1962,9 +1962,9 @@
   "0xc23db6a338500c35faf6657071777148a6d55b848acdd2862b7d3c5b7200e409": {
    "inv": 0.0,
    "cash": -0.08924999999999983,
-   "mid": 0.45499999999999996,
-   "share": 0.026158993018076945,
-   "reward": 88.12186990926192,
+   "mid": 0.595,
+   "share": 1.0,
+   "reward": 88.18048174044512,
    "fills": 1,
    "q": "Will Morena win the most seats in the 2027 Sinaloa Congress election?",
    "closed_at": 0.5
@@ -2120,18 +2120,18 @@
   "0x946ed795f363c024e5ae1076b3aaf7f95510799b9d0929fe3cc18d078bd5d2e7": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.5900000000000001,
-   "share": 0.8941798941798961,
-   "reward": 4.165315879414929,
+   "mid": 0.595,
+   "share": 0.7660924750679942,
+   "reward": 4.177787650035557,
    "fills": 0,
    "q": "Will Labor win the most seats in the next New South Wales state election?"
   },
   "0x0b1d8001d3e23c14fc9e1cdac19583ab7591c628217dcfea48d7b5b0014f37d7": {
    "inv": 0.0,
    "cash": -1.8500000000000014,
-   "mid": 0.425,
+   "mid": 0.38,
    "share": 1.0,
-   "reward": 8.101355881679334,
+   "reward": 8.16065442936779,
    "fills": 1,
    "q": "Will Liberal\u2013National win the second-most seats in the next New South Wales stat",
    "closed_at": 0.49
@@ -2158,9 +2158,9 @@
   "0xbf5b7f2b593071f08c23ef0a3e2dd4460186970152a966c5237de938d374e520": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.69,
-   "share": 0.09144691749936819,
-   "reward": 6.068545191211289,
+   "mid": 0.7,
+   "share": null,
+   "reward": 6.071878637946347,
    "fills": 0,
    "q": "Will Chris Minns be the next Premier of New South Wales?"
   },
@@ -2279,9 +2279,9 @@
   "0x151502fd3ddb6716de9508b5128c83b3f33b0610c86129b98d3450763735f74c": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.515,
+   "mid": 0.52,
    "share": 1.0,
-   "reward": 10.756025607310086,
+   "reward": 10.761603630281835,
    "fills": 0,
    "q": "Will PAN win the most seats in the 2027 Guanajuato Congress election?"
   },
@@ -2602,9 +2602,9 @@
   "0xbc0f8352360f41bf0c09f05fae925026b831037a44c97f8cf79060c3f92f4967": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.615,
-   "share": null,
-   "reward": 18.948255554759346,
+   "mid": 0.655,
+   "share": 1.0,
+   "reward": 19.004944638459722,
    "fills": 0,
    "q": "Will NYC have less than 3 inches of precipitation in October?"
   },
@@ -2629,9 +2629,9 @@
   "0xfbd043738e36d992eba1fddc69f9094403419d8420bab07d9710b917cfb888e9": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.456,
-   "share": 1.0,
-   "reward": 48.18339272971924,
+   "mid": 0.4355,
+   "share": null,
+   "reward": 48.1995613546634,
    "fills": 0,
    "q": "Will Seoul have between 70-85mm of precipitation in October?"
   },
@@ -2647,9 +2647,9 @@
   "0xa95aae3fd0f8f5223f3909b5e940130f4a30e80b14153ff0a962053ab28b2365": {
    "inv": 0.0,
    "cash": -0.3520000000000003,
-   "mid": 0.605,
+   "mid": 0.59,
    "share": 1.0,
-   "reward": 17.612669183981815,
+   "reward": 17.74314059554996,
    "fills": 1,
    "q": "Will Felipe Fernando Mac\u00edas Olvera win the 2027 Quer\u00e9taro Governor Election?",
    "closed_at": 0.42
@@ -2778,8 +2778,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.435,
-   "share": 0.008700784479986463,
-   "reward": 3.402123377940899,
+   "share": null,
+   "reward": 3.403594742916307,
    "fills": 0,
    "q": "Will Amazon\u2019s market capitalization be between $2.50T and $3.00T at the end of 2"
   },
@@ -2796,9 +2796,9 @@
   "0x6c10b4f4c60b2c9001702166ad126450c05c9dfc51a938c042b9c965d922a2fe": {
    "inv": -7.199999999999999,
    "cash": 4.177999999999999,
-   "mid": 0.355,
+   "mid": 0.325,
    "share": 1.0,
-   "reward": 63.83621334882005,
+   "reward": 63.91551801555446,
    "fills": 2,
    "q": "Will PAN win the most seats in the 2027 Nuevo Le\u00f3n Congress election?"
   },
@@ -2825,7 +2825,7 @@
   "0x9c53f5008c63f1a006e206ca2658f9f66662daa29860fc444654f3404261b3ac": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.6,
+   "mid": 0.61,
    "share": 1.0,
    "reward": 132.11806422067525,
    "fills": 0,
@@ -3297,9 +3297,9 @@
   "0x1d730eae559959dd3823a3e69aa99999ab2914ab3fd8932f43ae768beba58d64": {
    "inv": 18.94,
    "cash": -14.638225000000002,
-   "mid": 0.365,
+   "mid": 0.45999999999999996,
    "share": 1.0,
-   "reward": 171.49851721987767,
+   "reward": 171.7879972179629,
    "fills": 3,
    "q": "Will Trump's approval rating hit 35% by June 30, 2027?",
    "closed_at": 0.55
@@ -3630,7 +3630,7 @@
    "cash": 0.0,
    "mid": 0.30000000000000004,
    "share": 1.0,
-   "reward": 37.47904485777482,
+   "reward": 37.57171957433684,
    "fills": 0,
    "q": "Will Claude Fable's output price be at or above $55 in 2026?"
   },
@@ -3772,9 +3772,9 @@
   "0x2905ae6e791276c157e1eba95dbe890958c8423dd861928cce07070e0073edae": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.355,
-   "share": 0.058175559380378786,
-   "reward": 41.688744309253856,
+   "mid": 0.24000000000000002,
+   "share": 1.0,
+   "reward": 41.89714969229245,
    "fills": 0,
    "q": "Will Trump's approval rating hit 42% by June 30, 2027?"
   },
@@ -3891,9 +3891,9 @@
   "0xfe8e8afc3842b7db979a1f3c05f4613864ad1329798b5f9060467df1ecc1c029": {
    "inv": 0.0,
    "cash": -2.9323500000000005,
-   "mid": 0.5,
-   "share": null,
-   "reward": 61.948026824308464,
+   "mid": 0.355,
+   "share": 1.0,
+   "reward": 62.099197714176135,
    "fills": 4,
    "q": "Will Trump's approval rating hit 41% by June 30, 2027?",
    "closed_at": 0.18
@@ -4504,7 +4504,7 @@
   "0x5d15579a3a31d6220eb8d33d167788db82976f14c856768a5e37e51afdaeb279": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.4755,
+   "mid": 0.4845,
    "share": 1.0,
    "reward": 17.59805527737572,
    "fills": 0,
@@ -4902,9 +4902,9 @@
   "0xdebc007fd4db3bf445787b8d5bd8613144c66ebe5061593527a82540aa65cb0a": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.44,
+   "mid": 0.35000000000000003,
    "share": 1.0,
-   "reward": 78.48284874354246,
+   "reward": 78.69995874210638,
    "fills": 0,
    "q": "Will \"Wild Horse Nine\" be nominated for Best Costume Design at the 99th Academy "
   },
@@ -5231,8 +5231,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.525,
-   "share": 0.010680098098678837,
-   "reward": 12.293522884521886,
+   "share": null,
+   "reward": 12.294482871463996,
    "fills": 0,
    "q": "Will OXY play for Cloud9 in 2027?"
   },
@@ -5552,7 +5552,7 @@
    "cash": 0.0,
    "mid": 0.77,
    "share": 1.0,
-   "reward": 62.61815129151274,
+   "reward": 62.862165650695516,
    "fills": 0,
    "q": "Will Palo Alto Networks Q1 Next-Generation Security ARR be above $9.75B?"
   },
@@ -5633,9 +5633,9 @@
   "0x93f0593238c871518fbff133b44264fd2606f5e1c0d7e08c85c93b2e4271af71": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.325,
+   "mid": 0.33,
    "share": 1.0,
-   "reward": 51.84371725409125,
+   "reward": 52.162105252897355,
    "fills": 0,
    "q": "Will Snowflake Q3 Product revenue be above $1.66B?"
   },
@@ -5854,7 +5854,7 @@
    "cash": 0.0,
    "mid": 0.615,
    "share": 1.0,
-   "reward": 2.080388850487618,
+   "reward": 2.093297772587766,
    "fills": 0,
    "q": "Will it snow in Buffalo, NY by November 15?"
   },
@@ -5928,8 +5928,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.33499999999999996,
-   "share": 0.01564623583043556,
-   "reward": 3.305755300447177,
+   "share": null,
+   "reward": 3.3064959791147803,
    "fills": 0,
    "q": "Will Yashar win less than 16% of the vote in the 2026 Knesset elections?"
   },
@@ -6027,9 +6027,9 @@
   "0x1b73a0834a1ea23f809ba6ed19659bad140f2db96e200baf5d01e96a055f88aa": {
    "inv": 0.0,
    "cash": -0.005700000000000004,
-   "mid": 0.29000000000000004,
-   "share": null,
-   "reward": 1.4608103384970517,
+   "mid": 0.29,
+   "share": 1.0,
+   "reward": 1.510665496163788,
    "fills": 1,
    "q": "Will The Joint List win 5.5-6.5% of the vote in the 2026 Knesset elections?",
    "closed_at": 0.31
@@ -6091,9 +6091,9 @@
   "0xa0e6c46ec6b8d8be9035c4f7f5b6703bc60a61aaf8dc6cd4e97e314c4e5f44f3": {
    "inv": 0.0,
    "cash": -1.1500000000000004,
-   "mid": 0.47,
-   "share": null,
-   "reward": 11.89966665475048,
+   "mid": 0.43500000000000005,
+   "share": 1.0,
+   "reward": 11.954496397460275,
    "fills": 1,
    "q": "Will PRI win the most seats in the 2027 Nuevo Le\u00f3n Congress election?",
    "closed_at": 0.43
@@ -6183,9 +6183,9 @@
   "0x4ec9be824015fc912b069ed53f118c7e2d8b12ad35bc2b210e179dd1dcd490c8": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.21000000000000002,
-   "share": null,
-   "reward": 1.679409000348452,
+   "mid": 0.28500000000000003,
+   "share": 1.0,
+   "reward": 1.766150491225789,
    "fills": 0,
    "q": "Will Salesforce Q3 current RPO growth (CC) be between 15% and 16%?"
   },
@@ -6201,9 +6201,9 @@
   "0xec6f149b42c9b8fb33640918eba2e2d316bcc49352b3e075b50d1475211d4d9e": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.45999999999999996,
+   "mid": 0.475,
    "share": 1.0,
-   "reward": 3.0880420537526074,
+   "reward": 3.260711446171138,
    "fills": 0,
    "q": "Will PCN win the third most seats in the 2027 Salvadoran legislative election?"
   },
@@ -6363,9 +6363,9 @@
   "0x0f2218a53993736b36f042eeb2ab6111928e3944b4c6e4ca2180a5e7562d288d": {
    "inv": 0.0,
    "cash": -1.8500000000000014,
-   "mid": 0.41500000000000004,
-   "share": 1.0,
-   "reward": 3.684159482693039,
+   "mid": 0.3765,
+   "share": 0.5784501642935387,
+   "reward": 3.8118228682984876,
    "fills": 2,
    "q": "Will Reservists \u2013 New Economic Party win 3.25-3.75% of the vote in the 2026 Knes"
   },
@@ -6382,8 +6382,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.595,
-   "share": 0.03640449438202237,
-   "reward": 1.467595737782962,
+   "share": null,
+   "reward": 1.4695705180472094,
    "fills": 0,
    "q": "Will Liberty Flames Win the 2026 Conference USA Championship?"
   },
@@ -6392,25 +6392,25 @@
    "cash": 0.0,
    "mid": 0.26,
    "share": 1.0,
-   "reward": 5.037425816842436,
+   "reward": 5.0732756316713346,
    "fills": 0,
    "q": "Will PCN win the second most seats in the 2027 Salvadoran legislative election?"
   },
   "0xdbc8bb83821f4225252c34822baf5f216e13480d59f911edacf6424bb1f65887": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.21000000000000002,
-   "share": null,
-   "reward": 1.2574295686840105,
+   "mid": 0.27,
+   "share": 0.22207621550591333,
+   "reward": 1.2958492157851924,
    "fills": 0,
    "q": "Will The Joint List win 7.5% or more of the vote in the 2026 Knesset elections?"
   },
   "0x0f85c0d101f011f260f269e529f3b57b3dab4b225e102df89d99ffb9f55c8269": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.38,
+   "mid": 0.37,
    "share": 1.0,
-   "reward": 6.343507736306172,
+   "reward": 6.462238475434984,
    "fills": 0,
    "q": "Will Morena win the most seats in the 2027 Chihuahua Congress election?"
   },
@@ -6418,7 +6418,7 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.245,
-   "share": 0.010856198156835969,
+   "share": null,
    "reward": 0.9488163009480752,
    "fills": 0,
    "q": "Will Morena win the most seats in the 2027 Guanajuato Congress election?"
@@ -6455,7 +6455,7 @@
    "cash": 0.0,
    "mid": 0.36,
    "share": 1.0,
-   "reward": 1.0247572269994771,
+   "reward": 1.075481769753041,
    "fills": 0,
    "q": "Will ARENA win the second most seats in the 2027 Salvadoran legislative election"
   },
@@ -6472,9 +6472,9 @@
   "0x6a4a9ec279b150e2c84773e403580d8fbe488e53897d019934dadef1054d9f1d": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.1805,
-   "share": 0.10116156219789946,
-   "reward": 3.4906014127741747,
+   "mid": 0.1795,
+   "share": null,
+   "reward": 3.49683771308015,
    "fills": 0,
    "q": "Will Yashar win 16-18% of the vote in the 2026 Knesset elections?"
   },
@@ -6572,27 +6572,28 @@
   "0x6ec7488799349b287b7d7074880fce11d87d6b8173c64550b063501d8d1a65f3": {
    "inv": 7.43,
    "cash": -4.11238,
-   "mid": 0.425,
+   "mid": 0.42,
    "share": 1.0,
-   "reward": 7.775005801477363,
+   "reward": 7.997877400641637,
    "fills": 2,
    "q": "Will Trey McBride finish the 2026-27 NFL regular season with the most receptions"
   },
   "0xed39a352fe87e978d63a103468708211371284883e6e8be5c7fa3785d5300fb2": {
-   "inv": 0.35,
-   "cash": -0.17762499999999998,
+   "inv": 0.0,
+   "cash": -0.03762499999999999,
    "mid": 0.455,
-   "share": 0.26933830382106244,
-   "reward": 2.4844161387993227,
+   "share": null,
+   "reward": 2.4956234662099552,
    "fills": 1,
-   "q": "Will Imelda Castro Castro win the 2027 Sinaloa Governor Election?"
+   "q": "Will Imelda Castro Castro win the 2027 Sinaloa Governor Election?",
+   "closed_at": 0.4
   },
   "0x99e11d81342308f9f44af3326ad292ad0c921f71286967987f509b8071d3036f": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.25,
+   "mid": 0.11,
    "share": 1.0,
-   "reward": 0.24007062300537874,
+   "reward": 0.24192996399596184,
    "fills": 0,
    "q": "Will Pale Sun win Best Live Action Short Film at the 99th Academy Awards?"
   },
@@ -6608,9 +6609,9 @@
   "0x6fdf44e3476622c75558b9ae3454068fd716fad82e7c0742076b80a8a0dc71b2": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.14700000000000002,
-   "share": 0.006388522490911736,
-   "reward": 3.2078851739860372,
+   "mid": 0.14650000000000002,
+   "share": null,
+   "reward": 3.2082327023808737,
    "fills": 0,
    "q": "Will Aneyas Williams be the 2026 D1 Rushing Yards Leader?"
   },
@@ -6626,9 +6627,9 @@
   "0x5c1ca64f372a0b36304ead231d81cc4bbbdbb153d21ac5f9a3c219928141233e": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.23500000000000001,
-   "share": null,
-   "reward": 0.034025741307091385,
+   "mid": 0.26,
+   "share": 1.0,
+   "reward": 0.07242436642926767,
    "fills": 0,
    "q": "Walmart (WMT) Q3 US eCommerce sales growth 25% to 29%?"
   },
@@ -6644,9 +6645,9 @@
   "0x9ae897ad15eddcfbfd3d2e54618b10da87bb5efbb6c08a04a178d485ceae0023": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.265,
-   "share": null,
-   "reward": 1.6664916704825947,
+   "mid": 0.31,
+   "share": 1.0,
+   "reward": 1.6926794925756092,
    "fills": 0,
    "q": "Will Together win 9-11% of the vote in the 2026 Knesset elections?"
   },
@@ -6662,9 +6663,9 @@
   "0x388672a9c7c066ee2a5b0c68ea8b8c3762e4ab73fab80162046814b5501169c7": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.35500000000000004,
+   "mid": 0.27,
    "share": 1.0,
-   "reward": 0.40703104558079317,
+   "reward": 0.44403669419928826,
    "fills": 0,
    "q": "Will the CPN-UML candidate win the 2027 Kathmandu mayoral election?"
   },
@@ -6673,7 +6674,7 @@
    "cash": 0.0,
    "mid": 0.14500000000000002,
    "share": 1.0,
-   "reward": 2.383833056638636,
+   "reward": 2.48730915625062,
    "fills": 0,
    "q": "Will England host the 2027 UEFA Nations League Finals?"
   },
@@ -6691,16 +6692,16 @@
    "cash": 0.0,
    "mid": 0.455,
    "share": 1.0,
-   "reward": 2.484229309953474,
+   "reward": 2.5412842147273054,
    "fills": 0,
    "q": "Will Boaster play for Gentle Mates in 2027?"
   },
   "0x5c954c20af31c83cc196fe8bf81af39d68c11610bfa9c55fcfc9738ce19bbebb": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.345,
+   "mid": 0.35,
    "share": 1.0,
-   "reward": 0.5996292154630939,
+   "reward": 0.6373383712825761,
    "fills": 0,
    "q": "Will Together win 14-16 seats in the 2026 Knesset elections?"
   },
@@ -6716,18 +6717,18 @@
   "0x3a490e1ebf7e4ccc285e923aed701d998f8c621bab44878f9f1326868af2de67": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.295,
+   "mid": 0.30000000000000004,
    "share": 1.0,
-   "reward": 2.324942718690574,
+   "reward": 2.433996841274307,
    "fills": 0,
    "q": "Will PAN win the most seats in the 2027 Chihuahua Congress election?"
   },
   "0x2fc4684e3ed355169c9e18a05e9eb23a05ac5ea34d7b2480980bb261f2740335": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.199,
+   "mid": 0.1865,
    "share": 1.0,
-   "reward": 1.223830846862661,
+   "reward": 1.2875084466238822,
    "fills": 0,
    "q": "Will Tennessee Volunteers Win the 2026 SEC Championship?"
   },
@@ -6754,7 +6755,7 @@
    "cash": 0.0,
    "mid": 0.1695,
    "share": 1.0,
-   "reward": 1.5494899706625282,
+   "reward": 1.6717894832210416,
    "fills": 0,
    "q": "Will Arizona Cardinals finish the 2026-27 NFL regular season with the most sacks"
   },
@@ -6797,9 +6798,9 @@
   "0x65c7002c05e9ad53c34c17649c36e59d112e770c20ceeea598ccb3b92161b6d6": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.395,
-   "share": 1.0,
-   "reward": 0.9727903260514954,
+   "mid": 0.345,
+   "share": 0.1754249181350386,
+   "reward": 1.0376377919520157,
    "fills": 0,
    "q": "Will Bruno Fernandes (Man Utd) record the most assists in the 2026-27 Premier Le"
   },
@@ -6825,11 +6826,47 @@
   "0x2afbbf5a9c7d3d63e3a9da3908fb843d2dc84622ce18bd112f0422f7bb095227": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.415,
-   "share": 0.05985724931500644,
-   "reward": 0.1243510681009345,
+   "mid": 0.41500000000000004,
+   "share": null,
+   "reward": 0.12605696526193833,
    "fills": 0,
    "q": "Will Stephen Wilson Jr. win New Artist of the Year at the 2026 CMA Awards?"
+  },
+  "0x9fc9a5c5c13a18ec43de3181b88710f27c3219a95886fb1ba10fd861e9a9f081": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.1285,
+   "share": 1.0,
+   "reward": 0.038398625122176275,
+   "fills": 0,
+   "q": "Will Salesforce Q3 current RPO growth (CC) be above 17%?"
+  },
+  "0x7906968a07f6e8d52400965cda542cbf7eecad2a01491a70163ee5d8def0a2e0": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.38,
+   "share": 1.0,
+   "reward": 0.04025796611275938,
+   "fills": 0,
+   "q": "Will Otzma win 8-9 seats in the 2026 Knesset elections?"
+  },
+  "0xf42d2731e8ae959d937c32eb2380bf46bf9d1fcd46b00581bf1a4e2986874d7b": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.155,
+   "share": 1.0,
+   "reward": 0.06587689983072105,
+   "fills": 0,
+   "q": "Will Salesforce Q3 current RPO growth (CC) be between 16% and 17%?"
+  },
+  "0x9446650e11b9d651300095e1d945ac1f90aa56892d6918e813e6b4427db1d317": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.29000000000000004,
+   "share": 1.0,
+   "reward": 0.028738378576106494,
+   "fills": 0,
+   "q": "Will Otzma win 10 or more seats in the 2026 Knesset elections?"
   }
  },
  "history": [
@@ -21550,17 +21587,30 @@
    "w": 2987207
   },
   {
-   "ts": "2026-10-18T12:05:26.696932+00:00",
-   "dt_h": 0.101,
-   "reward_tick": 2.0437,
-   "reward_total": 10761.11,
-   "mm_value": -309.99,
-   "net": 10451.11,
-   "avg_share": 0.7482,
+   "ts": "2026-10-18T12:09:29.382704+00:00",
+   "dt_h": 0.168,
+   "reward_tick": 3.4537,
+   "reward_total": 10762.52,
+   "mm_value": -310.07,
+   "net": 10452.44,
+   "avg_share": 0.7658,
    "n_markets": 53,
    "fills_total": 257,
    "rebalanced": false,
    "w": 2987208
+  },
+  {
+   "ts": "2026-10-18T12:16:54.415009+00:00",
+   "dt_h": 0.124,
+   "reward_tick": 3.333,
+   "reward_total": 10765.85,
+   "mm_value": -307.98,
+   "net": 10457.86,
+   "avg_share": 0.9574,
+   "n_markets": 53,
+   "fills_total": 257,
+   "rebalanced": false,
+   "w": 2987209
   }
  ],
  "fills": [
@@ -23878,8 +23928,8 @@
    "ledger": "v4"
   }
  ],
- "reward_total": 10761.10589467643,
- "last_ts": 1792325126.6969318,
+ "reward_total": 10765.848822090966,
+ "last_ts": 1792325814.4150093,
  "chosen_at": 1791639880.921448,
  "rebalances": [
   {
@@ -23890,12 +23940,12 @@
   }
  ],
  "last_tick": {
-  "ts": "2026-10-18T12:05:26.696932+00:00",
-  "dt_h": 0.017,
+  "ts": "2026-10-18T12:16:54.415009+00:00",
+  "dt_h": 0.045,
   "markets": [
    {
     "q": "Will global temperature increase by between 1.35\u00baC",
-    "mid": 0.25,
+    "mid": 0.24,
     "share": 1.0,
     "earned": 0.0,
     "inv": -5.0
@@ -23916,30 +23966,30 @@
    },
    {
     "q": "Will PAN win the most seats in the 2027 Nuevo Le\u00f3n",
-    "mid": 0.355,
+    "mid": 0.325,
     "share": 1.0,
-    "earned": 0.0093,
+    "earned": 0.0,
     "inv": -7.199999999999999
    },
    {
     "q": "Will Meta\u2019s market capitalization be between $1.75",
-    "mid": 0.6,
+    "mid": 0.61,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will Denver Broncos finish the 2026-27 NFL regular",
-    "mid": 0.475,
+    "mid": 0.484,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will \"Wild Horse Nine\" be nominated for Best Costu",
-    "mid": 0.44,
+    "mid": 0.35,
     "share": 1.0,
-    "earned": 0.0214,
+    "earned": 0.0558,
     "inv": 0.0
    },
    {
@@ -23951,7 +24001,7 @@
    },
    {
     "q": "Will Anthropic's frontier output token price be at",
-    "mid": 0.585,
+    "mid": 0.595,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -23960,316 +24010,316 @@
     "q": "Will Palo Alto Networks Q1 Next-Generation Securit",
     "mid": 0.77,
     "share": 1.0,
-    "earned": 0.0286,
+    "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will Snowflake Q3 Product revenue be above $1.66B?",
-    "mid": 0.325,
+    "mid": 0.33,
     "share": 1.0,
-    "earned": 0.0286,
+    "earned": 0.0744,
     "inv": 0.0
    },
    {
     "q": "Will it snow in Buffalo, NY by November 15?",
     "mid": 0.615,
     "share": 1.0,
-    "earned": 0.0014,
+    "earned": 0.0037,
     "inv": 0.0
    },
    {
     "q": "Will Trump's approval rating hit 35% by June 30, 2",
-    "mid": 0.365,
+    "mid": 0.46,
     "share": 1.0,
-    "earned": 0.0286,
+    "earned": 0.0744,
     "inv": 18.94
    },
    {
     "q": "Will the Ornn H200 Index hit $4.00 (LOW) by Decemb",
     "mid": 0.604,
     "share": 1.0,
-    "earned": 0.0286,
+    "earned": 0.0744,
     "inv": 10.0
    },
    {
     "q": "Will Labor hold the most seats in the New South Wa",
     "mid": 0.54,
     "share": 1.0,
-    "earned": 0.0264,
+    "earned": 0.0688,
     "inv": 0.0
    },
    {
     "q": "Will Labor win the most seats in the next New Sout",
-    "mid": 0.59,
-    "share": 0.8942,
-    "earned": 0.0011,
-    "inv": 0.0
-   },
-   {
-    "q": "Will Yashar win 16-18% of the vote in the 2026 Kne",
-    "mid": 0.18,
-    "share": 0.1012,
-    "earned": 0.0003,
+    "mid": 0.595,
+    "share": 0.7661,
+    "earned": 0.0043,
     "inv": 0.0
    },
    {
     "q": "Will Morena win the most seats in the 2027 Chihuah",
-    "mid": 0.38,
-    "share": 1.0,
-    "earned": 0.0157,
-    "inv": 0.0
-   },
-   {
-    "q": "Will Trey McBride finish the 2026-27 NFL regular s",
-    "mid": 0.425,
-    "share": 1.0,
-    "earned": 0.02,
-    "inv": 7.43
-   },
-   {
-    "q": "Will Imelda Castro Castro win the 2027 Sinaloa Gov",
-    "mid": 0.455,
-    "share": 0.2693,
-    "earned": 0.0023,
-    "inv": 0.35
-   },
-   {
-    "q": "Will Pale Sun win Best Live Action Short Film at t",
-    "mid": 0.25,
+    "mid": 0.37,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
    },
    {
-    "q": "Will Aneyas Williams be the 2026 D1 Rushing Yards ",
-    "mid": 0.147,
-    "share": 0.0064,
-    "earned": 0.0001,
-    "inv": 0.0
+    "q": "Will Trey McBride finish the 2026-27 NFL regular s",
+    "mid": 0.42,
+    "share": 1.0,
+    "earned": 0.0521,
+    "inv": 7.43
    },
    {
-    "q": "Will Yashar win less than 16% of the vote in the 2",
-    "mid": 0.335,
-    "share": 0.0156,
-    "earned": 0.0002,
+    "q": "Will Pale Sun win Best Live Action Short Film at t",
+    "mid": 0.11,
+    "share": 1.0,
+    "earned": 0.0019,
     "inv": 0.0
    },
    {
     "q": "Will England host the 2027 UEFA Nations League Fin",
     "mid": 0.145,
     "share": 1.0,
-    "earned": 0.0093,
+    "earned": 0.0242,
     "inv": 0.0
    },
    {
     "q": "Will Boaster play for Gentle Mates in 2027?",
     "mid": 0.455,
     "share": 1.0,
-    "earned": 0.0043,
+    "earned": 0.0205,
     "inv": 0.0
    },
    {
     "q": "Will Together win 14-16 seats in the 2026 Knesset ",
-    "mid": 0.345,
+    "mid": 0.35,
     "share": 1.0,
-    "earned": 0.0007,
+    "earned": 0.0316,
     "inv": 0.0
    },
    {
     "q": "Will PAN win the most seats in the 2027 Chihuahua ",
-    "mid": 0.295,
+    "mid": 0.3,
     "share": 1.0,
-    "earned": 0.0093,
+    "earned": 0.0297,
     "inv": 0.0
    },
    {
     "q": "Will Tennessee Volunteers Win the 2026 SEC Champio",
-    "mid": 0.199,
+    "mid": 0.186,
     "share": 1.0,
-    "earned": 0.0057,
-    "inv": 0.0
-   },
-   {
-    "q": "Will Seoul have between 70-85mm of precipitation i",
-    "mid": 0.456,
-    "share": 1.0,
-    "earned": 0.0107,
+    "earned": 0.0149,
     "inv": 0.0
    },
    {
     "q": "Will Arizona Cardinals finish the 2026-27 NFL regu",
     "mid": 0.17,
     "share": 1.0,
-    "earned": 0.0121,
-    "inv": 0.0
-   },
-   {
-    "q": "Will Chris Minns be the next Premier of New South ",
-    "mid": 0.69,
-    "share": 0.0914,
-    "earned": 0.0022,
+    "earned": 0.0186,
     "inv": 0.0
    },
    {
     "q": "Will Claude Fable's output price be at or above $5",
     "mid": 0.3,
     "share": 1.0,
-    "earned": 0.0021,
+    "earned": 0.0744,
     "inv": 0.0
    },
    {
     "q": "Will Trump's approval rating hit 42% by June 30, 2",
-    "mid": 0.355,
-    "share": 0.0582,
-    "earned": 0.0017,
+    "mid": 0.24,
+    "share": 1.0,
+    "earned": 0.0744,
     "inv": 0.0
    },
    {
     "q": "Will Morena win the most seats in the 2027 Sinaloa",
-    "mid": 0.455,
-    "share": 0.0262,
-    "earned": 0.0007,
+    "mid": 0.595,
+    "share": 1.0,
+    "earned": 0.015,
     "inv": 0.0
    },
    {
     "q": "Will Bruno Fernandes (Man Utd) record the most ass",
-    "mid": 0.395,
-    "share": 1.0,
+    "mid": 0.345,
+    "share": 0.1754,
     "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will PCN win the third most seats in the 2027 Salv",
-    "mid": 0.46,
+    "mid": 0.475,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0019,
     "inv": 0.0
    },
    {
     "q": "Will PCN win the second most seats in the 2027 Sal",
     "mid": 0.26,
     "share": 1.0,
-    "earned": 0.0007,
+    "earned": 0.0297,
     "inv": 0.0
    },
    {
     "q": "Will ARENA win the second most seats in the 2027 S",
     "mid": 0.36,
     "share": 1.0,
-    "earned": 0.0007,
+    "earned": 0.0446,
     "inv": 0.0
    },
    {
     "q": "Will Reservists \u2013 New Economic Party win 3.25-3.75",
-    "mid": 0.415,
-    "share": 1.0,
-    "earned": 0.0136,
+    "mid": 0.377,
+    "share": 0.5785,
+    "earned": 0.0215,
     "inv": 0.0
    },
    {
     "q": "Will Liberal\u2013National win the second-most seats in",
-    "mid": 0.425,
+    "mid": 0.38,
     "share": 1.0,
-    "earned": 0.0007,
-    "inv": 0.0
-   },
-   {
-    "q": "Will Anthropic have the best AI model on LiveBench",
-    "mid": 0.705,
-    "share": 0.0077,
-    "earned": 0.0008,
-    "inv": 0.0
-   },
-   {
-    "q": "Will Stephen Wilson Jr. win New Artist of the Year",
-    "mid": 0.415,
-    "share": 0.0599,
-    "earned": 0.0001,
-    "inv": 0.0
-   },
-   {
-    "q": "Will Amazon\u2019s market capitalization be between $2.",
-    "mid": 0.435,
-    "share": 0.0087,
-    "earned": 0.0003,
-    "inv": 0.0
-   },
-   {
-    "q": "Will OpenAI's frontier output token price be at or",
-    "mid": 0.485,
-    "share": 0.0566,
-    "earned": 0.0001,
+    "earned": 0.0539,
     "inv": 0.0
    },
    {
     "q": "Will GPT Astra's output price be at or above $60 i",
-    "mid": 0.335,
+    "mid": 0.325,
     "share": 1.0,
-    "earned": 0.0286,
+    "earned": 0.0021,
     "inv": 0.0
    },
    {
     "q": "Will PAN win the most seats in the 2027 Aguascalie",
-    "mid": 0.675,
+    "mid": 0.68,
     "share": 1.0,
-    "earned": 0.025,
+    "earned": 0.0056,
     "inv": 0.0
    },
    {
     "q": "Will PAN win the most seats in the 2027 Guanajuato",
-    "mid": 0.515,
+    "mid": 0.52,
     "share": 1.0,
-    "earned": 0.0,
-    "inv": 0.0
-   },
-   {
-    "q": "Will OXY play for Cloud9 in 2027?",
-    "mid": 0.525,
-    "share": 0.0107,
-    "earned": 0.0002,
-    "inv": 0.0
-   },
-   {
-    "q": "Will Liberty Flames Win the 2026 Conference USA Ch",
-    "mid": 0.595,
-    "share": 0.0364,
-    "earned": 0.0006,
+    "earned": 0.0056,
     "inv": 0.0
    },
    {
     "q": "Will Felipe Fernando Mac\u00edas Olvera win the 2027 Qu",
-    "mid": 0.605,
+    "mid": 0.59,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0372,
     "inv": 0.0
    },
    {
     "q": "Will Jacksonville Jaguars finish the 2026-27 NFL r",
-    "mid": 0.247,
+    "mid": 0.287,
     "share": 1.0,
-    "earned": 0.0057,
-    "inv": 0.0
-   },
-   {
-    "q": "Will Morena win the most seats in the 2027 Guanaju",
-    "mid": 0.245,
-    "share": 0.0109,
-    "earned": 0.0,
+    "earned": 0.0186,
     "inv": 0.0
    },
    {
     "q": "Will the CPN-UML candidate win the 2027 Kathmandu ",
+    "mid": 0.27,
+    "share": 1.0,
+    "earned": 0.0316,
+    "inv": 0.0
+   },
+   {
+    "q": "Will Trump's approval rating hit 41% by June 30, 2",
     "mid": 0.355,
     "share": 1.0,
-    "earned": 0.0007,
+    "earned": 0.0744,
+    "inv": 0.0
+   },
+   {
+    "q": "Will GPT Astra's output price be at or below $30 i",
+    "mid": 0.42,
+    "share": 1.0,
+    "earned": 0.0056,
+    "inv": 0.0
+   },
+   {
+    "q": "Walmart (WMT) Q3 US eCommerce sales growth 25% to ",
+    "mid": 0.26,
+    "share": 1.0,
+    "earned": 0.0,
+    "inv": 0.0
+   },
+   {
+    "q": "Will Salesforce Q3 current RPO growth (CC) be betw",
+    "mid": 0.285,
+    "share": 1.0,
+    "earned": 0.0483,
+    "inv": 0.0
+   },
+   {
+    "q": "Will Salesforce Q3 current RPO growth (CC) be abov",
+    "mid": 0.129,
+    "share": 1.0,
+    "earned": 0.0,
+    "inv": 0.0
+   },
+   {
+    "q": "Will Otzma win 8-9 seats in the 2026 Knesset elect",
+    "mid": 0.38,
+    "share": 1.0,
+    "earned": 0.0019,
+    "inv": 0.0
+   },
+   {
+    "q": "Will Together win 9-11% of the vote in the 2026 Kn",
+    "mid": 0.31,
+    "share": 1.0,
+    "earned": 0.0019,
+    "inv": 0.0
+   },
+   {
+    "q": "Will Salesforce Q3 current RPO growth (CC) be betw",
+    "mid": 0.155,
+    "share": 1.0,
+    "earned": 0.0428,
+    "inv": 0.0
+   },
+   {
+    "q": "Will The Joint List win 7.5% or more of the vote i",
+    "mid": 0.27,
+    "share": 0.2221,
+    "earned": 0.0058,
+    "inv": 0.0
+   },
+   {
+    "q": "Will The Joint List win 5.5-6.5% of the vote in th",
+    "mid": 0.29,
+    "share": 1.0,
+    "earned": 0.0316,
+    "inv": 0.0
+   },
+   {
+    "q": "Will PRI win the most seats in the 2027 Nuevo Le\u00f3n",
+    "mid": 0.435,
+    "share": 1.0,
+    "earned": 0.026,
+    "inv": 0.0
+   },
+   {
+    "q": "Will NYC have less than 3 inches of precipitation ",
+    "mid": 0.655,
+    "share": 1.0,
+    "earned": 0.0279,
+    "inv": 0.0
+   },
+   {
+    "q": "Will Otzma win 10 or more seats in the 2026 Knesse",
+    "mid": 0.29,
+    "share": 1.0,
+    "earned": 0.0019,
     "inv": 0.0
    }
   ],
-  "reward_tick": 0.3492,
-  "reward_total": 10761.11,
-  "mm_value": -309.99,
-  "net": 10451.11,
-  "avg_share": 0.7482,
+  "reward_tick": 1.233,
+  "reward_total": 10765.85,
+  "mm_value": -307.98,
+  "net": 10457.86,
+  "avg_share": 0.9574,
   "n_markets": 53,
   "fills_total": 257,
   "rebalanced": false
@@ -28414,7 +28464,41 @@
     "Will Morena win the most seats in the 2027 Guanaju",
     "Will the CPN-UML candidate win the 2027 Kathmandu "
    ]
+  },
+  {
+   "ts": "2026-10-18T12:11:27.885887+00:00",
+   "swapped": 13,
+   "out": [
+    "Will Morena win the most seats in the 2027 Guanaju",
+    "Will OpenAI's frontier output token price be at or",
+    "Will Yashar win less than 16% of the vote in the 2",
+    "Will OXY play for Cloud9 in 2027?",
+    "Will Aneyas Williams be the 2026 D1 Rushing Yards ",
+    "Will Liberty Flames Win the 2026 Conference USA Ch",
+    "Will Amazon\u2019s market capitalization be between $2.",
+    "Will Chris Minns be the next Premier of New South ",
+    "Will Stephen Wilson Jr. win New Artist of the Year",
+    "Will Anthropic have the best AI model on LiveBench",
+    "Will Yashar win 16-18% of the vote in the 2026 Kne",
+    "Will Imelda Castro Castro win the 2027 Sinaloa Gov",
+    "Will Seoul have between 70-85mm of precipitation i"
+   ],
+   "in": [
+    "Will Trump's approval rating hit 41% by June 30, 2",
+    "Will GPT Astra's output price be at or below $30 i",
+    "Walmart (WMT) Q3 US eCommerce sales growth 25% to ",
+    "Will Salesforce Q3 current RPO growth (CC) be betw",
+    "Will Salesforce Q3 current RPO growth (CC) be abov",
+    "Will Otzma win 8-9 seats in the 2026 Knesset elect",
+    "Will Together win 9-11% of the vote in the 2026 Kn",
+    "Will Salesforce Q3 current RPO growth (CC) be betw",
+    "Will The Joint List win 7.5% or more of the vote i",
+    "Will The Joint List win 5.5-6.5% of the vote in th",
+    "Will PRI win the most seats in the 2027 Nuevo Le\u00f3n",
+    "Will NYC have less than 3 inches of precipitation ",
+    "Will Otzma win 10 or more seats in the 2026 Knesse"
+   ]
   }
  ],
- "reviewed_at": 1792321873.2377853
+ "reviewed_at": 1792325487.8858871
 }

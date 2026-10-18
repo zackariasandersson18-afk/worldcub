@@ -3,34 +3,18 @@
  "trial": 62,
  "portfolio": [
   {
-   "cond": "0x7a9b9fc81b9945c6adcf6f3d731627823aa96281096533e7b40ed6d86844637b",
-   "question": "Will Michael Owen attend the 2026 Ballon d'Or ceremony?",
-   "yes": "27336319072645271902351374017518139025053533820501862555604151106484677362585",
-   "no": "71007602436410978532366506213814273876155918753146913519126032416307317260883",
-   "rate": 20.0,
-   "v": 6.5,
+   "cond": "0xcff4936718364890cb8acc36976eddd363776d8b7fdddf5b411715e8daa1d18e",
+   "question": "Will it snow in Nashville, TN by November 30?",
+   "yes": "56206512986490528407481734398694467720557269089480648522301604664944492820881",
+   "no": "14252447849248990628902526777068311063531728112696863730616642990060578385414",
+   "rate": 50.0,
+   "v": 4.5,
    "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.700000000000003,
-   "est_reward_day": 86.00508905852445,
-   "end": "2026-12-01T04:59:00Z",
-   "share0": 0.4300254452926222,
-   "rate0": 200.0
-  },
-  {
-   "cond": "0xa18c5ab3fd2d863ecb04097dd5ad5709d76b3651df4963b565312e27d824d2af",
-   "question": "Will Palo Alto Networks Q1 Next-Generation Security ARR be above $9.75B?",
-   "yes": "68644513404902573697283154171070116375465759109975509602593591521728918970525",
-   "no": "27440959910019969207942567915704290941086769435709957616102788568543038460306",
-   "rate": 40.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.700000000000003,
-   "est_reward_day": 40.0,
-   "end": "2026-12-01T23:00:00Z",
-   "share0": 1.0,
-   "rate0": 40.0
+   "d": 0.0225,
+   "collateral": 19.1,
+   "est_reward_day": 50.0,
+   "end": "2026-12-04T04:59:00Z",
+   "share0": 1.0
   },
   {
    "cond": "0x93f0593238c871518fbff133b44264fd2606f5e1c0d7e08c85c93b2e4271af71",
@@ -42,85 +26,9 @@
    "min_size": 20.0,
    "d": 0.0325,
    "collateral": 18.7,
-   "est_reward_day": 38.19209039548022,
+   "est_reward_day": 40.0,
    "end": "2026-12-02T23:00:00Z",
-   "share0": 0.9548022598870055,
-   "rate0": 40.0
-  },
-  {
-   "cond": "0xfd5520eec131437a821138d429501b3f67ddab8a2d58e5ef7f157fda013bb4b1",
-   "question": "Will the Central Bank of Colombia increase the monetary policy interest rate by 25 bps at the December meeting?",
-   "yes": "40752279274016501630094910369918028356856922680481425424711456746635840512584",
-   "no": "17813463967137378856376320532226203680891287405245886257361624156026553183777",
-   "rate": 3.0,
-   "v": 4.5,
-   "min_size": 20.0,
-   "d": 0.0225,
-   "collateral": 19.1,
-   "est_reward_day": 35.0,
-   "end": "2026-12-18T00:00:00Z",
-   "share0": 1.0,
-   "rate0": 35.0
-  },
-  {
-   "cond": "0x0aeb404a2b7d06a43ef085a6a059d24396a45d32e084d7098c015eadd91ec2d7",
-   "question": "Will the Central Bank of Colombia decrease the monetary policy interest rate by 25 bps at the December meeting?",
-   "yes": "53180451347555382564941846936994453566930815354835187969600299539507882991257",
-   "no": "61978290791090611141588005922090191880749850560372576994959340910365168432361",
-   "rate": 0.0,
-   "v": 4.5,
-   "min_size": 20.0,
-   "d": 0.0225,
-   "collateral": 19.1,
-   "est_reward_day": 33.0,
-   "end": "2026-12-18T00:00:00Z",
-   "share0": 1.0,
-   "rate0": 33.0
-  },
-  {
-   "cond": "0x151502fd3ddb6716de9508b5128c83b3f33b0610c86129b98d3450763735f74c",
-   "question": "Will PAN win the most seats in the 2027 Guanajuato Congress election?",
-   "yes": "52853206855735733793774293157002861140361857174121255809579873860362675176869",
-   "no": "37343152785132735790900046060179067595943106491462536456700998681986180635829",
-   "rate": 31.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.700000000000003,
-   "est_reward_day": 25.0,
-   "end": "2027-06-07T03:59:00Z",
-   "share0": 1.0,
-   "rate0": 25.0
-  },
-  {
-   "cond": "0x2d8f1a455258da0b12681619042e86119bdf227b6928956dc24bdc44676ed5bb",
-   "question": "Will Savannah Maddox be the Republican nominee for Kentucky Governor?",
-   "yes": "46098245740177143394127611221140108046390614435085213281545528826417016861390",
-   "no": "92446181340240777152435432352767515897487034137406746548114732625417017731877",
-   "rate": 1.0,
-   "v": 4.5,
-   "min_size": 20.0,
-   "d": 0.0225,
-   "collateral": 19.099999999999998,
-   "est_reward_day": 25.0,
-   "end": "2027-05-19T03:59:00Z",
-   "share0": 1.0,
-   "rate0": 25.0
-  },
-  {
-   "cond": "0x838d204febc4748544b9d06b05c7e92e93fe4a7729f2b49b353567edca3b80dc",
-   "question": "Will Morena win the most seats in the 2027 Campeche Congress election?",
-   "yes": "105456728960019268680451345633311793872469862177719836392029895987945180172143",
-   "no": "43214736097552694523857951099660418705920084043349993148839002786413383209586",
-   "rate": 20.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.700000000000003,
-   "est_reward_day": 22.0,
-   "end": "2027-06-07T03:59:00Z",
-   "share0": 1.0,
-   "rate0": 22.0
+   "share0": 1.0
   },
   {
    "cond": "0xa95aae3fd0f8f5223f3909b5e940130f4a30e80b14153ff0a962053ab28b2365",
@@ -134,113 +42,21 @@
    "collateral": 18.3,
    "est_reward_day": 20.0,
    "end": "2027-06-07T03:59:00Z",
-   "share0": 1.0,
-   "rate0": 20.0
+   "share0": 1.0
   },
   {
-   "cond": "0x9b77bca04ba9d2967805a28a72da2c7bae2466ee51bba17194527b76b4799869",
-   "question": "Will Yashar win less than 16% of the vote in the 2026 Knesset elections?",
-   "yes": "56186282514025700591847165765172627830475511546770798738204185480834343918872",
-   "no": "93568527345109373052759202665170436483093171651221199268390966678271400230066",
-   "rate": 13.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.7,
-   "est_reward_day": 18.0,
-   "end": "2026-11-30T23:59:00Z",
-   "share0": 1.0,
-   "rate0": 18.0
-  },
-  {
-   "cond": "0x6fd35d4386532f338f7fc116c8335c8683952059294c248a6681b643480be4bf",
-   "question": "Will Morena win the most seats in the 2027 Durango Congress election?",
-   "yes": "5774717941280790411171794915839650583206322323102820337305715665639510801744",
-   "no": "6346132969790921588055367346542167891138983550809597569554931334890715851842",
-   "rate": 1.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.7,
-   "est_reward_day": 18.0,
-   "end": "2027-06-07T03:59:00Z",
-   "share0": 1.0,
-   "rate0": 18.0
-  },
-  {
-   "cond": "0x023ddcb14475efcfcd75a70d71445c4a179367e585dfaf00e4e1fe0fecd8c09c",
-   "question": "Will Charles \"Bruiser\" Martin be the Republican nominee for Kentucky Governor?",
-   "yes": "14616139084956796873762222334912446650788473881261633090503649452666888490083",
-   "no": "72345534553229177816479795595805756404643627535723452067158712460543237979421",
-   "rate": 0.0,
+   "cond": "0x2b21d6ce0071420904eb33eda841e88f3ac775939560402276a8b4cc9eb8b63b",
+   "question": "Will Uganda win AFCON 2027 qualifying Group H?",
+   "yes": "26121098344822101051420044068283480563717438543304853680496532166944616543793",
+   "no": "89365667120954476670679028400279426036241355469406388686340986633206619236195",
+   "rate": 15.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
    "collateral": 19.1,
-   "est_reward_day": 18.0,
-   "end": "2027-05-19T03:59:00Z",
-   "share0": 1.0,
-   "rate0": 18.0
-  },
-  {
-   "cond": "0xfccc58c1712def42ee3dc677471221404f321db6ce3df8b095189fb3339925fc",
-   "question": "Will Brice Turang win the 2026 World Series MVP?",
-   "yes": "50095488687758007665333527644210760612980276987073183741208833156397321247054",
-   "no": "72142104670184911319739295210731886735680834470395541445050834600105609833454",
-   "rate": 6.0,
-   "v": 4.5,
-   "min_size": 20.0,
-   "d": 0.0225,
-   "collateral": 19.1,
-   "est_reward_day": 16.0,
-   "end": "2026-11-16T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 16.0
-  },
-  {
-   "cond": "0x622aeb89ecf5cd1391fc2ce6ad274093183a0c67fc07af9ababf1175dfcb3324",
-   "question": "Will 2026 rank between 7th and 9th among the highest domestic box office years?",
-   "yes": "100448413203442875274401674534714559927670821663383572180619458461064801056800",
-   "no": "65380124645344421583618638566934455373707987126943567944339778335971290087296",
-   "rate": 13.0,
-   "v": 4.5,
-   "min_size": 20.0,
-   "d": 0.0225,
-   "collateral": 19.1,
-   "est_reward_day": 14.0,
-   "end": "2027-02-01T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 14.0
-  },
-  {
-   "cond": "0x144c4041f800414a3e6a6cdffbd8e312fb9bf83021a0bd31306e6e215f8fa711",
-   "question": "Will primmie play for Rex Regum Qeon in 2027?",
-   "yes": "61793261895646435418305080312763525287849898168668822805480405397495241779128",
-   "no": "22634507572343498219461901499310000642948542656158335945289304197553191457194",
-   "rate": 7.0,
-   "v": 4.5,
-   "min_size": 20.0,
-   "d": 0.0225,
-   "collateral": 19.1,
-   "est_reward_day": 14.0,
-   "end": "2027-01-01T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 14.0
-  },
-  {
-   "cond": "0x80092748ef14288632ad9a10356b467c996afddebc04aa06cad3b16d2dd54f95",
-   "question": "Will \"The Hunger Games: Sunrise on the Reaping\" Opening Weekend Box Office be at least 105m?",
-   "yes": "111964009051567522333086087888975345450144903605399736353847768656864423793622",
-   "no": "40044951814507586758084443981118427582576433426964852005343820541515337282380",
-   "rate": 11.0,
-   "v": 4.5,
-   "min_size": 20.0,
-   "d": 0.0225,
-   "collateral": 19.1,
-   "est_reward_day": 13.421052631578958,
-   "end": "2026-11-22T12:00:00Z",
-   "share0": 0.7894736842105269,
-   "rate0": 17.0
+   "est_reward_day": 15.0,
+   "end": "2027-03-31T03:59:00Z",
+   "share0": 1.0
   },
   {
    "cond": "0x6a4a9ec279b150e2c84773e403580d8fbe488e53897d019934dadef1054d9f1d",
@@ -252,70 +68,261 @@
    "min_size": 20.0,
    "d": 0.0325,
    "collateral": 18.700000000000003,
-   "est_reward_day": 13.0,
+   "est_reward_day": 14.0,
    "end": "2026-11-30T23:59:00Z",
-   "share0": 1.0,
-   "rate0": 13.0
+   "share0": 1.0
   },
   {
-   "cond": "0xcd140413c68b7dcc815158384a3b57d65d46f4db9cd1cb2b1bbe94f4d58492ef",
-   "question": "Will Shooters, Fishers, Farmers win the third-most seats in the next New South Wales state election?",
-   "yes": "56376064774054539738312934463299595163309306477524153304987051284435999054758",
-   "no": "22694202717663186882503825082476360343285284948807844575118921630312122618349",
-   "rate": 10.0,
+   "cond": "0xb7693c9efdafae99d7ef5a9096484ed36ddec5f5c2b3792b61889c2219bf67e5",
+   "question": "Will Aliyu Wadada Ahmed win the 2027 Nasarawa State gubernatorial election?",
+   "yes": "34649526691401249903884764485984318837427236479186297520711006673393291592767",
+   "no": "85426918261948338774764773363053426029939010792307904079942940192902211139262",
+   "rate": 13.0,
+   "v": 8.5,
+   "min_size": 20.0,
+   "d": 0.0425,
+   "collateral": 18.3,
+   "est_reward_day": 13.0,
+   "end": "2027-02-07T04:59:00Z",
+   "share0": 1.0
+  },
+  {
+   "cond": "0x9b77bca04ba9d2967805a28a72da2c7bae2466ee51bba17194527b76b4799869",
+   "question": "Will Yashar win less than 16% of the vote in the 2026 Knesset elections?",
+   "yes": "56186282514025700591847165765172627830475511546770798738204185480834343918872",
+   "no": "93568527345109373052759202665170436483093171651221199268390966678271400230066",
+   "rate": 13.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
    "collateral": 18.700000000000003,
    "est_reward_day": 13.0,
-   "end": "2027-03-28T03:59:00Z",
-   "share0": 1.0,
-   "rate0": 13.0
+   "end": "2026-11-30T23:59:00Z",
+   "share0": 1.0
   },
   {
-   "cond": "0x5d616986fd96ed858daa08d1d96ced7ea1e71f53c25a59e690cfb3de0c4b5857",
-   "question": "Will Dallas Wilson be the 2026 D1 Receiving Yards Leader?",
-   "yes": "85558586993851944603643681377956382512743517806788808858206352915605444675771",
-   "no": "113975054788116117803460380382218576588115443010523257140801250835335045084124",
-   "rate": 0.0,
+   "cond": "0xcf1cc654615f7924951b8526cdefb6d9754b91abd4ae83f1d3d8d94280a11d07",
+   "question": "Will Morena win the most seats in the 2027 Guanajuato Congress election?",
+   "yes": "28453240230968493463616274801059831744223320383669679310476695135460545824220",
+   "no": "83318917398536251474222161119819112425780649968025159331716853387643573103768",
+   "rate": 12.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.7,
+   "est_reward_day": 12.0,
+   "end": "2027-06-07T03:59:00Z",
+   "share0": 1.0
+  },
+  {
+   "cond": "0x92f264f36428a5a2bea2ee440db3d0b79fd3f6c4f26ec99b4a86d4ed8f23937a",
+   "question": "Will Paulo Dybala (Roma) record the most assists in the 2026-27 Serie A season?",
+   "yes": "28732788662069759630076095301033124452716092920034287334175439767800327858578",
+   "no": "101236969999460726588684995221478909474330029691022670308334080315445709322897",
+   "rate": 11.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
    "collateral": 19.1,
-   "est_reward_day": 13.0,
-   "end": "2027-01-04T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 13.0
+   "est_reward_day": 11.0,
+   "end": "2027-06-15T03:59:00Z",
+   "share0": 1.0
   },
   {
-   "cond": "0x8369878dee4427dcc0ab6cb20794084defbb86149c4c5377057f5126829385d7",
-   "question": "Will David Beckham attend the 2026 Ballon d'Or ceremony?",
-   "yes": "567651434729512189281346640287155532721102585761650748889436417907905634359",
-   "no": "85000820091107201100585288836981546706422545429341365331485931083603751825141",
-   "rate": 20.0,
+   "cond": "0x3242c16cbf5973da5352282b3895d996c2a271a30bab0b741850af2674391689",
+   "question": "Will Egypt win AFCON 2027 qualifying Group B?",
+   "yes": "54549901304996333238280537621620112472992106643801519349399840249534068040978",
+   "no": "26578246674869638402228636359891692105469144939631482133751810179758063594886",
+   "rate": 11.0,
+   "v": 4.5,
+   "min_size": 20.0,
+   "d": 0.0225,
+   "collateral": 19.1,
+   "est_reward_day": 11.0,
+   "end": "2027-03-31T03:59:00Z",
+   "share0": 1.0
+  },
+  {
+   "cond": "0x48c32f42080f365c045eab31803859e1a5c09766d79cb03fd78f2f703a1fd127",
+   "question": "Will the Brooklyn Nets finish as the #1 seed in the 2026-27 NBA Eastern Conference?",
+   "yes": "22885041041347696600880683600904921904601570371217893263427784845326437565845",
+   "no": "94563768061152239053993602013884023943336413135408094096484854468871668625678",
+   "rate": 11.0,
+   "v": 4.5,
+   "min_size": 20.0,
+   "d": 0.0225,
+   "collateral": 19.1,
+   "est_reward_day": 11.0,
+   "end": "2027-04-26T03:59:00Z",
+   "share0": 1.0
+  },
+  {
+   "cond": "0x8b5fbbd73294ca8b6a8d2847d21ce0a79027b4062c6f9645894d3fcff621b73e",
+   "question": "Will Hawai'i Rainbow Warriors Win the 2026 Mountain West Championship?",
+   "yes": "38338079632885323339060969389094434980170673691363749864650462606136061623879",
+   "no": "48881504056809786110711122002874029166950048249792729879806400999501651125305",
+   "rate": 9.0,
+   "v": 4.5,
+   "min_size": 20.0,
+   "d": 0.0225,
+   "collateral": 19.1,
+   "est_reward_day": 9.0,
+   "end": "2026-12-19T04:59:00Z",
+   "share0": 1.0
+  },
+  {
+   "cond": "0xc32fbc0f44e9676ba66915b7549941dc0868517af3112d4ac1b64de873b6293c",
+   "question": "Will Tyran Stokes be the first pick in the 2027 NBA Draft?",
+   "yes": "20787840783342051755292094193577893878101878135992253957701754482392071780739",
+   "no": "91068896328177515709385581042437605735600745245124303095619463449255302317787",
+   "rate": 9.0,
+   "v": 4.5,
+   "min_size": 20.0,
+   "d": 0.0225,
+   "collateral": 19.1,
+   "est_reward_day": 9.0,
+   "end": "2027-07-09T03:59:00Z",
+   "share0": 1.0
+  },
+  {
+   "cond": "0xf87b5497c950b4ae324e20cc02622d56b23131bd2f2f0f36a4a254b0a1f2c609",
+   "question": "Will Morena win the most seats in the 2027 Nuevo Le\u00f3n Congress election?",
+   "yes": "59587519072380006770682437893776070184507613414842014450581478235422002054199",
+   "no": "65049419908147765057701110451346002748513231451268393355516681284540095395634",
+   "rate": 8.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
-   "collateral": 18.700000000000003,
-   "est_reward_day": 12.495378927911247,
-   "end": "2026-12-01T04:59:00Z",
-   "share0": 0.06247689463955623,
-   "rate0": 200.0
+   "collateral": 18.7,
+   "est_reward_day": 8.0,
+   "end": "2027-06-07T03:59:00Z",
+   "share0": 1.0
   },
   {
-   "cond": "0xbd7144a36ed9aff7e0af7816ca9482288212667f63c77ac4231c775cca331253",
-   "question": "Will Claude Fable's output price be at or above $60 in 2026?",
-   "yes": "30069566108176607828103608630348797161292125450051627168704002754076664901713",
-   "no": "42553051517146379097103957211169802171944237668936155705910268654630026536044",
-   "rate": 3.0,
-   "v": 6.5,
+   "cond": "0x9668e92f98ea6db7b505c54acfd5cbff6ce7e104cf51a92a459b7aa32228494c",
+   "question": "Will Boaster play for Gentle Mates in 2027?",
+   "yes": "26580239771399640523706428515472715291892341918372572478543010270690741492121",
+   "no": "97890493775374736970693883566314043121759886871030125569041372532571462091630",
+   "rate": 8.0,
+   "v": 4.5,
    "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.700000000000003,
-   "est_reward_day": 12.224231464737782,
+   "d": 0.0225,
+   "collateral": 19.1,
+   "est_reward_day": 8.0,
    "end": "2027-01-01T04:59:00Z",
-   "share0": 0.30560578661844456,
-   "rate0": 40.0
+   "share0": 1.0
+  },
+  {
+   "cond": "0xa1f478f6ee6e24b33bb8f93b58edc14395e5398d9bd7cae37d85030ae2690073",
+   "question": "Will MC win the most seats in the 2027 Nuevo Le\u00f3n Congress election?",
+   "yes": "29223847181460852609676595145473631962686628780360406530937607520674797030777",
+   "no": "105889054100814285142141722562550549374944543300208350489473530470377597847605",
+   "rate": 6.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.699999999999996,
+   "est_reward_day": 6.0,
+   "end": "2027-06-07T03:59:00Z",
+   "share0": 1.0
+  },
+  {
+   "cond": "0x38bc3cc22cdfa673df3dd1a61811c6135aa2b292859ffda4eabe55f2976c1261",
+   "question": "Will Edward Norton be nominated for Best Supporting Actor at the 99th Academy Awards?",
+   "yes": "30275158442170791632939218279799477285528853437346301535388327097710974355185",
+   "no": "41278879690189009656020586777207395749011397378295305676837614917076696913521",
+   "rate": 30.0,
+   "v": 6.5,
+   "min_size": 100.0,
+   "d": 0.0325,
+   "collateral": 93.5,
+   "est_reward_day": 30.0,
+   "end": "2027-03-15T03:59:00Z",
+   "share0": 1.0
+  },
+  {
+   "cond": "0x2943d00ac506a0299d497d803e637f96a8317a2973ee64ac9b948d631696f2d7",
+   "question": "Will Olivia Colman be nominated for Best Supporting Actress at the 99th Academy Awards?",
+   "yes": "19236306998383220208232169794719798608912552341307536270272883167600019992021",
+   "no": "86295966626812238670647221807991569363742607931504675560651088563832556877672",
+   "rate": 30.0,
+   "v": 6.5,
+   "min_size": 100.0,
+   "d": 0.0325,
+   "collateral": 93.5,
+   "est_reward_day": 30.0,
+   "end": "2027-03-15T03:59:00Z",
+   "share0": 1.0
+  },
+  {
+   "cond": "0x19ee16583748332d3ec2d4e4454d6546115bace7dc6ac19eb79e578ddbb074c2",
+   "question": "Will Kate O'Flynn be nominated for Best Supporting Actress at the 99th Academy Awards?",
+   "yes": "39587266174601689696527101429500996457392915754104927608078001700915114604393",
+   "no": "56178272698062112701902620577904234533424360370193923347380881707237274465993",
+   "rate": 30.0,
+   "v": 6.5,
+   "min_size": 100.0,
+   "d": 0.0325,
+   "collateral": 93.5,
+   "est_reward_day": 30.0,
+   "end": "2027-03-15T03:59:00Z",
+   "share0": 1.0
+  },
+  {
+   "cond": "0x8b90086aa04c3a015ffb4c7f6418b473eb6f269e9fc68e607ac5adc05caa9109",
+   "question": "Will \"Fatherland\" be nominated for Best Cinematography at the 99th Academy Awards?",
+   "yes": "58711147852670451711113259256698556742336917352110410084750727834126789705033",
+   "no": "11965455872023203245990404258987398234063493231016153812488754274096898302492",
+   "rate": 30.0,
+   "v": 6.5,
+   "min_size": 100.0,
+   "d": 0.0325,
+   "collateral": 93.5,
+   "est_reward_day": 30.0,
+   "end": "2027-03-15T03:59:00Z",
+   "share0": 1.0
+  },
+  {
+   "cond": "0x346b035f44e2b3778b825a4d39f37a5b3c006aa70c8140054d185dece1306089",
+   "question": "Will \"Shaun the Sheep: The Beast of Mossy Bottom\" be nominated for Best Animated Feature Film at the 99th Academy Awards?",
+   "yes": "20185715557834880919782810226487138632001207570928500672138859983674260315374",
+   "no": "113817699996215438266022376884285565612838508079123089121380144757058841635328",
+   "rate": 30.0,
+   "v": 6.5,
+   "min_size": 100.0,
+   "d": 0.0325,
+   "collateral": 93.5,
+   "est_reward_day": 30.0,
+   "end": "2027-03-15T03:59:00Z",
+   "share0": 1.0
+  },
+  {
+   "cond": "0xc7fe76163d8fd722dc640a83ab3b32ce29c6bcaed3f83df47fa2d46fd26cb9e6",
+   "question": "Will \"Avengers: Doomsday\" be nominated for Best Visual Effects at the 99th Academy Awards?",
+   "yes": "14463937958141166718380657887863641345420121376826150918566868119228542390628",
+   "no": "113414648903745539745661599721657014807249575228235669264792173220084295502991",
+   "rate": 30.0,
+   "v": 6.5,
+   "min_size": 100.0,
+   "d": 0.0325,
+   "collateral": 93.5,
+   "est_reward_day": 30.0,
+   "end": "2027-03-15T03:59:00Z",
+   "share0": 1.0
+  },
+  {
+   "cond": "0xd3036b40190c99967cf69f69c450d3dfe5237834fe143296913deb3690a13fb0",
+   "question": "Will \"Dune: Part Three\" be nominated for Best Sound at the 99th Academy Awards?",
+   "yes": "109006337244089232427744725221268221412532666729495240287760775043775226476597",
+   "no": "23421225746580644760618449697632259434446437597312093620019443691110794778518",
+   "rate": 30.0,
+   "v": 6.5,
+   "min_size": 100.0,
+   "d": 0.0325,
+   "collateral": 93.5,
+   "est_reward_day": 30.0,
+   "end": "2027-03-15T03:59:00Z",
+   "share0": 1.0
   }
  ],
  "positions": {
@@ -539,9 +546,9 @@
   "0x838d204febc4748544b9d06b05c7e92e93fe4a7729f2b49b353567edca3b80dc": {
    "inv": 0.0,
    "cash": -4.35,
-   "mid": 0.365,
-   "share": 0.01062493744489493,
-   "reward": 40.90895669203214,
+   "mid": 0.37,
+   "share": null,
+   "reward": 40.909768366113546,
    "fills": 1,
    "q": "Will Morena win the most seats in the 2027 Campeche Congress election?",
    "closed_at": 0.27
@@ -549,8 +556,8 @@
   "0x92f264f36428a5a2bea2ee440db3d0b79fd3f6c4f26ec99b4a86d4ed8f23937a": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.225,
-   "share": null,
+   "mid": 0.29,
+   "share": 1.0,
    "reward": 7.357290435498252,
    "fills": 0,
    "q": "Will Paulo Dybala (Roma) record the most assists in the 2026-27 Serie A season?"
@@ -1087,8 +1094,8 @@
   "0x19ee16583748332d3ec2d4e4454d6546115bace7dc6ac19eb79e578ddbb074c2": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.355,
-   "share": null,
+   "mid": 0.265,
+   "share": 1.0,
    "reward": 51.04925677722582,
    "fills": 0,
    "q": "Will Kate O'Flynn be nominated for Best Supporting Actress at the 99th Academy A"
@@ -1267,8 +1274,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.21000000000000002,
-   "share": 0.016196760647870463,
-   "reward": 17.37185236553482,
+   "share": null,
+   "reward": 17.373311856690982,
    "fills": 0,
    "q": "Will \"The Hunger Games: Sunrise on the Reaping\" Opening Weekend Box Office be at"
   },
@@ -1642,9 +1649,9 @@
   "0x93f0593238c871518fbff133b44264fd2606f5e1c0d7e08c85c93b2e4271af71": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.325,
+   "mid": 0.33,
    "share": 1.0,
-   "reward": 49.25355431469947,
+   "reward": 49.47378207963267,
    "fills": 0,
    "q": "Will Snowflake Q3 Product revenue be above $1.66B?"
   },
@@ -1681,62 +1688,65 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.605,
-   "share": 0.16360116166505353,
-   "reward": 5.389724691539744,
+   "share": null,
+   "reward": 5.408968467440853,
    "fills": 0,
    "q": "Will Michael Owen attend the 2026 Ballon d'Or ceremony?"
   },
   "0xa18c5ab3fd2d863ecb04097dd5ad5709d76b3651df4963b565312e27d824d2af": {
-   "inv": -20.0,
-   "cash": 4.1499999999999995,
-   "mid": 0.7150000000000001,
-   "share": 1.0,
-   "reward": 35.331358012953146,
+   "inv": 0.0,
+   "cash": -10.25,
+   "mid": 0.71,
+   "share": null,
+   "reward": 35.38702645275203,
    "fills": 1,
-   "q": "Will Palo Alto Networks Q1 Next-Generation Security ARR be above $9.75B?"
+   "q": "Will Palo Alto Networks Q1 Next-Generation Security ARR be above $9.75B?",
+   "closed_at": 0.72
   },
   "0xfd5520eec131437a821138d429501b3f67ddab8a2d58e5ef7f157fda013bb4b1": {
    "inv": 0.0,
    "cash": 0.6000000000000014,
    "mid": 0.28,
-   "share": 0.06403162055335973,
-   "reward": 4.201192493971914,
+   "share": null,
+   "reward": 4.202115988363969,
    "fills": 5,
    "q": "Will the Central Bank of Colombia increase the monetary policy interest rate by "
   },
   "0x0aeb404a2b7d06a43ef085a6a059d24396a45d32e084d7098c015eadd91ec2d7": {
-   "inv": 20.0,
-   "cash": -3.1500000000000004,
-   "mid": 0.082,
-   "share": 1.0,
+   "inv": 0.0,
+   "cash": -3.0700000000000003,
+   "mid": 0.0815,
+   "share": null,
    "reward": 1.9948325790132841,
    "fills": 2,
-   "q": "Will the Central Bank of Colombia decrease the monetary policy interest rate by "
+   "q": "Will the Central Bank of Colombia decrease the monetary policy interest rate by ",
+   "closed_at": 0.004
   },
   "0x151502fd3ddb6716de9508b5128c83b3f33b0610c86129b98d3450763735f74c": {
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.5800000000000001,
-   "share": 0.04810703102761186,
-   "reward": 10.906124131045866,
+   "share": null,
+   "reward": 10.918388280068905,
    "fills": 0,
    "q": "Will PAN win the most seats in the 2027 Guanajuato Congress election?"
   },
   "0x2d8f1a455258da0b12681619042e86119bdf227b6928956dc24bdc44676ed5bb": {
-   "inv": 20.0,
-   "cash": -2.45,
+   "inv": 0.0,
+   "cash": -0.8500000000000001,
    "mid": 0.08,
-   "share": 0.030156366344005897,
+   "share": null,
    "reward": 1.5001219432796549,
    "fills": 2,
-   "q": "Will Savannah Maddox be the Republican nominee for Kentucky Governor?"
+   "q": "Will Savannah Maddox be the Republican nominee for Kentucky Governor?",
+   "closed_at": 0.08
   },
   "0xa95aae3fd0f8f5223f3909b5e940130f4a30e80b14153ff0a962053ab28b2365": {
    "inv": 15.725,
    "cash": -9.7101875,
    "mid": 0.6799999999999999,
    "share": 1.0,
-   "reward": 11.530569616667307,
+   "reward": 11.640683499133909,
    "fills": 1,
    "q": "Will Felipe Fernando Mac\u00edas Olvera win the 2027 Quer\u00e9taro Governor Election?"
   },
@@ -1745,33 +1755,34 @@
    "cash": 0.0,
    "mid": 0.33499999999999996,
    "share": 1.0,
-   "reward": 6.382485855477909,
+   "reward": 6.454059879081199,
    "fills": 0,
    "q": "Will Yashar win less than 16% of the vote in the 2026 Knesset elections?"
   },
   "0x6fd35d4386532f338f7fc116c8335c8683952059294c248a6681b643480be4bf": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.295,
-   "share": 1.0,
-   "reward": 13.022624094939685,
+   "mid": 0.3,
+   "share": null,
+   "reward": 13.027431586322201,
    "fills": 0,
    "q": "Will Morena win the most seats in the 2027 Durango Congress election?"
   },
   "0x023ddcb14475efcfcd75a70d71445c4a179367e585dfaf00e4e1fe0fecd8c09c": {
-   "inv": 20.0,
-   "cash": -2.04,
+   "inv": 0.0,
+   "cash": -1.92,
    "mid": 0.03,
-   "share": 0.06085963254206126,
+   "share": null,
    "reward": 1.3105227830536936,
    "fills": 2,
-   "q": "Will Charles \"Bruiser\" Martin be the Republican nominee for Kentucky Governor?"
+   "q": "Will Charles \"Bruiser\" Martin be the Republican nominee for Kentucky Governor?",
+   "closed_at": 0.006
   },
   "0xfccc58c1712def42ee3dc677471221404f321db6ce3df8b095189fb3339925fc": {
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.0785,
-   "share": 0.013001546702518822,
+   "share": null,
    "reward": 4.843822810694875,
    "fills": 0,
    "q": "Will Brice Turang win the 2026 World Series MVP?"
@@ -1780,8 +1791,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.5,
-   "share": 0.002916658744877486,
-   "reward": 2.9493275588878225,
+   "share": null,
+   "reward": 2.949510582569768,
    "fills": 0,
    "q": "Will 2026 rank between 7th and 9th among the highest domestic box office years?"
   },
@@ -1789,17 +1800,17 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.10400000000000001,
-   "share": 1.0,
-   "reward": 10.506791399537967,
+   "share": null,
+   "reward": 10.540443839215571,
    "fills": 0,
    "q": "Will primmie play for Rex Regum Qeon in 2027?"
   },
   "0x6a4a9ec279b150e2c84773e403580d8fbe488e53897d019934dadef1054d9f1d": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.2595,
+   "mid": 0.253,
    "share": 1.0,
-   "reward": 8.147773863091977,
+   "reward": 8.205369626888986,
    "fills": 0,
    "q": "Will Yashar win 16-18% of the vote in the 2026 Knesset elections?"
   },
@@ -1807,16 +1818,16 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.185,
-   "share": 0.057354238783682836,
-   "reward": 2.127090595865596,
+   "share": null,
+   "reward": 2.1293059988792904,
    "fills": 0,
    "q": "Will Shooters, Fishers, Farmers win the third-most seats in the next New South W"
   },
   "0x5d616986fd96ed858daa08d1d96ced7ea1e71f53c25a59e690cfb3de0c4b5857": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.040999999999999995,
-   "share": 0.3063336177319509,
+   "mid": 0.198,
+   "share": null,
    "reward": 0.26800641178256934,
    "fills": 0,
    "q": "Will Dallas Wilson be the 2026 D1 Receiving Yards Leader?"
@@ -1825,8 +1836,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.765,
-   "share": 0.00758736241732469,
-   "reward": 0.5967060787668317,
+   "share": null,
+   "reward": 0.597450281408417,
    "fills": 0,
    "q": "Will David Beckham attend the 2026 Ballon d'Or ceremony?"
   },
@@ -1834,10 +1845,163 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.125,
-   "share": 0.010404584419965975,
-   "reward": 0.564947729766489,
+   "share": null,
+   "reward": 0.5651095072289642,
    "fills": 0,
    "q": "Will Claude Fable's output price be at or above $60 in 2026?"
+  },
+  "0xcff4936718364890cb8acc36976eddd363776d8b7fdddf5b411715e8daa1d18e": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.5549999999999999,
+   "share": 1.0,
+   "reward": 0.0,
+   "fills": 0,
+   "q": "Will it snow in Nashville, TN by November 30?"
+  },
+  "0x2b21d6ce0071420904eb33eda841e88f3ac775939560402276a8b4cc9eb8b63b": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.323,
+   "share": 1.0,
+   "reward": 0.0,
+   "fills": 0,
+   "q": "Will Uganda win AFCON 2027 qualifying Group H?"
+  },
+  "0xb7693c9efdafae99d7ef5a9096484ed36ddec5f5c2b3792b61889c2219bf67e5": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.5449999999999999,
+   "share": 1.0,
+   "reward": 0.0,
+   "fills": 0,
+   "q": "Will Aliyu Wadada Ahmed win the 2027 Nasarawa State gubernatorial election?"
+  },
+  "0xcf1cc654615f7924951b8526cdefb6d9754b91abd4ae83f1d3d8d94280a11d07": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.19,
+   "share": 1.0,
+   "reward": 0.0,
+   "fills": 0,
+   "q": "Will Morena win the most seats in the 2027 Guanajuato Congress election?"
+  },
+  "0x3242c16cbf5973da5352282b3895d996c2a271a30bab0b741850af2674391689": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.25,
+   "share": 1.0,
+   "reward": 0.0,
+   "fills": 0,
+   "q": "Will Egypt win AFCON 2027 qualifying Group B?"
+  },
+  "0x48c32f42080f365c045eab31803859e1a5c09766d79cb03fd78f2f703a1fd127": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.251,
+   "share": 1.0,
+   "reward": 0.0,
+   "fills": 0,
+   "q": "Will the Brooklyn Nets finish as the #1 seed in the 2026-27 NBA Eastern Conferen"
+  },
+  "0x8b5fbbd73294ca8b6a8d2847d21ce0a79027b4062c6f9645894d3fcff621b73e": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.209,
+   "share": 1.0,
+   "reward": 0.0,
+   "fills": 0,
+   "q": "Will Hawai'i Rainbow Warriors Win the 2026 Mountain West Championship?"
+  },
+  "0xc32fbc0f44e9676ba66915b7549941dc0868517af3112d4ac1b64de873b6293c": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.3125,
+   "share": 1.0,
+   "reward": 0.0,
+   "fills": 0,
+   "q": "Will Tyran Stokes be the first pick in the 2027 NBA Draft?"
+  },
+  "0xf87b5497c950b4ae324e20cc02622d56b23131bd2f2f0f36a4a254b0a1f2c609": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.32,
+   "share": 1.0,
+   "reward": 0.0,
+   "fills": 0,
+   "q": "Will Morena win the most seats in the 2027 Nuevo Le\u00f3n Congress election?"
+  },
+  "0x9668e92f98ea6db7b505c54acfd5cbff6ce7e104cf51a92a459b7aa32228494c": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.605,
+   "share": 1.0,
+   "reward": 0.0,
+   "fills": 0,
+   "q": "Will Boaster play for Gentle Mates in 2027?"
+  },
+  "0xa1f478f6ee6e24b33bb8f93b58edc14395e5398d9bd7cae37d85030ae2690073": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.25,
+   "share": 1.0,
+   "reward": 0.0,
+   "fills": 0,
+   "q": "Will MC win the most seats in the 2027 Nuevo Le\u00f3n Congress election?"
+  },
+  "0x38bc3cc22cdfa673df3dd1a61811c6135aa2b292859ffda4eabe55f2976c1261": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.54,
+   "share": 1.0,
+   "reward": 0.0,
+   "fills": 0,
+   "q": "Will Edward Norton be nominated for Best Supporting Actor at the 99th Academy Aw"
+  },
+  "0x2943d00ac506a0299d497d803e637f96a8317a2973ee64ac9b948d631696f2d7": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.32,
+   "share": 1.0,
+   "reward": 0.0,
+   "fills": 0,
+   "q": "Will Olivia Colman be nominated for Best Supporting Actress at the 99th Academy "
+  },
+  "0x8b90086aa04c3a015ffb4c7f6418b473eb6f269e9fc68e607ac5adc05caa9109": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.445,
+   "share": 1.0,
+   "reward": 0.0,
+   "fills": 0,
+   "q": "Will \"Fatherland\" be nominated for Best Cinematography at the 99th Academy Award"
+  },
+  "0x346b035f44e2b3778b825a4d39f37a5b3c006aa70c8140054d185dece1306089": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.43,
+   "share": 1.0,
+   "reward": 0.0,
+   "fills": 0,
+   "q": "Will \"Shaun the Sheep: The Beast of Mossy Bottom\" be nominated for Best Animated"
+  },
+  "0xc7fe76163d8fd722dc640a83ab3b32ce29c6bcaed3f83df47fa2d46fd26cb9e6": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.345,
+   "share": 1.0,
+   "reward": 0.0,
+   "fills": 0,
+   "q": "Will \"Avengers: Doomsday\" be nominated for Best Visual Effects at the 99th Acade"
+  },
+  "0xd3036b40190c99967cf69f69c450d3dfe5237834fe143296913deb3690a13fb0": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.76,
+   "share": 1.0,
+   "reward": 0.0,
+   "fills": 0,
+   "q": "Will \"Dune: Part Three\" be nominated for Best Sound at the 99th Academy Awards?"
   }
  },
  "history": [
@@ -16632,17 +16796,30 @@
    "w": 2987135
   },
   {
-   "ts": "2026-10-18T00:04:38.746559+00:00",
-   "dt_h": 0.088,
-   "reward_tick": 0.324,
-   "reward_total": 2337.84,
-   "mm_value": -104.72,
-   "net": 2233.11,
-   "avg_share": 0.4186,
+   "ts": "2026-10-18T00:09:34.359665+00:00",
+   "dt_h": 0.171,
+   "reward_tick": 0.7104,
+   "reward_total": 2338.22,
+   "mm_value": -104.03,
+   "net": 2234.19,
+   "avg_share": 0.4567,
    "n_markets": 21,
    "fills_total": 62,
    "rebalanced": false,
    "w": 2987136
+  },
+  {
+   "ts": "2026-10-18T00:12:34.438531+00:00",
+   "dt_h": 0.05,
+   "reward_tick": 0.2051,
+   "reward_total": 2338.43,
+   "mm_value": -106.86,
+   "net": 2231.56,
+   "avg_share": 1.0,
+   "n_markets": 23,
+   "fills_total": 62,
+   "rebalanced": true,
+   "w": 2987137
   }
  ],
  "fills": [
@@ -17205,9 +17382,9 @@
    "ledger": "v2"
   }
  ],
- "reward_total": 2337.837665126253,
- "last_ts": 1792281878.7465587,
- "chosen_at": 1792195943.592527,
+ "reward_total": 2338.429311923265,
+ "last_ts": 1792282354.438531,
+ "chosen_at": 1792282354.438531,
  "rebalances": [
   {
    "ts": "2026-10-10T00:08:08.546677+00:00",
@@ -17256,167 +17433,187 @@
    "kept": 1,
    "added": 20,
    "dropped": 44
+  },
+  {
+   "ts": "2026-10-18T00:12:34.438531+00:00",
+   "kept": 4,
+   "added": 19,
+   "dropped": 17
   }
  ],
  "last_tick": {
-  "ts": "2026-10-18T00:04:38.746559+00:00",
-  "dt_h": 0.018,
+  "ts": "2026-10-18T00:12:34.438531+00:00",
+  "dt_h": 0.017,
   "markets": [
    {
-    "q": "Will Michael Owen attend the 2026 Ballon d'Or cere",
-    "mid": 0.605,
-    "share": 0.1636,
-    "earned": 0.0024,
-    "inv": 0.0
-   },
-   {
-    "q": "Will Palo Alto Networks Q1 Next-Generation Securit",
-    "mid": 0.715,
+    "q": "Will it snow in Nashville, TN by November 30?",
+    "mid": 0.555,
     "share": 1.0,
-    "earned": 0.0297,
-    "inv": -20.0
+    "earned": 0.0,
+    "inv": 0.0
    },
    {
     "q": "Will Snowflake Q3 Product revenue be above $1.66B?",
-    "mid": 0.325,
+    "mid": 0.33,
     "share": 1.0,
-    "earned": 0.0297,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the Central Bank of Colombia increase the mon",
-    "mid": 0.28,
-    "share": 0.064,
-    "earned": 0.0001,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the Central Bank of Colombia decrease the mon",
-    "mid": 0.082,
-    "share": 1.0,
-    "earned": 0.0,
-    "inv": 20.0
-   },
-   {
-    "q": "Will PAN win the most seats in the 2027 Guanajuato",
-    "mid": 0.58,
-    "share": 0.0481,
-    "earned": 0.0009,
-    "inv": 0.0
-   },
-   {
-    "q": "Will Savannah Maddox be the Republican nominee for",
-    "mid": 0.08,
-    "share": 0.0302,
-    "earned": 0.0,
-    "inv": 20.0
-   },
-   {
-    "q": "Will Morena win the most seats in the 2027 Campech",
-    "mid": 0.365,
-    "share": 0.0106,
-    "earned": 0.0002,
+    "earned": 0.0279,
     "inv": 0.0
    },
    {
     "q": "Will Felipe Fernando Mac\u00edas Olvera win the 2027 Qu",
     "mid": 0.68,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.014,
     "inv": 15.725
+   },
+   {
+    "q": "Will Uganda win AFCON 2027 qualifying Group H?",
+    "mid": 0.323,
+    "share": 1.0,
+    "earned": 0.0,
+    "inv": 0.0
+   },
+   {
+    "q": "Will Yashar win 16-18% of the vote in the 2026 Kne",
+    "mid": 0.253,
+    "share": 1.0,
+    "earned": 0.0098,
+    "inv": 0.0
+   },
+   {
+    "q": "Will Aliyu Wadada Ahmed win the 2027 Nasarawa Stat",
+    "mid": 0.545,
+    "share": 1.0,
+    "earned": 0.0,
+    "inv": 0.0
    },
    {
     "q": "Will Yashar win less than 16% of the vote in the 2",
     "mid": 0.335,
     "share": 1.0,
-    "earned": 0.0096,
+    "earned": 0.0091,
     "inv": 0.0
    },
    {
-    "q": "Will Morena win the most seats in the 2027 Durango",
-    "mid": 0.295,
+    "q": "Will Morena win the most seats in the 2027 Guanaju",
+    "mid": 0.19,
     "share": 1.0,
-    "earned": 0.0007,
-    "inv": 0.0
-   },
-   {
-    "q": "Will Charles \"Bruiser\" Martin be the Republican no",
-    "mid": 0.03,
-    "share": 0.0609,
-    "earned": 0.0,
-    "inv": 20.0
-   },
-   {
-    "q": "Will Brice Turang win the 2026 World Series MVP?",
-    "mid": 0.079,
-    "share": 0.013,
     "earned": 0.0,
     "inv": 0.0
    },
    {
-    "q": "Will 2026 rank between 7th and 9th among the highe",
-    "mid": 0.5,
-    "share": 0.0029,
-    "earned": 0.0,
-    "inv": 0.0
-   },
-   {
-    "q": "Will primmie play for Rex Regum Qeon in 2027?",
-    "mid": 0.104,
+    "q": "Will Paulo Dybala (Roma) record the most assists i",
+    "mid": 0.29,
     "share": 1.0,
-    "earned": 0.0052,
-    "inv": 0.0
-   },
-   {
-    "q": "Will \"The Hunger Games: Sunrise on the Reaping\" Op",
-    "mid": 0.21,
-    "share": 0.0162,
-    "earned": 0.0001,
-    "inv": 0.0
-   },
-   {
-    "q": "Will Yashar win 16-18% of the vote in the 2026 Kne",
-    "mid": 0.26,
-    "share": 1.0,
-    "earned": 0.0104,
-    "inv": 0.0
-   },
-   {
-    "q": "Will Shooters, Fishers, Farmers win the third-most",
-    "mid": 0.185,
-    "share": 0.0574,
-    "earned": 0.0004,
-    "inv": 0.0
-   },
-   {
-    "q": "Will Dallas Wilson be the 2026 D1 Receiving Yards ",
-    "mid": 0.041,
-    "share": 0.3063,
     "earned": 0.0,
     "inv": 0.0
    },
    {
-    "q": "Will David Beckham attend the 2026 Ballon d'Or cer",
-    "mid": 0.765,
-    "share": 0.0076,
-    "earned": 0.0001,
+    "q": "Will Egypt win AFCON 2027 qualifying Group B?",
+    "mid": 0.25,
+    "share": 1.0,
+    "earned": 0.0,
     "inv": 0.0
    },
    {
-    "q": "Will Claude Fable's output price be at or above $6",
-    "mid": 0.125,
-    "share": 0.0104,
+    "q": "Will the Brooklyn Nets finish as the #1 seed in th",
+    "mid": 0.251,
+    "share": 1.0,
+    "earned": 0.0,
+    "inv": 0.0
+   },
+   {
+    "q": "Will Hawai'i Rainbow Warriors Win the 2026 Mountai",
+    "mid": 0.209,
+    "share": 1.0,
+    "earned": 0.0,
+    "inv": 0.0
+   },
+   {
+    "q": "Will Tyran Stokes be the first pick in the 2027 NB",
+    "mid": 0.312,
+    "share": 1.0,
+    "earned": 0.0,
+    "inv": 0.0
+   },
+   {
+    "q": "Will Morena win the most seats in the 2027 Nuevo L",
+    "mid": 0.32,
+    "share": 1.0,
+    "earned": 0.0,
+    "inv": 0.0
+   },
+   {
+    "q": "Will Boaster play for Gentle Mates in 2027?",
+    "mid": 0.605,
+    "share": 1.0,
+    "earned": 0.0,
+    "inv": 0.0
+   },
+   {
+    "q": "Will MC win the most seats in the 2027 Nuevo Le\u00f3n ",
+    "mid": 0.25,
+    "share": 1.0,
+    "earned": 0.0,
+    "inv": 0.0
+   },
+   {
+    "q": "Will Edward Norton be nominated for Best Supportin",
+    "mid": 0.54,
+    "share": 1.0,
+    "earned": 0.0,
+    "inv": 0.0
+   },
+   {
+    "q": "Will Olivia Colman be nominated for Best Supportin",
+    "mid": 0.32,
+    "share": 1.0,
+    "earned": 0.0,
+    "inv": 0.0
+   },
+   {
+    "q": "Will Kate O'Flynn be nominated for Best Supporting",
+    "mid": 0.265,
+    "share": 1.0,
+    "earned": 0.0,
+    "inv": 0.0
+   },
+   {
+    "q": "Will \"Fatherland\" be nominated for Best Cinematogr",
+    "mid": 0.445,
+    "share": 1.0,
+    "earned": 0.0,
+    "inv": 0.0
+   },
+   {
+    "q": "Will \"Shaun the Sheep: The Beast of Mossy Bottom\" ",
+    "mid": 0.43,
+    "share": 1.0,
+    "earned": 0.0,
+    "inv": 0.0
+   },
+   {
+    "q": "Will \"Avengers: Doomsday\" be nominated for Best Vi",
+    "mid": 0.345,
+    "share": 1.0,
+    "earned": 0.0,
+    "inv": 0.0
+   },
+   {
+    "q": "Will \"Dune: Part Three\" be nominated for Best Soun",
+    "mid": 0.76,
+    "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
    }
   ],
-  "reward_tick": 0.0896,
-  "reward_total": 2337.84,
-  "mm_value": -104.72,
-  "net": 2233.11,
-  "avg_share": 0.4186,
-  "n_markets": 21,
+  "reward_tick": 0.0607,
+  "reward_total": 2338.43,
+  "mm_value": -106.86,
+  "net": 2231.56,
+  "avg_share": 1.0,
+  "n_markets": 23,
   "fills_total": 62,
-  "rebalanced": false
+  "rebalanced": true
  }
 }

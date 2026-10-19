@@ -7,7 +7,7 @@
    "question": "Will GPT Astra's output price be at or above $60 in 2026?",
    "yes": "18455205206735497586059553527464262898328548045519377094099702370010900897453",
    "no": "103738468820728402974763620188459630759326018270425417552214109623732044178416",
-   "rate": 40.0,
+   "rate": 3.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -37,7 +37,7 @@
    "question": "Will Chris Minns be the next Premier of New South Wales?",
    "yes": "72943409563048660286495482444186258030496364528774274591856523725087599395555",
    "no": "23880904800481099514631226134461069309397733326565360709053588080391592716364",
-   "rate": 29.0,
+   "rate": 3.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -52,7 +52,7 @@
    "question": "Will the Ornn B200 Index hit $5.50 (LOW) by December 31, 2026?",
    "yes": "115395915268360037284581545608210295551599972442929214768868587430316916898028",
    "no": "40805991361927122746810621095049165716184890967380090907202055256392269271368",
-   "rate": 3.0,
+   "rate": 40.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -82,7 +82,7 @@
    "question": "Will DeSean Bishop be the 2026 D1 Rushing Yards Leader?",
    "yes": "65724198037352443506806865711024892733946309470856719156505130920290451318825",
    "no": "26518229714840812268685816545792791877942656840800600182928466062047483499660",
-   "rate": 13.0,
+   "rate": 19.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -97,7 +97,7 @@
    "question": "Will \"The Hunger Games: Sunrise on the Reaping\" Opening Weekend Box Office be between 75m and 85m?",
    "yes": "47240286898037152636339109151492058214166811295555132741492782020332594851687",
    "no": "53142848209751508995328332445065259344972834109187436317505056049797009154072",
-   "rate": 23.0,
+   "rate": 25.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -127,7 +127,7 @@
    "question": "Will Morena win the most seats in the 2027 Jalisco Congress election?",
    "yes": "87606783396000036367703712899706814305648946637809700886614841900709311334715",
    "no": "49420028312345155265286251468289734909599699814623812949328610374417911846289",
-   "rate": 16.0,
+   "rate": 15.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -142,7 +142,7 @@
    "question": "Will Morena win the most seats in the 2027 Nuevo Le\u00f3n Congress election?",
    "yes": "59587519072380006770682437893776070184507613414842014450581478235422002054199",
    "no": "65049419908147765057701110451346002748513231451268393355516681284540095395634",
-   "rate": 9.0,
+   "rate": 6.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -157,7 +157,7 @@
    "question": "Will Cody Bellinger win the 2026 AL Platinum Glove award?",
    "yes": "1486426906406548227247014074131306567437987921818397730044089449141781627160",
    "no": "103797860541055019309468328300847605652176624383078955545886528723575346834451",
-   "rate": 9.0,
+   "rate": 5.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -172,7 +172,7 @@
    "question": "Will Syria win Group C at the 2027 AFC Asian Cup?",
    "yes": "21803655611441419387751745221513539982150346178604717316819524094023489519802",
    "no": "78002327750045693340904654426161998661921291742427212200659675604554116523559",
-   "rate": 11.0,
+   "rate": 10.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -217,7 +217,7 @@
    "question": "Will Tyran Stokes be the first pick in the 2027 NBA Draft?",
    "yes": "20787840783342051755292094193577893878101878135992253957701754482392071780739",
    "no": "91068896328177515709385581042437605735600745245124303095619463449255302317787",
-   "rate": 6.0,
+   "rate": 5.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -232,7 +232,7 @@
    "question": "Will The Odyssey win Best Film Editing at the 99th Academy Awards?",
    "yes": "8399490146598826523728993978205877851272961778930621974798636533558285891229",
    "no": "54101259437164796466918325438018628515499968085799853551892407543473138372474",
-   "rate": 57.0,
+   "rate": 63.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -1134,7 +1134,7 @@
    "cash": 0.0,
    "mid": 0.31,
    "share": 1.0,
-   "reward": 80.88462267762294,
+   "reward": 81.07524615530376,
    "fills": 0,
    "q": "Will Kate O'Flynn be nominated for Best Supporting Actress at the 99th Academy A"
   },
@@ -1198,9 +1198,9 @@
   "0xbf69469cec83d7f9d1fafc48609e064e861d4ca5dad23699d08cd7e424a60fca": {
    "inv": 0.0,
    "cash": 0.196625,
-   "mid": 0.28500000000000003,
-   "share": 0.004605140535809462,
-   "reward": 23.098106013732107,
+   "mid": 0.28,
+   "share": 0.004358689731442812,
+   "reward": 23.100425612939286,
    "fills": 1,
    "q": "Will The Odyssey win Best Film Editing at the 99th Academy Awards?",
    "closed_at": 0.32
@@ -1303,8 +1303,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.235,
-   "share": 0.027715048244713623,
-   "reward": 10.681435784833074,
+   "share": 0.013852310428566545,
+   "reward": 10.684596507903985,
    "fills": 0,
    "q": "Will \"The Hunger Games: Sunrise on the Reaping\" Opening Weekend Box Office be be"
   },
@@ -1404,9 +1404,9 @@
   "0x9ea79fae286f5e7e265dc5c09d38371e4a7b4d946dca672b68ae8bee471dbc07": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.685,
+   "mid": 0.66,
    "share": 1.0,
-   "reward": 25.473969520961457,
+   "reward": 25.66459299864227,
    "fills": 0,
    "q": "Will \"Iron Boy\" be nominated for Best Animated Feature Film at the 99th Academy "
   },
@@ -1958,7 +1958,7 @@
    "cash": 0.0,
    "mid": 0.313,
    "share": 1.0,
-   "reward": 3.108588959875171,
+   "reward": 3.1435728278753032,
    "fills": 0,
    "q": "Will Tyran Stokes be the first pick in the 2027 NBA Draft?"
   },
@@ -1967,7 +1967,7 @@
    "cash": 0.0,
    "mid": 0.305,
    "share": 1.0,
-   "reward": 7.361181813025916,
+   "reward": 7.409736703206543,
    "fills": 0,
    "q": "Will Morena win the most seats in the 2027 Nuevo Le\u00f3n Congress election?"
   },
@@ -1993,9 +1993,9 @@
   "0x38bc3cc22cdfa673df3dd1a61811c6135aa2b292859ffda4eabe55f2976c1261": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.3,
+   "mid": 0.285,
    "share": 1.0,
-   "reward": 28.30315817412404,
+   "reward": 28.45427175006934,
    "fills": 0,
    "q": "Will Edward Norton be nominated for Best Supporting Actor at the 99th Academy Aw"
   },
@@ -2011,18 +2011,18 @@
   "0x8b90086aa04c3a015ffb4c7f6418b473eb6f269e9fc68e607ac5adc05caa9109": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.32499999999999996,
+   "mid": 0.3,
    "share": 1.0,
-   "reward": 23.050373396494297,
+   "reward": 23.24103687485222,
    "fills": 0,
    "q": "Will \"Fatherland\" be nominated for Best Cinematography at the 99th Academy Award"
   },
   "0x346b035f44e2b3778b825a4d39f37a5b3c006aa70c8140054d185dece1306089": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.26,
+   "mid": 0.315,
    "share": 1.0,
-   "reward": 28.646338559356018,
+   "reward": 28.816483820478137,
    "fills": 0,
    "q": "Will \"Shaun the Sheep: The Beast of Mossy Bottom\" be nominated for Best Animated"
   },
@@ -2048,8 +2048,8 @@
    "inv": 10.0,
    "cash": -1.625,
    "mid": 0.125,
-   "share": 0.03924617616842137,
-   "reward": 0.48350571399750386,
+   "share": 0.051997568113737444,
+   "reward": 0.48553561745426094,
    "fills": 2,
    "q": "Will GPT Astra's output price be at or above $60 in 2026?"
   },
@@ -2057,26 +2057,26 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.5800000000000001,
-   "share": 0.9548022598870065,
-   "reward": 0.7124709120868076,
+   "share": 0.2256341789052076,
+   "reward": 0.8131673482417087,
    "fills": 0,
    "q": "Will Labor hold the most seats in the New South Wales Legislative Council after "
   },
   "0xbf5b7f2b593071f08c23ef0a3e2dd4460186970152a966c5237de938d374e520": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.6950000000000001,
-   "share": 0.07550422525814368,
-   "reward": 0.2672246632054047,
+   "mid": 0.6799999999999999,
+   "share": 0.03348092234592034,
+   "reward": 0.270181506575708,
    "fills": 0,
    "q": "Will Chris Minns be the next Premier of New South Wales?"
   },
   "0xa5642e1ff4a1eab7a1752b3176bf8301ddeb6baee3c85f615e810d1b7eeedb00": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.443,
-   "share": 1.0,
-   "reward": 0.2896624902401935,
+   "mid": 0.46799999999999997,
+   "share": 0.8720503027510994,
+   "reward": 0.46755646261853473,
    "fills": 0,
    "q": "Will the Ornn B200 Index hit $5.50 (LOW) by December 31, 2026?"
   },
@@ -2084,17 +2084,17 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.725,
-   "share": 0.01394388018591841,
-   "reward": 0.2685956351649776,
+   "share": 0.008299853840598547,
+   "reward": 0.2700948141500903,
    "fills": 0,
    "q": "Will Iran win Group C at the 2027 AFC Asian Cup?"
   },
   "0xb95c8808956affcc247e6da693cf61b3555e19cab47ccd85795124eeb4b98683": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.169,
+   "mid": 0.1675,
    "share": 1.0,
-   "reward": 0.38895533873527144,
+   "reward": 0.4583923971211469,
    "fills": 0,
    "q": "Will DeSean Bishop be the 2026 D1 Rushing Yards Leader?"
   },
@@ -2103,16 +2103,16 @@
    "cash": 0.0,
    "mid": 0.14500000000000002,
    "share": 1.0,
-   "reward": 0.3326384133045321,
+   "reward": 0.4333950616281343,
    "fills": 0,
    "q": "Will England host the 2027 UEFA Nations League Finals?"
   },
   "0xed06fc25317064c67bd198c1d9684fb43ca9273c4b57af93dad6273ef43105bd": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.26,
+   "mid": 0.35000000000000003,
    "share": 1.0,
-   "reward": 0.3483221519379704,
+   "reward": 0.4075087332419284,
    "fills": 0,
    "q": "Will Morena win the most seats in the 2027 Jalisco Congress election?"
   },
@@ -2121,7 +2121,7 @@
    "cash": 0.0,
    "mid": 0.1145,
    "share": 1.0,
-   "reward": 0.17903058881560965,
+   "reward": 0.2205189081612561,
    "fills": 0,
    "q": "Will Cody Bellinger win the 2026 AL Platinum Glove award?"
   },
@@ -2130,7 +2130,7 @@
    "cash": 0.0,
    "mid": 0.155,
    "share": 1.0,
-   "reward": 0.2525895605760592,
+   "reward": 0.3307786152456646,
    "fills": 0,
    "q": "Will Syria win Group C at the 2027 AFC Asian Cup?"
   },
@@ -2139,7 +2139,7 @@
    "cash": 0.0,
    "mid": 0.3325,
    "share": 1.0,
-   "reward": 0.22326479688286785,
+   "reward": 0.29301939956843853,
    "fills": 0,
    "q": "Will London have between 70-85mm of precipitation in October?"
   },
@@ -2148,34 +2148,34 @@
    "cash": 0.0,
    "mid": 0.2925,
    "share": 1.0,
-   "reward": 0.17083214124043783,
+   "reward": 0.2328362325165007,
    "fills": 0,
    "q": "Will London have between 60-70mm of precipitation in October?"
   },
   "0x2b79c5641ecb8ca60c48ab9d02c863004cff60b0771c5fd30291c99ce7d35934": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.2675,
+   "mid": 0.267,
    "share": 1.0,
-   "reward": 0.07553128868893341,
+   "reward": 0.08328180009844126,
    "fills": 0,
    "q": "Will Maurice Vunobolki win the 2027 Adamawa State gubernatorial election?"
   },
   "0x987fe52b1798f86d6a4af8afa60646443b95aa1b28bd0820ab8a9c509413874b": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.455,
+   "mid": 0.265,
    "share": 1.0,
-   "reward": 0.4888031280072867,
+   "reward": 0.6197326299414707,
    "fills": 0,
    "q": "Will Ruth Madeley be nominated for Best Actress at the 99th Academy Awards?"
   },
   "0xf60c133468aad2fa33c21e9139519d7f0089e85d812c8e02141117a54a9abd83": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.19,
+   "mid": 0.165,
    "share": 1.0,
-   "reward": 0.38149507023670054,
+   "reward": 0.4519576431700477,
    "fills": 0,
    "q": "Will \"Obsession\" be nominated for Best Casting at the 99th Academy Awards?"
   }
@@ -18896,17 +18896,43 @@
    "w": 2987283
   },
   {
-   "ts": "2026-10-19T00:48:52.338370+00:00",
-   "dt_h": 0.151,
-   "reward_tick": 1.84,
-   "reward_total": 2636.01,
+   "ts": "2026-10-19T00:49:51.430836+00:00",
+   "dt_h": 0.167,
+   "reward_tick": 2.0357,
+   "reward_total": 2636.2,
    "mm_value": -116.21,
-   "net": 2519.79,
-   "avg_share": 0.7965,
+   "net": 2519.99,
+   "avg_share": 0.7968,
    "n_markets": 24,
    "fills_total": 68,
    "rebalanced": false,
    "w": 2987284
+  },
+  {
+   "ts": "2026-10-19T00:59:01.273879+00:00",
+   "dt_h": 0.154,
+   "reward_tick": 1.5573,
+   "reward_total": 2637.76,
+   "mm_value": -116.21,
+   "net": 2521.55,
+   "avg_share": 0.7676,
+   "n_markets": 24,
+   "fills_total": 68,
+   "rebalanced": false,
+   "w": 2987285
+  },
+  {
+   "ts": "2026-10-19T01:00:01.982556+00:00",
+   "dt_h": 0.017,
+   "reward_tick": 0.2042,
+   "reward_total": 2637.96,
+   "mm_value": -116.21,
+   "net": 2521.75,
+   "avg_share": 0.7587,
+   "n_markets": 24,
+   "fills_total": 68,
+   "rebalanced": false,
+   "w": 2987286
   }
  ],
  "fills": [
@@ -19523,8 +19549,8 @@
    "ledger": "v2"
   }
  ],
- "reward_total": 2636.00574104879,
- "last_ts": 1792370932.3383703,
+ "reward_total": 2637.9629646766475,
+ "last_ts": 1792371601.982556,
  "chosen_at": 1792368788.9963202,
  "rebalances": [
   {
@@ -19589,91 +19615,91 @@
   }
  ],
  "last_tick": {
-  "ts": "2026-10-19T00:48:52.338370+00:00",
+  "ts": "2026-10-19T01:00:01.982556+00:00",
   "dt_h": 0.017,
   "markets": [
    {
     "q": "Will GPT Astra's output price be at or above $60 i",
     "mid": 0.125,
-    "share": 0.0392,
-    "earned": 0.0011,
+    "share": 0.052,
+    "earned": 0.0001,
     "inv": 10.0
    },
    {
     "q": "Will Labor hold the most seats in the New South Wa",
     "mid": 0.58,
-    "share": 0.9548,
-    "earned": 0.0255,
+    "share": 0.2256,
+    "earned": 0.006,
     "inv": 0.0
    },
    {
     "q": "Will Chris Minns be the next Premier of New South ",
-    "mid": 0.695,
-    "share": 0.0755,
-    "earned": 0.0015,
+    "mid": 0.68,
+    "share": 0.0335,
+    "earned": 0.0001,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn B200 Index hit $5.50 (LOW) by Decemb",
-    "mid": 0.443,
-    "share": 1.0,
-    "earned": 0.0021,
+    "mid": 0.468,
+    "share": 0.8721,
+    "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will Iran win Group C at the 2027 AFC Asian Cup?",
     "mid": 0.725,
-    "share": 0.0139,
-    "earned": 0.0002,
+    "share": 0.0083,
+    "earned": 0.0001,
     "inv": 0.0
    },
    {
     "q": "Will DeSean Bishop be the 2026 D1 Rushing Yards Le",
-    "mid": 0.169,
+    "mid": 0.168,
     "share": 1.0,
-    "earned": 0.0092,
+    "earned": 0.0134,
     "inv": 0.0
    },
    {
     "q": "Will \"The Hunger Games: Sunrise on the Reaping\" Op",
     "mid": 0.235,
-    "share": 0.0277,
-    "earned": 0.0004,
+    "share": 0.0139,
+    "earned": 0.0002,
     "inv": 0.0
    },
    {
     "q": "Will England host the 2027 UEFA Nations League Fin",
     "mid": 0.145,
     "share": 1.0,
-    "earned": 0.0092,
+    "earned": 0.0091,
     "inv": 0.0
    },
    {
     "q": "Will Morena win the most seats in the 2027 Jalisco",
-    "mid": 0.26,
+    "mid": 0.35,
     "share": 1.0,
-    "earned": 0.0113,
+    "earned": 0.0105,
     "inv": 0.0
    },
    {
     "q": "Will Morena win the most seats in the 2027 Nuevo L",
     "mid": 0.305,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0042,
     "inv": 0.0
    },
    {
     "q": "Will Cody Bellinger win the 2026 AL Platinum Glove",
     "mid": 0.115,
     "share": 1.0,
-    "earned": 0.0063,
+    "earned": 0.0035,
     "inv": 0.0
    },
    {
     "q": "Will Syria win Group C at the 2027 AFC Asian Cup?",
     "mid": 0.155,
     "share": 1.0,
-    "earned": 0.0077,
+    "earned": 0.007,
     "inv": 0.0
    },
    {
@@ -19694,33 +19720,33 @@
     "q": "Will Tyran Stokes be the first pick in the 2027 NB",
     "mid": 0.313,
     "share": 1.0,
-    "earned": 0.0042,
+    "earned": 0.0035,
     "inv": 0.0
    },
    {
     "q": "Will The Odyssey win Best Film Editing at the 99th",
-    "mid": 0.285,
-    "share": 0.0046,
+    "mid": 0.28,
+    "share": 0.0044,
     "earned": 0.0002,
     "inv": 0.0
    },
    {
     "q": "Will Maurice Vunobolki win the 2027 Adamawa State ",
-    "mid": 0.268,
+    "mid": 0.267,
     "share": 1.0,
     "earned": 0.0007,
     "inv": 0.0
    },
    {
     "q": "Will Ruth Madeley be nominated for Best Actress at",
-    "mid": 0.455,
+    "mid": 0.265,
     "share": 1.0,
     "earned": 0.0211,
     "inv": 0.0
    },
    {
     "q": "Will Edward Norton be nominated for Best Supportin",
-    "mid": 0.3,
+    "mid": 0.285,
     "share": 1.0,
     "earned": 0.0211,
     "inv": 0.0
@@ -19729,43 +19755,43 @@
     "q": "Will Kate O'Flynn be nominated for Best Supporting",
     "mid": 0.31,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0211,
     "inv": 0.0
    },
    {
     "q": "Will \"Fatherland\" be nominated for Best Cinematogr",
-    "mid": 0.325,
+    "mid": 0.3,
     "share": 1.0,
     "earned": 0.0211,
     "inv": 0.0
    },
    {
     "q": "Will \"Obsession\" be nominated for Best Casting at ",
-    "mid": 0.19,
+    "mid": 0.165,
     "share": 1.0,
     "earned": 0.007,
     "inv": 0.0
    },
    {
     "q": "Will \"Iron Boy\" be nominated for Best Animated Fea",
-    "mid": 0.685,
+    "mid": 0.66,
     "share": 1.0,
     "earned": 0.0211,
     "inv": 0.0
    },
    {
     "q": "Will \"Shaun the Sheep: The Beast of Mossy Bottom\" ",
-    "mid": 0.26,
+    "mid": 0.315,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0211,
     "inv": 0.0
    }
   ],
-  "reward_tick": 0.1831,
-  "reward_total": 2636.01,
+  "reward_tick": 0.2042,
+  "reward_total": 2637.96,
   "mm_value": -116.21,
-  "net": 2519.79,
-  "avg_share": 0.7965,
+  "net": 2521.75,
+  "avg_share": 0.7587,
   "n_markets": 24,
   "fills_total": 68,
   "rebalanced": false

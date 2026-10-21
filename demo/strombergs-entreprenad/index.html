@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Strömbergs Entreprenad – Bygg, snickeri & transport i Tierp</title>
+<meta name="description" content="Strömbergs Entreprenad AB i Björklinge – snickeri, byggnation, entreprenad och transporter i Tierp, Björklinge och Uppsala län.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f4ef; --surface:#ffffff; --ink:#1b1f1d; --muted:#5d645f; --line:#e3ded3;
+  --brand:#2f4a3a; --brand-2:#3f6b52; --accent:#d9902f; --accent-ink:#1b1f1d;
+  --radius:18px; --shadow:0 10px 30px rgba(27,31,29,.08);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#121614; --surface:#1a201d; --ink:#eef1ee; --muted:#a9b2ac; --line:#2a332e;
+    --brand:#8fc3a2; --brand-2:#6fa685; --accent:#e9a64a; --accent-ink:#121614; --shadow:0 10px 30px rgba(0,0,0,.35);
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+/* nav */
+header.nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;text-decoration:none;font-size:1.05rem}
+.logo .mark{width:36px;height:36px;border-radius:10px;background:var(--brand);color:var(--bg);display:grid;place-items:center;font-weight:800}
+.nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}
+.nav ul a{text-decoration:none;color:var(--muted);font-weight:500;font-size:.95rem}
+.nav ul a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;font-weight:600;text-decoration:none;border:1px solid transparent;transition:transform .15s ease,background .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--accent);color:var(--accent-ink)}
+.btn-ghost{border-color:var(--line);background:var(--surface)}
+.nav .btn{padding:10px 16px;font-size:.92rem}
+@media (max-width:760px){.nav ul{display:none}}
+/* hero */
+.hero{position:relative;overflow:hidden;padding:84px 0 72px}
+.hero::before{content:"";position:absolute;inset:-20% -10% auto auto;width:620px;height:620px;border-radius:50%;background:radial-gradient(closest-side,color-mix(in srgb,var(--brand-2) 28%,transparent),transparent);z-index:0}
+.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.85rem;font-weight:600;color:var(--brand);background:color-mix(in srgb,var(--brand) 12%,transparent);padding:6px 12px;border-radius:999px}
+h1{font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.05;letter-spacing:-.035em;margin:18px 0 18px;font-weight:800}
+h1 span{color:var(--brand)}
+.lead{font-size:1.15rem;color:var(--muted);max-width:560px;margin:0 0 28px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.hero-card{background:var(--surface);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);padding:22px}
+.ph{aspect-ratio:4/3;border-radius:16px;background:linear-gradient(135deg,color-mix(in srgb,var(--brand) 85%,#000),var(--brand-2));display:grid;place-items:center;color:#fff;text-align:center;padding:20px;position:relative;overflow:hidden}
+.ph svg{width:120px;height:120px;opacity:.9}
+.ph small{position:absolute;bottom:10px;left:0;right:0;font-size:.75rem;opacity:.75}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.fact{background:var(--bg);border-radius:12px;padding:12px;text-align:center}
+.fact b{display:block;font-size:1.05rem}
+.fact span{font-size:.78rem;color:var(--muted)}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr}.hero{padding:56px 0}}
+/* sections */
+section{padding:84px 0}
+.sec-head{max-width:640px;margin-bottom:40px}
+.sec-head h2{font-size:clamp(1.7rem,3.4vw,2.4rem);letter-spacing:-.03em;line-height:1.15;margin:10px 0 12px}
+.sec-head p{color:var(--muted);margin:0}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media (max-width:860px){.grid3{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);transition:transform .2s ease}
+.card:hover{transform:translateY(-3px)}
+.icon{width:52px;height:52px;border-radius:14px;background:color-mix(in srgb,var(--brand) 12%,transparent);color:var(--brand);display:grid;place-items:center;margin-bottom:18px}
+.icon svg{width:26px;height:26px}
+.card h3{margin:0 0 8px;font-size:1.2rem;letter-spacing:-.01em}
+.card p{margin:0 0 14px;color:var(--muted)}
+.card ul{margin:0;padding:0;list-style:none;display:grid;gap:6px}
+.card li{display:flex;gap:8px;font-size:.95rem}
+.card li::before{content:"✓";color:var(--brand);font-weight:700}
+/* band */
+.band{background:var(--brand);color:#fff;border-radius:28px;padding:48px;display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.band h2{margin:0 0 10px;font-size:clamp(1.6rem,3vw,2.2rem);letter-spacing:-.02em;color:#fff}
+.band p{margin:0;opacity:.85}
+.steps{display:grid;gap:14px}
+.step{display:flex;gap:14px;align-items:flex-start;background:rgba(255,255,255,.08);border-radius:14px;padding:14px 16px}
+.step b{width:30px;height:30px;flex:0 0 30px;border-radius:50%;background:var(--accent);color:#1b1f1d;display:grid;place-items:center}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .band{background:#1f2c25}}
+@media (max-width:860px){.band{grid-template-columns:1fr;padding:32px}}
+/* area */
+.area{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{padding:10px 16px;border-radius:999px;background:var(--surface);border:1px solid var(--line);font-weight:500}
+.map{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);aspect-ratio:4/3;background:var(--surface)}
+.map iframe{width:100%;height:100%;border:0;display:block}
+@media (max-width:860px){.area{grid-template-columns:1fr}}
+/* gallery placeholders */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.gallery .ph{aspect-ratio:1}
+@media (max-width:860px){.gallery{grid-template-columns:repeat(2,1fr)}}
+/* contact */
+.contact{display:grid;grid-template-columns:.9fr 1.1fr;gap:28px}
+.info{display:grid;gap:14px}
+.info a,.info div{display:flex;gap:14px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px;text-decoration:none}
+.info svg{width:22px;height:22px;color:var(--brand);flex:0 0 22px}
+.info small{display:block;color:var(--muted);font-size:.82rem}
+form{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);display:grid;gap:14px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{font-size:.85rem;font-weight:600;display:grid;gap:6px}
+input,select,textarea{font:inherit;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
+textarea{min-height:120px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--brand-2);outline-offset:1px}
+.note{font-size:.8rem;color:var(--muted)}
+@media (max-width:860px){.contact{grid-template-columns:1fr}.row{grid-template-columns:1fr}}
+footer{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.todo{display:inline-block;font-size:.72rem;font-weight:600;background:#fff3cd;color:#7a5b00;border:1px dashed #d9b44a;border-radius:6px;padding:1px 6px;margin-left:6px;vertical-align:middle}
+.callbar{display:none}
+@media (max-width:760px){
+  .callbar{display:flex;position:fixed;bottom:14px;left:14px;right:14px;z-index:30;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+  footer{padding-bottom:90px}
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a href="#" class="logo"><span class="mark">S</span>Strömbergs Entreprenad</a>
+    <ul>
+      <li><a href="#tjanster">Tjänster</a></li>
+      <li><a href="#sa-jobbar-vi">Så jobbar vi</a></li>
+      <li><a href="#omrade">Område</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
+    <a class="btn btn-primary" href="tel:+46739340386">Ring 073-934 03 86</a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">📍 Björklinge · Tierp · Uppsala län</span>
+      <h1>Bygg, snickeri och transporter – <span>från första spik till sista lass.</span></h1>
+      <p class="lead">Strömbergs Entreprenad är ett lokalt entreprenadföretag i Björklinge. Vi tar hand om snickeri- och byggjobb, och har egna fordon för transporter och materialhantering – så att ditt projekt blir klart utan mellanhänder.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#kontakt">Begär offert</a>
+        <a class="btn btn-ghost" href="#tjanster">Se våra tjänster →</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="ph" role="img" aria-label="Plats för bild på ett genomfört projekt">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V10l7-5 7 5v11"/><path d="M9 21v-6h6v6"/></svg>
+        <small>Byt till egen projektbild</small>
+      </div>
+      <div class="facts">
+        <div class="fact"><b>Lokalt</b><span>Björklinge &amp; Tierp</span></div>
+        <div class="fact"><b>Egna fordon</b><span>Transport &amp; åkeri</span></div>
+        <div class="fact"><b>Ett samtal</b><span>Hela jobbet</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tjanster">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Tjänster</span>
+      <h2>Allt du behöver – under ett och samma tak</h2>
+      <p>För privatpersoner, bostadsrättsföreningar, lantbruk och företag i norra Uppland.</p>
+    </div>
+    <div class="grid3">
+      <article class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg></div>
+        <h3>Snickeri &amp; bygg</h3>
+        <p>Nybygge, tillbyggnader och renoveringar – inne och ute.</p>
+        <ul><li>Altaner, staket och förråd</li><li>Tillbyggnader och garage</li><li>Renovering och ombyggnad</li></ul>
+      </article>
+      <article class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 17V6h13v11"/><path d="M14 9h4l4 4v4h-8"/><circle cx="6" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg></div>
+        <h3>Transport &amp; åkeri</h3>
+        <p>Egna fordon för att flytta material, maskiner och massor dit de ska.</p>
+        <ul><li>Material- och maskintransporter</li><li>Bortforsling</li><li>Leveranser till byggen</li></ul>
+      </article>
+      <article class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20"/><path d="M4 20l4-8 4 4 3-6 5 10"/></svg></div>
+        <h3>Entreprenad</h3>
+        <p>Vi samordnar hela jobbet – från planering till färdigt resultat.</p>
+        <ul><li>Helhetsåtagande</li><li>Förberedande markarbeten<span class="todo">bekräfta</span></li><li>Samarbete med andra hantverkare</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="sa-jobbar-vi">
+  <div class="wrap">
+    <div class="band">
+      <div>
+        <h2>Enkelt från start till mål</h2>
+        <p>Du får en kontaktperson som håller i allt – inga mellanhänder, inga överraskningar.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><b>1</b><div><strong>Kontakt</strong><br>Ring eller skicka en förfrågan – berätta vad du vill få gjort.</div></div>
+        <div class="step"><b>2</b><div><strong>Besök &amp; offert</strong><br>Vi tittar på plats och lämnar en tydlig offert.</div></div>
+        <div class="step"><b>3</b><div><strong>Utförande</strong><br>Vi bygger, transporterar och städar efter oss.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Referensprojekt</span>
+      <h2>Ett urval av våra jobb</h2>
+      <p>Lägg in bilder från egna projekt här – bilder säljer bättre än ord.<span class="todo">byt bilder</span></p>
+    </div>
+    <div class="gallery">
+      <div class="ph"><small>Projektbild 1</small></div>
+      <div class="ph"><small>Projektbild 2</small></div>
+      <div class="ph"><small>Projektbild 3</small></div>
+      <div class="ph"><small>Projektbild 4</small></div>
+    </div>
+  </div>
+</section>
+
+<section id="omrade">
+  <div class="wrap area">
+    <div>
+      <div class="sec-head" style="margin-bottom:20px">
+        <span class="eyebrow">Arbetsområde</span>
+        <h2>Här finns vi</h2>
+        <p>Med bas i Björklinge tar vi uppdrag i Tierp, Uppsala och närliggande orter.<span class="todo">justera orter</span></p>
+      </div>
+      <div class="chips">
+        <span class="chip">Björklinge</span><span class="chip">Tierp</span><span class="chip">Skärplinge</span><span class="chip">Örbyhus</span><span class="chip">Storvreta</span><span class="chip">Uppsala</span>
+      </div>
+    </div>
+    <div class="map">
+      <iframe title="Karta över Torkelsbo, Björklinge" loading="lazy" src="https://www.google.com/maps?q=Torkelsbo+107,+743+72+Bj%C3%B6rklinge&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Kontakt</span>
+      <h2>Berätta om ditt projekt</h2>
+      <p>Ring direkt eller skicka en förfrågan, så återkommer vi med en offert.</p>
+    </div>
+    <div class="contact">
+      <div class="info">
+        <a href="tel:+46739340386"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span><small>Telefon</small><strong>073-934 03 86</strong></span></a>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span><small>Adress</small><strong>Torkelsbo 107, 743 72 Björklinge</strong></span></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg><span><small>E-post</small><strong>info@… <span class="todo">lägg till</span></strong></span></div>
+      </div>
+      <form onsubmit="event.preventDefault();this.querySelector('.note').textContent='Tack! Formuläret är en demo – koppla det till e-post innan sidan går live.';">
+        <div class="row">
+          <label>Namn<input required name="namn" autocomplete="name"></label>
+          <label>Telefon<input required name="tel" type="tel" autocomplete="tel"></label>
+        </div>
+        <label>Typ av jobb
+          <select name="typ"><option>Snickeri / bygg</option><option>Transport / åkeri</option><option>Entreprenad / helhetsåtagande</option><option>Annat</option></select>
+        </label>
+        <label>Beskriv kort<textarea name="msg" placeholder="Vad vill du få gjort, var och ungefär när?"></textarea></label>
+        <button class="btn btn-primary" type="submit" style="justify-content:center">Skicka förfrågan</button>
+        <p class="note">Vi svarar normalt inom en arbetsdag.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© Strömbergs Entreprenad AB · Org.nr 556906-4750</span>
+    <span>Torkelsbo 107, 743 72 Björklinge · 073-934 03 86</span>
+  </div>
+</footer>
+
+<a class="btn btn-primary callbar" href="tel:+46739340386">📞 Ring 073-934 03 86</a>
+</body>
+</html>

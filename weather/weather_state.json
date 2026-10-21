@@ -32959,14 +32959,22 @@
    "equity": 48.02,
    "cash": 26.79,
    "open": 17
+  },
+  {
+   "ts": "2026-10-21T00:01:58.446637+00:00",
+   "equity": 48.02,
+   "cash": 26.79,
+   "open": 17
   }
  ],
  "last_run": {
-  "ts": "2026-10-20T23:31:24.355027+00:00",
+  "ts": "2026-10-21T00:01:58.446637+00:00",
   "settled": [],
   "opened": [],
   "logged": 0,
-  "skipped": {}
+  "skipped": {
+   "San Francisco": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=37.6213&longitude=-122.379&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=fahrenheit"
+  }
  },
  "mode": "trading",
  "gates_ignored": true,

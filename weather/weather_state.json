@@ -27683,6 +27683,65 @@
     0.05,
     0.05
    ]
+  },
+  "1215924": {
+   "date": "2026-10-21",
+   "mu_raw": 30.766666666666666,
+   "unit": "C",
+   "city": "Lucknow",
+   "spread": 2.0,
+   "labels": [
+    "25\u00b0C or below",
+    "26\u00b0C",
+    "27\u00b0C",
+    "28\u00b0C",
+    "29\u00b0C",
+    "30\u00b0C",
+    "31\u00b0C",
+    "32\u00b0C",
+    "33\u00b0C",
+    "34\u00b0C",
+    "35\u00b0C or higher"
+   ],
+   "probs": [
+    0.0,
+    0.0001,
+    0.0016,
+    0.013,
+    0.0618,
+    0.1714,
+    0.2786,
+    0.2657,
+    0.1486,
+    0.0487,
+    0.0105
+   ],
+   "market": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    0.415,
+    0.56,
+    0.0445,
+    null,
+    null,
+    null
+   ],
+   "gfs": [
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.0968,
+    0.3548,
+    0.4839,
+    0.0645,
+    0.05,
+    0.05,
+    0.05
+   ]
   }
  },
  "history": [
@@ -32965,16 +33024,20 @@
    "equity": 48.02,
    "cash": 26.79,
    "open": 17
+  },
+  {
+   "ts": "2026-10-21T00:31:25.892346+00:00",
+   "equity": 48.02,
+   "cash": 26.79,
+   "open": 17
   }
  ],
  "last_run": {
-  "ts": "2026-10-21T00:01:58.446637+00:00",
+  "ts": "2026-10-21T00:31:25.892346+00:00",
   "settled": [],
   "opened": [],
-  "logged": 0,
-  "skipped": {
-   "San Francisco": "forecast: 503 Server Error: Service Unavailable for url: https://api.open-meteo.com/v1/forecast?latitude=37.6213&longitude=-122.379&hourly=temperature_2m&models=ecmwf_ifs025%2Cecmwf_aifs025_single%2Cgfs_seamless%2Cicon_seamless%2Cgem_seamless%2Cjma_seamless&timezone=auto&forecast_days=3&temperature_unit=fahrenheit"
-  }
+  "logged": 1,
+  "skipped": {}
  },
  "mode": "trading",
  "gates_ignored": true,

@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="sv"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Zdanmotion – Bygg</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>:root{--dk:#1C1F22;--dk2:#2A2E32;--dk3:#3A3F44;--g6:#4A4D50;--g3:#8D887F;--g4:#B9B4AA;--g5:#E6E2DA;--lt:#F7F6F3;--or:#E8772E;--w:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:#0E1012;color:var(--w);font-family:Inter,Arial,Helvetica,sans-serif;overflow:hidden}
+.deck{position:fixed;inset:0}
+.stage{position:absolute;left:50%;top:50%;width:1600px;height:900px;transform-origin:center;transform:translate(-50%,-50%)}
+.slide{position:absolute;inset:0;padding:64px 96px;overflow:hidden;opacity:0;visibility:hidden;transition:opacity .5s ease,visibility .5s}
+.slide.active{opacity:1;visibility:visible}
+.dark{background:radial-gradient(900px 700px at 88% 10%,rgba(232,119,46,.2),transparent 70%),repeating-linear-gradient(0deg,transparent 0 47px,#24282C 47px 48px),repeating-linear-gradient(90deg,transparent 0 47px,#24282C 47px 48px),var(--dk)}
+.light{color:var(--dk);background:radial-gradient(900px 700px at 88% 10%,rgba(232,119,46,.16),transparent 70%),repeating-linear-gradient(0deg,transparent 0 47px,#EFEDE8 47px 48px),repeating-linear-gradient(90deg,transparent 0 47px,#EFEDE8 47px 48px),var(--lt)}
+.orange{background:var(--or);color:var(--dk)}
+.ic{width:1em;height:1em;flex:none}
+.or{color:var(--or)}
+/* chrome */
+.vf{position:absolute;width:45px;height:45px;border:2px solid var(--g6)}
+.light .vf{border-color:var(--g4)}.orange .vf{border-color:var(--dk)}
+.vf.tl{top:40px;left:40px;border-right:0;border-bottom:0}.vf.tr{top:40px;right:40px;border-left:0;border-bottom:0}
+.vf.bl{bottom:40px;left:40px;border-right:0;border-top:0}.vf.br{bottom:40px;right:40px;border-left:0;border-top:0}
+.rec{position:absolute;top:68px;right:96px;font-size:14px;font-weight:600;color:var(--g3);display:flex;align-items:center;gap:10px;font-variant-numeric:tabular-nums;letter-spacing:.04em}
+.orange .rec{color:var(--dk)}
+.dot{width:14px;height:14px;border-radius:50%;background:var(--or);animation:blink 1.2s steps(2,start) infinite}
+.orange .dot{background:var(--dk)}
+@keyframes blink{to{visibility:hidden}}
+.foot{position:absolute;left:96px;right:96px;bottom:60px;display:flex;justify-content:space-between;font-size:15px;color:var(--g3)}
+/* type */
+.kicker{font-size:17px;font-weight:800;letter-spacing:.3em;color:var(--or)}
+.kicker.dk{color:var(--dk);font-size:14px}
+.brand{font-size:19px;font-weight:800;letter-spacing:.32em;color:var(--or)}
+.orange .brand{color:var(--dk)}
+h1{font-size:68px;line-height:1.08;font-weight:800;letter-spacing:-.02em}
+h1 em{font-style:normal;color:var(--or)}
+h2{font-size:48px;font-weight:800;letter-spacing:-.015em;margin-top:14px}
+.lead{font-size:23px;line-height:1.4;color:var(--g4);margin-top:26px;max-width:640px}
+.orange .lead{color:var(--dk)}
+.sub{font-size:21px;line-height:1.4;color:var(--g6);margin-top:10px;max-width:1300px}
+small{display:block;font-size:17px;line-height:1.4;font-weight:400}
+/* entrance animation */
+.a{opacity:0;transform:translateY(24px)}
+.active .a{animation:in .7s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(var(--d,0) * .14s + .1s)}
+@keyframes in{to{opacity:1;transform:none}}
+/* cover */
+.cover .brand{margin-top:4px}
+.cover-l{position:absolute;left:96px;top:190px;width:860px}
+.chips{display:flex;gap:14px;margin-top:36px}
+.chip{display:flex;align-items:center;gap:10px;padding:11px 20px;border-radius:40px;background:var(--dk2);border:1px solid var(--dk3);font-weight:600;font-size:17px}
+.chip .ic{color:var(--or);font-size:20px}
+.kf{position:relative;margin-top:56px;height:60px;width:840px}
+.kf-track{position:absolute;top:12px;left:0;right:0;height:2px;background:var(--g6)}
+.kf-fill{height:4px;margin-top:-1px;background:var(--or);width:0}
+.active .kf-fill{animation:fill 3.2s 1s cubic-bezier(.5,0,.2,1) forwards}
+@keyframes fill{to{width:100%}}
+.dia{position:absolute;width:20px;height:20px;background:var(--g6);transform:translateX(-50%) rotate(45deg)}
+.kf .dia{top:3px}
+.active .kf .dia{animation:dia .3s forwards;animation-delay:calc(1s + var(--k) * .78s)}
+@keyframes dia{to{background:var(--or);box-shadow:0 0 18px var(--or)}}
+.kf .dia:first-of-type{transform:rotate(45deg)}
+.kf-l,.kf-r{position:absolute;top:34px;font-size:14px;color:var(--g3)}.kf-r{right:0}
+.cover-r{position:absolute;right:120px;top:60px;width:420px;height:780px;display:grid;place-items:center}
+.glow{position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(232,119,46,.35),rgba(232,119,46,0) 70%)}
+.phone{position:relative;height:760px;filter:drop-shadow(0 30px 50px rgba(0,0,0,.5))}
+.phone.sm{height:600px}
+.active .float{animation:float 5s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-12px)}}
+/* agenda */
+.agenda{display:grid;grid-template-columns:1fr 500px;gap:56px;margin-top:48px}
+.ag-list{display:flex;flex-direction:column;gap:24px}
+.card{background:var(--w);border:1px solid var(--g5);border-radius:18px;box-shadow:0 8px 24px rgba(28,31,34,.08)}
+.ag{display:flex;align-items:center;gap:22px;padding:16px 28px;height:122px}
+.ag .num{font-size:28px;color:var(--or);width:40px}
+.ag strong{font-size:24px;display:block}.ag small{color:var(--g6)}
+.icc{width:66px;height:66px;border-radius:50%;display:grid;place-items:center;font-size:28px;flex:none}
+.icc.dk{background:var(--dk);color:var(--or)}.icc.dk2{background:var(--dk2);color:var(--or);width:76px;height:76px;font-size:32px}
+.goal{background:var(--dk);color:var(--w);border-radius:18px;padding:36px 40px}
+.goal-row{display:flex;align-items:center;gap:20px;margin-top:40px;font-size:24px}
+.goal-row .ic{font-size:32px}
+.goal p{margin-top:60px;color:var(--g4);font-size:17px;line-height:1.45}
+/* editor timeline */
+.editor{position:relative;margin-top:56px;background:var(--dk2);border:1px solid var(--dk3);border-radius:18px;padding:22px 40px 40px}
+.ruler{display:flex;justify-content:space-between;height:20px;align-items:flex-start}
+.ruler i{width:2px;height:20px;background:var(--g6)}.ruler i.s{height:10px}
+.playhead{position:absolute;top:10px;left:40px;width:2px;height:220px;background:var(--w);z-index:3}
+.playhead:before{content:"";position:absolute;top:-4px;left:-11px;border:12px solid transparent;border-top:16px solid var(--w)}
+.active .playhead{animation:play 6s 1s linear infinite}
+@keyframes play{from{left:40px}to{left:calc(100% - 40px)}}
+.clips{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:20px}
+.clip{display:flex;align-items:center;gap:16px;height:120px;border-radius:12px;background:var(--dk3);padding:0 22px;font-size:34px;color:var(--or)}
+.clip.hot{background:var(--or);color:var(--dk)}
+.clip small{font-size:14px;font-weight:800;color:var(--g4)}.clip.hot small{color:var(--dk)}
+.clip strong{font-size:22px;color:var(--w);display:block}.clip.hot strong{color:var(--dk)}
+.kfrow{position:relative;height:44px}
+.kfrow:before{content:"";position:absolute;left:-24px;right:-24px;top:21px;height:2px;background:var(--g6)}
+.kfrow .dia{left:50%;top:12px}.kfrow .dia.on{background:var(--or)}
+.step p{font-size:24px;line-height:1.5;color:var(--g4);margin-top:18px;min-height:190px}
+.active .step{animation:in .6s forwards;animation-delay:calc(.5s + var(--k) * .25s);opacity:0;transform:translateY(20px)}
+/* qualify */
+.qual{display:grid;grid-template-columns:1fr 90px 1fr;gap:36px;align-items:center;margin-top:40px}
+.leadc{padding:28px 36px}
+
+.lead-h{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px}
+.lead-h strong{font-size:24px}.lead-h small{color:var(--g3);font-size:16px}
+.badge{background:var(--or);color:var(--w);font-weight:800;font-size:14px;padding:9px 18px;border-radius:30px;letter-spacing:.03em}
+.qa{display:grid;grid-template-columns:36px 150px 1fr;align-items:center;border-top:1px solid var(--g5);padding:15px 0;font-size:21px}
+.qa .ic{font-size:26px}.qa span{color:var(--g3)}
+.active .qa .ic{animation:pop .4s backwards;animation-delay:calc(1s + var(--k) * .3s)}
+@keyframes pop{from{transform:scale(0)}60%{transform:scale(1.3)}}
+.arrow{width:80px;height:80px;border-radius:50%;background:var(--dk);color:var(--or);display:grid;place-items:center;font-size:32px}
+.cal{padding:28px 32px}
+.cal-h{display:flex;align-items:center;gap:14px;font-size:24px;margin-bottom:16px}
+.days,.grid{display:grid;grid-template-columns:repeat(5,1fr)}
+.days span{text-align:center;font-size:16px;font-weight:600;color:var(--g3);padding-bottom:8px;border-bottom:1px solid var(--g5)}
+.cell{height:92px;border-bottom:1px solid var(--g5);border-left:1px solid var(--g5);padding:6px}
+.cell:nth-child(5n+1){border-left:0}
+.evt{height:100%;border-radius:8px;background:var(--lt);border:1px solid var(--g5);color:var(--g3);font-size:13px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.evt b{font-size:14px}
+.evt.hot{background:var(--or);border:0;color:var(--w)}
+.active .evt.hot{animation:pop .5s backwards;animation-delay:calc(1.6s + var(--k) * .3s)}
+/* app */
+.app{display:grid;grid-template-columns:1fr 520px;margin-top:30px;height:640px}
+.feats{display:flex;flex-direction:column;justify-content:center;gap:34px;padding-bottom:80px}
+.feat{display:flex;align-items:center;gap:28px}
+.feat strong{font-size:26px;display:block}.feat small{color:var(--g4);font-size:19px}
+.app-r{position:relative;display:grid;place-items:center;margin-top:-40px}
+.notif{position:absolute;top:70px;left:-40px;display:flex;align-items:center;gap:14px;background:var(--lt);color:var(--dk);padding:14px 22px;border-radius:16px;box-shadow:0 20px 40px rgba(0,0,0,.4);font-size:24px;opacity:0}
+.notif .ic{color:var(--or)}.notif b{font-size:17px;display:block}.notif small{font-size:14px;color:var(--g6)}
+.active .notif{animation:notif 5s 1.2s infinite}
+@keyframes notif{0%{opacity:0;transform:translateY(-20px)}10%,70%{opacity:1;transform:none}85%,100%{opacity:0;transform:translateY(-20px)}}
+/* price */
+.price{display:grid;grid-template-columns:repeat(3,1fr) 520px;gap:24px;margin-top:48px;height:540px}
+.pcard{background:var(--dk2);border:1px solid var(--dk3);border-radius:18px;padding:32px 28px}
+.big{font-size:60px;font-weight:800;color:var(--or);letter-spacing:-.02em}
+.big.w{color:var(--w)}
+.pcard strong{display:block;font-size:24px;margin-top:16px;line-height:1.3}
+.pcard small{color:var(--g4);margin-top:32px;font-size:19px}
+.ex{background:var(--or);color:var(--dk);border-radius:18px;padding:30px 36px}
+.row{display:flex;justify-content:space-between;font-size:21px;margin-top:24px}
+.row.tot{border-top:2px solid var(--dk);padding-top:16px;font-size:22px;font-weight:800}
+.keep{margin-top:34px}.keep b{display:block;font-size:21px}
+.note{position:absolute;bottom:60px;left:0;right:0;text-align:center;font-size:14px;color:var(--g3)}
+/* cta */
+.orange h1{margin-top:110px;font-size:80px}
+.steps{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:40px;margin-top:70px}
+.steps-line{position:absolute;top:40px;left:40px;right:300px;height:3px;background:var(--dk);transform-origin:left;transform:scaleX(0)}
+.active .steps-line{animation:grow 1.4s .5s forwards}
+@keyframes grow{to{transform:scaleX(1)}}
+.stp .n{position:relative;display:grid;place-items:center;width:80px;height:80px;border-radius:50%;background:var(--dk);color:var(--or);font-size:26px;font-weight:800}
+.stp strong{display:block;font-size:26px;margin-top:26px}
+.stp small{font-size:20px;margin-top:6px;color:var(--dk2)}
+.url{position:absolute;left:96px;bottom:64px;font-weight:800;font-size:20px}
+/* nav */
+.nav{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);display:flex;align-items:center;gap:10px;background:rgba(14,16,18,.7);backdrop-filter:blur(8px);padding:6px 10px;border-radius:30px;opacity:.25;transition:opacity .3s;z-index:9}
+.nav:hover,.nav:focus-within{opacity:1}
+.nav button{background:none;border:0;color:#fff;width:34px;height:34px;border-radius:50%;cursor:pointer;display:grid;place-items:center;font-size:15px}
+.nav button:hover{background:rgba(255,255,255,.12)}
+.dots{display:flex;gap:6px}
+.dots button{width:10px;height:10px;padding:0;border-radius:50%;background:#4A4D50}
+.dots button.on{background:var(--or)}
+@media (prefers-reduced-motion:reduce){*,*:before{animation:none!important;transition:none!important}.a,.step,.notif{opacity:1!important;transform:none!important}.kf-fill{width:68%}.steps-line{transform:none}}
+@media print{html,body{overflow:visible;background:none}.deck{position:static;display:block}.stage{transform:none!important}.slide{position:relative;opacity:1;visibility:visible;page-break-after:always}.a,.step,.notif{opacity:1;transform:none}.nav{display:none}}
+</style></head>
+<body>
+<main class="deck" id="deck" aria-live="polite"><div class="stage" id="stage">
+<section class="slide dark cover" data-n="1">
+  <div class="vf tl"></div><div class="vf tr"></div><div class="vf bl"></div><div class="vf br"></div>
+  
+  
+  <div class="brand a" style="--d:0">ZDANMOTION</div>
+  <div class="cover-l">
+    <h1 class="a" style="--d:1">Fler hembesök.<br><em>Fler vunna jobb.</em></h1>
+    <p class="lead a" style="--d:2">Videoannonser med motion graphics för byggföretag. Vi kvalificerar leads och bokar hembesöken direkt i din kalender.</p>
+    <div class="chips a" style="--d:3">
+      <span class="chip"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="ic " aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M488 64h-8v20c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12V64H96v20c0 6.6-5.4 12-12 12H44c-6.6 0-12-5.4-12-12V64h-8C10.7 64 0 74.7 0 88v336c0 13.3 10.7 24 24 24h8v-20c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v20h320v-20c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v20h8c13.3 0 24-10.7 24-24V88c0-13.3-10.7-24-24-24zM96 372c0 6.6-5.4 12-12 12H44c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40zm0-96c0 6.6-5.4 12-12 12H44c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40zm0-96c0 6.6-5.4 12-12 12H44c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40zm272 208c0 6.6-5.4 12-12 12H156c-6.6 0-12-5.4-12-12v-96c0-6.6 5.4-12 12-12h200c6.6 0 12 5.4 12 12v96zm0-168c0 6.6-5.4 12-12 12H156c-6.6 0-12-5.4-12-12v-96c0-6.6 5.4-12 12-12h200c6.6 0 12 5.4 12 12v96zm112 152c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40zm0-96c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40zm0-96c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40z"></path></svg>Motion graphics</span>
+      <span class="chip"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="ic " aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M480 288c0-80.25-49.28-148.92-119.19-177.62L320 192V80a16 16 0 0 0-16-16h-96a16 16 0 0 0-16 16v112l-40.81-81.62C81.28 139.08 32 207.75 32 288v64h448zm16 96H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h480a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16z"></path></svg>För byggföretag</span>
+      <span class="chip"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" class="ic " aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M436 160H12c-6.627 0-12-5.373-12-12v-36c0-26.51 21.49-48 48-48h48V12c0-6.627 5.373-12 12-12h40c6.627 0 12 5.373 12 12v52h128V12c0-6.627 5.373-12 12-12h40c6.627 0 12 5.373 12 12v52h48c26.51 0 48 21.49 48 48v36c0 6.627-5.373 12-12 12zM12 192h424c6.627 0 12 5.373 12 12v260c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V204c0-6.627 5.373-12 12-12zm333.296 95.947l-28.169-28.398c-4.667-4.705-12.265-4.736-16.97-.068L194.12 364.665l-45.98-46.352c-4.667-4.705-12.266-4.736-16.971-.068l-28.397 28.17c-4.705 4.667-4.736 12.265-.068 16.97l82.601 83.269c4.667 4.705 12.265 4.736 16.97.068l142.953-141.805c4.705-4.667 4.736-12.265.068-16.97z"></path></svg>Bokade hembesök</span>
+    </div>
+    <div class="kf a" style="--d:4">
+      <div class="kf-track"><div class="kf-fill"></div></div>
+      <i class="dia" style="left:0%;--k:0"></i><i class="dia" style="left:22%;--k:1"></i><i class="dia" style="left:46%;--k:2"></i><i class="dia" style="left:68%;--k:3"></i><i class="dia" style="left:100%;--k:4"></i>
+      <span class="kf-l">Annons</span><span class="kf-r">Hembesök</span>
+    </div>
+  </div>
+  <div class="cover-r"><div class="glow"></div><img class="phone float" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MDAiIGhlaWdodD0iMTIyMCI+CiAgPGRlZnM+CiAgIDxsaW5lYXJHcmFkaWVudCBpZD0ic2t5IiB4MT0iMCIgeTE9IjAiIHgyPSIwIiB5Mj0iMSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjMkUzMzM4Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMTUxNzFBIi8+PC9saW5lYXJHcmFkaWVudD4KICAgPGNsaXBQYXRoIGlkPSJzY3IiPjxyZWN0IHg9IjIyIiB5PSIyMiIgd2lkdGg9IjU1NiIgaGVpZ2h0PSIxMTc2IiByeD0iNTYiLz48L2NsaXBQYXRoPgogIDwvZGVmcz4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iNjAwIiBoZWlnaHQ9IjEyMjAiIHJ4PSI3NiIgZmlsbD0iIzBFMTAxMiIvPgogIDxyZWN0IHg9IjYiIHk9IjYiIHdpZHRoPSI1ODgiIGhlaWdodD0iMTIwOCIgcng9IjcwIiBmaWxsPSJub25lIiBzdHJva2U9IiMzQTNGNDQiIHN0cm9rZS13aWR0aD0iMyIvPgogIDxnIGNsaXAtcGF0aD0idXJsKCNzY3IpIj4KICAgPHJlY3QgeD0iMjIiIHk9IjIyIiB3aWR0aD0iNTU2IiBoZWlnaHQ9IjExNzYiIGZpbGw9InVybCgjc2t5KSIvPgogICA8Y2lyY2xlIGN4PSI0NzAiIGN5PSIzMzAiIHI9IjE1MCIgZmlsbD0iI0U4NzcyRSIgZmlsbC1vcGFjaXR5PSIwLjEyIi8+CiAgIDwhLS0gaGVhZGVyIC0tPgogICA8Y2lyY2xlIGN4PSI4MCIgY3k9IjExMCIgcj0iMjgiIGZpbGw9IiNFODc3MkUiLz4KICAgPHRleHQgeD0iODAiIHk9IjEyMCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXdlaWdodD0iNzAwIiBmb250LXNpemU9IjI2IiBmaWxsPSIjMUMxRjIyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5CPC90ZXh0PgogICA8dGV4dCB4PSIxMjQiIHk9IjEwNCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXdlaWdodD0iNzAwIiBmb250LXNpemU9IjI2IiBmaWxsPSIjZmZmIj5CeWdnZmlybWFuIEFCPC90ZXh0PgogICA8dGV4dCB4PSIxMjQiIHk9IjEzNiIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjIxIiBmaWxsPSIjQjlCNEFBIj5TcG9uc3JhZDwvdGV4dD4KICAgPCEtLSBjcmFuZSAtLT4KICAgPGxpbmUgeDE9IjUwMCIgeTE9Ijg0MCIgeDI9IjUwMCIgeTI9IjMwMCIgc3Ryb2tlPSIjQjlCNEFBIiBzdHJva2Utd2lkdGg9IjEwIi8+CiAgIDxsaW5lIHgxPSIyNTAiIHkxPSIzMTAiIHgyPSI1NjAiIHkyPSIzMTAiIHN0cm9rZT0iI0I5QjRBQSIgc3Ryb2tlLXdpZHRoPSIxMCIvPgogICA8bGluZSB4MT0iNTAwIiB5MT0iMjUwIiB4Mj0iMzAwIiB5Mj0iMzEwIiBzdHJva2U9IiNCOUI0QUEiIHN0cm9rZS13aWR0aD0iNCIvPgogICA8bGluZSB4MT0iNTAwIiB5MT0iMjUwIiB4Mj0iNTYwIiB5Mj0iMzEwIiBzdHJva2U9IiNCOUI0QUEiIHN0cm9rZS13aWR0aD0iNCIvPgogICA8bGluZSB4MT0iNTAwIiB5MT0iMjUwIiB4Mj0iNTAwIiB5Mj0iMzEwIiBzdHJva2U9IiNCOUI0QUEiIHN0cm9rZS13aWR0aD0iNiIvPgogICA8bGluZSB4MT0iMzIwIiB5MT0iMzEwIiB4Mj0iMzIwIiB5Mj0iNDIwIiBzdHJva2U9IiNCOUI0QUEiIHN0cm9rZS13aWR0aD0iMyIvPgogICA8cmVjdCB4PSIyNzUiIHk9IjQyMCIgd2lkdGg9IjkwIiBoZWlnaHQ9IjI2IiBmaWxsPSIjRTg3NzJFIi8+CiAgIDxsaW5lIHgxPSI3MCIgeTE9IjU2MCIgeDI9IjEzMCIgeTI9IjU2MCIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4zNSIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48bGluZSB4MT0iNjAiIHkxPSI2MDAiIHgyPSIxNTAiIHkyPSI2MDAiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLW9wYWNpdHk9IjAuMzUiIHN0cm9rZS13aWR0aD0iNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PGxpbmUgeDE9IjgwIiB5MT0iNzAwIiB4Mj0iMTI1IiB5Mj0iNzAwIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS1vcGFjaXR5PSIwLjM1IiBzdHJva2Utd2lkdGg9IjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogICA8IS0tIGhvdXNlIC0tPgogICA8bGluZSB4MT0iMTQwIiB5MT0iNjQwIiB4Mj0iMTQwIiB5Mj0iNjQ5LjUiIHN0cm9rZT0iI0YzQjI3RSIgc3Ryb2tlLXdpZHRoPSI1Ii8+PGxpbmUgeDE9IjE5My4zIiB5MT0iNjQwIiB4Mj0iMTkzLjMiIHkyPSI1OTguODY1IiBzdHJva2U9IiNGM0IyN0UiIHN0cm9rZS13aWR0aD0iNSIvPjxsaW5lIHgxPSIyNDYuNiIgeTE9IjY0MCIgeDI9IjI0Ni42IiB5Mj0iNTQ4LjIzIiBzdHJva2U9IiNGM0IyN0UiIHN0cm9rZS13aWR0aD0iNSIvPjxsaW5lIHgxPSIyOTkuOSIgeTE9IjY0MCIgeDI9IjI5OS45IiB5Mj0iNDk4IiBzdHJva2U9IiNGM0IyN0UiIHN0cm9rZS13aWR0aD0iNSIvPjxsaW5lIHgxPSIzNTMuMiIgeTE9IjY0MCIgeDI9IjM1My4yIiB5Mj0iNTQ4LjA0IiBzdHJva2U9IiNGM0IyN0UiIHN0cm9rZS13aWR0aD0iNSIvPjxsaW5lIHgxPSI0MDYuNSIgeTE9IjY0MCIgeDI9IjQwNi41IiB5Mj0iNTk4LjY3NSIgc3Ryb2tlPSIjRjNCMjdFIiBzdHJva2Utd2lkdGg9IjUiLz48bGluZSB4MT0iNDU5Ljc5OTk5OTk5OTk5OTk1IiB5MT0iNjQwIiB4Mj0iNDU5Ljc5OTk5OTk5OTk5OTk1IiB5Mj0iNjQ5LjMxIiBzdHJva2U9IiNGM0IyN0UiIHN0cm9rZS13aWR0aD0iNSIvPgogICA8cG9seWxpbmUgcG9pbnRzPSIxMjgsNjQ0IDMwMCw0OTQgNDcyLDY0NCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRTg3NzJFIiBzdHJva2Utd2lkdGg9IjEyIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CiAgIDxsaW5lIHgxPSIxNDAiIHkxPSI2NDAiIHgyPSI0NjAiIHkyPSI2NDAiIHN0cm9rZT0iI0U4NzcyRSIgc3Ryb2tlLXdpZHRoPSI5Ii8+CiAgIDxsaW5lIHgxPSIxNTAiIHkxPSI2NDAiIHgyPSIxNTAiIHkyPSI4MjAiIHN0cm9rZT0iI0U4NzcyRSIgc3Ryb2tlLXdpZHRoPSI3Ii8+PGxpbmUgeDE9IjE4Ny41IiB5MT0iNjQwIiB4Mj0iMTg3LjUiIHkyPSI4MjAiIHN0cm9rZT0iI0U4NzcyRSIgc3Ryb2tlLXdpZHRoPSI3Ii8+PGxpbmUgeDE9IjIyNSIgeTE9IjY0MCIgeDI9IjIyNSIgeTI9IjgyMCIgc3Ryb2tlPSIjRTg3NzJFIiBzdHJva2Utd2lkdGg9IjciLz48bGluZSB4MT0iMjYyLjUiIHkxPSI2NDAiIHgyPSIyNjIuNSIgeTI9IjgyMCIgc3Ryb2tlPSIjRTg3NzJFIiBzdHJva2Utd2lkdGg9IjciLz48bGluZSB4MT0iMzAwIiB5MT0iNjQwIiB4Mj0iMzAwIiB5Mj0iODIwIiBzdHJva2U9IiNFODc3MkUiIHN0cm9rZS13aWR0aD0iNyIvPjxsaW5lIHgxPSIzMzcuNSIgeTE9IjY0MCIgeDI9IjMzNy41IiB5Mj0iODIwIiBzdHJva2U9IiNFODc3MkUiIHN0cm9rZS13aWR0aD0iNyIvPjxsaW5lIHgxPSIzNzUiIHkxPSI2NDAiIHgyPSIzNzUiIHkyPSI4MjAiIHN0cm9rZT0iI0U4NzcyRSIgc3Ryb2tlLXdpZHRoPSI3Ii8+PGxpbmUgeDE9IjQxMi41IiB5MT0iNjQwIiB4Mj0iNDEyLjUiIHkyPSI4MjAiIHN0cm9rZT0iI0U4NzcyRSIgc3Ryb2tlLXdpZHRoPSI3Ii8+PGxpbmUgeDE9IjQ1MCIgeTE9IjY0MCIgeDI9IjQ1MCIgeTI9IjgyMCIgc3Ryb2tlPSIjRTg3NzJFIiBzdHJva2Utd2lkdGg9IjciLz4KICAgPHJlY3QgeD0iMjI1IiB5PSI3MDAiIHdpZHRoPSI3MCIgaGVpZ2h0PSIxMjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSI1Ii8+CiAgIDxyZWN0IHg9IjMzMCIgeT0iNjgwIiB3aWR0aD0iODAiIGhlaWdodD0iNjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSI1Ii8+CiAgIDxsaW5lIHgxPSI0NTUiIHkxPSI2NDAiIHgyPSI0NTUiIHkyPSI4NDAiIHN0cm9rZT0iIzhEODg3RiIgc3Ryb2tlLXdpZHRoPSI1Ii8+PGxpbmUgeDE9IjUzNSIgeTE9IjY0MCIgeDI9IjUzNSIgeTI9Ijg0MCIgc3Ryb2tlPSIjOEQ4ODdGIiBzdHJva2Utd2lkdGg9IjUiLz4KICAgPGxpbmUgeDE9IjQ2MCIgeTE9IjY2MCIgeDI9IjUzMCIgeTI9IjY2MCIgc3Ryb2tlPSIjOEQ4ODdGIiBzdHJva2Utd2lkdGg9IjUiLz48bGluZSB4MT0iNDYwIiB5MT0iNzE0IiB4Mj0iNTMwIiB5Mj0iNzE0IiBzdHJva2U9IiM4RDg4N0YiIHN0cm9rZS13aWR0aD0iNSIvPjxsaW5lIHgxPSI0NjAiIHkxPSI3NjgiIHgyPSI1MzAiIHkyPSI3NjgiIHN0cm9rZT0iIzhEODg3RiIgc3Ryb2tlLXdpZHRoPSI1Ii8+CiAgIDxyZWN0IHg9IjIyIiB5PSI4MjAiIHdpZHRoPSI1NTYiIGhlaWdodD0iMzgwIiBmaWxsPSIjMjQyODJDIi8+CiAgIDxyZWN0IHg9IjExMCIgeT0iODIwIiB3aWR0aD0iMzgwIiBoZWlnaHQ9IjIyIiBmaWxsPSIjNEE0RDUwIi8+CiAgIDwhLS0gcGxheSAtLT4KICAgPGNpcmNsZSBjeD0iMzAwIiBjeT0iNTYwIiByPSI3MCIgZmlsbD0iIzAwMCIgZmlsbC1vcGFjaXR5PSIwLjQ1Ii8+CiAgIDxjaXJjbGUgY3g9IjMwMCIgY3k9IjU2MCIgcj0iNzAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSI1Ii8+CiAgIDxwb2x5Z29uIHBvaW50cz0iMjgyLDUyNSAyODIsNTk1IDMzOCw1NjAiIGZpbGw9IiNmZmYiLz4KICAgPCEtLSBjYXB0aW9uICsgcHJvZ3Jlc3MgLS0+CiAgIDx0ZXh0IHg9IjU2IiB5PSI5MTAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC13ZWlnaHQ9IjcwMCIgZm9udC1zaXplPSIzNCIgZmlsbD0iI2ZmZiI+RnLDpW4gcml0bmluZyB0aWxsIG55Y2tlbC48L3RleHQ+CiAgIDx0ZXh0IHg9IjU2IiB5PSI5NTYiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyNSIgZmlsbD0iI0I5QjRBQSI+VGlsbGJ5Z2duYWQgaSBUw6RieSDCtyAxMiB2ZWNrb3I8L3RleHQ+CiAgIDxyZWN0IHg9IjU2IiB5PSI5OTYiIHdpZHRoPSI0ODgiIGhlaWdodD0iOCIgcng9IjQiIGZpbGw9IiM0QTRENTAiLz4KICAgPHJlY3QgeD0iNTYiIHk9Ijk5NiIgd2lkdGg9IjMwMCIgaGVpZ2h0PSI4IiByeD0iNCIgZmlsbD0iI0U4NzcyRSIvPgogICA8Y2lyY2xlIGN4PSIzNTYiIGN5PSIxMDAwIiByPSIxMyIgZmlsbD0iI2ZmZiIvPgogICA8cmVjdCB4PSI1NiIgeT0iMTA0MCIgd2lkdGg9IjQ4OCIgaGVpZ2h0PSI5MiIgcng9IjIwIiBmaWxsPSIjRTg3NzJFIi8+CiAgIDx0ZXh0IHg9IjMwMCIgeT0iMTA5OSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXdlaWdodD0iNzAwIiBmb250LXNpemU9IjM0IiBmaWxsPSIjMUMxRjIyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5Cb2thIGhlbWJlc8O2azwvdGV4dD4KICA8L2c+CiAgPHJlY3QgeD0iMjMwIiB5PSI0MCIgd2lkdGg9IjE0MCIgaGVpZ2h0PSIzMCIgcng9IjE1IiBmaWxsPSIjMEUxMDEyIi8+CiAgPC9zdmc+" alt="Exempel på videoannons för ett byggföretag"></div>
+</section>
+<section class="slide light" data-n="2">
+  <div class="vf tl"></div><div class="vf tr"></div><div class="vf bl"></div><div class="vf br"></div>
+  <div class="rec"><span class="dot"></span>REC <span class="tc" data-base="2">00:00:02:00</span></div>
+  <div class="foot"><span>zdanmotion.se</span><span>2</span></div>
+  <div class="kicker a" style="--d:0">DAGENS AGENDA</div>
+  <h2 class="a" style="--d:1">Det här går vi igenom idag</h2>
+  <div class="agenda">
+    <div class="ag-list"><div class="card ag a" style="--d:2"><b class="num">01</b><span class="icc dk"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" class="ic " aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M336.2 64H47.8C21.4 64 0 85.4 0 111.8v288.4C0 426.6 21.4 448 47.8 448h288.4c26.4 0 47.8-21.4 47.8-47.8V111.8c0-26.4-21.4-47.8-47.8-47.8zm189.4 37.7L416 177.3v157.4l109.6 75.5c21.2 14.6 50.4-.3 50.4-25.8V127.5c0-25.4-29.1-40.4-50.4-25.8z"></path></svg></span><div><strong>Så fungerar systemet</strong><small>Videoannonser via Meta till husägare i ert område.</small></div></div><div class="card ag a" style="--d:2.6"><b class="num">02</b><span class="icc dk"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" class="ic " aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M436 160H12c-6.627 0-12-5.373-12-12v-36c0-26.51 21.49-48 48-48h48V12c0-6.627 5.373-12 12-12h40c6.627 0 12 5.373 12 12v52h128V12c0-6.627 5.373-12 12-12h40c6.627 0 12 5.373 12 12v52h48c26.51 0 48 21.49 48 48v36c0 6.627-5.373 12-12 12zM12 192h424c6.627 0 12 5.373 12 12v260c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V204c0-6.627 5.373-12 12-12zm333.296 95.947l-28.169-28.398c-4.667-4.705-12.265-4.736-16.97-.068L194.12 364.665l-45.98-46.352c-4.667-4.705-12.266-4.736-16.971-.068l-28.397 28.17c-4.705 4.667-4.736 12.265-.068 16.97l82.601 83.269c4.667 4.705 12.265 4.736 16.97.068l142.953-141.805c4.705-4.667 4.736-12.265.068-16.97z"></path></svg></span><div><strong>Kvalificering och bokning</strong><small>Hur vi bokar hembesök direkt i din kalender.</small></div></div><div class="card ag a" style="--d:3.2"><b class="num">03</b><span class="icc dk"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" class="ic " aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M272 0H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h224c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zM160 480c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm112-108c0 6.6-5.4 12-12 12H60c-6.6 0-12-5.4-12-12V60c0-6.6 5.4-12 12-12h200c6.6 0 12 5.4 12 12v312z"></path></svg></span><div><strong>Appen</strong><small>Hembesök, notiser och leads på ett ställe.</small></div></div><div class="card ag a" style="--d:3.8"><b class="num">04</b><span class="icc dk"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" class="ic " aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M434.7 64h-85.9c-8 0-15.7 3-21.6 8.4l-98.3 90c-.1.1-.2.3-.3.4-16.6 15.6-16.3 40.5-2.1 56 12.7 13.9 39.4 17.6 56.1 2.7.1-.1.3-.1.4-.2l79.9-73.2c6.5-5.9 16.7-5.5 22.6 1 6 6.5 5.5 16.6-1 22.6l-26.1 23.9L504 313.8c2.9 2.4 5.5 5 7.9 7.7V128l-54.6-54.6c-5.9-6-14.1-9.4-22.6-9.4zM544 128.2v223.9c0 17.7 14.3 32 32 32h64V128.2h-96zm48 223.9c-8.8 0-16-7.2-16-16s7.2-16 16-16 16 7.2 16 16-7.2 16-16 16zM0 384h64c17.7 0 32-14.3 32-32V128.2H0V384zm48-63.9c8.8 0 16 7.2 16 16s-7.2 16-16 16-16-7.2-16-16c0-8.9 7.2-16 16-16zm435.9 18.6L334.6 217.5l-30 27.5c-29.7 27.1-75.2 24.5-101.7-4.4-26.9-29.4-24.8-74.9 4.4-101.7L289.1 64h-83.8c-8.5 0-16.6 3.4-22.6 9.4L128 128v223.9h18.3l90.5 81.9c27.4 22.3 67.7 18.1 90-9.3l.2-.2 17.9 15.5c15.9 13 39.4 10.5 52.3-5.4l31.4-38.6 5.4 4.4c13.7 11.1 33.9 9.1 45-4.7l9.5-11.7c11.2-13.8 9.1-33.9-4.6-45.1z"></path></svg></span><div><strong>Investering och nästa steg</strong><small>Vi bestämmer tillsammans om vi kör.</small></div></div></div>
+    <div class="goal a" style="--d:3">
+      <div class="kicker">MÅLET</div>
+      <div class="goal-row"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" class="ic or" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"></path></svg><strong>Fler hembesök varje månad</strong></div><div class="goal-row"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" class="ic or" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M0 464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V192H0v272zm320-196c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM192 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM64 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zM400 64h-48V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H160V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H48C21.5 64 0 85.5 0 112v48h448v-48c0-26.5-21.5-48-48-48z"></path></svg><strong>Trygghet att planera framåt</strong></div><div class="goal-row"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 416 512" class="ic or" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M272 96c26.51 0 48-21.49 48-48S298.51 0 272 0s-48 21.49-48 48 21.49 48 48 48zM113.69 317.47l-14.8 34.52H32c-17.67 0-32 14.33-32 32s14.33 32 32 32h77.45c19.25 0 36.58-11.44 44.11-29.09l8.79-20.52-10.67-6.3c-17.32-10.23-30.06-25.37-37.99-42.61zM384 223.99h-44.03l-26.06-53.25c-12.5-25.55-35.45-44.23-61.78-50.94l-71.08-21.14c-28.3-6.8-57.77-.55-80.84 17.14l-39.67 30.41c-14.03 10.75-16.69 30.83-5.92 44.86s30.84 16.66 44.86 5.92l39.69-30.41c7.67-5.89 17.44-8 25.27-6.14l14.7 4.37-37.46 87.39c-12.62 29.48-1.31 64.01 26.3 80.31l84.98 50.17-27.47 87.73c-5.28 16.86 4.11 34.81 20.97 40.09 3.19 1 6.41 1.48 9.58 1.48 13.61 0 26.23-8.77 30.52-22.45l31.64-101.06c5.91-20.77-2.89-43.08-21.64-54.39l-61.24-36.14 31.31-78.28 20.27 41.43c8 16.34 24.92 26.89 43.11 26.89H384c17.67 0 32-14.33 32-32s-14.33-31.99-32-31.99z"></path></svg><strong>Slippa jaga jobb och leads</strong></div>
+      <p><i>Känns det inte rätt är det helt okej – känns det rätt kör vi igång direkt.</i></p>
+    </div>
+  </div>
+</section>
+<section class="slide dark" data-n="3">
+  <div class="vf tl"></div><div class="vf tr"></div><div class="vf bl"></div><div class="vf br"></div>
+  <div class="rec"><span class="dot"></span>REC <span class="tc" data-base="3">00:00:03:00</span></div>
+  <div class="foot"><span>zdanmotion.se</span><span>3</span></div>
+  <div class="kicker a" style="--d:0">SÅ FUNGERAR DET</div>
+  <h2 class="a" style="--d:1">Från videoannons till bokat hembesök</h2>
+  <div class="editor a" style="--d:2">
+    <div class="ruler"><i class=""></i><i class="s"></i><i class=""></i><i class="s"></i><i class=""></i><i class="s"></i><i class=""></i><i class="s"></i><i class=""></i><i class="s"></i><i class=""></i><i class="s"></i><i class=""></i><i class="s"></i><i class=""></i><i class="s"></i><i class=""></i><i class="s"></i><i class=""></i><i class="s"></i><i class=""></i><i class="s"></i><i class=""></i><i class="s"></i><i class=""></i><i class="s"></i><i class=""></i><i class="s"></i><i class=""></i><i class="s"></i><i class=""></i><i class="s"></i><i class=""></i></div>
+    <div class="playhead"></div>
+    <div class="clips"><div class="step" style="--k:0">
+      <div class="clip "><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" class="ic " aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M336.2 64H47.8C21.4 64 0 85.4 0 111.8v288.4C0 426.6 21.4 448 47.8 448h288.4c26.4 0 47.8-21.4 47.8-47.8V111.8c0-26.4-21.4-47.8-47.8-47.8zm189.4 37.7L416 177.3v157.4l109.6 75.5c21.2 14.6 50.4-.3 50.4-25.8V127.5c0-25.4-29.1-40.4-50.4-25.8z"></path></svg><div><small>01</small><strong>Videoannons</strong></div></div>
+      <div class="kfrow"><i class="dia "></i></div>
+      <p>Motion graphics av era bilder och filmer från färdiga jobb – eller med AI.</p></div><div class="step" style="--k:1">
+      <div class="clip "><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 496 512" class="ic " aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M248 8C111.03 8 0 119.03 0 256s111.03 248 248 248 248-111.03 248-248S384.97 8 248 8zm0 432c-101.69 0-184-82.29-184-184 0-101.69 82.29-184 184-184 101.69 0 184 82.29 184 184 0 101.69-82.29 184-184 184zm0-312c-70.69 0-128 57.31-128 128s57.31 128 128 128 128-57.31 128-128-57.31-128-128-128zm0 192c-35.29 0-64-28.71-64-64s28.71-64 64-64 64 28.71 64 64-28.71 64-64 64z"></path></svg><div><small>02</small><strong>Rätt målgrupp</strong></div></div>
+      <div class="kfrow"><i class="dia "></i></div>
+      <p>Betald annonsering via Meta till husägare i ert område, 300 kr/dag.</p></div><div class="step" style="--k:2">
+      <div class="clip hot"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="ic " aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M487.976 0H24.028C2.71 0-8.047 25.866 7.058 40.971L192 225.941V432c0 7.831 3.821 15.17 10.237 19.662l80 55.98C298.02 518.69 320 507.493 320 487.98V225.941l184.947-184.97C520.021 25.896 509.338 0 487.976 0z"></path></svg><div><small>03</small><strong>Vi kvalificerar</strong></div></div>
+      <div class="kfrow"><i class="dia on"></i></div>
+      <p>Formulär och SMS: projekt, budget och tidsplan. Prisjägarna sållas bort.</p></div><div class="step" style="--k:3">
+      <div class="clip hot"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" class="ic " aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M436 160H12c-6.627 0-12-5.373-12-12v-36c0-26.51 21.49-48 48-48h48V12c0-6.627 5.373-12 12-12h40c6.627 0 12 5.373 12 12v52h128V12c0-6.627 5.373-12 12-12h40c6.627 0 12 5.373 12 12v52h48c26.51 0 48 21.49 48 48v36c0 6.627-5.373 12-12 12zM12 192h424c6.627 0 12 5.373 12 12v260c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V204c0-6.627 5.373-12 12-12zm333.296 95.947l-28.169-28.398c-4.667-4.705-12.265-4.736-16.97-.068L194.12 364.665l-45.98-46.352c-4.667-4.705-12.266-4.736-16.971-.068l-28.397 28.17c-4.705 4.667-4.736 12.265-.068 16.97l82.601 83.269c4.667 4.705 12.265 4.736 16.97.068l142.953-141.805c4.705-4.667 4.736-12.265.068-16.97z"></path></svg><div><small>04</small><strong>I din kalender</strong></div></div>
+      <div class="kfrow"><i class="dia on"></i></div>
+      <p>Kunden bokas direkt in i er kalender. Ni åker ut och ger offert.</p></div></div>
+  </div>
+</section>
+<section class="slide light" data-n="4">
+  <div class="vf tl"></div><div class="vf tr"></div><div class="vf bl"></div><div class="vf br"></div>
+  <div class="rec"><span class="dot"></span>REC <span class="tc" data-base="4">00:00:04:00</span></div>
+  <div class="foot"><span>zdanmotion.se</span><span>4</span></div>
+  <div class="kicker a" style="--d:0">KVALIFICERING & BOKNING</div>
+  <h2 class="a" style="--d:1">Kvalificerade leads – direkt i din kalender</h2>
+  <p class="sub a" style="--d:1.5">Vårt team kvalificerar via formulär och SMS och bokar in hembesöket åt dig. Kunden får uppföljningsmejl om ert företag så att de känner sig trygga med att välja er.</p>
+  <div class="qual">
+    <div class="card leadc a" style="--d:2">
+      <div class="lead-h"><div><strong>Ny förfrågan</strong><small>Anna L. · Täby</small></div><span class="badge">KVALIFICERAD</span></div>
+      <div class="qa" style="--k:0"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="ic or" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg><span>Projekt</span><b>Altan 30 kvm</b></div><div class="qa" style="--k:1"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="ic or" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg><span>Budget</span><b>150–200 000 kr</b></div><div class="qa" style="--k:2"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="ic or" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg><span>Start</span><b>Inom 2 månader</b></div><div class="qa" style="--k:3"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="ic or" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg><span>Husägare</span><b>Ja</b></div>
+    </div>
+    <div class="arrow a" style="--d:3"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" class="ic " aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"></path></svg></div>
+    <div class="card cal a" style="--d:3.5">
+      <div class="cal-h"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" class="ic " aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M0 464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V192H0v272zm320-196c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM192 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM64 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zM400 64h-48V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H160V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H48C21.5 64 0 85.5 0 112v48h448v-48c0-26.5-21.5-48-48-48z"></path></svg><strong>Din kalender · 3 hembesök</strong></div>
+      <div class="days"><span>Mån</span><span>Tis</span><span>Ons</span><span>Tor</span><span>Fre</span></div>
+      <div class="grid"><div class="cell"><div class="evt hot" style="--k:0"><b>Hembesök</b>Anna L.</div></div><div class="cell"></div><div class="cell"></div><div class="cell"><div class="evt " style="--k:3"><b>Pågående</b>jobb</div></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"><div class="evt hot" style="--k:2"><b>Hembesök</b>Erik S.</div></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"><div class="evt " style="--k:1"><b>Pågående</b>jobb</div></div><div class="cell"></div><div class="cell"></div><div class="cell"><div class="evt hot" style="--k:4"><b>Hembesök</b>Maria K.</div></div></div>
+    </div>
+  </div>
+</section>
+<section class="slide dark" data-n="5">
+  <div class="vf tl"></div><div class="vf tr"></div><div class="vf bl"></div><div class="vf br"></div>
+  <div class="rec"><span class="dot"></span>REC <span class="tc" data-base="5">00:00:05:00</span></div>
+  <div class="foot"><span>zdanmotion.se</span><span>5</span></div>
+  <div class="kicker a" style="--d:0">APPEN</div>
+  <h2 class="a" style="--d:1">Full överblick – i mobilen och på datorn</h2>
+  <div class="app">
+    <div class="feats"><div class="feat a" style="--d:2"><span class="icc dk2"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" class="ic " aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M0 464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V192H0v272zm320-196c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM192 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM64 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zM400 64h-48V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H160V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H48C21.5 64 0 85.5 0 112v48h448v-48c0-26.5-21.5-48-48-48z"></path></svg></span><div><strong>Alla hembesök samlade</strong><small>Ett enkelt kalendersystem med adress och info om jobbet.</small></div></div><div class="feat a" style="--d:2.6"><span class="icc dk2"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" class="ic " aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M224 512c35.32 0 63.97-28.65 63.97-64H160.03c0 35.35 28.65 64 63.97 64zm215.39-149.71c-19.32-20.76-55.47-51.99-55.47-154.29 0-77.7-54.48-139.9-127.94-155.16V32c0-17.67-14.32-32-31.98-32s-31.98 14.33-31.98 32v20.84C118.56 68.1 64.08 130.3 64.08 208c0 102.3-36.15 133.53-55.47 154.29-6 6.45-8.66 14.16-8.61 21.71.11 16.4 12.98 32 32.1 32h383.8c19.12 0 32-15.6 32.1-32 .05-7.55-2.61-15.27-8.61-21.71z"></path></svg></span><div><strong>SMS-notis vid varje bokning</strong><small>Du får besked direkt när ett hembesök bokas in.</small></div></div><div class="feat a" style="--d:3.2"><span class="icc dk2"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" class="ic " aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M416 192c0-88.4-93.1-160-208-160S0 103.6 0 192c0 34.3 14.1 65.9 38 92-13.4 30.2-35.5 54.2-35.8 54.5-2.2 2.3-2.8 5.7-1.5 8.7S4.8 352 8 352c36.6 0 66.9-12.3 88.7-25 32.2 15.7 70.3 25 111.3 25 114.9 0 208-71.6 208-160zm122 220c23.9-26 38-57.7 38-92 0-66.9-53.5-124.2-129.3-148.1.9 6.6 1.3 13.3 1.3 20.1 0 105.9-107.7 192-240 192-10.8 0-21.3-.8-31.7-1.9C207.8 439.6 281.8 480 368 480c41 0 79.1-9.2 111.3-25 21.8 12.7 52.1 25 88.7 25 3.2 0 6.1-1.9 7.3-4.8 1.3-2.9.7-6.3-1.5-8.7-.3-.3-22.4-24.2-35.8-54.5z"></path></svg></span><div><strong>Chatta med leads via SMS</strong><small>All kontakt med kunderna på ett ställe.</small></div></div><div class="feat a" style="--d:3.8"><span class="icc dk2"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="ic " aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M496 384H64V80c0-8.84-7.16-16-16-16H16C7.16 64 0 71.16 0 80v336c0 17.67 14.33 32 32 32h464c8.84 0 16-7.16 16-16v-32c0-8.84-7.16-16-16-16zM464 96H345.94c-21.38 0-32.09 25.85-16.97 40.97l32.4 32.4L288 242.75l-73.37-73.37c-12.5-12.5-32.76-12.5-45.25 0l-68.69 68.69c-6.25 6.25-6.25 16.38 0 22.63l22.62 22.62c6.25 6.25 16.38 6.25 22.63 0L192 237.25l73.37 73.37c12.5 12.5 32.76 12.5 45.25 0l96-96 32.4 32.4c15.12 15.12 40.97 4.41 40.97-16.97V112c.01-8.84-7.15-16-15.99-16z"></path></svg></span><div><strong>Överblick och statistik</strong><small>Se hur många hembesök som bokas varje månad.</small></div></div></div>
+    <div class="app-r"><div class="glow"></div><img class="phone sm float" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MDAiIGhlaWdodD0iMTIyMCI+CiAgPGRlZnM+PGNsaXBQYXRoIGlkPSJzY3IiPjxyZWN0IHg9IjIyIiB5PSIyMiIgd2lkdGg9IjU1NiIgaGVpZ2h0PSIxMTc2IiByeD0iNTYiLz48L2NsaXBQYXRoPjwvZGVmcz4KICA8cmVjdCB3aWR0aD0iNjAwIiBoZWlnaHQ9IjEyMjAiIHJ4PSI3NiIgZmlsbD0iIzBFMTAxMiIvPgogIDxyZWN0IHg9IjYiIHk9IjYiIHdpZHRoPSI1ODgiIGhlaWdodD0iMTIwOCIgcng9IjcwIiBmaWxsPSJub25lIiBzdHJva2U9IiMzQTNGNDQiIHN0cm9rZS13aWR0aD0iMyIvPgogIDxnIGNsaXAtcGF0aD0idXJsKCNzY3IpIj4KICAgPHJlY3QgeD0iMjIiIHk9IjIyIiB3aWR0aD0iNTU2IiBoZWlnaHQ9IjExNzYiIGZpbGw9IiMxQzFGMjIiLz4KICAgPHJlY3QgeD0iNDAiIHk9IjExMCIgd2lkdGg9IjUyMCIgaGVpZ2h0PSIxMzAiIHJ4PSIyNiIgZmlsbD0iI0Y3RjZGMyIvPgogICA8cmVjdCB4PSI2MiIgeT0iMTMyIiB3aWR0aD0iODYiIGhlaWdodD0iODYiIHJ4PSIyMCIgZmlsbD0iI0U4NzcyRSIvPgogICA8cGF0aCBkPSJNODYgMTYwIGgzOCB2NDAgaC0zOCB6IE04NiAxNzIgaDM4IiBzdHJva2U9IiMxQzFGMjIiIHN0cm9rZS13aWR0aD0iNiIgZmlsbD0ibm9uZSIvPgogICA8dGV4dCB4PSIxNzAiIHk9IjE2NSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXdlaWdodD0iNzAwIiBmb250LXNpemU9IjI2IiBmaWxsPSIjMUMxRjIyIj5OeXR0IGhlbWJlc8O2ayBib2thdDwvdGV4dD4KICAgPHRleHQgeD0iMTcwIiB5PSIyMDMiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyMyIgZmlsbD0iIzRBNEQ1MCI+QW5uYSBMLiDCtyBNw6VuIDEwOjAwIMK3IEFsdGFuPC90ZXh0PgogICA8dGV4dCB4PSI1MCIgeT0iMzIwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtd2VpZ2h0PSI3MDAiIGZvbnQtc2l6ZT0iNDAiIGZpbGw9IiNmZmYiPkhlbWJlc8O2azwvdGV4dD4KICAgPHRleHQgeD0iNTAiIHk9IjM2NSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjI0IiBmaWxsPSIjQjlCNEFBIj5WZWNrYSA0NSDCtyAzIGJva2FkZTwvdGV4dD4KICAgPHJlY3QgeD0iNTAiIHk9IjM5NSIgd2lkdGg9IjE2MCIgaGVpZ2h0PSI1MCIgcng9IjI1IiBmaWxsPSIjRTg3NzJFIi8+CiAgIDx0ZXh0IHg9IjEzMCIgeT0iNDI5IiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtd2VpZ2h0PSI3MDAiIGZvbnQtc2l6ZT0iMjIiIGZpbGw9IiMxQzFGMjIiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkthbGVuZGVyPC90ZXh0PgogICA8cmVjdCB4PSIyMjUiIHk9IjM5NSIgd2lkdGg9IjEyMCIgaGVpZ2h0PSI1MCIgcng9IjI1IiBmaWxsPSIjMkEyRTMyIi8+CiAgIDx0ZXh0IHg9IjI4NSIgeT0iNDI5IiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjIiIGZpbGw9IiNCOUI0QUEiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkxlYWRzPC90ZXh0PgogICA8cmVjdCB4PSIzNjAiIHk9IjM5NSIgd2lkdGg9IjEyMCIgaGVpZ2h0PSI1MCIgcng9IjI1IiBmaWxsPSIjMkEyRTMyIi8+CiAgIDx0ZXh0IHg9IjQyMCIgeT0iNDI5IiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjIiIGZpbGw9IiNCOUI0QUEiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkNoYXR0PC90ZXh0PgogICA8cmVjdCB4PSI1MCIgeT0iNDcwIiB3aWR0aD0iNTAwIiBoZWlnaHQ9IjE0MCIgcng9IjIyIiBmaWxsPSIjMkEyRTMyIi8+CiAgICA8cmVjdCB4PSI1MCIgeT0iNDcwIiB3aWR0aD0iMTIwIiBoZWlnaHQ9IjE0MCIgcng9IjIyIiBmaWxsPSIjRTg3NzJFIi8+CiAgICA8dGV4dCB4PSIxMTAiIHk9IjUzMiIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXdlaWdodD0iNzAwIiBmb250LXNpemU9IjMwIiBmaWxsPSIjMUMxRjIyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj4xMDowMDwvdGV4dD4KICAgIDx0ZXh0IHg9IjExMCIgeT0iNTcwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjAiIGZpbGw9IiMxQzFGMjIiIHRleHQtYW5jaG9yPSJtaWRkbGUiPk3DpW48L3RleHQ+CiAgICA8dGV4dCB4PSIxOTUiIHk9IjUzMCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXdlaWdodD0iNzAwIiBmb250LXNpemU9IjMwIiBmaWxsPSIjZmZmIj5IZW1iZXPDtmsgwrcgQW5uYSBMLjwvdGV4dD4KICAgIDx0ZXh0IHg9IjE5NSIgeT0iNTcwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IiNCOUI0QUEiPkFsdGFuIMK3IFTDpGJ5PC90ZXh0PjxyZWN0IHg9IjUwIiB5PSI2MzAiIHdpZHRoPSI1MDAiIGhlaWdodD0iMTQwIiByeD0iMjIiIGZpbGw9IiMyQTJFMzIiLz4KICAgIDxyZWN0IHg9IjUwIiB5PSI2MzAiIHdpZHRoPSIxMjAiIGhlaWdodD0iMTQwIiByeD0iMjIiIGZpbGw9IiNFODc3MkUiLz4KICAgIDx0ZXh0IHg9IjExMCIgeT0iNjkyIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtd2VpZ2h0PSI3MDAiIGZvbnQtc2l6ZT0iMzAiIGZpbGw9IiMxQzFGMjIiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjE0OjMwPC90ZXh0PgogICAgPHRleHQgeD0iMTEwIiB5PSI3MzAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyMCIgZmlsbD0iIzFDMUYyMiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+VGlzPC90ZXh0PgogICAgPHRleHQgeD0iMTk1IiB5PSI2OTAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC13ZWlnaHQ9IjcwMCIgZm9udC1zaXplPSIzMCIgZmlsbD0iI2ZmZiI+SGVtYmVzw7ZrIMK3IEVyaWsgUy48L3RleHQ+CiAgICA8dGV4dCB4PSIxOTUiIHk9IjczMCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjI0IiBmaWxsPSIjQjlCNEFBIj5Lw7ZrIMK3IFNvbG5hPC90ZXh0PjxyZWN0IHg9IjUwIiB5PSI3OTAiIHdpZHRoPSI1MDAiIGhlaWdodD0iMTQwIiByeD0iMjIiIGZpbGw9IiMyQTJFMzIiLz4KICAgIDxyZWN0IHg9IjUwIiB5PSI3OTAiIHdpZHRoPSIxMjAiIGhlaWdodD0iMTQwIiByeD0iMjIiIGZpbGw9IiNFODc3MkUiLz4KICAgIDx0ZXh0IHg9IjExMCIgeT0iODUyIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtd2VpZ2h0PSI3MDAiIGZvbnQtc2l6ZT0iMzAiIGZpbGw9IiMxQzFGMjIiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjA5OjAwPC90ZXh0PgogICAgPHRleHQgeD0iMTEwIiB5PSI4OTAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyMCIgZmlsbD0iIzFDMUYyMiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+T25zPC90ZXh0PgogICAgPHRleHQgeD0iMTk1IiB5PSI4NTAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC13ZWlnaHQ9IjcwMCIgZm9udC1zaXplPSIzMCIgZmlsbD0iI2ZmZiI+SGVtYmVzw7ZrIMK3IE1hcmlhIEsuPC90ZXh0PgogICAgPHRleHQgeD0iMTk1IiB5PSI4OTAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyNCIgZmlsbD0iI0I5QjRBQSI+QmFkcnVtIMK3IE5hY2thPC90ZXh0PjxyZWN0IHg9IjUwIiB5PSI5NTAiIHdpZHRoPSI1MDAiIGhlaWdodD0iMTQwIiByeD0iMjIiIGZpbGw9IiMyQTJFMzIiLz4KICAgIDxyZWN0IHg9IjUwIiB5PSI5NTAiIHdpZHRoPSIxMjAiIGhlaWdodD0iMTQwIiByeD0iMjIiIGZpbGw9IiMzQTNGNDQiLz4KICAgIDx0ZXh0IHg9IjExMCIgeT0iMTAxMiIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXdlaWdodD0iNzAwIiBmb250LXNpemU9IjMwIiBmaWxsPSIjZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj4xMzowMDwvdGV4dD4KICAgIDx0ZXh0IHg9IjExMCIgeT0iMTA1MCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjIwIiBmaWxsPSIjQjlCNEFBIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5Ub3I8L3RleHQ+CiAgICA8dGV4dCB4PSIxOTUiIHk9IjEwMTAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC13ZWlnaHQ9IjcwMCIgZm9udC1zaXplPSIzMCIgZmlsbD0iI2ZmZiI+SGVtYmVzw7ZrIMK3IEpvaGFuIFAuPC90ZXh0PgogICAgPHRleHQgeD0iMTk1IiB5PSIxMDUwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IiNCOUI0QUEiPlRpbGxieWdnbmFkIMK3IExpZGluZ8O2PC90ZXh0PgogIDwvZz4KICA8cmVjdCB4PSIyMzAiIHk9IjQwIiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjMwIiByeD0iMTUiIGZpbGw9IiMwRTEwMTIiLz4KICA8L3N2Zz4=" alt="Appen med bokade hembesök"></div>
+  </div>
+</section>
+<section class="slide dark" data-n="6">
+  <div class="vf tl"></div><div class="vf tr"></div><div class="vf bl"></div><div class="vf br"></div>
+  <div class="rec"><span class="dot"></span>REC <span class="tc" data-base="6">00:00:06:00</span></div>
+  <div class="foot"><span>zdanmotion.se</span><span>6</span></div>
+  <div class="kicker a" style="--d:0">PRISMODELL</div>
+  <h2 class="a" style="--d:1">Ni betalar för resultat</h2>
+  <div class="price">
+    <div class="pcard a" style="--d:2"><div class="big">500 kr</div><strong>per bokat hembesök</strong><small>För varje kvalificerat besök i er kalender.</small></div><div class="pcard a" style="--d:2.5"><div class="big">5 %</div><strong>av vinsten</strong><small>På de jobb ni vinner från våra besök.</small></div><div class="pcard a" style="--d:3"><div class="big">300 kr</div><strong>per dag i annonser</strong><small>Går direkt till Meta. Ca 9 000 kr/mån.</small></div>
+    <div class="ex a" style="--d:3.6">
+      <div class="kicker dk">RÄKNEEXEMPEL · 1 MÅNAD</div>
+      <div class="row"><span>Annonser 30 × 300 kr</span><b>9 000 kr</b></div>
+      <div class="row"><span>10 hembesök × 500 kr</span><b>5 000 kr</b></div>
+      <div class="row"><span>5 % av 150 000 kr</span><b>7 500 kr</b></div>
+      <div class="row tot"><span>Totalt</span><b>21 500 kr</b></div>
+      <div class="keep"><span class="big w">95 %</span><b>av vinsten behåller ni</b></div>
+    </div>
+  </div>
+  <div class="note">Exempelsiffror – faktiskt utfall varierar per företag och område</div>
+</section>
+<section class="slide orange" data-n="7">
+  <div class="vf tl"></div><div class="vf tr"></div><div class="vf bl"></div><div class="vf br"></div>
+  <div class="rec"><span class="dot"></span>REC <span class="tc" data-base="7">00:00:07:00</span></div>
+  
+  <div class="brand a" style="--d:0">ZDANMOTION</div>
+  <h1 class="a" style="--d:1">Ska vi fylla er kalender?</h1>
+  <p class="lead a" style="--d:2">Från ja till första bokade hembesöket:</p>
+  <div class="steps"><div class="steps-line"></div><div class="stp a" style="--d:3"><span class="n">1</span><strong>Signera avtalet</strong><small>Digitalt via länk – direkt under mötet.</small></div><div class="stp a" style="--d:3.6"><span class="n">2</span><strong>Skicka material</strong><small>Bilder och filmer från era jobb i en Google Drive-mapp.</small></div><div class="stp a" style="--d:4.2"><span class="n">3</span><strong>Produktion</strong><small>Vi gör annonser och formulär. Kampanjen går live.</small></div><div class="stp a" style="--d:4.8"><span class="n">4</span><strong>Hembesök</strong><small>De första kunderna bokas in i er kalender.</small></div></div>
+  <div class="url a" style="--d:6">zdanmotion.se</div>
+</section>
+</div></main>
+<nav class="nav" aria-label="Bildspel">
+  <button id="prev" aria-label="Föregående"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" class="ic " aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z"></path></svg></button>
+  <div class="dots" id="dots"></div>
+  <button id="next" aria-label="Nästa"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" class="ic " aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg></button>
+  <button id="fs" aria-label="Helskärm"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" class="ic " aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M0 180V56c0-13.3 10.7-24 24-24h124c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H64v84c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12zM288 44v40c0 6.6 5.4 12 12 12h84v84c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12V56c0-13.3-10.7-24-24-24H300c-6.6 0-12 5.4-12 12zm148 276h-40c-6.6 0-12 5.4-12 12v84h-84c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h124c13.3 0 24-10.7 24-24V332c0-6.6-5.4-12-12-12zM160 468v-40c0-6.6-5.4-12-12-12H64v-84c0-6.6-5.4-12-12-12H12c-6.6 0-12 5.4-12 12v124c0 13.3 10.7 24 24 24h124c6.6 0 12-5.4 12-12z"></path></svg></button>
+</nav>
+<script>(function(){
+  var stage=document.getElementById("stage"),slides=[].slice.call(document.querySelectorAll(".slide")),dots=document.getElementById("dots"),cur=0,timer;
+  function fit(){var s=Math.min(innerWidth/1600,innerHeight/900);stage.style.transform="translate(-50%,-50%) scale("+s+")";}
+  slides.forEach(function(_,i){var b=document.createElement("button");b.setAttribute("aria-label","Bild "+(i+1));b.onclick=function(){go(i)};dots.appendChild(b);});
+  function go(i){
+    if(i<0||i>=slides.length)return;
+    slides[cur].classList.remove("active");cur=i;
+    var s=slides[cur];void s.offsetWidth;s.classList.add("active");
+    [].forEach.call(dots.children,function(d,k){d.classList.toggle("on",k===cur)});
+    try{history.replaceState(null,"","#"+(cur+1))}catch(e){}
+    tick();
+  }
+  function tick(){
+    clearInterval(timer);var tc=slides[cur].querySelector(".tc");if(!tc)return;
+    var n=+tc.dataset.base,f=0,sec=0;
+    timer=setInterval(function(){f=(f+1)%25;if(!f)sec++;var p=function(x){return(x<10?"0":"")+x};tc.textContent="00:00:"+p(n+sec)+":"+p(f);},40);
+  }
+  document.getElementById("prev").onclick=function(){go(cur-1)};
+  document.getElementById("next").onclick=function(){go(cur+1)};
+  document.getElementById("fs").onclick=function(){var d=document.documentElement;if(!document.fullscreenElement){d.requestFullscreen&&d.requestFullscreen()}else{document.exitFullscreen()}};
+  addEventListener("keydown",function(e){
+    if(["ArrowRight","PageDown"," ","Enter"].indexOf(e.key)>=0){e.preventDefault();go(cur+1)}
+    else if(["ArrowLeft","PageUp","Backspace"].indexOf(e.key)>=0){e.preventDefault();go(cur-1)}
+    else if(e.key==="Home")go(0);else if(e.key==="End")go(slides.length-1);
+    else if(e.key==="f"||e.key==="F")document.getElementById("fs").click();
+  });
+  var x0=null;addEventListener("touchstart",function(e){x0=e.touches[0].clientX},{passive:true});
+  addEventListener("touchend",function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40)go(cur+(dx<0?1:-1));x0=null});
+  document.getElementById("deck").addEventListener("click",function(e){if(e.clientX>innerWidth/2)go(cur+1);else go(cur-1)});
+  addEventListener("resize",fit);fit();
+  var h=parseInt(location.hash.slice(1),10);go(h>0&&h<=slides.length?h-1:0);
+})();
+</script>
+</body></html>

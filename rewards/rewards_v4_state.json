@@ -143,7 +143,7 @@
    "question": "Will London have between 70-85mm of precipitation in October?",
    "yes": "75823398362274084438117852764171263999331077259485180339239270218290692067990",
    "no": "102587967677488496902282615550557958033008645564328396747405484120825037882858",
-   "rate": 7.0,
+   "rate": 9.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -158,7 +158,7 @@
    "question": "Will Barry Avotu Johnson win the 2027 Delta State gubernatorial election?",
    "yes": "99050738949460693758844990769214200666199767062651582690603731697991888289236",
    "no": "107313973473844839917465066576973101358432852982965054780273639407252353067910",
-   "rate": 8.0,
+   "rate": 7.0,
    "v": 8.5,
    "min_size": 20.0,
    "d": 0.0425,
@@ -188,7 +188,7 @@
    "question": "Will Alphabet\u2019s market capitalization be between $4.50T and $5.00T at the end of 2026?",
    "yes": "83777723126644357400212605918157128561921767937501707230379500571460801927182",
    "no": "57081494460739127762169279580723466398134151267799150817188669865270990051407",
-   "rate": 1.0,
+   "rate": 2.0,
    "v": 5.5,
    "min_size": 20.0,
    "d": 0.0275,
@@ -233,7 +233,7 @@
    "question": "Will the total domestic gross for \"You Can See Everything\" be between $75M and $100M by November 30?",
    "yes": "89371850369454565821634656520409443359966586121262724376843936942776661059598",
    "no": "37366096062354026051522640074927958840995164075264379743051764639529126192426",
-   "rate": 17.0,
+   "rate": 15.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -278,7 +278,7 @@
    "question": "Will Maurice Vunobolki win the 2027 Adamawa State gubernatorial election?",
    "yes": "96829023984278631817875737388552658004094614635125761906159765469887269687086",
    "no": "92257849184086958640258752047513730331726639499470928228218028686012477169827",
-   "rate": 8.0,
+   "rate": 6.0,
    "v": 8.5,
    "min_size": 20.0,
    "d": 0.0425,
@@ -409,36 +409,6 @@
    "rate0": 50.0
   },
   {
-   "cond": "0x4928847a196790e3e6d35516a22242945700e404e0087259eb695f79ecadaa36",
-   "question": "GenLayer FDV above $300M one day after launch?",
-   "yes": "75125358828850416004040104692533214793682816089336213615333457717879568472425",
-   "no": "99403628284937207225667528214174520138735007316789829147568060720068735670541",
-   "rate": 80.0,
-   "v": 4.5,
-   "min_size": 20.0,
-   "d": 0.0225,
-   "collateral": 19.099999999999998,
-   "est_reward_day": 80.0,
-   "end": "2028-01-01T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 80.0
-  },
-  {
-   "cond": "0xa52f312f915de85e65d395449aca483fe4b0f21b3b6b0fd2bd1cf720d99a4327",
-   "question": "GenLayer FDV above $500M one day after launch?",
-   "yes": "48664026380000475959982670935957190916287556017707544749228681576489238017370",
-   "no": "38798909839187963485724071523457082390078748458888053685791655936870758206547",
-   "rate": 80.0,
-   "v": 4.5,
-   "min_size": 20.0,
-   "d": 0.0225,
-   "collateral": 19.1,
-   "est_reward_day": 80.0,
-   "end": "2028-01-01T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 80.0
-  },
-  {
    "cond": "0xc9a5d34238c3554598d5b42dfc39b70879db9abf4570c8643003a5254f66f278",
    "question": "Glider FDV above $25M one day after launch?",
    "yes": "15672670626843662939360226649591152527023876089373735433075243971056768201563",
@@ -467,21 +437,6 @@
    "end": "2028-01-01T04:59:00Z",
    "share0": 1.0,
    "rate0": 80.0
-  },
-  {
-   "cond": "0x9bfb26b40156a54e02897a15082d2e81f06cefcc7f8202009d7b98e9a6a77a24",
-   "question": "Spain General Election: Vox wins a constituency?",
-   "yes": "97391538739925762829144474985230519794316204486076074219337104299189296543987",
-   "no": "114369982954958359027255982901935896608122640297220413614786611362647115746467",
-   "rate": 1.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.7,
-   "est_reward_day": 50.0,
-   "end": "2026-11-30T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 50.0
   },
   {
    "cond": "0xd9318e87af19ccc4ae1080b4cdfcb3dd5360d9fc1cec4239c4d53400387d124c",
@@ -527,21 +482,6 @@
    "end": "2027-01-01T04:59:00Z",
    "share0": 1.0,
    "rate0": 40.0
-  },
-  {
-   "cond": "0x1dabc72f310c2e34b4d5f1eb90a83fc46936355678c4ee00e4437656b97eb5b0",
-   "question": "Will Derke play for Team Vitality in 2027?",
-   "yes": "14769174390810797661810847599884922800986272819111838006154464818577987189279",
-   "no": "30264161627931386493190746438184929327181135190256973562053377518478310212438",
-   "rate": 50.0,
-   "v": 4.5,
-   "min_size": 20.0,
-   "d": 0.0225,
-   "collateral": 19.1,
-   "est_reward_day": 50.0,
-   "end": "2027-01-01T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 50.0
   },
   {
    "cond": "0x2905ae6e791276c157e1eba95dbe890958c8423dd861928cce07070e0073edae",
@@ -634,21 +574,6 @@
    "rate0": 30.0
   },
   {
-   "cond": "0x2d024a1edcf89324c11b8bca7c368c0c6d196d2599358b95369bbd340d3fe816",
-   "question": "Will PCN win the second most seats in the 2027 Salvadoran legislative election?",
-   "yes": "113635936901267985077636179070066979031481458681267127511186052422498346586096",
-   "no": "49645049790674567798769000809836773428156521423498184007243324745458633863803",
-   "rate": 1.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.7,
-   "est_reward_day": 27.0,
-   "end": "2027-03-01T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 27.0
-  },
-  {
    "cond": "0xe2000803dd7fb7a44784f178550266b97cbda005e88e95b50d870920bfa6a9bb",
    "question": "Will Databricks' valuation hit (HIGH) $215B by December 31?",
    "yes": "114178517643472716199108918238491005642351525025121718064652342739330206727580",
@@ -668,7 +593,7 @@
    "question": "Will PP win the most seats in Santa Cruz de Tenerife in the 2026 Spanish general election?",
    "yes": "101470221613903586806700697574288056648920559862698499332969870269810896270965",
    "no": "6644014831756138636304053676780833233608441602279283462239070904564345219688",
-   "rate": 17.0,
+   "rate": 21.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -677,36 +602,6 @@
    "end": "2026-11-30T04:59:00Z",
    "share0": 1.0,
    "rate0": 24.0
-  },
-  {
-   "cond": "0x3de5a53956b2b95e525b77c34dd63366b854a6baa7371c0e6343a6ca91c23598",
-   "question": "Will Russia capture Kucheriv Yar by December 31?",
-   "yes": "1645562934406251763265900599053551346814604865001968507963365026182782329036",
-   "no": "64861603058459100758046803962280840351265644942260413880166542157697929997891",
-   "rate": 100.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.7,
-   "est_reward_day": 45.47085201793705,
-   "end": "2027-01-01T04:59:00Z",
-   "share0": 0.45470852017937047,
-   "rate0": 100.0
-  },
-  {
-   "cond": "0xfe8e8afc3842b7db979a1f3c05f4613864ad1329798b5f9060467df1ecc1c029",
-   "question": "Will Trump's approval rating hit 41% by June 30, 2027?",
-   "yes": "55181107977408208850305212932119064602551994679691338778755197281335257454229",
-   "no": "63059169857079336917049184614038464233483781490761971710812591874439691169891",
-   "rate": 3.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.7,
-   "est_reward_day": 40.0,
-   "end": "2027-07-01T03:59:00Z",
-   "share0": 1.0,
-   "rate0": 40.0
   },
   {
    "cond": "0x645e6824a815af4fa7f9c82dbb09fcec9d94a93d3285b0c626879024d51fd6ee",
@@ -739,21 +634,6 @@
    "rate0": 29.0
   },
   {
-   "cond": "0x99f81e0d29a27fd8444847073ae5b72e78a4ecccb8b79d48837dc9a27b5b1368",
-   "question": "Will the lowest Baton Rouge river level be 4.00 to 4.99 ft by November 30?",
-   "yes": "11923803322911420870161358216957964348667168898720658741279754107841944730166",
-   "no": "86144496240558379012109186453510986666612424486122290305383401956914900390611",
-   "rate": 38.0,
-   "v": 4.5,
-   "min_size": 20.0,
-   "d": 0.0225,
-   "collateral": 19.1,
-   "est_reward_day": 27.96317606444189,
-   "end": "2026-12-02T04:59:00Z",
-   "share0": 0.9986848594443531,
-   "rate0": 28.0
-  },
-  {
    "cond": "0x9130056ec67e50fedb633669e013c317e4eefd016c26d665e0e63cd74a8c31f1",
    "question": "Will Isamaa win the most seats in the 2027 Estonian parliamentary election?",
    "yes": "113822831378255021478878520686257196832185425949019693055753158004423934715222",
@@ -769,34 +649,154 @@
    "rate0": 27.0
   },
   {
-   "cond": "0x63fb5607522047d333d52311efe86636c327b3b55a75441353cb9b2fdc7a3854",
-   "question": "Will Tesla deliver between 400000 and 425000 vehicles in Q4 2026",
-   "yes": "1755919098590293470754626953677671500514375560840311160326695256981678269602",
-   "no": "83911710880007075993928595466738049726109828090178266775411263800252179891912",
-   "rate": 27.0,
+   "cond": "0x17665795b299d126749c35c9c2095e822c177a361a1a678e04858af705f57f4b",
+   "question": "Will Russia enter Zaporizhia by December 31, 2027?",
+   "yes": "114737638079053951381688224464321064871132409250526024698078148750283149346309",
+   "no": "59610121322522197461683048500385379862010543994155603575613264082844136288799",
+   "rate": 100.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
    "collateral": 18.700000000000003,
-   "est_reward_day": 26.0,
-   "end": "2027-03-01T04:59:00Z",
+   "est_reward_day": 100.0,
+   "end": "2028-01-01T04:59:00Z",
    "share0": 1.0,
-   "rate0": 26.0
+   "rate0": 100.0
   },
   {
-   "cond": "0x0c67af31f2b335b7d347d3f64930464635586e5e87292fc22ce17b176a763dcd",
-   "question": "Will \"The Hunger Games: Sunrise on the Reaping\" Opening Weekend Box Office be less than 65m?",
-   "yes": "9052734918846321431507905584317682855413611487644414682932660402137612076402",
-   "no": "3506259658437004276017218428755039564085040319444996498537288755572482895430",
-   "rate": 29.0,
+   "cond": "0xeb5d918348e57c731bc6899c18f0476cba775332fcdb8ee53f23a372e777db19",
+   "question": "Will the highest score achieved by a SpaceXAI Grok model on Humanity\u2019s Last Exam in 2026 be 45% or higher?",
+   "yes": "71970265423171613408428666644865836185052293713391876091332849893886357291521",
+   "no": "73333197648465377670231650164225506221996804906315454617016904271728295536896",
+   "rate": 40.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.7,
+   "est_reward_day": 40.0,
+   "end": "2027-01-01T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 40.0
+  },
+  {
+   "cond": "0xd574e42b80e4de882bbd1a4b0d4fb9499989a5a0c3a4494c1c050b5f9ba9375a",
+   "question": "Will OpenAI's frontier output token price be at or below $40 in 2026?",
+   "yes": "52515308989919436531401182511278356890830436407885199407744566898342854712299",
+   "no": "104444976117775031858513043968327422908697794225490615959998874985223040663271",
+   "rate": 40.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.7,
+   "est_reward_day": 40.0,
+   "end": "2027-01-01T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 40.0
+  },
+  {
+   "cond": "0xaee30c779a493cb475a7c54108ce40102619e3634850c4ad7cb6726d84e70cab",
+   "question": "Will OpenAI's frontier output token price be at or below $30 in 2026?",
+   "yes": "112723642647615725259876419205014007869785921744439261322608046013879853111938",
+   "no": "112669802864135053993189066607597375807286615321354682873086249733979598630549",
+   "rate": 40.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.700000000000003,
+   "est_reward_day": 40.0,
+   "end": "2027-01-01T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 40.0
+  },
+  {
+   "cond": "0x3a0cfd022f4c5c45a46f166e0692dffa2bfe5844af2b563d1884b9cf0e953832",
+   "question": "Will GPT Astra 6.1+ be released between November 30 and December 6, 2026?",
+   "yes": "24605738639092262984813679462002614143152873050838490351053479683366158775718",
+   "no": "102963794136463867152666398492879746695675917945567118707930311419463725230444",
+   "rate": 38.0,
+   "v": 4.5,
+   "min_size": 20.0,
+   "d": 0.0225,
+   "collateral": 19.099999999999998,
+   "est_reward_day": 38.0,
+   "end": "2026-12-07T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 38.0
+  },
+  {
+   "cond": "0xf8fe2b66400bcf12fd8b5743d365557e804956fc52223bec33774106303f440e",
+   "question": "Will PP win the most seats in Salamanca in the 2026 Spanish general election?",
+   "yes": "4681927885658079183403747315854585585489820804384700447908294133655529653349",
+   "no": "82502655283035443133418548398776146544173310023934030475946676046941621323176",
+   "rate": 23.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.700000000000003,
+   "est_reward_day": 23.0,
+   "end": "2026-11-30T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 23.0
+  },
+  {
+   "cond": "0x7fafeb4e1a61a52f4705bbb9b6b739d18c46d03bf8cc285ac331997f6be4f334",
+   "question": "Will OXY play for Sentinels in 2027?",
+   "yes": "31420671772749289465483396255757609254758508634907836630419345936892775789798",
+   "no": "50540616095469327327965257442387719321979006699441720059066913429174485354044",
+   "rate": 23.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
    "collateral": 19.1,
-   "est_reward_day": 26.0,
-   "end": "2026-11-22T12:00:00Z",
+   "est_reward_day": 23.0,
+   "end": "2027-01-01T04:59:00Z",
    "share0": 1.0,
-   "rate0": 26.0
+   "rate0": 23.0
+  },
+  {
+   "cond": "0xcd9cd652c67135b5fff5f8a962d137e17f1912f609b728adc0e2d86424bcd79e",
+   "question": "Will PP win the most seats in C\u00f3rdoba in the 2026 Spanish general election?",
+   "yes": "12119472162362175685557360649612726247569798415070700038911046450423448041286",
+   "no": "21556664808508058804218291264508813058661323536586785006574073146486094324496",
+   "rate": 22.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.7,
+   "est_reward_day": 22.0,
+   "end": "2026-11-30T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 22.0
+  },
+  {
+   "cond": "0x40e98666a1ddba4d1eff8a92cb977773ab88d30ab40b77a18e6ef3c94469bcb8",
+   "question": "Will PP win the most seats in Navarre in the 2026 Spanish general election?",
+   "yes": "114731212258937950786746426753668253697482446589341691501397424306132791263015",
+   "no": "32449837125771857930187014625149782622961068744903803371147794874905212411603",
+   "rate": 22.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.7,
+   "est_reward_day": 22.0,
+   "end": "2026-11-30T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 22.0
+  },
+  {
+   "cond": "0x4d7e607464914d21b0d45bd14530fb64495fe88329cd0f5c3f1d33b9b494e004",
+   "question": "Will PP win the most seats in Pontevedra in the 2026 Spanish general election?",
+   "yes": "60116427358120660947889406349438788660096973459556876660303204257907013663940",
+   "no": "74102952582758182394656952220604626395488947133740379069938766026573589537939",
+   "rate": 22.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.7,
+   "est_reward_day": 22.0,
+   "end": "2026-11-30T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 22.0
   }
  ],
  "positions": {
@@ -941,9 +941,9 @@
   "0xf3d7426f3f7f4f054d4ae90f1ccead6789452049199051d018270c7ddf4081b8": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.56,
+   "mid": 0.55,
    "share": 1.0,
-   "reward": 220.98866494987425,
+   "reward": 221.29328904344652,
    "fills": 0,
    "q": "Will the Ornn H100 Index hit $3.50 (HIGH) by December 31, 2026?"
   },
@@ -959,9 +959,9 @@
   "0xaee30c779a493cb475a7c54108ce40102619e3634850c4ad7cb6726d84e70cab": {
    "inv": 0.0,
    "cash": -0.1822499999999989,
-   "mid": 0.29000000000000004,
-   "share": null,
-   "reward": 34.35209241628157,
+   "mid": 0.265,
+   "share": 1.0,
+   "reward": 34.47166713230649,
    "fills": 1,
    "q": "Will OpenAI's frontier output token price be at or below $30 in 2026?",
    "closed_at": 0.39
@@ -1019,7 +1019,7 @@
    "cash": 0.10000000000000142,
    "mid": 0.471,
    "share": 1.0,
-   "reward": 203.56073732714066,
+   "reward": 203.86536142071293,
    "fills": 2,
    "q": "Will the Ornn H200 Index hit $7.00 (HIGH) by December 31, 2026?",
    "closed_at": 0.54
@@ -1027,9 +1027,9 @@
   "0xf7699db92f899f7577f55c0dc9db490d6a17d1eced1c07d3860b4ae80a13b175": {
    "inv": -0.006315000000000293,
    "cash": 4.260396830000001,
-   "mid": 0.51,
+   "mid": 0.515,
    "share": 1.0,
-   "reward": 415.27638373278995,
+   "reward": 415.5810078263622,
    "fills": 8,
    "q": "Will the Ornn H200 Index hit $4.00 (LOW) by December 31, 2026?",
    "closed_at": 0.52
@@ -1066,9 +1066,9 @@
   "0xd574e42b80e4de882bbd1a4b0d4fb9499989a5a0c3a4494c1c050b5f9ba9375a": {
    "inv": 0.0,
    "cash": 0.017500000000000016,
-   "mid": 0.29000000000000004,
-   "share": null,
-   "reward": 44.25774968977782,
+   "mid": 0.27,
+   "share": 1.0,
+   "reward": 44.37732440580274,
    "fills": 1,
    "q": "Will OpenAI's frontier output token price be at or below $40 in 2026?",
    "closed_at": 0.44
@@ -1200,9 +1200,9 @@
   "0xe6cf1356fad9a1cc1dfa23e95191303a87adb5c6598fc08c2ab33668e7961eec": {
    "inv": -5.0,
    "cash": 1.8775000000000004,
-   "mid": 0.41800000000000004,
+   "mid": 0.4175,
    "share": 1.0,
-   "reward": 38.74424890008865,
+   "reward": 38.80861085979826,
    "fills": 1,
    "q": "Will London have between 70-85mm of precipitation in October?"
   },
@@ -1378,9 +1378,9 @@
   "0x7fafeb4e1a61a52f4705bbb9b6b739d18c46d03bf8cc285ac331997f6be4f334": {
    "inv": 0.0,
    "cash": -1.8400000000000007,
-   "mid": 0.6915,
-   "share": null,
-   "reward": 72.25995267376761,
+   "mid": 0.8145,
+   "share": 1.0,
+   "reward": 72.32870813548196,
    "fills": 1,
    "q": "Will OXY play for Sentinels in 2027?",
    "closed_at": 0.389
@@ -1785,7 +1785,7 @@
   "0xd290d0ce68bea178bc6fcecb04a539702bb603518dc41dfc71e2844dfeb7a99d": {
    "inv": -5.0,
    "cash": 1.2625,
-   "mid": 0.29,
+   "mid": 0.275,
    "share": 1.0,
    "reward": 46.55953813173782,
    "fills": 1,
@@ -2215,7 +2215,7 @@
   "0xa3ef154900809e3a38bba9a5e6037055cf2026ccc63413c9ac849e908fba5bcc": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.36,
+   "mid": 0.325,
    "share": 1.0,
    "reward": 21.646234121457837,
    "fills": 0,
@@ -2226,7 +2226,7 @@
    "cash": 0.0,
    "mid": 0.14500000000000002,
    "share": 1.0,
-   "reward": 11.577811564627059,
+   "reward": 11.590953538633595,
    "fills": 0,
    "q": "Will Alphabet\u2019s market capitalization be between $4.50T and $5.00T at the end of"
   },
@@ -2559,7 +2559,7 @@
    "cash": -5.112950000000003,
    "mid": 0.71,
    "share": 1.0,
-   "reward": 67.03248320913352,
+   "reward": 67.05533001615142,
    "fills": 3,
    "q": "Will Morena win the most seats in the 2027 Yucat\u00e1n Congress election?",
    "closed_at": 0.55
@@ -3284,7 +3284,7 @@
    "cash": -9.885414367500001,
    "mid": 0.505,
    "share": 1.0,
-   "reward": 159.9056233016958,
+   "reward": 160.21024739526808,
    "fills": 13,
    "q": "Will Trump's approval rating hit 39% by June 30, 2027?",
    "closed_at": 0.4
@@ -3304,7 +3304,7 @@
    "cash": 1.9871613124999987,
    "mid": 0.59,
    "share": 1.0,
-   "reward": 257.6068908969395,
+   "reward": 257.7058046721583,
    "fills": 7,
    "q": "Will Trump's approval rating hit 35% by June 30, 2027?",
    "closed_at": 0.42
@@ -3312,9 +3312,9 @@
   "0xe3ffc6e9666c89d1eb2f77326282447a436ba013704f785416482a9af600536f": {
    "inv": 0.0,
    "cash": -4.167675000000002,
-   "mid": 0.25,
+   "mid": 0.325,
    "share": 1.0,
-   "reward": 207.84376772442593,
+   "reward": 208.11418695967748,
    "fills": 3,
    "q": "Will Trump's approval rating hit 34% by June 30, 2027?",
    "closed_at": 0.35
@@ -3780,7 +3780,7 @@
    "cash": 0.0,
    "mid": 0.29000000000000004,
    "share": 1.0,
-   "reward": 56.32182064576525,
+   "reward": 56.62644473933754,
    "fills": 0,
    "q": "Will Trump's approval rating hit 42% by June 30, 2027?"
   },
@@ -3898,8 +3898,8 @@
    "inv": 0.0,
    "cash": -2.547350000000003,
    "mid": 0.435,
-   "share": 0.24220269738325512,
-   "reward": 97.55194769331379,
+   "share": null,
+   "reward": 97.55474782475382,
    "fills": 7,
    "q": "Will Trump's approval rating hit 41% by June 30, 2027?",
    "closed_at": 0.41
@@ -4911,7 +4911,7 @@
    "cash": 7.850000000000001,
    "mid": 0.28,
    "share": 1.0,
-   "reward": 183.66474379142704,
+   "reward": 183.8932118616063,
    "fills": 1,
    "q": "Will \"Wild Horse Nine\" be nominated for Best Costume Design at the 99th Academy "
   },
@@ -5879,8 +5879,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.28,
-   "share": 0.049001814882032625,
-   "reward": 4.945147251961773,
+   "share": null,
+   "reward": 4.950177856623857,
    "fills": 0,
    "q": "Will \"The Hunger Games: Sunrise on the Reaping\" Opening Weekend Box Office be le"
   },
@@ -6402,8 +6402,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.33499999999999996,
-   "share": 0.0727973837740229,
-   "reward": 21.46355724573155,
+   "share": null,
+   "reward": 21.46417593405218,
    "fills": 0,
    "q": "Will PCN win the second most seats in the 2027 Salvadoran legislative election?"
   },
@@ -6458,7 +6458,7 @@
    "cash": 0.0,
    "mid": 0.18,
    "share": 1.0,
-   "reward": 4.76789767249994,
+   "reward": 4.935440923964705,
    "fills": 0,
    "q": "Will Apple\u2019s market capitalization be between $4.50T and $5.00T at the end of 20"
   },
@@ -6770,7 +6770,7 @@
    "cash": 0.0,
    "mid": 0.148,
    "share": 1.0,
-   "reward": 26.064781090949023,
+   "reward": 26.133321512002784,
    "fills": 0,
    "q": "Will Arizona Cardinals finish the 2026-27 NFL regular season with the most sacks"
   },
@@ -6898,7 +6898,7 @@
    "cash": 0.0,
    "mid": 0.176,
    "share": 1.0,
-   "reward": 3.259355454132314,
+   "reward": 3.266971056471623,
    "fills": 0,
    "q": "Will Guinea-Bissau win AFCON 2027 qualifying Group L?"
   },
@@ -7196,12 +7196,12 @@
    "q": "Will Ra'am win exactly 7 seats in the 2026 Knesset elections?"
   },
   "0x5b11903433ba3f3f85304895e9a2f0e07ec6975f46755de03516177f4c395c0e": {
-   "inv": 0.0,
-   "cash": 0.0,
-   "mid": 0.2195,
+   "inv": -20.0,
+   "cash": 4.680000000000001,
+   "mid": 0.2165,
    "share": 1.0,
-   "reward": 4.756002060897302,
-   "fills": 0,
+   "reward": 4.811400507944531,
+   "fills": 1,
    "q": "Will Barry Avotu Johnson win the 2027 Delta State gubernatorial election?"
   },
   "0x00cf4c913dbc45498cd9b9ff995775a2a9b3a1c57ef2f8652d441e6317f6a4aa": {
@@ -7975,9 +7975,9 @@
   "0x2b79c5641ecb8ca60c48ab9d02c863004cff60b0771c5fd30291c99ce7d35934": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.1905,
+   "mid": 0.243,
    "share": 1.0,
-   "reward": 6.574259719622024,
+   "reward": 6.617897355942482,
    "fills": 0,
    "q": "Will Maurice Vunobolki win the 2027 Adamawa State gubernatorial election?"
   },
@@ -8159,7 +8159,7 @@
    "cash": 0.0,
    "mid": 0.148,
    "share": 0.8405977584059783,
-   "reward": 5.051806399561081,
+   "reward": 5.051812801219337,
    "fills": 0,
    "q": "Will Green Bay Packers finish the 2026-27 NFL regular season with the most retur"
   },
@@ -8331,7 +8331,7 @@
    "cash": 0.0,
    "mid": 0.385,
    "share": 1.0,
-   "reward": 1.822789912516399,
+   "reward": 1.8456367195343215,
    "fills": 0,
    "q": "Will Isamaa win the most seats in the 2027 Estonian parliamentary election?"
   },
@@ -8411,9 +8411,9 @@
   "0xa6aaf724fd295fcf12ab91cb7fb7b86750da94d71cd3a151f35b2f561814d1d3": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.185,
+   "mid": 0.19,
    "share": 1.0,
-   "reward": 15.30013524948458,
+   "reward": 15.418547745918346,
    "fills": 0,
    "q": "Will the total domestic gross for \"You Can See Everything\" be between $75M and $"
   },
@@ -8447,9 +8447,9 @@
   "0x1598d9ae1a10d2c1520d9dddc437b6bc32c73d580356f2760a6eb63922b75ec9": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.505,
+   "mid": 0.5,
    "share": 1.0,
-   "reward": 10.412756384263485,
+   "reward": 10.595530840406864,
    "fills": 0,
    "q": "Will Boise State Broncos Win the 2026 Pac-12 Championship?"
   },
@@ -8510,9 +8510,9 @@
   "0x9a0c68821b4db736d65f717adf8e0a2a43267dfe68a8d560e306987c48e3617a": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.6194999999999999,
+   "mid": 0.6225,
    "share": 1.0,
-   "reward": 11.453977674516588,
+   "reward": 11.735754961070965,
    "fills": 0,
    "q": "Will primmie play for FULL SENSE in 2027?"
   },
@@ -8557,8 +8557,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.165,
-   "share": 0.02229365979324694,
-   "reward": 24.694900061471735,
+   "share": null,
+   "reward": 24.6981018408832,
    "fills": 0,
    "q": "Will Derke play for Team Vitality in 2027?"
   },
@@ -8686,7 +8686,7 @@
    "cash": 0.0,
    "mid": 0.595,
    "share": 1.0,
-   "reward": 2.0758903955419856,
+   "reward": 2.106981110917749,
    "fills": 0,
    "q": "Will Chainlink dip to $10 by December 31, 2026?"
   },
@@ -8831,9 +8831,9 @@
   "0xeb5d918348e57c731bc6899c18f0476cba775332fcdb8ee53f23a372e777db19": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.484,
-   "share": null,
-   "reward": 1.011488554754721,
+   "mid": 0.49449999999999994,
+   "share": 1.0,
+   "reward": 1.1310632707796495,
    "fills": 0,
    "q": "Will the highest score achieved by a SpaceXAI Grok model on Humanity\u2019s Last Exam"
   },
@@ -8886,9 +8886,9 @@
   "0x2dc64d4a2621b5b9e54ef6dfc5445fee6d3897a75348272ea9bfcf05ceec0253": {
    "inv": -5.0,
    "cash": 3.0125,
-   "mid": 0.6,
+   "mid": 0.585,
    "share": 1.0,
-   "reward": 26.315209051856314,
+   "reward": 26.924457239000915,
    "fills": 1,
    "q": "GenLayer FDV above $100M one day after launch?"
   },
@@ -8913,18 +8913,18 @@
   "0xf3715680fd19a6a191f74feb9c936729a863d3c57bf5867157fa77a3c5778ed5": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.605,
+   "mid": 0.525,
    "share": 1.0,
-   "reward": 26.047438945814438,
+   "reward": 26.2395258954278,
    "fills": 0,
    "q": "GenLayer FDV above $200M one day after launch?"
   },
   "0xd1c4866b28d6b1dbc3eb6dc71a55d6d29e06f36773ba0a7d2449f4d922338c0f": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.41000000000000003,
+   "mid": 0.42000000000000004,
    "share": 1.0,
-   "reward": 15.874562407395361,
+   "reward": 16.25534252436073,
    "fills": 0,
    "q": "Next DeepSeek Flash released by December 31, 2026?"
   },
@@ -8950,8 +8950,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.355,
-   "share": 0.013310364946578983,
-   "reward": 10.512531714043842,
+   "share": null,
+   "reward": 10.517243384736256,
    "fills": 0,
    "q": "Will Russia capture Kucheriv Yar by December 31?"
   },
@@ -8976,9 +8976,9 @@
   "0x4928847a196790e3e6d35516a22242945700e404e0087259eb695f79ecadaa36": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.4,
-   "share": 0.10478654592496775,
-   "reward": 17.65285648883959,
+   "mid": 0.405,
+   "share": null,
+   "reward": 17.73236511148346,
    "fills": 0,
    "q": "GenLayer FDV above $300M one day after launch?"
   },
@@ -8986,8 +8986,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.215,
-   "share": 0.02193813986241265,
-   "reward": 17.73093107417959,
+   "share": null,
+   "reward": 17.73757301173533,
    "fills": 0,
    "q": "GenLayer FDV above $500M one day after launch?"
   },
@@ -8996,16 +8996,16 @@
    "cash": 0.0,
    "mid": 0.735,
    "share": 1.0,
-   "reward": 19.034614064075317,
+   "reward": 19.643862251219918,
    "fills": 0,
    "q": "Glider FDV above $25M one day after launch?"
   },
   "0xbe0a792a6b1e9bfd3737906ab36c618e982af54da32d6b7e9f33a6bdee1f7f31": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.39,
+   "mid": 0.475,
    "share": 1.0,
-   "reward": 15.253939888848953,
+   "reward": 15.814834245461759,
    "fills": 0,
    "q": "Glider FDV above $100M one day after launch?"
   },
@@ -9040,8 +9040,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.335,
-   "share": 0.04337773433730119,
-   "reward": 5.9558508709109415,
+   "share": null,
+   "reward": 5.956006852924573,
    "fills": 0,
    "q": "Spain General Election: Vox wins a constituency?"
   },
@@ -9069,7 +9069,7 @@
    "cash": 0.0,
    "mid": 0.31,
    "share": 1.0,
-   "reward": 9.668286744919092,
+   "reward": 10.049066861884468,
    "fills": 0,
    "q": "Spain General Election: PSOE gains seats?"
   },
@@ -9088,16 +9088,16 @@
    "cash": 0.0,
    "mid": 0.495,
    "share": 1.0,
-   "reward": 9.932194640928952,
+   "reward": 10.312974757894327,
    "fills": 0,
    "q": "Will the Bitcoin halving occur by March 31, 2028?"
   },
   "0x3a0cfd022f4c5c45a46f166e0692dffa2bfe5844af2b563d1884b9cf0e953832": {
    "inv": 0.0,
    "cash": -0.05000000000000071,
-   "mid": 0.22499999999999998,
-   "share": null,
-   "reward": 2.416415481205655,
+   "mid": 0.195,
+   "share": 1.0,
+   "reward": 2.5300114614293374,
    "fills": 1,
    "q": "Will GPT Astra 6.1+ be released between November 30 and December 6, 2026?",
    "closed_at": 0.2
@@ -9115,18 +9115,18 @@
   "0xe2000803dd7fb7a44784f178550266b97cbda005e88e95b50d870920bfa6a9bb": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.37,
-   "share": 0.14647377938517195,
-   "reward": 1.3777474781669115,
+   "mid": 0.29500000000000004,
+   "share": 1.0,
+   "reward": 1.695048593499023,
    "fills": 0,
    "q": "Will Databricks' valuation hit (HIGH) $215B by December 31?"
   },
   "0xc835f8dbda6fe401a5d8ee6fa157f45d9cb4efcb6ac1f3ef72e4a94041c5e806": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.485,
+   "mid": 0.495,
    "share": 1.0,
-   "reward": 6.326014024571137,
+   "reward": 6.630638118143436,
    "fills": 0,
    "q": "Will the highest score achieved by a SpaceXAI Grok model on Humanity\u2019s Last Exam"
   },
@@ -9135,7 +9135,7 @@
    "cash": 0.0,
    "mid": 0.475,
    "share": 1.0,
-   "reward": 6.130731223771972,
+   "reward": 6.5115113407373455,
    "fills": 0,
    "q": "Will Katie Zacharia be officially given a new role in the Trump administration b"
   },
@@ -9152,46 +9152,92 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.28500000000000003,
-   "share": 0.5937491216728987,
-   "reward": 0.544498634587785,
+   "share": 0.6787148594377526,
+   "reward": 0.5590703801805783,
    "fills": 0,
    "q": "Will the Ornn RTX 5090 Index be between $0.65 and $0.70 on November 30, 2026?"
   },
   "0x2d5b564bbea63e59fc7e1cd2508cc3624962cd4c92ece9539e45cc374f0544b9": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.645,
+   "mid": 0.48,
    "share": 1.0,
-   "reward": 3.1134889156730092,
+   "reward": 3.2683010614580583,
    "fills": 0,
    "q": "Will the highest score achieved on Humanity\u2019s Last Exam in 2026 be 58% or higher"
   },
   "0xdaf7b694cf64fb9c0620afd138d95766302122e8d79d8f908581bed193cc8b18": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.375,
+   "mid": 0.495,
    "share": 1.0,
-   "reward": 1.4019985311247831,
+   "reward": 1.484611108299332,
    "fills": 0,
    "q": "Will PP win the most seats in Santa Cruz de Tenerife in the 2026 Spanish general"
   },
   "0x99f81e0d29a27fd8444847073ae5b72e78a4ecccb8b79d48837dc9a27b5b1368": {
-   "inv": -10.035336,
-   "cash": 2.669399376,
-   "mid": 0.346,
-   "share": 0.095492742551566,
-   "reward": 0.22984001125033335,
+   "inv": 0.0,
+   "cash": -0.9533569199999996,
+   "mid": 0.345,
+   "share": null,
+   "reward": 0.2391696221250875,
    "fills": 1,
-   "q": "Will the lowest Baton Rouge river level be 4.00 to 4.99 ft by November 30?"
+   "q": "Will the lowest Baton Rouge river level be 4.00 to 4.99 ft by November 30?",
+   "closed_at": 0.361
   },
   "0x63fb5607522047d333d52311efe86636c327b3b55a75441353cb9b2fdc7a3854": {
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.22999999999999998,
-   "share": 0.013038771287915826,
-   "reward": 0.4082679510045997,
+   "share": null,
+   "reward": 0.4095112136032448,
    "fills": 0,
    "q": "Will Tesla deliver between 400000 and 425000 vehicles in Q4 2026"
+  },
+  "0x17665795b299d126749c35c9c2095e822c177a361a1a678e04858af705f57f4b": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.33,
+   "share": 1.0,
+   "reward": 0.2134246442604948,
+   "fills": 0,
+   "q": "Will Russia enter Zaporizhia by December 31, 2027?"
+  },
+  "0xf8fe2b66400bcf12fd8b5743d365557e804956fc52223bec33774106303f440e": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.54,
+   "share": 1.0,
+   "reward": 0.06875546171433396,
+   "fills": 0,
+   "q": "Will PP win the most seats in Salamanca in the 2026 Spanish general election?"
+  },
+  "0xcd9cd652c67135b5fff5f8a962d137e17f1912f609b728adc0e2d86424bcd79e": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.47,
+   "share": 1.0,
+   "reward": 0.049556775887807214,
+   "fills": 0,
+   "q": "Will PP win the most seats in C\u00f3rdoba in the 2026 Spanish general election?"
+  },
+  "0x40e98666a1ddba4d1eff8a92cb977773ab88d30ab40b77a18e6ef3c94469bcb8": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.605,
+   "share": 1.0,
+   "reward": 0.06576609381371075,
+   "fills": 0,
+   "q": "Will PP win the most seats in Navarre in the 2026 Spanish general election?"
+  },
+  "0x4d7e607464914d21b0d45bd14530fb64495fe88329cd0f5c3f1d33b9b494e004": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.6000000000000001,
+   "share": 0.9545865341165847,
+   "reward": 0.049556775887807214,
+   "fills": 0,
+   "q": "Will PP win the most seats in Pontevedra in the 2026 Spanish general election?"
   }
  },
  "history": [
@@ -30789,17 +30835,30 @@
    "w": 2987736
   },
   {
-   "ts": "2026-10-22T04:11:29.606490+00:00",
-   "dt_h": 0.034,
-   "reward_tick": 1.2589,
-   "reward_total": 13551.18,
-   "mm_value": -356.15,
-   "net": 13195.03,
-   "avg_share": 0.7934,
+   "ts": "2026-10-22T04:19:23.195639+00:00",
+   "dt_h": 0.168,
+   "reward_tick": 6.8878,
+   "reward_total": 13556.8,
+   "mm_value": -355.29,
+   "net": 13201.52,
+   "avg_share": 0.9908,
    "n_markets": 53,
-   "fills_total": 345,
+   "fills_total": 346,
    "rebalanced": false,
    "w": 2987737
+  },
+  {
+   "ts": "2026-10-22T04:22:27.594532+00:00",
+   "dt_h": 0.052,
+   "reward_tick": 3.0418,
+   "reward_total": 13559.85,
+   "mm_value": -355.8,
+   "net": 13204.05,
+   "avg_share": 0.9899,
+   "n_markets": 53,
+   "fills_total": 346,
+   "rebalanced": false,
+   "w": 2987738
   }
  ],
  "fills": [
@@ -33907,10 +33966,19 @@
    "price": 0.266,
    "size": 10.035336,
    "ledger": "v4"
+  },
+  {
+   "ts": "2026-10-22T04:15:39+00:00",
+   "cond": "0x5b11903433ba3f3f85304895e9a2f0e07ec6975f46755de03516177f4c395c0e",
+   "q": "Will Barry Avotu Johnson win the 2027 Delta State gubernatorial election?",
+   "side": "SELL",
+   "price": 0.234,
+   "size": 20.0,
+   "ledger": "v4"
   }
  ],
- "reward_total": 13551.175754202195,
- "last_ts": 1792642289.60649,
+ "reward_total": 13559.846567470473,
+ "last_ts": 1792642947.594532,
  "chosen_at": 1791639880.921448,
  "rebalances": [
   {
@@ -33921,12 +33989,12 @@
   }
  ],
  "last_tick": {
-  "ts": "2026-10-22T04:11:29.606490+00:00",
-  "dt_h": 0.017,
+  "ts": "2026-10-22T04:22:27.594532+00:00",
+  "dt_h": 0.018,
   "markets": [
    {
     "q": "Will global temperature increase by between 1.35\u00baC",
-    "mid": 0.29,
+    "mid": 0.275,
     "share": 1.0,
     "earned": 0.0,
     "inv": -5.0
@@ -33940,7 +34008,7 @@
    },
    {
     "q": "Will global temperature increase by between 1.45\u00baC",
-    "mid": 0.36,
+    "mid": 0.325,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -33963,7 +34031,7 @@
     "q": "Will \"Wild Horse Nine\" be nominated for Best Costu",
     "mid": 0.28,
     "share": 1.0,
-    "earned": 0.0209,
+    "earned": 0.0221,
     "inv": -20.0
    },
    {
@@ -33984,42 +34052,42 @@
     "q": "Will Arizona Cardinals finish the 2026-27 NFL regu",
     "mid": 0.148,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0066,
     "inv": 0.0
    },
    {
     "q": "Will London have between 70-85mm of precipitation ",
-    "mid": 0.418,
+    "mid": 0.417,
     "share": 1.0,
-    "earned": 0.0049,
+    "earned": 0.0066,
     "inv": -5.0
    },
    {
     "q": "Will Barry Avotu Johnson win the 2027 Delta State ",
-    "mid": 0.22,
+    "mid": 0.216,
     "share": 1.0,
-    "earned": 0.0054,
-    "inv": 0.0
+    "earned": 0.0052,
+    "inv": -20.0
    },
    {
     "q": "Will the Ornn H200 Index hit $4.00 (LOW) by Decemb",
-    "mid": 0.51,
+    "mid": 0.515,
     "share": 1.0,
-    "earned": 0.0279,
+    "earned": 0.0295,
     "inv": -0.006315000000000293
    },
    {
     "q": "Will Alphabet\u2019s market capitalization be between $",
     "mid": 0.145,
     "share": 1.0,
-    "earned": 0.0007,
+    "earned": 0.0015,
     "inv": 0.0
    },
    {
     "q": "Will Morena win the most seats in the 2027 Yucat\u00e1n",
     "mid": 0.71,
     "share": 1.0,
-    "earned": 0.0021,
+    "earned": 0.0022,
     "inv": 0.0
    },
    {
@@ -34031,9 +34099,9 @@
    },
    {
     "q": "Will the total domestic gross for \"You Can See Eve",
-    "mid": 0.185,
+    "mid": 0.19,
     "share": 1.0,
-    "earned": 0.0119,
+    "earned": 0.0111,
     "inv": 0.0
    },
    {
@@ -34047,28 +34115,28 @@
     "q": "Will Trump's approval rating hit 35% by June 30, 2",
     "mid": 0.59,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0295,
     "inv": -9.993871
    },
    {
     "q": "Will Maurice Vunobolki win the 2027 Adamawa State ",
-    "mid": 0.191,
+    "mid": 0.243,
     "share": 1.0,
-    "earned": 0.0056,
+    "earned": 0.0044,
     "inv": 0.0
    },
    {
     "q": "Will Chainlink dip to $10 by December 31, 2026?",
     "mid": 0.595,
     "share": 1.0,
-    "earned": 0.0035,
+    "earned": 0.0037,
     "inv": 0.0
    },
    {
     "q": "Will Trump's approval rating hit 34% by June 30, 2",
-    "mid": 0.25,
+    "mid": 0.325,
     "share": 1.0,
-    "earned": 0.0279,
+    "earned": 0.0295,
     "inv": 0.0
    },
    {
@@ -34077,229 +34145,229 @@
    },
    {
     "q": "Will the Ornn H100 Index hit $3.50 (HIGH) by Decem",
-    "mid": 0.56,
+    "mid": 0.55,
     "share": 1.0,
-    "earned": 0.0279,
+    "earned": 0.0295,
     "inv": 0.0
    },
    {
     "q": "Will Boise State Broncos Win the 2026 Pac-12 Champ",
-    "mid": 0.505,
+    "mid": 0.5,
     "share": 1.0,
-    "earned": 0.0167,
+    "earned": 0.0177,
     "inv": 0.0
    },
    {
     "q": "GenLayer FDV above $100M one day after launch?",
-    "mid": 0.6,
+    "mid": 0.585,
     "share": 1.0,
-    "earned": 0.0558,
+    "earned": 0.0589,
     "inv": -5.0
    },
    {
     "q": "GenLayer FDV above $200M one day after launch?",
-    "mid": 0.605,
+    "mid": 0.525,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0589,
     "inv": 0.0
    },
    {
     "q": "Next DeepSeek Flash released by December 31, 2026?",
-    "mid": 0.41,
+    "mid": 0.42,
     "share": 1.0,
-    "earned": 0.0,
-    "inv": 0.0
-   },
-   {
-    "q": "GenLayer FDV above $300M one day after launch?",
-    "mid": 0.4,
-    "share": 0.1048,
-    "earned": 0.0043,
-    "inv": 0.0
-   },
-   {
-    "q": "GenLayer FDV above $500M one day after launch?",
-    "mid": 0.215,
-    "share": 0.0219,
-    "earned": 0.0012,
+    "earned": 0.0368,
     "inv": 0.0
    },
    {
     "q": "Glider FDV above $25M one day after launch?",
     "mid": 0.735,
     "share": 1.0,
-    "earned": 0.0558,
+    "earned": 0.0589,
     "inv": 0.0
    },
    {
     "q": "Glider FDV above $100M one day after launch?",
-    "mid": 0.39,
+    "mid": 0.475,
     "share": 1.0,
-    "earned": 0.0,
-    "inv": 0.0
-   },
-   {
-    "q": "Spain General Election: Vox wins a constituency?",
-    "mid": 0.335,
-    "share": 0.0434,
-    "earned": 0.0,
+    "earned": 0.0589,
     "inv": 0.0
    },
    {
     "q": "Spain General Election: PSOE gains seats?",
     "mid": 0.31,
     "share": 1.0,
-    "earned": 0.0349,
+    "earned": 0.0368,
     "inv": 0.0
    },
    {
     "q": "Will the Bitcoin halving occur by March 31, 2028?",
     "mid": 0.495,
     "share": 1.0,
-    "earned": 0.0349,
+    "earned": 0.0368,
     "inv": 0.0
    },
    {
     "q": "Will the highest score achieved by a SpaceXAI Grok",
-    "mid": 0.485,
+    "mid": 0.495,
     "share": 1.0,
-    "earned": 0.0279,
-    "inv": 0.0
-   },
-   {
-    "q": "Will Derke play for Team Vitality in 2027?",
-    "mid": 0.165,
-    "share": 0.0223,
-    "earned": 0.0008,
+    "earned": 0.0295,
     "inv": 0.0
    },
    {
     "q": "Will Trump's approval rating hit 42% by June 30, 2",
     "mid": 0.29,
     "share": 1.0,
-    "earned": 0.0279,
+    "earned": 0.0295,
     "inv": 0.0
    },
    {
     "q": "Will Katie Zacharia be officially given a new role",
     "mid": 0.475,
     "share": 1.0,
-    "earned": 0.0349,
+    "earned": 0.0368,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index hit $7.00 (HIGH) by Decem",
     "mid": 0.471,
     "share": 1.0,
-    "earned": 0.0279,
+    "earned": 0.0295,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn RTX 5090 Index be between $0.65 and ",
     "mid": 0.285,
-    "share": 0.5937,
-    "earned": 0.0012,
+    "share": 0.6787,
+    "earned": 0.0015,
     "inv": 0.0
    },
    {
     "q": "Will the highest score achieved on Humanity\u2019s Last",
-    "mid": 0.645,
+    "mid": 0.48,
     "share": 1.0,
-    "earned": 0.0279,
+    "earned": 0.0295,
     "inv": 0.0
    },
    {
     "q": "Will Apple\u2019s market capitalization be between $4.5",
     "mid": 0.18,
     "share": 1.0,
-    "earned": 0.0154,
-    "inv": 0.0
-   },
-   {
-    "q": "Will PCN win the second most seats in the 2027 Sal",
-    "mid": 0.335,
-    "share": 0.0728,
-    "earned": 0.0001,
+    "earned": 0.0162,
     "inv": 0.0
    },
    {
     "q": "Will Databricks' valuation hit (HIGH) $215B by Dec",
-    "mid": 0.37,
-    "share": 0.1465,
-    "earned": 0.0051,
+    "mid": 0.295,
+    "share": 1.0,
+    "earned": 0.0368,
     "inv": 0.0
    },
    {
     "q": "Will PP win the most seats in Santa Cruz de Teneri",
-    "mid": 0.375,
+    "mid": 0.495,
     "share": 1.0,
-    "earned": 0.0119,
-    "inv": 0.0
-   },
-   {
-    "q": "Will Russia capture Kucheriv Yar by December 31?",
-    "mid": 0.355,
-    "share": 0.0133,
-    "earned": 0.0009,
-    "inv": 0.0
-   },
-   {
-    "q": "Will Trump's approval rating hit 41% by June 30, 2",
-    "mid": 0.435,
-    "share": 0.2422,
-    "earned": 0.0005,
+    "earned": 0.0155,
     "inv": 0.0
    },
    {
     "q": "Will Trump's approval rating hit 39% by June 30, 2",
     "mid": 0.505,
     "share": 1.0,
-    "earned": 0.0279,
+    "earned": 0.0295,
     "inv": 0.0
    },
    {
     "q": "Will primmie play for FULL SENSE in 2027?",
-    "mid": 0.619,
+    "mid": 0.623,
     "share": 1.0,
-    "earned": 0.0258,
+    "earned": 0.0273,
     "inv": 0.0
-   },
-   {
-    "q": "Will the lowest Baton Rouge river level be 4.00 to",
-    "mid": 0.346,
-    "share": 0.0955,
-    "earned": 0.0025,
-    "inv": -10.035336
    },
    {
     "q": "Will Isamaa win the most seats in the 2027 Estonia",
     "mid": 0.385,
     "share": 1.0,
-    "earned": 0.0021,
+    "earned": 0.0022,
     "inv": 0.0
    },
    {
-    "q": "Will Tesla deliver between 400000 and 425000 vehic",
-    "mid": 0.23,
-    "share": 0.013,
-    "earned": 0.0002,
+    "q": "Will Russia enter Zaporizhia by December 31, 2027?",
+    "mid": 0.33,
+    "share": 1.0,
+    "earned": 0.0737,
     "inv": 0.0
    },
    {
-    "q": "Will \"The Hunger Games: Sunrise on the Reaping\" Op",
-    "mid": 0.28,
-    "share": 0.049,
-    "earned": 0.001,
+    "q": "Will the highest score achieved by a SpaceXAI Grok",
+    "mid": 0.494,
+    "share": 1.0,
+    "earned": 0.0295,
+    "inv": 0.0
+   },
+   {
+    "q": "Will OpenAI's frontier output token price be at or",
+    "mid": 0.27,
+    "share": 1.0,
+    "earned": 0.0295,
+    "inv": 0.0
+   },
+   {
+    "q": "Will OpenAI's frontier output token price be at or",
+    "mid": 0.265,
+    "share": 1.0,
+    "earned": 0.0295,
+    "inv": 0.0
+   },
+   {
+    "q": "Will GPT Astra 6.1+ be released between November 3",
+    "mid": 0.195,
+    "share": 1.0,
+    "earned": 0.028,
+    "inv": 0.0
+   },
+   {
+    "q": "Will PP win the most seats in Salamanca in the 202",
+    "mid": 0.54,
+    "share": 1.0,
+    "earned": 0.0169,
+    "inv": 0.0
+   },
+   {
+    "q": "Will OXY play for Sentinels in 2027?",
+    "mid": 0.815,
+    "share": 1.0,
+    "earned": 0.0169,
+    "inv": 0.0
+   },
+   {
+    "q": "Will PP win the most seats in C\u00f3rdoba in the 2026 ",
+    "mid": 0.47,
+    "share": 1.0,
+    "earned": 0.0,
+    "inv": 0.0
+   },
+   {
+    "q": "Will PP win the most seats in Navarre in the 2026 ",
+    "mid": 0.605,
+    "share": 1.0,
+    "earned": 0.0162,
+    "inv": 0.0
+   },
+   {
+    "q": "Will PP win the most seats in Pontevedra in the 20",
+    "mid": 0.6,
+    "share": 0.9546,
+    "earned": 0.0,
     "inv": 0.0
    }
   ],
-  "reward_tick": 0.585,
-  "reward_total": 13551.18,
-  "mm_value": -356.15,
-  "net": 13195.03,
-  "avg_share": 0.7934,
+  "reward_tick": 1.0698,
+  "reward_total": 13559.85,
+  "mm_value": -355.8,
+  "net": 13204.05,
+  "avg_share": 0.9899,
   "n_markets": 53,
-  "fills_total": 345,
+  "fills_total": 346,
   "rebalanced": false
  },
  "reviews": [
@@ -40840,7 +40908,35 @@
     "Will Tesla deliver between 400000 and 425000 vehic",
     "Will \"The Hunger Games: Sunrise on the Reaping\" Op"
    ]
+  },
+  {
+   "ts": "2026-10-22T04:18:09.313145+00:00",
+   "swapped": 10,
+   "out": [
+    "Spain General Election: Vox wins a constituency?",
+    "Will PCN win the second most seats in the 2027 Sal",
+    "Will Tesla deliver between 400000 and 425000 vehic",
+    "Will Trump's approval rating hit 41% by June 30, 2",
+    "Will Derke play for Team Vitality in 2027?",
+    "Will the lowest Baton Rouge river level be 4.00 to",
+    "Will \"The Hunger Games: Sunrise on the Reaping\" Op",
+    "Will Russia capture Kucheriv Yar by December 31?",
+    "GenLayer FDV above $500M one day after launch?",
+    "GenLayer FDV above $300M one day after launch?"
+   ],
+   "in": [
+    "Will Russia enter Zaporizhia by December 31, 2027?",
+    "Will the highest score achieved by a SpaceXAI Grok",
+    "Will OpenAI's frontier output token price be at or",
+    "Will OpenAI's frontier output token price be at or",
+    "Will GPT Astra 6.1+ be released between November 3",
+    "Will PP win the most seats in Salamanca in the 202",
+    "Will OXY play for Sentinels in 2027?",
+    "Will PP win the most seats in C\u00f3rdoba in the 2026 ",
+    "Will PP win the most seats in Navarre in the 2026 ",
+    "Will PP win the most seats in Pontevedra in the 20"
+   ]
   }
  ],
- "reviewed_at": 1792639046.38895
+ "reviewed_at": 1792642689.3131454
 }

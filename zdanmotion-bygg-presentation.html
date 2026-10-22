@@ -129,27 +129,39 @@ small{display:block;font-size:17px;line-height:1.4;font-weight:400}
 .active .notif{animation:notif 5s 1.2s infinite}
 @keyframes notif{0%{opacity:0;transform:translateY(-20px)}10%,70%{opacity:1;transform:none}85%,100%{opacity:0;transform:translateY(-20px)}}
 /* price */
-.price{display:grid;grid-template-columns:repeat(3,1fr) 520px;gap:24px;margin-top:48px;height:540px}
-.pcard{background:var(--dk2);border:1px solid var(--dk3);border-radius:18px;padding:32px 28px}
-.big{font-size:60px;font-weight:800;color:var(--or);letter-spacing:-.02em}
-.big.w{color:var(--w)}
-.pcard strong{display:block;font-size:24px;margin-top:16px;line-height:1.3}
-.pcard small{color:var(--g4);margin-top:32px;font-size:19px}
-.ex{background:var(--or);color:var(--dk);border-radius:18px;padding:30px 36px}
-.row{display:flex;justify-content:space-between;font-size:21px;margin-top:24px}
-.row.tot{border-top:2px solid var(--dk);padding-top:16px;font-size:22px;font-weight:800}
-.keep{margin-top:34px}.keep b{display:block;font-size:21px}
-.note{position:absolute;bottom:60px;left:0;right:0;text-align:center;font-size:14px;color:var(--g3)}
-/* cta */
-.orange h1{margin-top:110px;font-size:80px}
-.steps{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:40px;margin-top:70px}
-.steps-line{position:absolute;top:40px;left:40px;right:300px;height:3px;background:var(--dk);transform-origin:left;transform:scaleX(0)}
-.active .steps-line{animation:grow 1.4s .5s forwards}
-@keyframes grow{to{transform:scaleX(1)}}
-.stp .n{position:relative;display:grid;place-items:center;width:80px;height:80px;border-radius:50%;background:var(--dk);color:var(--or);font-size:26px;font-weight:800}
-.stp strong{display:block;font-size:26px;margin-top:26px}
-.stp small{font-size:20px;margin-top:6px;color:var(--dk2)}
-.url{position:absolute;left:96px;bottom:64px;font-weight:800;font-size:20px}
+.price{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:64px;height:560px}
+.pcard{background:var(--dk2);border:1px solid var(--dk3);border-radius:18px;padding:40px 40px}
+.icc.dk3{background:var(--dk3);color:var(--or);width:84px;height:84px;font-size:36px}
+.big{font-size:80px;font-weight:800;color:var(--or);letter-spacing:-.02em;margin-top:70px}
+.pcard strong{display:block;font-size:28px;margin-top:10px}
+.pcard small{color:var(--g4);margin-top:22px;font-size:22px;line-height:1.45}
+/* closing */
+.close-l{position:absolute;left:96px;top:150px;width:820px}
+.closing h1{font-size:76px}
+.recap{list-style:none;margin-top:44px;display:flex;flex-direction:column;gap:20px}
+.recap li{display:flex;align-items:center;gap:18px;font-size:26px}
+.recap .ic{font-size:32px}
+.cta{display:inline-block;margin-top:48px;background:var(--or);color:var(--dk);font-weight:800;font-size:26px;padding:20px 44px;border-radius:50px;box-shadow:0 0 0 0 rgba(232,119,46,.6)}
+.active .cta{animation:in .7s cubic-bezier(.2,.8,.2,1) forwards,pulse 2.4s 1.5s infinite;animation-delay:calc(var(--d) * .14s + .1s),1.5s}
+@keyframes pulse{70%{box-shadow:0 0 0 22px rgba(232,119,46,0)}100%{box-shadow:0 0 0 0 rgba(232,119,46,0)}}
+.cta-sub{margin-top:18px;font-size:18px;color:var(--g4)}
+.month{position:absolute;right:96px;top:150px;width:540px;background:var(--lt);color:var(--dk);border-radius:22px;padding:34px 36px;box-shadow:0 30px 60px rgba(0,0,0,.45)}
+.month strong{font-size:28px}
+.cnt{font-size:17px;font-weight:800;color:var(--or);margin-top:6px}
+.mdays,.mgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.mdays{margin-top:22px}.mdays span{text-align:center;font-size:15px;font-weight:800;color:var(--g3)}
+.mgrid{margin-top:10px}
+.day{position:relative;height:86px;border-radius:10px;background:var(--w);border:1px solid var(--g5);display:grid;place-items:center;font-size:26px;color:var(--w)}
+.day span{position:absolute;top:6px;left:9px;font-size:13px;font-weight:800;color:var(--g3)}
+.day.on{background:var(--w)}
+.active .day.on{animation:book .45s forwards;animation-delay:calc(1.4s + var(--k) * .22s)}
+.day.on .ic{opacity:0}
+.active .day.on .ic{animation:icin .45s forwards;animation-delay:calc(1.4s + var(--k) * .22s)}
+@keyframes book{0%{transform:scale(1)}50%{transform:scale(1.12)}100%{transform:scale(1);background:var(--or);border-color:var(--or)}}
+@keyframes book2{to{color:var(--w)}}
+.active .day.on span{animation:book2 .45s forwards;animation-delay:calc(1.4s + var(--k) * .22s)}
+@keyframes icin{to{opacity:1}}
+.url{position:absolute;left:96px;bottom:64px;font-weight:800;font-size:20px;color:var(--g3)}
 /* nav */
 .nav{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);display:flex;align-items:center;gap:10px;background:rgba(14,16,18,.7);backdrop-filter:blur(8px);padding:6px 10px;border-radius:30px;opacity:.25;transition:opacity .3s;z-index:9}
 .nav:hover,.nav:focus-within{opacity:1}
@@ -158,7 +170,7 @@ small{display:block;font-size:17px;line-height:1.4;font-weight:400}
 .dots{display:flex;gap:6px}
 .dots button{width:10px;height:10px;padding:0;border-radius:50%;background:#4A4D50}
 .dots button.on{background:var(--or)}
-@media (prefers-reduced-motion:reduce){*,*:before{animation:none!important;transition:none!important}.a,.step,.notif{opacity:1!important;transform:none!important}.kf-fill{width:68%}.steps-line{transform:none}}
+@media (prefers-reduced-motion:reduce){*,*:before{animation:none!important;transition:none!important}.a,.step,.notif{opacity:1!important;transform:none!important}.kf-fill{width:68%}.day.on{background:var(--or)!important}.day.on .ic{opacity:1!important}}
 @media print{html,body{overflow:visible;background:none}.deck{position:static;display:block}.stage{transform:none!important}.slide{position:relative;opacity:1;visibility:visible;page-break-after:always}.a,.step,.notif{opacity:1;transform:none}.nav{display:none}}
 </style></head>
 <body>
@@ -211,7 +223,7 @@ small{display:block;font-size:17px;line-height:1.4;font-weight:400}
     <div class="clips"><div class="step" style="--k:0">
       <div class="clip "><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" class="ic " aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M336.2 64H47.8C21.4 64 0 85.4 0 111.8v288.4C0 426.6 21.4 448 47.8 448h288.4c26.4 0 47.8-21.4 47.8-47.8V111.8c0-26.4-21.4-47.8-47.8-47.8zm189.4 37.7L416 177.3v157.4l109.6 75.5c21.2 14.6 50.4-.3 50.4-25.8V127.5c0-25.4-29.1-40.4-50.4-25.8z"></path></svg><div><small>01</small><strong>Videoannons</strong></div></div>
       <div class="kfrow"><i class="dia "></i></div>
-      <p>Motion graphics av era bilder och filmer från färdiga jobb – eller med AI.</p></div><div class="step" style="--k:1">
+      <p>Videoannonser av era bilder och filmer från färdiga jobb – eller med AI.</p></div><div class="step" style="--k:1">
       <div class="clip "><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 496 512" class="ic " aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M248 8C111.03 8 0 119.03 0 256s111.03 248 248 248 248-111.03 248-248S384.97 8 248 8zm0 432c-101.69 0-184-82.29-184-184 0-101.69 82.29-184 184-184 101.69 0 184 82.29 184 184 0 101.69-82.29 184-184 184zm0-312c-70.69 0-128 57.31-128 128s57.31 128 128 128 128-57.31 128-128-57.31-128-128-128zm0 192c-35.29 0-64-28.71-64-64s28.71-64 64-64 64 28.71 64 64-28.71 64-64 64z"></path></svg><div><small>02</small><strong>Rätt målgrupp</strong></div></div>
       <div class="kfrow"><i class="dia "></i></div>
       <p>Betald annonsering via Meta till husägare i ert område, 300 kr/dag.</p></div><div class="step" style="--k:2">
@@ -261,27 +273,27 @@ small{display:block;font-size:17px;line-height:1.4;font-weight:400}
   <div class="kicker a" style="--d:0">PRISMODELL</div>
   <h2 class="a" style="--d:1">Ni betalar för resultat</h2>
   <div class="price">
-    <div class="pcard a" style="--d:2"><div class="big">500 kr</div><strong>per bokat hembesök</strong><small>För varje kvalificerat besök i er kalender.</small></div><div class="pcard a" style="--d:2.5"><div class="big">5 %</div><strong>av vinsten</strong><small>På de jobb ni vinner från våra besök.</small></div><div class="pcard a" style="--d:3"><div class="big">300 kr</div><strong>per dag i annonser</strong><small>Går direkt till Meta. Ca 9 000 kr/mån.</small></div>
-    <div class="ex a" style="--d:3.6">
-      <div class="kicker dk">RÄKNEEXEMPEL · 1 MÅNAD</div>
-      <div class="row"><span>Annonser 30 × 300 kr</span><b>9 000 kr</b></div>
-      <div class="row"><span>10 hembesök × 500 kr</span><b>5 000 kr</b></div>
-      <div class="row"><span>5 % av 150 000 kr</span><b>7 500 kr</b></div>
-      <div class="row tot"><span>Totalt</span><b>21 500 kr</b></div>
-      <div class="keep"><span class="big w">95 %</span><b>av vinsten behåller ni</b></div>
-    </div>
+    <div class="pcard a" style="--d:2"><span class="icc dk3"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" class="ic " aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"></path></svg></span><div class="big">500 kr</div><strong>per bokat hembesök</strong><small>För varje kvalificerat hembesök vi bokar in i er kalender.</small></div><div class="pcard a" style="--d:2.6"><span class="icc dk3"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" class="ic " aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M112 224c61.9 0 112-50.1 112-112S173.9 0 112 0 0 50.1 0 112s50.1 112 112 112zm0-160c26.5 0 48 21.5 48 48s-21.5 48-48 48-48-21.5-48-48 21.5-48 48-48zm224 224c-61.9 0-112 50.1-112 112s50.1 112 112 112 112-50.1 112-112-50.1-112-112-112zm0 160c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zM392.3.2l31.6-.1c19.4-.1 30.9 21.8 19.7 37.8L77.4 501.6a23.95 23.95 0 0 1-19.6 10.2l-33.4.1c-19.5 0-30.9-21.9-19.7-37.8l368-463.7C377.2 4 384.5.2 392.3.2z"></path></svg></span><div class="big">5 %</div><strong>av vinsten</strong><small>På de jobb ni vinner från våra hembesök.</small></div><div class="pcard a" style="--d:3.2"><span class="icc dk3"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" class="ic " aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M576 240c0-23.63-12.95-44.04-32-55.12V32.01C544 23.26 537.02 0 512 0c-7.12 0-14.19 2.38-19.98 7.02l-85.03 68.03C364.28 109.19 310.66 128 256 128H64c-35.35 0-64 28.65-64 64v96c0 35.35 28.65 64 64 64h33.7c-1.39 10.48-2.18 21.14-2.18 32 0 39.77 9.26 77.35 25.56 110.94 5.19 10.69 16.52 17.06 28.4 17.06h74.28c26.05 0 41.69-29.84 25.9-50.56-16.4-21.52-26.15-48.36-26.15-77.44 0-11.11 1.62-21.79 4.41-32H256c54.66 0 108.28 18.81 150.98 52.95l85.03 68.03a32.023 32.023 0 0 0 19.98 7.02c24.92 0 32-22.78 32-32V295.13C563.05 284.04 576 263.63 576 240zm-96 141.42l-33.05-26.44C392.95 311.78 325.12 288 256 288v-96c69.12 0 136.95-23.78 190.95-66.98L480 98.58v282.84z"></path></svg></span><div class="big">300 kr</div><strong>per dag i annonser</strong><small>Går direkt till Meta och syns i ert eget annonskonto.</small></div>
   </div>
-  <div class="note">Exempelsiffror – faktiskt utfall varierar per företag och område</div>
 </section>
-<section class="slide orange" data-n="7">
+<section class="slide dark closing" data-n="7">
   <div class="vf tl"></div><div class="vf tr"></div><div class="vf bl"></div><div class="vf br"></div>
   <div class="rec"><span class="dot"></span>REC <span class="tc" data-base="7">00:00:07:00</span></div>
   
-  <div class="brand a" style="--d:0">ZDANMOTION</div>
-  <h1 class="a" style="--d:1">Ska vi fylla er kalender?</h1>
-  <p class="lead a" style="--d:2">Från ja till första bokade hembesöket:</p>
-  <div class="steps"><div class="steps-line"></div><div class="stp a" style="--d:3"><span class="n">1</span><strong>Signera avtalet</strong><small>Digitalt via länk – direkt under mötet.</small></div><div class="stp a" style="--d:3.6"><span class="n">2</span><strong>Skicka material</strong><small>Bilder och filmer från era jobb i en Google Drive-mapp.</small></div><div class="stp a" style="--d:4.2"><span class="n">3</span><strong>Produktion</strong><small>Vi gör annonser och formulär. Kampanjen går live.</small></div><div class="stp a" style="--d:4.8"><span class="n">4</span><strong>Hembesök</strong><small>De första kunderna bokas in i er kalender.</small></div></div>
-  <div class="url a" style="--d:6">zdanmotion.se</div>
+  <div class="kicker a" style="--d:0">NÄSTA STEG</div>
+  <div class="close-l">
+    <h1 class="a" style="--d:1">Ska vi fylla din <em>kalender?</em></h1>
+    <ul class="recap"><li class="a" style="--d:2"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="ic or" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg>Videoannonser som visar ert hantverk</li><li class="a" style="--d:2.5"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="ic or" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg>Vi kvalificerar varje lead</li><li class="a" style="--d:3"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="ic or" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg>Hembesöken bokas direkt i din kalender</li></ul>
+    <div class="cta a" style="--d:4">Ja – vi kör igång idag</div>
+    <p class="cta-sub a" style="--d:4.5">Signera digitalt och skicka bilder och filmer – sedan sätter vi igång.</p>
+  </div>
+  <div class="month a" style="--d:2">
+    <strong>Din kalender</strong>
+    <div class="cnt"><span class="num-up" data-to="12">0</span> hembesök bokade denna månad</div>
+    <div class="mdays"><span>M</span><span>T</span><span>O</span><span>T</span><span>F</span></div>
+    <div class="mgrid"><div class="day on" style="--k:0"><span>3</span><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" class="ic " aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"></path></svg></div><div class="day " ><span>4</span></div><div class="day on" style="--k:1"><span>5</span><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" class="ic " aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"></path></svg></div><div class="day on" style="--k:2"><span>6</span><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" class="ic " aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"></path></svg></div><div class="day " ><span>7</span></div><div class="day " ><span>8</span></div><div class="day on" style="--k:3"><span>9</span><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" class="ic " aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"></path></svg></div><div class="day " ><span>10</span></div><div class="day on" style="--k:4"><span>11</span><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" class="ic " aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"></path></svg></div><div class="day on" style="--k:5"><span>12</span><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" class="ic " aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"></path></svg></div><div class="day " ><span>13</span></div><div class="day on" style="--k:6"><span>14</span><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" class="ic " aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"></path></svg></div><div class="day on" style="--k:7"><span>15</span><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" class="ic " aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"></path></svg></div><div class="day " ><span>16</span></div><div class="day on" style="--k:8"><span>17</span><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" class="ic " aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"></path></svg></div><div class="day " ><span>18</span></div><div class="day on" style="--k:9"><span>19</span><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" class="ic " aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"></path></svg></div><div class="day on" style="--k:10"><span>20</span><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" class="ic " aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"></path></svg></div><div class="day " ><span>21</span></div><div class="day on" style="--k:11"><span>22</span><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" class="ic " aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"></path></svg></div></div>
+  </div>
+  <div class="url a" style="--d:5">zdanmotion.se</div>
 </section>
 </div></main>
 <nav class="nav" aria-label="Bildspel">
@@ -300,8 +312,9 @@ small{display:block;font-size:17px;line-height:1.4;font-weight:400}
     var s=slides[cur];void s.offsetWidth;s.classList.add("active");
     [].forEach.call(dots.children,function(d,k){d.classList.toggle("on",k===cur)});
     try{history.replaceState(null,"","#"+(cur+1))}catch(e){}
-    tick();
+    tick();count();
   }
+  var ct;function count(){clearTimeout(ct);var el=slides[cur].querySelector('.num-up');if(!el)return;var to=+el.dataset.to,i=0;el.textContent='0';var step=function(){el.textContent=++i;if(i<to)ct=setTimeout(step,220)};ct=setTimeout(step,1600);}
   function tick(){
     clearInterval(timer);var tc=slides[cur].querySelector(".tc");if(!tc)return;
     var n=+tc.dataset.base,f=0,sec=0;

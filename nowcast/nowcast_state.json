@@ -1,43 +1,6 @@
 {
  "cash": 812.8322000000001,
- "open": [
-  {
-   "event_id": "1215947",
-   "slug": "highest-temperature-in-shenzhen-on-october-21-2026",
-   "city": "Shenzhen",
-   "date": "2026-10-21",
-   "station": "ZGSZ",
-   "bucket": "34\u00b0C",
-   "side": "YES",
-   "token": "83061259399427194798918703571595994958518161143114527280527185414865490601090",
-   "price": 0.312,
-   "cost": 0.322,
-   "prob": 0.9812,
-   "edge": 0.6592,
-   "shares": 51.9565,
-   "stake_usd": 16.73,
-   "observed": 34,
-   "opened": "2026-10-21T08:31:18.132592+00:00"
-  },
-  {
-   "event_id": "1215947",
-   "slug": "highest-temperature-in-shenzhen-on-october-21-2026",
-   "city": "Shenzhen",
-   "date": "2026-10-21",
-   "station": "ZGSZ",
-   "bucket": "36\u00b0C",
-   "side": "NO",
-   "token": "104700694865271422741516335509579941088086993070596555497173208695648734138026",
-   "price": 0.331,
-   "cost": 0.341,
-   "prob": 0.99,
-   "edge": 0.649,
-   "shares": 31.8182,
-   "stake_usd": 10.85,
-   "observed": 34,
-   "opened": "2026-10-21T08:31:18.132592+00:00"
-  }
- ],
+ "open": [],
  "closed": [
   {
    "event_id": "1118072",
@@ -920,6 +883,48 @@
    "won": true,
    "pnl_usd": 0.5066,
    "settled": "2026-10-23T06:01:30.339233+00:00"
+  },
+  {
+   "event_id": "1215947",
+   "slug": "highest-temperature-in-shenzhen-on-october-21-2026",
+   "city": "Shenzhen",
+   "date": "2026-10-21",
+   "station": "ZGSZ",
+   "bucket": "34\u00b0C",
+   "side": "YES",
+   "token": "83061259399427194798918703571595994958518161143114527280527185414865490601090",
+   "price": 0.312,
+   "cost": 0.322,
+   "prob": 0.9812,
+   "edge": 0.6592,
+   "shares": 51.9565,
+   "stake_usd": 16.73,
+   "observed": 34,
+   "opened": "2026-10-21T08:31:18.132592+00:00",
+   "won": false,
+   "pnl_usd": -16.73,
+   "settled": "2026-10-23T10:00:05.488402+00:00"
+  },
+  {
+   "event_id": "1215947",
+   "slug": "highest-temperature-in-shenzhen-on-october-21-2026",
+   "city": "Shenzhen",
+   "date": "2026-10-21",
+   "station": "ZGSZ",
+   "bucket": "36\u00b0C",
+   "side": "NO",
+   "token": "104700694865271422741516335509579941088086993070596555497173208695648734138026",
+   "price": 0.331,
+   "cost": 0.341,
+   "prob": 0.99,
+   "edge": 0.649,
+   "shares": 31.8182,
+   "stake_usd": 10.85,
+   "observed": 34,
+   "opened": "2026-10-21T08:31:18.132592+00:00",
+   "won": false,
+   "pnl_usd": -10.85,
+   "settled": "2026-10-23T10:00:05.488402+00:00"
   }
  ],
  "decisions": {
@@ -43817,7 +43822,9 @@
     0.331,
     0.999,
     null
-   ]
+   ],
+   "scored": true,
+   "winner": "36\u00b0C"
   },
   "1215945": {
    "city": "Wuhan",
@@ -49755,7 +49762,9 @@
     0.999,
     null,
     null
-   ]
+   ],
+   "scored": true,
+   "winner": "76-77\u00b0F"
   },
   "1223235": {
    "city": "Los Angeles",
@@ -56046,6 +56055,12 @@
    "equity": 840.41,
    "cash": 812.83,
    "open": 2
+  },
+  {
+   "ts": "2026-10-23T10:00:05.488402+00:00",
+   "equity": 812.83,
+   "cash": 812.83,
+   "open": 0
   }
  ],
  "upcoming": [],
@@ -56055,14 +56070,14 @@
  },
  "mode": "trading",
  "last_run": {
-  "ts": "2026-10-23T09:31:19.010811+00:00",
+  "ts": "2026-10-23T10:00:05.488402+00:00",
   "decided": 0,
   "skipped": {}
  },
  "score": {
-  "n": 1853,
-  "model": 274.7056318912725,
-  "market": 113.02734605446155,
-  "events": 806
+  "n": 1862,
+  "model": 283.3613351561488,
+  "market": 113.60962968134115,
+  "events": 808
  }
 }

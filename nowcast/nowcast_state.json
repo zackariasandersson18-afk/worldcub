@@ -49831,7 +49831,9 @@
     0.019,
     0.998,
     0.998
-   ]
+   ],
+   "scored": true,
+   "winner": "70-71\u00b0F"
   },
   "1223236": {
    "city": "San Francisco",
@@ -49907,7 +49909,9 @@
     0.999,
     null,
     0.999
-   ]
+   ],
+   "scored": true,
+   "winner": "62-63\u00b0F"
   },
   "1223234": {
    "city": "Seattle",
@@ -49983,7 +49987,9 @@
     0.999,
     0.999,
     null
-   ]
+   ],
+   "scored": true,
+   "winner": "60-61\u00b0F"
   }
  },
  "history": [
@@ -56022,36 +56028,29 @@
    "equity": 840.41,
    "cash": 812.83,
    "open": 2
-  }
- ],
- "upcoming": [
-  {
-   "city": "San Francisco",
-   "station": "KSFO",
-   "slug": "highest-temperature-in-san-francisco-on-october-22-2026",
-   "solar": "23:52"
   },
   {
-   "city": "Seattle",
-   "station": "KSEA",
-   "slug": "highest-temperature-in-seattle-on-october-22-2026",
-   "solar": "23:52"
+   "ts": "2026-10-23T08:31:11.798233+00:00",
+   "equity": 840.41,
+   "cash": 812.83,
+   "open": 2
   }
  ],
+ "upcoming": [],
  "training_days": {
   "C": 1446,
   "F": 473
  },
  "mode": "trading",
  "last_run": {
-  "ts": "2026-10-23T08:01:32.838430+00:00",
+  "ts": "2026-10-23T08:31:11.798233+00:00",
   "decided": 0,
   "skipped": {}
  },
  "score": {
-  "n": 1841,
-  "model": 274.5473954314432,
-  "market": 112.92346950535081,
-  "events": 803
+  "n": 1853,
+  "model": 274.7056318912725,
+  "market": 113.02734605446155,
+  "events": 806
  }
 }

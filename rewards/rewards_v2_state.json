@@ -14,7 +14,8 @@
    "collateral": 18.7,
    "est_reward_day": 200.0,
    "end": "2027-01-01T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 200.0
   },
   {
    "cond": "0xb92d69a5616767057cab095be76ee7d15a39b955b13daeee009b23702a6dc81f",
@@ -28,21 +29,23 @@
    "collateral": 18.7,
    "est_reward_day": 200.0,
    "end": "2027-01-01T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 200.0
   },
   {
    "cond": "0xcb123af9c027e132d795f7f044e0f7173336d4957dd845c9edffcdbfa4a987fd",
    "question": "Will Morena win the most seats in the 2027 Morelos Congress election?",
    "yes": "58057924402133124041672440650957844022720802344054733120850072650814764368042",
    "no": "60979444855884193552072389614681467008551166925331336936739249258912273342918",
-   "rate": 43.0,
+   "rate": 0.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
    "collateral": 18.7,
    "est_reward_day": 43.0,
    "end": "2027-06-07T03:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 43.0
   },
   {
    "cond": "0xa917becb36c30ed2ec6643d300ac0479298cb4b7edd8cbfd50c2cc93b8d72bf1",
@@ -56,7 +59,8 @@
    "collateral": 18.700000000000003,
    "est_reward_day": 40.0,
    "end": "2027-01-01T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 40.0
   },
   {
    "cond": "0x0b2af95dd6050edc1f61c345a95fd11191caee02a4c5bfb4099f2a10de870215",
@@ -70,35 +74,38 @@
    "collateral": 18.699999999999996,
    "est_reward_day": 27.0,
    "end": "2026-11-30T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 27.0
   },
   {
    "cond": "0x611e22b4533bd5ac4a577c94537827d9d62d7653a2fcb8a7a3c074fb9cf02727",
    "question": "Will England host the 2027 UEFA Nations League Finals?",
    "yes": "41862351375938798790698327984761502686832469833331103339201169209605536280752",
    "no": "28945416086565045961537322493929853259530496950790354921847018376694740858463",
-   "rate": 23.0,
+   "rate": 15.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
    "collateral": 19.099999999999998,
    "est_reward_day": 23.0,
    "end": "2027-06-10T03:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 23.0
   },
   {
    "cond": "0x3cb43b1b966d017193eb7dcc16a6020bc94b664769941ee5ddb2655ee19367d8",
    "question": "Will PSOE win the most seats in Badajoz in the 2026 Spanish general election?",
    "yes": "108265765218120686907610659881758587212583250910706676961086519065821557843799",
    "no": "81518501963183590726463924959290438572632394554390263713577836623086603730984",
-   "rate": 20.0,
+   "rate": 19.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
    "collateral": 18.699999999999996,
    "est_reward_day": 20.0,
    "end": "2026-11-30T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 20.0
   },
   {
    "cond": "0x6a4a9ec279b150e2c84773e403580d8fbe488e53897d019934dadef1054d9f1d",
@@ -112,175 +119,188 @@
    "collateral": 18.700000000000003,
    "est_reward_day": 19.0,
    "end": "2026-11-30T23:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 19.0
   },
   {
    "cond": "0x1c1d142caf3cf1e018ae69a03ad04c89c7774bc2d5cbb3f891690b5af5db71b5",
    "question": "Will Vox win the third-most seats in the 2026 Spanish general election?",
    "yes": "86688452452513398559575278460106976342904996398682374499331845540642104673483",
    "no": "115260408046681002494952076259070795655808581582632974779214551160145925702594",
-   "rate": 19.0,
+   "rate": 15.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
    "collateral": 18.700000000000003,
    "est_reward_day": 19.0,
    "end": "2026-11-30T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 19.0
   },
   {
    "cond": "0x4ee3d5b7791662d9d928f8d660bfa869d82a598315b0d637becc006e4e3497a3",
    "question": "Will PP win the most seats in Badajoz in the 2026 Spanish general election?",
    "yes": "56204810414297275380782351318054045545900149976699993922533572229716256298440",
    "no": "57691290686417450047336596344856891505070380181413679802448944793696103482219",
-   "rate": 18.0,
+   "rate": 19.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
    "collateral": 18.700000000000003,
    "est_reward_day": 18.0,
    "end": "2026-11-30T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 18.0
   },
   {
    "cond": "0xcad30fcc10966c30da49f3a5187da03a020464627f78da1c14646f1b869354e3",
    "question": "Will PSOE win the most seats in Santa Cruz de Tenerife in the 2026 Spanish general election?",
    "yes": "98907492361525865238393325886113996732605506852262550354969718590830727272483",
    "no": "100389421942275273644383746131925207185507318737913534870861474466462176432157",
-   "rate": 18.0,
+   "rate": 19.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
    "collateral": 18.700000000000003,
    "est_reward_day": 18.0,
    "end": "2026-11-30T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 18.0
   },
   {
    "cond": "0x94758b948da26cf46855565f65be7f58574db4b235096615811b9601ebe736a6",
    "question": "Will Ana Lilia Rivera Rivera win the 2027 Tlaxcala Governor Election?",
    "yes": "80258917081346061050036805501298709043623829276041924454314954550761668548278",
    "no": "4605478568367350721882912413649047274644394086578479617515543043652543936033",
-   "rate": 16.0,
+   "rate": 19.0,
    "v": 8.5,
    "min_size": 20.0,
    "d": 0.0425,
    "collateral": 18.3,
    "est_reward_day": 16.0,
    "end": "2027-06-07T03:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 16.0
   },
   {
    "cond": "0x1a84f52aa3e80491d0221f5d29cff65155eb2bf7389d0bc7b14e1ab5fe653459",
    "question": "Will PP win the most seats in C\u00e1ceres in the 2026 Spanish general election?",
    "yes": "81575647246687996180245774660857608105484313856450725149097991853622576121740",
    "no": "69977518301925304412167267321713082898358229148065087500287409239871074182052",
-   "rate": 15.0,
+   "rate": 12.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
    "collateral": 18.7,
    "est_reward_day": 15.0,
    "end": "2026-11-30T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 15.0
   },
   {
    "cond": "0x27c3904b15688262ec1320bde18261c523e24f457734a79af6a1022a9bb24437",
    "question": "Will PSOE win the most seats in C\u00e1ceres in the 2026 Spanish general election?",
    "yes": "74607172856384828571185446139487978337001649716148272325169207369745933868437",
    "no": "75094890055618749703636085804069821624148354461268362498494348088164660727990",
-   "rate": 15.0,
+   "rate": 22.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
    "collateral": 18.7,
    "est_reward_day": 15.0,
    "end": "2026-11-30T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 15.0
   },
   {
    "cond": "0x374b3e5300d44a23e27ca22a48dcb307a4195838296874aafe6374f884a32f8e",
    "question": "Will PSOE win the second-most seats in the 2026 Spanish general election?",
    "yes": "607244323607346944883953880160605378924789353579851051793155712404482725501",
    "no": "60710385573376947044767661233547323133884960985410720004332165418581090214439",
-   "rate": 15.0,
+   "rate": 14.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
    "collateral": 18.700000000000003,
    "est_reward_day": 15.0,
    "end": "2026-11-30T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 15.0
   },
   {
    "cond": "0xa0f80e3b158df896522726f3f43099485a3f9a242403fd0a163be40a81fe01f3",
    "question": "Will PSOE win the third-most seats in the 2026 Spanish general election?",
    "yes": "103101167308628170490288076065679109023642089371012073018354866616877312224847",
    "no": "31829062950547929651104936416461932284717233731120172261713365884841215485488",
-   "rate": 15.0,
+   "rate": 12.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
    "collateral": 18.700000000000003,
    "est_reward_day": 15.0,
    "end": "2026-11-30T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 15.0
   },
   {
    "cond": "0x0a450772a93368d4797127c60e1a42924f430d4a5921e13e78c8bd7e8562f94d",
    "question": "Will the total domestic gross for \"You Can See Everything\" be between $125M and $150M by November 30?",
    "yes": "18014507299835676330746875876240841486403262767072006645481768902442519663764",
    "no": "61059424047576678323748567874283958636840310867803838122329551399348419050345",
-   "rate": 15.0,
+   "rate": 13.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
    "collateral": 19.1,
    "est_reward_day": 15.0,
    "end": "2026-12-01T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 15.0
   },
   {
    "cond": "0x97634c5b4a3a7c09e1c3826cd06981ff153778e7608090c936bdad5691bffce3",
    "question": "Will the next GPT Terra model (5.7+) be released between November 16 and November 22, 2026?",
    "yes": "91961839451998129471286915388402912474631533529961579959702195315480631510813",
    "no": "42216167287663501331533395828479091138405295002913558862340054761139385440322",
-   "rate": 15.0,
+   "rate": 19.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
    "collateral": 19.1,
    "est_reward_day": 15.0,
    "end": "2026-11-23T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 15.0
   },
   {
    "cond": "0x87b8c6b879a34ccdfde3a6a676c31223c17635f168efa78ac45a309525f9f278",
    "question": "Will Broad Front (FA) win the third-most seats in the 2026 Spanish general election?",
    "yes": "106714652654438741022951416013268621387015927322228884304303839719763850508873",
    "no": "23770916245525347977105759950328151931295873318355819299482221011444797767649",
-   "rate": 14.0,
+   "rate": 11.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
    "collateral": 18.700000000000003,
    "est_reward_day": 14.0,
    "end": "2026-11-30T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 14.0
   },
   {
    "cond": "0xa6aaf724fd295fcf12ab91cb7fb7b86750da94d71cd3a151f35b2f561814d1d3",
    "question": "Will the total domestic gross for \"You Can See Everything\" be between $75M and $100M by November 30?",
    "yes": "89371850369454565821634656520409443359966586121262724376843936942776661059598",
    "no": "37366096062354026051522640074927958840995164075264379743051764639529126192426",
-   "rate": 14.0,
+   "rate": 16.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
    "collateral": 19.099999999999998,
    "est_reward_day": 14.0,
    "end": "2026-12-01T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 14.0
   }
  ],
  "positions": {
@@ -1768,9 +1788,9 @@
   "0x6a4a9ec279b150e2c84773e403580d8fbe488e53897d019934dadef1054d9f1d": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.354,
+   "mid": 0.334,
    "share": 1.0,
-   "reward": 14.58351101270308,
+   "reward": 14.790067816966008,
    "fills": 0,
    "q": "Will Yashar win 16-18% of the vote in the 2026 Knesset elections?"
   },
@@ -2026,7 +2046,7 @@
    "cash": 0.0,
    "mid": 0.17,
    "share": 1.0,
-   "reward": 2.5865888711188503,
+   "reward": 2.8110060729458204,
    "fills": 0,
    "q": "Will England host the 2027 UEFA Nations League Finals?"
   },
@@ -2471,7 +2491,7 @@
    "cash": 0.0,
    "mid": 0.195,
    "share": 1.0,
-   "reward": 13.42083547648109,
+   "reward": 13.579441538350286,
    "fills": 0,
    "q": "Will the total domestic gross for \"You Can See Everything\" be between $75M and $"
   },
@@ -2507,7 +2527,7 @@
    "cash": 0.0,
    "mid": 0.2,
    "share": 1.0,
-   "reward": 15.068003413031501,
+   "reward": 15.22466826293204,
    "fills": 0,
    "q": "Will the total domestic gross for \"You Can See Everything\" be between $125M and "
   },
@@ -2617,18 +2637,18 @@
   "0xdaae829981042e7b447e86c0b5fff90364d2d8fed19c06c2fe0fa7e8a703b0ec": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.605,
-   "share": 1.0,
-   "reward": 0.0,
+   "mid": 0.615,
+   "share": 0.022928734778847628,
+   "reward": 0.7497643141243183,
    "fills": 0,
    "q": "Will the 10-year Treasury yield dip below 4.8% before 2027?"
   },
   "0xb92d69a5616767057cab095be76ee7d15a39b955b13daeee009b23702a6dc81f": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.84,
-   "share": 1.0,
-   "reward": 0.0,
+   "mid": 0.8200000000000001,
+   "share": 0.025679987843792773,
+   "reward": 0.6443655733198917,
    "fills": 0,
    "q": "Will the 10-year Treasury yield dip below 4.9% before 2027?"
   },
@@ -2637,25 +2657,25 @@
    "cash": 0.0,
    "mid": 0.72,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.32973496804634733,
    "fills": 0,
    "q": "Will Morena win the most seats in the 2027 Morelos Congress election?"
   },
   "0xa917becb36c30ed2ec6643d300ac0479298cb4b7edd8cbfd50c2cc93b8d72bf1": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.47,
+   "mid": 0.45999999999999996,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.2800452021537004,
    "fills": 0,
    "q": "Will the highest score achieved by a Meta model on Humanity\u2019s Last Exam in 2026 "
   },
   "0x0b2af95dd6050edc1f61c345a95fd11191caee02a4c5bfb4099f2a10de870215": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.31,
+   "mid": 0.44499999999999995,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.17052889809012411,
    "fills": 0,
    "q": "Will PP win the Ceuta seat in the 2026 Spanish general election?"
   },
@@ -2664,7 +2684,7 @@
    "cash": 0.0,
    "mid": 0.31,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.21422505933377478,
    "fills": 0,
    "q": "Will PSOE win the most seats in Badajoz in the 2026 Spanish general election?"
   },
@@ -2673,16 +2693,16 @@
    "cash": 0.0,
    "mid": 0.7050000000000001,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.19374418154358866,
    "fills": 0,
    "q": "Will Vox win the third-most seats in the 2026 Spanish general election?"
   },
   "0x4ee3d5b7791662d9d928f8d660bfa869d82a598315b0d637becc006e4e3497a3": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.6799999999999999,
+   "mid": 0.71,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.18688029888603425,
    "fills": 0,
    "q": "Will PP win the most seats in Badajoz in the 2026 Spanish general election?"
   },
@@ -2691,34 +2711,34 @@
    "cash": 0.0,
    "mid": 0.265,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.1988885491920842,
    "fills": 0,
    "q": "Will PSOE win the most seats in Santa Cruz de Tenerife in the 2026 Spanish gener"
   },
   "0x94758b948da26cf46855565f65be7f58574db4b235096615811b9601ebe736a6": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.735,
-   "share": 1.0,
-   "reward": 0.0,
+   "mid": 0.6905,
+   "share": 0.013837282051220753,
+   "reward": 0.07085536552470591,
    "fills": 0,
    "q": "Will Ana Lilia Rivera Rivera win the 2027 Tlaxcala Governor Election?"
   },
   "0x1a84f52aa3e80491d0221f5d29cff65155eb2bf7389d0bc7b14e1ab5fe653459": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.725,
+   "mid": 0.7050000000000001,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.11502382606267929,
    "fills": 0,
    "q": "Will PP win the most seats in C\u00e1ceres in the 2026 Spanish general election?"
   },
   "0x27c3904b15688262ec1320bde18261c523e24f457734a79af6a1022a9bb24437": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.305,
+   "mid": 0.4,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.16247725200976024,
    "fills": 0,
    "q": "Will PSOE win the most seats in C\u00e1ceres in the 2026 Spanish general election?"
   },
@@ -2727,34 +2747,34 @@
    "cash": 0.0,
    "mid": 0.7050000000000001,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.15986800558037229,
    "fills": 0,
    "q": "Will PSOE win the second-most seats in the 2026 Spanish general election?"
   },
   "0xa0f80e3b158df896522726f3f43099485a3f9a242403fd0a163be40a81fe01f3": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.23500000000000001,
+   "mid": 0.245,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.15346169422070186,
    "fills": 0,
    "q": "Will PSOE win the third-most seats in the 2026 Spanish general election?"
   },
   "0x97634c5b4a3a7c09e1c3826cd06981ff153778e7608090c936bdad5691bffce3": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.18000000000000002,
+   "mid": 0.12,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.1434011956883801,
    "fills": 0,
    "q": "Will the next GPT Terra model (5.7+) be released between November 16 and Novembe"
   },
   "0x87b8c6b879a34ccdfde3a6a676c31223c17635f168efa78ac45a309525f9f278": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.225,
+   "mid": 0.245,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.14259028347002137,
    "fills": 0,
    "q": "Will Broad Front (FA) win the third-most seats in the 2026 Spanish general elect"
   }
@@ -26924,17 +26944,43 @@
    "w": 2987856
   },
   {
-   "ts": "2026-10-23T00:15:34.117505+00:00",
-   "dt_h": 0.1,
-   "reward_tick": 0.8065,
-   "reward_total": 3600.01,
+   "ts": "2026-10-23T00:19:39.064846+00:00",
+   "dt_h": 0.168,
+   "reward_tick": 2.4984,
+   "reward_total": 3601.7,
    "mm_value": -166.94,
-   "net": 3433.06,
+   "net": 3434.76,
    "avg_share": 1.0,
    "n_markets": 20,
    "fills_total": 98,
    "rebalanced": true,
    "w": 2987857
+  },
+  {
+   "ts": "2026-10-23T00:26:36.654743+00:00",
+   "dt_h": 0.116,
+   "reward_tick": 2.2559,
+   "reward_total": 3603.95,
+   "mm_value": -166.94,
+   "net": 3437.01,
+   "avg_share": 0.8596,
+   "n_markets": 20,
+   "fills_total": 98,
+   "rebalanced": false,
+   "w": 2987858
+  },
+  {
+   "ts": "2026-10-23T00:31:13.407394+00:00",
+   "dt_h": 0.077,
+   "reward_tick": 0.7143,
+   "reward_total": 3604.67,
+   "mm_value": -166.94,
+   "net": 3437.73,
+   "avg_share": 0.8531,
+   "n_markets": 20,
+   "fills_total": 98,
+   "rebalanced": false,
+   "w": 2987859
   }
  ],
  "fills": [
@@ -27821,8 +27867,8 @@
    "ledger": "v2"
   }
  ],
- "reward_total": 3600.0061713914215,
- "last_ts": 1792714534.1175048,
+ "reward_total": 3604.6682709765278,
+ "last_ts": 1792715473.4073937,
  "chosen_at": 1792714534.1175048,
  "rebalances": [
   {
@@ -27911,21 +27957,21 @@
   }
  ],
  "last_tick": {
-  "ts": "2026-10-23T00:15:34.117505+00:00",
-  "dt_h": 0.016,
+  "ts": "2026-10-23T00:31:13.407394+00:00",
+  "dt_h": 0.077,
   "markets": [
    {
     "q": "Will the 10-year Treasury yield dip below 4.8% bef",
-    "mid": 0.605,
-    "share": 1.0,
-    "earned": 0.0,
+    "mid": 0.615,
+    "share": 0.0229,
+    "earned": 0.0147,
     "inv": 0.0
    },
    {
     "q": "Will the 10-year Treasury yield dip below 4.9% bef",
-    "mid": 0.84,
-    "share": 1.0,
-    "earned": 0.0,
+    "mid": 0.82,
+    "share": 0.0257,
+    "earned": 0.0165,
     "inv": 0.0
    },
    {
@@ -27937,14 +27983,14 @@
    },
    {
     "q": "Will the highest score achieved by a Meta model on",
-    "mid": 0.47,
+    "mid": 0.46,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will PP win the Ceuta seat in the 2026 Spanish gen",
-    "mid": 0.31,
+    "mid": 0.445,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -27953,115 +27999,115 @@
     "q": "Will England host the 2027 UEFA Nations League Fin",
     "mid": 0.17,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.048,
     "inv": 0.0
    },
    {
     "q": "Will PSOE win the most seats in Badajoz in the 202",
     "mid": 0.31,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0609,
     "inv": 0.0
    },
    {
     "q": "Will Yashar win 16-18% of the vote in the 2026 Kne",
-    "mid": 0.354,
+    "mid": 0.334,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0609,
     "inv": 0.0
    },
    {
     "q": "Will Vox win the third-most seats in the 2026 Span",
     "mid": 0.705,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.048,
     "inv": 0.0
    },
    {
     "q": "Will PP win the most seats in Badajoz in the 2026 ",
-    "mid": 0.68,
+    "mid": 0.71,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0609,
     "inv": 0.0
    },
    {
     "q": "Will PSOE win the most seats in Santa Cruz de Tene",
     "mid": 0.265,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0609,
     "inv": 0.0
    },
    {
     "q": "Will Ana Lilia Rivera Rivera win the 2027 Tlaxcala",
-    "mid": 0.735,
-    "share": 1.0,
-    "earned": 0.0,
+    "mid": 0.691,
+    "share": 0.0138,
+    "earned": 0.0008,
     "inv": 0.0
    },
    {
     "q": "Will PP win the most seats in C\u00e1ceres in the 2026 ",
-    "mid": 0.725,
-    "share": 1.0,
-    "earned": 0.0,
-    "inv": 0.0
-   },
-   {
-    "q": "Will PSOE win the most seats in C\u00e1ceres in the 202",
-    "mid": 0.305,
-    "share": 1.0,
-    "earned": 0.0,
-    "inv": 0.0
-   },
-   {
-    "q": "Will PSOE win the second-most seats in the 2026 Sp",
     "mid": 0.705,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
    },
    {
-    "q": "Will PSOE win the third-most seats in the 2026 Spa",
-    "mid": 0.235,
+    "q": "Will PSOE win the most seats in C\u00e1ceres in the 202",
+    "mid": 0.4,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0705,
+    "inv": 0.0
+   },
+   {
+    "q": "Will PSOE win the second-most seats in the 2026 Sp",
+    "mid": 0.705,
+    "share": 1.0,
+    "earned": 0.0448,
+    "inv": 0.0
+   },
+   {
+    "q": "Will PSOE win the third-most seats in the 2026 Spa",
+    "mid": 0.245,
+    "share": 1.0,
+    "earned": 0.0384,
     "inv": 0.0
    },
    {
     "q": "Will the total domestic gross for \"You Can See Eve",
     "mid": 0.2,
     "share": 1.0,
-    "earned": 0.0102,
+    "earned": 0.0416,
     "inv": 0.0
    },
    {
     "q": "Will the next GPT Terra model (5.7+) be released b",
-    "mid": 0.18,
+    "mid": 0.12,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0609,
     "inv": 0.0
    },
    {
     "q": "Will Broad Front (FA) win the third-most seats in ",
-    "mid": 0.225,
+    "mid": 0.245,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0352,
     "inv": 0.0
    },
    {
     "q": "Will the total domestic gross for \"You Can See Eve",
     "mid": 0.195,
     "share": 1.0,
-    "earned": 0.0095,
+    "earned": 0.0513,
     "inv": 0.0
    }
   ],
-  "reward_tick": 0.0197,
-  "reward_total": 3600.01,
+  "reward_tick": 0.7143,
+  "reward_total": 3604.67,
   "mm_value": -166.94,
-  "net": 3433.06,
-  "avg_share": 1.0,
+  "net": 3437.73,
+  "avg_share": 0.8531,
   "n_markets": 20,
   "fills_total": 98,
-  "rebalanced": true
+  "rebalanced": false
  }
 }

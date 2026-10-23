@@ -1,24 +1,6 @@
 {
- "cash": 805.5956000000001,
+ "cash": 812.8322000000001,
  "open": [
-  {
-   "event_id": "1215959",
-   "slug": "highest-temperature-in-manila-on-october-21-2026",
-   "city": "Manila",
-   "date": "2026-10-21",
-   "station": "RPLL",
-   "bucket": "32\u00b0C",
-   "side": "YES",
-   "token": "27184153753201406918325334693509623618388973346667235683380092417241972803801",
-   "price": 0.92,
-   "cost": 0.93,
-   "prob": 0.9812,
-   "edge": 0.0512,
-   "shares": 7.2366,
-   "stake_usd": 6.73,
-   "observed": 32,
-   "opened": "2026-10-21T08:01:22.616722+00:00"
-  },
   {
    "event_id": "1215947",
    "slug": "highest-temperature-in-shenzhen-on-october-21-2026",
@@ -917,6 +899,27 @@
    "won": false,
    "pnl_usd": -2.5,
    "settled": "2026-10-22T11:01:33.402904+00:00"
+  },
+  {
+   "event_id": "1215959",
+   "slug": "highest-temperature-in-manila-on-october-21-2026",
+   "city": "Manila",
+   "date": "2026-10-21",
+   "station": "RPLL",
+   "bucket": "32\u00b0C",
+   "side": "YES",
+   "token": "27184153753201406918325334693509623618388973346667235683380092417241972803801",
+   "price": 0.92,
+   "cost": 0.93,
+   "prob": 0.9812,
+   "edge": 0.0512,
+   "shares": 7.2366,
+   "stake_usd": 6.73,
+   "observed": 32,
+   "opened": "2026-10-21T08:01:22.616722+00:00",
+   "won": true,
+   "pnl_usd": 0.5066,
+   "settled": "2026-10-23T06:01:30.339233+00:00"
   }
  ],
  "decisions": {
@@ -43190,7 +43193,9 @@
     0.999,
     null,
     null
-   ]
+   ],
+   "scored": true,
+   "winner": "29\u00b0C"
   },
   "1215950": {
    "city": "Busan",
@@ -43342,7 +43347,9 @@
     null,
     null,
     null
-   ]
+   ],
+   "scored": true,
+   "winner": "32\u00b0C"
   },
   "1215957": {
    "city": "Qingdao",
@@ -43652,7 +43659,9 @@
     null,
     null,
     null
-   ]
+   ],
+   "scored": true,
+   "winner": "17\u00b0C"
   },
   "1215956": {
    "city": "Guangzhou",
@@ -43882,7 +43891,9 @@
     0.998,
     null,
     null
-   ]
+   ],
+   "scored": true,
+   "winner": "21\u00b0C"
   },
   "1215944": {
    "city": "Beijing",
@@ -44190,7 +44201,9 @@
     0.999,
     null,
     null
-   ]
+   ],
+   "scored": true,
+   "winner": "22\u00b0C"
   },
   "1215930": {
    "city": "Singapore",
@@ -44420,7 +44433,9 @@
     0.998,
     null,
     null
-   ]
+   ],
+   "scored": true,
+   "winner": "38\u00b0C"
   },
   "1215954": {
    "city": "Jeddah",
@@ -44574,7 +44589,9 @@
     0.999,
     0.997,
     0.015
-   ]
+   ],
+   "scored": true,
+   "winner": "20\u00b0C or higher"
   },
   "1215952": {
    "city": "Helsinki",
@@ -44728,7 +44745,9 @@
     0.997,
     0.999,
     null
-   ]
+   ],
+   "scored": true,
+   "winner": "20\u00b0C"
   },
   "1215933": {
    "city": "Warsaw",
@@ -44882,7 +44901,9 @@
     0.999,
     0.999,
     null
-   ]
+   ],
+   "scored": true,
+   "winner": "13\u00b0C"
   },
   "1215931": {
    "city": "Milan",
@@ -45036,7 +45057,9 @@
     0.999,
     null,
     null
-   ]
+   ],
+   "scored": true,
+   "winner": "11\u00b0C"
   },
   "1215920": {
    "city": "Paris",
@@ -45656,7 +45679,9 @@
     0.998,
     0.999,
     0.999
-   ]
+   ],
+   "scored": true,
+   "winner": "15\u00b0C"
   },
   "1216344": {
    "city": "Miami",
@@ -55951,6 +55976,12 @@
    "equity": 839.91,
    "cash": 805.6,
    "open": 3
+  },
+  {
+   "ts": "2026-10-23T06:01:30.339233+00:00",
+   "equity": 840.41,
+   "cash": 812.83,
+   "open": 2
   }
  ],
  "upcoming": [
@@ -55958,55 +55989,49 @@
    "city": "Mexico City",
    "station": "MMMX",
    "slug": "highest-temperature-in-mexico-city-on-october-22-2026",
-   "solar": "22:55"
+   "solar": "23:25"
   },
   {
    "city": "San Francisco",
    "station": "KSFO",
    "slug": "highest-temperature-in-san-francisco-on-october-22-2026",
-   "solar": "21:21"
+   "solar": "21:51"
   },
   {
    "city": "Los Angeles",
    "station": "KLAX",
    "slug": "highest-temperature-in-los-angeles-on-october-22-2026",
-   "solar": "21:37"
+   "solar": "22:07"
   },
   {
    "city": "Seattle",
    "station": "KSEA",
    "slug": "highest-temperature-in-seattle-on-october-22-2026",
-   "solar": "21:22"
+   "solar": "21:52"
   },
   {
    "city": "Houston",
    "station": "KHOU",
    "slug": "highest-temperature-in-houston-on-october-22-2026",
-   "solar": "23:10"
+   "solar": "23:40"
   },
   {
    "city": "Denver",
    "station": "KBKF",
    "slug": "highest-temperature-in-denver-on-october-22-2026",
-   "solar": "22:32"
+   "solar": "23:02"
   },
   {
    "city": "Austin",
    "station": "KAUS",
    "slug": "highest-temperature-in-austin-on-october-22-2026",
-   "solar": "23:00"
-  },
-  {
-   "city": "Chicago",
-   "station": "KORD",
-   "slug": "highest-temperature-in-chicago-on-october-22-2026",
-   "solar": "23:39"
+   "solar": "23:30"
   },
   {
    "city": "Dallas",
    "station": "KDAL",
    "slug": "highest-temperature-in-dallas-on-october-22-2026",
-   "solar": "23:03"
+   "solar": "23:34"
   }
  ],
  "training_days": {
@@ -56015,14 +56040,14 @@
  },
  "mode": "trading",
  "last_run": {
-  "ts": "2026-10-23T05:31:19.119957+00:00",
+  "ts": "2026-10-23T06:01:30.339233+00:00",
   "decided": 0,
   "skipped": {}
  },
  "score": {
-  "n": 1738,
-  "model": 265.2002942911092,
-  "market": 111.6717798573209,
-  "events": 784
+  "n": 1804,
+  "model": 274.0770567772293,
+  "market": 112.59575038348953,
+  "events": 795
  }
 }

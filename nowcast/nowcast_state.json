@@ -43416,7 +43416,9 @@
     null,
     null,
     null
-   ]
+   ],
+   "scored": true,
+   "winner": "15\u00b0C"
   },
   "1215942": {
    "city": "Taipei",
@@ -44026,7 +44028,9 @@
     null,
     null,
     null
-   ]
+   ],
+   "scored": true,
+   "winner": "22\u00b0C"
   },
   "1215953": {
    "city": "Kuala Lumpur",
@@ -44102,7 +44106,9 @@
     null,
     null,
     null
-   ]
+   ],
+   "scored": true,
+   "winner": "34\u00b0C"
   },
   "1215946": {
    "city": "Chengdu",
@@ -44254,7 +44260,9 @@
     null,
     null,
     null
-   ]
+   ],
+   "scored": true,
+   "winner": "32\u00b0C"
   },
   "1215924": {
    "city": "Lucknow",
@@ -45096,7 +45104,9 @@
     0.014,
     0.998,
     0.999
-   ]
+   ],
+   "scored": true,
+   "winner": "15\u00b0C"
   },
   "1215919": {
    "city": "London",
@@ -55907,6 +55917,12 @@
    "equity": 839.91,
    "cash": 805.6,
    "open": 3
+  },
+  {
+   "ts": "2026-10-23T05:01:41.095333+00:00",
+   "equity": 839.91,
+   "cash": 805.6,
+   "open": 3
   }
  ],
  "upcoming": [
@@ -55914,85 +55930,79 @@
    "city": "Panama City",
    "station": "MPMG",
    "slug": "highest-temperature-in-panama-city-on-october-22-2026",
-   "solar": "23:23"
+   "solar": "23:43"
   },
   {
    "city": "Mexico City",
    "station": "MMMX",
    "slug": "highest-temperature-in-mexico-city-on-october-22-2026",
-   "solar": "22:05"
+   "solar": "22:25"
   },
   {
    "city": "Toronto",
    "station": "CYYZ",
    "slug": "highest-temperature-in-toronto-on-october-22-2026",
-   "solar": "23:22"
+   "solar": "23:43"
   },
   {
    "city": "San Francisco",
    "station": "KSFO",
    "slug": "highest-temperature-in-san-francisco-on-october-22-2026",
-   "solar": "20:31"
+   "solar": "20:52"
   },
   {
    "city": "Los Angeles",
    "station": "KLAX",
    "slug": "highest-temperature-in-los-angeles-on-october-22-2026",
-   "solar": "20:47"
+   "solar": "21:08"
   },
   {
    "city": "Seattle",
    "station": "KSEA",
    "slug": "highest-temperature-in-seattle-on-october-22-2026",
-   "solar": "20:32"
+   "solar": "20:52"
   },
   {
    "city": "Miami",
    "station": "KMIA",
    "slug": "highest-temperature-in-miami-on-october-22-2026",
-   "solar": "23:20"
+   "solar": "23:40"
   },
   {
    "city": "Houston",
    "station": "KHOU",
    "slug": "highest-temperature-in-houston-on-october-22-2026",
-   "solar": "22:20"
+   "solar": "22:40"
   },
   {
    "city": "Denver",
    "station": "KBKF",
    "slug": "highest-temperature-in-denver-on-october-22-2026",
-   "solar": "21:42"
+   "solar": "22:02"
   },
   {
    "city": "Austin",
    "station": "KAUS",
    "slug": "highest-temperature-in-austin-on-october-22-2026",
-   "solar": "22:10"
+   "solar": "22:31"
   },
   {
    "city": "Chicago",
    "station": "KORD",
    "slug": "highest-temperature-in-chicago-on-october-22-2026",
-   "solar": "22:49"
+   "solar": "23:10"
   },
   {
    "city": "Atlanta",
    "station": "KATL",
    "slug": "highest-temperature-in-atlanta-on-october-22-2026",
-   "solar": "23:03"
+   "solar": "23:23"
   },
   {
    "city": "Dallas",
    "station": "KDAL",
    "slug": "highest-temperature-in-dallas-on-october-22-2026",
-   "solar": "22:13"
-  },
-  {
-   "city": "NYC",
-   "station": "KLGA",
-   "slug": "highest-temperature-in-nyc-on-october-22-2026",
-   "solar": "23:45"
+   "solar": "22:34"
   }
  ],
  "training_days": {
@@ -56001,14 +56011,14 @@
  },
  "mode": "trading",
  "last_run": {
-  "ts": "2026-10-23T04:41:20.738509+00:00",
+  "ts": "2026-10-23T05:01:41.095333+00:00",
   "decided": 0,
   "skipped": {}
  },
  "score": {
-  "n": 1664,
-  "model": 264.1835622351232,
-  "market": 110.31423423529547,
-  "events": 768
+  "n": 1684,
+  "model": 264.4606236997518,
+  "market": 110.5516251197243,
+  "events": 773
  }
 }

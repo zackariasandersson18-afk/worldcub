@@ -14,7 +14,8 @@
    "collateral": 19.1,
    "est_reward_day": 109.00036,
    "end": "2027-05-31T03:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 109.00036
   },
   {
    "cond": "0xac3f9a8ea369f76c60a8add9069240ff55fea957796f4fe82727653f6dfa5210",
@@ -28,7 +29,8 @@
    "collateral": 18.7,
    "est_reward_day": 50.0,
    "end": "2028-01-01T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 50.0
   },
   {
    "cond": "0x4dbf6d208dd56f1d297738f44327c39f3128cc7da5d59e137d027a18dfbc502e",
@@ -42,7 +44,8 @@
    "collateral": 18.7,
    "est_reward_day": 50.0,
    "end": "2027-01-15T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 50.0
   },
   {
    "cond": "0x72849e2b659307445c77b6c93130ad57df90692393c79ab5dda7a0a1e28d1f8d",
@@ -56,7 +59,8 @@
    "collateral": 18.7,
    "est_reward_day": 50.0,
    "end": "2027-01-15T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 50.0
   },
   {
    "cond": "0x3657dc1c7a8b984564e8354ca00411d2207eabb52b6c982514c5ba53b84da40a",
@@ -70,7 +74,8 @@
    "collateral": 18.7,
    "est_reward_day": 50.0,
    "end": "2027-01-15T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 50.0
   },
   {
    "cond": "0x411bcf6c1842e1224633582e8ea2b69423559ea15224168f7d705ffab21b053f",
@@ -84,7 +89,8 @@
    "collateral": 18.7,
    "est_reward_day": 50.0,
    "end": "2026-12-01T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 50.0
   },
   {
    "cond": "0x35a226ed0eab1aa3fe45107aede32c4c4510d6c10a77b2321d0f60d2312c00d7",
@@ -98,7 +104,8 @@
    "collateral": 18.700000000000003,
    "est_reward_day": 50.0,
    "end": "2027-01-15T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 50.0
   },
   {
    "cond": "0x5cff640db63271f06560a4473edd5aa6f80c83977bfaee3ff7b9ef02c1c37fe6",
@@ -112,7 +119,8 @@
    "collateral": 18.700000000000003,
    "est_reward_day": 50.0,
    "end": "2027-07-01T03:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 50.0
   },
   {
    "cond": "0xb0d63088fa99fe65859d999f232af514f6ec9e8c42a7f514c7a786e484c42308",
@@ -126,7 +134,8 @@
    "collateral": 18.700000000000003,
    "est_reward_day": 50.0,
    "end": "2027-07-01T03:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 50.0
   },
   {
    "cond": "0x6cf827720a643edb6480aa0ab04d0010f4e75fdf3a18bfe0be629649a0cba714",
@@ -140,7 +149,8 @@
    "collateral": 18.700000000000003,
    "est_reward_day": 40.0,
    "end": "2027-01-01T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 40.0
   },
   {
    "cond": "0x2257e3232c4b23458ec0b44d21904897d516216f24af74487033876b1e56b591",
@@ -154,7 +164,8 @@
    "collateral": 18.700000000000003,
    "est_reward_day": 40.0,
    "end": "2027-01-01T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 40.0
   },
   {
    "cond": "0xa4ebe87cd36d4dc9c19abc85b6a37e1ca910e73544676872bed213ee4f42a1cc",
@@ -168,7 +179,8 @@
    "collateral": 18.700000000000003,
    "est_reward_day": 40.0,
    "end": "2027-01-01T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 40.0
   },
   {
    "cond": "0x12e7e3aaed06c1ac55f082a0b4282d5f525cdb2106afb1972e9d861bdc7e1649",
@@ -182,21 +194,23 @@
    "collateral": 18.700000000000003,
    "est_reward_day": 40.0,
    "end": "2027-01-01T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 40.0
   },
   {
    "cond": "0x348e67280ef52edd02429ed351ce4bc6cc7023331a8f5d9e8c35bdd1ad3b13ee",
    "question": "Will Amy Hunt win the 2026 BBC Sports Personality of the Year award?",
    "yes": "77249567135958294736749375774980462606305182464036957717986145663547295480096",
    "no": "22129368575947198190679972495801803305449441141518072104693598039575271530936",
-   "rate": 40.0,
+   "rate": 55.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
    "collateral": 19.1,
    "est_reward_day": 40.0,
    "end": "2027-01-01T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 40.0
   },
   {
    "cond": "0x6fd35d4386532f338f7fc116c8335c8683952059294c248a6681b643480be4bf",
@@ -210,7 +224,8 @@
    "collateral": 18.7,
    "est_reward_day": 36.0,
    "end": "2027-06-07T03:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 36.0
   },
   {
    "cond": "0xbffc3a084b630d9ca23950ac2c78e943fc27048731b8af4ce10daff3f202ee8c",
@@ -224,35 +239,38 @@
    "collateral": 19.1,
    "est_reward_day": 26.0,
    "end": "2028-11-08T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 26.0
   },
   {
    "cond": "0x4277be442b97a0fdc682966725431c88a256f9ed531f315a2cabf732452f5d5f",
    "question": "Will the Democrats win North Carolina in the 2028 Presidential Election?",
    "yes": "47512240933151230303069474125546811153373387272719960026256401687197964335544",
    "no": "7302226507497958462186081678786595282363432780401588472441018523514850345981",
-   "rate": 25.0,
+   "rate": 24.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
    "collateral": 19.1,
    "est_reward_day": 25.0,
    "end": "2028-11-08T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 25.0
   },
   {
    "cond": "0x7406d857d301357beadfb2d6b32b4d0ad335dd5186e7ae022c194220fc9b43a3",
    "question": "Will the Democrats win Iowa in the 2028 Presidential Election?",
    "yes": "75311007999890597186144371739338759449233312409334978734538857068585033937129",
    "no": "102710635769981555604534652531442382194413840968695988069813729251166705733971",
-   "rate": 25.0,
+   "rate": 21.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
    "collateral": 19.1,
    "est_reward_day": 25.0,
    "end": "2028-11-08T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 25.0
   },
   {
    "cond": "0x9ea8ef9fe07f3dacfb8f6c655dd48355a84d21b692b8722afecb842d706269c9",
@@ -266,77 +284,83 @@
    "collateral": 19.1,
    "est_reward_day": 23.0,
    "end": "2028-11-08T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 23.0
   },
   {
    "cond": "0x0428539158b33e9c6e410ac4ef1de47726ab70e855467d03c33f528ad6a3934c",
    "question": "Will the Democrats win Virginia in the 2028 Presidential Election?",
    "yes": "41721151226890769778132036395293423866201334597563552753436984608757690705815",
    "no": "66201092682638361171309092622098321611970622309708303734999748381890313397823",
-   "rate": 23.0,
+   "rate": 26.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
    "collateral": 19.1,
    "est_reward_day": 23.0,
    "end": "2028-11-08T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 23.0
   },
   {
    "cond": "0x1faf18ad6f853eef9db5e8f4cada5dcea149e68b9b58df652281f0ce6d964c9f",
    "question": "Will the Republicans win Michigan in the 2028 Presidential Election?",
    "yes": "59784022167943245396947861848222646549421313485130323653517059004318918590568",
    "no": "96826055802413258227904658311589339976899596010790054067816778292256663540909",
-   "rate": 22.0,
+   "rate": 20.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
    "collateral": 19.1,
    "est_reward_day": 22.0,
    "end": "2028-11-08T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 22.0
   },
   {
    "cond": "0x620a6cddea9306e96a21bb20d2d316645757db5972bcfccee8779b2185ff8227",
    "question": "Will the Democrats win Minnesota in the 2028 Presidential Election?",
    "yes": "54544011970616008400087595863312063570947687825936103526944390227819986525941",
    "no": "60500077131427508090164762360330320415540056632465106678310524392120647128426",
-   "rate": 22.0,
+   "rate": 20.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
    "collateral": 19.1,
    "est_reward_day": 22.0,
    "end": "2028-11-08T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 22.0
   },
   {
    "cond": "0x8c7db0d1f8e74f773dc0c3097fdcbb24317ca67ee5cf66367e11175581b3a826",
    "question": "Will the Democrats win Alaska in the 2028 Presidential Election?",
    "yes": "17078393104310884289347035595264001997013474161673925083136106458080488603952",
    "no": "14129207197856251304282387420047895552816939607518553843760339455740847052837",
-   "rate": 22.0,
+   "rate": 21.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
    "collateral": 19.1,
    "est_reward_day": 22.0,
    "end": "2028-11-08T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 22.0
   },
   {
    "cond": "0x7c36090daf3bf2a75bca1a9183a8ba56aa102c877e0b36e245757e719ae78f16",
    "question": "Will the Republicans win Maine in the 2028 Presidential Election?",
    "yes": "20339142947081196921978949738674362341423867118135155938176239965434803970755",
    "no": "109606740777230973534799117237840352209823644771491970158075368693330397921027",
-   "rate": 21.0,
+   "rate": 22.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
    "collateral": 19.1,
    "est_reward_day": 21.0,
    "end": "2028-11-08T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 21.0
   },
   {
    "cond": "0xf678bbcd9ae594797e9d4772174f8fb4138f2beedbde076c74b2d31d1dc3b01f",
@@ -350,7 +374,8 @@
    "collateral": 19.099999999999998,
    "est_reward_day": 20.0,
    "end": "2028-11-08T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 20.0
   },
   {
    "cond": "0xd86a225278d13642c5ecb71845c1f41383812cb99f1dee65ba58f329b46797db",
@@ -364,7 +389,8 @@
    "collateral": 19.1,
    "est_reward_day": 20.0,
    "end": "2028-11-08T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 20.0
   },
   {
    "cond": "0xf6dbbf0894d69d030de4b4d0b0ed9dda40b3f1a15aeb72fc077d1a958343e547",
@@ -378,35 +404,38 @@
    "collateral": 19.1,
    "est_reward_day": 20.0,
    "end": "2028-11-08T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 20.0
   },
   {
    "cond": "0xc599fa56a02ebb5cc4929f441383b8ecb328943feab82821926fc5036da1cbc2",
    "question": "Will the Democrats win Ohio in the 2028 Presidential Election?",
    "yes": "54479414009774195316159551539048337773819955922230016841184569057943795718584",
    "no": "51172608380800534286786392520671533411804216857575843293511483637426468636568",
-   "rate": 20.0,
+   "rate": 21.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
    "collateral": 19.1,
    "est_reward_day": 20.0,
    "end": "2028-11-08T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 20.0
   },
   {
    "cond": "0x56c3185d20937db2f07550ba5a2fa4368029846e4134c404f58a443de7107e67",
    "question": "Will the Republicans win Ohio in the 2028 Presidential Election?",
    "yes": "2236325420049124964761254659573226458681688405861701460959526855893126232505",
    "no": "23752676965265156529288241399750944703743547963795763834513206076154088655897",
-   "rate": 20.0,
+   "rate": 19.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
    "collateral": 19.1,
    "est_reward_day": 20.0,
    "end": "2028-11-08T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 20.0
   },
   {
    "cond": "0xee3e32c755cfbfdabf66b73a457820dd0cd93680529765ffbb8d94211fb15915",
@@ -420,21 +449,23 @@
    "collateral": 19.1,
    "est_reward_day": 20.0,
    "end": "2028-11-08T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 20.0
   },
   {
    "cond": "0x8f6e8fc8300b5330c210423269930e421789495bac7e25fb923e4f7f5a0ef776",
    "question": "Will the Democrats win Maine in the 2028 Presidential Election?",
    "yes": "45705511633561367437851846320664455210230079284664027775669298239628731497651",
    "no": "112813096921913940167829925439666827451321823884797352575844123616634949751772",
-   "rate": 19.0,
+   "rate": 18.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
    "collateral": 19.1,
    "est_reward_day": 19.0,
    "end": "2028-11-08T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 19.0
   },
   {
    "cond": "0x1f838ca91423ea3d5ed5a4ecc8e1123a6fed2f0742f5424eff90ebcd0b0948c2",
@@ -448,105 +479,113 @@
    "collateral": 19.1,
    "est_reward_day": 18.0,
    "end": "2027-01-04T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 18.0
   },
   {
    "cond": "0xe5a190a6e3efbaef21bc3794a45ff351239c1174bfd0c23907c444f4f18d6b07",
    "question": "Will the Republicans win Minnesota in the 2028 Presidential Election?",
    "yes": "77952307130612428803512933018232850446113127112112002807805606879410235807465",
    "no": "69914093465769653353178768012321817927415872047270755978313902356405597949120",
-   "rate": 18.0,
+   "rate": 20.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
    "collateral": 19.1,
    "est_reward_day": 18.0,
    "end": "2028-11-08T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 18.0
   },
   {
    "cond": "0x82d84d12db92d6724e25d767a1726f1af0ce71ae86dfa84ad7a939b46dac8344",
    "question": "Will the Republicans win Alaska in the 2028 Presidential Election?",
    "yes": "14336960681758086331150988370235262654538929691967917543636369179939138216238",
    "no": "10743179499200997702625133910048240603396528327535157080037986362320542868594",
-   "rate": 18.0,
+   "rate": 19.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
    "collateral": 19.1,
    "est_reward_day": 18.0,
    "end": "2028-11-08T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 18.0
   },
   {
    "cond": "0x7177e2195521a9a3ca8d06e2ec89094a0d4060374704409ae125d3167ce6c6ae",
    "question": "Will the Republicans win Virginia in the 2028 Presidential Election?",
    "yes": "57841331627104236142980530179099143348887774896081029065407919440330634908587",
    "no": "30942374030201497128781836487053296670807222783337266147441402882390641790621",
-   "rate": 17.0,
+   "rate": 14.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
    "collateral": 19.1,
    "est_reward_day": 17.0,
    "end": "2028-11-08T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 17.0
   },
   {
    "cond": "0xfd7882ed49db515a48ced4d35fff84b7392ebfa84ee174ce8f6170086c0e814b",
    "question": "Will the Republicans win New Jersey in the 2028 Presidential Election?",
    "yes": "18332490576372584749190261706669994838541871671638910406105462790931500552426",
    "no": "79483854690507408865455413422950578442917726528189971521236379906182201727030",
-   "rate": 17.0,
+   "rate": 16.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
    "collateral": 19.1,
    "est_reward_day": 17.0,
    "end": "2028-11-08T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 17.0
   },
   {
    "cond": "0x248a310233f61f9096f6cf39e704cc44176be622906095d7a2b78bb7719eb473",
    "question": "Will the Republicans win North Carolina in the 2028 Presidential Election?",
    "yes": "111040428454204134145057620165494543435622437383776425987138853289357416246306",
    "no": "50757559926119560269501823433960745870326594590251367978937602841123694986941",
-   "rate": 15.0,
+   "rate": 16.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
    "collateral": 19.1,
    "est_reward_day": 15.0,
    "end": "2028-11-08T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 15.0
   },
   {
    "cond": "0x2252038307c5e583a376586ee586cc253063f329f28f4ce72fc50d27faa7a2a5",
    "question": "Will the Republicans win Iowa in the 2028 Presidential Election?",
    "yes": "51882480794919620719909557324406450379365856469945936653849365212667736827172",
    "no": "56084173924587863618452917730068703767850131841766964618965993172145289629319",
-   "rate": 15.0,
+   "rate": 19.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
    "collateral": 19.1,
    "est_reward_day": 15.0,
    "end": "2028-11-08T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 15.0
   },
   {
    "cond": "0x0363a7f29185f6c62ef4c83980719f5162da6c6d5a618787ba53517827552f77",
    "question": "Will Chou Chun-mi win the next Pingtung County Magistrate election?",
    "yes": "62091251019900643533669445194568753398451098271122500856748350215949774261416",
    "no": "105328557292212845055751252094950727211987020118977316219447080565771015911935",
-   "rate": 14.0,
+   "rate": 4.0,
    "v": 8.5,
    "min_size": 20.0,
    "d": 0.0425,
    "collateral": 18.3,
    "est_reward_day": 14.0,
    "end": "2026-11-29T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 14.0
   }
  ],
  "positions": {
@@ -1990,7 +2029,7 @@
    "cash": 0.0,
    "mid": 0.52,
    "share": 1.0,
-   "reward": 13.027431586322201,
+   "reward": 13.369261946516248,
    "fills": 0,
    "q": "Will Morena win the most seats in the 2027 Durango Congress election?"
   },
@@ -3527,9 +3566,9 @@
   "0xabf3e732e9312ab44932c134d5ccd16488ba0e297423a34f7a53cbdeee8dbf03": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.2255,
+   "mid": 0.2265,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.60297208661904,
    "fills": 0,
    "q": "Will Fabian Hurzeler be the first Premier League manager sacked in 2026-27?"
   },
@@ -3538,16 +3577,16 @@
    "cash": 0.0,
    "mid": 0.275,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.47476438915839897,
    "fills": 0,
    "q": "Will Ukraine agree to give up the rest of Donbas by December 31, 2027?"
   },
   "0x4dbf6d208dd56f1d297738f44327c39f3128cc7da5d59e137d027a18dfbc502e": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.275,
+   "mid": 0.28,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.47476438915839897,
    "fills": 0,
    "q": "Will the U.S. 30-year Fixed-Rate Mortgage hit 8.00% (HIGH) by December 31, 2026?"
   },
@@ -3556,16 +3595,16 @@
    "cash": 0.0,
    "mid": 0.28,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.47476438915839897,
    "fills": 0,
    "q": "Will the U.S. 30-year Fixed-Rate Mortgage hit 7.75% (HIGH) by December 31, 2026?"
   },
   "0x3657dc1c7a8b984564e8354ca00411d2207eabb52b6c982514c5ba53b84da40a": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.32,
+   "mid": 0.495,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.3029310988883177,
    "fills": 0,
    "q": "Will the U.S. 30-year Fixed-Rate Mortgage hit 6.75% (LOW) by December 31, 2026?"
   },
@@ -3574,34 +3613,34 @@
    "cash": 0.0,
    "mid": 0.43500000000000005,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.47476438915839897,
    "fills": 0,
    "q": "EU country blames Russia for new sabotage attack by November 30?"
   },
   "0x35a226ed0eab1aa3fe45107aede32c4c4510d6c10a77b2321d0f60d2312c00d7": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.21500000000000002,
-   "share": 0.9406307977736548,
-   "reward": 0.0,
+   "mid": 0.26,
+   "share": 1.0,
+   "reward": 0.1396077395313316,
    "fills": 0,
    "q": "Will the U.S. 30-year Fixed-Rate Mortgage hit 7.00% (LOW) by December 31, 2026?"
   },
   "0x5cff640db63271f06560a4473edd5aa6f80c83977bfaee3ff7b9ef02c1c37fe6": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.515,
+   "mid": 0.51,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.47476438915839897,
    "fills": 0,
    "q": "Netanyahu out before the next Israel x Lebanon diplomatic meeting?"
   },
   "0xb0d63088fa99fe65859d999f232af514f6ec9e8c42a7f514c7a786e484c42308": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.5800000000000001,
+   "mid": 0.6000000000000001,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.47476438915839897,
    "fills": 0,
    "q": "US imports Russian diesel before Russia x Ukraine peace talks?"
   },
@@ -3610,7 +3649,7 @@
    "cash": 0.0,
    "mid": 0.265,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.3798115113267192,
    "fills": 0,
    "q": "Will the Ornn H200 Index hit $8.00 (HIGH) by December 31, 2026?"
   },
@@ -3619,7 +3658,7 @@
    "cash": 0.0,
    "mid": 0.265,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.3798115113267192,
    "fills": 0,
    "q": "Will the Ornn H200 Index hit $7.50 (HIGH) by December 31, 2026?"
   },
@@ -3628,7 +3667,7 @@
    "cash": 0.0,
    "mid": 0.265,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.3798115113267192,
    "fills": 0,
    "q": "Will the Ornn H200 Index hit $5.50 (LOW) by December 31, 2026?"
   },
@@ -3637,16 +3676,16 @@
    "cash": 0.0,
    "mid": 0.265,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.3798115113267192,
    "fills": 0,
    "q": "Will the Ornn H200 Index hit $5.00 (LOW) by December 31, 2026?"
   },
   "0x348e67280ef52edd02429ed351ce4bc6cc7023331a8f5d9e8c35bdd1ad3b13ee": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.235,
+   "mid": 0.245,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.44761554561555383,
    "fills": 0,
    "q": "Will Amy Hunt win the 2026 BBC Sports Personality of the Year award?"
   },
@@ -3655,7 +3694,7 @@
    "cash": 0.0,
    "mid": 0.475,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.24687748236236748,
    "fills": 0,
    "q": "Will the Republicans win New Hampshire in the 2028 Presidential Election?"
   },
@@ -3664,7 +3703,7 @@
    "cash": 0.0,
    "mid": 0.525,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.22788690679603157,
    "fills": 0,
    "q": "Will the Democrats win North Carolina in the 2028 Presidential Election?"
   },
@@ -3673,7 +3712,7 @@
    "cash": 0.0,
    "mid": 0.495,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.19940104344652762,
    "fills": 0,
    "q": "Will the Democrats win Iowa in the 2028 Presidential Election?"
   },
@@ -3682,25 +3721,25 @@
    "cash": 0.0,
    "mid": 0.6950000000000001,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.21839161901286352,
    "fills": 0,
    "q": "Will the Democrats win New Mexico in the 2028 Presidential Election?"
   },
   "0x0428539158b33e9c6e410ac4ef1de47726ab70e855467d03c33f528ad6a3934c": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.71,
+   "mid": 0.65,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.22882476774630725,
    "fills": 0,
    "q": "Will the Democrats win Virginia in the 2028 Presidential Election?"
   },
   "0x1faf18ad6f853eef9db5e8f4cada5dcea149e68b9b58df652281f0ce6d964c9f": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.45499999999999996,
+   "mid": 0.44999999999999996,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.10641315827767055,
    "fills": 0,
    "q": "Will the Republicans win Michigan in the 2028 Presidential Election?"
   },
@@ -3709,7 +3748,7 @@
    "cash": 0.0,
    "mid": 0.41000000000000003,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.1899057556633596,
    "fills": 0,
    "q": "Will the Democrats win Minnesota in the 2028 Presidential Election?"
   },
@@ -3718,7 +3757,7 @@
    "cash": 0.0,
    "mid": 0.46,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.13086237737701997,
    "fills": 0,
    "q": "Will the Democrats win Alaska in the 2028 Presidential Election?"
   },
@@ -3727,7 +3766,7 @@
    "cash": 0.0,
    "mid": 0.46499999999999997,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.20889633122969556,
    "fills": 0,
    "q": "Will the Republicans win Maine in the 2028 Presidential Election?"
   },
@@ -3736,25 +3775,25 @@
    "cash": 0.0,
    "mid": 0.36000000000000004,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.1899057556633596,
    "fills": 0,
    "q": "Will the Democrats win Texas in the 2028 Presidential Election?"
   },
   "0xd86a225278d13642c5ecb71845c1f41383812cb99f1dee65ba58f329b46797db": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.49,
+   "mid": 0.31,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.13845308787292904,
    "fills": 0,
    "q": "Will the Democrats win Florida in the 2028 Presidential Election?"
   },
   "0xf6dbbf0894d69d030de4b4d0b0ed9dda40b3f1a15aeb72fc077d1a958343e547": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.495,
+   "mid": 0.505,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.1899057556633596,
    "fills": 0,
    "q": "Will the Republicans win Florida in the 2028 Presidential Election?"
   },
@@ -3763,7 +3802,7 @@
    "cash": 0.0,
    "mid": 0.45999999999999996,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.19940104344652762,
    "fills": 0,
    "q": "Will the Democrats win Ohio in the 2028 Presidential Election?"
   },
@@ -3772,16 +3811,16 @@
    "cash": 0.0,
    "mid": 0.42,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.154046142084731,
    "fills": 0,
    "q": "Will the Republicans win Ohio in the 2028 Presidential Election?"
   },
   "0xee3e32c755cfbfdabf66b73a457820dd0cd93680529765ffbb8d94211fb15915": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.565,
+   "mid": 0.5800000000000001,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.13461248841550616,
    "fills": 0,
    "q": "Will the Republicans win Texas in the 2028 Presidential Election?"
   },
@@ -3790,16 +3829,16 @@
    "cash": 0.0,
    "mid": 0.44,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.1454436046878497,
    "fills": 0,
    "q": "Will the Democrats win Maine in the 2028 Presidential Election?"
   },
   "0x1f838ca91423ea3d5ed5a4ecc8e1123a6fed2f0742f5424eff90ebcd0b0948c2": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.3105,
-   "share": 1.0,
-   "reward": 0.0,
+   "mid": 0.3015,
+   "share": 0.3149463424749857,
+   "reward": 0.1292419183058581,
    "fills": 0,
    "q": "Will Jeremiah Smith be the 2026 D1 Receiving Yards Leader?"
   },
@@ -3808,7 +3847,7 @@
    "cash": 0.0,
    "mid": 0.395,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.1899057556633596,
    "fills": 0,
    "q": "Will the Republicans win Minnesota in the 2028 Presidential Election?"
   },
@@ -3817,16 +3856,16 @@
    "cash": 0.0,
    "mid": 0.6,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.18041046788019163,
    "fills": 0,
    "q": "Will the Republicans win Alaska in the 2028 Presidential Election?"
   },
   "0x7177e2195521a9a3ca8d06e2ec89094a0d4060374704409ae125d3167ce6c6ae": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.36,
+   "mid": 0.275,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.10394767612770751,
    "fills": 0,
    "q": "Will the Republicans win Virginia in the 2028 Presidential Election?"
   },
@@ -3835,7 +3874,7 @@
    "cash": 0.0,
    "mid": 0.185,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.15192460453068768,
    "fills": 0,
    "q": "Will the Republicans win New Jersey in the 2028 Presidential Election?"
   },
@@ -3844,7 +3883,7 @@
    "cash": 0.0,
    "mid": 0.315,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.15192460453068768,
    "fills": 0,
    "q": "Will the Republicans win North Carolina in the 2028 Presidential Election?"
   },
@@ -3853,16 +3892,16 @@
    "cash": 0.0,
    "mid": 0.44,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.18041046788019163,
    "fills": 0,
    "q": "Will the Republicans win Iowa in the 2028 Presidential Election?"
   },
   "0x0363a7f29185f6c62ef4c83980719f5162da6c6d5a618787ba53517827552f77": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.69,
-   "share": 1.0,
-   "reward": 0.0,
+   "mid": 0.78,
+   "share": 0.10859490468198059,
+   "reward": 0.028633435567462798,
    "fills": 0,
    "q": "Will Chou Chun-mi win the next Pingtung County Magistrate election?"
   }
@@ -37403,6 +37442,32 @@
    "fills_total": 137,
    "rebalanced": true,
    "w": 2988577
+  },
+  {
+   "ts": "2026-10-28T00:29:45.190416+00:00",
+   "dt_h": 0.195,
+   "reward_tick": 8.8334,
+   "reward_total": 4329.28,
+   "mm_value": -195.23,
+   "net": 4134.05,
+   "avg_share": 0.9716,
+   "n_markets": 39,
+   "fills_total": 137,
+   "rebalanced": false,
+   "w": 2988578
+  },
+  {
+   "ts": "2026-10-28T00:31:45.078719+00:00",
+   "dt_h": 0.034,
+   "reward_tick": 1.395,
+   "reward_total": 4330.67,
+   "mm_value": -195.23,
+   "net": 4135.45,
+   "avg_share": 0.9596,
+   "n_markets": 39,
+   "fills_total": 137,
+   "rebalanced": false,
+   "w": 2988579
   }
  ],
  "fills": [
@@ -38640,8 +38705,8 @@
    "ledger": "v2"
   }
  ],
- "reward_total": 4320.443917319545,
- "last_ts": 1793146684.6858544,
+ "reward_total": 4330.672332780882,
+ "last_ts": 1793147505.078719,
  "chosen_at": 1793146684.6858544,
  "rebalances": [
   {
@@ -38760,40 +38825,40 @@
   }
  ],
  "last_tick": {
-  "ts": "2026-10-28T00:18:04.685854+00:00",
-  "dt_h": 0.016,
+  "ts": "2026-10-28T00:31:45.078719+00:00",
+  "dt_h": 0.017,
   "markets": [
    {
     "q": "Will Fabian Hurzeler be the first Premier League m",
-    "mid": 0.226,
+    "mid": 0.227,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0753,
     "inv": 0.0
    },
    {
     "q": "Will Ukraine agree to give up the rest of Donbas b",
     "mid": 0.275,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0346,
     "inv": 0.0
    },
    {
     "q": "Will the U.S. 30-year Fixed-Rate Mortgage hit 8.00",
-    "mid": 0.275,
+    "mid": 0.28,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0346,
     "inv": 0.0
    },
    {
     "q": "Will the U.S. 30-year Fixed-Rate Mortgage hit 7.75",
     "mid": 0.28,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0346,
     "inv": 0.0
    },
    {
     "q": "Will the U.S. 30-year Fixed-Rate Mortgage hit 6.75",
-    "mid": 0.32,
+    "mid": 0.495,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -38802,110 +38867,110 @@
     "q": "EU country blames Russia for new sabotage attack b",
     "mid": 0.435,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0346,
     "inv": 0.0
    },
    {
     "q": "Will the U.S. 30-year Fixed-Rate Mortgage hit 7.00",
-    "mid": 0.215,
-    "share": 0.9406,
+    "mid": 0.26,
+    "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Netanyahu out before the next Israel x Lebanon dip",
-    "mid": 0.515,
+    "mid": 0.51,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0346,
     "inv": 0.0
    },
    {
     "q": "US imports Russian diesel before Russia x Ukraine ",
-    "mid": 0.58,
+    "mid": 0.6,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0346,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index hit $8.00 (HIGH) by Decem",
     "mid": 0.265,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0276,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index hit $7.50 (HIGH) by Decem",
     "mid": 0.265,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0276,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index hit $5.50 (LOW) by Decemb",
     "mid": 0.265,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0276,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index hit $5.00 (LOW) by Decemb",
     "mid": 0.265,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0276,
     "inv": 0.0
    },
    {
     "q": "Will Amy Hunt win the 2026 BBC Sports Personality ",
-    "mid": 0.235,
+    "mid": 0.245,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.038,
     "inv": 0.0
    },
    {
     "q": "Will Morena win the most seats in the 2027 Durango",
     "mid": 0.52,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0249,
     "inv": 0.0
    },
    {
     "q": "Will the Republicans win New Hampshire in the 2028",
     "mid": 0.475,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.018,
     "inv": 0.0
    },
    {
     "q": "Will the Democrats win North Carolina in the 2028 ",
     "mid": 0.525,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0166,
     "inv": 0.0
    },
    {
     "q": "Will the Democrats win Iowa in the 2028 Presidenti",
     "mid": 0.495,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0145,
     "inv": 0.0
    },
    {
     "q": "Will the Democrats win New Mexico in the 2028 Pres",
     "mid": 0.695,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0159,
     "inv": 0.0
    },
    {
     "q": "Will the Democrats win Virginia in the 2028 Presid",
-    "mid": 0.71,
+    "mid": 0.65,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.018,
     "inv": 0.0
    },
    {
     "q": "Will the Republicans win Michigan in the 2028 Pres",
-    "mid": 0.455,
+    "mid": 0.45,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -38914,7 +38979,7 @@
     "q": "Will the Democrats win Minnesota in the 2028 Presi",
     "mid": 0.41,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0138,
     "inv": 0.0
    },
    {
@@ -38928,35 +38993,35 @@
     "q": "Will the Republicans win Maine in the 2028 Preside",
     "mid": 0.465,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0152,
     "inv": 0.0
    },
    {
     "q": "Will the Democrats win Texas in the 2028 President",
     "mid": 0.36,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0138,
     "inv": 0.0
    },
    {
     "q": "Will the Democrats win Florida in the 2028 Preside",
-    "mid": 0.49,
+    "mid": 0.31,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0138,
     "inv": 0.0
    },
    {
     "q": "Will the Republicans win Florida in the 2028 Presi",
-    "mid": 0.495,
+    "mid": 0.505,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0138,
     "inv": 0.0
    },
    {
     "q": "Will the Democrats win Ohio in the 2028 Presidenti",
     "mid": 0.46,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0145,
     "inv": 0.0
    },
    {
@@ -38968,7 +39033,7 @@
    },
    {
     "q": "Will the Republicans win Texas in the 2028 Preside",
-    "mid": 0.565,
+    "mid": 0.58,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -38977,33 +39042,33 @@
     "q": "Will the Democrats win Maine in the 2028 President",
     "mid": 0.44,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0124,
     "inv": 0.0
    },
    {
     "q": "Will Jeremiah Smith be the 2026 D1 Receiving Yards",
-    "mid": 0.31,
-    "share": 1.0,
-    "earned": 0.0,
+    "mid": 0.301,
+    "share": 0.3149,
+    "earned": 0.0039,
     "inv": 0.0
    },
    {
     "q": "Will the Republicans win Minnesota in the 2028 Pre",
     "mid": 0.395,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0138,
     "inv": 0.0
    },
    {
     "q": "Will the Republicans win Alaska in the 2028 Presid",
     "mid": 0.6,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0131,
     "inv": 0.0
    },
    {
     "q": "Will the Republicans win Virginia in the 2028 Pres",
-    "mid": 0.36,
+    "mid": 0.275,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -39012,38 +39077,38 @@
     "q": "Will the Republicans win New Jersey in the 2028 Pr",
     "mid": 0.185,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0111,
     "inv": 0.0
    },
    {
     "q": "Will the Republicans win North Carolina in the 202",
     "mid": 0.315,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0111,
     "inv": 0.0
    },
    {
     "q": "Will the Republicans win Iowa in the 2028 Presiden",
     "mid": 0.44,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0131,
     "inv": 0.0
    },
    {
     "q": "Will Chou Chun-mi win the next Pingtung County Mag",
-    "mid": 0.69,
-    "share": 1.0,
-    "earned": 0.0,
+    "mid": 0.78,
+    "share": 0.1086,
+    "earned": 0.0003,
     "inv": 0.0
    }
   ],
-  "reward_tick": 0.0,
-  "reward_total": 4320.44,
+  "reward_tick": 0.7029,
+  "reward_total": 4330.67,
   "mm_value": -195.23,
-  "net": 4125.22,
-  "avg_share": 0.9985,
+  "net": 4135.45,
+  "avg_share": 0.9596,
   "n_markets": 39,
   "fills_total": 137,
-  "rebalanced": true
+  "rebalanced": false
  }
 }

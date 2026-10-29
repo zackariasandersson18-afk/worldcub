@@ -1,29 +1,19 @@
 WARNING: --ignore-gates. This strategy did NOT pass the gates. Testnet/paper only -- never real money.
 {
-  "bar": "2026-10-28 00:00:00+00:00",
-  "action": "BUY",
+  "bar": "2026-10-29 00:00:00+00:00",
+  "action": "HOLD",
   "executed": true,
-  "price": 80909.77,
-  "equity": 9893.53,
+  "price": 81343.5,
+  "equity": 9902.56,
   "signal": 1.0,
-  "stop": 78797.74,
-  "current_qty": 0.0,
-  "target_qty": 0.024456,
+  "stop": 79234.71,
+  "current_qty": 0.024456,
+  "target_qty": 0.024348,
   "health": {
-    "live_sharpe": -2.91,
-    "current_dd": -7.4,
+    "live_sharpe": -2.59,
+    "current_dd": -7.0,
     "alerts": [],
     "action": "CONTINUE"
   },
-  "order": {
-    "side": "BUY",
-    "qty": 0.024456
-  },
-  "fill": {
-    "side": "BUY",
-    "qty": 0.024456,
-    "price": 80934.042931,
-    "quote_qty": 1979.322953920536,
-    "commission_quote": 0.9896614769602681
-  }
+  "order": null
 }

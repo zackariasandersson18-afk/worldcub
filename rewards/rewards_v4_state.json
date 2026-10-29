@@ -439,36 +439,6 @@
    "rate0": 40.0
   },
   {
-   "cond": "0x685ccb1b69d19c23edc048fb463c3edb31b3e93e6547a2994b192056a89dd84f",
-   "question": "Government shutdown by December 31?",
-   "yes": "50852204896231294661068085082316124719712684824266258070886011702008498007694",
-   "no": "4235820340218542512143150935496560057536280565512013327813861566421791819717",
-   "rate": 200.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.7,
-   "est_reward_day": 200.0,
-   "end": "2027-01-01T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 200.0
-  },
-  {
-   "cond": "0x914f77b6298fd736d6f477303de84c27fd5fef104fb3e81c1fbbce0cdd001b4e",
-   "question": "Government shutdown by December 12?",
-   "yes": "106618226234420575464925687803810655149328378581404930412306724975458754634939",
-   "no": "110234370526287683894729327696614873707144855943099848995226737849576275505124",
-   "rate": 200.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.700000000000003,
-   "est_reward_day": 200.0,
-   "end": "2026-12-13T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 200.0
-  },
-  {
    "cond": "0x9b67b66ab4b4c1286a5247810e914b2877ee3cf5f6863c6289870d47a0b0c64a",
    "question": "Will the next Fable model (5.2+) debut in the top 1 of the Text Arena leaderboard by June 30, 2027?",
    "yes": "84160479378160549440729511563265161474914945624000062426332085840288312748172",
@@ -478,21 +448,6 @@
    "min_size": 20.0,
    "d": 0.0325,
    "collateral": 18.700000000000003,
-   "est_reward_day": 200.0,
-   "end": "2027-07-01T03:59:00Z",
-   "share0": 1.0,
-   "rate0": 200.0
-  },
-  {
-   "cond": "0x38f87124463212f3353af69323b2300356529cca9d94ffadabbde2e51e2dd177",
-   "question": "Will the next Fable model (5.2+) debut in the top 10 of the Text Arena leaderboard by June 30, 2027?",
-   "yes": "91131740563267990818294682593378131498311299168314852674718034279752529371628",
-   "no": "35720959562961698631810327826879903574120526135543879746891221882371001098197",
-   "rate": 200.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.7,
    "est_reward_day": 200.0,
    "end": "2027-07-01T03:59:00Z",
    "share0": 1.0,
@@ -604,21 +559,6 @@
    "rate0": 49.0
   },
   {
-   "cond": "0x7fdf5acfb7c909aabc82d285077446ad96919696a03687b4e13071030cf9a734",
-   "question": "Will PSOE win the most seats in Tarragona in the 2026 Spanish general election?",
-   "yes": "80816221171742048738311981967986373730602186251394070329606225552501301988721",
-   "no": "30000754680153765866470420431321714946219855556200758452156269231244757777261",
-   "rate": 43.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.7,
-   "est_reward_day": 47.0,
-   "end": "2026-11-30T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 47.0
-  },
-  {
    "cond": "0x5cfd00788475b2dea78f717e0a73a15621f79abb9b1fbe66b95305c2c1caa5a4",
    "question": "Will there be no Gemini Carbon release by January 3, 2027?",
    "yes": "9585575440305525260873849436808053603118661261437070615725461515537783065008",
@@ -662,21 +602,6 @@
    "end": "2027-01-01T04:59:00Z",
    "share0": 1.0,
    "rate0": 40.0
-  },
-  {
-   "cond": "0xd0b24abd98e6e21723a9b48a5dd416fb31f9fa842a8cf5236d0599df0c8deca0",
-   "question": "Will no next Israeli Minister of Justice be appointed by February 28, 2027?",
-   "yes": "23705284677457594963867725336530289399676808807062834587154732585347666657943",
-   "no": "48892538873024444378016257034441127213367068398614607181256523660208148234119",
-   "rate": 64.0,
-   "v": 4.5,
-   "min_size": 20.0,
-   "d": 0.0225,
-   "collateral": 19.1,
-   "est_reward_day": 146.0,
-   "end": "2027-03-01T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 146.0
   },
   {
    "cond": "0x2c0216c3f757f815384a9bc2bce0756a722ce463a302383739d11940b023247a",
@@ -797,6 +722,81 @@
    "end": "2026-12-28T04:59:00Z",
    "share0": 1.0,
    "rate0": 32.0
+  },
+  {
+   "cond": "0x9f5001a1e6542f81fc296bfcf73764a1c7ab2767d8c036441ab222a01da585e9",
+   "question": "Will Microsoft be the third-largest company in the world by market cap on December 31?",
+   "yes": "93552762427746212666634598203661219992023791597980188618226879792234867315851",
+   "no": "109763638815427318663956800948761484327027294909889189362206411975569190300456",
+   "rate": 124.0,
+   "v": 4.5,
+   "min_size": 20.0,
+   "d": 0.0225,
+   "collateral": 19.1,
+   "est_reward_day": 124.0,
+   "end": "2027-01-01T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 124.0
+  },
+  {
+   "cond": "0xcee63a6f14c38eb3ad2e5e8deacc423ac61b6921b5b5e024910159b5a4ccb3d2",
+   "question": "Will \"Resident Evil Requiem\" win Ultimate Game of the Year at the 2026 Golden Joystick Awards?",
+   "yes": "99379698769889934436509769341283835048873998320515855045578201056877866711969",
+   "no": "105979370444899387312860966879154998770676644923097058573979285649847748321372",
+   "rate": 68.0,
+   "v": 4.5,
+   "min_size": 20.0,
+   "d": 0.0225,
+   "collateral": 19.1,
+   "est_reward_day": 68.0,
+   "end": "2026-12-01T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 68.0
+  },
+  {
+   "cond": "0x671e3f3b87b7844a5e7131516e6994f92757e6f37696ece569ce773cfc4aabb6",
+   "question": "Will the Ornn H200 Index hit $7.00 (HIGH) by December 31, 2026?",
+   "yes": "59246871954485130189018733855023506369147594420690627398018512437010578798990",
+   "no": "91118135007777442291202135161737632048016309985502908817528922487305255102994",
+   "rate": 40.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.700000000000003,
+   "est_reward_day": 40.0,
+   "end": "2027-01-01T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 40.0
+  },
+  {
+   "cond": "0x6ffb13f712ac81e8aa029670ecb15717987a6028909d4e300c1a5962b4548846",
+   "question": "Will there be no next Gemini Flash-Lite model (3.6+) release by November 30, 2026?",
+   "yes": "26864569213598418844784550863758592576197568538988540632166745927571113312321",
+   "no": "38083607627846434900881218915090151086843094959221975348983430075232790569094",
+   "rate": 38.0,
+   "v": 4.5,
+   "min_size": 20.0,
+   "d": 0.0225,
+   "collateral": 19.1,
+   "est_reward_day": 38.0,
+   "end": "2026-12-01T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 38.0
+  },
+  {
+   "cond": "0x84183fca786cd364abf470fa01b8d547671a63844e0d606d55c775f9e84e839b",
+   "question": "Will no next Israeli Minister of Interior be appointed by February 28, 2027?",
+   "yes": "63975726699744414319904614617569009274545240134609866590572881553651131960880",
+   "no": "47406788904746866535729819709144755653540821341269971392510555916070903875553",
+   "rate": 33.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.7,
+   "est_reward_day": 33.0,
+   "end": "2027-03-01T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 33.0
   }
  ],
  "positions": {
@@ -1018,9 +1018,9 @@
   "0x671e3f3b87b7844a5e7131516e6994f92757e6f37696ece569ce773cfc4aabb6": {
    "inv": 0.0,
    "cash": -5.190000000000001,
-   "mid": 0.496,
-   "share": null,
-   "reward": 299.2456119114814,
+   "mid": 0.532,
+   "share": 1.0,
+   "reward": 299.4185034640621,
    "fills": 3,
    "q": "Will the Ornn H200 Index hit $7.00 (HIGH) by December 31, 2026?",
    "closed_at": 0.679
@@ -1028,9 +1028,9 @@
   "0xf7699db92f899f7577f55c0dc9db490d6a17d1eced1c07d3860b4ae80a13b175": {
    "inv": -10.0,
    "cash": 1.0907582300000036,
-   "mid": 0.43800000000000006,
+   "mid": 0.44000000000000006,
    "share": 1.0,
-   "reward": 584.9255227563286,
+   "reward": 585.2169579067445,
    "fills": 12,
    "q": "Will the Ornn H200 Index hit $4.00 (LOW) by December 31, 2026?",
    "closed_at": 0.463
@@ -1136,7 +1136,7 @@
   "0xeaf463a1a9353009d8d9c50839bcc56afe7a043cacb131fccf908dfa26b10769": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.675,
+   "mid": 0.67,
    "share": 1.0,
    "reward": 118.30446849300093,
    "fills": 0,
@@ -1827,7 +1827,7 @@
    "cash": -1.1500000000000004,
    "mid": 0.6950000000000001,
    "share": 1.0,
-   "reward": 90.6831030394936,
+   "reward": 90.97453818990942,
    "fills": 1,
    "q": "Will Anthropic have a #1 AI model by December 31, 2026?",
    "closed_at": 0.6
@@ -2071,7 +2071,7 @@
   "0x7a9a68c97682b82da841fa413f4764e86024c49e2c58a01b34cb5d3c5b9b2624": {
    "inv": 20.0,
    "cash": -8.85,
-   "mid": 0.36,
+   "mid": 0.37,
    "share": 1.0,
    "reward": 87.751647885782,
    "fills": 1,
@@ -2343,9 +2343,9 @@
   "0x9f5001a1e6542f81fc296bfcf73764a1c7ab2767d8c036441ab222a01da585e9": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.65,
-   "share": null,
-   "reward": 23.904060302584856,
+   "mid": 0.575,
+   "share": 0.2967032967032949,
+   "reward": 24.078807664834194,
    "fills": 0,
    "q": "Will Microsoft be the third-largest company in the world by market cap on Decemb"
   },
@@ -2712,9 +2712,9 @@
   "0x84183fca786cd364abf470fa01b8d547671a63844e0d606d55c775f9e84e839b": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.475,
-   "share": null,
-   "reward": 42.171314306492405,
+   "mid": 0.49,
+   "share": 1.0,
+   "reward": 42.33718436113807,
    "fills": 0,
    "q": "Will no next Israeli Minister of Interior be appointed by February 28, 2027?"
   },
@@ -2834,7 +2834,7 @@
   "0x9c53f5008c63f1a006e206ca2658f9f66662daa29860fc444654f3404261b3ac": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.485,
+   "mid": 0.49,
    "share": 1.0,
    "reward": 132.11806422067525,
    "fills": 0,
@@ -3261,7 +3261,7 @@
    "cash": -0.6459100000000015,
    "mid": 0.364,
    "share": 0.5175493956493008,
-   "reward": 191.4816492799999,
+   "reward": 191.49296168644756,
    "fills": 6,
    "q": "Will the Ornn H200 Index hit $3.75 (LOW) by December 31, 2026?",
    "closed_at": 0.418
@@ -3525,7 +3525,7 @@
    "cash": 0.0,
    "mid": 0.5,
    "share": 1.0,
-   "reward": 55.03815275704862,
+   "reward": 55.285872634902056,
    "fills": 0,
    "q": "Will Morena win the most seats in the 2027 Durango Congress election?"
   },
@@ -3698,7 +3698,7 @@
    "cash": 0.0,
    "mid": 0.355,
    "share": 1.0,
-   "reward": 77.2143039561576,
+   "reward": 77.534882621615,
    "fills": 0,
    "q": "Will Space Exploration Technologies\u2019 market capitalization be between $2.00T and"
   },
@@ -4519,7 +4519,7 @@
   "0x5d15579a3a31d6220eb8d33d167788db82976f14c856768a5e37e51afdaeb279": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.479,
+   "mid": 0.485,
    "share": 1.0,
    "reward": 17.59805527737572,
    "fills": 0,
@@ -6136,9 +6136,9 @@
   "0xcee63a6f14c38eb3ad2e5e8deacc423ac61b6921b5b5e024910159b5a4ccb3d2": {
    "inv": 0.0,
    "cash": -3.0500000000000007,
-   "mid": 0.425,
-   "share": null,
-   "reward": 39.81277225137203,
+   "mid": 0.41500000000000004,
+   "share": 1.0,
+   "reward": 40.05903522557025,
    "fills": 1,
    "q": "Will \"Resident Evil Requiem\" win Ultimate Game of the Year at the 2026 Golden Jo",
    "closed_at": 0.63
@@ -8002,9 +8002,9 @@
   "0x2b79c5641ecb8ca60c48ab9d02c863004cff60b0771c5fd30291c99ce7d35934": {
    "inv": 10.0,
    "cash": -4.3950000000000005,
-   "mid": 0.23349999999999999,
+   "mid": 0.27899999999999997,
    "share": 1.0,
-   "reward": 33.63238451232859,
+   "reward": 33.63896631461122,
    "fills": 1,
    "q": "Will Maurice Vunobolki win the 2027 Adamawa State gubernatorial election?"
   },
@@ -8186,7 +8186,7 @@
    "cash": 0.0,
    "mid": 0.101,
    "share": 1.0,
-   "reward": 5.058110007974113,
+   "reward": 5.058115875335011,
    "fills": 0,
    "q": "Will Green Bay Packers finish the 2026-27 NFL regular season with the most retur"
   },
@@ -8239,8 +8239,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.505,
-   "share": 0.021463776564735818,
-   "reward": 5.693750998178778,
+   "share": null,
+   "reward": 5.695773408796022,
    "fills": 0,
    "q": "Will no next Israeli Minister of Justice be appointed by February 28, 2027?"
   },
@@ -8717,7 +8717,7 @@
    "cash": 0.0,
    "mid": 0.37,
    "share": 1.0,
-   "reward": 31.760489222641915,
+   "reward": 31.796918616443893,
    "fills": 0,
    "q": "Will Chainlink dip to $10 by December 31, 2026?"
   },
@@ -9160,7 +9160,7 @@
    "cash": 0.4249999999999998,
    "mid": 0.725,
    "share": 1.0,
-   "reward": 169.2633767315683,
+   "reward": 169.5548118819841,
    "fills": 1,
    "q": "Will the highest score achieved by a SpaceXAI Grok model on Humanity\u2019s Last Exam",
    "closed_at": 0.64
@@ -9424,8 +9424,8 @@
    "inv": 0.0,
    "cash": -5.2500000000000036,
    "mid": 0.825,
-   "share": 0.004612879508966875,
-   "reward": 9.305461473569355,
+   "share": null,
+   "reward": 9.305762304010402,
    "fills": 1,
    "q": "Will PSOE win the most seats in Tarragona in the 2026 Spanish general election?",
    "closed_at": 0.92
@@ -9985,9 +9985,9 @@
   "0xfb0a7cd7ecf82a80564c3da00264c32982ed072fef085601eab10ddbd2a44d42": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.8,
+   "mid": 0.78,
    "share": 1.0,
-   "reward": 16.305365276642952,
+   "reward": 16.32722291292414,
    "fills": 0,
    "q": "Will PP win the most seats in the Balearic Islands in the 2026 Spanish general e"
   },
@@ -10958,7 +10958,7 @@
    "cash": 0.0,
    "mid": 0.5155,
    "share": 1.0,
-   "reward": 10.408919701091747,
+   "reward": 10.593500486707324,
    "fills": 0,
    "q": "Will brawk play for NRG in 2027?"
   },
@@ -11362,7 +11362,7 @@
    "cash": 0.0,
    "mid": 0.555,
    "share": 1.0,
-   "reward": 71.22390758772472,
+   "reward": 71.58820152574448,
    "fills": 0,
    "q": "Will \"The Legend of Zelda: Ocarina of Time\" have a Metascore of at least 90?"
   },
@@ -11783,9 +11783,9 @@
   "0x8c7db0d1f8e74f773dc0c3097fdcbb24317ca67ee5cf66367e11175581b3a826": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.29500000000000004,
+   "mid": 0.37,
    "share": 1.0,
-   "reward": 21.198948897829744,
+   "reward": 21.303599141747846,
    "fills": 0,
    "q": "Will the Democrats win Alaska in the 2028 Presidential Election?"
   },
@@ -11865,9 +11865,9 @@
   "0x3657dc1c7a8b984564e8354ca00411d2207eabb52b6c982514c5ba53b84da40a": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.565,
+   "mid": 0.5650000000000001,
    "share": 1.0,
-   "reward": 29.850514484028178,
+   "reward": 30.181249827226154,
    "fills": 0,
    "q": "Will the U.S. 30-year Fixed-Rate Mortgage hit 6.75% (LOW) by December 31, 2026?"
   },
@@ -12016,7 +12016,7 @@
    "cash": 0.0,
    "mid": 0.21000000000000002,
    "share": 1.0,
-   "reward": 39.43863011764157,
+   "reward": 39.730065268057366,
    "fills": 0,
    "q": "Will the Ornn H200 Index hit $8.00 (HIGH) by December 31, 2026?"
   },
@@ -12025,7 +12025,7 @@
    "cash": 0.0,
    "mid": 0.255,
    "share": 1.0,
-   "reward": 41.343138117591565,
+   "reward": 41.63457326800736,
    "fills": 0,
    "q": "Will the Ornn H200 Index hit $7.50 (HIGH) by December 31, 2026?"
   },
@@ -12034,7 +12034,7 @@
    "cash": 0.0,
    "mid": 0.265,
    "share": 1.0,
-   "reward": 38.51351050279785,
+   "reward": 38.80494565321364,
    "fills": 0,
    "q": "Will the Ornn H200 Index hit $5.50 (LOW) by December 31, 2026?"
   },
@@ -12043,7 +12043,7 @@
    "cash": 0.0,
    "mid": 0.20500000000000002,
    "share": 1.0,
-   "reward": 37.39884765137125,
+   "reward": 37.577918049693096,
    "fills": 0,
    "q": "Will the Ornn H200 Index hit $5.00 (LOW) by December 31, 2026?"
   },
@@ -12188,9 +12188,9 @@
   "0xb8dbfa3ca863601ce45de6aa3bb7547c687b76bb8e68a0464f0a6c18d1c3d458": {
    "inv": 0.0,
    "cash": -4.000980435000002,
-   "mid": 0.425,
+   "mid": 0.405,
    "share": 1.0,
-   "reward": 29.261038022263932,
+   "reward": 29.625331960283688,
    "fills": 3,
    "q": "Will Cheniere Energy (LNG) be added to the S&P 500 by December 31, 2026?",
    "closed_at": 0.46
@@ -12272,9 +12272,9 @@
   "0xf6dbbf0894d69d030de4b4d0b0ed9dda40b3f1a15aeb72fc077d1a958343e547": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.665,
+   "mid": 0.47500000000000003,
    "share": 1.0,
-   "reward": 12.986480691742022,
+   "reward": 13.082278339970452,
    "fills": 0,
    "q": "Will the Republicans win Florida in the 2028 Presidential Election?"
   },
@@ -12394,7 +12394,7 @@
    "cash": 0.0,
    "mid": 0.29,
    "share": 1.0,
-   "reward": 7.68845827991488,
+   "reward": 7.782554724627625,
    "fills": 0,
    "q": "Will the Democrats win New Hampshire in the 2028 Presidential Election?"
   },
@@ -12437,9 +12437,9 @@
   "0x82d84d12db92d6724e25d767a1726f1af0ce71ae86dfa84ad7a939b46dac8344": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.565,
+   "mid": 0.54,
    "share": 1.0,
-   "reward": 9.439951643027637,
+   "reward": 9.563970617729202,
    "fills": 0,
    "q": "Will the Republicans win Alaska in the 2028 Presidential Election?"
   },
@@ -12455,9 +12455,9 @@
   "0x56c3185d20937db2f07550ba5a2fa4368029846e4134c404f58a443de7107e67": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.5900000000000001,
-   "share": 0.3014379707642353,
-   "reward": 7.454300746887176,
+   "mid": 0.5800000000000001,
+   "share": 0.402985074626863,
+   "reward": 7.532641800636836,
    "fills": 0,
    "q": "Will the Republicans win Ohio in the 2028 Presidential Election?"
   },
@@ -12483,9 +12483,9 @@
   "0xc6dc2d4a2f15d8ec76dd53e9fc042993672a721d0e7a045de832b87790c9baa1": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.53,
+   "mid": 0.5549999999999999,
    "share": 1.0,
-   "reward": 4.0666648856905585,
+   "reward": 4.084292915349948,
    "fills": 0,
    "q": "Will GPT Astra 6.1+ debut at an output token price of at least $40 by June 30, 2"
   },
@@ -12501,9 +12501,9 @@
   "0xdaec6bad665b7a3b61fded70093394b5fc35660beeddecc4b5b84fe60d3064ef": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.644,
+   "mid": 0.639,
    "share": 1.0,
-   "reward": 11.144144718536614,
+   "reward": 11.311719930025705,
    "fills": 0,
    "q": "Will Luka Doncic lead the NBA in points per game in 2026-27?"
   },
@@ -12512,7 +12512,7 @@
    "cash": 0.0,
    "mid": 0.525,
    "share": 1.0,
-   "reward": 45.65782819597348,
+   "reward": 45.74525874109821,
    "fills": 0,
    "q": "Will the Knesset elect a new Speaker by November 30?"
   },
@@ -12548,7 +12548,7 @@
    "cash": -8.55,
    "mid": 0.195,
    "share": 1.0,
-   "reward": 15.810569285149162,
+   "reward": 15.897999830273905,
    "fills": 1,
    "q": "Israel Election: Yashar and Likud in coalition?"
   },
@@ -12667,9 +12667,9 @@
   "0xaf3ba1ff7b53fde6ca40e83060cdd6b1b6542249a994680aec77688290e2ba16": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.635,
+   "mid": 0.595,
    "share": 1.0,
-   "reward": 12.606707482624687,
+   "reward": 12.935797596755707,
    "fills": 0,
    "q": "Over $10M committed to the over.computer public sale?"
   },
@@ -12741,8 +12741,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.42,
-   "share": 0.02004983431797658,
-   "reward": 18.999102417937817,
+   "share": null,
+   "reward": 19.00354232483535,
    "fills": 0,
    "q": "Government shutdown by December 31?"
   },
@@ -12775,13 +12775,14 @@
    "q": "Will Gemini Carbon debut in the top 3 of the Text Arena leaderboard by June 30, "
   },
   "0x914f77b6298fd736d6f477303de84c27fd5fef104fb3e81c1fbbce0cdd001b4e": {
-   "inv": -20.0,
-   "cash": 7.050000000000001,
+   "inv": 0.0,
+   "cash": -0.75,
    "mid": 0.385,
-   "share": 0.007926457483232497,
-   "reward": 23.711755857433797,
+   "share": null,
+   "reward": 23.71411811651806,
    "fills": 1,
-   "q": "Government shutdown by December 12?"
+   "q": "Government shutdown by December 12?",
+   "closed_at": 0.39
   },
   "0x8fdc27c1feb6615565bccee59e05a90a7551324529a081683dd811d3cb83a20f": {
    "inv": 0.0,
@@ -12833,7 +12834,7 @@
    "cash": 0.0,
    "mid": 0.29000000000000004,
    "share": 1.0,
-   "reward": 21.219688214637603,
+   "reward": 22.395893773546913,
    "fills": 0,
    "q": "Will the next Fable model (5.2+) debut in the top 1 of the Text Arena leaderboar"
   },
@@ -12841,17 +12842,17 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.875,
-   "share": 0.007316009714968268,
-   "reward": 10.84660973762872,
+   "share": null,
+   "reward": 10.848825427681573,
    "fills": 0,
    "q": "Will the next Fable model (5.2+) debut in the top 10 of the Text Arena leaderboa"
   },
   "0x0af8a5f5305804d818cc02d135fc9e8bf4e01e2aa3ea586fb78f3274cde9646f": {
    "inv": -20.0,
    "cash": 11.149999999999999,
-   "mid": 0.375,
+   "mid": 0.53,
    "share": 1.0,
-   "reward": 19.667581229204846,
+   "reward": 20.68777413712102,
    "fills": 1,
    "q": "Will Gemini Carbon debut with an HLE-Diamond score of 65% or higher?"
   },
@@ -12860,7 +12861,7 @@
    "cash": 0.0,
    "mid": 0.28500000000000003,
    "share": 1.0,
-   "reward": 20.31374496112809,
+   "reward": 21.770920713207136,
    "fills": 0,
    "q": "Will GPT Astra 6.1+ debut in the top 5 of the Text Arena leaderboard by June 30,"
   },
@@ -12876,9 +12877,9 @@
   "0x29e0792ea05736053ff0cb113549be50c4fa4662c4262a1cd36a50a4f6981ea2": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.59,
+   "mid": 0.585,
    "share": 1.0,
-   "reward": 20.244296040699318,
+   "reward": 21.701471792778364,
    "fills": 0,
    "q": "Will the next Fable model (5.2+) debut in the top 3 of the Text Arena leaderboar"
   },
@@ -12913,83 +12914,92 @@
   "0x0efc8520c57c0e1545aa5408e3c0146b45872ce6530bee82338a5e61065b04b8": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.585,
+   "mid": 0.6499999999999999,
    "share": 1.0,
-   "reward": 5.575209915775943,
+   "reward": 5.939503853795705,
    "fills": 0,
    "q": "Will the US birth rate in 2026 be 52.0 or higher?"
   },
   "0x10b85ebc643f251e203ff71e9e96b586d242e78d0c2e67510489db36324f2189": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.37,
-   "share": 0.2343966712898754,
-   "reward": 9.557969698785941,
+   "mid": 0.35,
+   "share": 0.09485940601172889,
+   "reward": 9.782631064378407,
    "fills": 0,
    "q": "Israel tourism plunges below 40K by January?"
   },
   "0x6e6f40e9b07490b6d6450a788b06562bd2ee019e07937c43519c996f925a7c61": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.20500000000000002,
+   "mid": 0.15999999999999998,
    "share": 1.0,
-   "reward": 2.878013040404076,
+   "reward": 2.9632451424968456,
    "fills": 0,
    "q": "Will Gemini Carbon be released between November 30 and December 6, 2026?"
   },
   "0x5cfd00788475b2dea78f717e0a73a15621f79abb9b1fbe66b95305c2c1caa5a4": {
    "inv": -10.0,
    "cash": 2.125,
-   "mid": 0.24,
-   "share": 0.5294117647058832,
-   "reward": 2.037072001407655,
+   "mid": 0.235,
+   "share": 1.0,
+   "reward": 2.3320139975774206,
    "fills": 1,
    "q": "Will there be no Gemini Carbon release by January 3, 2027?"
   },
   "0x2c0216c3f757f815384a9bc2bce0756a722ce463a302383739d11940b023247a": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.21500000000000002,
-   "share": 1.0,
-   "reward": 1.214269250970748,
+   "mid": 0.125,
+   "share": 0.6029776674937973,
+   "reward": 1.5600717940015927,
    "fills": 0,
    "q": "Will Gemini Carbon be released between November 23 and November 29, 2026?"
   },
   "0x4ae7a436b70cea63e34a201ebb42189980bf6205aa787ac7d67d945ca589ec23": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.15,
+   "mid": 0.185,
    "share": 1.0,
-   "reward": 1.2442868274974603,
+   "reward": 1.5238688126509943,
    "fills": 0,
    "q": "Will Gemini Carbon be released between December 7 and December 13, 2026?"
   },
   "0xec8bb64d701e09c6b06a6a33a576d9d6da6e2cc8661e8cf4d45dcfc302aa508b": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.17500000000000002,
+   "mid": 0.19,
    "share": 1.0,
-   "reward": 0.7067865648283498,
+   "reward": 0.9912479702984616,
    "fills": 0,
    "q": "Will Gemini Carbon be released between December 28, 2026 and January 3, 2027?"
   },
   "0x536909bcc3849d54fc3936203076e47be5c2af607e72a9d816065aa42e97b6b9": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.13,
+   "mid": 0.14500000000000002,
    "share": 1.0,
-   "reward": 0.8804084438416695,
+   "reward": 1.1053084772162969,
    "fills": 0,
    "q": "Will Gemini Carbon be released between December 14 and December 20, 2026?"
   },
   "0x95b6b4280dfd6ea82e0f4adf81091dff1d1035665bf39e6811c6ef64cf5473ac": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.08499999999999999,
+   "mid": 0.15000000000000002,
    "share": 1.0,
-   "reward": 1.035277826866066,
+   "reward": 1.1727404424796501,
    "fills": 0,
    "q": "Will Gemini Carbon be released between December 21 and December 27, 2026?"
+  },
+  "0x6ffb13f712ac81e8aa029670ecb15717987a6028909d4e300c1a5962b4548846": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.44500000000000006,
+   "share": 1.0,
+   "reward": 0.19100188110713606,
+   "fills": 0,
+   "q": "Will there be no next Gemini Flash-Lite model (3.6+) release by November 30, 202"
   }
  },
  "history": [
@@ -47548,17 +47558,30 @@
    "w": 2988733
   },
   {
-   "ts": "2026-10-29T02:21:25.963805+00:00",
-   "dt_h": 0.045,
-   "reward_tick": 2.7904,
-   "reward_total": 21247.31,
-   "mm_value": -580.62,
-   "net": 20666.69,
-   "avg_share": 0.8585,
+   "ts": "2026-10-29T02:29:57.813848+00:00",
+   "dt_h": 0.187,
+   "reward_tick": 13.4303,
+   "reward_total": 21257.95,
+   "mm_value": -584.03,
+   "net": 20673.92,
+   "avg_share": 0.9473,
    "n_markets": 53,
    "fills_total": 583,
    "rebalanced": false,
    "w": 2988734
+  },
+  {
+   "ts": "2026-10-29T02:31:55.463730+00:00",
+   "dt_h": 0.033,
+   "reward_tick": 2.6763,
+   "reward_total": 21260.63,
+   "mm_value": -583.13,
+   "net": 20677.49,
+   "avg_share": 0.9407,
+   "n_markets": 53,
+   "fills_total": 583,
+   "rebalanced": false,
+   "w": 2988735
   }
  ],
  "fills": [
@@ -52810,8 +52833,8 @@
    "ledger": "v4"
   }
  ],
- "reward_total": 21247.310517609014,
- "last_ts": 1793240485.9638047,
+ "reward_total": 21260.626850252378,
+ "last_ts": 1793241115.4637296,
  "chosen_at": 1791639880.921448,
  "rebalances": [
   {
@@ -52822,8 +52845,8 @@
   }
  ],
  "last_tick": {
-  "ts": "2026-10-29T02:21:25.963805+00:00",
-  "dt_h": 0.045,
+  "ts": "2026-10-29T02:31:55.463730+00:00",
+  "dt_h": 0.016,
   "markets": [
    {
     "q": "Will global temperature increase by between 1.35\u00baC",
@@ -52834,7 +52857,7 @@
    },
    {
     "q": "Will Chicago Bears finish the 2026-27 NFL regular ",
-    "mid": 0.36,
+    "mid": 0.37,
     "share": 1.0,
     "earned": 0.0,
     "inv": 20.0
@@ -52848,21 +52871,21 @@
    },
    {
     "q": "Will Meta\u2019s market capitalization be between $1.75",
-    "mid": 0.485,
+    "mid": 0.49,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will Denver Broncos finish the 2026-27 NFL regular",
-    "mid": 0.479,
+    "mid": 0.485,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will Claude Opus 5.6+ debut at an output token pri",
-    "mid": 0.675,
+    "mid": 0.67,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -52876,16 +52899,16 @@
    },
    {
     "q": "Will Maurice Vunobolki win the 2027 Adamawa State ",
-    "mid": 0.233,
+    "mid": 0.279,
     "share": 1.0,
-    "earned": 0.0019,
+    "earned": 0.0007,
     "inv": 10.0
    },
    {
     "q": "Will Chainlink dip to $10 by December 31, 2026?",
     "mid": 0.37,
     "share": 1.0,
-    "earned": 0.0095,
+    "earned": 0.0033,
     "inv": 0.0
    },
    {
@@ -52894,225 +52917,197 @@
    },
    {
     "q": "Will the Democrats win Alaska in the 2028 Presiden",
-    "mid": 0.295,
+    "mid": 0.37,
     "share": 1.0,
-    "earned": 0.0303,
+    "earned": 0.0105,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index hit $8.00 (HIGH) by Decem",
     "mid": 0.21,
     "share": 1.0,
-    "earned": 0.0757,
+    "earned": 0.0263,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index hit $7.50 (HIGH) by Decem",
     "mid": 0.255,
     "share": 1.0,
-    "earned": 0.0757,
+    "earned": 0.0263,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index hit $5.50 (LOW) by Decemb",
     "mid": 0.265,
     "share": 1.0,
-    "earned": 0.0757,
+    "earned": 0.0263,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index hit $5.00 (LOW) by Decemb",
     "mid": 0.205,
     "share": 1.0,
-    "earned": 0.0757,
+    "earned": 0.0263,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index hit $4.00 (LOW) by Decemb",
-    "mid": 0.438,
+    "mid": 0.44,
     "share": 1.0,
-    "earned": 0.0757,
+    "earned": 0.0263,
     "inv": -10.0
    },
    {
     "q": "Will the Republicans win Florida in the 2028 Presi",
-    "mid": 0.665,
+    "mid": 0.475,
     "share": 1.0,
-    "earned": 0.036,
+    "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will the Democrats win New Hampshire in the 2028 P",
     "mid": 0.29,
     "share": 1.0,
-    "earned": 0.0303,
+    "earned": 0.0105,
     "inv": 0.0
    },
    {
     "q": "Will the Republicans win Alaska in the 2028 Presid",
-    "mid": 0.565,
+    "mid": 0.54,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0158,
     "inv": 0.0
    },
    {
     "q": "Will Space Exploration Technologies\u2019 market capita",
     "mid": 0.355,
     "share": 1.0,
-    "earned": 0.0833,
+    "earned": 0.0289,
     "inv": 0.0
    },
    {
     "q": "Will the Republicans win Ohio in the 2028 Presiden",
-    "mid": 0.59,
-    "share": 0.3014,
-    "earned": 0.0131,
+    "mid": 0.58,
+    "share": 0.403,
+    "earned": 0.0035,
     "inv": 0.0
    },
    {
     "q": "Will Luka Doncic lead the NBA in points per game i",
-    "mid": 0.644,
+    "mid": 0.639,
     "share": 1.0,
-    "earned": 0.0435,
+    "earned": 0.0151,
     "inv": 0.0
    },
    {
     "q": "Will the Knesset elect a new Speaker by November 3",
     "mid": 0.525,
     "share": 1.0,
-    "earned": 0.0227,
+    "earned": 0.0079,
     "inv": 0.0
    },
    {
     "q": "Israel Election: Yashar and Likud in coalition?",
     "mid": 0.195,
     "share": 1.0,
-    "earned": 0.0227,
+    "earned": 0.0079,
     "inv": 20.0
    },
    {
     "q": "Will Cheniere Energy (LNG) be added to the S&P 500",
-    "mid": 0.425,
+    "mid": 0.405,
     "share": 1.0,
-    "earned": 0.0947,
+    "earned": 0.0329,
     "inv": 0.0
    },
    {
     "q": "Over $10M committed to the over.computer public sa",
-    "mid": 0.635,
+    "mid": 0.595,
     "share": 1.0,
-    "earned": 0.0947,
+    "earned": 0.0329,
     "inv": 0.0
    },
    {
     "q": "Will Anthropic have a #1 AI model by December 31, ",
     "mid": 0.695,
     "share": 1.0,
-    "earned": 0.0757,
+    "earned": 0.0263,
     "inv": 0.0
    },
    {
     "q": "Will the U.S. 30-year Fixed-Rate Mortgage hit 6.75",
     "mid": 0.565,
     "share": 1.0,
-    "earned": 0.0947,
+    "earned": 0.0329,
     "inv": 0.0
    },
    {
     "q": "Will GPT Astra 6.1+ debut at an output token price",
-    "mid": 0.53,
+    "mid": 0.555,
     "share": 1.0,
-    "earned": 0.0057,
+    "earned": 0.002,
     "inv": 0.0
-   },
-   {
-    "q": "Government shutdown by December 31?",
-    "mid": 0.42,
-    "share": 0.02,
-    "earned": 0.0068,
-    "inv": 0.0
-   },
-   {
-    "q": "Government shutdown by December 12?",
-    "mid": 0.385,
-    "share": 0.0079,
-    "earned": 0.003,
-    "inv": -20.0
    },
    {
     "q": "Will the next Fable model (5.2+) debut in the top ",
     "mid": 0.29,
     "share": 1.0,
-    "earned": 0.3787,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the next Fable model (5.2+) debut in the top ",
-    "mid": 0.875,
-    "share": 0.0073,
-    "earned": 0.0028,
+    "earned": 0.1315,
     "inv": 0.0
    },
    {
     "q": "Will Gemini Carbon debut with an HLE-Diamond score",
-    "mid": 0.375,
+    "mid": 0.53,
     "share": 1.0,
-    "earned": 0.3787,
+    "earned": 0.1315,
     "inv": -20.0
    },
    {
     "q": "Will GPT Astra 6.1+ debut in the top 5 of the Text",
     "mid": 0.285,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.1315,
     "inv": 0.0
    },
    {
     "q": "Will the next Fable model (5.2+) debut in the top ",
-    "mid": 0.59,
+    "mid": 0.585,
     "share": 1.0,
-    "earned": 0.3787,
+    "earned": 0.1315,
     "inv": 0.0
    },
    {
     "q": "Will the US birth rate in 2026 be 52.0 or higher?",
-    "mid": 0.585,
+    "mid": 0.65,
     "share": 1.0,
-    "earned": 0.0947,
+    "earned": 0.0329,
     "inv": 0.0
    },
    {
     "q": "Israel tourism plunges below 40K by January?",
-    "mid": 0.37,
-    "share": 0.2344,
-    "earned": 0.0,
+    "mid": 0.35,
+    "share": 0.0949,
+    "earned": 0.0125,
     "inv": 0.0
    },
    {
     "q": "Will \"The Legend of Zelda: Ocarina of Time\" have a",
     "mid": 0.555,
     "share": 1.0,
-    "earned": 0.0947,
+    "earned": 0.0329,
     "inv": 0.0
    },
    {
     "q": "Will Gemini Carbon be released between November 30",
-    "mid": 0.205,
+    "mid": 0.16,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
    },
    {
-    "q": "Will PSOE win the most seats in Tarragona in the 2",
-    "mid": 0.825,
-    "share": 0.0046,
-    "earned": 0.0004,
-    "inv": 0.0
-   },
-   {
     "q": "Will there be no Gemini Carbon release by January ",
-    "mid": 0.24,
-    "share": 0.5294,
+    "mid": 0.235,
+    "share": 1.0,
     "earned": 0.0,
     "inv": -10.0
    },
@@ -53120,85 +53115,113 @@
     "q": "Will brawk play for NRG in 2027?",
     "mid": 0.515,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0276,
     "inv": 0.0
    },
    {
     "q": "Will the highest score achieved by a SpaceXAI Grok",
     "mid": 0.725,
     "share": 1.0,
-    "earned": 0.0757,
-    "inv": 0.0
-   },
-   {
-    "q": "Will no next Israeli Minister of Justice be appoin",
-    "mid": 0.505,
-    "share": 0.0215,
-    "earned": 0.0026,
+    "earned": 0.0263,
     "inv": 0.0
    },
    {
     "q": "Will Gemini Carbon be released between November 23",
-    "mid": 0.215,
-    "share": 1.0,
-    "earned": 0.1098,
+    "mid": 0.125,
+    "share": 0.603,
+    "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will Gemini Carbon be released between December 7 ",
-    "mid": 0.15,
+    "mid": 0.185,
     "share": 1.0,
-    "earned": 0.089,
+    "earned": 0.0309,
     "inv": 0.0
    },
    {
     "q": "Will Gemini Carbon be released between December 28",
-    "mid": 0.175,
+    "mid": 0.19,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0309,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index hit $3.75 (LOW) by Decemb",
     "mid": 0.364,
     "share": 0.5175,
-    "earned": 0.0029,
+    "earned": 0.001,
     "inv": 0.0
    },
    {
     "q": "Will Gemini Carbon be released between December 14",
-    "mid": 0.13,
+    "mid": 0.145,
     "share": 1.0,
-    "earned": 0.0644,
+    "earned": 0.0224,
     "inv": 0.0
    },
    {
     "q": "Will PP win the most seats in the Balearic Islands",
-    "mid": 0.8,
+    "mid": 0.78,
     "share": 1.0,
-    "earned": 0.0057,
+    "earned": 0.002,
     "inv": 0.0
    },
    {
     "q": "Will Morena win the most seats in the 2027 Durango",
     "mid": 0.5,
     "share": 1.0,
-    "earned": 0.0644,
+    "earned": 0.0224,
     "inv": 0.0
    },
    {
     "q": "Will Gemini Carbon be released between December 21",
-    "mid": 0.085,
+    "mid": 0.15,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0204,
+    "inv": 0.0
+   },
+   {
+    "q": "Will Microsoft be the third-largest company in the",
+    "mid": 0.575,
+    "share": 0.2967,
+    "earned": 0.0242,
+    "inv": 0.0
+   },
+   {
+    "q": "Will \"Resident Evil Requiem\" win Ultimate Game of ",
+    "mid": 0.415,
+    "share": 1.0,
+    "earned": 0.0447,
+    "inv": 0.0
+   },
+   {
+    "q": "Will the Ornn H200 Index hit $7.00 (HIGH) by Decem",
+    "mid": 0.532,
+    "share": 1.0,
+    "earned": 0.0263,
+    "inv": 0.0
+   },
+   {
+    "q": "Will there be no next Gemini Flash-Lite model (3.6",
+    "mid": 0.445,
+    "share": 1.0,
+    "earned": 0.025,
+    "inv": 0.0
+   },
+   {
+    "q": "Will no next Israeli Minister of Interior be appoi",
+    "mid": 0.49,
+    "share": 1.0,
+    "earned": 0.0217,
     "inv": 0.0
    }
   ],
-  "reward_tick": 2.7904,
-  "reward_total": 21247.31,
-  "mm_value": -580.62,
-  "net": 20666.69,
-  "avg_share": 0.8585,
+  "reward_tick": 1.2926,
+  "reward_total": 21260.63,
+  "mm_value": -583.13,
+  "net": 20677.49,
+  "avg_share": 0.9407,
   "n_markets": 53,
   "fills_total": 583,
   "rebalanced": false
@@ -63915,7 +63938,25 @@
     "Will Morena win the most seats in the 2027 Durango",
     "Will Gemini Carbon be released between December 21"
    ]
+  },
+  {
+   "ts": "2026-10-29T02:24:41.185768+00:00",
+   "swapped": 5,
+   "out": [
+    "Will PSOE win the most seats in Tarragona in the 2",
+    "Will no next Israeli Minister of Justice be appoin",
+    "Will the next Fable model (5.2+) debut in the top ",
+    "Government shutdown by December 12?",
+    "Government shutdown by December 31?"
+   ],
+   "in": [
+    "Will Microsoft be the third-largest company in the",
+    "Will \"Resident Evil Requiem\" win Ultimate Game of ",
+    "Will the Ornn H200 Index hit $7.00 (HIGH) by Decem",
+    "Will there be no next Gemini Flash-Lite model (3.6",
+    "Will no next Israeli Minister of Interior be appoi"
+   ]
   }
  ],
- "reviewed_at": 1793237063.0059373
+ "reviewed_at": 1793240681.1857684
 }

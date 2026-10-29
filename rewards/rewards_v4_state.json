@@ -604,21 +604,6 @@
    "rate0": 26.0
   },
   {
-   "cond": "0xf929af007ea6c6e40ce006a583820b97eb0ad872534dd51050c73b1d67956eb2",
-   "question": "Will Google have the best Image-to-Video AI at the end of November 2026?",
-   "yes": "10057864294815413241824783319690532639659584579580525784076905194771620547630",
-   "no": "69849339153933014914991722710944399366725837362385503361533708137562314672746",
-   "rate": 125.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.700000000000003,
-   "est_reward_day": 105.0,
-   "end": "2026-12-01T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 105.0
-  },
-  {
    "cond": "0xa52e0d8febb5108c4db568a25c8191efe572d41ef74397c2c2b99f5a207e9117",
    "question": "Will MiniMax have the best Image-to-Video AI at the end of November 2026?",
    "yes": "99966445547765625802250911864166657793696111668032416240494311035030943978110",
@@ -647,21 +632,6 @@
    "end": "2027-01-15T04:59:00Z",
    "share0": 1.0,
    "rate0": 50.0
-  },
-  {
-   "cond": "0x973e958d20a1d7739d4f7ebea1bf80a53a048bb37aa8f7ac7cf5715c140d00ec",
-   "question": "Will Micron Q1 adjusted gross margin be between 87.5% and 90%?",
-   "yes": "4937410301639742652180393164172828135427367872899840181051867063814033146297",
-   "no": "3384607600963899778669189479769954912872777534648648638151793697166821042882",
-   "rate": 41.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.700000000000003,
-   "est_reward_day": 55.0,
-   "end": "2026-12-23T23:00:00Z",
-   "share0": 1.0,
-   "rate0": 55.0
   },
   {
    "cond": "0x185591c455bea9a4355f9714dd8ec2a63297d025248867821492fb3f2bd9ddff",
@@ -754,21 +724,6 @@
    "rate0": 55.0
   },
   {
-   "cond": "0xb788b8cb9b8c8ff6c09c536820300fae028e7db2ea3e629cf3330bfe95a78809",
-   "question": "Will Yashar be in the next Israeli government?",
-   "yes": "62661037420718254475604636051820203679771392591516123974470699140734728502516",
-   "no": "46164706879249085808805355141377272796819079503843369563336124706247148368700",
-   "rate": 150.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.700000000000003,
-   "est_reward_day": 101.80722891566279,
-   "end": "2027-06-30T23:59:00Z",
-   "share0": 0.6787148594377519,
-   "rate0": 150.0
-  },
-  {
    "cond": "0x02a499c868cdbc702cef0e6cb286a91d3a2ae9825bc9b26c7b92982f2cb7dc97",
    "question": "Will Rihanna have the second-greatest number of monthly Spotify listeners this month?",
    "yes": "46872127345975305044655456568555878401868885332299243118188380448092485954990",
@@ -797,6 +752,51 @@
    "end": "2027-01-01T04:59:00Z",
    "share0": 1.0,
    "rate0": 40.0
+  },
+  {
+   "cond": "0x1944bc683848791adb84356853baf3761ce64035dc1d0ab9b538d0da765352fc",
+   "question": "Will the Democratic Party control the House after the 2028 elections?",
+   "yes": "55128028703524947831482438762569297424479174322217696204150791471886242145073",
+   "no": "19211599436141625024357654193157294787423132059527226689481532205431947269423",
+   "rate": 250.0,
+   "v": 4.5,
+   "min_size": 20.0,
+   "d": 0.0225,
+   "collateral": 19.1,
+   "est_reward_day": 250.0,
+   "end": "2028-11-08T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 250.0
+  },
+  {
+   "cond": "0xf2840074bc45cbef6082b7f92ebf5429baf67491dab4bcd92b463e6960b8bc93",
+   "question": "Will the Republican Party control the House after the 2028 elections?",
+   "yes": "77252654008302987945452187952410405355718779122486924872935776857075780420337",
+   "no": "97141915231849692820437109455819240350021279000409271591549042286483906683600",
+   "rate": 250.0,
+   "v": 4.5,
+   "min_size": 20.0,
+   "d": 0.0225,
+   "collateral": 19.1,
+   "est_reward_day": 250.0,
+   "end": "2028-11-08T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 250.0
+  },
+  {
+   "cond": "0x924150d8e5d4a19e390312a34f703b7898f117ede3e8832d7b245084fa53c3ee",
+   "question": "Next Israeli government formed by February 28, 2027?",
+   "yes": "9931095909857979556841312980850507948635901286485682644547743304936041250470",
+   "no": "52946998485445174877735684634824653455445474752794907058483856797073994515805",
+   "rate": 200.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.700000000000003,
+   "est_reward_day": 200.0,
+   "end": "2027-03-01T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 200.0
   }
  ],
  "positions": {
@@ -1068,9 +1068,9 @@
   "0xd574e42b80e4de882bbd1a4b0d4fb9499989a5a0c3a4494c1c050b5f9ba9375a": {
    "inv": 0.0,
    "cash": -2.0325000000000006,
-   "mid": 0.54,
+   "mid": 0.5700000000000001,
    "share": 1.0,
-   "reward": 63.234693835217136,
+   "reward": 63.515037869893334,
    "fills": 2,
    "q": "Will OpenAI's frontier output token price be at or below $40 in 2026?",
    "closed_at": 0.37
@@ -1136,7 +1136,7 @@
   "0xeaf463a1a9353009d8d9c50839bcc56afe7a043cacb131fccf908dfa26b10769": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.685,
+   "mid": 0.675,
    "share": 1.0,
    "reward": 118.30446849300093,
    "fills": 0,
@@ -1147,7 +1147,7 @@
    "cash": -3.9192750000000007,
    "mid": 0.46499999999999997,
    "share": 1.0,
-   "reward": 141.91039899480634,
+   "reward": 142.16265740110993,
    "fills": 2,
    "q": "Will GPT Astra 6.1+ debut at an output token price of at least $50 by June 30, 2",
    "closed_at": 0.48
@@ -1788,7 +1788,7 @@
   "0xd290d0ce68bea178bc6fcecb04a539702bb603518dc41dfc71e2844dfeb7a99d": {
    "inv": -3.09,
    "cash": 0.7897749999999999,
-   "mid": 0.185,
+   "mid": 0.22499999999999998,
    "share": 1.0,
    "reward": 46.55953813173782,
    "fills": 2,
@@ -2129,7 +2129,7 @@
    "cash": 0.0,
    "mid": 0.59,
    "share": 1.0,
-   "reward": 16.041824019690175,
+   "reward": 16.325059148626014,
    "fills": 0,
    "q": "Will Labor win the most seats in the next New South Wales state election?"
   },
@@ -2508,9 +2508,9 @@
   "0xc654c867cf8105295819c97e2e8f0aede0abcc5ec73d3b405d9d0b6373951d9d": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.69,
+   "mid": 0.755,
    "share": 1.0,
-   "reward": 31.86643875124322,
+   "reward": 31.881748758212726,
    "fills": 0,
    "q": "Will PAN win the most seats in the 2027 Quer\u00e9taro Congress election?"
   },
@@ -2655,9 +2655,9 @@
   "0xa95aae3fd0f8f5223f3909b5e940130f4a30e80b14153ff0a962053ab28b2365": {
    "inv": 0.0,
    "cash": -0.5019999999999989,
-   "mid": 0.56,
+   "mid": 0.5650000000000001,
    "share": 1.0,
-   "reward": 90.1834536686598,
+   "reward": 90.33655373835485,
    "fills": 2,
    "q": "Will Felipe Fernando Mac\u00edas Olvera win the 2027 Quer\u00e9taro Governor Election?",
    "closed_at": 0.56
@@ -2712,9 +2712,9 @@
   "0x84183fca786cd364abf470fa01b8d547671a63844e0d606d55c775f9e84e839b": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.51,
+   "mid": 0.61,
    "share": 1.0,
-   "reward": 46.687493489250286,
+   "reward": 46.82501220152143,
    "fills": 0,
    "q": "Will no next Israeli Minister of Interior be appointed by February 28, 2027?"
   },
@@ -2824,9 +2824,9 @@
   "0x0363a7f29185f6c62ef4c83980719f5162da6c6d5a618787ba53517827552f77": {
    "inv": 0.0,
    "cash": -7.15,
-   "mid": 0.525,
+   "mid": 0.43000000000000005,
    "share": 1.0,
-   "reward": 12.026826525626708,
+   "reward": 12.1449979603272,
    "fills": 1,
    "q": "Will Chou Chun-mi win the next Pingtung County Magistrate election?",
    "closed_at": 0.84
@@ -2834,7 +2834,7 @@
   "0x9c53f5008c63f1a006e206ca2658f9f66662daa29860fc444654f3404261b3ac": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.52,
+   "mid": 0.19,
    "share": 1.0,
    "reward": 132.11806422067525,
    "fills": 0,
@@ -2980,9 +2980,9 @@
   "0xe3b52c31f596e8551a481be8214c6fe27e0cf6478137b21fa054808f8ad2a9a7": {
    "inv": 0.0,
    "cash": -0.8000000000000003,
-   "mid": 0.4,
+   "mid": 0.39999999999999997,
    "share": 1.0,
-   "reward": 101.05088326335861,
+   "reward": 101.2499133539622,
    "fills": 2,
    "q": "Will One Nation win the third-most seats in the next New South Wales state elect",
    "closed_at": 0.4
@@ -3349,7 +3349,7 @@
    "cash": 0.7505799999999994,
    "mid": 0.332,
    "share": 1.0,
-   "reward": 45.03485964052967,
+   "reward": 45.34105977991977,
    "fills": 3,
    "q": "Will the Ornn H100 Index hit $2.00 (LOW) by December 31, 2026?",
    "closed_at": 0.48
@@ -3523,9 +3523,9 @@
   "0x6fd35d4386532f338f7fc116c8335c8683952059294c248a6681b643480be4bf": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.485,
+   "mid": 0.48,
    "share": 1.0,
-   "reward": 75.13145068525056,
+   "reward": 75.37641079676264,
    "fills": 0,
    "q": "Will Morena win the most seats in the 2027 Durango Congress election?"
   },
@@ -4519,7 +4519,7 @@
   "0x5d15579a3a31d6220eb8d33d167788db82976f14c856768a5e37e51afdaeb279": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.479,
+   "mid": 0.48,
    "share": 1.0,
    "reward": 17.59805527737572,
    "fills": 0,
@@ -5920,9 +5920,9 @@
   "0x185591c455bea9a4355f9714dd8ec2a63297d025248867821492fb3f2bd9ddff": {
    "inv": 0.0,
    "cash": 2.750000000000001,
-   "mid": 0.45,
+   "mid": 0.435,
    "share": 1.0,
-   "reward": 47.73373920114803,
+   "reward": 48.17007439977892,
    "fills": 1,
    "q": "Will Micron Q1 adjusted gross margin be between 85% and 87.5%?",
    "closed_at": 0.46
@@ -6351,7 +6351,7 @@
    "cash": -0.375,
    "mid": 0.31,
    "share": 1.0,
-   "reward": 12.607358914450366,
+   "reward": 12.630323924904621,
    "fills": 1,
    "q": "Will the Ornn H200 Index be at least $6.50 on November 30, 2026?",
    "closed_at": 0.55
@@ -7851,7 +7851,7 @@
    "cash": -1.5344250000000001,
    "mid": 0.26,
    "share": 1.0,
-   "reward": 14.196293421903267,
+   "reward": 14.770418683259702,
    "fills": 1,
    "q": "Will MiniMax have the best Image-to-Video AI at the end of November 2026?"
   },
@@ -7894,9 +7894,9 @@
   "0xf929af007ea6c6e40ce006a583820b97eb0ad872534dd51050c73b1d67956eb2": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.6255,
-   "share": 0.02512204258557842,
-   "reward": 18.078879164159307,
+   "mid": 0.625,
+   "share": null,
+   "reward": 18.08527840331883,
    "fills": 0,
    "q": "Will Google have the best Image-to-Video AI at the end of November 2026?"
   },
@@ -8004,7 +8004,7 @@
    "cash": -4.3950000000000005,
    "mid": 0.245,
    "share": 1.0,
-   "reward": 35.893376075692274,
+   "reward": 35.90103107917701,
    "fills": 1,
    "q": "Will Maurice Vunobolki win the 2027 Adamawa State gubernatorial election?"
   },
@@ -8184,9 +8184,9 @@
   "0x32a041d75e914143a3001f68cb51eacc209da04f2f9a332cad7c9ca9407564cf": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.145,
+   "mid": 0.144,
    "share": 1.0,
-   "reward": 5.058712184050386,
+   "reward": 5.058719839053871,
    "fills": 0,
    "q": "Will Green Bay Packers finish the 2026-27 NFL regular season with the most retur"
   },
@@ -8717,7 +8717,7 @@
    "cash": 0.0,
    "mid": 0.49,
    "share": 1.0,
-   "reward": 34.8677073700423,
+   "reward": 34.90598238746606,
    "fills": 0,
    "q": "Will Chainlink dip to $10 by December 31, 2026?"
   },
@@ -10437,9 +10437,9 @@
   "0xd682d6abb4bcb2ffb933997e8202032b60b287054a223cb3f0edcc4a894aef5c": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.1995,
+   "mid": 0.1985,
    "share": 1.0,
-   "reward": 111.21943933429311,
+   "reward": 111.52563947368321,
    "fills": 0,
    "q": "Will the Ornn H200 Index hit $3.50 (LOW) by December 31, 2026?"
   },
@@ -10673,9 +10673,9 @@
   "0x6b2d876c9bb9615396b829e6b6c32db3d037332d09352f5a4f1e8f45c18f829f": {
    "inv": 0.0,
    "cash": 0.8891734780000027,
-   "mid": 0.532,
+   "mid": 0.5375000000000001,
    "share": 1.0,
-   "reward": 52.96355990348147,
+   "reward": 53.170244997569775,
    "fills": 4,
    "q": "Will Nikola Jokic lead the NBA in efficiency (EFF) per game in 2026-27?",
    "closed_at": 0.497
@@ -10695,7 +10695,7 @@
    "cash": 0.0,
    "mid": 0.39,
    "share": 1.0,
-   "reward": 42.22678850984239,
+   "reward": 42.53298864923249,
    "fills": 0,
    "q": "Will the highest score achieved by an OpenAI model on Humanity\u2019s Last Exam in 20"
   },
@@ -11242,7 +11242,7 @@
    "cash": 0.0,
    "mid": 0.227,
    "share": 1.0,
-   "reward": 8.623431523453238,
+   "reward": 8.638741530422744,
    "fills": 0,
    "q": "Will the Ornn H200 Index be between $4.50 and $5.00 on November 30, 2026?"
   },
@@ -11693,9 +11693,9 @@
   "0x97a7bb02eeecb617c68a74eae57638b05c5688a46669d93553e57b71caccd05c": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.22799999999999998,
+   "mid": 0.22749999999999998,
    "share": 1.0,
-   "reward": 14.153671197998522,
+   "reward": 14.459871337388616,
    "fills": 0,
    "q": "OpenAI announces a full training pause in 2026?"
   },
@@ -11783,9 +11783,9 @@
   "0x8c7db0d1f8e74f773dc0c3097fdcbb24317ca67ee5cf66367e11175581b3a826": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.195,
+   "mid": 0.17,
    "share": 1.0,
-   "reward": 31.539139572969685,
+   "reward": 31.684322993242017,
    "fills": 0,
    "q": "Will the Democrats win Alaska in the 2028 Presidential Election?"
   },
@@ -11865,9 +11865,9 @@
   "0x3657dc1c7a8b984564e8354ca00411d2207eabb52b6c982514c5ba53b84da40a": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.515,
+   "mid": 0.52,
    "share": 1.0,
-   "reward": 44.12907806404172,
+   "reward": 44.511828238279335,
    "fills": 0,
    "q": "Will the U.S. 30-year Fixed-Rate Mortgage hit 6.75% (LOW) by December 31, 2026?"
   },
@@ -12014,9 +12014,9 @@
   "0x6cf827720a643edb6480aa0ab04d0010f4e75fdf3a18bfe0be629649a0cba714": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.5,
+   "mid": 0.49000000000000005,
    "share": 1.0,
-   "reward": 55.09432665353308,
+   "reward": 55.34271679687016,
    "fills": 0,
    "q": "Will the Ornn H200 Index hit $8.00 (HIGH) by December 31, 2026?"
   },
@@ -12025,7 +12025,7 @@
    "cash": 5.15,
    "mid": 0.7150000000000001,
    "share": 1.0,
-   "reward": 59.85265754607203,
+   "reward": 60.15885768546213,
    "fills": 1,
    "q": "Will the Ornn H200 Index hit $7.50 (HIGH) by December 31, 2026?"
   },
@@ -12034,7 +12034,7 @@
    "cash": 0.0,
    "mid": 0.27,
    "share": 1.0,
-   "reward": 56.37843099353906,
+   "reward": 56.68463113292916,
    "fills": 0,
    "q": "Will the Ornn H200 Index hit $5.50 (LOW) by December 31, 2026?"
   },
@@ -12043,7 +12043,7 @@
    "cash": 0.55915,
    "mid": 0.26,
    "share": 1.0,
-   "reward": 57.65891552037656,
+   "reward": 57.96511565976666,
    "fills": 1,
    "q": "Will the Ornn H200 Index hit $5.00 (LOW) by December 31, 2026?"
   },
@@ -12171,8 +12171,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.445,
-   "share": 0.036351903635190315,
-   "reward": 10.11428622204036,
+   "share": null,
+   "reward": 10.127204062941594,
    "fills": 0,
    "q": "Will Yashar be in the next Israeli government?"
   },
@@ -12274,7 +12274,7 @@
    "cash": 0.0,
    "mid": 0.69,
    "share": 1.0,
-   "reward": 24.824303873181368,
+   "reward": 24.985058946361164,
    "fills": 0,
    "q": "Will the Republicans win Florida in the 2028 Presidential Election?"
   },
@@ -12302,7 +12302,7 @@
    "cash": 0.0,
    "mid": 0.455,
    "share": 1.0,
-   "reward": 10.704932597663907,
+   "reward": 10.850377663874202,
    "fills": 0,
    "q": "Will the Republicans win North Carolina in the 2028 Presidential Election?"
   },
@@ -12311,7 +12311,7 @@
    "cash": -9.065,
    "mid": 0.72,
    "share": 1.0,
-   "reward": 14.564079468005191,
+   "reward": 14.732489544669743,
    "fills": 1,
    "q": "Will the Democrats win Minnesota in the 2028 Presidential Election?"
   },
@@ -12392,9 +12392,9 @@
   "0xde7f8d864196f272e6e579dd418ae993a41b663eb04410332e8d0a08c1da3274": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.35,
+   "mid": 0.36,
    "share": 1.0,
-   "reward": 15.921034369005094,
+   "reward": 16.05882443173064,
    "fills": 0,
    "q": "Will the Democrats win New Hampshire in the 2028 Presidential Election?"
   },
@@ -12419,9 +12419,9 @@
   "0x2252038307c5e583a376586ee586cc253063f329f28f4ce72fc50d27faa7a2a5": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.76,
+   "mid": 0.75,
    "share": 1.0,
-   "reward": 15.129135520579792,
+   "reward": 15.289890593759596,
    "fills": 0,
    "q": "Will the Republicans win Iowa in the 2028 Presidential Election?"
   },
@@ -12437,9 +12437,9 @@
   "0x82d84d12db92d6724e25d767a1726f1af0ce71ae86dfa84ad7a939b46dac8344": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.81,
+   "mid": 0.7949999999999999,
    "share": 1.0,
-   "reward": 20.75288102474747,
+   "reward": 20.898326090957767,
    "fills": 0,
    "q": "Will the Republicans win Alaska in the 2028 Presidential Election?"
   },
@@ -12483,9 +12483,9 @@
   "0xc6dc2d4a2f15d8ec76dd53e9fc042993672a721d0e7a045de832b87790c9baa1": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.5549999999999999,
-   "share": 1.0,
-   "reward": 12.398074881823948,
+   "mid": 0.5700000000000001,
+   "share": 0.4599624046507889,
+   "reward": 12.686090741739758,
    "fills": 0,
    "q": "Will GPT Astra 6.1+ debut at an output token price of at least $40 by June 30, 2"
   },
@@ -12501,18 +12501,18 @@
   "0xdaec6bad665b7a3b61fded70093394b5fc35660beeddecc4b5b84fe60d3064ef": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.5835,
+   "mid": 0.583,
    "share": 1.0,
-   "reward": 20.31786468397962,
+   "reward": 20.409724725796657,
    "fills": 0,
    "q": "Will Luka Doncic lead the NBA in points per game in 2026-27?"
   },
   "0xdec231c72ffdea54bd43f40bd2159f905fba06d603b0008391ba06b5d4798ed8": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.63,
+   "mid": 0.61,
    "share": 1.0,
-   "reward": 52.44776859152736,
+   "reward": 52.53962863334438,
    "fills": 0,
    "q": "Will the Knesset elect a new Speaker by November 30?"
   },
@@ -12537,9 +12537,9 @@
   "0x924150d8e5d4a19e390312a34f703b7898f117ede3e8832d7b245084fa53c3ee": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.195,
-   "share": null,
-   "reward": 0.8226547591473475,
+   "mid": 0.48,
+   "share": 0.03940760804680038,
+   "reward": 1.357733281023093,
    "fills": 0,
    "q": "Next Israeli government formed by February 28, 2027?"
   },
@@ -13008,18 +13008,18 @@
   "0x0d691db3b9216a353b8c9af9ebc166496e315996f220e3930e523db4b204df9b": {
    "inv": -20.0,
    "cash": 6.949999999999999,
-   "mid": 0.46499999999999997,
+   "mid": 0.47,
    "share": 1.0,
-   "reward": 23.207565137351462,
+   "reward": 23.590315311589087,
    "fills": 1,
    "q": "Will there be no next Claude Opus model (5.6+) release by November 30, 2026?"
   },
   "0x26688c7beeb4bdcb22abc3c6fdc36c1518b3b1fbf27bb2f39c2198e025118976": {
    "inv": 0.0,
    "cash": 1.8000000000000012,
-   "mid": 0.52,
+   "mid": 0.53,
    "share": 1.0,
-   "reward": 28.217078776740248,
+   "reward": 29.281124261120837,
    "fills": 4,
    "q": "Will any other company have the best AI model on LiveBench (Mathematics) at the "
   },
@@ -13044,18 +13044,18 @@
   "0x80bfba82313e3a2bc68129f1b3adad7906c9d2b95cfec071af800d2439f91bb5": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.51,
+   "mid": 0.48,
    "share": 1.0,
-   "reward": 5.453223810165509,
+   "reward": 5.6292888903148155,
    "fills": 0,
    "q": "Will PSOE win the most seats in Biscay in the 2026 Spanish general election?"
   },
   "0xb920f2c26c999446df6a44d525c9b3fdff28b9da600136f99329de06f1fe292a": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.43999999999999995,
+   "mid": 0.43500000000000005,
    "share": 1.0,
-   "reward": 10.094226108560411,
+   "reward": 10.270291188709717,
    "fills": 0,
    "q": "Will the Democrats win Arizona in the 2028 Presidential Election?"
   },
@@ -13109,7 +13109,7 @@
    "cash": 0.0,
    "mid": 0.28,
    "share": 1.0,
-   "reward": 5.913425033912064,
+   "reward": 6.05887010012236,
    "fills": 0,
    "q": "Will the Democrats win Florida in the 2028 Presidential Election?"
   },
@@ -13126,8 +13126,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.33999999999999997,
-   "share": 0.03305300215137887,
-   "reward": 5.301113078576848,
+   "share": null,
+   "reward": 5.304138101401923,
    "fills": 0,
    "q": "Will Micron Q1 adjusted gross margin be between 87.5% and 90%?"
   },
@@ -13172,18 +13172,36 @@
    "cash": 0.0,
    "mid": 0.445,
    "share": 1.0,
-   "reward": 4.659112549073719,
+   "reward": 5.16434277906738,
    "fills": 0,
    "q": "Will The Weeknd have the second-greatest number of monthly Spotify listeners thi"
   },
   "0x02a499c868cdbc702cef0e6cb286a91d3a2ae9825bc9b26c7b92982f2cb7dc97": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.265,
+   "mid": 0.48,
    "share": 1.0,
-   "reward": 0.8236217657476664,
+   "reward": 1.0100343468426556,
    "fills": 0,
    "q": "Will Rihanna have the second-greatest number of monthly Spotify listeners this m"
+  },
+  "0x1944bc683848791adb84356853baf3761ce64035dc1d0ab9b538d0da765352fc": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.745,
+   "share": 1.0,
+   "reward": 0.8239475078880787,
+   "fills": 0,
+   "q": "Will the Democratic Party control the House after the 2028 elections?"
+  },
+  "0xf2840074bc45cbef6082b7f92ebf5429baf67491dab4bcd92b463e6960b8bc93": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.43,
+   "share": 1.0,
+   "reward": 0.33753630946631785,
+   "fills": 0,
+   "q": "Will the Republican Party control the House after the 2028 elections?"
   }
  },
  "history": [
@@ -48925,17 +48943,30 @@
    "w": 2988824
   },
   {
-   "ts": "2026-10-29T17:32:11.806048+00:00",
-   "dt_h": 0.057,
-   "reward_tick": 3.1037,
-   "reward_total": 21972.13,
-   "mm_value": -594.01,
-   "net": 21378.13,
-   "avg_share": 0.9441,
+   "ts": "2026-10-29T17:39:11.828754+00:00",
+   "dt_h": 0.174,
+   "reward_tick": 10.3374,
+   "reward_total": 21979.37,
+   "mm_value": -594.26,
+   "net": 21385.11,
+   "avg_share": 1.0,
    "n_markets": 53,
    "fills_total": 598,
    "rebalanced": false,
    "w": 2988825
+  },
+  {
+   "ts": "2026-10-29T17:43:13.198349+00:00",
+   "dt_h": 0.068,
+   "reward_tick": 4.4167,
+   "reward_total": 21983.78,
+   "mm_value": -594.23,
+   "net": 21389.55,
+   "avg_share": 0.9711,
+   "n_markets": 53,
+   "fills_total": 598,
+   "rebalanced": false,
+   "w": 2988826
   }
  ],
  "fills": [
@@ -54322,8 +54353,8 @@
    "ledger": "v4"
   }
  ],
- "reward_total": 21972.131881812842,
- "last_ts": 1793295131.8060484,
+ "reward_total": 21983.782147269554,
+ "last_ts": 1793295793.1983495,
  "chosen_at": 1791639880.921448,
  "rebalances": [
   {
@@ -54334,12 +54365,12 @@
   }
  ],
  "last_tick": {
-  "ts": "2026-10-29T17:32:11.806048+00:00",
-  "dt_h": 0.057,
+  "ts": "2026-10-29T17:43:13.198349+00:00",
+  "dt_h": 0.018,
   "markets": [
    {
     "q": "Will global temperature increase by between 1.35\u00baC",
-    "mid": 0.185,
+    "mid": 0.225,
     "share": 1.0,
     "earned": 0.0,
     "inv": -3.09
@@ -54360,28 +54391,28 @@
    },
    {
     "q": "Will Meta\u2019s market capitalization be between $1.75",
-    "mid": 0.52,
+    "mid": 0.19,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will Denver Broncos finish the 2026-27 NFL regular",
-    "mid": 0.479,
+    "mid": 0.48,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will Claude Opus 5.6+ debut at an output token pri",
-    "mid": 0.685,
+    "mid": 0.675,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will Green Bay Packers finish the 2026-27 NFL regu",
-    "mid": 0.145,
+    "mid": 0.144,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -54390,14 +54421,14 @@
     "q": "Will Maurice Vunobolki win the 2027 Adamawa State ",
     "mid": 0.245,
     "share": 1.0,
-    "earned": 0.0024,
+    "earned": 0.0007,
     "inv": 10.0
    },
    {
     "q": "Will Chainlink dip to $10 by December 31, 2026?",
     "mid": 0.49,
     "share": 1.0,
-    "earned": 0.0119,
+    "earned": 0.0037,
     "inv": 0.0
    },
    {
@@ -54406,311 +54437,311 @@
    },
    {
     "q": "Will the Democrats win Alaska in the 2028 Presiden",
-    "mid": 0.195,
+    "mid": 0.17,
     "share": 1.0,
-    "earned": 0.0501,
+    "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index hit $8.00 (HIGH) by Decem",
-    "mid": 0.5,
+    "mid": 0.49,
     "share": 1.0,
-    "earned": 0.0955,
+    "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index hit $7.50 (HIGH) by Decem",
     "mid": 0.715,
     "share": 1.0,
-    "earned": 0.0955,
+    "earned": 0.0297,
     "inv": -20.0
    },
    {
     "q": "Will the Ornn H200 Index hit $5.50 (LOW) by Decemb",
     "mid": 0.27,
     "share": 1.0,
-    "earned": 0.0955,
+    "earned": 0.0297,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index hit $5.00 (LOW) by Decemb",
     "mid": 0.26,
     "share": 1.0,
-    "earned": 0.0955,
+    "earned": 0.0297,
     "inv": -1.06
    },
    {
     "q": "Will the Republicans win Florida in the 2028 Presi",
     "mid": 0.69,
     "share": 1.0,
-    "earned": 0.0501,
+    "earned": 0.0156,
     "inv": 0.0
    },
    {
     "q": "Will the Democrats win New Hampshire in the 2028 P",
-    "mid": 0.35,
+    "mid": 0.36,
     "share": 1.0,
-    "earned": 0.043,
+    "earned": 0.0133,
     "inv": 0.0
    },
    {
     "q": "Will the Republicans win Alaska in the 2028 Presid",
-    "mid": 0.81,
+    "mid": 0.795,
     "share": 1.0,
-    "earned": 0.0454,
+    "earned": 0.0141,
     "inv": 0.0
    },
    {
     "q": "Will Luka Doncic lead the NBA in points per game i",
-    "mid": 0.584,
+    "mid": 0.583,
     "share": 1.0,
-    "earned": 0.0287,
+    "earned": 0.0089,
     "inv": 0.0
    },
    {
     "q": "Will the Knesset elect a new Speaker by November 3",
-    "mid": 0.63,
+    "mid": 0.61,
     "share": 1.0,
-    "earned": 0.0287,
+    "earned": 0.0089,
     "inv": 0.0
    },
    {
     "q": "Will Morena win the most seats in the 2027 Durango",
-    "mid": 0.485,
+    "mid": 0.48,
     "share": 1.0,
-    "earned": 0.0764,
+    "earned": 0.0237,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index hit $3.50 (LOW) by Decemb",
-    "mid": 0.2,
+    "mid": 0.199,
     "share": 1.0,
-    "earned": 0.0955,
+    "earned": 0.0297,
     "inv": 0.0
    },
    {
     "q": "Will Nikola Jokic lead the NBA in efficiency (EFF)",
-    "mid": 0.532,
+    "mid": 0.538,
     "share": 1.0,
-    "earned": 0.0645,
+    "earned": 0.02,
     "inv": 0.0
    },
    {
     "q": "Will One Nation win the third-most seats in the ne",
     "mid": 0.4,
     "share": 1.0,
-    "earned": 0.0621,
+    "earned": 0.0193,
     "inv": 0.0
    },
    {
     "q": "Will the Republicans win Iowa in the 2028 Presiden",
-    "mid": 0.76,
+    "mid": 0.75,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0156,
     "inv": 0.0
    },
    {
     "q": "Will the Democrats win Arizona in the 2028 Preside",
-    "mid": 0.44,
+    "mid": 0.435,
     "share": 1.0,
-    "earned": 0.0549,
+    "earned": 0.0171,
     "inv": 0.0
    },
    {
     "q": "Will Felipe Fernando Mac\u00edas Olvera win the 2027 Qu",
-    "mid": 0.56,
+    "mid": 0.565,
     "share": 1.0,
-    "earned": 0.0478,
+    "earned": 0.0148,
     "inv": 0.0
    },
    {
     "q": "Will the Democrats win Florida in the 2028 Preside",
     "mid": 0.28,
     "share": 1.0,
-    "earned": 0.0454,
+    "earned": 0.0141,
     "inv": 0.0
    },
    {
     "q": "Will Chou Chun-mi win the next Pingtung County Mag",
-    "mid": 0.525,
+    "mid": 0.43,
     "share": 1.0,
-    "earned": 0.0406,
+    "earned": 0.0126,
     "inv": 0.0
    },
    {
     "q": "Will the Democrats win Minnesota in the 2028 Presi",
     "mid": 0.72,
     "share": 1.0,
-    "earned": 0.0525,
+    "earned": 0.0163,
     "inv": 14.0
    },
    {
     "q": "Will the Republicans win North Carolina in the 202",
     "mid": 0.455,
     "share": 1.0,
-    "earned": 0.0454,
+    "earned": 0.0141,
     "inv": 0.0
    },
    {
     "q": "Will PAN win the most seats in the 2027 Quer\u00e9taro ",
-    "mid": 0.69,
+    "mid": 0.755,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0015,
     "inv": 0.0
    },
    {
     "q": "OpenAI announces a full training pause in 2026?",
-    "mid": 0.228,
+    "mid": 0.227,
     "share": 1.0,
-    "earned": 0.0955,
+    "earned": 0.0297,
     "inv": 0.0
    },
    {
     "q": "Will any other company have the best AI model on L",
-    "mid": 0.52,
+    "mid": 0.53,
     "share": 1.0,
-    "earned": 0.3319,
+    "earned": 0.1031,
     "inv": 0.0
    },
    {
     "q": "Will the highest score achieved by an OpenAI model",
     "mid": 0.39,
     "share": 1.0,
-    "earned": 0.0955,
+    "earned": 0.0297,
     "inv": 0.0
    },
    {
     "q": "Will Labor win the most seats in the next New Sout",
     "mid": 0.59,
     "share": 1.0,
-    "earned": 0.0883,
+    "earned": 0.0274,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index be between $4.50 and $5.0",
     "mid": 0.227,
     "share": 1.0,
-    "earned": 0.0048,
+    "earned": 0.0015,
     "inv": 0.0
    },
    {
     "q": "Will there be no next Claude Opus model (5.6+) rel",
-    "mid": 0.465,
+    "mid": 0.47,
     "share": 1.0,
-    "earned": 0.1194,
+    "earned": 0.0371,
     "inv": -20.0
    },
    {
     "q": "Will no next Israeli Minister of Interior be appoi",
-    "mid": 0.51,
+    "mid": 0.61,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0148,
     "inv": 0.0
    },
    {
     "q": "Will PSOE win the most seats in Biscay in the 2026",
-    "mid": 0.51,
+    "mid": 0.48,
     "share": 1.0,
-    "earned": 0.0549,
-    "inv": 0.0
-   },
-   {
-    "q": "Will Google have the best Image-to-Video AI at the",
-    "mid": 0.625,
-    "share": 0.0251,
-    "earned": 0.0075,
+    "earned": 0.0171,
     "inv": 0.0
    },
    {
     "q": "Will MiniMax have the best Image-to-Video AI at th",
     "mid": 0.26,
     "share": 1.0,
-    "earned": 0.1791,
+    "earned": 0.0556,
     "inv": 4.99
    },
    {
     "q": "Will the U.S. 30-year Fixed-Rate Mortgage hit 6.75",
-    "mid": 0.515,
+    "mid": 0.52,
     "share": 1.0,
-    "earned": 0.1194,
-    "inv": 0.0
-   },
-   {
-    "q": "Will Micron Q1 adjusted gross margin be between 87",
-    "mid": 0.34,
-    "share": 0.0331,
-    "earned": 0.0032,
+    "earned": 0.0371,
     "inv": 0.0
    },
    {
     "q": "Will Micron Q1 adjusted gross margin be between 85",
-    "mid": 0.45,
+    "mid": 0.435,
     "share": 1.0,
-    "earned": 0.1361,
+    "earned": 0.0423,
     "inv": 0.0
    },
    {
     "q": "Will OpenAI's frontier output token price be at or",
-    "mid": 0.54,
+    "mid": 0.57,
     "share": 1.0,
-    "earned": 0.0955,
+    "earned": 0.0297,
     "inv": 0.0
    },
    {
     "q": "Will GPT Astra 6.1+ debut at an output token price",
-    "mid": 0.555,
-    "share": 1.0,
-    "earned": 0.0955,
+    "mid": 0.57,
+    "share": 0.46,
+    "earned": 0.0136,
     "inv": 0.0
    },
    {
     "q": "Will GPT Astra 6.1+ debut at an output token price",
     "mid": 0.465,
     "share": 1.0,
-    "earned": 0.0955,
+    "earned": 0.0297,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index be at least $6.50 on Nove",
     "mid": 0.31,
     "share": 1.0,
-    "earned": 0.0072,
+    "earned": 0.0022,
     "inv": 0.0
    },
    {
     "q": "Will The Weeknd have the second-greatest number of",
     "mid": 0.445,
     "share": 1.0,
-    "earned": 0.1576,
-    "inv": 0.0
-   },
-   {
-    "q": "Will Yashar be in the next Israeli government?",
-    "mid": 0.445,
-    "share": 0.0364,
-    "earned": 0.013,
+    "earned": 0.0489,
     "inv": 0.0
    },
    {
     "q": "Will Rihanna have the second-greatest number of mo",
-    "mid": 0.265,
+    "mid": 0.48,
     "share": 1.0,
-    "earned": 0.0812,
+    "earned": 0.0252,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H100 Index hit $2.00 (LOW) by Decemb",
     "mid": 0.332,
     "share": 1.0,
-    "earned": 0.0955,
+    "earned": 0.0297,
+    "inv": 0.0
+   },
+   {
+    "q": "Will the Democratic Party control the House after ",
+    "mid": 0.745,
+    "share": 1.0,
+    "earned": 0.0,
+    "inv": 0.0
+   },
+   {
+    "q": "Will the Republican Party control the House after ",
+    "mid": 0.43,
+    "share": 1.0,
+    "earned": 0.0,
+    "inv": 0.0
+   },
+   {
+    "q": "Next Israeli government formed by February 28, 202",
+    "mid": 0.48,
+    "share": 0.0394,
+    "earned": 0.0058,
     "inv": 0.0
    }
   ],
-  "reward_tick": 3.1037,
-  "reward_total": 21972.13,
-  "mm_value": -594.01,
-  "net": 21378.13,
-  "avg_share": 0.9441,
+  "reward_tick": 0.933,
+  "reward_total": 21983.78,
+  "mm_value": -594.23,
+  "net": 21389.55,
+  "avg_share": 0.9711,
   "n_markets": 53,
   "fills_total": 598,
   "rebalanced": false
@@ -65759,7 +65790,21 @@
     "Will Rihanna have the second-greatest number of mo",
     "Will the Ornn H100 Index hit $2.00 (LOW) by Decemb"
    ]
+  },
+  {
+   "ts": "2026-10-29T17:36:28.526675+00:00",
+   "swapped": 3,
+   "out": [
+    "Will Micron Q1 adjusted gross margin be between 87",
+    "Will Google have the best Image-to-Video AI at the",
+    "Will Yashar be in the next Israeli government?"
+   ],
+   "in": [
+    "Will the Democratic Party control the House after ",
+    "Will the Republican Party control the House after ",
+    "Next Israeli government formed by February 28, 202"
+   ]
   }
  ],
- "reviewed_at": 1793291744.3513124
+ "reviewed_at": 1793295388.5266755
 }

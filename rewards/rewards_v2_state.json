@@ -37,7 +37,7 @@
    "question": "Will the Bank of England make no change to the Bank Rate at the February meeting?",
    "yes": "30594246012662275402061690422048346375687962950190976637863103347385647899349",
    "no": "431959466271901091339176002264737965528520039104714586752028253068755526361",
-   "rate": 90.0,
+   "rate": 89.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -52,7 +52,7 @@
    "question": "Will the Reserve Bank of Australia make no change to the cash rate target at the March meeting?",
    "yes": "82290604910412205543912477736033125174056306558645206660541735825704244251712",
    "no": "106186390022071520937670977439995323523637304733007882363566133776683641475635",
-   "rate": 88.0,
+   "rate": 90.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -322,7 +322,7 @@
    "question": "Will the Bank of Brazil increase the target for the Selic rate by 50+ bps at the January meeting?",
    "yes": "20578922845702983946090287468613206220357060123885742326705553486599138116512",
    "no": "87755984177244470170372484332651273823046275229086438943392571298030303839322",
-   "rate": 48.0,
+   "rate": 42.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -337,7 +337,7 @@
    "question": "Will the Bank of Brazil decrease the target for the Selic rate by 50+ bps at the January meeting?",
    "yes": "74967017535992035132869349619099138561704351659532281810414400465404405642249",
    "no": "92051665976658503605496028639393102631068498115218343318605595725526807760378",
-   "rate": 41.0,
+   "rate": 43.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -397,7 +397,7 @@
    "question": "Hormuz Island no longer under Iranian control by December 31?",
    "yes": "2356476753428494331902586466503169868171633030047649833600319632171996235589",
    "no": "93682590387335367378856227667601101368206676467228705029686469492045254287913",
-   "rate": 0.0,
+   "rate": 1.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -4494,8 +4494,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.645,
-   "share": 0.0038662782025549137,
-   "reward": 11.543297622577422,
+   "share": 0.0038222073776834876,
+   "reward": 11.54469954659083,
    "fills": 0,
    "q": "US imports Russian diesel by January 31?"
   },
@@ -4503,17 +4503,17 @@
    "inv": -15.0,
    "cash": 9.862499999999999,
    "mid": 0.7,
-   "share": 0.005435441937451373,
-   "reward": 10.187640500275917,
+   "share": 0.005486901111237076,
+   "reward": 10.18844327447214,
    "fills": 1,
    "q": "US imports Russian diesel by March 31?"
   },
   "0x6c9dee437fd386a7b1ea3ff0c83c7a8796bba22bb45109afbbe37a5e5f2d8bc2": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.33,
+   "mid": 0.32,
    "share": 1.0,
-   "reward": 65.9403067466283,
+   "reward": 66.59464822323763,
    "fills": 0,
    "q": "Will the Bank of England make no change to the Bank Rate at the February meeting"
   },
@@ -4521,8 +4521,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.39,
-   "share": 0.012394417921410219,
-   "reward": 61.46758268259056,
+   "share": 0.01204067070995363,
+   "reward": 61.47589029723828,
    "fills": 0,
    "q": "Will the Reserve Bank of Australia make no change to the cash rate target at the"
   },
@@ -4531,16 +4531,16 @@
    "cash": 0.0,
    "mid": 0.5499999999999999,
    "share": 1.0,
-   "reward": 63.613387667911994,
+   "reward": 64.19965697460702,
    "fills": 0,
    "q": "Will Dreamcash launch a token by December 31, 2027?"
   },
   "0x0ce6191d00b53f3d016367ab8fd9f1152f1fd2865601cc00a91ab1801ecf21b0": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.31,
+   "mid": 0.3,
    "share": 1.0,
-   "reward": 63.921096688729726,
+   "reward": 64.50736599542476,
    "fills": 0,
    "q": "Will Ostium launch a token by March 31, 2027?"
   },
@@ -4549,7 +4549,7 @@
    "cash": 0.0,
    "mid": 0.615,
    "share": 1.0,
-   "reward": 62.074663585424396,
+   "reward": 62.660932892119426,
    "fills": 0,
    "q": "Will Pacifica launch a token by June 30, 2027?"
   },
@@ -4558,7 +4558,7 @@
    "cash": 0.0,
    "mid": 0.59,
    "share": 1.0,
-   "reward": 62.78309155857119,
+   "reward": 63.36936086526622,
    "fills": 0,
    "q": "Will Pacifica launch a token by December 31, 2027?"
   },
@@ -4567,7 +4567,7 @@
    "cash": 0.0,
    "mid": 0.485,
    "share": 1.0,
-   "reward": 63.00860187874898,
+   "reward": 63.59487118544401,
    "fills": 0,
    "q": "Will Theo launch a token by March 31, 2027?"
   },
@@ -4576,43 +4576,43 @@
    "cash": 0.0,
    "mid": 0.54,
    "share": 1.0,
-   "reward": 63.92105500543557,
+   "reward": 64.5073243121306,
    "fills": 0,
    "q": "Will Theo launch a token by June 30, 2027?"
   },
   "0xd48803acd8a251c8792e494234b5847335182e26c6949c1ddff37e342a94205c": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.515,
+   "mid": 0.52,
    "share": 1.0,
-   "reward": 63.026874524134165,
+   "reward": 63.613143830829195,
    "fills": 0,
    "q": "Will Theo launch a token by December 31, 2027?"
   },
   "0xfcce99aade6aab9de83de3b4a85e36fe5efb220e3c061e3805ff250c3de187d9": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.32,
+   "mid": 0.31000000000000005,
    "share": 1.0,
-   "reward": 60.0320510091605,
+   "reward": 60.56253663036559,
    "fills": 0,
    "q": "Will Perena launch a token by March 31, 2027?"
   },
   "0xc00edb855704d231530a3f7ec52fe8422056e454e3be9ba04e9b9f6a690f5579": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.585,
+   "mid": 0.615,
    "share": 1.0,
-   "reward": 54.52163043287064,
+   "reward": 54.99234016029922,
    "fills": 0,
    "q": "Will Perena launch a token by December 31, 2027?"
   },
   "0x845bedd50c8773e25b84aa56d2036afa5d93d7213be22b9764c1781cbc8258e7": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.47,
+   "mid": 0.49,
    "share": 1.0,
-   "reward": 63.64852637560278,
+   "reward": 64.23479568229781,
    "fills": 0,
    "q": "Will Dreamcash launch a token by March 31, 2027?"
   },
@@ -4621,7 +4621,7 @@
    "cash": 0.0,
    "mid": 0.465,
    "share": 1.0,
-   "reward": 63.86619733373322,
+   "reward": 64.28370047785616,
    "fills": 0,
    "q": "Will Dreamcash launch a token by June 30, 2027?"
   },
@@ -4630,34 +4630,34 @@
    "cash": 0.0,
    "mid": 0.405,
    "share": 1.0,
-   "reward": 47.62373720981455,
+   "reward": 48.13117861549059,
    "fills": 0,
    "q": "Will OpenSea launch a token by March 31, 2027?"
   },
   "0xefd5d8e8e66bd0d947ecc0f3f9abf2de204a65a83d38ee8df2659a5ea05d3e1c": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.575,
+   "mid": 0.595,
    "share": 1.0,
-   "reward": 58.66627987998503,
+   "reward": 59.19672737386492,
    "fills": 0,
    "q": "Will OpenSea launch a token by December 31, 2027?"
   },
   "0x85e6702b5ce07a9d902fdfcf03796140f39c4e19a4dc6b7706c86fea5259e9dc": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.52,
+   "mid": 0.51,
    "share": 1.0,
-   "reward": 62.66890764523435,
+   "reward": 63.19969770820053,
    "fills": 0,
    "q": "Will TownSquare launch a token by March 31, 2027?"
   },
   "0xbd0b1b0436d1007f106279d492956f7fd9f0e22c0a6b0f5c67a22934cf1a66ef": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.5,
+   "mid": 0.51,
    "share": 1.0,
-   "reward": 62.96367092066339,
+   "reward": 63.54994022735842,
    "fills": 0,
    "q": "Will TownSquare launch a token by June 30, 2027?"
   },
@@ -4666,7 +4666,7 @@
    "cash": 0.0,
    "mid": 0.57,
    "share": 1.0,
-   "reward": 63.247245762304004,
+   "reward": 63.833515068999034,
    "fills": 0,
    "q": "Will TownSquare launch a token by December 31, 2027?"
   },
@@ -4675,25 +4675,25 @@
    "cash": 0.0,
    "mid": 0.355,
    "share": 1.0,
-   "reward": 58.574238081803536,
+   "reward": 59.17516412116593,
    "fills": 0,
    "q": "Will the Bank of Canada increase the target for the overnight rate by 25 bps at "
   },
   "0xc9ed4cfa06255fa379b586fc92b788039eb50c22a3b49167343274f6c8ddc7f2": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.445,
+   "mid": 0.41000000000000003,
    "share": 1.0,
-   "reward": 35.88466874421474,
+   "reward": 36.20516136769623,
    "fills": 0,
    "q": "Will the Bank of Brazil increase the target for the Selic rate by 50+ bps at the"
   },
   "0x0347cce5e4fb4f4f795c90fe874da4a5c809a0f6692c239f502c88bce5987a15": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.375,
+   "mid": 0.37,
    "share": 1.0,
-   "reward": 34.04081165461612,
+   "reward": 34.35169766114249,
    "fills": 0,
    "q": "Will the Bank of Brazil decrease the target for the Selic rate by 50+ bps at the"
   },
@@ -4702,16 +4702,16 @@
    "cash": 0.0,
    "mid": 0.45499999999999996,
    "share": 1.0,
-   "reward": 45.39114856941603,
+   "reward": 45.97741787611106,
    "fills": 0,
    "q": "Will the Swiss National Bank make no change to the SNB policy rate at the June m"
   },
   "0x30dedcdd839b8c0fabec548499b556ccf27d8c638a23daf230b23c95893271c0": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.14500000000000002,
+   "mid": 0.135,
    "share": 1.0,
-   "reward": 19.327528695264657,
+   "reward": 19.459439289271042,
    "fills": 0,
    "q": "Will the Swiss National Bank decrease the SNB policy rate by 25 bps at the June "
   },
@@ -4720,15 +4720,15 @@
    "cash": -6.75,
    "mid": 0.11,
    "share": 0.11239392407757183,
-   "reward": 9.845440809003644,
+   "reward": 9.847911800551607,
    "fills": 1,
    "q": "Abu Musa Island no longer under Iranian control by December 31?"
   },
   "0xf5b1dbf65353cc93305f446e974b1568b9e78c2225f34c064a2eafb90b437ca8": {
    "inv": 20.0,
    "cash": -2.3500000000000005,
-   "mid": 0.036500000000000005,
-   "share": 0.00031508782095006214,
+   "mid": 0.031,
+   "share": 0.00023227785158485667,
    "reward": 16.1220087341701,
    "fills": 1,
    "q": "Hormuz Island no longer under Iranian control by December 31?"
@@ -4736,9 +4736,9 @@
   "0xbe3888a3d8ec44acc4187e43c375c215f5e5439409da3778350ca488afdafff0": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.52,
+   "mid": 0.53,
    "share": 1.0,
-   "reward": 39.94854506422528,
+   "reward": 40.31496338090967,
    "fills": 0,
    "q": "Will Iran target Syria by December 31, 2026?"
   },
@@ -4747,7 +4747,7 @@
    "cash": 0.0,
    "mid": 0.235,
    "share": 1.0,
-   "reward": 39.985329063816245,
+   "reward": 40.35174738050063,
    "fills": 0,
    "q": "Israel x Lebanon Effective Ceasefire by November 30?"
   },
@@ -4756,7 +4756,7 @@
    "cash": 0.0,
    "mid": 0.525,
    "share": 1.0,
-   "reward": 39.91335767424773,
+   "reward": 40.279775990932116,
    "fills": 0,
    "q": "Will Iran target Jordan by November 30, 2026?"
   },
@@ -4765,7 +4765,7 @@
    "cash": 0.0,
    "mid": 0.395,
    "share": 1.0,
-   "reward": 39.985329063816245,
+   "reward": 40.35174738050063,
    "fills": 0,
    "q": "Israel military action against Iraq by November 30, 2026?"
   },
@@ -4781,9 +4781,9 @@
   "0x75df31192e87c1bb24481647ad0c65df8752d4f1d0e7f88e9d1db040f7af700b": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.355,
-   "share": 0.03260166704476883,
-   "reward": 20.29725313631152,
+   "mid": 0.36,
+   "share": 0.027035466692944942,
+   "reward": 20.29824456940602,
    "fills": 0,
    "q": "Will a 7.5+ earthquake occur worldwide by November 30?"
   },
@@ -4792,16 +4792,16 @@
    "cash": 4.55,
    "mid": 0.34,
    "share": 1.0,
-   "reward": 31.95901934261854,
+   "reward": 32.32543765930293,
    "fills": 1,
    "q": "Will a 6.0+ magnitude earthquake occur in Peru this month?"
   },
   "0x46554d6fa794c3e32ba7f897975cb969d314c1c735adc331099b19e96bcb7f98": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.7,
-   "share": 0.05631456181272919,
-   "reward": 39.85224833666306,
+   "mid": 0.685,
+   "share": 0.012105150060883843,
+   "reward": 39.859059303373705,
    "fills": 0,
    "q": "Will there be at least 5600 measles cases in the U.S. by November 30, 2026?"
   },
@@ -4809,8 +4809,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.33999999999999997,
-   "share": 0.1387140902872773,
-   "reward": 39.863709014341914,
+   "share": 0.1193783847421706,
+   "reward": 39.90377260408015,
    "fills": 0,
    "q": "Will there be at least 5800 measles cases in the U.S. by November 30, 2026?"
   },
@@ -4818,8 +4818,8 @@
    "inv": -12.0,
    "cash": 4.089999999999999,
    "mid": 0.24,
-   "share": 0.08912035572205429,
-   "reward": 19.05025673044858,
+   "share": 0.11535836177474404,
+   "reward": 19.05473952305334,
    "fills": 2,
    "q": "\u015awi\u0119czkowski reinstated as Constitutional Tribunal President by December 31, 202"
   },
@@ -4828,7 +4828,7 @@
    "cash": 0.0,
    "mid": 0.33999999999999997,
    "share": 1.0,
-   "reward": 39.985329063816245,
+   "reward": 40.35174738050063,
    "fills": 0,
    "q": "Will any country leave NATO by June 30, 2027?"
   },
@@ -4837,7 +4837,7 @@
    "cash": 0.0,
    "mid": 0.275,
    "share": 1.0,
-   "reward": 39.914987390791964,
+   "reward": 40.28140570747635,
    "fills": 0,
    "q": "Will any country leave NATO by December 31, 2027?"
   },
@@ -4846,24 +4846,24 @@
    "cash": 0.0,
    "mid": 0.585,
    "share": 1.0,
-   "reward": 39.850758322549126,
+   "reward": 40.217176639233514,
    "fills": 0,
    "q": "US reissues Iran oil sanction relief by December 31?"
   },
   "0xb087ef29ad90ab94becb60658fd996b39c828675f0c2d4b5ed57c2602da01aba": {
    "inv": 20.0,
    "cash": -3.65,
-   "mid": 0.16,
-   "share": 0.09116271843989843,
-   "reward": 26.07962312886642,
+   "mid": 0.135,
+   "share": 0.0640654331733088,
+   "reward": 26.103955100942684,
    "fills": 2,
    "q": "Israel military action against Greater Beirut by November 30?"
   },
   "0xf79510d8ffe9c40d6505c7a8183348a1d7022830cf8ae2f449d62c6a9b5fdd90": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.065,
-   "share": 0.05830754920605124,
+   "mid": 0.07,
+   "share": 0.10346820526132755,
    "reward": 15.47726081371981,
    "fills": 0,
    "q": "Greater Tunb Island no longer under Iranian control by December 31?"
@@ -45527,17 +45527,30 @@
    "w": 2989124
   },
   {
-   "ts": "2026-10-31T19:30:43.587251+00:00",
-   "dt_h": 0.017,
-   "reward_tick": 1.3402,
-   "reward_total": 8020.5,
-   "mm_value": -241.04,
-   "net": 7779.47,
-   "avg_share": 0.7122,
+   "ts": "2026-10-31T19:39:18.876399+00:00",
+   "dt_h": 0.162,
+   "reward_tick": 13.027,
+   "reward_total": 8032.19,
+   "mm_value": -241.65,
+   "net": 7790.54,
+   "avg_share": 0.7098,
    "n_markets": 43,
    "fills_total": 186,
    "rebalanced": false,
    "w": 2989125
+  },
+  {
+   "ts": "2026-10-31T19:41:16.758102+00:00",
+   "dt_h": 0.033,
+   "reward_tick": 2.7891,
+   "reward_total": 8034.98,
+   "mm_value": -241.65,
+   "net": 7793.33,
+   "avg_share": 0.7116,
+   "n_markets": 43,
+   "fills_total": 186,
+   "rebalanced": false,
+   "w": 2989126
   }
  ],
  "fills": [
@@ -47216,8 +47229,8 @@
    "ledger": "v2"
   }
  ],
- "reward_total": 8020.5019027452,
- "last_ts": 1793475043.5872507,
+ "reward_total": 8034.977809906214,
+ "last_ts": 1793475676.758102,
  "chosen_at": 1793405948.9386284,
  "rebalances": [
   {
@@ -47354,34 +47367,34 @@
   }
  ],
  "last_tick": {
-  "ts": "2026-10-31T19:30:43.587251+00:00",
+  "ts": "2026-10-31T19:41:16.758102+00:00",
   "dt_h": 0.017,
   "markets": [
    {
     "q": "US imports Russian diesel by January 31?",
     "mid": 0.645,
-    "share": 0.0039,
+    "share": 0.0038,
     "earned": 0.0001,
     "inv": 0.0
    },
    {
     "q": "US imports Russian diesel by March 31?",
     "mid": 0.7,
-    "share": 0.0054,
+    "share": 0.0055,
     "earned": 0.0001,
     "inv": -15.0
    },
    {
     "q": "Will the Bank of England make no change to the Ban",
-    "mid": 0.33,
+    "mid": 0.32,
     "share": 1.0,
-    "earned": 0.0628,
+    "earned": 0.0625,
     "inv": 0.0
    },
    {
     "q": "Will the Reserve Bank of Australia make no change ",
     "mid": 0.39,
-    "share": 0.0124,
+    "share": 0.012,
     "earned": 0.0008,
     "inv": 0.0
    },
@@ -47389,145 +47402,145 @@
     "q": "Will Dreamcash launch a token by December 31, 2027",
     "mid": 0.55,
     "share": 1.0,
-    "earned": 0.0558,
+    "earned": 0.0562,
     "inv": 0.0
    },
    {
     "q": "Will Ostium launch a token by March 31, 2027?",
-    "mid": 0.31,
+    "mid": 0.3,
     "share": 1.0,
-    "earned": 0.0558,
+    "earned": 0.0562,
     "inv": 0.0
    },
    {
     "q": "Will Pacifica launch a token by June 30, 2027?",
     "mid": 0.615,
     "share": 1.0,
-    "earned": 0.0558,
+    "earned": 0.0562,
     "inv": 0.0
    },
    {
     "q": "Will Pacifica launch a token by December 31, 2027?",
     "mid": 0.59,
     "share": 1.0,
-    "earned": 0.0558,
+    "earned": 0.0562,
     "inv": 0.0
    },
    {
     "q": "Will Theo launch a token by March 31, 2027?",
     "mid": 0.485,
     "share": 1.0,
-    "earned": 0.0558,
+    "earned": 0.0562,
     "inv": 0.0
    },
    {
     "q": "Will Theo launch a token by June 30, 2027?",
     "mid": 0.54,
     "share": 1.0,
-    "earned": 0.0558,
+    "earned": 0.0562,
     "inv": 0.0
    },
    {
     "q": "Will Theo launch a token by December 31, 2027?",
-    "mid": 0.515,
+    "mid": 0.52,
     "share": 1.0,
-    "earned": 0.0558,
+    "earned": 0.0562,
     "inv": 0.0
    },
    {
     "q": "Will Perena launch a token by March 31, 2027?",
-    "mid": 0.32,
+    "mid": 0.31,
     "share": 1.0,
-    "earned": 0.0558,
+    "earned": 0.0562,
     "inv": 0.0
    },
    {
     "q": "Will Perena launch a token by December 31, 2027?",
-    "mid": 0.585,
+    "mid": 0.615,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0562,
     "inv": 0.0
    },
    {
     "q": "Will Dreamcash launch a token by March 31, 2027?",
-    "mid": 0.47,
+    "mid": 0.49,
     "share": 1.0,
-    "earned": 0.0558,
+    "earned": 0.0562,
     "inv": 0.0
    },
    {
     "q": "Will Dreamcash launch a token by June 30, 2027?",
     "mid": 0.465,
     "share": 1.0,
-    "earned": 0.0558,
+    "earned": 0.0562,
     "inv": 0.0
    },
    {
     "q": "Will OpenSea launch a token by March 31, 2027?",
     "mid": 0.405,
     "share": 1.0,
-    "earned": 0.0558,
+    "earned": 0.0562,
     "inv": 0.0
    },
    {
     "q": "Will OpenSea launch a token by December 31, 2027?",
-    "mid": 0.575,
+    "mid": 0.595,
     "share": 1.0,
-    "earned": 0.0558,
+    "earned": 0.0562,
     "inv": 0.0
    },
    {
     "q": "Will TownSquare launch a token by March 31, 2027?",
-    "mid": 0.52,
+    "mid": 0.51,
     "share": 1.0,
-    "earned": 0.0558,
+    "earned": 0.0562,
     "inv": 0.0
    },
    {
     "q": "Will TownSquare launch a token by June 30, 2027?",
-    "mid": 0.5,
+    "mid": 0.51,
     "share": 1.0,
-    "earned": 0.0558,
+    "earned": 0.0562,
     "inv": 0.0
    },
    {
     "q": "Will TownSquare launch a token by December 31, 202",
     "mid": 0.57,
     "share": 1.0,
-    "earned": 0.0558,
+    "earned": 0.0562,
     "inv": 0.0
    },
    {
     "q": "Will the Bank of Canada increase the target for th",
     "mid": 0.355,
     "share": 1.0,
-    "earned": 0.0572,
+    "earned": 0.0576,
     "inv": 0.0
    },
    {
     "q": "Will the Bank of Brazil increase the target for th",
-    "mid": 0.445,
+    "mid": 0.41,
     "share": 1.0,
-    "earned": 0.0335,
+    "earned": 0.0295,
     "inv": 0.0
    },
    {
     "q": "Will the Bank of Brazil decrease the target for th",
-    "mid": 0.375,
+    "mid": 0.37,
     "share": 1.0,
-    "earned": 0.0286,
+    "earned": 0.0302,
     "inv": 0.0
    },
    {
     "q": "Will the Swiss National Bank make no change to the",
     "mid": 0.455,
     "share": 1.0,
-    "earned": 0.0558,
+    "earned": 0.0562,
     "inv": 0.0
    },
    {
     "q": "Will the Swiss National Bank decrease the SNB poli",
-    "mid": 0.145,
+    "mid": 0.135,
     "share": 1.0,
     "earned": 0.0126,
     "inv": 0.0
@@ -47541,37 +47554,37 @@
    },
    {
     "q": "Hormuz Island no longer under Iranian control by D",
-    "mid": 0.037,
-    "share": 0.0003,
+    "mid": 0.031,
+    "share": 0.0002,
     "earned": 0.0,
     "inv": 20.0
    },
    {
     "q": "Will Iran target Syria by December 31, 2026?",
-    "mid": 0.52,
+    "mid": 0.53,
     "share": 1.0,
-    "earned": 0.0349,
+    "earned": 0.0351,
     "inv": 0.0
    },
    {
     "q": "Israel x Lebanon Effective Ceasefire by November 3",
     "mid": 0.235,
     "share": 1.0,
-    "earned": 0.0349,
+    "earned": 0.0351,
     "inv": 0.0
    },
    {
     "q": "Will Iran target Jordan by November 30, 2026?",
     "mid": 0.525,
     "share": 1.0,
-    "earned": 0.0349,
+    "earned": 0.0351,
     "inv": 0.0
    },
    {
     "q": "Israel military action against Iraq by November 30",
     "mid": 0.395,
     "share": 1.0,
-    "earned": 0.0349,
+    "earned": 0.0351,
     "inv": 0.0
    },
    {
@@ -47583,8 +47596,8 @@
    },
    {
     "q": "Will a 7.5+ earthquake occur worldwide by November",
-    "mid": 0.355,
-    "share": 0.0326,
+    "mid": 0.36,
+    "share": 0.027,
     "earned": 0.0001,
     "inv": 0.0
    },
@@ -47592,62 +47605,62 @@
     "q": "Will a 6.0+ magnitude earthquake occur in Peru thi",
     "mid": 0.34,
     "share": 1.0,
-    "earned": 0.0349,
+    "earned": 0.0351,
     "inv": -20.0
    },
    {
     "q": "Will there be at least 5600 measles cases in the U",
-    "mid": 0.7,
-    "share": 0.0563,
-    "earned": 0.002,
+    "mid": 0.685,
+    "share": 0.0121,
+    "earned": 0.0004,
     "inv": 0.0
    },
    {
     "q": "Will there be at least 5800 measles cases in the U",
     "mid": 0.34,
-    "share": 0.1387,
-    "earned": 0.0048,
+    "share": 0.1194,
+    "earned": 0.0028,
     "inv": 0.0
    },
    {
     "q": "\u015awi\u0119czkowski reinstated as Constitutional Tribunal",
     "mid": 0.24,
-    "share": 0.0891,
-    "earned": 0.0002,
+    "share": 0.1154,
+    "earned": 0.0004,
     "inv": -12.0
    },
    {
     "q": "Will any country leave NATO by June 30, 2027?",
     "mid": 0.34,
     "share": 1.0,
-    "earned": 0.0349,
+    "earned": 0.0351,
     "inv": 0.0
    },
    {
     "q": "Will any country leave NATO by December 31, 2027?",
     "mid": 0.275,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0351,
     "inv": 0.0
    },
    {
     "q": "US reissues Iran oil sanction relief by December 3",
     "mid": 0.585,
     "share": 1.0,
-    "earned": 0.0349,
+    "earned": 0.0351,
     "inv": 0.0
    },
    {
     "q": "Israel military action against Greater Beirut by N",
-    "mid": 0.16,
-    "share": 0.0912,
-    "earned": 0.0,
+    "mid": 0.135,
+    "share": 0.0641,
+    "earned": 0.0022,
     "inv": 20.0
    },
    {
     "q": "Greater Tunb Island no longer under Iranian contro",
-    "mid": 0.065,
-    "share": 0.0583,
+    "mid": 0.07,
+    "share": 0.1035,
     "earned": 0.0,
     "inv": 0.0
    },
@@ -47659,11 +47672,11 @@
     "inv": 0.0
    }
   ],
-  "reward_tick": 1.3402,
-  "reward_total": 8020.5,
-  "mm_value": -241.04,
-  "net": 7779.47,
-  "avg_share": 0.7122,
+  "reward_tick": 1.4352,
+  "reward_total": 8034.98,
+  "mm_value": -241.65,
+  "net": 7793.33,
+  "avg_share": 0.7116,
   "n_markets": 43,
   "fills_total": 186,
   "rebalanced": false

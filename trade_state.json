@@ -44,6 +44,15 @@
       "price": 77605.294606,
       "quote_qty": 1961.318610577438,
       "commission_quote": 0.980659305288719
+    },
+    {
+      "ts": "2026-11-02 05:30:25.289111+00:00",
+      "bar": "2026-11-02 00:00:00+00:00",
+      "side": "SELL",
+      "qty": 0.025273,
+      "price": 78330.4938,
+      "quote_qty": 1979.6465698073998,
+      "commission_quote": 0.9898232849037
     }
   ],
   "history": [
@@ -196,24 +205,33 @@
       "ts": "2026-11-01 00:00:00+00:00",
       "equity": 9803.835877095718,
       "exposure": 0.20002825792497175
+    },
+    {
+      "ts": "2026-11-02 00:00:00+00:00",
+      "equity": 9821.777249212992,
+      "exposure": 0.0
     }
   ],
-  "last_bar": "2026-11-01 00:00:00+00:00",
+  "last_bar": "2026-11-02 00:00:00+00:00",
   "last_decision": {
-    "action": "BUY",
+    "action": "HALT",
     "signal": 1.0,
-    "stop": 75316.86,
-    "target_qty": 0.025273,
-    "health": "CONTINUE",
-    "alerts": []
+    "stop": 76037.57,
+    "target_qty": 0.0,
+    "health": "HALT",
+    "alerts": [
+      "SHARPE_DECAY"
+    ]
   },
-  "stop": 75316.86,
+  "stop": null,
   "account": {
-    "base": 0.025273,
-    "quote": 7841.536607212992,
-    "price": 77582.02,
-    "bar": "2026-11-01 00:00:00+00:00",
+    "base": 0.0,
+    "quote": 9820.193353735489,
+    "price": 78354.0,
+    "bar": "2026-11-02 00:00:00+00:00",
     "asset": "BTC",
     "quote_asset": "USDT"
-  }
+  },
+  "halted": true,
+  "halt_reason": "SHARPE_DECAY"
 }

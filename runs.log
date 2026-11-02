@@ -657,3 +657,35 @@ WARNING: --ignore-gates. This strategy did NOT pass the gates. Testnet/paper onl
     "commission_quote": 0.980659305288719
   }
 }
+--- 2026-11-02T05:30:25Z broker=paper exit=2
+WARNING: --ignore-gates. This strategy did NOT pass the gates. Testnet/paper only -- never real money.
+{
+  "bar": "2026-11-02 00:00:00+00:00",
+  "action": "HALT",
+  "executed": true,
+  "price": 78354.0,
+  "equity": 9821.78,
+  "signal": 1.0,
+  "stop": 76037.57,
+  "current_qty": 0.025273,
+  "target_qty": 0.0,
+  "health": {
+    "live_sharpe": -3.81,
+    "current_dd": -10.7,
+    "alerts": [
+      "SHARPE_DECAY"
+    ],
+    "action": "HALT"
+  },
+  "order": {
+    "side": "SELL",
+    "qty": 0.025273
+  },
+  "fill": {
+    "side": "SELL",
+    "qty": 0.025273,
+    "price": 78330.4938,
+    "quote_qty": 1979.6465698073998,
+    "commission_quote": 0.9898232849037
+  }
+}

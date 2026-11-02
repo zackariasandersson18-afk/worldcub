@@ -334,21 +334,6 @@
    "rate0": 100.0
   },
   {
-   "cond": "0x769295466388e527b601e260a304ccce12d7c38680329fc1936b0e0f165a411e",
-   "question": "Will Trump speak to Mark Rutte by November 30?",
-   "yes": "108108396018638996655476993778472999978382299282823766817737368683171580663138",
-   "no": "49820992637388007667112211810688599021686467704150883357931194559543303940152",
-   "rate": 101.99872,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.700000000000003,
-   "est_reward_day": 100.0,
-   "end": "2026-12-01T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 100.0
-  },
-  {
    "cond": "0x676d210eb8fa9f920100bd82f3152a0f8348977c2a5b792970297519cbf52bae",
    "question": "Will Dreamcash launch a token by December 31, 2027?",
    "yes": "91838789748518661646648035197383517609510271795520263170506876624454104249378",
@@ -604,21 +589,6 @@
    "rate0": 80.0
   },
   {
-   "cond": "0xbd0b1b0436d1007f106279d492956f7fd9f0e22c0a6b0f5c67a22934cf1a66ef",
-   "question": "Will TownSquare launch a token by June 30, 2027?",
-   "yes": "33611061368031554684353048941785800248590789316492509038539059725348331375424",
-   "no": "11685709965711296459491729755958959588044277271901760458784969447956290617564",
-   "rate": 80.0,
-   "v": 4.5,
-   "min_size": 20.0,
-   "d": 0.0225,
-   "collateral": 19.1,
-   "est_reward_day": 80.0,
-   "end": "2027-07-01T03:59:00Z",
-   "share0": 1.0,
-   "rate0": 80.0
-  },
-  {
    "cond": "0x116ff2653ac3565fc578ee4f82adb7dafc7d8fb67161354b5161c1e5c289835c",
    "question": "Will the Bank of Canada increase the target for the overnight rate by 25 bps at the March interest rate announcement?",
    "yes": "101210403458319639399459640081921095937232967627076895647435906424799820875785",
@@ -784,19 +754,49 @@
    "rate0": 42.0
   },
   {
-   "cond": "0x5f6a7b61c0d5c70860e7538932e122a0392cc7f93ab568008770315883cc5de0",
-   "question": "Will Apple be the second-largest company in the world by market cap on December 31?",
-   "yes": "69735375491031838104241264868597697438957468021437178287310137256738557969442",
-   "no": "100432687948739646587101710609568969270821306394702299223912447207889743777454",
-   "rate": 4.0,
+   "cond": "0x56a4aa076b8e887195d8bbc44504e00faf992c567912fbf3ca072d4f8fc06b41",
+   "question": "Will the Bank of Canada increase the target for the overnight rate by 25 bps at the January interest rate announcement?",
+   "yes": "92805880922576929587421034285547882082053726335915255451766957954370177269775",
+   "no": "80643517049155997112983546392956214475007014346247842899671573481496156432454",
+   "rate": 103.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
    "collateral": 19.1,
-   "est_reward_day": 71.85992217898834,
-   "end": "2026-12-31T23:59:00Z",
-   "share0": 0.945525291828794,
-   "rate0": 76.0
+   "est_reward_day": 103.0,
+   "end": "2027-01-27T23:59:00Z",
+   "share0": 1.0,
+   "rate0": 103.0
+  },
+  {
+   "cond": "0xbf44f4df115b932ff864daa3e8733e90eb622aa4d4801205d36ad6999d16de84",
+   "question": "Will Gianni Infantino be the next President of FIFA?",
+   "yes": "42906138015923943662903931019745225686007907315945802792831977116751722767453",
+   "no": "107610481598459021534560073190159593720401964639150528356832996372410645763558",
+   "rate": 42.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.700000000000003,
+   "est_reward_day": 42.0,
+   "end": "2027-03-19T03:59:00Z",
+   "share0": 1.0,
+   "rate0": 42.0
+  },
+  {
+   "cond": "0x77a84b4262b83e376c3a3cff48b7da5e751c5ccaf6512cfda55caae325d30527",
+   "question": "Will the Bank of Canada make no change to the target for the overnight rate at the January interest rate announcement?",
+   "yes": "97906700147471124076085445599233614785816758078687796548110188170215356642503",
+   "no": "42676524878629131700343801081989684989186536456327180831867401940861012598028",
+   "rate": 97.0,
+   "v": 4.5,
+   "min_size": 20.0,
+   "d": 0.0225,
+   "collateral": 19.1,
+   "est_reward_day": 97.0,
+   "end": "2027-01-27T23:59:00Z",
+   "share0": 1.0,
+   "rate0": 97.0
   }
  ],
  "positions": {
@@ -1136,7 +1136,7 @@
   "0xeaf463a1a9353009d8d9c50839bcc56afe7a043cacb131fccf908dfa26b10769": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.61,
+   "mid": 0.62,
    "share": 1.0,
    "reward": 118.30446849300093,
    "fills": 0,
@@ -2714,7 +2714,7 @@
    "cash": -6.359464210000001,
    "mid": 0.4,
    "share": 1.0,
-   "reward": 98.83917405955326,
+   "reward": 98.96569700124196,
    "fills": 2,
    "q": "Will no next Israeli Minister of Interior be appointed by February 28, 2027?"
   },
@@ -4519,7 +4519,7 @@
   "0x5d15579a3a31d6220eb8d33d167788db82976f14c856768a5e37e51afdaeb279": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.485,
+   "mid": 0.4835,
    "share": 1.0,
    "reward": 17.59805527737572,
    "fills": 0,
@@ -5050,8 +5050,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.38,
-   "share": 0.16893301076165895,
-   "reward": 6.013571151564725,
+   "share": null,
+   "reward": 6.013702292985518,
    "fills": 0,
    "q": "Will Apple be the second-largest company in the world by market cap on December "
   },
@@ -8719,7 +8719,7 @@
    "cash": 0.0,
    "mid": 0.52,
    "share": 1.0,
-   "reward": 51.3331059566665,
+   "reward": 51.3682512182467,
    "fills": 0,
    "q": "Will Chainlink dip to $10 by December 31, 2026?"
   },
@@ -8735,9 +8735,9 @@
   "0xca634275e74cabcc22dfc4b3528f9d195869aa4827c63005fa817f459dd19ee5": {
    "inv": -4.89,
    "cash": 1.8704249999999996,
-   "mid": 0.32999999999999996,
+   "mid": 0.32,
    "share": 1.0,
-   "reward": 14.775072037108144,
+   "reward": 14.810217298688336,
    "fills": 1,
    "q": "Will Travis Scott release an album in 2026?"
   },
@@ -10441,7 +10441,7 @@
    "cash": 0.0,
    "mid": 0.1895,
    "share": 1.0,
-   "reward": 241.1099335643347,
+   "reward": 241.39109565697623,
    "fills": 0,
    "q": "Will the Ornn H200 Index hit $3.50 (LOW) by December 31, 2026?"
   },
@@ -11695,9 +11695,9 @@
   "0x97a7bb02eeecb617c68a74eae57638b05c5688a46669d93553e57b71caccd05c": {
    "inv": -20.0,
    "cash": 5.28,
-   "mid": 0.33149999999999996,
+   "mid": 0.496,
    "share": 1.0,
-   "reward": 141.1892025651065,
+   "reward": 141.44036627945798,
    "fills": 1,
    "q": "OpenAI announces a full training pause in 2026?"
   },
@@ -12017,18 +12017,18 @@
   "0x6cf827720a643edb6480aa0ab04d0010f4e75fdf3a18bfe0be629649a0cba714": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.495,
+   "mid": 0.505,
    "share": 1.0,
-   "reward": 184.36082963891235,
+   "reward": 184.64199173155387,
    "fills": 0,
    "q": "Will the Ornn H200 Index hit $8.00 (HIGH) by December 31, 2026?"
   },
   "0x2257e3232c4b23458ec0b44d21904897d516216f24af74487033876b1e56b591": {
    "inv": -20.0,
    "cash": 5.15,
-   "mid": 0.455,
+   "mid": 0.45999999999999996,
    "share": 1.0,
-   "reward": 188.38432694652568,
+   "reward": 188.6654890391672,
    "fills": 1,
    "q": "Will the Ornn H200 Index hit $7.50 (HIGH) by December 31, 2026?"
   },
@@ -12046,7 +12046,7 @@
    "cash": 0.55915,
    "mid": 0.52,
    "share": 1.0,
-   "reward": 187.4533733116247,
+   "reward": 187.7345354042662,
    "fills": 1,
    "q": "Will the Ornn H200 Index hit $5.00 (LOW) by December 31, 2026?"
   },
@@ -12303,9 +12303,9 @@
   "0x248a310233f61f9096f6cf39e704cc44176be622906095d7a2b78bb7719eb473": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.425,
+   "mid": 0.435,
    "share": 1.0,
-   "reward": 75.27591790062478,
+   "reward": 75.41649894694554,
    "fills": 0,
    "q": "Will the Republicans win North Carolina in the 2028 Presidential Election?"
   },
@@ -12398,7 +12398,7 @@
    "cash": 0.0,
    "mid": 0.345,
    "share": 1.0,
-   "reward": 70.45856274203277,
+   "reward": 70.58508568372147,
    "fills": 0,
    "q": "Will the Democrats win New Hampshire in the 2028 Presidential Election?"
   },
@@ -12517,7 +12517,7 @@
    "cash": 0.0,
    "mid": 0.51,
    "share": 1.0,
-   "reward": 89.45137271276852,
+   "reward": 89.53572134056098,
    "fills": 0,
    "q": "Will the Knesset elect a new Speaker by November 30?"
   },
@@ -13323,9 +13323,9 @@
   "0xffda1c03516975d418d8f87b201ddfafac0c9c3995494bdcb02106cfc7da0847": {
    "inv": 20.0,
    "cash": -10.049999999999999,
-   "mid": 0.315,
+   "mid": 0.325,
    "share": 1.0,
-   "reward": 15.033315116335922,
+   "reward": 15.068460377916114,
    "fills": 1,
    "q": "Will JAY-Z release a new song in 2026?"
   },
@@ -13370,7 +13370,7 @@
    "cash": -0.5499999999999989,
    "mid": 0.31,
    "share": 1.0,
-   "reward": 15.106341268094807,
+   "reward": 15.68975261032602,
    "fills": 1,
    "q": "Will the Reserve Bank of New Zealand make no change to the official cash rate at",
    "closed_at": 0.46
@@ -13490,16 +13490,16 @@
    "cash": 0.0,
    "mid": 0.335,
    "share": 1.0,
-   "reward": 110.31831418114191,
+   "reward": 110.64165058767968,
    "fills": 0,
    "q": "Will the Bank of Brazil decrease the target for the Selic rate by 50+ bps at the"
   },
   "0x4e9622ecbe78510333f9fe2f24308b676f2c13f11cfb30fc22ae2c6aec973b75": {
    "inv": 20.0,
    "cash": -6.75,
-   "mid": 0.275,
+   "mid": 0.255,
    "share": 1.0,
-   "reward": 92.29824086804804,
+   "reward": 92.55128675142542,
    "fills": 1,
    "q": "Will the Bank of Brazil decrease the target for the Selic rate by 25 bps at the "
   },
@@ -13608,7 +13608,7 @@
    "cash": 0.0,
    "mid": 0.49,
    "share": 1.0,
-   "reward": 124.18796239404757,
+   "reward": 124.57456027142972,
    "fills": 0,
    "q": "Will the Bank of Brazil make no change to the target for the Selic rate at the J"
   },
@@ -13643,9 +13643,9 @@
   "0x77a84b4262b83e376c3a3cff48b7da5e751c5ccaf6512cfda55caae325d30527": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.54,
-   "share": null,
-   "reward": 94.39039038980819,
+   "mid": 0.41000000000000003,
+   "share": 1.0,
+   "reward": 94.98063730520049,
    "fills": 0,
    "q": "Will the Bank of Canada make no change to the target for the overnight rate at t"
   },
@@ -13857,7 +13857,7 @@
    "cash": 0.0,
    "mid": 0.31,
    "share": 1.0,
-   "reward": 162.3735309117051,
+   "reward": 163.07643614330897,
    "fills": 0,
    "q": "Will Trump speak to Ahmed al-Sharaa by November 30?"
   },
@@ -13996,8 +13996,8 @@
    "inv": 0.0,
    "cash": 2.1999999999999993,
    "mid": 0.36,
-   "share": 0.017506589314475116,
-   "reward": 101.24666782366585,
+   "share": null,
+   "reward": 101.24701437026123,
    "fills": 2,
    "q": "Will Trump speak to Mark Rutte by November 30?"
   },
@@ -14070,9 +14070,9 @@
   "0x56a4aa076b8e887195d8bbc44504e00faf992c567912fbf3ca072d4f8fc06b41": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.32,
-   "share": null,
-   "reward": 18.505023353605075,
+   "mid": 0.36,
+   "share": 1.0,
+   "reward": 19.13178038747525,
    "fills": 0,
    "q": "Will the Bank of Canada increase the target for the overnight rate by 25 bps at "
   },
@@ -14088,9 +14088,9 @@
   "0x676d210eb8fa9f920100bd82f3152a0f8348977c2a5b792970297519cbf52bae": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.515,
+   "mid": 0.65,
    "share": 1.0,
-   "reward": 70.76491439187966,
+   "reward": 71.15448225604162,
    "fills": 0,
    "q": "Will Dreamcash launch a token by December 31, 2027?"
   },
@@ -14145,7 +14145,7 @@
    "cash": 0.0,
    "mid": 0.36,
    "share": 1.0,
-   "reward": 43.98813355617499,
+   "reward": 44.339586171976926,
    "fills": 0,
    "q": "US reissues Iran oil sanction relief by December 31?"
   },
@@ -14154,7 +14154,7 @@
    "cash": 0.0,
    "mid": 0.305,
    "share": 1.0,
-   "reward": 41.965104283557956,
+   "reward": 42.31655689935989,
    "fills": 0,
    "q": "Will any country leave NATO by December 31, 2027?"
   },
@@ -14199,9 +14199,9 @@
   "0x2162e0164a5bb62db0ad7af1ff46b02ffed273f5ef308cb24e14cf7352b359db": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.125,
+   "mid": 0.115,
    "share": 1.0,
-   "reward": 41.554364210339564,
+   "reward": 41.905816826141496,
    "fills": 0,
    "q": "Will Iran target Oman by December 31, 2026?"
   },
@@ -14229,16 +14229,16 @@
    "cash": 0.0,
    "mid": 0.5549999999999999,
    "share": 1.0,
-   "reward": 39.327107404788904,
+   "reward": 39.67856002059084,
    "fills": 0,
    "q": "Will Iran target Qatar by December 31, 2026?"
   },
   "0x877668a32efeb0a2f074f8e0a2fbc3495b3d40abd6fe66deac4377d3009b8d8d": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.345,
+   "mid": 0.36,
    "share": 1.0,
-   "reward": 36.84246866883023,
+   "reward": 37.19392128463216,
    "fills": 0,
    "q": "Supreme Court sides with Catholic preschools in Colorado funding case?"
   },
@@ -14247,7 +14247,7 @@
    "cash": 0.0,
    "mid": 0.375,
    "share": 1.0,
-   "reward": 37.70104816693948,
+   "reward": 38.05250078274141,
    "fills": 0,
    "q": "Will a 6.0+ magnitude earthquake occur in United States this month?"
   },
@@ -14256,7 +14256,7 @@
    "cash": 0.0,
    "mid": 0.187,
    "share": 1.0,
-   "reward": 3.9836513893692587,
+   "reward": 4.004738546317375,
    "fills": 0,
    "q": "Will the Ornn H200 Index be at least $7.50 on December 31, 2026?"
   },
@@ -14293,7 +14293,7 @@
    "cash": 0.0,
    "mid": 0.365,
    "share": 1.0,
-   "reward": 7.217119866509899,
+   "reward": 7.772414999476956,
    "fills": 0,
    "q": "Will the Bank of Japan increase the uncollateralized overnight call rate by 25 b"
   },
@@ -14312,7 +14312,7 @@
    "cash": 0.0,
    "mid": 0.55,
    "share": 1.0,
-   "reward": 37.702581710506344,
+   "reward": 38.26490589578944,
    "fills": 0,
    "q": "Will Theo launch a token by June 30, 2027?"
   },
@@ -14337,9 +14337,9 @@
   "0xc00edb855704d231530a3f7ec52fe8422056e454e3be9ba04e9b9f6a690f5579": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.685,
+   "mid": 0.65,
    "share": 1.0,
-   "reward": 31.561125890855454,
+   "reward": 32.064790984436335,
    "fills": 0,
    "q": "Will Perena launch a token by December 31, 2027?"
   },
@@ -14348,7 +14348,7 @@
    "cash": 0.0,
    "mid": 0.375,
    "share": 1.0,
-   "reward": 20.779310544331867,
+   "reward": 21.1307631601338,
    "fills": 0,
    "q": "Will a 6.0+ magnitude earthquake occur in Chile this month?"
   },
@@ -14367,16 +14367,16 @@
    "cash": 0.0,
    "mid": 0.615,
    "share": 1.0,
-   "reward": 17.080715419325887,
+   "reward": 17.446217142572934,
    "fills": 0,
    "q": "Alaska Senator sworn in by January 5?"
   },
   "0x40760862717a0c8a903a6d3e9ec04a5987afb29120f6b5624b51be08149e9fc3": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.55,
+   "mid": 0.5599999999999999,
    "share": 1.0,
-   "reward": 16.773966534132207,
+   "reward": 17.12541914993414,
    "fills": 0,
    "q": "Will Iran target Saudi Arabia by December 31, 2026?"
   },
@@ -14394,16 +14394,16 @@
    "cash": 0.0,
    "mid": 0.445,
    "share": 1.0,
-   "reward": 19.449320496083423,
+   "reward": 20.018673733682558,
    "fills": 0,
    "q": "Will the Bank of Canada make no change to the target for the overnight rate at t"
   },
   "0x845bedd50c8773e25b84aa56d2036afa5d93d7213be22b9764c1781cbc8258e7": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.64,
+   "mid": 0.655,
    "share": 1.0,
-   "reward": 19.641672609912032,
+   "reward": 19.97124371749384,
    "fills": 0,
    "q": "Will Dreamcash launch a token by March 31, 2027?"
   },
@@ -14412,7 +14412,7 @@
    "cash": 0.0,
    "mid": 0.5,
    "share": 1.0,
-   "reward": 12.5856283062862,
+   "reward": 12.937080922088136,
    "fills": 0,
    "q": "Will Iran target Syria by December 31, 2026?"
   },
@@ -14421,7 +14421,7 @@
    "cash": 0.0,
    "mid": 0.655,
    "share": 1.0,
-   "reward": 15.703291866735173,
+   "reward": 16.265616052018267,
    "fills": 0,
    "q": "Will TownSquare launch a token by December 31, 2027?"
   },
@@ -14429,8 +14429,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.505,
-   "share": 0.10720525173381361,
-   "reward": 15.472672433102831,
+   "share": null,
+   "reward": 15.47433688565304,
    "fills": 0,
    "q": "Will TownSquare launch a token by June 30, 2027?"
   },
@@ -14439,7 +14439,7 @@
    "cash": 0.0,
    "mid": 0.38999999999999996,
    "share": 1.0,
-   "reward": 15.602482203625977,
+   "reward": 16.101544918064725,
    "fills": 0,
    "q": "Will the Bank of Canada increase the target for the overnight rate by 25 bps at "
   },
@@ -14448,7 +14448,7 @@
    "cash": 6.9075,
    "mid": 0.73,
    "share": 1.0,
-   "reward": 8.999823122157906,
+   "reward": 9.351275737959842,
    "fills": 1,
    "q": "US x Yemen ceasefire continues through December 31?"
   },
@@ -14457,25 +14457,25 @@
    "cash": 0.0,
    "mid": 0.49,
    "share": 1.0,
-   "reward": 6.268714311360209,
+   "reward": 6.620166927162144,
    "fills": 0,
    "q": "Will a 6.0+ magnitude earthquake occur in Indonesia this month?"
   },
   "0x6985709acda07189d4953ee86d8b547be14c24c8fce56bb55c9f0f9c8f767cf4": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.4295,
+   "mid": 0.2955,
    "share": 1.0,
-   "reward": 4.154050781415019,
+   "reward": 4.467195549416876,
    "fills": 0,
    "q": "Will General Mills Q2 organic net sales growth be between -3% and -1.5%?"
   },
   "0x3b4949868d5f3a308b3f532e192f0c4b768f56353792d800d6241ebb97a33bff": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.685,
+   "mid": 0.69,
    "share": 1.0,
-   "reward": 0.4467583504345304,
+   "reward": 0.46784550738264646,
    "fills": 0,
    "q": "Will Somali pirates successfully seize a vessel by December 31, 2026?"
   },
@@ -14484,16 +14484,16 @@
    "cash": 0.0,
    "mid": 0.375,
    "share": 1.0,
-   "reward": 4.149723300365388,
+   "reward": 4.501175916167323,
    "fills": 0,
    "q": "Will a 6.0+ magnitude earthquake occur in Philippines this month?"
   },
   "0x299cd160cf9d05db8ba28418566bd62c9354201c18b9ab0b63782eb01d76cb35": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.43400000000000005,
+   "mid": 0.4065,
    "share": 1.0,
-   "reward": 3.3098419972012434,
+   "reward": 3.4996264097342875,
    "fills": 0,
    "q": "Will Z.ai be the second-best AI lab at the end of January 2027?"
   },
@@ -14509,20 +14509,29 @@
   "0x480f5cddae7a6d38b5f67aa9039902b0a7fb4762dc701d142956dc64209b7b81": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.45,
+   "mid": 0.44,
    "share": 1.0,
-   "reward": 5.041657418619704,
+   "reward": 5.422980932394029,
    "fills": 0,
    "q": "Will the Bank of Brazil make no change to the target for the Selic rate at the M"
   },
   "0x45cc7669487da12fe2ee1ca3b3aea38c9aee26267d8ed28cc6e50da7fcbaa85f": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.345,
+   "mid": 0.33999999999999997,
    "share": 1.0,
-   "reward": 1.6283069742912502,
+   "reward": 1.9024400146167593,
    "fills": 0,
    "q": "Will OpenAI be the second-best Code Arena | WebDev AI lab at the end of January "
+  },
+  "0xbf44f4df115b932ff864daa3e8733e90eb622aa4d4801205d36ad6999d16de84": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.59,
+   "share": 1.0,
+   "reward": 0.2555708293451203,
+   "fills": 0,
+   "q": "Will Gianni Infantino be the next President of FIFA?"
   }
  },
  "history": [
@@ -56426,17 +56435,30 @@
    "w": 2989298
   },
   {
-   "ts": "2026-11-02T00:34:13.893625+00:00",
-   "dt_h": 0.076,
-   "reward_tick": 6.4184,
-   "reward_total": 28710.48,
-   "mm_value": -659.91,
-   "net": 28050.56,
-   "avg_share": 0.948,
+   "ts": "2026-11-02T00:39:34.178675+00:00",
+   "dt_h": 0.165,
+   "reward_tick": 14.5521,
+   "reward_total": 28718.61,
+   "mm_value": -663.25,
+   "net": 28055.36,
+   "avg_share": 1.0,
    "n_markets": 53,
    "fills_total": 647,
    "rebalanced": false,
    "w": 2989299
+  },
+  {
+   "ts": "2026-11-02T00:44:21.203745+00:00",
+   "dt_h": 0.08,
+   "reward_tick": 7.3041,
+   "reward_total": 28725.91,
+   "mm_value": -663.45,
+   "net": 28062.46,
+   "avg_share": 1.0,
+   "n_markets": 53,
+   "fills_total": 647,
+   "rebalanced": false,
+   "w": 2989300
   }
  ],
  "fills": [
@@ -62264,8 +62286,8 @@
    "ledger": "v4"
   }
  ],
- "reward_total": 28710.47611251875,
- "last_ts": 1793579653.8936253,
+ "reward_total": 28725.914006288505,
+ "last_ts": 1793580261.2037454,
  "chosen_at": 1791639880.921448,
  "rebalances": [
   {
@@ -62276,8 +62298,8 @@
   }
  ],
  "last_tick": {
-  "ts": "2026-11-02T00:34:13.893625+00:00",
-  "dt_h": 0.06,
+  "ts": "2026-11-02T00:44:21.203745+00:00",
+  "dt_h": 0.047,
   "markets": [
    {
     "q": "Will global temperature increase by between 1.35\u00baC",
@@ -62302,14 +62324,14 @@
    },
    {
     "q": "Will Denver Broncos finish the 2026-27 NFL regular",
-    "mid": 0.485,
+    "mid": 0.483,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will Claude Opus 5.6+ debut at an output token pri",
-    "mid": 0.61,
+    "mid": 0.62,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -62318,7 +62340,7 @@
     "q": "Will Chainlink dip to $10 by December 31, 2026?",
     "mid": 0.52,
     "share": 1.0,
-    "earned": 0.0125,
+    "earned": 0.0098,
     "inv": 0.0
    },
    {
@@ -62327,367 +62349,337 @@
    },
    {
     "q": "Will the Ornn H200 Index hit $8.00 (HIGH) by Decem",
-    "mid": 0.495,
+    "mid": 0.505,
     "share": 1.0,
-    "earned": 0.1,
+    "earned": 0.0786,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index hit $7.50 (HIGH) by Decem",
-    "mid": 0.455,
+    "mid": 0.46,
     "share": 1.0,
-    "earned": 0.1,
+    "earned": 0.0786,
     "inv": -20.0
    },
    {
     "q": "Will the Ornn H200 Index hit $5.00 (LOW) by Decemb",
     "mid": 0.52,
     "share": 1.0,
-    "earned": 0.1,
+    "earned": 0.0786,
     "inv": -1.06
    },
    {
     "q": "Will the Democrats win New Hampshire in the 2028 P",
     "mid": 0.345,
     "share": 1.0,
-    "earned": 0.045,
+    "earned": 0.0354,
     "inv": 0.0
    },
    {
     "q": "Will the Knesset elect a new Speaker by November 3",
     "mid": 0.51,
     "share": 1.0,
-    "earned": 0.03,
+    "earned": 0.0236,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index hit $3.50 (LOW) by Decemb",
     "mid": 0.19,
     "share": 1.0,
-    "earned": 0.1,
+    "earned": 0.0786,
     "inv": 0.0
    },
    {
     "q": "Will the Republicans win North Carolina in the 202",
-    "mid": 0.425,
+    "mid": 0.435,
     "share": 1.0,
-    "earned": 0.05,
+    "earned": 0.0393,
     "inv": 0.0
    },
    {
     "q": "OpenAI announces a full training pause in 2026?",
-    "mid": 0.331,
+    "mid": 0.496,
     "share": 1.0,
-    "earned": 0.1,
+    "earned": 0.0786,
     "inv": -20.0
    },
    {
     "q": "Will no next Israeli Minister of Interior be appoi",
     "mid": 0.4,
     "share": 1.0,
-    "earned": 0.045,
+    "earned": 0.0354,
     "inv": 6.690476
    },
    {
     "q": "Will JAY-Z release a new song in 2026?",
-    "mid": 0.315,
+    "mid": 0.325,
     "share": 1.0,
-    "earned": 0.0125,
+    "earned": 0.0098,
     "inv": 20.0
    },
    {
     "q": "Will Travis Scott release an album in 2026?",
-    "mid": 0.33,
+    "mid": 0.32,
     "share": 1.0,
-    "earned": 0.0125,
+    "earned": 0.0098,
     "inv": -4.89
    },
    {
     "q": "Will the Bank of Brazil decrease the target for th",
     "mid": 0.335,
     "share": 1.0,
-    "earned": 0.115,
+    "earned": 0.0904,
     "inv": 0.0
    },
    {
     "q": "Will the Bank of Brazil decrease the target for th",
-    "mid": 0.275,
+    "mid": 0.255,
     "share": 1.0,
-    "earned": 0.09,
+    "earned": 0.0708,
     "inv": 20.0
    },
    {
     "q": "Will the Bank of Brazil make no change to the targ",
     "mid": 0.49,
     "share": 1.0,
-    "earned": 0.1375,
+    "earned": 0.1081,
     "inv": 0.0
    },
    {
     "q": "Will Trump speak to Ahmed al-Sharaa by November 30",
     "mid": 0.31,
     "share": 1.0,
-    "earned": 0.2501,
-    "inv": 0.0
-   },
-   {
-    "q": "Will Trump speak to Mark Rutte by November 30?",
-    "mid": 0.36,
-    "share": 0.0175,
-    "earned": 0.0045,
+    "earned": 0.1965,
     "inv": 0.0
    },
    {
     "q": "Will Dreamcash launch a token by December 31, 2027",
-    "mid": 0.515,
+    "mid": 0.65,
     "share": 1.0,
-    "earned": 0.2001,
+    "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "US reissues Iran oil sanction relief by December 3",
     "mid": 0.36,
     "share": 1.0,
-    "earned": 0.125,
+    "earned": 0.0983,
     "inv": 0.0
    },
    {
     "q": "Will any country leave NATO by December 31, 2027?",
     "mid": 0.305,
     "share": 1.0,
-    "earned": 0.125,
+    "earned": 0.0983,
     "inv": 0.0
    },
    {
     "q": "Will Iran target Oman by December 31, 2026?",
-    "mid": 0.125,
+    "mid": 0.115,
     "share": 1.0,
-    "earned": 0.125,
+    "earned": 0.0983,
     "inv": 0.0
    },
    {
     "q": "Will Iran target Qatar by December 31, 2026?",
     "mid": 0.555,
     "share": 1.0,
-    "earned": 0.125,
+    "earned": 0.0983,
     "inv": 0.0
    },
    {
     "q": "Supreme Court sides with Catholic preschools in Co",
-    "mid": 0.345,
+    "mid": 0.36,
     "share": 1.0,
-    "earned": 0.125,
+    "earned": 0.0983,
     "inv": 0.0
    },
    {
     "q": "Will a 6.0+ magnitude earthquake occur in United S",
     "mid": 0.375,
     "share": 1.0,
-    "earned": 0.125,
+    "earned": 0.0983,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index be at least $7.50 on Dece",
     "mid": 0.187,
     "share": 1.0,
-    "earned": 0.0075,
+    "earned": 0.0059,
     "inv": 0.0
    },
    {
     "q": "Will Theo launch a token by June 30, 2027?",
     "mid": 0.55,
     "share": 1.0,
-    "earned": 0.2001,
+    "earned": 0.1572,
     "inv": 0.0
    },
    {
     "q": "Will Perena launch a token by December 31, 2027?",
-    "mid": 0.685,
+    "mid": 0.65,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.1572,
     "inv": 0.0
    },
    {
     "q": "Will a 6.0+ magnitude earthquake occur in Chile th",
     "mid": 0.375,
     "share": 1.0,
-    "earned": 0.125,
+    "earned": 0.0983,
     "inv": 0.0
    },
    {
     "q": "Alaska Senator sworn in by January 5?",
     "mid": 0.615,
     "share": 1.0,
-    "earned": 0.13,
+    "earned": 0.1022,
     "inv": 0.0
    },
    {
     "q": "Will Iran target Saudi Arabia by December 31, 2026",
-    "mid": 0.55,
+    "mid": 0.56,
     "share": 1.0,
-    "earned": 0.125,
+    "earned": 0.0983,
     "inv": 0.0
    },
    {
     "q": "Will the Bank of Canada make no change to the targ",
     "mid": 0.445,
     "share": 1.0,
-    "earned": 0.2026,
+    "earned": 0.1592,
     "inv": 0.0
    },
    {
     "q": "Will Dreamcash launch a token by March 31, 2027?",
-    "mid": 0.64,
+    "mid": 0.655,
     "share": 1.0,
-    "earned": 0.2001,
+    "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will Iran target Syria by December 31, 2026?",
     "mid": 0.5,
     "share": 1.0,
-    "earned": 0.125,
+    "earned": 0.0983,
     "inv": 0.0
    },
    {
     "q": "Will TownSquare launch a token by December 31, 202",
     "mid": 0.655,
     "share": 1.0,
-    "earned": 0.2001,
-    "inv": 0.0
-   },
-   {
-    "q": "Will TownSquare launch a token by June 30, 2027?",
-    "mid": 0.505,
-    "share": 0.1072,
-    "earned": 0.0214,
+    "earned": 0.1572,
     "inv": 0.0
    },
    {
     "q": "Will the Bank of Canada increase the target for th",
     "mid": 0.39,
     "share": 1.0,
-    "earned": 0.1776,
+    "earned": 0.1395,
     "inv": 0.0
    },
    {
     "q": "US x Yemen ceasefire continues through December 31",
     "mid": 0.73,
     "share": 1.0,
-    "earned": 0.125,
+    "earned": 0.0983,
     "inv": -9.0
    },
    {
     "q": "Will a 6.0+ magnitude earthquake occur in Indonesi",
     "mid": 0.49,
     "share": 1.0,
-    "earned": 0.125,
+    "earned": 0.0983,
     "inv": 0.0
    },
    {
     "q": "Will General Mills Q2 organic net sales growth be ",
-    "mid": 0.429,
+    "mid": 0.295,
     "share": 1.0,
-    "earned": 0.125,
+    "earned": 0.0983,
     "inv": 0.0
    },
    {
     "q": "Will the Bank of Japan increase the uncollateraliz",
     "mid": 0.365,
     "share": 1.0,
-    "earned": 0.1976,
+    "earned": 0.1553,
     "inv": 0.0
    },
    {
     "q": "Will Somali pirates successfully seize a vessel by",
-    "mid": 0.685,
+    "mid": 0.69,
     "share": 1.0,
-    "earned": 0.0075,
+    "earned": 0.0059,
     "inv": 0.0
    },
    {
     "q": "Will the Reserve Bank of New Zealand make no chang",
     "mid": 0.31,
     "share": 1.0,
-    "earned": 0.2076,
+    "earned": 0.1631,
     "inv": 0.0
    },
    {
     "q": "Will a 6.0+ magnitude earthquake occur in Philippi",
     "mid": 0.375,
     "share": 1.0,
-    "earned": 0.125,
+    "earned": 0.0983,
     "inv": 0.0
    },
    {
     "q": "Will Z.ai be the second-best AI lab at the end of ",
-    "mid": 0.434,
+    "mid": 0.406,
     "share": 1.0,
-    "earned": 0.0675,
+    "earned": 0.0531,
     "inv": 0.0
    },
    {
     "q": "Will the Bank of Brazil make no change to the targ",
-    "mid": 0.45,
+    "mid": 0.44,
     "share": 1.0,
-    "earned": 0.1525,
+    "earned": 0.1199,
     "inv": 0.0
    },
    {
     "q": "Will OpenAI be the second-best Code Arena | WebDev",
-    "mid": 0.345,
+    "mid": 0.34,
     "share": 1.0,
-    "earned": 0.0975,
+    "earned": 0.0766,
     "inv": 0.0
    },
    {
-    "q": "Will Apple be the second-largest company in the wo",
-    "mid": 0.38,
-    "share": 0.1689,
-    "earned": 0.0017,
+    "q": "Will the Bank of Canada increase the target for th",
+    "mid": 0.36,
+    "share": 1.0,
+    "earned": 0.2024,
+    "inv": 0.0
+   },
+   {
+    "q": "Will Gianni Infantino be the next President of FIF",
+    "mid": 0.59,
+    "share": 1.0,
+    "earned": 0.0825,
+    "inv": 0.0
+   },
+   {
+    "q": "Will the Bank of Canada make no change to the targ",
+    "mid": 0.41,
+    "share": 1.0,
+    "earned": 0.1906,
     "inv": 0.0
    }
   ],
-  "reward_tick": 5.0017,
-  "reward_total": 28710.48,
-  "mm_value": -659.91,
-  "net": 28050.56,
-  "avg_share": 0.948,
+  "reward_tick": 4.2275,
+  "reward_total": 28725.91,
+  "mm_value": -663.45,
+  "net": 28062.46,
+  "avg_share": 1.0,
   "n_markets": 53,
   "fills_total": 647,
   "rebalanced": false
  },
  "reviews": [
-  {
-   "ts": "2026-10-11T21:22:59.686478+00:00",
-   "swapped": 11,
-   "out": [
-    "Will Satanic have the most kills at BLAST Slam VII",
-    "Will Marvin Harrison Jr.'s next team be the Las Ve",
-    "Will Marvin Harrison Jr.'s next team be the Housto",
-    "Will Morena win the most seats in the 2027 Campech",
-    "Will Anthropic's frontier output token price be at",
-    "Will trent have the most kills for G2 Esports at V",
-    "Will the next Google Gemini Pro model debut with a",
-    "Will PT win the most seats in the 2027 Quintana Ro",
-    "Will Claude Fable's output price be at or below $4",
-    "Will GPT Astra's output price be at or above $60 i",
-    "Will Morena win the most seats in the 2027 Mexico "
-   ],
-   "in": [
-    "Will Microsoft be the third-largest company in the",
-    "Will the next Fable model (5.2+) debut with a Huma",
-    "Will Claude Fable 5.2+ debut at an output token pr",
-    "Will there be between 35 and 59 tornadoes in the U",
-    "Will the Ornn B200 Index hit $5.50 (LOW) by Decemb",
-    "Will a player from the Big Ten win the 2026 Heisma",
-    "Will Buffalo Bills finish the 2026-27 NFL regular ",
-    "Will Arvell Reese win the 2026 NFL Defensive Rooki",
-    "Will United States host the 2028 Copa America?",
-    "Will the next Fable model (5.2+) debut with a Huma",
-    "Will PRI win the most seats in the 2027 Oaxaca Con"
-   ]
-  },
   {
    "ts": "2026-10-11T22:23:49.132350+00:00",
    "swapped": 11,
@@ -74185,7 +74177,21 @@
     "Will OpenAI be the second-best Code Arena | WebDev",
     "Will Apple be the second-largest company in the wo"
    ]
+  },
+  {
+   "ts": "2026-11-02T00:35:35.458039+00:00",
+   "swapped": 3,
+   "out": [
+    "Will Apple be the second-largest company in the wo",
+    "Will Trump speak to Mark Rutte by November 30?",
+    "Will TownSquare launch a token by June 30, 2027?"
+   ],
+   "in": [
+    "Will the Bank of Canada increase the target for th",
+    "Will Gianni Infantino be the next President of FIF",
+    "Will the Bank of Canada make no change to the targ"
+   ]
   }
  ],
- "reviewed_at": 1793576123.9073632
+ "reviewed_at": 1793579735.4580393
 }

@@ -263,7 +263,7 @@
    "question": "Will primmie play for Paper Rex in 2027?",
    "yes": "80065387661331799553598752727676933037643240147033542264908321875551448316874",
    "no": "90297749759086617158234739158953701172096324824374018636468566452007013106977",
-   "rate": 23.0,
+   "rate": 19.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -353,7 +353,7 @@
    "question": "Will the Bank of Russia decrease the key rate by 50+ bps at the February meeting?",
    "yes": "89287779270693931891696763885538487031782727678237621059305198581120850724605",
    "no": "105382084819085665551549529548435460232422603224692734987331068384387670684910",
-   "rate": 47.0,
+   "rate": 49.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -398,7 +398,7 @@
    "question": "Will the Bank of Israel decrease the Bank of Israel Interest Rate by 25 bps at the January meeting?",
    "yes": "47581093177850773572912796397813919289083050127327560487187345540232941401393",
    "no": "68012295283354448206601314247270904171550497691052930376518666122934830305165",
-   "rate": 54.0,
+   "rate": 56.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -443,7 +443,7 @@
    "question": "Will the Bank of Russia decrease the key rate by 25 bps at the February meeting?",
    "yes": "100131215114132301379084801226799361198151872670594608210527875768735427060261",
    "no": "70448187333380320944626628432352966521957786851905421360159044988062256330345",
-   "rate": 44.0,
+   "rate": 41.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -467,21 +467,6 @@
    "end": "2027-01-01T04:59:00Z",
    "share0": 1.0,
    "rate0": 40.0
-  },
-  {
-   "cond": "0x2fea460b4117caca8e99ad4b1d48c1bcf4edf7a20131eae676c30afe7fb2a067",
-   "question": "Will the Bank of Russia decrease the key rate by 25 bps at the March meeting?",
-   "yes": "103484467019259786452183880801695768181960427502860001941117818023785506958820",
-   "no": "60378862290044381835471668339712692812658526101213771259532534203757757950138",
-   "rate": 46.0,
-   "v": 4.5,
-   "min_size": 20.0,
-   "d": 0.0225,
-   "collateral": 19.1,
-   "est_reward_day": 52.0,
-   "end": "2027-03-19T23:59:00Z",
-   "share0": 1.0,
-   "rate0": 52.0
   },
   {
    "cond": "0xb2b0fb4cf5f52829cb81ecb3afc6739c747acd1bc950c77c83d19717951c0813",
@@ -518,7 +503,7 @@
    "question": "Will the Bank of Israel increase the Bank of Israel Interest Rate by 25 bps at the January meeting?",
    "yes": "69608543562036550404327671487170468611043333862062794177522525468971225425735",
    "no": "92395687263397229963702847629797421126973598432347973960359280350239186387188",
-   "rate": 58.0,
+   "rate": 50.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -548,7 +533,7 @@
    "question": "Will the Bank of Israel decrease the Bank of Israel Interest Rate by 50+ bps at the January meeting?",
    "yes": "47695160070022354093964483909329416861461099530688329851754434342425607055163",
    "no": "67014933502765846801400511393446240748139717255148990923374346106298529408633",
-   "rate": 27.0,
+   "rate": 26.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -608,7 +593,7 @@
    "question": "Will Skuba play for NRG in 2027?",
    "yes": "52202564217243005213069244780182301376647216316931582563100114782582797956215",
    "no": "14968575929125302929824337449100963766294868407859058801656510494002553429673",
-   "rate": 12.0,
+   "rate": 5.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -683,21 +668,6 @@
    "question": "Carlson's Republican nomination odds hit 5% by December 31?",
    "yes": "38567748918465870960681780783652232906910802116821173405340941981923875395601",
    "no": "48550948609514487557069595525222443101510622001092750982962017861014034540848",
-   "rate": 200.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.7,
-   "est_reward_day": 200.0,
-   "end": "2027-01-01T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 200.0
-  },
-  {
-   "cond": "0xe4ccde1936c45cef986dd5f883ab936f14b38d9e33a7c14e9341e71a43cae210",
-   "question": "Shapiro's Democratic nomination odds hit 10% by December 31?",
-   "yes": "48377571788673959738159709190969809585459068150295922818803044639480095428089",
-   "no": "6065642721622781654951741747705272352292330100577423446138129076195061881068",
    "rate": 200.0,
    "v": 6.5,
    "min_size": 20.0,
@@ -788,6 +758,36 @@
    "question": "Ossoff's Democratic nomination odds dip to 10% by December 31?",
    "yes": "75514148287538013354750556908972298006580565928555830230214949106067335239951",
    "no": "19443041331649757663857334578915653864180952090919491800129378356230274143978",
+   "rate": 200.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.7,
+   "est_reward_day": 200.0,
+   "end": "2027-01-01T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 200.0
+  },
+  {
+   "cond": "0xf2abe2dcf73f082d1b3c40f6df8abb75ae5e4cd14888cec3a9a4b531a423bfa6",
+   "question": "AOC's Democratic nomination odds hit 20% by December 31?",
+   "yes": "109400083340846462960299440966138227981245619151731783977734939594153445132055",
+   "no": "772517425596148659531624891685314559166440753375963341912466442946131726423",
+   "rate": 200.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.7,
+   "est_reward_day": 200.0,
+   "end": "2027-01-01T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 200.0
+  },
+  {
+   "cond": "0xa9345ccca84b60d1866024257d8ac6c8511cbf3786fcf60c8aa8ba9bbe677edc",
+   "question": "Newsom's Democratic nomination odds dip to 10% by December 31?",
+   "yes": "41239567615506905380165143547469650320859248443585644854336492206098616134480",
+   "no": "61178174352530349120340347945853356512275426813433763325649221960744618866149",
    "rate": 200.0,
    "v": 6.5,
    "min_size": 20.0,
@@ -925,7 +925,7 @@
    "cash": 0.0,
    "mid": 0.42,
    "share": 1.0,
-   "reward": 74.21700179444572,
+   "reward": 74.37964059977773,
    "fills": 0,
    "q": "Will primmie play for Paper Rex in 2027?"
   },
@@ -960,9 +960,9 @@
   "0xaee30c779a493cb475a7c54108ce40102619e3634850c4ad7cb6726d84e70cab": {
    "inv": 0.0,
    "cash": -0.1822499999999989,
-   "mid": 0.5,
+   "mid": 0.495,
    "share": 1.0,
-   "reward": 102.07214925627902,
+   "reward": 102.37877477437142,
    "fills": 1,
    "q": "Will OpenAI's frontier output token price be at or below $30 in 2026?",
    "closed_at": 0.39
@@ -1010,7 +1010,7 @@
    "cash": 0.432975000000001,
    "mid": 0.22,
    "share": 1.0,
-   "reward": 295.5497723441425,
+   "reward": 295.85639786223487,
    "fills": 3,
    "q": "Will the Ornn H100 Index hit $2.25 (LOW) by December 31, 2026?",
    "closed_at": 0.64
@@ -1030,7 +1030,7 @@
    "cash": -2.9992417699999963,
    "mid": 0.382,
    "share": 1.0,
-   "reward": 640.2458398956867,
+   "reward": 640.552465413779,
    "fills": 12,
    "q": "Will the Ornn H200 Index hit $4.00 (LOW) by December 31, 2026?",
    "closed_at": 0.409
@@ -1070,7 +1070,7 @@
    "cash": -2.0325000000000006,
    "mid": 0.515,
    "share": 1.0,
-   "reward": 203.67657370668377,
+   "reward": 203.9831992247762,
    "fills": 2,
    "q": "Will OpenAI's frontier output token price be at or below $40 in 2026?",
    "closed_at": 0.37
@@ -1249,9 +1249,9 @@
   "0xa0ab5c59632b54575ce8c4425687cf91a4e0a0abea5947c186342d576c9b7743": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.45,
+   "mid": 0.46,
    "share": 1.0,
-   "reward": 86.69152098064053,
+   "reward": 86.99814649873294,
    "fills": 0,
    "q": "Will Claude Sonnet's output price be at or below $8 in 2026?"
   },
@@ -1448,7 +1448,7 @@
    "cash": 0.0,
    "mid": 0.25,
    "share": 1.0,
-   "reward": 67.65631642219032,
+   "reward": 67.88628556075962,
    "fills": 0,
    "q": "Will Emma Myers be the live-action Gwen Stacy?"
   },
@@ -1538,9 +1538,9 @@
   "0x0ceb01b478b109062e6d7d69f060d44a5773a98b1c5faedd65119d3594245314": {
    "inv": 0.0,
    "cash": -9.03225,
-   "mid": 0.775,
+   "mid": 0.765,
    "share": 1.0,
-   "reward": 111.65459570106113,
+   "reward": 111.96122121915353,
    "fills": 3,
    "q": "Will GPT Astra's output price be at or below $40 in 2026?",
    "closed_at": 0.27
@@ -1585,9 +1585,9 @@
   "0x0ce8bfcbda5a0ef4de7680d6839c887e0a1b2e1a33a4f8f9106b0821d5d7cf6c": {
    "inv": 0.0,
    "cash": 0.8999999999999986,
-   "mid": 0.5,
+   "mid": 0.53,
    "share": 1.0,
-   "reward": 162.464400059156,
+   "reward": 162.77102557724842,
    "fills": 2,
    "q": "Will GPT Astra's output price be at or below $30 in 2026?"
   },
@@ -2220,7 +2220,7 @@
   "0xa3ef154900809e3a38bba9a5e6037055cf2026ccc63413c9ac849e908fba5bcc": {
    "inv": 1.91,
    "cash": -0.453625,
-   "mid": 0.14,
+   "mid": 0.135,
    "share": 1.0,
    "reward": 21.646234121457837,
    "fills": 1,
@@ -3262,7 +3262,7 @@
    "cash": -1.8858250000000014,
    "mid": 0.24050000000000002,
    "share": 1.0,
-   "reward": 251.2112009746363,
+   "reward": 251.51782649272874,
    "fills": 7,
    "q": "Will the Ornn H200 Index hit $3.75 (LOW) by December 31, 2026?",
    "closed_at": 0.216
@@ -3309,9 +3309,9 @@
   "0x1d730eae559959dd3823a3e69aa99999ab2914ab3fd8932f43ae768beba58d64": {
    "inv": 0.0,
    "cash": -6.362151607500002,
-   "mid": 0.595,
+   "mid": 0.59,
    "share": 1.0,
-   "reward": 364.1556488222208,
+   "reward": 364.4622743403132,
    "fills": 8,
    "q": "Will Trump's approval rating hit 35% by June 30, 2027?",
    "closed_at": 0.42
@@ -3643,9 +3643,9 @@
   "0x51868caa8278ae7cbfeeb407538f3d8c948626412c6ac5eb0a5cc71ab48f3d92": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.36,
+   "mid": 0.365,
    "share": 1.0,
-   "reward": 130.59431123830592,
+   "reward": 130.90093675639835,
    "fills": 0,
    "q": "Will Claude Fable's output price be at or above $55 in 2026?"
   },
@@ -8721,7 +8721,7 @@
    "cash": 0.0,
    "mid": 0.47,
    "share": 1.0,
-   "reward": 62.2846869548989,
+   "reward": 62.323015144660445,
    "fills": 0,
    "q": "Will Chainlink dip to $10 by December 31, 2026?"
   },
@@ -9590,7 +9590,7 @@
    "cash": 0.6500000000000004,
    "mid": 0.49,
    "share": 1.0,
-   "reward": 90.98450652772269,
+   "reward": 91.29113204581509,
    "fills": 1,
    "q": "Will the highest score achieved by a Meta model on Humanity\u2019s Last Exam in 2026 ",
    "closed_at": 0.37
@@ -11698,9 +11698,9 @@
   "0x97a7bb02eeecb617c68a74eae57638b05c5688a46669d93553e57b71caccd05c": {
    "inv": -20.0,
    "cash": 5.28,
-   "mid": 0.4155,
+   "mid": 0.4145,
    "share": 1.0,
-   "reward": 226.47770551734172,
+   "reward": 226.78433103543415,
    "fills": 1,
    "q": "OpenAI announces a full training pause in 2026?"
   },
@@ -12022,16 +12022,16 @@
    "cash": 0.0,
    "mid": 0.52,
    "share": 1.0,
-   "reward": 271.50888413017077,
+   "reward": 271.8155096482631,
    "fills": 0,
    "q": "Will the Ornn H200 Index hit $8.00 (HIGH) by December 31, 2026?"
   },
   "0x2257e3232c4b23458ec0b44d21904897d516216f24af74487033876b1e56b591": {
    "inv": -20.0,
    "cash": 5.15,
-   "mid": 0.475,
+   "mid": 0.48,
    "share": 1.0,
-   "reward": 275.77222808578404,
+   "reward": 276.0788536038764,
    "fills": 1,
    "q": "Will the Ornn H200 Index hit $7.50 (HIGH) by December 31, 2026?"
   },
@@ -12047,9 +12047,9 @@
   "0x12e7e3aaed06c1ac55f082a0b4282d5f525cdb2106afb1972e9d861bdc7e1649": {
    "inv": -1.06,
    "cash": 0.55915,
-   "mid": 0.5349999999999999,
+   "mid": 0.5449999999999999,
    "share": 1.0,
-   "reward": 274.60166629927943,
+   "reward": 274.9082918173718,
    "fills": 1,
    "q": "Will the Ornn H200 Index hit $5.00 (LOW) by December 31, 2026?"
   },
@@ -12306,9 +12306,9 @@
   "0x248a310233f61f9096f6cf39e704cc44176be622906095d7a2b78bb7719eb473": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.42,
+   "mid": 0.43,
    "share": 1.0,
-   "reward": 117.74446421653084,
+   "reward": 117.89011133762472,
    "fills": 0,
    "q": "Will the Republicans win North Carolina in the 2028 Presidential Election?"
   },
@@ -12365,7 +12365,7 @@
    "cash": 0.0,
    "mid": 0.755,
    "share": 1.0,
-   "reward": 10.701678879534933,
+   "reward": 10.769742516713187,
    "fills": 0,
    "q": "Will Skuba play for NRG in 2027?"
   },
@@ -12401,7 +12401,7 @@
    "cash": 0.0,
    "mid": 0.42000000000000004,
    "share": 1.0,
-   "reward": 111.55125491031619,
+   "reward": 111.7045676693624,
    "fills": 0,
    "q": "Will the Democrats win New Hampshire in the 2028 Presidential Election?"
   },
@@ -12518,9 +12518,9 @@
   "0xdec231c72ffdea54bd43f40bd2159f905fba06d603b0008391ba06b5d4798ed8": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.475,
+   "mid": 0.485,
    "share": 1.0,
-   "reward": 115.1232517716461,
+   "reward": 115.21523942707381,
    "fills": 0,
    "q": "Will the Knesset elect a new Speaker by November 30?"
   },
@@ -13134,7 +13134,7 @@
   "0x973e958d20a1d7739d4f7ebea1bf80a53a048bb37aa8f7ac7cf5715c140d00ec": {
    "inv": -20.0,
    "cash": 6.65,
-   "mid": 0.31,
+   "mid": 0.305,
    "share": 1.0,
    "reward": 10.747734591559169,
    "fills": 1,
@@ -14232,9 +14232,9 @@
   "0x1765098df4bea3fd353922e36e42f2c5203e8d4764f7d6c05e0517c09d1a1032": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.625,
+   "mid": 0.615,
    "share": 1.0,
-   "reward": 142.8233084237888,
+   "reward": 143.20659032140432,
    "fills": 0,
    "q": "Will Iran target Qatar by December 31, 2026?"
   },
@@ -14243,7 +14243,7 @@
    "cash": 0.0,
    "mid": 0.44,
    "share": 1.0,
-   "reward": 136.2130741578814,
+   "reward": 136.48785917223373,
    "fills": 0,
    "q": "Supreme Court sides with Catholic preschools in Colorado funding case?"
   },
@@ -14354,7 +14354,7 @@
    "cash": 0.0,
    "mid": 0.29000000000000004,
    "share": 1.0,
-   "reward": 128.7360130654713,
+   "reward": 129.11929496308682,
    "fills": 0,
    "q": "Will a 6.0+ magnitude earthquake occur in Chile this month?"
   },
@@ -14602,9 +14602,9 @@
   "0x6c32c39fca26d0328e052078cd42275b752f8965ac3ff125eb82719cfd8c6150": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.55,
+   "mid": 0.46499999999999997,
    "share": 1.0,
-   "reward": 88.99076288223048,
+   "reward": 89.37402576753722,
    "fills": 0,
    "q": "Will the Bank of Israel decrease the Bank of Israel Interest Rate by 25 bps at t"
   },
@@ -14739,18 +14739,18 @@
   "0xa96c019dc58f3b9a6c6573006dee5242cb76f603e66652fa252dc17aed1ecb44": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.445,
+   "mid": 0.45,
    "share": 1.0,
-   "reward": 75.41243135615899,
+   "reward": 75.77955177370312,
    "fills": 0,
    "q": "Will the Bank of Russia decrease the key rate by 50+ bps at the February meeting"
   },
   "0xe2fa505297010936cecc0d6289dd432740e856e36ecd054beb2de2de95514716": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.324,
+   "mid": 0.3245,
    "share": 1.0,
-   "reward": 37.248810114441085,
+   "reward": 37.50177616686732,
    "fills": 0,
    "q": "Will the Bank of Russia increase the key rate by 25 bps at the February meeting?"
   },
@@ -14813,7 +14813,7 @@
    "cash": 0.0,
    "mid": 0.38,
    "share": 1.0,
-   "reward": 54.57740376550018,
+   "reward": 54.90443868472348,
    "fills": 0,
    "q": "Will the Bank of Russia decrease the key rate by 25 bps at the February meeting?"
   },
@@ -14856,9 +14856,9 @@
   "0x2fea460b4117caca8e99ad4b1d48c1bcf4edf7a20131eae676c30afe7fb2a067": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.37,
-   "share": 0.1683991683991686,
-   "reward": 41.72896593581929,
+   "mid": 0.375,
+   "share": null,
+   "reward": 41.73987396363003,
    "fills": 0,
    "q": "Will the Bank of Russia decrease the key rate by 25 bps at the March meeting?"
   },
@@ -14874,18 +14874,18 @@
   "0xb2b0fb4cf5f52829cb81ecb3afc6739c747acd1bc950c77c83d19717951c0813": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.38,
+   "mid": 0.405,
    "share": 1.0,
-   "reward": 43.12080619497981,
+   "reward": 43.50408809259532,
    "fills": 0,
    "q": "Will Jon Ossoff announce a presidential run by June 30, 2027?"
   },
   "0x3e89fb1bdbb76e423c7e0192686ce0db32b52e932d9ac623ebf118ac4554f616": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.7,
+   "mid": 0.69,
    "share": 1.0,
-   "reward": 43.81766779734577,
+   "reward": 44.16621173393944,
    "fills": 0,
    "q": "2026 Senate or Governor race goes to full recount?"
   },
@@ -14901,27 +14901,27 @@
   "0xedebd909ba18a4d235634160bffd914f490d4120ba11fdec5df52539d11b74bd": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.41500000000000004,
+   "mid": 0.29500000000000004,
    "share": 1.0,
-   "reward": 30.954535055017015,
+   "reward": 31.20137507650034,
    "fills": 0,
    "q": "Will the Bank of Israel increase the Bank of Israel Interest Rate by 25 bps at t"
   },
   "0x15b71586554b2f6fd061c585fdb4292314f2fb8edc59016919a5924430b0307a": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.22999999999999998,
+   "mid": 0.21999999999999997,
    "share": 1.0,
-   "reward": 27.683642185195186,
+   "reward": 27.887196693014776,
    "fills": 0,
    "q": "Will the Bank of Israel decrease the Bank of Israel Interest Rate by 50+ bps at "
   },
   "0x1f99beda2810e077fdd3b7fd14046ac2327f7aaa7e288a58229b00f8b711b917": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.62,
+   "mid": 0.7150000000000001,
    "share": 1.0,
-   "reward": 31.5841987248924,
+   "reward": 31.786720875126342,
    "fills": 0,
    "q": "Will the 2-year Treasury yield dip below 4.50% before 2027?"
   },
@@ -14948,16 +14948,16 @@
    "cash": 0.0,
    "mid": 0.68,
    "share": 1.0,
-   "reward": 24.411631236197767,
+   "reward": 24.79491313381327,
    "fills": 0,
    "q": "U.S. anti-cartel operation outside of the U.S. by December 31?"
   },
   "0xd78f98201fc7f226f232f377603d2b4e96a0b6e32f8d36c65649925216879503": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.285,
+   "mid": 0.28,
    "share": 1.0,
-   "reward": 21.43442203480613,
+   "reward": 21.660356159097077,
    "fills": 0,
    "q": "Will the Bank of Israel make no change to the Bank of Israel Interest Rate at th"
   },
@@ -15002,25 +15002,25 @@
    "cash": 0.0,
    "mid": 0.33,
    "share": 1.0,
-   "reward": 50.27988292442427,
+   "reward": 51.81301051488628,
    "fills": 0,
    "q": "Shapiro's Democratic nomination odds dip to 4% by December 31?"
   },
   "0xa9345ccca84b60d1866024257d8ac6c8511cbf3786fcf60c8aa8ba9bbe677edc": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.49,
-   "share": null,
-   "reward": 5.077913462646807,
+   "mid": 0.195,
+   "share": 1.0,
+   "reward": 6.1950721829855935,
    "fills": 0,
    "q": "Newsom's Democratic nomination odds dip to 10% by December 31?"
   },
   "0x23ccfd56bf2058d52d24bcc29603cc3168c3021c5a10c755543080abad99ae4a": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.5,
+   "mid": 0.51,
    "share": 1.0,
-   "reward": 40.99112771894148,
+   "reward": 42.524255309403486,
    "fills": 0,
    "q": "Carlson's Republican nomination odds hit 5% by December 31?"
   },
@@ -15036,9 +15036,9 @@
   "0xe4ccde1936c45cef986dd5f883ab936f14b38d9e33a7c14e9341e71a43cae210": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.335,
-   "share": 1.0,
-   "reward": 31.04799505461144,
+   "mid": 0.15,
+   "share": null,
+   "reward": 31.07880659228487,
    "fills": 0,
    "q": "Shapiro's Democratic nomination odds hit 10% by December 31?"
   },
@@ -15047,7 +15047,7 @@
    "cash": 0.0,
    "mid": 0.275,
    "share": 1.0,
-   "reward": 32.96133044638013,
+   "reward": 34.49445803684214,
    "fills": 0,
    "q": "Trump Jr.'s Republican nomination odds hit 4% by December 31?"
   },
@@ -15056,7 +15056,7 @@
    "cash": 0.0,
    "mid": 0.315,
    "share": 1.0,
-   "reward": 32.95832420057718,
+   "reward": 34.49145179103919,
    "fills": 0,
    "q": "Buttigieg's Democratic nomination odds dip to 4% by December 31?"
   },
@@ -15065,7 +15065,7 @@
    "cash": 0.0,
    "mid": 0.255,
    "share": 1.0,
-   "reward": 32.95832420057718,
+   "reward": 34.49145179103919,
    "fills": 0,
    "q": "Harris's Democratic nomination odds hit 8% by December 31?"
   },
@@ -15074,7 +15074,7 @@
    "cash": 0.0,
    "mid": 0.71,
    "share": 1.0,
-   "reward": 32.95832420057718,
+   "reward": 34.49145179103919,
    "fills": 0,
    "q": "Harris's Democratic nomination odds dip to 4% by December 31?"
   },
@@ -15092,7 +15092,7 @@
    "cash": 0.0,
    "mid": 0.28,
    "share": 1.0,
-   "reward": 16.31313434132824,
+   "reward": 17.846261931790252,
    "fills": 0,
    "q": "Newsom's Democratic nomination odds hit 20% by December 31?"
   },
@@ -15101,9 +15101,18 @@
    "cash": 0.0,
    "mid": 0.495,
    "share": 1.0,
-   "reward": 7.975236525138219,
+   "reward": 9.508364115600232,
    "fills": 0,
    "q": "Ossoff's Democratic nomination odds dip to 10% by December 31?"
+  },
+  "0xf2abe2dcf73f082d1b3c40f6df8abb75ae5e4cd14888cec3a9a4b531a423bfa6": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.32,
+   "share": 1.0,
+   "reward": 1.117158720338786,
+   "fills": 0,
+   "q": "AOC's Democratic nomination odds hit 20% by December 31?"
   }
  },
  "history": [
@@ -61102,17 +61111,30 @@
    "w": 2989613
   },
   {
-   "ts": "2026-11-04T05:08:17.213275+00:00",
-   "dt_h": 0.153,
-   "reward_tick": 19.5041,
-   "reward_total": 33157.04,
+   "ts": "2026-11-04T05:09:16.842606+00:00",
+   "dt_h": 0.17,
+   "reward_tick": 21.5523,
+   "reward_total": 33159.08,
    "mm_value": -675.08,
-   "net": 32481.96,
-   "avg_share": 0.984,
+   "net": 32484.01,
+   "avg_share": 0.9701,
    "n_markets": 53,
    "fills_total": 659,
    "rebalanced": false,
    "w": 2989614
+  },
+  {
+   "ts": "2026-11-04T05:19:19.524394+00:00",
+   "dt_h": 0.168,
+   "reward_tick": 22.3479,
+   "reward_total": 33181.43,
+   "mm_value": -675.08,
+   "net": 32506.35,
+   "avg_share": 1.0,
+   "n_markets": 53,
+   "fills_total": 659,
+   "rebalanced": false,
+   "w": 2989615
   }
  ],
  "fills": [
@@ -67048,8 +67070,8 @@
    "ledger": "v4"
   }
  ],
- "reward_total": 33157.03502059043,
- "last_ts": 1793768897.2132747,
+ "reward_total": 33181.43110001781,
+ "last_ts": 1793769559.5243938,
  "chosen_at": 1791639880.921448,
  "rebalances": [
   {
@@ -67060,7 +67082,7 @@
   }
  ],
  "last_tick": {
-  "ts": "2026-11-04T05:08:17.213275+00:00",
+  "ts": "2026-11-04T05:19:19.524394+00:00",
   "dt_h": 0.017,
   "markets": [
    {
@@ -67079,7 +67101,7 @@
    },
    {
     "q": "Will global temperature increase by between 1.45\u00baC",
-    "mid": 0.14,
+    "mid": 0.135,
     "share": 1.0,
     "earned": 0.0,
     "inv": 1.91
@@ -67113,353 +67135,335 @@
     "q": "Will the Ornn H200 Index hit $8.00 (HIGH) by Decem",
     "mid": 0.52,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0279,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index hit $7.50 (HIGH) by Decem",
-    "mid": 0.475,
+    "mid": 0.48,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0279,
     "inv": -20.0
    },
    {
     "q": "Will the Ornn H200 Index hit $5.00 (LOW) by Decemb",
-    "mid": 0.535,
+    "mid": 0.545,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0279,
     "inv": -1.06
    },
    {
     "q": "Will the Democrats win New Hampshire in the 2028 P",
     "mid": 0.42,
     "share": 1.0,
-    "earned": 0.0139,
+    "earned": 0.014,
     "inv": 0.0
    },
    {
     "q": "Will the Knesset elect a new Speaker by November 3",
-    "mid": 0.475,
+    "mid": 0.485,
     "share": 1.0,
-    "earned": 0.0083,
+    "earned": 0.0084,
     "inv": 0.0
    },
    {
     "q": "Will the Republicans win North Carolina in the 202",
-    "mid": 0.42,
+    "mid": 0.43,
     "share": 1.0,
-    "earned": 0.0132,
+    "earned": 0.0133,
     "inv": 0.0
    },
    {
     "q": "OpenAI announces a full training pause in 2026?",
-    "mid": 0.415,
+    "mid": 0.414,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0279,
     "inv": -20.0
    },
    {
     "q": "Supreme Court sides with Catholic preschools in Co",
     "mid": 0.44,
     "share": 1.0,
-    "earned": 0.0347,
+    "earned": 0.0349,
     "inv": 0.0
    },
    {
     "q": "Will a 6.0+ magnitude earthquake occur in Chile th",
     "mid": 0.29,
     "share": 1.0,
-    "earned": 0.0347,
+    "earned": 0.0349,
     "inv": 0.0
    },
    {
     "q": "Will Claude Fable's output price be at or above $5",
-    "mid": 0.36,
+    "mid": 0.365,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0279,
     "inv": 0.0
    },
    {
     "q": "Will primmie play for Paper Rex in 2027?",
     "mid": 0.42,
     "share": 1.0,
-    "earned": 0.016,
+    "earned": 0.0133,
     "inv": 0.0
    },
    {
     "q": "Will OpenAI's frontier output token price be at or",
-    "mid": 0.5,
+    "mid": 0.495,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0279,
     "inv": 0.0
    },
    {
     "q": "Will the highest score achieved by a Meta model on",
     "mid": 0.49,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0279,
     "inv": 0.0
    },
    {
     "q": "Will Micron Q1 adjusted gross margin be between 87",
-    "mid": 0.31,
+    "mid": 0.305,
     "share": 1.0,
     "earned": 0.0,
     "inv": -20.0
    },
    {
     "q": "Will Claude Sonnet's output price be at or below $",
-    "mid": 0.45,
+    "mid": 0.46,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0279,
     "inv": 0.0
    },
    {
     "q": "Will GPT Astra's output price be at or below $30 i",
-    "mid": 0.5,
+    "mid": 0.53,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0279,
     "inv": 0.0
    },
    {
     "q": "Will the Bank of Russia decrease the key rate by 5",
-    "mid": 0.445,
+    "mid": 0.45,
     "share": 1.0,
-    "earned": 0.0326,
+    "earned": 0.0342,
     "inv": 0.0
    },
    {
     "q": "Will OpenAI's frontier output token price be at or",
     "mid": 0.515,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0279,
     "inv": 0.0
    },
    {
     "q": "Will Trump's approval rating hit 35% by June 30, 2",
-    "mid": 0.595,
+    "mid": 0.59,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0279,
     "inv": 0.0
    },
    {
     "q": "Will the Bank of Israel decrease the Bank of Israe",
-    "mid": 0.55,
+    "mid": 0.465,
     "share": 1.0,
-    "earned": 0.0375,
+    "earned": 0.0391,
     "inv": 0.0
    },
    {
     "q": "Will Emma Myers be the live-action Gwen Stacy?",
     "mid": 0.25,
     "share": 1.0,
-    "earned": 0.0208,
+    "earned": 0.0209,
     "inv": 0.0
    },
    {
     "q": "Will the Bank of Russia increase the key rate by 2",
-    "mid": 0.324,
+    "mid": 0.325,
     "share": 1.0,
-    "earned": 0.0229,
+    "earned": 0.023,
     "inv": 0.0
    },
    {
     "q": "Will the Bank of Russia decrease the key rate by 2",
     "mid": 0.38,
     "share": 1.0,
-    "earned": 0.0306,
+    "earned": 0.0286,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index hit $3.75 (LOW) by Decemb",
     "mid": 0.241,
     "share": 1.0,
-    "earned": 0.0278,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the Bank of Russia decrease the key rate by 2",
-    "mid": 0.37,
-    "share": 0.1684,
-    "earned": 0.0054,
+    "earned": 0.0279,
     "inv": 0.0
    },
    {
     "q": "Will Jon Ossoff announce a presidential run by Jun",
-    "mid": 0.38,
+    "mid": 0.405,
     "share": 1.0,
-    "earned": 0.0347,
+    "earned": 0.0349,
     "inv": 0.0
    },
    {
     "q": "2026 Senate or Governor race goes to full recount?",
-    "mid": 0.7,
+    "mid": 0.69,
     "share": 1.0,
-    "earned": 0.0347,
+    "earned": 0.0349,
     "inv": 0.0
    },
    {
     "q": "Will the Bank of Israel increase the Bank of Israe",
-    "mid": 0.415,
+    "mid": 0.295,
     "share": 1.0,
-    "earned": 0.0403,
+    "earned": 0.0349,
     "inv": 0.0
    },
    {
     "q": "Will GPT Astra's output price be at or below $40 i",
-    "mid": 0.775,
+    "mid": 0.765,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0279,
     "inv": 0.0
    },
    {
     "q": "Will the Bank of Israel decrease the Bank of Israe",
-    "mid": 0.23,
+    "mid": 0.22,
     "share": 1.0,
-    "earned": 0.0188,
+    "earned": 0.0181,
     "inv": 0.0
    },
    {
     "q": "Will the 2-year Treasury yield dip below 4.50% bef",
-    "mid": 0.62,
+    "mid": 0.715,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0279,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index hit $4.00 (LOW) by Decemb",
     "mid": 0.382,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0279,
     "inv": 0.0
    },
    {
     "q": "Will Iran target Qatar by December 31, 2026?",
-    "mid": 0.625,
+    "mid": 0.615,
     "share": 1.0,
-    "earned": 0.0347,
+    "earned": 0.0349,
     "inv": 0.0
    },
    {
     "q": "Will Skuba play for NRG in 2027?",
     "mid": 0.755,
     "share": 1.0,
-    "earned": 0.0083,
+    "earned": 0.0035,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H100 Index hit $2.25 (LOW) by Decemb",
     "mid": 0.22,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0279,
     "inv": 0.0
    },
    {
     "q": "U.S. anti-cartel operation outside of the U.S. by ",
     "mid": 0.68,
     "share": 1.0,
-    "earned": 0.0347,
+    "earned": 0.0349,
     "inv": 0.0
    },
    {
     "q": "Will the Bank of Israel make no change to the Bank",
-    "mid": 0.285,
+    "mid": 0.28,
     "share": 1.0,
-    "earned": 0.025,
+    "earned": 0.0251,
     "inv": 0.0
    },
    {
     "q": "Shapiro's Democratic nomination odds dip to 4% by ",
     "mid": 0.33,
     "share": 1.0,
-    "earned": 0.1389,
+    "earned": 0.1395,
     "inv": 0.0
    },
    {
     "q": "Carlson's Republican nomination odds hit 5% by Dec",
-    "mid": 0.5,
+    "mid": 0.51,
     "share": 1.0,
-    "earned": 0.1389,
-    "inv": 0.0
-   },
-   {
-    "q": "Shapiro's Democratic nomination odds hit 10% by De",
-    "mid": 0.335,
-    "share": 1.0,
-    "earned": 0.1389,
+    "earned": 0.1395,
     "inv": 0.0
    },
    {
     "q": "Trump Jr.'s Republican nomination odds hit 4% by D",
     "mid": 0.275,
     "share": 1.0,
-    "earned": 0.1389,
+    "earned": 0.1395,
     "inv": 0.0
    },
    {
     "q": "Buttigieg's Democratic nomination odds dip to 4% b",
     "mid": 0.315,
     "share": 1.0,
-    "earned": 0.1389,
+    "earned": 0.1395,
     "inv": 0.0
    },
    {
     "q": "Harris's Democratic nomination odds hit 8% by Dece",
     "mid": 0.255,
     "share": 1.0,
-    "earned": 0.1389,
+    "earned": 0.1395,
     "inv": 0.0
    },
    {
     "q": "Harris's Democratic nomination odds dip to 4% by D",
     "mid": 0.71,
     "share": 1.0,
-    "earned": 0.1389,
+    "earned": 0.1395,
     "inv": 0.0
    },
    {
     "q": "Newsom's Democratic nomination odds hit 20% by Dec",
     "mid": 0.28,
     "share": 1.0,
-    "earned": 0.1389,
+    "earned": 0.1395,
     "inv": 0.0
    },
    {
     "q": "Ossoff's Democratic nomination odds dip to 10% by ",
     "mid": 0.495,
     "share": 1.0,
-    "earned": 0.1389,
+    "earned": 0.1395,
+    "inv": 0.0
+   },
+   {
+    "q": "AOC's Democratic nomination odds hit 20% by Decemb",
+    "mid": 0.32,
+    "share": 1.0,
+    "earned": 0.1395,
+    "inv": 0.0
+   },
+   {
+    "q": "Newsom's Democratic nomination odds dip to 10% by ",
+    "mid": 0.195,
+    "share": 1.0,
+    "earned": 0.1395,
     "inv": 0.0
    }
   ],
-  "reward_tick": 2.2003,
-  "reward_total": 33157.04,
+  "reward_tick": 2.3311,
+  "reward_total": 33181.43,
   "mm_value": -675.08,
-  "net": 32481.96,
-  "avg_share": 0.984,
+  "net": 32506.35,
+  "avg_share": 1.0,
   "n_markets": 53,
   "fills_total": 659,
   "rebalanced": false
  },
  "reviews": [
-  {
-   "ts": "2026-10-14T02:00:39.213396+00:00",
-   "swapped": 5,
-   "out": [
-    "Will Anthropic's frontier output token price be at",
-    "Will the next Fable model (5.2+) debut with a Huma",
-    "Will Paper Rex keep both f0rsakeN and Jinggg for 2",
-    "Another crypto hack over $100m by December 31?",
-    "Will MrBeast's next video get between 80 and 90 mi"
-   ],
-   "in": [
-    "Will there be 35 to 49 West Nile neuroinvasive dis",
-    "Will Claude Opus's output price be at or below $10",
-    "Will Trump's approval rating hit 42% by June 30, 2",
-    "Will Anthropic have a #1 AI model by December 31, ",
-    "Will the Ornn B200 Index hit $5.50 (LOW) by Decemb"
-   ]
-  },
   {
    "ts": "2026-10-14T03:00:53.347260+00:00",
    "swapped": 4,
@@ -78497,7 +78501,19 @@
    "in": [
     "Ossoff's Democratic nomination odds dip to 10% by "
    ]
+  },
+  {
+   "ts": "2026-11-04T05:11:16.911827+00:00",
+   "swapped": 2,
+   "out": [
+    "Will the Bank of Russia decrease the key rate by 2",
+    "Shapiro's Democratic nomination odds hit 10% by De"
+   ],
+   "in": [
+    "AOC's Democratic nomination odds hit 20% by Decemb",
+    "Newsom's Democratic nomination odds dip to 10% by "
+   ]
   }
  ],
- "reviewed_at": 1793765451.9110959
+ "reviewed_at": 1793769076.9118266
 }

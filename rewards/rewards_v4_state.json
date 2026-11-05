@@ -353,7 +353,7 @@
    "question": "Will the Bank of Israel decrease the Bank of Israel Interest Rate by 25 bps at the January meeting?",
    "yes": "47581093177850773572912796397813919289083050127327560487187345540232941401393",
    "no": "68012295283354448206601314247270904171550497691052930376518666122934830305165",
-   "rate": 59.0,
+   "rate": 65.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -368,7 +368,7 @@
    "question": "Will the Bank of Russia increase the key rate by 25 bps at the February meeting?",
    "yes": "111759888680542274728259635825866760581198199745250203982980516797503426229297",
    "no": "105643374509237307582180862828295211026911704857633815329758016258661398712317",
-   "rate": 44.0,
+   "rate": 39.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -428,7 +428,7 @@
    "question": "Will the Bank of Israel increase the Bank of Israel Interest Rate by 25 bps at the January meeting?",
    "yes": "69608543562036550404327671487170468611043333862062794177522525468971225425735",
    "no": "92395687263397229963702847629797421126973598432347973960359280350239186387188",
-   "rate": 52.0,
+   "rate": 55.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -458,7 +458,7 @@
    "question": "Will the Bank of Israel decrease the Bank of Israel Interest Rate by 50+ bps at the January meeting?",
    "yes": "47695160070022354093964483909329416861461099530688329851754434342425607055163",
    "no": "67014933502765846801400511393446240748139717255148990923374346106298529408633",
-   "rate": 22.0,
+   "rate": 23.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -533,7 +533,7 @@
    "question": "Will the Bank of Israel make no change to the Bank of Israel Interest Rate at the January meeting?",
    "yes": "70865312913098633084587533812415811609024863344921710000463897063378379424891",
    "no": "10375593452245426720076186238820128252143350584828541629111276619753070695620",
-   "rate": 39.0,
+   "rate": 42.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -548,7 +548,7 @@
    "question": "Will the Bank of Israel increase the Bank of Israel Interest Rate by 50+ bps at the January meeting?",
    "yes": "43399135330812250897056762223598484734186280536336511225838728118057149682705",
    "no": "70160041592297825361826055733537127920367696024224028140501827191678142141876",
-   "rate": 28.0,
+   "rate": 15.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -578,7 +578,7 @@
    "question": "Will Diable play for JD Gaming in 2027?",
    "yes": "25347245891397225614423330859788612510000101237594639326828126042396858085506",
    "no": "57815295633377631656676352153576055678426198502158621207124899791090138901391",
-   "rate": 22.0,
+   "rate": 50.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -638,7 +638,7 @@
    "question": "Will the Ornn RTX 6000 Index be between $1.25 and $1.50 on December 31, 2026?",
    "yes": "99388621831971344285580601030392364174999188854550288959658982147158364377576",
    "no": "26940757376952645003144585969755113269292204123456279749981156807900937464779",
-   "rate": 44.0,
+   "rate": 46.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -668,7 +668,7 @@
    "question": "Will the Ornn B200 Index be between $9.50 and $10.00 on December 31, 2026?",
    "yes": "68054849880594905883598463791928190285391455533012059227732798572769310216633",
    "no": "47999835576496915892073239657026914808340503781056027715184408840347131206929",
-   "rate": 61.0,
+   "rate": 65.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -743,7 +743,7 @@
    "question": "Will there be 3 or more government shutdowns by December 31, 2027?",
    "yes": "11160817946247706389994188639311022263432781912440073441070673884961743456331",
    "no": "13204835082971612111705132582176901385034980554519210912207158148245828469763",
-   "rate": 92.0,
+   "rate": 124.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -754,26 +754,11 @@
    "rate0": 125.0
   },
   {
-   "cond": "0xacf2bbd96738cf924279c6b708d160cc2a9a7539d6cd20a6fe6467c3d46f826c",
-   "question": "Will there be exactly 1 government shutdown by December 31, 2027?",
-   "yes": "115603878174150811618447941192599049926356806319917129996196303503477286364867",
-   "no": "34743468519655249834958673311245271922346325841647156706252443892285700196448",
-   "rate": 118.0,
-   "v": 4.5,
-   "min_size": 20.0,
-   "d": 0.0225,
-   "collateral": 19.1,
-   "est_reward_day": 161.0,
-   "end": "2028-01-01T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 161.0
-  },
-  {
    "cond": "0x115c4326985073b5fdc899b914911589a33c8750bdd1e705b304aa1cfd4e5b59",
    "question": "Will the 10-year Japanese government bond yield on the last reported day of 2026 be between 2.8% and 3.0%?",
    "yes": "29400120669099455838229476458569608457736461503310104394686192822484398935492",
    "no": "105423296999866272526458916093214271361989073392574635460455307116890476432909",
-   "rate": 71.0,
+   "rate": 68.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -784,19 +769,34 @@
    "rate0": 78.0
   },
   {
-   "cond": "0x749f093e8cedd2ac583448fe8d8c1de819613e28a576872e8dd960e321c67a13",
-   "question": "Will the Bank of Japan increase the uncollateralized overnight call rate by 25 bps at the March meeting?",
-   "yes": "83041918492724390771700686385309474724010792368135265332213830718130382270310",
-   "no": "7933425603778363860851118507194218103639609714480938123960953377849311877030",
-   "rate": 85.0,
+   "cond": "0x29c639f7498ae455e756f9f0851f93ea75a746c3c9cf4ed90ef7d1c6ded412bd",
+   "question": "Will Canada\u2019s 2026 inflation be between 3.0% and 3.4%?",
+   "yes": "70947022834029907891985983421086617935623882414718990926364070609942565191239",
+   "no": "26890068771948329902522323370485464410795024516188981048655213665137558129893",
+   "rate": 102.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
    "collateral": 19.1,
-   "est_reward_day": 92.0,
-   "end": "2027-03-18T23:59:00Z",
+   "est_reward_day": 102.0,
+   "end": "2027-01-18T00:00:00Z",
    "share0": 1.0,
-   "rate0": 92.0
+   "rate0": 102.0
+  },
+  {
+   "cond": "0x6e6279b5d44197881e0f4d6b091c5c6377e48dd8027e58f5a002c14b8df948dd",
+   "question": "Will South Korea\u2019s 2026 Annual Inflation be at least 3.0%?",
+   "yes": "61633927546342453884225148481971419565225246459195931002447504386001790385818",
+   "no": "15591076053001904381240756490843710853063822928252645554582690028464678454008",
+   "rate": 95.0,
+   "v": 4.5,
+   "min_size": 20.0,
+   "d": 0.0225,
+   "collateral": 19.1,
+   "est_reward_day": 95.0,
+   "end": "2027-01-01T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 95.0
   }
  ],
  "positions": {
@@ -923,9 +923,9 @@
   "0x8652314642ea8e1b8b1f5fded33bd3deb328fff284b5f8d015ef62e0c39cae3c": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.493,
+   "mid": 0.494,
    "share": 1.0,
-   "reward": 99.34150182054678,
+   "reward": 99.56630773503048,
    "fills": 0,
    "q": "Will primmie play for Paper Rex in 2027?"
   },
@@ -962,7 +962,7 @@
    "cash": -0.1822499999999989,
    "mid": 0.5,
    "share": 1.0,
-   "reward": 142.36603896338542,
+   "reward": 142.71189421643726,
    "fills": 1,
    "q": "Will OpenAI's frontier output token price be at or below $30 in 2026?",
    "closed_at": 0.39
@@ -1008,9 +1008,9 @@
   "0xa8818217726c5c55fdb16c01afd175ba825fd2d7be77ca06773694907989e1b6": {
    "inv": 0.0,
    "cash": 0.432975000000001,
-   "mid": 0.34,
+   "mid": 0.34500000000000003,
    "share": 1.0,
-   "reward": 334.88089025303185,
+   "reward": 335.2267455060836,
    "fills": 3,
    "q": "Will the Ornn H100 Index hit $2.25 (LOW) by December 31, 2026?",
    "closed_at": 0.64
@@ -1030,7 +1030,7 @@
    "cash": -2.9992417699999963,
    "mid": 0.451,
    "share": 1.0,
-   "reward": 680.2905323753652,
+   "reward": 680.636387628417,
    "fills": 12,
    "q": "Will the Ornn H200 Index hit $4.00 (LOW) by December 31, 2026?",
    "closed_at": 0.409
@@ -1070,7 +1070,7 @@
    "cash": -2.0325000000000006,
    "mid": 0.515,
    "share": 1.0,
-   "reward": 243.85959430835425,
+   "reward": 244.20544956140608,
    "fills": 2,
    "q": "Will OpenAI's frontier output token price be at or below $40 in 2026?",
    "closed_at": 0.37
@@ -1136,7 +1136,7 @@
   "0xeaf463a1a9353009d8d9c50839bcc56afe7a043cacb131fccf908dfa26b10769": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.6,
+   "mid": 0.59,
    "share": 1.0,
    "reward": 118.30446849300093,
    "fills": 0,
@@ -1249,9 +1249,9 @@
   "0xa0ab5c59632b54575ce8c4425687cf91a4e0a0abea5947c186342d576c9b7743": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.43,
+   "mid": 0.42,
    "share": 1.0,
-   "reward": 126.9576907136705,
+   "reward": 127.30354596672231,
    "fills": 0,
    "q": "Will Claude Sonnet's output price be at or below $8 in 2026?"
   },
@@ -1540,7 +1540,7 @@
    "cash": -9.03225,
    "mid": 0.765,
    "share": 1.0,
-   "reward": 151.93645486107027,
+   "reward": 152.2823101141221,
    "fills": 3,
    "q": "Will GPT Astra's output price be at or below $40 in 2026?",
    "closed_at": 0.27
@@ -1587,7 +1587,7 @@
    "cash": 0.8999999999999986,
    "mid": 0.49,
    "share": 1.0,
-   "reward": 202.75828976626264,
+   "reward": 203.10414501931447,
    "fills": 2,
    "q": "Will GPT Astra's output price be at or below $30 in 2026?"
   },
@@ -1778,9 +1778,9 @@
   "0xbe4315a7481cc3a9961b5230bfff7dbf3a654369b9becf87ea0333e9c6eb7842": {
    "inv": 0.0,
    "cash": -0.5954500000000009,
-   "mid": 0.71,
+   "mid": 0.705,
    "share": 1.0,
-   "reward": 172.49053261963903,
+   "reward": 172.92285168595382,
    "fills": 2,
    "q": "Will Morena win the most seats in the 2027 Tlaxcala Congress election?",
    "closed_at": 0.58
@@ -2071,7 +2071,7 @@
   "0x7a9a68c97682b82da841fa413f4764e86024c49e2c58a01b34cb5d3c5b9b2624": {
    "inv": 20.0,
    "cash": -8.85,
-   "mid": 0.455,
+   "mid": 0.4,
    "share": 1.0,
    "reward": 87.751647885782,
    "fills": 1,
@@ -3260,9 +3260,9 @@
   "0xb795db3fc2806e016825af44b56836def3b5cff806706ed840415b9b26d14bf0": {
    "inv": 0.0,
    "cash": -1.8858250000000014,
-   "mid": 0.2425,
+   "mid": 0.2285,
    "share": 1.0,
-   "reward": 291.4205583264746,
+   "reward": 291.76641357952633,
    "fills": 7,
    "q": "Will the Ornn H200 Index hit $3.75 (LOW) by December 31, 2026?",
    "closed_at": 0.216
@@ -3570,8 +3570,8 @@
   "0x6e6279b5d44197881e0f4d6b091c5c6377e48dd8027e58f5a002c14b8df948dd": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.3805,
-   "share": null,
+   "mid": 0.35250000000000004,
+   "share": 1.0,
    "reward": 31.693004490961588,
    "fills": 0,
    "q": "Will South Korea\u2019s 2026 Annual Inflation be at least 3.0%?"
@@ -3917,9 +3917,9 @@
   "0x115c4326985073b5fdc899b914911589a33c8750bdd1e705b304aa1cfd4e5b59": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.263,
+   "mid": 0.259,
    "share": 1.0,
-   "reward": 44.82915510265008,
+   "reward": 45.43585944760374,
    "fills": 0,
    "q": "Will the 10-year Japanese government bond yield on the last reported day of 2026"
   },
@@ -8721,7 +8721,7 @@
    "cash": 0.0,
    "mid": 0.495,
    "share": 1.0,
-   "reward": 67.32142316828701,
+   "reward": 67.36465507491849,
    "fills": 0,
    "q": "Will Chainlink dip to $10 by December 31, 2026?"
   },
@@ -9590,7 +9590,7 @@
    "cash": 0.6500000000000004,
    "mid": 0.59,
    "share": 1.0,
-   "reward": 130.4665513347993,
+   "reward": 130.81240658785114,
    "fills": 1,
    "q": "Will the highest score achieved by a Meta model on Humanity\u2019s Last Exam in 2026 ",
    "closed_at": 0.37
@@ -10698,9 +10698,9 @@
   "0x2b071ab38aad8c77a564168ea9d098df986c80d4642af4c002b300bd703c8163": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.375,
+   "mid": 0.365,
    "share": 1.0,
-   "reward": 130.96491645941896,
+   "reward": 131.3107717124708,
    "fills": 0,
    "q": "Will the highest score achieved by an OpenAI model on Humanity\u2019s Last Exam in 20"
   },
@@ -11698,9 +11698,9 @@
   "0x97a7bb02eeecb617c68a74eae57638b05c5688a46669d93553e57b71caccd05c": {
    "inv": -20.0,
    "cash": 5.28,
-   "mid": 0.3135,
+   "mid": 0.3095,
    "share": 1.0,
-   "reward": 266.6884225031158,
+   "reward": 267.03427775616757,
    "fills": 1,
    "q": "OpenAI announces a full training pause in 2026?"
   },
@@ -12022,16 +12022,16 @@
    "cash": 0.0,
    "mid": 0.48000000000000004,
    "share": 1.0,
-   "reward": 311.7750335223441,
+   "reward": 312.1208887753958,
    "fills": 0,
    "q": "Will the Ornn H200 Index hit $8.00 (HIGH) by December 31, 2026?"
   },
   "0x2257e3232c4b23458ec0b44d21904897d516216f24af74487033876b1e56b591": {
    "inv": -20.0,
    "cash": 5.15,
-   "mid": 0.52,
+   "mid": 0.53,
    "share": 1.0,
-   "reward": 316.01045543696057,
+   "reward": 316.3563106900123,
    "fills": 1,
    "q": "Will the Ornn H200 Index hit $7.50 (HIGH) by December 31, 2026?"
   },
@@ -12049,7 +12049,7 @@
    "cash": 0.55915,
    "mid": 0.525,
    "share": 1.0,
-   "reward": 314.7507338675077,
+   "reward": 315.09658912055943,
    "fills": 1,
    "q": "Will the Ornn H200 Index hit $5.00 (LOW) by December 31, 2026?"
   },
@@ -12308,7 +12308,7 @@
    "cash": 0.0,
    "mid": 0.415,
    "share": 1.0,
-   "reward": 137.05650574853905,
+   "reward": 137.22943337506493,
    "fills": 0,
    "q": "Will the Republicans win North Carolina in the 2028 Presidential Election?"
   },
@@ -12365,7 +12365,7 @@
    "cash": 0.0,
    "mid": 0.755,
    "share": 1.0,
-   "reward": 22.513426623469325,
+   "reward": 22.582597674079693,
    "fills": 0,
    "q": "Will Skuba play for NRG in 2027?"
   },
@@ -12401,7 +12401,7 @@
    "cash": 0.0,
    "mid": 0.37,
    "share": 1.0,
-   "reward": 130.52810026114452,
+   "reward": 130.6923815063441,
    "fills": 0,
    "q": "Will the Democrats win New Hampshire in the 2028 Presidential Election?"
   },
@@ -12518,9 +12518,9 @@
   "0xdec231c72ffdea54bd43f40bd2159f905fba06d603b0008391ba06b5d4798ed8": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.59,
+   "mid": 0.58,
    "share": 1.0,
-   "reward": 125.12243856800993,
+   "reward": 125.13108494933621,
    "fills": 0,
    "q": "Will the Knesset elect a new Speaker by November 30?"
   },
@@ -13317,8 +13317,8 @@
   "0x29c639f7498ae455e756f9f0851f93ea75a746c3c9cf4ed90ef7d1c6ded412bd": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.3825,
-   "share": null,
+   "mid": 0.3725,
+   "share": 1.0,
    "reward": 1.837927505253832,
    "fills": 0,
    "q": "Will Canada\u2019s 2026 inflation be between 3.0% and 3.4%?"
@@ -14234,7 +14234,7 @@
    "cash": 0.0,
    "mid": 0.465,
    "share": 1.0,
-   "reward": 193.0516993865019,
+   "reward": 193.48401845281668,
    "fills": 0,
    "q": "Will Iran target Qatar by December 31, 2026?"
   },
@@ -14243,7 +14243,7 @@
    "cash": 0.0,
    "mid": 0.355,
    "share": 1.0,
-   "reward": 185.30602177676167,
+   "reward": 185.73834084307646,
    "fills": 0,
    "q": "Supreme Court sides with Catholic preschools in Colorado funding case?"
   },
@@ -14296,9 +14296,9 @@
   "0x749f093e8cedd2ac583448fe8d8c1de819613e28a576872e8dd960e321c67a13": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.515,
-   "share": 0.01295747346544058,
-   "reward": 42.19832370976807,
+   "mid": 0.49,
+   "share": null,
+   "reward": 42.20351403431226,
    "fills": 0,
    "q": "Will the Bank of Japan increase the uncollateralized overnight call rate by 25 b"
   },
@@ -14354,7 +14354,7 @@
    "cash": 0.0,
    "mid": 0.505,
    "share": 1.0,
-   "reward": 178.99915917962733,
+   "reward": 179.43147824594212,
    "fills": 0,
    "q": "Will a 6.0+ magnitude earthquake occur in Chile this month?"
   },
@@ -14604,7 +14604,7 @@
    "cash": 0.0,
    "mid": 0.435,
    "share": 1.0,
-   "reward": 136.88563281632472,
+   "reward": 137.41014677300288,
    "fills": 0,
    "q": "Will the Bank of Israel decrease the Bank of Israel Interest Rate by 25 bps at t"
   },
@@ -14666,9 +14666,9 @@
   "0x16da0ef6c2f804b49bdf6985d281d5f92551c0d2b5a465b2733f7e885d08ad99": {
    "inv": 0.0,
    "cash": -7.07,
-   "mid": 0.305,
+   "mid": 0.3045,
    "share": 1.0,
-   "reward": 74.87439203417063,
+   "reward": 75.13170722934035,
    "fills": 1,
    "q": "Will Diable play for JD Gaming in 2027?",
    "closed_at": 0.024
@@ -14748,9 +14748,9 @@
   "0xe2fa505297010936cecc0d6289dd432740e856e36ecd054beb2de2de95514716": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.32,
+   "mid": 0.338,
    "share": 1.0,
-   "reward": 66.94798911868695,
+   "reward": 67.1620052457766,
    "fills": 0,
    "q": "Will the Bank of Russia increase the key rate by 25 bps at the February meeting?"
   },
@@ -14813,7 +14813,7 @@
    "cash": 0.0,
    "mid": 0.33999999999999997,
    "share": 1.0,
-   "reward": 94.9491601611894,
+   "reward": 95.32095455822012,
    "fills": 0,
    "q": "Will the Bank of Russia decrease the key rate by 25 bps at the February meeting?"
   },
@@ -14883,9 +14883,9 @@
   "0x3e89fb1bdbb76e423c7e0192686ce0db32b52e932d9ac623ebf118ac4554f616": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.6,
+   "mid": 0.605,
    "share": 1.0,
-   "reward": 91.27935928299492,
+   "reward": 91.71167834930971,
    "fills": 0,
    "q": "2026 Senate or Governor race goes to full recount?"
   },
@@ -14901,9 +14901,9 @@
   "0xedebd909ba18a4d235634160bffd914f490d4120ba11fdec5df52539d11b74bd": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.38,
+   "mid": 0.385,
    "share": 1.0,
-   "reward": 77.45862351983509,
+   "reward": 77.9154240780158,
    "fills": 0,
    "q": "Will the Bank of Israel increase the Bank of Israel Interest Rate by 25 bps at t"
   },
@@ -14912,7 +14912,7 @@
    "cash": 0.0,
    "mid": 0.19,
    "share": 1.0,
-   "reward": 57.448287438419094,
+   "reward": 57.640904070668704,
    "fills": 0,
    "q": "Will the Bank of Israel decrease the Bank of Israel Interest Rate by 50+ bps at "
   },
@@ -14957,7 +14957,7 @@
    "cash": 0.0,
    "mid": 0.3,
    "share": 1.0,
-   "reward": 56.63564794026591,
+   "reward": 56.98004554120479,
    "fills": 0,
    "q": "Will the Bank of Israel make no change to the Bank of Israel Interest Rate at th"
   },
@@ -15173,7 +15173,7 @@
    "cash": 0.0,
    "mid": 0.375,
    "share": 1.0,
-   "reward": 28.928573633189924,
+   "reward": 29.46558786637842,
    "fills": 0,
    "q": "Will the Ornn B200 Index be between $9.50 and $10.00 on December 31, 2026?"
   },
@@ -15189,9 +15189,9 @@
   "0x0610a2141254c81f634131375b5e7fb8b7d6ba9813d56fc18224b84cfaba613a": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.14,
+   "mid": 0.135,
    "share": 1.0,
-   "reward": 22.984619348800575,
+   "reward": 23.195566866012367,
    "fills": 0,
    "q": "Will the Bank of Israel increase the Bank of Israel Interest Rate by 50+ bps at "
   },
@@ -15225,9 +15225,9 @@
   "0x845e3846869a35dc6e37b531d687a73b633e392d07ca412d94727d08883d0ec8": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.31,
+   "mid": 0.315,
    "share": 1.0,
-   "reward": 30.824579989244707,
+   "reward": 31.20981325374395,
    "fills": 0,
    "q": "Will the Ornn RTX 6000 Index be between $1.25 and $1.50 on December 31, 2026?"
   },
@@ -15245,25 +15245,25 @@
    "cash": 0.0,
    "mid": 0.6,
    "share": 1.0,
-   "reward": 30.70112496014877,
+   "reward": 31.219907839726513,
    "fills": 0,
    "q": "Will the Ornn RTX 6000 Index be between $1.50 and $1.75 on December 31, 2026?"
   },
   "0xf1ef7f353b9f74dbfdd4dcb6a081f47809e10af1ba0638c218e5f83716b9e9cc": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.41000000000000003,
+   "mid": 0.41500000000000004,
    "share": 1.0,
-   "reward": 26.44822949780358,
+   "reward": 26.724913700245043,
    "fills": 0,
    "q": "Will the Ornn H100 Index be between $2.25 and $2.50 on December 31, 2026?"
   },
   "0xeaae0b23f57110aba2327a1d3e6cd239c8de2da655b3cfc02494c5d1c86b14d5": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.28500000000000003,
+   "mid": 0.29000000000000004,
    "share": 1.0,
-   "reward": 31.29798714057717,
+   "reward": 31.730306206891953,
    "fills": 0,
    "q": "Will Minnesota Lynx advance to the Finals in the 2027 WNBA Playoffs?"
   },
@@ -15308,7 +15308,7 @@
    "cash": 0.0,
    "mid": 0.61,
    "share": 1.0,
-   "reward": 14.226198006026722,
+   "reward": 14.59799240305744,
    "fills": 0,
    "q": "Will Javier Milei win the most votes in the first round of the 2027 Argentina pr"
   },
@@ -15344,7 +15344,7 @@
    "cash": 0.0,
    "mid": 0.1525,
    "share": 1.0,
-   "reward": 1.4463824027142045,
+   "reward": 1.4636751653667959,
    "fills": 0,
    "q": "Will Baidu be the third-best AI lab at the end of January 2027?"
   },
@@ -15353,7 +15353,7 @@
    "cash": 0.0,
    "mid": 0.42000000000000004,
    "share": 1.0,
-   "reward": 7.567577787684621,
+   "reward": 7.852908371452378,
    "fills": 0,
    "q": "Will the Ornn H100 Index be between $3.00 and $3.25 on December 31, 2026?"
   },
@@ -15362,7 +15362,7 @@
    "cash": 0.0,
    "mid": 0.5,
    "share": 1.0,
-   "reward": 31.751500285334043,
+   "reward": 33.48077655059318,
    "fills": 0,
    "q": "Any member-elect blocked from being sworn in?"
   },
@@ -15378,9 +15378,9 @@
   "0x60162b33c6e3fd5e688ee3307091193d214fe705cc14b7c80222464671cc1144": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.305,
+   "mid": 0.25,
    "share": 1.0,
-   "reward": 21.9876521692701,
+   "reward": 22.85979902956498,
    "fills": 0,
    "q": "Will there be 3 or more government shutdowns by December 31, 2027?"
   },
@@ -15397,8 +15397,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.37,
-   "share": 0.059602649006622516,
-   "reward": 13.078647688085665,
+   "share": null,
+   "reward": 13.111507129235928,
    "fills": 0,
    "q": "Will there be exactly 1 government shutdown by December 31, 2027?"
   }
@@ -63284,17 +63284,43 @@
    "w": 2989758
   },
   {
-   "ts": "2026-11-05T05:18:52.015042+00:00",
-   "dt_h": 0.153,
-   "reward_tick": 11.5156,
-   "reward_total": 35377.29,
-   "mm_value": -673.34,
-   "net": 34703.95,
-   "avg_share": 0.9622,
+   "ts": "2026-11-05T05:19:52.364521+00:00",
+   "dt_h": 0.17,
+   "reward_tick": 12.8378,
+   "reward_total": 35378.61,
+   "mm_value": -673.44,
+   "net": 34705.17,
+   "avg_share": 0.962,
    "n_markets": 53,
    "fills_total": 659,
    "rebalanced": false,
    "w": 2989759
+  },
+  {
+   "ts": "2026-11-05T05:27:52.026987+00:00",
+   "dt_h": 0.136,
+   "reward_tick": 10.4426,
+   "reward_total": 35389.05,
+   "mm_value": -673.86,
+   "net": 34715.19,
+   "avg_share": 0.9632,
+   "n_markets": 53,
+   "fills_total": 659,
+   "rebalanced": false,
+   "w": 2989760
+  },
+  {
+   "ts": "2026-11-05T05:31:19.062389+00:00",
+   "dt_h": 0.058,
+   "reward_tick": 4.5648,
+   "reward_total": 35393.62,
+   "mm_value": -674.56,
+   "net": 34719.05,
+   "avg_share": 1.0,
+   "n_markets": 53,
+   "fills_total": 659,
+   "rebalanced": false,
+   "w": 2989761
   }
  ],
  "fills": [
@@ -69230,8 +69256,8 @@
    "ledger": "v4"
   }
  ],
- "reward_total": 35377.28666152422,
- "last_ts": 1793855932.015042,
+ "reward_total": 35393.61632513351,
+ "last_ts": 1793856679.0623887,
  "chosen_at": 1791639880.921448,
  "rebalances": [
   {
@@ -69242,8 +69268,8 @@
   }
  ],
  "last_tick": {
-  "ts": "2026-11-05T05:18:52.015042+00:00",
-  "dt_h": 0.017,
+  "ts": "2026-11-05T05:31:19.062389+00:00",
+  "dt_h": 0.058,
   "markets": [
    {
     "q": "Will global temperature increase by between 1.35\u00baC",
@@ -69251,7 +69277,7 @@
    },
    {
     "q": "Will Chicago Bears finish the 2026-27 NFL regular ",
-    "mid": 0.455,
+    "mid": 0.4,
     "share": 1.0,
     "earned": 0.0,
     "inv": 20.0
@@ -69272,7 +69298,7 @@
    },
    {
     "q": "Will Claude Opus 5.6+ debut at an output token pri",
-    "mid": 0.6,
+    "mid": 0.59,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -69281,7 +69307,7 @@
     "q": "Will Chainlink dip to $10 by December 31, 2026?",
     "mid": 0.495,
     "share": 1.0,
-    "earned": 0.0035,
+    "earned": 0.012,
     "inv": 0.0
    },
    {
@@ -69292,84 +69318,84 @@
     "q": "Will the Ornn H200 Index hit $8.00 (HIGH) by Decem",
     "mid": 0.48,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0958,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index hit $7.50 (HIGH) by Decem",
-    "mid": 0.52,
+    "mid": 0.53,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0958,
     "inv": -20.0
    },
    {
     "q": "Will the Ornn H200 Index hit $5.00 (LOW) by Decemb",
     "mid": 0.525,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0958,
     "inv": -1.06
    },
    {
     "q": "Will the Democrats win New Hampshire in the 2028 P",
     "mid": 0.37,
     "share": 1.0,
-    "earned": 0.0132,
+    "earned": 0.0455,
     "inv": 0.0
    },
    {
     "q": "Will the Knesset elect a new Speaker by November 3",
-    "mid": 0.59,
+    "mid": 0.58,
     "share": 1.0,
-    "earned": 0.0007,
+    "earned": 0.0024,
     "inv": 0.0
    },
    {
     "q": "Will the Republicans win North Carolina in the 202",
     "mid": 0.415,
     "share": 1.0,
-    "earned": 0.0139,
+    "earned": 0.0479,
     "inv": 0.0
    },
    {
     "q": "OpenAI announces a full training pause in 2026?",
-    "mid": 0.314,
+    "mid": 0.309,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0958,
     "inv": -20.0
    },
    {
     "q": "Supreme Court sides with Catholic preschools in Co",
     "mid": 0.355,
     "share": 1.0,
-    "earned": 0.0347,
+    "earned": 0.1198,
     "inv": 0.0
    },
    {
     "q": "Will a 6.0+ magnitude earthquake occur in Chile th",
     "mid": 0.505,
     "share": 1.0,
-    "earned": 0.0347,
+    "earned": 0.1198,
     "inv": 0.0
    },
    {
     "q": "Will primmie play for Paper Rex in 2027?",
-    "mid": 0.493,
+    "mid": 0.494,
     "share": 1.0,
-    "earned": 0.018,
+    "earned": 0.0623,
     "inv": 0.0
    },
    {
     "q": "Will OpenAI's frontier output token price be at or",
     "mid": 0.5,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0958,
     "inv": 0.0
    },
    {
     "q": "Will the highest score achieved by a Meta model on",
     "mid": 0.59,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0958,
     "inv": 0.0
    },
    {
@@ -69381,266 +69407,246 @@
    },
    {
     "q": "Will Claude Sonnet's output price be at or below $",
-    "mid": 0.43,
+    "mid": 0.42,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0958,
     "inv": 0.0
    },
    {
     "q": "Will GPT Astra's output price be at or below $30 i",
     "mid": 0.49,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0958,
     "inv": 0.0
    },
    {
     "q": "Will OpenAI's frontier output token price be at or",
     "mid": 0.515,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0958,
     "inv": 0.0
    },
    {
     "q": "Will the Bank of Israel decrease the Bank of Israe",
     "mid": 0.435,
     "share": 1.0,
-    "earned": 0.041,
+    "earned": 0.1558,
     "inv": 0.0
    },
    {
     "q": "Will the Bank of Russia increase the key rate by 2",
-    "mid": 0.32,
+    "mid": 0.338,
     "share": 1.0,
-    "earned": 0.0305,
+    "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will the Bank of Russia decrease the key rate by 2",
     "mid": 0.34,
     "share": 1.0,
-    "earned": 0.0298,
+    "earned": 0.103,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index hit $3.75 (LOW) by Decemb",
-    "mid": 0.242,
+    "mid": 0.229,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0958,
     "inv": 0.0
    },
    {
     "q": "2026 Senate or Governor race goes to full recount?",
-    "mid": 0.6,
+    "mid": 0.605,
     "share": 1.0,
-    "earned": 0.0347,
+    "earned": 0.1198,
     "inv": 0.0
    },
    {
     "q": "Will the Bank of Israel increase the Bank of Israe",
-    "mid": 0.38,
+    "mid": 0.385,
     "share": 1.0,
-    "earned": 0.0361,
+    "earned": 0.1318,
     "inv": 0.0
    },
    {
     "q": "Will GPT Astra's output price be at or below $40 i",
     "mid": 0.765,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0958,
     "inv": 0.0
    },
    {
     "q": "Will the Bank of Israel decrease the Bank of Israe",
     "mid": 0.19,
     "share": 1.0,
-    "earned": 0.0153,
+    "earned": 0.0551,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index hit $4.00 (LOW) by Decemb",
     "mid": 0.451,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0958,
     "inv": 0.0
    },
    {
     "q": "Will Iran target Qatar by December 31, 2026?",
     "mid": 0.465,
     "share": 1.0,
-    "earned": 0.0347,
+    "earned": 0.1198,
     "inv": 0.0
    },
    {
     "q": "Will Skuba play for NRG in 2027?",
     "mid": 0.755,
     "share": 1.0,
-    "earned": 0.0056,
+    "earned": 0.0192,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H100 Index hit $2.25 (LOW) by Decemb",
-    "mid": 0.34,
+    "mid": 0.345,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0958,
     "inv": 0.0
    },
    {
     "q": "Will the Bank of Israel make no change to the Bank",
     "mid": 0.3,
     "share": 1.0,
-    "earned": 0.0271,
+    "earned": 0.1006,
     "inv": 0.0
    },
    {
     "q": "Will the Bank of Israel increase the Bank of Israe",
-    "mid": 0.14,
+    "mid": 0.135,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0359,
     "inv": 0.0
    },
    {
     "q": "Will Morena win the most seats in the 2027 Tlaxcal",
-    "mid": 0.71,
+    "mid": 0.705,
     "share": 1.0,
-    "earned": 0.0347,
+    "earned": 0.1198,
     "inv": 0.0
    },
    {
     "q": "Will Diable play for JD Gaming in 2027?",
-    "mid": 0.305,
+    "mid": 0.304,
     "share": 1.0,
-    "earned": 0.0153,
+    "earned": 0.1198,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H100 Index be between $2.25 and $2.5",
-    "mid": 0.41,
+    "mid": 0.415,
     "share": 1.0,
-    "earned": 0.0222,
+    "earned": 0.0767,
     "inv": 0.0
    },
    {
     "q": "Will Minnesota Lynx advance to the Finals in the 2",
-    "mid": 0.285,
+    "mid": 0.29,
     "share": 1.0,
-    "earned": 0.0347,
+    "earned": 0.1198,
     "inv": 0.0
    },
    {
     "q": "Will the highest score achieved by an OpenAI model",
-    "mid": 0.375,
+    "mid": 0.365,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0958,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn RTX 6000 Index be between $1.25 and ",
-    "mid": 0.31,
+    "mid": 0.315,
     "share": 1.0,
-    "earned": 0.0305,
+    "earned": 0.1102,
     "inv": 0.0
    },
    {
     "q": "Will Javier Milei win the most votes in the first ",
     "mid": 0.61,
     "share": 1.0,
-    "earned": 0.0298,
+    "earned": 0.103,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn B200 Index be between $9.50 and $10.",
     "mid": 0.375,
     "share": 1.0,
-    "earned": 0.0423,
+    "earned": 0.1558,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn RTX 6000 Index be between $1.50 and ",
     "mid": 0.6,
     "share": 1.0,
-    "earned": 0.0416,
+    "earned": 0.1438,
     "inv": 0.0
    },
    {
     "q": "Will Baidu be the third-best AI lab at the end of ",
     "mid": 0.152,
     "share": 1.0,
-    "earned": 0.0014,
+    "earned": 0.0048,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H100 Index be between $3.00 and $3.2",
     "mid": 0.42,
     "share": 1.0,
-    "earned": 0.0229,
+    "earned": 0.0791,
     "inv": 0.0
    },
    {
     "q": "Any member-elect blocked from being sworn in?",
     "mid": 0.5,
     "share": 1.0,
-    "earned": 0.1388,
+    "earned": 0.4792,
     "inv": 0.0
    },
    {
     "q": "Will there be 3 or more government shutdowns by De",
-    "mid": 0.305,
+    "mid": 0.25,
     "share": 1.0,
-    "earned": 0.0639,
-    "inv": 0.0
-   },
-   {
-    "q": "Will there be exactly 1 government shutdown by Dec",
-    "mid": 0.37,
-    "share": 0.0596,
-    "earned": 0.0049,
+    "earned": 0.2971,
     "inv": 0.0
    },
    {
     "q": "Will the 10-year Japanese government bond yield on",
-    "mid": 0.263,
+    "mid": 0.259,
     "share": 1.0,
-    "earned": 0.0493,
+    "earned": 0.1629,
     "inv": 0.0
    },
    {
-    "q": "Will the Bank of Japan increase the uncollateraliz",
-    "mid": 0.515,
-    "share": 0.013,
-    "earned": 0.0007,
+    "q": "Will Canada\u2019s 2026 inflation be between 3.0% and 3",
+    "mid": 0.372,
+    "share": 1.0,
+    "earned": 0.0,
+    "inv": 0.0
+   },
+   {
+    "q": "Will South Korea\u2019s 2026 Annual Inflation be at lea",
+    "mid": 0.353,
+    "share": 1.0,
+    "earned": 0.0,
     "inv": 0.0
    }
   ],
-  "reward_tick": 1.2953,
-  "reward_total": 35377.29,
-  "mm_value": -673.34,
-  "net": 34703.95,
-  "avg_share": 0.9622,
+  "reward_tick": 4.5648,
+  "reward_total": 35393.62,
+  "mm_value": -674.56,
+  "net": 34719.05,
+  "avg_share": 1.0,
   "n_markets": 53,
   "fills_total": 659,
   "rebalanced": false
  },
  "reviews": [
-  {
-   "ts": "2026-10-15T02:18:09.253578+00:00",
-   "swapped": 6,
-   "out": [
-    "Will Claude Opus's output price be at or above $25",
-    "Will Miles Teller be nominated for Best Supporting",
-    "Will PT win the most seats in the 2027 Guerrero Co",
-    "Next Gemini Argon released by January 31, 2027?",
-    "Will Gus Bilirakis be the next US Ambassador to Gr",
-    "Will Kate O'Flynn be nominated for Best Supporting"
-   ],
-   "in": [
-    "Will Canada\u2019s 2026 inflation be between 3.5% and 3",
-    "Will Trump pardon anyone by December 31?",
-    "Will OpenAI's frontier output token price be at or",
-    "Will Trump's approval rating hit 41% by June 30, 2",
-    "Will Morena win the most seats in the 2027 Sinaloa",
-    "Will Dean Spanos be the next US Ambassador to Gree"
-   ]
-  },
   {
    "ts": "2026-10-15T03:19:10.014547+00:00",
    "swapped": 13,
@@ -80528,7 +80534,19 @@
    "in": [
     "Will the Bank of Japan increase the uncollateraliz"
    ]
+  },
+  {
+   "ts": "2026-11-05T05:31:19.062389+00:00",
+   "swapped": 2,
+   "out": [
+    "Will the Bank of Japan increase the uncollateraliz",
+    "Will there be exactly 1 government shutdown by Dec"
+   ],
+   "in": [
+    "Will Canada\u2019s 2026 inflation be between 3.0% and 3",
+    "Will South Korea\u2019s 2026 Annual Inflation be at lea"
+   ]
   }
  ],
- "reviewed_at": 1793852901.8153226
+ "reviewed_at": 1793856679.0623887
 }

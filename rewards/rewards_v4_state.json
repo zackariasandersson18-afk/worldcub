@@ -203,7 +203,7 @@
    "question": "Will Ferryn & Brinkley come in third-place on The Voice season 30?",
    "yes": "18423385567651310115143457978150335842826273171309305370027616090076710625774",
    "no": "41519332591519156426494560283784995511509029823627759839537474648732938859964",
-   "rate": 14.0,
+   "rate": 12.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -248,7 +248,7 @@
    "question": "Will Kewan Lacy be the 2026 D1 Rushing Yards Leader?",
    "yes": "71348123981743624925598082680661543794580537775159136764204265573489389575595",
    "no": "99356748384369084956733112374869845064723279537781003762169609995771768478218",
-   "rate": 0.0,
+   "rate": 65.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -563,7 +563,7 @@
    "question": "Will J.D. Vance win the South Carolina Republican primary?",
    "yes": "115565344648286930879711244040127793047366730574349713418784082149242881149013",
    "no": "66454030286926228764263180222824854767395252639021981773069555166728240636969",
-   "rate": 39.0,
+   "rate": 43.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -653,7 +653,7 @@
    "question": "Will there be no next Gemini Carbon model (4.1+) release by December 31, 2026?",
    "yes": "63474985783214648171893582294898218936844287727746495516091699855611148777694",
    "no": "1996017698900013289877706721772290171421278487789308435523566369055659826758",
-   "rate": 191.0,
+   "rate": 196.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -713,7 +713,7 @@
    "question": "Will GEN be number 1 on the end of year Global Power Rankings?",
    "yes": "35018437165125254956927767138387710450173566248362420011510696931332345783539",
    "no": "57056033142307022839769047712791901231213307025624162389998979691714281882959",
-   "rate": 150.0,
+   "rate": 148.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -728,7 +728,7 @@
    "question": "Will BLG be number 1 on the end of year Global Power Rankings?",
    "yes": "37927381885817712825949403956654117870174260540555327649058192315021934657869",
    "no": "86852004038532519436920357527492662226439468934451730838566416738883349656759",
-   "rate": 150.0,
+   "rate": 152.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -769,21 +769,6 @@
    "rate0": 50.0
   },
   {
-   "cond": "0xbca77673aa14a88111a9907ed78e91d905e14419ee3113f04bf2cd45fa07ba39",
-   "question": "Will the next Gemini model family be named Gemini Neon?",
-   "yes": "45804196301451846861983228665930313521197024554385904999169266874474769462797",
-   "no": "43108112469738737892722985804697879100497418207528422919320262815748268284091",
-   "rate": 15.0,
-   "v": 4.5,
-   "min_size": 20.0,
-   "d": 0.0225,
-   "collateral": 19.1,
-   "est_reward_day": 46.0,
-   "end": "2027-01-01T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 46.0
-  },
-  {
    "cond": "0x561a0129b03a07f18caf9e3bc24634dfb6f300fdb7562cec9784e5479860ea71",
    "question": "Will the next Gemini model family be named Gemini Helix?",
    "yes": "46148035997131277302813767951021064638873003564859997806981300689204950444157",
@@ -797,6 +782,21 @@
    "end": "2027-01-01T04:59:00Z",
    "share0": 1.0,
    "rate0": 43.0
+  },
+  {
+   "cond": "0xfe5040eddbaac110eaf86740a61df389ac2e51743bdd27f1f0b8b6504d01fa07",
+   "question": "Will the Republicans win South Dakota in the 2028 Presidential Election?",
+   "yes": "29811350131650952077990015751483896591886560393428241590825383115179504186857",
+   "no": "46078311500029130952586490587261937639665825551452457761475028847459509561723",
+   "rate": 86.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.700000000000003,
+   "est_reward_day": 87.0,
+   "end": "2028-11-08T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 87.0
   }
  ],
  "positions": {
@@ -923,9 +923,9 @@
   "0x8652314642ea8e1b8b1f5fded33bd3deb328fff284b5f8d015ef62e0c39cae3c": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.6225,
+   "mid": 0.6305000000000001,
    "share": 1.0,
-   "reward": 291.29803568909097,
+   "reward": 291.59169188748996,
    "fills": 0,
    "q": "Will primmie play for Paper Rex in 2027?"
   },
@@ -1136,7 +1136,7 @@
   "0xeaf463a1a9353009d8d9c50839bcc56afe7a043cacb131fccf908dfa26b10769": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.525,
+   "mid": 0.56,
    "share": 1.0,
    "reward": 118.30446849300093,
    "fills": 0,
@@ -1587,7 +1587,7 @@
    "cash": 0.8999999999999986,
    "mid": 0.495,
    "share": 1.0,
-   "reward": 546.9483424096826,
+   "reward": 547.2260365150122,
    "fills": 2,
    "q": "Will GPT Astra's output price be at or below $30 in 2026?"
   },
@@ -4130,7 +4130,7 @@
    "cash": 0.0,
    "mid": 0.28,
    "share": 1.0,
-   "reward": 6.1741951472192715,
+   "reward": 6.188079852485738,
    "fills": 0,
    "q": "Will Dune: Part Three win Best Sound at the 99th Academy Awards?"
   },
@@ -4522,7 +4522,7 @@
   "0x5d15579a3a31d6220eb8d33d167788db82976f14c856768a5e37e51afdaeb279": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.478,
+   "mid": 0.4785,
    "share": 1.0,
    "reward": 17.59805527737572,
    "fills": 0,
@@ -12053,7 +12053,7 @@
    "cash": -0.34185,
    "mid": 0.455,
    "share": 1.0,
-   "reward": 655.2657530888708,
+   "reward": 655.5434471942004,
    "fills": 1,
    "q": "Will the Ornn H200 Index hit $5.00 (LOW) by December 31, 2026?",
    "closed_at": 0.85
@@ -13406,9 +13406,9 @@
   "0xe32519c919cbbca022969647761c32caef07b9adbe20cbd37f255fcd54f99a17": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.564,
+   "mid": 0.5725,
    "share": 1.0,
-   "reward": 16.14741570304481,
+   "reward": 17.08577725072242,
    "fills": 0,
    "q": "Will BLG be number 1 on the end of year Global Power Rankings?"
   },
@@ -13968,9 +13968,9 @@
   "0x2c9e595051e5c8486d78c646a67a5e145ec5db47d8bbe51380e6f7dde22215c2": {
    "inv": 0.0,
    "cash": 5.15,
-   "mid": 0.435,
+   "mid": 0.41500000000000004,
    "share": 1.0,
-   "reward": 20.153457422725506,
+   "reward": 21.089046382125808,
    "fills": 1,
    "q": "Will GEN be number 1 on the end of year Global Power Rankings?",
    "closed_at": 0.43
@@ -15188,7 +15188,7 @@
    "cash": 0.0,
    "mid": 0.398,
    "share": 1.0,
-   "reward": 72.94550621557201,
+   "reward": 72.99056077507821,
    "fills": 0,
    "q": "Will Kewan Lacy be the 2026 D1 Rushing Yards Leader?"
   },
@@ -15438,9 +15438,9 @@
   "0xef5f5b9993b3d8be55730c7800014c20c09c662f3c1023233cc4f5ec8d6aca0a": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.28,
+   "mid": 0.29000000000000004,
    "share": 1.0,
-   "reward": 118.93649889996618,
+   "reward": 118.95732595786589,
    "fills": 0,
    "q": "Will the Ornn A100 Index be between $0.75 and $1.00 on December 31, 2026?"
   },
@@ -15701,7 +15701,7 @@
    "cash": 0.0,
    "mid": 0.17500000000000002,
    "share": 1.0,
-   "reward": 73.19365783008703,
+   "reward": 73.20754253535351,
    "fills": 0,
    "q": "Will the Ornn RTX 6000 Index be between $1.75 and $2.00 on December 31, 2026?"
   },
@@ -16025,7 +16025,7 @@
    "cash": 0.0,
    "mid": 0.515,
    "share": 1.0,
-   "reward": 99.06333395477958,
+   "reward": 99.07027630741281,
    "fills": 0,
    "q": "Will Marine Le Pen hit 42% in any poll before the first round of the French pres"
   },
@@ -18005,7 +18005,7 @@
    "cash": 0.0,
    "mid": 0.64,
    "share": 1.0,
-   "reward": 98.90896985566819,
+   "reward": 99.1241827872984,
    "fills": 0,
    "q": "Will Hugo Motta be the next President of Brazil's Chamber of Deputies?"
   },
@@ -18039,7 +18039,7 @@
   "0xe43ebfb9c7af7e7560cf67dffd4431864a59f9876e0bc057bddb846bdb612d68": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.2695,
+   "mid": 0.274,
    "share": 1.0,
    "reward": 76.87070843404608,
    "fills": 0,
@@ -18768,8 +18768,8 @@
   "0xfe5040eddbaac110eaf86740a61df389ac2e51743bdd27f1f0b8b6504d01fa07": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.875,
-   "share": null,
+   "mid": 0.54,
+   "share": 1.0,
    "reward": 0.18126331467936746,
    "fills": 0,
    "q": "Will the Republicans win South Dakota in the 2028 Presidential Election?"
@@ -19265,7 +19265,7 @@
    "cash": 0.0,
    "mid": 0.135,
    "share": 1.0,
-   "reward": 29.189834508766186,
+   "reward": 29.293969798264687,
    "fills": 0,
    "q": "Will Lexi Stephens come in third-place on The Voice season 30?"
   },
@@ -19299,9 +19299,9 @@
   "0xe55903dd5fc689df55dc6cab12d84b23720cac0d12157c8739347ece6e3921e7": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.1255,
+   "mid": 0.1405,
    "share": 1.0,
-   "reward": 26.993744105202722,
+   "reward": 27.089550747929337,
    "fills": 0,
    "q": "Will Ferryn & Brinkley come in third-place on The Voice season 30?"
   },
@@ -19452,7 +19452,7 @@
   "0x1fd8ef1caf742f2be02e897cb4d6b72b45c54f4ea507c4f874c52017e3b44265": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.44,
+   "mid": 0.425,
    "share": 1.0,
    "reward": 25.788417514844074,
    "fills": 0,
@@ -19515,9 +19515,9 @@
   "0xa4ea9499477b74c0bdf00a77b2e8fe8d6b25c2e89d4d2df0ed2796a0d5667307": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.475,
+   "mid": 0.48000000000000004,
    "share": 1.0,
-   "reward": 33.684922447746146,
+   "reward": 34.157002426806024,
    "fills": 0,
    "q": "Will Sweet Nuthins - Kehlani feat. Leon Thomas win Best R&B Collaboration or Duo"
   },
@@ -19614,7 +19614,7 @@
   "0x11f0d30a34d3dc66510694aeb5f8ff233617706430b8e6e178750e02951a5408": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.385,
+   "mid": 0.4,
    "share": 1.0,
    "reward": 7.8959042222080384,
    "fills": 0,
@@ -19623,7 +19623,7 @@
   "0xde3b2838acf91270a03d4b4a442bbdcb618bcddb9f8ed75c7b771ecf08ccf7c2": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.41000000000000003,
+   "mid": 0.43,
    "share": 1.0,
    "reward": 8.511376862470751,
    "fills": 0,
@@ -19767,7 +19767,7 @@
   "0x46a73cf44a4946a2fb1f848069651455f58d95edcefbc5c9e2b3b67c3c2947a7": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.4,
+   "mid": 0.395,
    "share": 1.0,
    "reward": 13.075212543223191,
    "fills": 0,
@@ -19776,7 +19776,7 @@
   "0xfac681446686ac04394df2ae509bb674ccbde10713a16489b1e52622442b45f4": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.38,
+   "mid": 0.425,
    "share": 1.0,
    "reward": 11.031408953961954,
    "fills": 0,
@@ -19821,7 +19821,7 @@
   "0xfc6c7fa06f53201149e1f6c693525f0b999fe794d0d7686edab7d6b50128b579": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.445,
+   "mid": 0.44,
    "share": 1.0,
    "reward": 6.133938541542049,
    "fills": 0,
@@ -19848,7 +19848,7 @@
   "0xe1ea9572020e3fac2f171c823ea36517f4c780ae62cd4be1cf67ff2cd09da456": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.405,
+   "mid": 0.36,
    "share": 1.0,
    "reward": 4.548629093992491,
    "fills": 0,
@@ -19902,7 +19902,7 @@
   "0x2a256c18683ff955f02072cd9969a52d5770b9301e3e557065330442d1c067f0": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.435,
+   "mid": 0.445,
    "share": 1.0,
    "reward": 2.1374141492860184,
    "fills": 0,
@@ -19911,7 +19911,7 @@
   "0x1b7f169f8274f2030362feea2c043b1760a7071d3b9511f76dfad201d096d0f6": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.4815,
+   "mid": 0.458,
    "share": 1.0,
    "reward": 2.6639839692910505,
    "fills": 0,
@@ -19967,16 +19967,16 @@
    "cash": 0.0,
    "mid": 0.3,
    "share": 1.0,
-   "reward": 1.5888320666385998,
+   "reward": 1.595774419271833,
    "fills": 0,
    "q": "Will DJ Khaled perform at Coachella 2027?"
   },
   "0x8347207684579486b7219d6ffc9a6ea9abf1607f36895c20f3065d7b50a8cefe": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.61,
+   "mid": 0.615,
    "share": 1.0,
-   "reward": 38.2701275195754,
+   "reward": 38.61724515123708,
    "fills": 0,
    "q": "Aleksandar Vu\u010di\u0107 arrested by June 30, 2027?"
   },
@@ -19994,7 +19994,7 @@
    "cash": 0.0,
    "mid": 0.52,
    "share": 1.0,
-   "reward": 29.138985889735316,
+   "reward": 29.486103521396988,
    "fills": 0,
    "q": "Will Robert F. Kennedy Jr. leave the Trump administration before 2028?"
   },
@@ -20093,7 +20093,7 @@
    "cash": 0.0,
    "mid": 0.62,
    "share": 1.0,
-   "reward": 14.037734019699688,
+   "reward": 14.384851651361359,
    "fills": 0,
    "q": "Gemini Helix released by December 15, 2026?"
   },
@@ -20120,7 +20120,7 @@
    "cash": 0.0,
    "mid": 0.645,
    "share": 1.0,
-   "reward": 26.08268416148807,
+   "reward": 26.429801793149743,
    "fills": 0,
    "q": "Next Mythos Model (5.3+) released by January 31, 2027?"
   },
@@ -20165,16 +20165,16 @@
    "cash": 0.0,
    "mid": 0.35,
    "share": 1.0,
-   "reward": 22.30753869442753,
+   "reward": 22.58106303540093,
    "fills": 0,
    "q": "Will J.D. Vance win the South Carolina Republican primary?"
   },
   "0xb57a1b17f61d4f63a74ab7a70fab1c94c7d4e577bc53c8581a5723b0b47addd2": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.515,
+   "mid": 0.535,
    "share": 1.0,
-   "reward": 24.153806586044194,
+   "reward": 24.500924217705865,
    "fills": 0,
    "q": "Next Gemini Hydrogen (4.1+) released by December 31, 2026?"
   },
@@ -20201,7 +20201,7 @@
    "cash": 0.0,
    "mid": 0.8049999999999999,
    "share": 1.0,
-   "reward": 18.069678532776177,
+   "reward": 18.416796164437848,
    "fills": 0,
    "q": "Next Fable Model (5.3+) released by February 28, 2027?"
   },
@@ -20227,8 +20227,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.24,
-   "share": 1.0,
-   "reward": 11.714136922311333,
+   "share": 0.2731975428386685,
+   "reward": 12.024902813777054,
    "fills": 0,
    "q": "Will Bangladesh join the Mecca Agreement by December 31, 2027?"
   },
@@ -20253,9 +20253,9 @@
   "0xa62690969cf4009357575afd979ec3bace61c2fbd9cdd3c4ebb0ae4c6d2cbbcc": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.475,
+   "mid": 0.495,
    "share": 1.0,
-   "reward": 29.78179283628309,
+   "reward": 31.111247924577306,
    "fills": 0,
    "q": "Will there be no next Gemini Carbon model (4.1+) release by December 31, 2026?"
   },
@@ -20271,9 +20271,9 @@
   "0x864c198d5376b8a58f7863a8f6318458950444eb1a46647097717ba002006f79": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.31,
+   "mid": 0.305,
    "share": 1.0,
-   "reward": 5.74437884611112,
+   "reward": 6.084554125139559,
    "fills": 0,
    "q": "Will Strait of Hormuz traffic return to normal in August 2027?"
   },
@@ -20290,8 +20290,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.12000000000000001,
-   "share": 0.0320746857076785,
-   "reward": 0.615406726470543,
+   "share": null,
+   "reward": 0.6184293752466659,
    "fills": 0,
    "q": "Will the next Gemini model family be named Gemini Neon?"
   },
@@ -20300,7 +20300,7 @@
    "cash": 0.0,
    "mid": 0.28,
    "share": 1.0,
-   "reward": 1.5402669569711995,
+   "reward": 1.8665575307331703,
    "fills": 0,
    "q": "Will the next Gemini model family be named Gemini Helix?"
   }
@@ -86438,17 +86438,30 @@
    "w": 2991162
   },
   {
-   "ts": "2026-11-14T23:16:40.450242+00:00",
-   "dt_h": 0.119,
-   "reward_tick": 5.8903,
-   "reward_total": 52868.38,
+   "ts": "2026-11-14T23:19:40.312124+00:00",
+   "dt_h": 0.17,
+   "reward_tick": 8.44,
+   "reward_total": 52870.93,
    "mm_value": -680.26,
-   "net": 52188.13,
+   "net": 52190.68,
    "avg_share": 0.981,
    "n_markets": 53,
    "fills_total": 659,
    "rebalanced": false,
    "w": 2991163
+  },
+  {
+   "ts": "2026-11-14T23:26:40.269510+00:00",
+   "dt_h": 0.119,
+   "reward_tick": 5.8339,
+   "reward_total": 52876.77,
+   "mm_value": -680.26,
+   "net": 52196.51,
+   "avg_share": 0.9857,
+   "n_markets": 53,
+   "fills_total": 659,
+   "rebalanced": false,
+   "w": 2991164
   }
  ],
  "fills": [
@@ -92384,8 +92397,8 @@
    "ledger": "v4"
   }
  ],
- "reward_total": 52868.38228682137,
- "last_ts": 1794698200.450242,
+ "reward_total": 52876.7659919259,
+ "last_ts": 1794698800.2695096,
  "chosen_at": 1791639880.921448,
  "rebalances": [
   {
@@ -92396,7 +92409,7 @@
   }
  ],
  "last_tick": {
-  "ts": "2026-11-14T23:16:40.450242+00:00",
+  "ts": "2026-11-14T23:26:40.269510+00:00",
   "dt_h": 0.017,
   "markets": [
    {
@@ -92415,7 +92428,7 @@
    },
    {
     "q": "Will Claude Opus 5.6+ debut at an output token pri",
-    "mid": 0.525,
+    "mid": 0.56,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -92446,12 +92459,12 @@
     "q": "Will GPT Astra's output price be at or below $30 i",
     "mid": 0.495,
     "share": 1.0,
-    "earned": 0.0279,
+    "earned": 0.0277,
     "inv": 0.0
    },
    {
     "q": "Will Rui Costa be the next Brazilian Minister of D",
-    "mid": 0.27,
+    "mid": 0.274,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -92460,14 +92473,14 @@
     "q": "Will the Ornn H200 Index hit $5.00 (LOW) by Decemb",
     "mid": 0.455,
     "share": 1.0,
-    "earned": 0.0279,
+    "earned": 0.0277,
     "inv": 0.0
    },
    {
     "q": "Will Hugo Motta be the next President of Brazil's ",
     "mid": 0.64,
     "share": 1.0,
-    "earned": 0.0216,
+    "earned": 0.0215,
     "inv": 0.0
    },
    {
@@ -92481,19 +92494,19 @@
     "q": "Will Lexi Stephens come in third-place on The Voic",
     "mid": 0.135,
     "share": 1.0,
-    "earned": 0.0105,
+    "earned": 0.0104,
     "inv": 0.0
    },
    {
     "q": "Will Ferryn & Brinkley come in third-place on The ",
-    "mid": 0.126,
+    "mid": 0.141,
     "share": 1.0,
-    "earned": 0.0098,
+    "earned": 0.0083,
     "inv": 0.0
    },
    {
     "q": "Will Workin' Man: Willie Sings Merle - Willie Nels",
-    "mid": 0.44,
+    "mid": 0.425,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -92509,19 +92522,19 @@
     "q": "Will Kewan Lacy be the 2026 D1 Rushing Yards Leade",
     "mid": 0.398,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0451,
     "inv": 0.0
    },
    {
     "q": "Will House of the Dragon win Best Television Serie",
-    "mid": 0.385,
+    "mid": 0.4,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will Paradise win Best Television Series \u2013 Drama a",
-    "mid": 0.41,
+    "mid": 0.43,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -92542,14 +92555,14 @@
    },
    {
     "q": "Will BERNARR. - Durand Bernarr win Best Progressiv",
-    "mid": 0.4,
+    "mid": 0.395,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will Metamorfosis - Yahritza Y Su Esencia win Best",
-    "mid": 0.38,
+    "mid": 0.425,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -92577,7 +92590,7 @@
    },
    {
     "q": "Will Danceteria - Madonna win Best Dance Pop Recor",
-    "mid": 0.445,
+    "mid": 0.44,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -92591,7 +92604,7 @@
    },
    {
     "q": "Will Do Not Disturb - Young Miko win Best Musica U",
-    "mid": 0.405,
+    "mid": 0.36,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -92612,14 +92625,14 @@
    },
    {
     "q": "Will HOPE!! - Angelique Kidjo win Best Global Musi",
-    "mid": 0.435,
+    "mid": 0.445,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will M$NEY - ASAKE win Best Global Music Album at ",
-    "mid": 0.481,
+    "mid": 0.458,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -92640,65 +92653,65 @@
    },
    {
     "q": "Aleksandar Vu\u010di\u0107 arrested by June 30, 2027?",
-    "mid": 0.61,
+    "mid": 0.615,
     "share": 1.0,
-    "earned": 0.0348,
+    "earned": 0.0347,
     "inv": 0.0
    },
    {
     "q": "Next Mythos Model (5.3+) released by January 31, 2",
     "mid": 0.645,
     "share": 1.0,
-    "earned": 0.0348,
+    "earned": 0.0347,
     "inv": 0.0
    },
    {
     "q": "Will J.D. Vance win the South Carolina Republican ",
     "mid": 0.35,
     "share": 1.0,
-    "earned": 0.0272,
+    "earned": 0.0298,
     "inv": 0.0
    },
    {
     "q": "Next Gemini Hydrogen (4.1+) released by December 3",
-    "mid": 0.515,
+    "mid": 0.535,
     "share": 1.0,
-    "earned": 0.0348,
+    "earned": 0.0347,
     "inv": 0.0
    },
    {
     "q": "Will Sweet Nuthins - Kehlani feat. Leon Thomas win",
-    "mid": 0.475,
+    "mid": 0.48,
     "share": 1.0,
-    "earned": 0.0474,
+    "earned": 0.0471,
     "inv": 0.0
    },
    {
     "q": "Next Fable Model (5.3+) released by February 28, 2",
     "mid": 0.805,
     "share": 1.0,
-    "earned": 0.0348,
+    "earned": 0.0347,
     "inv": 0.0
    },
    {
     "q": "Will Robert F. Kennedy Jr. leave the Trump adminis",
     "mid": 0.52,
     "share": 1.0,
-    "earned": 0.0348,
+    "earned": 0.0347,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn A100 Index be between $0.75 and $1.0",
-    "mid": 0.28,
+    "mid": 0.29,
     "share": 1.0,
     "earned": 0.0021,
     "inv": 0.0
    },
    {
     "q": "Will there be no next Gemini Carbon model (4.1+) r",
-    "mid": 0.475,
+    "mid": 0.495,
     "share": 1.0,
-    "earned": 0.1331,
+    "earned": 0.1359,
     "inv": 0.0
    },
    {
@@ -92712,105 +92725,69 @@
     "q": "Gemini Helix released by December 15, 2026?",
     "mid": 0.62,
     "share": 1.0,
-    "earned": 0.0348,
+    "earned": 0.0347,
     "inv": 0.0
    },
    {
     "q": "Will Strait of Hormuz traffic return to normal in ",
-    "mid": 0.31,
+    "mid": 0.305,
     "share": 1.0,
-    "earned": 0.0341,
+    "earned": 0.034,
     "inv": 0.0
    },
    {
     "q": "Will GEN be number 1 on the end of year Global Pow",
-    "mid": 0.435,
+    "mid": 0.415,
     "share": 1.0,
-    "earned": 0.1045,
+    "earned": 0.1026,
     "inv": 0.0
    },
    {
     "q": "Will BLG be number 1 on the end of year Global Pow",
-    "mid": 0.564,
+    "mid": 0.573,
     "share": 1.0,
-    "earned": 0.1045,
+    "earned": 0.1054,
     "inv": 0.0
    },
    {
     "q": "Will primmie play for Paper Rex in 2027?",
-    "mid": 0.623,
+    "mid": 0.631,
     "share": 1.0,
-    "earned": 0.0327,
+    "earned": 0.0326,
     "inv": 0.0
    },
    {
     "q": "Will Bangladesh join the Mecca Agreement by Decemb",
     "mid": 0.24,
-    "share": 1.0,
-    "earned": 0.0348,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the next Gemini model family be named Gemini ",
-    "mid": 0.12,
-    "share": 0.0321,
-    "earned": 0.0003,
+    "share": 0.2732,
+    "earned": 0.0095,
     "inv": 0.0
    },
    {
     "q": "Will the next Gemini model family be named Gemini ",
     "mid": 0.28,
     "share": 1.0,
-    "earned": 0.0327,
+    "earned": 0.0326,
+    "inv": 0.0
+   },
+   {
+    "q": "Will the Republicans win South Dakota in the 2028 ",
+    "mid": 0.54,
+    "share": 1.0,
+    "earned": 0.0,
     "inv": 0.0
    }
   ],
-  "reward_tick": 0.8643,
-  "reward_total": 52868.38,
+  "reward_tick": 0.8842,
+  "reward_total": 52876.77,
   "mm_value": -680.26,
-  "net": 52188.13,
-  "avg_share": 0.981,
+  "net": 52196.51,
+  "avg_share": 0.9857,
   "n_markets": 53,
   "fills_total": 659,
   "rebalanced": false
  },
  "reviews": [
-  {
-   "ts": "2026-10-24T22:02:55.674986+00:00",
-   "swapped": 14,
-   "out": [
-    "Will PP win the most seats in Huelva in the 2026 S",
-    "Will Nigeria win AFCON 2027 qualifying Group L?",
-    "Will Vox receive between 18% and 20% of the vote i",
-    "Will Guinea-Bissau win AFCON 2027 qualifying Group",
-    "Will Trump's approval rating hit 40% by June 30, 2",
-    "Will Podemos win exactly 1 seat in the 2026 Spanis",
-    "Will the Ornn B200 Index hit $5.50 (LOW) by Decemb",
-    "Will PSOE win the most seats in Santa Cruz de Tene",
-    "Will PP win the most seats in Santa Cruz de Teneri",
-    "Will zekken play for MIBR in 2027?",
-    "Will Labor hold the most seats in the New South Wa",
-    "Will Jude Bellingham attend the 2026 Ballon d'Or c",
-    "Will GPT Astra's output price be at or above $60 i",
-    "Will primmie play for FULL SENSE in 2027?"
-   ],
-   "in": [
-    "Will Elon Musk post 1000+ tweets in November 2026?",
-    "Will the Ornn H200 Index hit $4.00 (LOW) by Decemb",
-    "Will the highest score achieved by an OpenAI model",
-    "Will OpenAI's frontier output token price be at or",
-    "Will Trump's approval rating hit 42% by June 30, 2",
-    "Will Isamaa win the most seats in the 2027 Estonia",
-    "Will primmie play for Rex Regum Qeon in 2027?",
-    "Will Vox win the Ceuta seat in the 2026 Spanish ge",
-    "Will the total domestic gross for \"You Can See Eve",
-    "Will Michael Olise attend the 2026 Ballon d'Or cer",
-    "Will Yashar win 16-18% of the vote in the 2026 Kne",
-    "Will there be no next GPT Terra model (5.7+) relea",
-    "Will Palmeiras win the 2026 Copa do Brasil?",
-    "Will Yashar win less than 16% of the vote in the 2"
-   ]
-  },
   {
    "ts": "2026-10-24T23:04:07.747180+00:00",
    "swapped": 15,
@@ -101934,7 +101911,17 @@
     "Will the next Gemini model family be named Gemini ",
     "Will the next Gemini model family be named Gemini "
    ]
+  },
+  {
+   "ts": "2026-11-14T23:26:40.269510+00:00",
+   "swapped": 1,
+   "out": [
+    "Will the next Gemini model family be named Gemini "
+   ],
+   "in": [
+    "Will the Republicans win South Dakota in the 2028 "
+   ]
   }
  ],
- "reviewed_at": 1794695190.341832
+ "reviewed_at": 1794698800.2695096
 }

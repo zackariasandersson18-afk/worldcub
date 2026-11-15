@@ -143,7 +143,7 @@
    "question": "Will Hugo Motta be the next President of Brazil's Chamber of Deputies?",
    "yes": "75372587784179099839077739317967397987385148374826873326129744295721345165138",
    "no": "21028925596279085381338873490840285166300563621974644800532841649202947417175",
-   "rate": 31.0,
+   "rate": 30.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -499,21 +499,6 @@
    "rate0": 50.0
   },
   {
-   "cond": "0xef5f5b9993b3d8be55730c7800014c20c09c662f3c1023233cc4f5ec8d6aca0a",
-   "question": "Will the Ornn A100 Index be between $0.75 and $1.00 on December 31, 2026?",
-   "yes": "24033254451567682036077190541785698427639440206569391715225767818933599288263",
-   "no": "33559504541050885848891072942090521690947420919929235914129104249949629468439",
-   "rate": 3.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.700000000000003,
-   "est_reward_day": 72.0,
-   "end": "2027-01-01T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 72.0
-  },
-  {
    "cond": "0xfe8e8afc3842b7db979a1f3c05f4613864ad1329798b5f9060467df1ecc1c029",
    "question": "Will Trump's approval rating hit 41% by June 30, 2027?",
    "yes": "55181107977408208850305212932119064602551994679691338778755197281335257454229",
@@ -709,21 +694,6 @@
    "rate0": 40.0
   },
   {
-   "cond": "0x0a65fe87594a6f4e0db37c9163b38587a05b9467a20f009ed8f7ac638d9a3293",
-   "question": "Will Jensen Huang found a new company next?",
-   "yes": "74670630322197431412618047409378361319954589448654225386298055931657225867852",
-   "no": "61451165843798903384092430262262922870905545951486820351396754921690660559726",
-   "rate": 30.0,
-   "v": 4.5,
-   "min_size": 20.0,
-   "d": 0.0225,
-   "collateral": 19.1,
-   "est_reward_day": 52.0,
-   "end": "2028-01-01T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 52.0
-  },
-  {
    "cond": "0x6808b35d1beddee1d37cf5999929a8c7866ac70a811c5dfba4d37e2f870361bf",
    "question": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait be 30+ on December 31?",
    "yes": "85816629718025268428147794699438805487669719350293802623119544134335689861592",
@@ -797,6 +767,36 @@
    "end": "2027-01-21T04:59:00Z",
    "share0": 1.0,
    "rate0": 103.0
+  },
+  {
+   "cond": "0xd5734dd2e09b67f3193f5c2d642f40a459a7923d979ed8dd9d50b5aa79e5437c",
+   "question": "Will the median home value in the US be between $403,000 and $407,000 on December 31?",
+   "yes": "99507712795652164179050193447669039181881719656945884181977166199531438030224",
+   "no": "58442307756839191199378229988220899897985293114785450542144170199125058321635",
+   "rate": 0.0,
+   "v": 4.5,
+   "min_size": 20.0,
+   "d": 0.0225,
+   "collateral": 19.1,
+   "est_reward_day": 82.0,
+   "end": "2027-01-11T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 82.0
+  },
+  {
+   "cond": "0x9beb023f95d83c9046eae91130938636d449beb93d18a1c537026c8531e83302",
+   "question": "Will South African inflation be greater than 5.0% in 2026?",
+   "yes": "54910771191607711444251656191873573102075130222151989688379848761975547811309",
+   "no": "50337778917490885509783924629662635770642580968707445173887589641222004875172",
+   "rate": 69.0,
+   "v": 4.5,
+   "min_size": 20.0,
+   "d": 0.0225,
+   "collateral": 19.1,
+   "est_reward_day": 69.0,
+   "end": "2027-01-21T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 69.0
   }
  ],
  "positions": {
@@ -905,8 +905,8 @@
   "0xd5734dd2e09b67f3193f5c2d642f40a459a7923d979ed8dd9d50b5aa79e5437c": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.425,
-   "share": null,
+   "mid": 0.38,
+   "share": 0.910112359550562,
    "reward": 20.331640453790783,
    "fills": 0,
    "q": "Will the median home value in the US be between $403,000 and $407,000 on Decembe"
@@ -1465,9 +1465,9 @@
   "0x9beb023f95d83c9046eae91130938636d449beb93d18a1c537026c8531e83302": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.27349999999999997,
-   "share": null,
-   "reward": 57.39083928142385,
+   "mid": 0.276,
+   "share": 1.0,
+   "reward": 57.5106564953201,
    "fills": 0,
    "q": "Will South African inflation be greater than 5.0% in 2026?"
   },
@@ -3313,7 +3313,7 @@
    "cash": -6.362151607500002,
    "mid": 0.385,
    "share": 1.0,
-   "reward": 380.33123121284774,
+   "reward": 380.65088679780564,
    "fills": 8,
    "q": "Will Trump's approval rating hit 35% by June 30, 2027?",
    "closed_at": 0.42
@@ -3911,7 +3911,7 @@
    "cash": -2.547350000000003,
    "mid": 0.4,
    "share": 1.0,
-   "reward": 276.3987360923661,
+   "reward": 276.718391677324,
    "fills": 7,
    "q": "Will Trump's approval rating hit 41% by June 30, 2027?",
    "closed_at": 0.41
@@ -4522,7 +4522,7 @@
   "0x5d15579a3a31d6220eb8d33d167788db82976f14c856768a5e37e51afdaeb279": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.4775,
+   "mid": 0.478,
    "share": 1.0,
    "reward": 17.59805527737572,
    "fills": 0,
@@ -12053,7 +12053,7 @@
    "cash": -0.34185,
    "mid": 0.43,
    "share": 1.0,
-   "reward": 682.1915047446118,
+   "reward": 682.5111603295696,
    "fills": 1,
    "q": "Will the Ornn H200 Index hit $5.00 (LOW) by December 31, 2026?",
    "closed_at": 0.85
@@ -15323,7 +15323,7 @@
    "cash": 0.0,
    "mid": 0.583,
    "share": 1.0,
-   "reward": 34.10741334395505,
+   "reward": 34.986466202589185,
    "fills": 0,
    "q": "Will South African inflation be between 4.7% and 5.0% in 2026?"
   },
@@ -15438,9 +15438,9 @@
   "0xef5f5b9993b3d8be55730c7800014c20c09c662f3c1023233cc4f5ec8d6aca0a": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.315,
-   "share": 0.3977668568415895,
-   "reward": 120.96819233941014,
+   "mid": 0.32,
+   "share": null,
+   "reward": 120.97353979680335,
    "fills": 0,
    "q": "Will the Ornn A100 Index be between $0.75 and $1.00 on December 31, 2026?"
   },
@@ -15593,7 +15593,7 @@
    "cash": 0.0,
    "mid": 0.47,
    "share": 0.8756476683937813,
-   "reward": 45.71165173170107,
+   "reward": 45.73264465677537,
    "fills": 0,
    "q": "Will any AI model reach 1580 Coding Arena Score by December 31, 2026?"
   },
@@ -15699,9 +15699,9 @@
   "0xa5cd730261cb4232d88ab842b37c38b6eb54087c86af84c935be7c9b490cdb8d": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.23,
+   "mid": 0.225,
    "share": 1.0,
-   "reward": 74.55062059090587,
+   "reward": 74.56660337015377,
    "fills": 0,
    "q": "Will the Ornn RTX 6000 Index be between $1.75 and $2.00 on December 31, 2026?"
   },
@@ -16025,7 +16025,7 @@
    "cash": 0.0,
    "mid": 0.48000000000000004,
    "share": 1.0,
-   "reward": 99.73508700008352,
+   "reward": 99.74307838970746,
    "fills": 0,
    "q": "Will Marine Le Pen hit 42% in any poll before the first round of the French pres"
   },
@@ -18003,9 +18003,9 @@
   "0x94160873b53243ddbaf3797af058c6341b89ca3df818801f3ac06991c56ed872": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.665,
+   "mid": 0.64,
    "share": 1.0,
-   "reward": 118.7405528616143,
+   "reward": 118.96491067263646,
    "fills": 0,
    "q": "Will Hugo Motta be the next President of Brazil's Chamber of Deputies?"
   },
@@ -18039,7 +18039,7 @@
   "0xe43ebfb9c7af7e7560cf67dffd4431864a59f9876e0bc057bddb846bdb612d68": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.27,
+   "mid": 0.2695,
    "share": 1.0,
    "reward": 76.87070843404608,
    "fills": 0,
@@ -19119,9 +19119,9 @@
   "0x0a65fe87594a6f4e0db37c9163b38587a05b9467a20f009ed8f7ac638d9a3293": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.265,
-   "share": 0.2965295065163275,
-   "reward": 16.396416477716738,
+   "mid": 0.28,
+   "share": null,
+   "reward": 16.418093898875576,
    "fills": 0,
    "q": "Will Jensen Huang found a new company next?"
   },
@@ -19614,7 +19614,7 @@
   "0x11f0d30a34d3dc66510694aeb5f8ff233617706430b8e6e178750e02951a5408": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.365,
+   "mid": 0.36,
    "share": 1.0,
    "reward": 7.8959042222080384,
    "fills": 0,
@@ -19623,7 +19623,7 @@
   "0xde3b2838acf91270a03d4b4a442bbdcb618bcddb9f8ed75c7b771ecf08ccf7c2": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.41500000000000004,
+   "mid": 0.41000000000000003,
    "share": 1.0,
    "reward": 8.511376862470751,
    "fills": 0,
@@ -19776,7 +19776,7 @@
   "0xfac681446686ac04394df2ae509bb674ccbde10713a16489b1e52622442b45f4": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.445,
+   "mid": 0.44,
    "share": 1.0,
    "reward": 11.031408953961954,
    "fills": 0,
@@ -19848,7 +19848,7 @@
   "0xe1ea9572020e3fac2f171c823ea36517f4c780ae62cd4be1cf67ff2cd09da456": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.385,
+   "mid": 0.38,
    "share": 1.0,
    "reward": 4.548629093992491,
    "fills": 0,
@@ -19902,7 +19902,7 @@
   "0x2a256c18683ff955f02072cd9969a52d5770b9301e3e557065330442d1c067f0": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.45,
+   "mid": 0.445,
    "share": 1.0,
    "reward": 2.1374141492860184,
    "fills": 0,
@@ -19911,7 +19911,7 @@
   "0x1b7f169f8274f2030362feea2c043b1760a7071d3b9511f76dfad201d096d0f6": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.4945,
+   "mid": 0.4965,
    "share": 1.0,
    "reward": 2.6639839692910505,
    "fills": 0,
@@ -19967,7 +19967,7 @@
    "cash": 0.0,
    "mid": 0.3,
    "share": 1.0,
-   "reward": 2.261975858032149,
+   "reward": 2.2699672476560964,
    "fills": 0,
    "q": "Will DJ Khaled perform at Coachella 2027?"
   },
@@ -19976,7 +19976,7 @@
    "cash": 0.0,
    "mid": 0.5549999999999999,
    "share": 1.0,
-   "reward": 71.2725676516381,
+   "reward": 71.67213713283543,
    "fills": 0,
    "q": "Aleksandar Vu\u010di\u0107 arrested by June 30, 2027?"
   },
@@ -20174,7 +20174,7 @@
    "cash": 0.0,
    "mid": 0.49,
    "share": 1.0,
-   "reward": 57.776272419237955,
+   "reward": 58.175841900435294,
    "fills": 0,
    "q": "Next Gemini Hydrogen (4.1+) released by December 31, 2026?"
   },
@@ -20318,7 +20318,7 @@
    "cash": 0.0,
    "mid": 0.7,
    "share": 1.0,
-   "reward": 22.811636343156877,
+   "reward": 23.131291928114745,
    "fills": 0,
    "q": "0 ships transit Hormuz on any date by March 31, 2027?"
   },
@@ -20336,7 +20336,7 @@
    "cash": 0.0,
    "mid": 0.33999999999999997,
    "share": 1.0,
-   "reward": 21.595467667999113,
+   "reward": 21.91512325295698,
    "fills": 0,
    "q": "0 ships transit Bab el-Mandeb on any date by March 31, 2027?"
   },
@@ -20345,7 +20345,7 @@
    "cash": 0.0,
    "mid": 0.535,
    "share": 1.0,
-   "reward": 21.54011133224878,
+   "reward": 21.85976691720665,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Strait of Hormuz be 4+ on Decemb"
   },
@@ -20363,7 +20363,7 @@
    "cash": 0.0,
    "mid": 0.545,
    "share": 1.0,
-   "reward": 21.487889535338812,
+   "reward": 21.80754512029668,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 38+ on December 31"
   },
@@ -20372,34 +20372,34 @@
    "cash": 0.0,
    "mid": 0.535,
    "share": 1.0,
-   "reward": 19.912803005068394,
+   "reward": 20.232458590026262,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Strait of Hormuz be 5+ on Decemb"
   },
   "0x11d5e82e159fe1e32c728db028b99f6c832215a46e434f4bfb65128cdee2b3c4": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.53,
+   "mid": 0.525,
    "share": 1.0,
-   "reward": 19.912803005068394,
+   "reward": 20.232458590026262,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Strait of Hormuz be 6+ on Decemb"
   },
   "0xab3305643ef7359a90326b1f9ca37210bef91fd09d5ee336ed1e34b98d088599": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.495,
+   "mid": 0.485,
    "share": 1.0,
-   "reward": 18.523370967639806,
+   "reward": 18.843026552597674,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 46+ on December 31"
   },
   "0x2bc2414f3e6d2171452339f8ea2ed5eaf5ad22e94a89f6fd08ef31db2dd43e50": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.755,
+   "mid": 0.75,
    "share": 1.0,
-   "reward": 19.912803005068394,
+   "reward": 20.232458590026262,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Malacca Strait be 200+ on Decemb"
   },
@@ -20408,16 +20408,16 @@
    "cash": 0.0,
    "mid": 0.5449999999999999,
    "share": 1.0,
-   "reward": 18.19540498665085,
+   "reward": 18.515060571608718,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Strait of Hormuz be 3+ on Decemb"
   },
   "0x98d60b024f30f06c80e1eebb49db7b9bb12895ee0b4c252a2e384c42deaeac9a": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.48000000000000004,
+   "mid": 0.47500000000000003,
    "share": 1.0,
-   "reward": 18.19523823956648,
+   "reward": 18.514893824524346,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Panama Canal be 27+ on December "
   },
@@ -20426,7 +20426,7 @@
    "cash": 0.0,
    "mid": 0.47500000000000003,
    "share": 1.0,
-   "reward": 18.195353854806328,
+   "reward": 18.515009439764196,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Strait of Hormuz reach 10+ by De"
   },
@@ -20435,7 +20435,7 @@
    "cash": 0.0,
    "mid": 0.535,
    "share": 1.0,
-   "reward": 11.272046729370395,
+   "reward": 11.59170231432826,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait be 30+ on D"
   },
@@ -20444,7 +20444,7 @@
    "cash": 0.0,
    "mid": 0.48000000000000004,
    "share": 1.0,
-   "reward": 6.472443245406505,
+   "reward": 6.7920988303643695,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Panama Canal be 25+ on December "
   },
@@ -20453,7 +20453,7 @@
    "cash": 0.0,
    "mid": 0.435,
    "share": 1.0,
-   "reward": 4.777958939252078,
+   "reward": 5.097614524209942,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait be 32+ on D"
   }
@@ -87852,17 +87852,30 @@
    "w": 2991259
   },
   {
-   "ts": "2026-11-15T15:26:00.073818+00:00",
-   "dt_h": 0.119,
-   "reward_tick": 4.5673,
-   "reward_total": 53436.75,
+   "ts": "2026-11-15T15:29:59.962315+00:00",
+   "dt_h": 0.187,
+   "reward_tick": 7.1597,
+   "reward_total": 53439.34,
    "mm_value": -680.46,
-   "net": 52756.29,
-   "avg_share": 0.972,
+   "net": 52758.88,
+   "avg_share": 0.9662,
    "n_markets": 53,
    "fills_total": 659,
    "rebalanced": false,
    "w": 2991260
+  },
+  {
+   "ts": "2026-11-15T15:37:30.529882+00:00",
+   "dt_h": 0.127,
+   "reward_tick": 4.9441,
+   "reward_total": 53444.28,
+   "mm_value": -680.46,
+   "net": 52763.83,
+   "avg_share": 0.9958,
+   "n_markets": 53,
+   "fills_total": 659,
+   "rebalanced": false,
+   "w": 2991261
   }
  ],
  "fills": [
@@ -93798,8 +93811,8 @@
    "ledger": "v4"
   }
  ],
- "reward_total": 53436.74582469282,
- "last_ts": 1794756360.0738184,
+ "reward_total": 53444.28231984517,
+ "last_ts": 1794757050.529882,
  "chosen_at": 1791639880.921448,
  "rebalances": [
   {
@@ -93810,8 +93823,8 @@
   }
  ],
  "last_tick": {
-  "ts": "2026-11-15T15:26:00.073818+00:00",
-  "dt_h": 0.017,
+  "ts": "2026-11-15T15:37:30.529882+00:00",
+  "dt_h": 0.042,
   "markets": [
    {
     "q": "Will Chicago Bears finish the 2026-27 NFL regular ",
@@ -93822,7 +93835,7 @@
    },
    {
     "q": "Will Denver Broncos finish the 2026-27 NFL regular",
-    "mid": 0.477,
+    "mid": 0.478,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -93853,7 +93866,7 @@
     "q": "Will Marine Le Pen hit 42% in any poll before the ",
     "mid": 0.48,
     "share": 1.0,
-    "earned": 0.0007,
+    "earned": 0.0017,
     "inv": 0.0
    },
    {
@@ -93867,21 +93880,21 @@
     "q": "Will the Ornn H200 Index hit $5.00 (LOW) by Decemb",
     "mid": 0.43,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0695,
     "inv": 0.0
    },
    {
     "q": "Will Hugo Motta be the next President of Brazil's ",
-    "mid": 0.665,
+    "mid": 0.64,
     "share": 1.0,
-    "earned": 0.0215,
+    "earned": 0.0521,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn RTX 6000 Index be between $1.75 and ",
-    "mid": 0.23,
+    "mid": 0.225,
     "share": 1.0,
-    "earned": 0.0014,
+    "earned": 0.0035,
     "inv": 0.0
    },
    {
@@ -93900,14 +93913,14 @@
    },
    {
     "q": "Will House of the Dragon win Best Television Serie",
-    "mid": 0.365,
+    "mid": 0.36,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will Paradise win Best Television Series \u2013 Drama a",
-    "mid": 0.415,
+    "mid": 0.41,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -93935,7 +93948,7 @@
    },
    {
     "q": "Will Metamorfosis - Yahritza Y Su Esencia win Best",
-    "mid": 0.445,
+    "mid": 0.44,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -93977,7 +93990,7 @@
    },
    {
     "q": "Will Do Not Disturb - Young Miko win Best Musica U",
-    "mid": 0.385,
+    "mid": 0.38,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -93998,14 +94011,14 @@
    },
    {
     "q": "Will HOPE!! - Angelique Kidjo win Best Global Musi",
-    "mid": 0.45,
+    "mid": 0.445,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will M$NEY - ASAKE win Best Global Music Album at ",
-    "mid": 0.494,
+    "mid": 0.496,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -94021,196 +94034,174 @@
     "q": "Will DJ Khaled perform at Coachella 2027?",
     "mid": 0.3,
     "share": 1.0,
-    "earned": 0.0007,
+    "earned": 0.0017,
     "inv": 0.0
    },
    {
     "q": "Aleksandar Vu\u010di\u0107 arrested by June 30, 2027?",
     "mid": 0.555,
     "share": 1.0,
-    "earned": 0.0347,
+    "earned": 0.0868,
     "inv": 0.0
    },
    {
     "q": "Next Gemini Hydrogen (4.1+) released by December 3",
     "mid": 0.49,
     "share": 1.0,
-    "earned": 0.0347,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the Ornn A100 Index be between $0.75 and $1.0",
-    "mid": 0.315,
-    "share": 0.3978,
-    "earned": 0.0008,
+    "earned": 0.0868,
     "inv": 0.0
    },
    {
     "q": "Will Trump's approval rating hit 41% by June 30, 2",
     "mid": 0.4,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0695,
     "inv": 0.0
    },
    {
     "q": "0 ships transit Hormuz on any date by March 31, 20",
     "mid": 0.7,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0695,
     "inv": 0.0
    },
    {
     "q": "0 ships transit Bab el-Mandeb on any date by March",
     "mid": 0.34,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0695,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the St",
     "mid": 0.535,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0695,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
     "mid": 0.545,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0695,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the St",
     "mid": 0.535,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0695,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the St",
-    "mid": 0.53,
+    "mid": 0.525,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0695,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
-    "mid": 0.495,
+    "mid": 0.485,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0695,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ma",
-    "mid": 0.755,
+    "mid": 0.75,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0695,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the St",
     "mid": 0.545,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0695,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Pa",
-    "mid": 0.48,
+    "mid": 0.475,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0695,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the St",
     "mid": 0.475,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0695,
     "inv": 0.0
    },
    {
     "q": "Will any AI model reach 1580 Coding Arena Score by",
     "mid": 0.47,
     "share": 0.8756,
-    "earned": 0.0018,
-    "inv": 0.0
-   },
-   {
-    "q": "Will Jensen Huang found a new company next?",
-    "mid": 0.265,
-    "share": 0.2965,
-    "earned": 0.0062,
+    "earned": 0.0046,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ba",
     "mid": 0.535,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0695,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Pa",
     "mid": 0.48,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0695,
     "inv": 0.0
    },
    {
     "q": "Will Trump's approval rating hit 35% by June 30, 2",
     "mid": 0.385,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0695,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ba",
     "mid": 0.435,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0695,
     "inv": 0.0
    },
    {
     "q": "Will South African inflation be between 4.7% and 5",
     "mid": 0.583,
     "share": 1.0,
-    "earned": 0.0764,
+    "earned": 0.191,
+    "inv": 0.0
+   },
+   {
+    "q": "Will the median home value in the US be between $4",
+    "mid": 0.38,
+    "share": 0.9101,
+    "earned": 0.0,
+    "inv": 0.0
+   },
+   {
+    "q": "Will South African inflation be greater than 5.0% ",
+    "mid": 0.276,
+    "share": 1.0,
+    "earned": 0.1198,
     "inv": 0.0
    }
   ],
-  "reward_tick": 0.6513,
-  "reward_total": 53436.75,
+  "reward_tick": 1.7289,
+  "reward_total": 53444.28,
   "mm_value": -680.46,
-  "net": 52756.29,
-  "avg_share": 0.972,
+  "net": 52763.83,
+  "avg_share": 0.9958,
   "n_markets": 53,
   "fills_total": 659,
   "rebalanced": false
  },
  "reviews": [
-  {
-   "ts": "2026-10-25T14:14:10.351135+00:00",
-   "swapped": 7,
-   "out": [
-    "Will the highest score achieved on Humanity\u2019s Last",
-    "Will GPT Astra's output price be at or above $60 i",
-    "Will Claude Fable's output price be at or below $4",
-    "Will Morena win the most seats in the 2027 Yucat\u00e1n",
-    "Will GPT Astra's output price be at or below $40 i",
-    "Will the Ornn H200 Index hit $3.50 (LOW) by Decemb",
-    "Will the Ornn H100 Index hit $3.50 (HIGH) by Decem"
-   ],
-   "in": [
-    "Will Trump's approval rating hit 34% by June 30, 2",
-    "Will Trump's approval rating hit 35% by June 30, 2",
-    "Will PP win the most seats in Cuenca in the 2026 S",
-    "Will Chronicle play for Team Vitality in 2027?",
-    "Will PP win the most seats in Huelva in the 2026 S",
-    "Will PSOE win the most seats in Huelva in the 2026",
-    "Will Ra'am win exactly 6 seats in the 2026 Knesset"
-   ]
-  },
   {
    "ts": "2026-10-25T15:14:18.122006+00:00",
    "swapped": 3,
@@ -103080,7 +103071,19 @@
    "in": [
     "Will South African inflation be between 4.7% and 5"
    ]
+  },
+  {
+   "ts": "2026-11-15T15:35:00.497892+00:00",
+   "swapped": 2,
+   "out": [
+    "Will the Ornn A100 Index be between $0.75 and $1.0",
+    "Will Jensen Huang found a new company next?"
+   ],
+   "in": [
+    "Will the median home value in the US be between $4",
+    "Will South African inflation be greater than 5.0% "
+   ]
   }
  ],
- "reviewed_at": 1794753261.6577964
+ "reviewed_at": 1794756900.4978924
 }

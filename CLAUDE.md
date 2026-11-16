@@ -20,6 +20,10 @@ Använd alltid Seedream 5.5 (`seedream-5-5` via APIMart) för alla bilder, om in
 
 AI-modellen ska vara kurvig: stor byst, smal midja, breda höfter och fylliga lår (som i helkroppsreferensen i grön Brasil-outfit).
 
+## Videomodell
+
+Använd alltid Wan 3.0 (`wan3.0-video` via APIMart) för alla videor, om inte användaren uttryckligen ber om en annan modell. Godkännandereglerna ovan gäller fortfarande.
+
 ## Spara på användningen
 
 Polla inte jobbstatus tätt. Skicka jobbet och kolla först efter 2–3 minuter (en kontroll i taget, gärna i bakgrunden), inte var några sekunder.

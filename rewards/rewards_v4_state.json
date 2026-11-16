@@ -679,21 +679,6 @@
    "rate0": 40.0
   },
   {
-   "cond": "0x45a8894313f8b6e3383acaecc0c3403e35e53a69ad7e2080fdd795cdc63a9281",
-   "question": "US confirms DeepSeek used Blackwell chips by March 31, 2027?",
-   "yes": "8378390814886292746146152128469790654064220790556648459482202259861273096791",
-   "no": "64348881081940136465808566466661952949529384463666350449107485791062075083663",
-   "rate": 50.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.700000000000003,
-   "est_reward_day": 50.0,
-   "end": "2027-04-01T03:59:00Z",
-   "share0": 1.0,
-   "rate0": 50.0
-  },
-  {
    "cond": "0x11d5e82e159fe1e32c728db028b99f6c832215a46e434f4bfb65128cdee2b3c4",
    "question": "Will the 7-day average ship traffic through the Strait of Hormuz be 6+ on December 31?",
    "yes": "86673964911383396166034782197445765861961531910962539881933281874123341827204",
@@ -769,21 +754,6 @@
    "rate0": 200.0
   },
   {
-   "cond": "0x98159a0f46f9adbce2a604fb7eda88fe7d5c2bebe5a31724d1b1859e8744e052",
-   "question": "Extended FDV above $50M one day after launch?",
-   "yes": "111431404076879234011087937518706326588963423182708764015445414835359854828933",
-   "no": "33706610322025610977184179921255270020211488414365573880340535464714485398135",
-   "rate": 80.0,
-   "v": 4.5,
-   "min_size": 20.0,
-   "d": 0.0225,
-   "collateral": 19.1,
-   "est_reward_day": 80.0,
-   "end": "2027-01-01T05:00:00Z",
-   "share0": 1.0,
-   "rate0": 80.0
-  },
-  {
    "cond": "0xfafaa706aa77ca7becd5741282e7455659580cbfe62a3881d5020b4b453d5753",
    "question": "Will Dune: Part Three win Best Sound at the 99th Academy Awards?",
    "yes": "109898412247292064922838917058658805859999305676958812260849603506639288583264",
@@ -797,6 +767,36 @@
    "end": "2027-03-14T23:59:00Z",
    "share0": 1.0,
    "rate0": 65.0
+  },
+  {
+   "cond": "0x5b00ce722b7d64f055834cb32352338a2403b25a1666cd167de286d8daf6f194",
+   "question": "Democratic trifecta odds dip to 50% by December 31?",
+   "yes": "106339516238487289317928441469645525948906032224680105422415427387269556098214",
+   "no": "80241150575677395227951075083750333218248090249613367064354260785112779142996",
+   "rate": 200.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.700000000000003,
+   "est_reward_day": 200.0,
+   "end": "2027-01-01T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 200.0
+  },
+  {
+   "cond": "0x5e2308501f28e574ca4478d2ebcdabd4ccac631c3db1c30ae5fa4e8a7cd9f47e",
+   "question": "Will South African inflation be between 4.7% and 5.0% in 2026?",
+   "yes": "107028333687669336034312843739051385389832352665578317459760936234132764773607",
+   "no": "51608721682495612047370945705512925710726403600935050310826500750141205623888",
+   "rate": 100.0,
+   "v": 4.5,
+   "min_size": 20.0,
+   "d": 0.0225,
+   "collateral": 19.1,
+   "est_reward_day": 100.0,
+   "end": "2027-01-21T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 100.0
   }
  ],
  "positions": {
@@ -925,7 +925,7 @@
    "cash": 0.0,
    "mid": 0.748,
    "share": 1.0,
-   "reward": 312.1026499428155,
+   "reward": 312.35622352873804,
    "fills": 0,
    "q": "Will primmie play for Paper Rex in 2027?"
   },
@@ -1540,7 +1540,7 @@
    "cash": -9.03225,
    "mid": 0.75,
    "share": 1.0,
-   "reward": 209.82376816309727,
+   "reward": 210.11356654700867,
    "fills": 3,
    "q": "Will GPT Astra's output price be at or below $40 in 2026?",
    "closed_at": 0.27
@@ -1585,9 +1585,9 @@
   "0x0ce8bfcbda5a0ef4de7680d6839c887e0a1b2e1a33a4f8f9106b0821d5d7cf6c": {
    "inv": 0.0,
    "cash": 0.8999999999999986,
-   "mid": 0.48,
-   "share": 0.9135135135135152,
-   "reward": 562.529060106793,
+   "mid": 0.43499999999999994,
+   "share": 1.0,
+   "reward": 562.7526806058265,
    "fills": 2,
    "q": "Will GPT Astra's output price be at or below $30 in 2026?"
   },
@@ -3909,9 +3909,9 @@
   "0xfe8e8afc3842b7db979a1f3c05f4613864ad1329798b5f9060467df1ecc1c029": {
    "inv": 0.0,
    "cash": -2.547350000000003,
-   "mid": 0.385,
+   "mid": 0.38,
    "share": 1.0,
-   "reward": 296.13473662721105,
+   "reward": 296.2144311827867,
    "fills": 7,
    "q": "Will Trump's approval rating hit 41% by June 30, 2027?",
    "closed_at": 0.41
@@ -4128,7 +4128,7 @@
   "0xfafaa706aa77ca7becd5741282e7455659580cbfe62a3881d5020b4b453d5753": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.235,
+   "mid": 0.28500000000000003,
    "share": 1.0,
    "reward": 9.29485488192705,
    "fills": 0,
@@ -4522,7 +4522,7 @@
   "0x5d15579a3a31d6220eb8d33d167788db82976f14c856768a5e37e51afdaeb279": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.4785,
+   "mid": 0.478,
    "share": 1.0,
    "reward": 17.59805527737572,
    "fills": 0,
@@ -12025,7 +12025,7 @@
    "cash": 0.0,
    "mid": 0.54,
    "share": 1.0,
-   "reward": 682.6881777156474,
+   "reward": 682.9779760995589,
    "fills": 0,
    "q": "Will the Ornn H200 Index hit $8.00 (HIGH) by December 31, 2026?"
   },
@@ -12053,7 +12053,7 @@
    "cash": -0.34185,
    "mid": 0.48,
    "share": 1.0,
-   "reward": 727.1828708428657,
+   "reward": 727.4726692267772,
    "fills": 1,
    "q": "Will the Ornn H200 Index hit $5.00 (LOW) by December 31, 2026?",
    "closed_at": 0.85
@@ -15321,9 +15321,9 @@
   "0x5e2308501f28e574ca4478d2ebcdabd4ccac631c3db1c30ae5fa4e8a7cd9f47e": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.4645,
-   "share": null,
-   "reward": 36.889101102474456,
+   "mid": 0.3565,
+   "share": 1.0,
+   "reward": 37.09763340107911,
    "fills": 0,
    "q": "Will South African inflation be between 4.7% and 5.0% in 2026?"
   },
@@ -17249,7 +17249,7 @@
    "cash": 0.0,
    "mid": 0.51,
    "share": 1.0,
-   "reward": 26.453179880745868,
+   "reward": 27.003796810177622,
    "fills": 0,
    "q": "Will the South African Reserve Bank make no change to the repo rate at the March"
   },
@@ -18039,7 +18039,7 @@
   "0xe43ebfb9c7af7e7560cf67dffd4431864a59f9876e0bc057bddb846bdb612d68": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.32299999999999995,
+   "mid": 0.32349999999999995,
    "share": 1.0,
    "reward": 76.87070843404608,
    "fills": 0,
@@ -18968,7 +18968,7 @@
    "cash": 0.0,
    "mid": 0.2705,
    "share": 1.0,
-   "reward": 31.46065314371411,
+   "reward": 31.895350719581288,
    "fills": 0,
    "q": "Will UK GDP growth in Q4 2026 be negative?"
   },
@@ -19283,7 +19283,7 @@
    "cash": 0.0,
    "mid": 0.32,
    "share": 1.0,
-   "reward": 29.37217430794452,
+   "reward": 29.9083013181807,
    "fills": 0,
    "q": "Will UK GDP growth in Q4 2026 be between 0.2% and 0.3%?"
   },
@@ -19821,7 +19821,7 @@
   "0xfc6c7fa06f53201149e1f6c693525f0b999fe794d0d7686edab7d6b50128b579": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.495,
+   "mid": 0.475,
    "share": 1.0,
    "reward": 6.133938541542049,
    "fills": 0,
@@ -19848,7 +19848,7 @@
   "0xe1ea9572020e3fac2f171c823ea36517f4c780ae62cd4be1cf67ff2cd09da456": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.45,
+   "mid": 0.415,
    "share": 1.0,
    "reward": 4.548629093992491,
    "fills": 0,
@@ -19884,7 +19884,7 @@
   "0xfce6cbb1a0ba0141f842789f0b3b188d212b64417b73498131be483975365dfa": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.635,
+   "mid": 0.615,
    "share": 1.0,
    "reward": 3.84280738617829,
    "fills": 0,
@@ -19967,7 +19967,7 @@
    "cash": 0.0,
    "mid": 0.25,
    "share": 1.0,
-   "reward": 3.609021473286877,
+   "reward": 3.6162664328846628,
    "fills": 0,
    "q": "Will DJ Khaled perform at Coachella 2027?"
   },
@@ -20316,9 +20316,9 @@
   "0xf5f84fa4c62328a3afad1028b244e6aa8e3e827374e8b18a771f24bd9b94d03f": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.61,
+   "mid": 0.605,
    "share": 1.0,
-   "reward": 71.6536326788645,
+   "reward": 71.94343106277596,
    "fills": 0,
    "q": "0 ships transit Hormuz on any date by March 31, 2027?"
   },
@@ -20343,18 +20343,18 @@
   "0x52d3fe6349e30bb8dbca9c5485fa2a76dda92de75e7e17164473da99a01cafa8": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.48000000000000004,
+   "mid": 0.47500000000000003,
    "share": 1.0,
-   "reward": 69.3812578380689,
+   "reward": 69.67105622198036,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Strait of Hormuz be 4+ on Decemb"
   },
   "0xeac467bcba15da8ba27bdcac2a0dde4e1edf5fbe5ad5ffdb7ba54fe1cb78da44": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.54,
+   "mid": 0.505,
    "share": 1.0,
-   "reward": 40.25953798450103,
+   "reward": 40.39053501574774,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait be 22+ on D"
   },
@@ -20379,9 +20379,9 @@
   "0x11d5e82e159fe1e32c728db028b99f6c832215a46e434f4bfb65128cdee2b3c4": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.44,
-   "share": 1.0,
-   "reward": 44.70038835734408,
+   "mid": 0.4,
+   "share": 0.9255202628696612,
+   "reward": 44.88366849540604,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Strait of Hormuz be 6+ on Decemb"
   },
@@ -20397,18 +20397,18 @@
   "0x2bc2414f3e6d2171452339f8ea2ed5eaf5ad22e94a89f6fd08ef31db2dd43e50": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.585,
+   "mid": 0.56,
    "share": 1.0,
-   "reward": 36.82621218515835,
+   "reward": 37.004926913513756,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Malacca Strait be 200+ on Decemb"
   },
   "0x8d4b03bc93fa84c1fda0b25ee18b7ac1fee8a37f110230acac29cdcae6b8c169": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.485,
+   "mid": 0.44,
    "share": 1.0,
-   "reward": 68.7332071934549,
+   "reward": 68.99519081291967,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Strait of Hormuz be 3+ on Decemb"
   },
@@ -20469,9 +20469,9 @@
   "0x835c3c9a2a78640a2b6e1e8d64677c35f3ba1430525d4a08863982b6ccce386e": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.48,
+   "mid": 0.49,
    "share": 1.0,
-   "reward": 37.56660504713829,
+   "reward": 37.60282984512723,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait be 26+ on D"
   },
@@ -20523,9 +20523,9 @@
   "0xd7b639810b823140b574d19e3cf880a398503700dfc777a07357b0981d3b1c40": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.3825,
+   "mid": 0.379,
    "share": 1.0,
-   "reward": 3.663658099837806,
+   "reward": 3.6709030594355916,
    "fills": 0,
    "q": "Will Avigdor Lieberman be the next Israeli Minister of Defense?"
   },
@@ -20534,7 +20534,7 @@
    "cash": 0.0,
    "mid": 0.3,
    "share": 1.0,
-   "reward": 26.40400660933443,
+   "reward": 26.585130599279083,
    "fills": 0,
    "q": "Will the Central Bank of Chile make no change to the monetary policy rate at the"
   },
@@ -20659,8 +20659,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.745,
-   "share": 0.044435504516695354,
-   "reward": 2.6768728493070153,
+   "share": null,
+   "reward": 2.6907767240212097,
    "fills": 0,
    "q": "Extended FDV above $50M one day after launch?"
   },
@@ -20686,8 +20686,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.355,
-   "share": 0.5390176483095908,
-   "reward": 7.663438027022619,
+   "share": null,
+   "reward": 7.775319036708825,
    "fills": 0,
    "q": "US confirms DeepSeek used Blackwell chips by March 31, 2027?"
   },
@@ -20705,43 +20705,43 @@
    "cash": 0.0,
    "mid": 0.18,
    "share": 1.0,
-   "reward": 7.1540885944280594,
+   "reward": 7.516336574317373,
    "fills": 0,
    "q": "DOJ criminally charges Megaspeed by December 31, 2026?"
   },
   "0xf258329400a0c1e00cc6b530d697805792c9c2aecbb7c7245096491c77dad35f": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.3,
+   "mid": 0.25,
    "share": 1.0,
-   "reward": 7.783010393105174,
+   "reward": 8.145258372994489,
    "fills": 0,
    "q": "Nvidia hit with a BIS export-control penalty by March 31, 2027?"
   },
   "0xe4e3c6d800dddb8c456251d498bb48e566a6867a469e9d973e2e792c05410d8a": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.555,
+   "mid": 0.5800000000000001,
    "share": 1.0,
-   "reward": 4.190929551647939,
+   "reward": 4.308524542594678,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait be 24+ on D"
   },
   "0x8c91d20f1e8fefcec50e045f572084e7a825f402fd87895b9288dc2e2a24cd6a": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.415,
+   "mid": 0.39,
    "share": 1.0,
-   "reward": 3.1647342639940748,
+   "reward": 3.454532647905525,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 44+ on December 31"
   },
   "0xd65e7a4b8a59c9d5ea28f43fe5a6cb0f7eb407c517c6be6e649c951204c56cb2": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.55,
+   "mid": 0.5,
    "share": 1.0,
-   "reward": 2.831992079524947,
+   "reward": 2.9327200361862205,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Malacca Strait be 220+ on Decemb"
   },
@@ -20750,9 +20750,18 @@
    "cash": 0.0,
    "mid": 0.63,
    "share": 1.0,
-   "reward": 5.098839432781613,
+   "reward": 6.547831352338866,
    "fills": 0,
    "q": "Democratic trifecta odds hit 60% by December 31?"
+  },
+  "0x5b00ce722b7d64f055834cb32352338a2403b25a1666cd167de286d8daf6f194": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.25,
+   "share": 1.0,
+   "reward": 0.027599651426736194,
+   "fills": 0,
+   "q": "Democratic trifecta odds dip to 50% by December 31?"
   }
  },
  "history": [
@@ -90671,17 +90680,30 @@
    "w": 2991453
   },
   {
-   "ts": "2026-11-16T23:47:54.416942+00:00",
-   "dt_h": 0.145,
-   "reward_tick": 6.1679,
-   "reward_total": 54580.29,
+   "ts": "2026-11-16T23:49:20.267679+00:00",
+   "dt_h": 0.169,
+   "reward_tick": 7.2552,
+   "reward_total": 54581.38,
    "mm_value": -678.16,
-   "net": 53902.13,
-   "avg_share": 0.9633,
+   "net": 53903.22,
+   "avg_share": 0.9628,
    "n_markets": 53,
    "fills_total": 659,
    "rebalanced": false,
    "w": 2991454
+  },
+  {
+   "ts": "2026-11-16T23:58:20.381452+00:00",
+   "dt_h": 0.153,
+   "reward_tick": 6.4705,
+   "reward_total": 54587.85,
+   "mm_value": -678.16,
+   "net": 53909.69,
+   "avg_share": 0.9982,
+   "n_markets": 53,
+   "fills_total": 659,
+   "rebalanced": false,
+   "w": 2991455
   }
  ],
  "fills": [
@@ -96617,8 +96639,8 @@
    "ledger": "v4"
   }
  ],
- "reward_total": 54580.28979336251,
- "last_ts": 1794872874.4169424,
+ "reward_total": 54587.847455707684,
+ "last_ts": 1794873500.3814516,
  "chosen_at": 1791639880.921448,
  "rebalances": [
   {
@@ -96629,8 +96651,8 @@
   }
  ],
  "last_tick": {
-  "ts": "2026-11-16T23:47:54.416942+00:00",
-  "dt_h": 0.026,
+  "ts": "2026-11-16T23:58:20.381452+00:00",
+  "dt_h": 0.017,
   "markets": [
    {
     "q": "Will Chicago Bears finish the 2026-27 NFL regular ",
@@ -96737,7 +96759,7 @@
    },
    {
     "q": "Will Danceteria - Madonna win Best Dance Pop Recor",
-    "mid": 0.495,
+    "mid": 0.475,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -96748,14 +96770,14 @@
    },
    {
     "q": "Will Do Not Disturb - Young Miko win Best Musica U",
-    "mid": 0.45,
+    "mid": 0.415,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will Choosin' Texas - Ella Langley win Best Countr",
-    "mid": 0.635,
+    "mid": 0.615,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -96775,110 +96797,110 @@
     "q": "Will DJ Khaled perform at Coachella 2027?",
     "mid": 0.25,
     "share": 1.0,
-    "earned": 0.0011,
+    "earned": 0.0007,
     "inv": 0.0
    },
    {
     "q": "Will Trump's approval rating hit 41% by June 30, 2",
-    "mid": 0.385,
+    "mid": 0.38,
     "share": 1.0,
-    "earned": 0.012,
+    "earned": 0.0077,
     "inv": 0.0
    },
    {
     "q": "0 ships transit Hormuz on any date by March 31, 20",
-    "mid": 0.61,
+    "mid": 0.605,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0279,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the St",
-    "mid": 0.48,
+    "mid": 0.475,
     "share": 1.0,
-    "earned": 0.0436,
+    "earned": 0.0279,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the St",
-    "mid": 0.485,
+    "mid": 0.44,
     "share": 1.0,
-    "earned": 0.0436,
+    "earned": 0.0279,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ba",
-    "mid": 0.48,
+    "mid": 0.49,
     "share": 1.0,
-    "earned": 0.0055,
+    "earned": 0.0035,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ba",
-    "mid": 0.54,
+    "mid": 0.505,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0279,
     "inv": 0.0
    },
    {
     "q": "Will Avigdor Lieberman be the next Israeli Ministe",
-    "mid": 0.383,
+    "mid": 0.379,
     "share": 1.0,
-    "earned": 0.0011,
+    "earned": 0.0007,
     "inv": 0.0
    },
    {
     "q": "Will the Central Bank of Chile make no change to t",
     "mid": 0.3,
     "share": 1.0,
-    "earned": 0.0273,
+    "earned": 0.0174,
     "inv": 0.0
    },
    {
     "q": "Will GPT Astra's output price be at or below $30 i",
-    "mid": 0.48,
-    "share": 0.9135,
-    "earned": 0.0399,
+    "mid": 0.435,
+    "share": 1.0,
+    "earned": 0.0279,
     "inv": 0.0
    },
    {
     "q": "Will UK GDP growth in Q4 2026 be between 0.2% and ",
     "mid": 0.32,
     "share": 1.0,
-    "earned": 0.0807,
+    "earned": 0.0516,
     "inv": 0.0
    },
    {
     "q": "DOJ criminally charges Megaspeed by December 31, 2",
     "mid": 0.18,
     "share": 1.0,
-    "earned": 0.0545,
+    "earned": 0.0348,
     "inv": 0.0
    },
    {
     "q": "Nvidia hit with a BIS export-control penalty by Ma",
-    "mid": 0.3,
+    "mid": 0.25,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0348,
     "inv": 0.0
    },
    {
     "q": "Will primmie play for Paper Rex in 2027?",
     "mid": 0.748,
     "share": 1.0,
-    "earned": 0.0382,
+    "earned": 0.0244,
     "inv": 0.0
    },
    {
     "q": "Will GPT Astra's output price be at or below $40 i",
     "mid": 0.75,
     "share": 1.0,
-    "earned": 0.0436,
+    "earned": 0.0279,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ba",
-    "mid": 0.555,
+    "mid": 0.58,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -96887,127 +96909,97 @@
     "q": "Will the South African Reserve Bank make no change",
     "mid": 0.51,
     "share": 1.0,
-    "earned": 0.0829,
+    "earned": 0.053,
     "inv": 0.0
    },
    {
     "q": "Will UK GDP growth in Q4 2026 be negative?",
     "mid": 0.271,
     "share": 1.0,
-    "earned": 0.0654,
+    "earned": 0.0418,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index hit $8.00 (HIGH) by Decem",
     "mid": 0.54,
     "share": 1.0,
-    "earned": 0.0436,
+    "earned": 0.0279,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index hit $5.00 (LOW) by Decemb",
     "mid": 0.48,
     "share": 1.0,
-    "earned": 0.0436,
-    "inv": 0.0
-   },
-   {
-    "q": "US confirms DeepSeek used Blackwell chips by March",
-    "mid": 0.355,
-    "share": 0.539,
-    "earned": 0.0294,
+    "earned": 0.0279,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the St",
-    "mid": 0.44,
-    "share": 1.0,
-    "earned": 0.0,
+    "mid": 0.4,
+    "share": 0.9255,
+    "earned": 0.0254,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
-    "mid": 0.415,
+    "mid": 0.39,
     "share": 1.0,
-    "earned": 0.0436,
+    "earned": 0.0279,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ma",
-    "mid": 0.585,
+    "mid": 0.56,
     "share": 1.0,
-    "earned": 0.0436,
+    "earned": 0.0279,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ma",
-    "mid": 0.55,
+    "mid": 0.5,
     "share": 1.0,
-    "earned": 0.0436,
+    "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Democratic trifecta odds hit 60% by December 31?",
     "mid": 0.63,
     "share": 1.0,
-    "earned": 0.2181,
-    "inv": 0.0
-   },
-   {
-    "q": "Extended FDV above $50M one day after launch?",
-    "mid": 0.745,
-    "share": 0.0444,
-    "earned": 0.0039,
+    "earned": 0.1394,
     "inv": 0.0
    },
    {
     "q": "Will Dune: Part Three win Best Sound at the 99th A",
-    "mid": 0.235,
+    "mid": 0.285,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
+   },
+   {
+    "q": "Democratic trifecta odds dip to 50% by December 31",
+    "mid": 0.25,
+    "share": 1.0,
+    "earned": 0.0,
+    "inv": 0.0
+   },
+   {
+    "q": "Will South African inflation be between 4.7% and 5",
+    "mid": 0.356,
+    "share": 1.0,
+    "earned": 0.0697,
+    "inv": 0.0
    }
   ],
-  "reward_tick": 1.0088,
-  "reward_total": 54580.29,
+  "reward_tick": 0.7835,
+  "reward_total": 54587.85,
   "mm_value": -678.16,
-  "net": 53902.13,
-  "avg_share": 0.9633,
+  "net": 53909.69,
+  "avg_share": 0.9982,
   "n_markets": 53,
   "fills_total": 659,
   "rebalanced": false
  },
  "reviews": [
-  {
-   "ts": "2026-10-26T22:41:05.450617+00:00",
-   "swapped": 11,
-   "out": [
-    "Portugal legislative snap election called by Decem",
-    "Will John Harbaugh win the 2026 NFL Coach of the Y",
-    "Will PSOE win the most seats in C\u00e1ceres in the 202",
-    "Will GPT Astra 6.1+ debut at an output token price",
-    "Will Oxford's 2026 Word of the Year contain \"larp\"",
-    "Will Morena win the most seats in the 2027 Durango",
-    "White House press briefing room decommissioned by ",
-    "Will Amcha Yisrael win less than 2.5% of the vote ",
-    "Will Rockstar release GTA VI on PC in March 2027 (",
-    "Will Anthropic's IPO valuation be between $1.50T a",
-    "Gemini Carbon released by December 31, 2026?"
-   ],
-   "in": [
-    "Will GTA VI break the 24-hour sales record?",
-    "Anthropic IPO: Closing Price above IPO Price on Fi",
-    "Rockstar releases PC version of GTA VI by March 31",
-    "Will PP win the most seats in Palencia in the 2026",
-    "Will \"Call of Duty: Modern Warfare 4\" have a Metas",
-    "Will \"Call of Duty: Modern Warfare 4\" have a Metas",
-    "Will \"The Legend of Zelda: Ocarina of Time\" have a",
-    "Will \"The Legend of Zelda: Ocarina of Time\" have a",
-    "Bill Maher visits White House again in 2026?",
-    "Will \"Call of Duty: Modern Warfare 4\" have a Metas",
-    "Will \"Call of Duty: Modern Warfare 4\" have a Metas"
-   ]
-  },
   {
    "ts": "2026-10-26T23:43:22.819166+00:00",
    "swapped": 6,
@@ -105529,7 +105521,19 @@
     "Extended FDV above $50M one day after launch?",
     "Will Dune: Part Three win Best Sound at the 99th A"
    ]
+  },
+  {
+   "ts": "2026-11-16T23:55:20.209546+00:00",
+   "swapped": 2,
+   "out": [
+    "Extended FDV above $50M one day after launch?",
+    "US confirms DeepSeek used Blackwell chips by March"
+   ],
+   "in": [
+    "Democratic trifecta odds dip to 50% by December 31",
+    "Will South African inflation be between 4.7% and 5"
+   ]
   }
  ],
- "reviewed_at": 1794869698.4828813
+ "reviewed_at": 1794873320.2095456
 }

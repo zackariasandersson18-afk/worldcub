@@ -13,3 +13,13 @@ Arbetsordning för varje ny video:
 Allmänna instruktioner som "gör allt" räknas inte som godkännande av en video. Fråga hellre en gång för mycket.
 
 Bildgenerering för förhandsvisning och lokal redigering med ffmpeg (klippa, sätta ihop, ändra ljus, skala upp) får göras utan att fråga först.
+
+## Bildmodell
+
+Använd alltid Seedream 5.5 (`seedream-5-5` via APIMart) för alla bilder, om inte användaren uttryckligen ber om en annan modell.
+
+AI-modellen ska vara kurvig: stor byst, smal midja, breda höfter och fylliga lår (som i helkroppsreferensen i grön Brasil-outfit).
+
+## Spara på användningen
+
+Polla inte jobbstatus tätt. Skicka jobbet och kolla först efter 2–3 minuter (en kontroll i taget, gärna i bakgrunden), inte var några sekunder.

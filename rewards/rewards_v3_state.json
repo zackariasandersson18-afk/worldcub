@@ -443,7 +443,7 @@
    "question": "Will the 7-day average ship traffic through the Suez Canal be 40+ on December 31?",
    "yes": "6931842133072788063149134512439690350242846853677132294003245518355625323450",
    "no": "91209712430141524455538123935802800851814701403067781912029328752886864806027",
-   "rate": 5.0,
+   "rate": 40.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -488,7 +488,7 @@
    "question": "Will the 7-day average ship traffic through the Suez Canal be 46+ on December 31?",
    "yes": "90224176809256449528135595594910326442973167101957045337667974213663968110730",
    "no": "106100297480992987864562749410840012516078416724319937832667449784229919326398",
-   "rate": 5.0,
+   "rate": 40.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -548,7 +548,7 @@
    "question": "Will the Central Bank of Chile make no change to the monetary policy rate at the January meeting?",
    "yes": "108361654932557974539513842429893473539174488435649448752384579419297186126130",
    "no": "17970267076191631973701391026089456660088446121359802024712301616733874879545",
-   "rate": 30.0,
+   "rate": 28.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -593,7 +593,7 @@
    "question": "Will the Central Bank of Chile increase the monetary policy rate by 50+ bps at the January meeting?",
    "yes": "69543357433400250102964432753008069284919193620036579029814556360251544795453",
    "no": "8872469857810832386732505458825487213275629637737579251494477653406372741957",
-   "rate": 36.0,
+   "rate": 37.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -638,7 +638,7 @@
    "question": "Will Cristiano Ronaldo join the Saudi Pro League next?",
    "yes": "15709350286068369996710886545698001137290311608064355590938612780201447654996",
    "no": "32628953048606964245335305729347686385046353298522081771337900055154014326921",
-   "rate": 29.0,
+   "rate": 24.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -683,7 +683,7 @@
    "question": "Will \u00c9douard Philippe, but not Gabriel Attal, be on the ballot for the 2027 French presidential election?",
    "yes": "90093229115596918498930544461654854308072746046958118554986502878386272553714",
    "no": "32091246405235493822739009177389177063874007074827110345171178992871413944129",
-   "rate": 1.0,
+   "rate": 24.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -698,7 +698,7 @@
    "question": "Will Tom Cotton win the Iowa Republican caucus?",
    "yes": "5658189945709293953558492673427967048494223227493234178669034569853739008102",
    "no": "77578553057238363397776951062068167607299317506348170001411547863709425215989",
-   "rate": 7.0,
+   "rate": 1.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -713,7 +713,7 @@
    "question": "Will the Central Bank of Chile increase the monetary policy rate by 25 bps at the January meeting?",
    "yes": "52414598111746130729417307096451418363212412065280940493895690553121024664161",
    "no": "97117323558336049268228090988347485389320441442532377813344822194690331851966",
-   "rate": 31.0,
+   "rate": 32.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -3647,7 +3647,7 @@
    "cash": -0.9000000000000021,
    "mid": 0.595,
    "share": 0.05528527200353831,
-   "reward": 181.22022262989077,
+   "reward": 181.22065084565332,
    "fills": 2,
    "q": "Will Morena win the most seats in the 2027 Yucat\u00e1n Congress election?"
   },
@@ -4409,8 +4409,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.645,
-   "share": 0.01320541363268214,
-   "reward": 8.932973402771225,
+   "share": 0.011701265816933273,
+   "reward": 8.93557652276873,
    "fills": 0,
    "q": "Will Cristiano Ronaldo join the Saudi Pro League next?"
   },
@@ -6398,7 +6398,7 @@
    "cash": 0.0,
    "mid": 0.41000000000000003,
    "share": 1.0,
-   "reward": 422.6875433341096,
+   "reward": 422.9973660026311,
    "fills": 0,
    "q": "Will the Ornn H200 Index hit $8.00 (HIGH) by December 31, 2026?"
   },
@@ -6424,9 +6424,9 @@
   "0x12e7e3aaed06c1ac55f082a0b4282d5f525cdb2106afb1972e9d861bdc7e1649": {
    "inv": 0.0,
    "cash": 0.045050000000000145,
-   "mid": 0.49000000000000005,
+   "mid": 0.495,
    "share": 1.0,
-   "reward": 483.5375383858635,
+   "reward": 483.84736105438503,
    "fills": 1,
    "q": "Will the Ornn H200 Index hit $5.00 (LOW) by December 31, 2026?",
    "closed_at": 0.47
@@ -7783,9 +7783,9 @@
   "0x002f2ab788587e2057c2333c450927616649d05da805b6d05701e90794e7210f": {
    "inv": 0.0,
    "cash": 0.46875,
-   "mid": 0.6000000000000001,
-   "share": 1.0,
-   "reward": 29.499249799910398,
+   "mid": 0.62,
+   "share": 0.7260666905700952,
+   "reward": 29.530253860877107,
    "fills": 1,
    "q": "Will the Bank of Israel make no change to the Bank of Israel Interest Rate at th",
    "closed_at": 0.36
@@ -9023,17 +9023,17 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.76,
-   "share": 0.059078514996853876,
-   "reward": 17.567198635489902,
+   "share": 0.04791607598525665,
+   "reward": 17.568455617573015,
    "fills": 0,
    "q": "Will the 2-year Treasury yield hit 4.90% before 2027?"
   },
   "0xe83778c342c966289dbbc33bbc53851ae057ed77b8e497fd8aaf0fb1142f3b5a": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.65,
-   "share": 0.10286062081558141,
-   "reward": 23.960980656888257,
+   "mid": 0.655,
+   "share": 0.053480064910241966,
+   "reward": 23.963077468204258,
    "fills": 0,
    "q": "Will the 5-year Treasury yield hit 5.05% before 2027?"
   },
@@ -9049,9 +9049,9 @@
   "0x4e315963ad8e7616243ade550951e28c5e7f4a241bfaec272a3d5481b316e3ed": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.27,
-   "share": 0.19937082186394026,
-   "reward": 83.76441370829943,
+   "mid": 0.265,
+   "share": 0.19549625973625356,
+   "reward": 83.76925526594502,
    "fills": 0,
    "q": "Will the 2-year Treasury yield dip below 4.40% before 2027?"
   },
@@ -9157,9 +9157,9 @@
   "0x73bcd86f674768bd4a2a2ba0a6042ee4bf328301eb51cfbd7407305629ebdf73": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.43999999999999995,
+   "mid": 0.44500000000000006,
    "share": 1.0,
-   "reward": 135.92929583177042,
+   "reward": 135.95253253190955,
    "fills": 0,
    "q": "Will Benjamin Netanyahu receive the second mandate to form a government after th"
   },
@@ -9420,7 +9420,7 @@
    "cash": 0.0,
    "mid": 0.495,
    "share": 1.0,
-   "reward": 213.24921244983548,
+   "reward": 213.5357984182179,
    "fills": 0,
    "q": "Will Salahdine Parnasse fight Rafael Fiziev next?"
   },
@@ -10005,7 +10005,7 @@
    "cash": 0.0,
    "mid": 0.8200000000000001,
    "share": 0.3946753853339575,
-   "reward": 31.327852859084068,
+   "reward": 31.33505142811746,
    "fills": 0,
    "q": "Will Hugo Motta be the next President of Brazil's Chamber of Deputies?"
   },
@@ -10561,9 +10561,9 @@
   "0xe3baa245e6ea1e88ecb18bf6a3178669fcf84e219f62bc32ecac20834f59e85a": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.48,
-   "share": 0.8582932457908073,
-   "reward": 47.8125965072034,
+   "mid": 0.475,
+   "share": 0.7730864661378971,
+   "reward": 48.041421968415705,
    "fills": 0,
    "q": "Will Jensen Huang publicly testify before Congress by March 31, 2027?"
   },
@@ -11472,7 +11472,7 @@
    "cash": 0.0,
    "mid": 0.75,
    "share": 0.6966199505358659,
-   "reward": 58.84242955572965,
+   "reward": 58.86836006249257,
    "fills": 0,
    "q": "0 ships transit Hormuz on any date by March 31, 2027?"
   },
@@ -11480,17 +11480,17 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.33,
-   "share": 0.019252949118898445,
-   "reward": 53.6288042158838,
+   "share": 0.015305370210641728,
+   "reward": 53.62947010407721,
    "fills": 0,
    "q": "0 ships transit Bab el-Mandeb on any date by March 31, 2027?"
   },
   "0xeac467bcba15da8ba27bdcac2a0dde4e1edf5fbe5ad5ffdb7ba54fe1cb78da44": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.52,
-   "share": 1.0,
-   "reward": 54.12142630224402,
+   "mid": 0.615,
+   "share": 0.8407960199004958,
+   "reward": 54.25463261942004,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait be 22+ on D"
   },
@@ -11499,16 +11499,16 @@
    "cash": 0.0,
    "mid": 0.58,
    "share": 1.0,
-   "reward": 60.62766260570946,
+   "reward": 60.93748527423095,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 42+ on December 31"
   },
   "0xab3305643ef7359a90326b1f9ca37210bef91fd09d5ee336ed1e34b98d088599": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.615,
+   "mid": 0.595,
    "share": 1.0,
-   "reward": 48.52303314281139,
+   "reward": 48.54039567248546,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 46+ on December 31"
   },
@@ -11542,36 +11542,36 @@
   "0x8d4b03bc93fa84c1fda0b25ee18b7ac1fee8a37f110230acac29cdcae6b8c169": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.55,
+   "mid": 0.545,
    "share": 1.0,
-   "reward": 59.78852054441221,
+   "reward": 60.010838334293524,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Strait of Hormuz be 3+ on Decemb"
   },
   "0x27ce2fe6452e02bbc4e767d77eae732b3999d8500268eb67a1adcf577b82c9bc": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.61,
+   "mid": 0.6000000000000001,
    "share": 1.0,
-   "reward": 54.43113619465985,
+   "reward": 54.74095886318134,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Strait of Hormuz be 5+ on Decemb"
   },
   "0x11d5e82e159fe1e32c728db028b99f6c832215a46e434f4bfb65128cdee2b3c4": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.445,
-   "share": 0.6377358490566033,
-   "reward": 53.86904513195354,
+   "mid": 0.45,
+   "share": 0.5264797507788159,
+   "reward": 53.88651775008271,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Strait of Hormuz be 6+ on Decemb"
   },
   "0x3ba71a2ca3808ffc8ccadb9a683d9d9af1c1027e0cc95b259d18540654281788": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.375,
-   "share": 1.0,
-   "reward": 26.05348354420171,
+   "mid": 0.37,
+   "share": 0.9548022598870061,
+   "reward": 26.353072399457137,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Strait of Hormuz be 7+ on Decemb"
   },
@@ -11587,18 +11587,18 @@
   "0xb5179c7a05ae44799060e3103369b60d0e141f1b4d96914e9860496a08247600": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.665,
+   "mid": 0.655,
    "share": 1.0,
-   "reward": 58.079230809705756,
+   "reward": 58.38905347822725,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 38+ on December 31"
   },
   "0x8c91d20f1e8fefcec50e045f572084e7a825f402fd87895b9288dc2e2a24cd6a": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.47500000000000003,
+   "mid": 0.51,
    "share": 1.0,
-   "reward": 58.1701299340873,
+   "reward": 58.42022450292708,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 44+ on December 31"
   },
@@ -11624,8 +11624,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.475,
-   "share": 0.014783840999352656,
-   "reward": 52.26285132517853,
+   "share": 0.019343023921254435,
+   "reward": 52.263590359535925,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Panama Canal be 26+ on December "
   },
@@ -11633,8 +11633,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.445,
-   "share": 0.010288672135451043,
-   "reward": 53.314808466556656,
+   "share": 0.010114290283243206,
+   "reward": 53.31521414131763,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Panama Canal be 27+ on December "
   },
@@ -11677,9 +11677,9 @@
   "0xa3d8344e1fda781e5f4329c961235a262ab16d75aaacdc96b130637b18e4088a": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.26,
-   "share": 0.8756476683937835,
-   "reward": 42.09102588570773,
+   "mid": 0.265,
+   "share": 0.4027978161525913,
+   "reward": 42.1161548893308,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Malacca Strait be 230+ on Decemb"
   },
@@ -11715,16 +11715,16 @@
    "cash": 0.0,
    "mid": 0.545,
    "share": 0.030303030303030304,
-   "reward": 52.67187616773092,
+   "reward": 52.67304973844501,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait reach 35+ b"
   },
   "0x21c5e05bad7e32c00d4e328b70a249dc908207036ebf5f2a3302a4b2088ff146": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.22,
+   "mid": 0.21500000000000002,
    "share": 1.0,
-   "reward": 60.20851300913785,
+   "reward": 60.518335677659344,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait reach 40+ b"
   },
@@ -11760,16 +11760,16 @@
    "cash": 0.0,
    "mid": 0.31,
    "share": 0.05498645836451398,
-   "reward": 1.6302746585926526,
+   "reward": 1.631126461155805,
    "fills": 0,
    "q": "Will Geraldo Alckmin be the next Brazilian Minister of Finance?"
   },
   "0xc1915f0c9dd497c9ddcdd17d92dd75dc94efa1a8d68a6c15769ad9d5d8dfe6fa": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.54,
-   "share": 0.11262161801945898,
-   "reward": 2.2185142921345107,
+   "mid": 0.55,
+   "share": 0.2910781949707196,
+   "reward": 2.223241748682146,
    "fills": 0,
    "q": "Will the 2-year Treasury yield hit 5.00% before 2027?"
   },
@@ -11777,89 +11777,89 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.405,
-   "share": 0.018842680343405065,
-   "reward": 11.80397090745724,
+   "share": 0.021619547140846875,
+   "reward": 11.804750328278626,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Panama Canal be 28+ on December "
   },
   "0x66dd36822fba88ffb3172cbfe4a16c672fe00037ea8448b0475a5576dd013ce7": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.25,
-   "share": 1.0,
-   "reward": 19.816722344654014,
+   "mid": 0.34,
+   "share": 0.926873857404022,
+   "reward": 19.952130585357125,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Panama Canal be 29+ on December "
   },
   "0xf4123c71f7f1b37d53be909c409a4d5503e7988ff0d21106d2fefefac055cd30": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.275,
-   "share": 0.13484759827650403,
-   "reward": 0.7235605978004789,
+   "mid": 0.26,
+   "share": 0.27812825717263717,
+   "reward": 0.7263115827289841,
    "fills": 0,
    "q": "Will the 5-year Treasury yield dip below 4.55% before 2027?"
   },
   "0x52d3fe6349e30bb8dbca9c5485fa2a76dda92de75e7e17164473da99a01cafa8": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.5900000000000001,
-   "share": 1.0,
-   "reward": 19.46699570503762,
+   "mid": 0.49,
+   "share": 0.9548022598870065,
+   "reward": 19.603442504900254,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Strait of Hormuz be 4+ on Decemb"
   },
   "0xe4e3c6d800dddb8c456251d498bb48e566a6867a469e9d973e2e792c05410d8a": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.51,
-   "share": 1.0,
-   "reward": 16.476669240423778,
+   "mid": 0.56,
+   "share": 0.9548022598870065,
+   "reward": 16.61304320730993,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait be 24+ on D"
   },
   "0x835c3c9a2a78640a2b6e1e8d64677c35f3ba1430525d4a08863982b6ccce386e": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.51,
-   "share": 1.0,
-   "reward": 16.701084101443932,
+   "mid": 0.55,
+   "share": 0.9548022598870065,
+   "reward": 16.837458068330083,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait be 26+ on D"
   },
   "0xbbb715f9f823c0750ac7d883df2ef2e6f6e92a314793cfef4ede45db66773110": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.675,
-   "share": 1.0,
-   "reward": 20.32410388438956,
+   "mid": 0.525,
+   "share": 0.6377358490566042,
+   "reward": 20.43280298444418,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait be 28+ on D"
   },
   "0x82e134b72fce08606874eccfbe3844dcb1f5eed1f73ec222712205e36cb126bc": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.47,
-   "share": 1.0,
-   "reward": 19.92362949092609,
+   "mid": 0.42,
+   "share": 0.9548022598870056,
+   "reward": 20.03095582655457,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait be 32+ on D"
   },
   "0xcb409177b8ddaad2a5d6a6c197c0f273457441cd2a53e7fe70212e89c4e89c10": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.475,
+   "mid": 0.325,
    "share": 1.0,
-   "reward": 20.01101906659899,
+   "reward": 20.09853689001587,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 40+ on December 31"
   },
   "0xb2fc207f27057b2528f3369f660910b2764a07980ef86907a1a3bdf09a7e7002": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.33499999999999996,
+   "mid": 0.43,
    "share": 1.0,
-   "reward": 15.53198056620259,
+   "reward": 15.719551492832425,
    "fills": 0,
    "q": "Will the Central Bank of Chile make no change to the monetary policy rate at the"
   },
@@ -11867,8 +11867,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.31,
-   "share": 0.006033534533915661,
-   "reward": 2.7996016349516766,
+   "share": 0.005769778706429858,
+   "reward": 2.8003200407431565,
    "fills": 0,
    "q": "Will the Gatorade shower at Super Bowl LXI be green/yellow?"
   },
@@ -11877,16 +11877,16 @@
    "cash": 0.0,
    "mid": 0.745,
    "share": 0.05320850429320227,
-   "reward": 8.484112454127645,
+   "reward": 8.486207665210674,
    "fills": 0,
    "q": "0 ships transit Hormuz on any date by January 31, 2027?"
   },
   "0x70b09253e0e430f61598ee8a42482ec75eaa4b6aa497921142adc546b0aea16d": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.355,
+   "mid": 0.425,
    "share": 1.0,
-   "reward": 19.545574826738868,
+   "reward": 19.80089013445981,
    "fills": 0,
    "q": "Will the Central Bank of Chile increase the monetary policy rate by 50+ bps at t"
   },
@@ -11894,17 +11894,17 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.15050000000000002,
-   "share": 0.21713010024472648,
-   "reward": 1.0485472743940634,
+   "share": 0.2583053578950658,
+   "reward": 1.0524915313563705,
    "fills": 0,
    "q": "Will no President of Brazil's Chamber of Deputies be elected by February 28?"
   },
   "0x6349295a923e22fdbb53bd3d40c064b36170b8664575c561e12d0fe9613e578b": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.6145,
+   "mid": 0.6095,
    "share": 1.0,
-   "reward": 12.447702946858831,
+   "reward": 12.633596547971724,
    "fills": 0,
    "q": "Will Drew Mestemaker be the 2026 D1 Passing Yards Leader?"
   },
@@ -11913,7 +11913,7 @@
    "cash": 0.0,
    "mid": 0.14,
    "share": 0.003808959877451186,
-   "reward": 3.1915069545479677,
+   "reward": 3.1916839698649957,
    "fills": 0,
    "q": "Will the Gatorade shower at Super Bowl LXI be purple?"
   },
@@ -11922,7 +11922,7 @@
    "cash": 0.0,
    "mid": 0.38,
    "share": 1.0,
-   "reward": 7.968546051125212,
+   "reward": 8.010635275155236,
    "fills": 0,
    "q": "Will \u00c9douard Philippe, but not Gabriel Attal, be on the ballot for the 2027 Fren"
   },
@@ -11930,7 +11930,7 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.08700000000000001,
-   "share": 0.053141311867178104,
+   "share": 0.04286337489474377,
    "reward": 1.8285021740138956,
    "fills": 0,
    "q": "Will Tom Cotton win the Iowa Republican caucus?"
@@ -11938,9 +11938,9 @@
   "0x7ad5206bbe6e0f4f9541e5b7ec723619bae7557b1555872f920fc3055726b4ce": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.374,
+   "mid": 0.376,
    "share": 1.0,
-   "reward": 13.491483797651744,
+   "reward": 13.733089568247944,
    "fills": 0,
    "q": "Will the Central Bank of Chile increase the monetary policy rate by 25 bps at th"
   },
@@ -11948,17 +11948,17 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.73,
-   "share": 0.005160616215802957,
-   "reward": 2.3754023044100245,
+   "share": 0.005159301392374428,
+   "reward": 2.3764420011237597,
    "fills": 0,
    "q": "Will Petr Yan fight Sean O'Malley next?"
   },
   "0x41ae916d1777353bc926a6f165ea3a8051f19aacb58512eca4a21d52e8c5fa9c": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.708,
+   "mid": 0.764,
    "share": 1.0,
-   "reward": 4.293630266101969,
+   "reward": 4.418677550521859,
    "fills": 0,
    "q": "Next Alibaba Qwen Plus (3.8+) released by December 31, 2026?"
   }
@@ -82082,6 +82082,32 @@
    "fills_total": 482,
    "rebalanced": false,
    "w": 2991392
+  },
+  {
+   "ts": "2026-11-16T13:38:57.409943+00:00",
+   "dt_h": 0.153,
+   "reward_tick": 4.553,
+   "reward_total": 38141.45,
+   "mm_value": -589.25,
+   "net": 37552.19,
+   "avg_share": 0.6033,
+   "n_markets": 51,
+   "fills_total": 482,
+   "rebalanced": false,
+   "w": 2991393
+  },
+  {
+   "ts": "2026-11-16T13:41:06.422638+00:00",
+   "dt_h": 0.036,
+   "reward_tick": 0.7909,
+   "reward_total": 38142.24,
+   "mm_value": -589.25,
+   "net": 37552.98,
+   "avg_share": 0.5912,
+   "n_markets": 51,
+   "fills_total": 482,
+   "rebalanced": false,
+   "w": 2991394
   }
  ],
  "fills": [
@@ -86424,8 +86450,8 @@
    "ledger": "v3"
   }
  ],
- "reward_total": 38136.892352817245,
- "last_ts": 1794835797.2056742,
+ "reward_total": 38142.23620523095,
+ "last_ts": 1794836466.4226382,
  "chosen_at": 1794790473.8421712,
  "rebalances": [
   {
@@ -86658,244 +86684,244 @@
   }
  ],
  "last_tick": {
-  "ts": "2026-11-16T13:29:57.205674+00:00",
-  "dt_h": 0.017,
+  "ts": "2026-11-16T13:41:06.422638+00:00",
+  "dt_h": 0.036,
   "markets": [
    {
     "q": "Will the Bank of Israel make no change to the Bank",
-    "mid": 0.6,
-    "share": 1.0,
-    "earned": 0.0035,
+    "mid": 0.62,
+    "share": 0.7261,
+    "earned": 0.0046,
     "inv": 0.0
    },
    {
     "q": "Will Morena win the most seats in the 2027 Yucat\u00e1n",
     "mid": 0.595,
     "share": 0.0553,
-    "earned": 0.0,
+    "earned": 0.0001,
     "inv": 0.0
    },
    {
     "q": "Will Benjamin Netanyahu receive the second mandate",
-    "mid": 0.44,
+    "mid": 0.445,
     "share": 1.0,
-    "earned": 0.0021,
+    "earned": 0.0045,
     "inv": 0.0
    },
    {
     "q": "Will Geraldo Alckmin be the next Brazilian Ministe",
     "mid": 0.31,
     "share": 0.055,
-    "earned": 0.0001,
+    "earned": 0.0002,
     "inv": 0.0
    },
    {
     "q": "Will the 2-year Treasury yield hit 5.00% before 20",
-    "mid": 0.54,
-    "share": 0.1126,
-    "earned": 0.0001,
+    "mid": 0.55,
+    "share": 0.2911,
+    "earned": 0.0013,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ba",
-    "mid": 0.22,
+    "mid": 0.215,
     "share": 1.0,
-    "earned": 0.0277,
+    "earned": 0.0597,
     "inv": 0.0
    },
    {
     "q": "0 ships transit Hormuz on any date by March 31, 20",
     "mid": 0.75,
     "share": 0.6966,
-    "earned": 0.0023,
+    "earned": 0.0052,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
-    "mid": 0.665,
+    "mid": 0.655,
     "share": 1.0,
-    "earned": 0.0277,
+    "earned": 0.0597,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Pa",
     "mid": 0.475,
-    "share": 0.0148,
+    "share": 0.0193,
     "earned": 0.0001,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Pa",
     "mid": 0.445,
-    "share": 0.0103,
-    "earned": 0.0,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the 7-day average ship traffic through the Pa",
-    "mid": 0.405,
-    "share": 0.0188,
+    "share": 0.0101,
     "earned": 0.0001,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Pa",
-    "mid": 0.25,
-    "share": 1.0,
-    "earned": 0.0277,
+    "mid": 0.405,
+    "share": 0.0216,
+    "earned": 0.0002,
+    "inv": 0.0
+   },
+   {
+    "q": "Will the 7-day average ship traffic through the Pa",
+    "mid": 0.34,
+    "share": 0.9269,
+    "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index hit $8.00 (HIGH) by Decem",
     "mid": 0.41,
     "share": 1.0,
-    "earned": 0.0277,
+    "earned": 0.0597,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index hit $5.00 (LOW) by Decemb",
-    "mid": 0.49,
+    "mid": 0.495,
     "share": 1.0,
-    "earned": 0.0277,
+    "earned": 0.0597,
     "inv": 0.0
    },
    {
     "q": "Will the 5-year Treasury yield hit 5.05% before 20",
-    "mid": 0.65,
-    "share": 0.1029,
+    "mid": 0.655,
+    "share": 0.0535,
     "earned": 0.0002,
     "inv": 0.0
    },
    {
     "q": "Will the 5-year Treasury yield dip below 4.55% bef",
-    "mid": 0.275,
-    "share": 0.1348,
-    "earned": 0.0003,
+    "mid": 0.26,
+    "share": 0.2781,
+    "earned": 0.0007,
     "inv": 0.0
    },
    {
     "q": "Will the 2-year Treasury yield hit 4.90% before 20",
     "mid": 0.76,
-    "share": 0.0591,
-    "earned": 0.0001,
+    "share": 0.0479,
+    "earned": 0.0002,
     "inv": 0.0
    },
    {
     "q": "Will the 2-year Treasury yield dip below 4.40% bef",
-    "mid": 0.27,
-    "share": 0.1994,
-    "earned": 0.0004,
+    "mid": 0.265,
+    "share": 0.1955,
+    "earned": 0.0009,
     "inv": 0.0
    },
    {
     "q": "0 ships transit Bab el-Mandeb on any date by March",
     "mid": 0.33,
-    "share": 0.0193,
+    "share": 0.0153,
     "earned": 0.0001,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the St",
-    "mid": 0.55,
-    "share": 1.0,
-    "earned": 0.0277,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the 7-day average ship traffic through the St",
-    "mid": 0.59,
-    "share": 1.0,
-    "earned": 0.0277,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the 7-day average ship traffic through the St",
-    "mid": 0.61,
-    "share": 1.0,
-    "earned": 0.0277,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the 7-day average ship traffic through the St",
-    "mid": 0.445,
-    "share": 0.6377,
-    "earned": 0.0022,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the 7-day average ship traffic through the St",
-    "mid": 0.375,
-    "share": 1.0,
-    "earned": 0.0277,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the 7-day average ship traffic through the Ba",
-    "mid": 0.52,
-    "share": 1.0,
-    "earned": 0.0277,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the 7-day average ship traffic through the Ba",
-    "mid": 0.51,
-    "share": 1.0,
-    "earned": 0.0277,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the 7-day average ship traffic through the Ba",
-    "mid": 0.51,
-    "share": 1.0,
-    "earned": 0.0277,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the 7-day average ship traffic through the Ba",
-    "mid": 0.675,
-    "share": 1.0,
-    "earned": 0.0277,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the 7-day average ship traffic through the Ba",
-    "mid": 0.47,
+    "mid": 0.545,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
    },
    {
-    "q": "Will the 7-day average ship traffic through the Su",
-    "mid": 0.475,
+    "q": "Will the 7-day average ship traffic through the St",
+    "mid": 0.49,
+    "share": 0.9548,
+    "earned": 0.0,
+    "inv": 0.0
+   },
+   {
+    "q": "Will the 7-day average ship traffic through the St",
+    "mid": 0.6,
     "share": 1.0,
-    "earned": 0.0035,
+    "earned": 0.0597,
+    "inv": 0.0
+   },
+   {
+    "q": "Will the 7-day average ship traffic through the St",
+    "mid": 0.45,
+    "share": 0.5265,
+    "earned": 0.0028,
+    "inv": 0.0
+   },
+   {
+    "q": "Will the 7-day average ship traffic through the St",
+    "mid": 0.37,
+    "share": 0.9548,
+    "earned": 0.057,
+    "inv": 0.0
+   },
+   {
+    "q": "Will the 7-day average ship traffic through the Ba",
+    "mid": 0.615,
+    "share": 0.8408,
+    "earned": 0.0,
+    "inv": 0.0
+   },
+   {
+    "q": "Will the 7-day average ship traffic through the Ba",
+    "mid": 0.56,
+    "share": 0.9548,
+    "earned": 0.0,
+    "inv": 0.0
+   },
+   {
+    "q": "Will the 7-day average ship traffic through the Ba",
+    "mid": 0.55,
+    "share": 0.9548,
+    "earned": 0.0,
+    "inv": 0.0
+   },
+   {
+    "q": "Will the 7-day average ship traffic through the Ba",
+    "mid": 0.525,
+    "share": 0.6377,
+    "earned": 0.0,
+    "inv": 0.0
+   },
+   {
+    "q": "Will the 7-day average ship traffic through the Ba",
+    "mid": 0.42,
+    "share": 0.9548,
+    "earned": 0.0,
+    "inv": 0.0
+   },
+   {
+    "q": "Will the 7-day average ship traffic through the Su",
+    "mid": 0.325,
+    "share": 1.0,
+    "earned": 0.0597,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
     "mid": 0.58,
     "share": 1.0,
-    "earned": 0.0277,
+    "earned": 0.0597,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
-    "mid": 0.475,
+    "mid": 0.51,
     "share": 1.0,
-    "earned": 0.0277,
+    "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
-    "mid": 0.615,
+    "mid": 0.595,
     "share": 1.0,
-    "earned": 0.0035,
+    "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ma",
-    "mid": 0.26,
-    "share": 0.8756,
+    "mid": 0.265,
+    "share": 0.4028,
     "earned": 0.003,
     "inv": 0.0
    },
@@ -86903,27 +86929,27 @@
     "q": "Will the 7-day average ship traffic through the Ba",
     "mid": 0.545,
     "share": 0.0303,
-    "earned": 0.0001,
+    "earned": 0.0002,
     "inv": 0.0
    },
    {
     "q": "Will Salahdine Parnasse fight Rafael Fiziev next?",
     "mid": 0.495,
     "share": 1.0,
-    "earned": 0.0256,
+    "earned": 0.0552,
     "inv": 0.0
    },
    {
     "q": "Will the Central Bank of Chile make no change to t",
-    "mid": 0.335,
+    "mid": 0.43,
     "share": 1.0,
-    "earned": 0.0208,
+    "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will the Gatorade shower at Super Bowl LXI be gree",
     "mid": 0.31,
-    "share": 0.006,
+    "share": 0.0058,
     "earned": 0.0001,
     "inv": 0.0
    },
@@ -86931,42 +86957,42 @@
     "q": "0 ships transit Hormuz on any date by January 31, ",
     "mid": 0.745,
     "share": 0.0532,
-    "earned": 0.0002,
+    "earned": 0.0004,
     "inv": 0.0
    },
    {
     "q": "Will the Central Bank of Chile increase the moneta",
-    "mid": 0.355,
+    "mid": 0.425,
     "share": 1.0,
-    "earned": 0.025,
+    "earned": 0.0552,
     "inv": 0.0
    },
    {
     "q": "Will no President of Brazil's Chamber of Deputies ",
     "mid": 0.151,
-    "share": 0.2171,
-    "earned": 0.0003,
+    "share": 0.2583,
+    "earned": 0.0008,
     "inv": 0.0
    },
    {
     "q": "Will Hugo Motta be the next President of Brazil's ",
     "mid": 0.82,
     "share": 0.3947,
-    "earned": 0.0008,
+    "earned": 0.0018,
     "inv": 0.0
    },
    {
     "q": "Will Cristiano Ronaldo join the Saudi Pro League n",
     "mid": 0.645,
-    "share": 0.0132,
-    "earned": 0.0003,
+    "share": 0.0117,
+    "earned": 0.0004,
     "inv": 0.0
    },
    {
     "q": "Will Drew Mestemaker be the 2026 D1 Passing Yards ",
-    "mid": 0.615,
+    "mid": 0.61,
     "share": 1.0,
-    "earned": 0.0166,
+    "earned": 0.0358,
     "inv": 0.0
    },
    {
@@ -86980,50 +87006,50 @@
     "q": "Will \u00c9douard Philippe, but not Gabriel Attal, be o",
     "mid": 0.38,
     "share": 1.0,
-    "earned": 0.0007,
+    "earned": 0.0358,
     "inv": 0.0
    },
    {
     "q": "Will Tom Cotton win the Iowa Republican caucus?",
     "mid": 0.087,
-    "share": 0.0531,
+    "share": 0.0429,
     "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will the Central Bank of Chile increase the moneta",
-    "mid": 0.374,
+    "mid": 0.376,
     "share": 1.0,
-    "earned": 0.0215,
+    "earned": 0.0478,
     "inv": 0.0
    },
    {
     "q": "Will Petr Yan fight Sean O'Malley next?",
     "mid": 0.73,
     "share": 0.0052,
-    "earned": 0.0001,
+    "earned": 0.0002,
     "inv": 0.0
    },
    {
     "q": "Next Alibaba Qwen Plus (3.8+) released by December",
-    "mid": 0.708,
+    "mid": 0.764,
     "share": 1.0,
-    "earned": 0.0139,
+    "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will Jensen Huang publicly testify before Congress",
-    "mid": 0.48,
-    "share": 0.8583,
-    "earned": 0.0269,
+    "mid": 0.475,
+    "share": 0.7731,
+    "earned": 0.0577,
     "inv": 0.0
    }
   ],
-  "reward_tick": 0.5903,
-  "reward_total": 38136.89,
+  "reward_tick": 0.7909,
+  "reward_total": 38142.24,
   "mm_value": -589.25,
-  "net": 37547.64,
-  "avg_share": 0.6201,
+  "net": 37552.98,
+  "avg_share": 0.5912,
   "n_markets": 51,
   "fills_total": 482,
   "rebalanced": false

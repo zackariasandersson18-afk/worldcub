@@ -394,36 +394,6 @@
    "rate0": 50.0
   },
   {
-   "cond": "0x52d3fe6349e30bb8dbca9c5485fa2a76dda92de75e7e17164473da99a01cafa8",
-   "question": "Will the 7-day average ship traffic through the Strait of Hormuz be 4+ on December 31?",
-   "yes": "57509727190721575496267891220332521843170027173631170823031493215202727780321",
-   "no": "11854117532988087734163263288399410715925510752621310600885489019446384060626",
-   "rate": 40.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.7,
-   "est_reward_day": 40.0,
-   "end": "2027-01-01T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 40.0
-  },
-  {
-   "cond": "0x8d4b03bc93fa84c1fda0b25ee18b7ac1fee8a37f110230acac29cdcae6b8c169",
-   "question": "Will the 7-day average ship traffic through the Strait of Hormuz be 3+ on December 31?",
-   "yes": "40957700497133318495858241814768518528242946788828498421614731758515708674607",
-   "no": "1762875088011585647201374308269553836730718568424290453659902377986355756767",
-   "rate": 40.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.7,
-   "est_reward_day": 40.0,
-   "end": "2027-01-01T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 40.0
-  },
-  {
    "cond": "0x835c3c9a2a78640a2b6e1e8d64677c35f3ba1430525d4a08863982b6ccce386e",
    "question": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait be 26+ on December 31?",
    "yes": "40716269990998375556304785670243786277041426991771774947000640576572897579882",
@@ -510,21 +480,6 @@
    "collateral": 18.700000000000003,
    "est_reward_day": 50.0,
    "end": "2027-04-01T03:59:00Z",
-   "share0": 1.0,
-   "rate0": 50.0
-  },
-  {
-   "cond": "0x8652314642ea8e1b8b1f5fded33bd3deb328fff284b5f8d015ef62e0c39cae3c",
-   "question": "Will primmie play for Paper Rex in 2027?",
-   "yes": "80065387661331799553598752727676933037643240147033542264908321875551448316874",
-   "no": "90297749759086617158234739158953701172096324824374018636468566452007013106977",
-   "rate": 33.0,
-   "v": 4.5,
-   "min_size": 20.0,
-   "d": 0.0225,
-   "collateral": 19.1,
-   "est_reward_day": 50.0,
-   "end": "2027-01-01T04:59:00Z",
    "share0": 1.0,
    "rate0": 50.0
   },
@@ -617,21 +572,6 @@
    "end": "2027-03-14T23:59:00Z",
    "share0": 1.0,
    "rate0": 65.0
-  },
-  {
-   "cond": "0x44bec47228dbab8e0a04621bb46311ca732cabb461979bad372c7ad6e87ac667",
-   "question": "Will Jensen Huang be TIME Person of the Year 2026?",
-   "yes": "35527825951692459592498484172559933106826770027951195030449715982833475501901",
-   "no": "114009078735598058500829111884753185825640363325438204418800276312456283775682",
-   "rate": 100.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.700000000000003,
-   "est_reward_day": 100.0,
-   "end": "2027-01-01T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 100.0
   },
   {
    "cond": "0x95c94d3f7425e444b5d9e3078bfea7bafa0e5989a59071612a10dd645d44e65b",
@@ -739,21 +679,6 @@
    "rate0": 115.0
   },
   {
-   "cond": "0xcd840c2493b83dc88916c3fab2da17fc250935b67cebf3b2874036bd09735c35",
-   "question": "Le Pen's French presidential odds hit 60% by December 31?",
-   "yes": "46904814567295733293808331331945354524987532759520986420431127021170077712594",
-   "no": "44516167425193202342502648018311559390867322219134625951101904276936892182499",
-   "rate": 100.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.700000000000003,
-   "est_reward_day": 76.74841053587645,
-   "end": "2027-01-01T04:59:00Z",
-   "share0": 0.7674841053587644,
-   "rate0": 100.0
-  },
-  {
    "cond": "0x7ef7f1b9a4fb90c6dd7d6c30d1e883fdbe069edb14667c7009080d53cc2f4b02",
    "question": "Javier Milei Argentina presidential odds leader on December 31?",
    "yes": "110681887409813456106409313075474804444900552115185038921717976236949492290430",
@@ -784,19 +709,94 @@
    "rate0": 56.0
   },
   {
-   "cond": "0xa83aa44f3f88c5b26bf4144b491990fd8e6d4c47e501e5a0ea75267fa225fbd6",
-   "question": "Le Pen's French presidential odds dip to 45% by December 31?",
-   "yes": "29775857865117716873910632627984400783036780552802352313791576526922422652738",
-   "no": "3894868175453171805181074762812812688255869411708909417060717185436809917795",
-   "rate": 100.0,
+   "cond": "0x6eb990d7210ce454ec236e143cf3c9d25ab0cad20dbbf2760bc04a756e16bb7a",
+   "question": "Will the Ornn H200 Index be at least $7.50 on December 31, 2026?",
+   "yes": "17312059198784864902159974558461646960457754419620883240463520007587289103439",
+   "no": "99219306389058447912548715929596338323917586104903050055332315603176404295194",
+   "rate": 93.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
-   "collateral": 18.700000000000003,
-   "est_reward_day": 52.38685678859256,
+   "collateral": 18.7,
+   "est_reward_day": 93.0,
    "end": "2027-01-01T04:59:00Z",
-   "share0": 0.5238685678859256,
-   "rate0": 100.0
+   "share0": 1.0,
+   "rate0": 93.0
+  },
+  {
+   "cond": "0xcf7eac32963e3866c7af3109145011d776a873099bf2ac92c1ad2ec50e564cdd",
+   "question": "David Lisnard French presidential odds runner-up on December 31?",
+   "yes": "29624719286931760222147846662431074732672553991795683604412635565375230371370",
+   "no": "35315743523455927515100833730965240541991526115411145516284426081598456972494",
+   "rate": 46.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.7,
+   "est_reward_day": 46.0,
+   "end": "2026-12-31T17:00:00Z",
+   "share0": 1.0,
+   "rate0": 46.0
+  },
+  {
+   "cond": "0x9bbde7ed3a9125e1dcb854ab3b0ef99b329fd0ae7bc56bc192e6a508b77192a8",
+   "question": "Tucker Carlson Republican nomination odds leader on March 31?",
+   "yes": "27320912991164011740533796571403758553981974810706183013681799163079706031091",
+   "no": "18064279504356787967459023781361272678060080049079353707539707001965444514815",
+   "rate": 42.0,
+   "v": 4.5,
+   "min_size": 20.0,
+   "d": 0.0225,
+   "collateral": 19.1,
+   "est_reward_day": 42.0,
+   "end": "2027-03-31T16:00:00Z",
+   "share0": 1.0,
+   "rate0": 42.0
+  },
+  {
+   "cond": "0x26dbb7adb346d79d90c58ba1b2ba865f0d193911e46426ac3d3225dc954904eb",
+   "question": "Will Eurozone GDP growth in Q4 2026 be between 0.0% and 0.3%?",
+   "yes": "36255764031474500096559584919437796081690034559785885305689190973767323406925",
+   "no": "43421927680009367845734873358138575014892941977144245159372075968092866505825",
+   "rate": 42.0,
+   "v": 4.5,
+   "min_size": 20.0,
+   "d": 0.0225,
+   "collateral": 19.1,
+   "est_reward_day": 42.0,
+   "end": "2027-01-31T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 42.0
+  },
+  {
+   "cond": "0x2e752b255c47874ce91a6c7aa4ecde625d19b6314cb7b65fd8560b4434dbf0e9",
+   "question": "Will the 10-year Treasury yield dip below 4.7% before 2027?",
+   "yes": "105575247226199211851144666383079625619226355982423363763955341652109592949985",
+   "no": "47079627474308693496697859753954750724173575134815366802696782970934247507441",
+   "rate": 40.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.7,
+   "est_reward_day": 40.0,
+   "end": "2026-12-31T00:00:00Z",
+   "share0": 1.0,
+   "rate0": 40.0
+  },
+  {
+   "cond": "0xb795db3fc2806e016825af44b56836def3b5cff806706ed840415b9b26d14bf0",
+   "question": "Will the Ornn H200 Index hit $3.75 (LOW) by December 31, 2026?",
+   "yes": "26870198385198361507767511159764200017755587304370123217260382243829693130844",
+   "no": "108117103916715071483492362278344088979793635426989593906989839394750684868745",
+   "rate": 40.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.7,
+   "est_reward_day": 40.0,
+   "end": "2027-01-01T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 40.0
   }
  ],
  "positions": {
@@ -923,9 +923,9 @@
   "0x8652314642ea8e1b8b1f5fded33bd3deb328fff284b5f8d015ef62e0c39cae3c": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.766,
-   "share": 0.9656652360515029,
-   "reward": 319.0274958835644,
+   "mid": 0.759,
+   "share": null,
+   "reward": 319.1067712045557,
    "fills": 0,
    "q": "Will primmie play for Paper Rex in 2027?"
   },
@@ -1587,7 +1587,7 @@
    "cash": 0.8999999999999986,
    "mid": 0.435,
    "share": 1.0,
-   "reward": 570.9039971996898,
+   "reward": 571.2003842213197,
    "fills": 2,
    "q": "Will GPT Astra's output price be at or below $30 in 2026?"
   },
@@ -3262,9 +3262,9 @@
   "0xb795db3fc2806e016825af44b56836def3b5cff806706ed840415b9b26d14bf0": {
    "inv": 0.0,
    "cash": -1.8858250000000014,
-   "mid": 0.1115,
-   "share": null,
-   "reward": 446.30264040067584,
+   "mid": 0.225,
+   "share": 1.0,
+   "reward": 446.38615219936673,
    "fills": 7,
    "q": "Will the Ornn H200 Index hit $3.75 (LOW) by December 31, 2026?",
    "closed_at": 0.216
@@ -4128,7 +4128,7 @@
   "0xfafaa706aa77ca7becd5741282e7455659580cbfe62a3881d5020b4b453d5753": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.33,
+   "mid": 0.335,
    "share": 1.0,
    "reward": 9.29485488192705,
    "fills": 0,
@@ -4522,7 +4522,7 @@
   "0x5d15579a3a31d6220eb8d33d167788db82976f14c856768a5e37e51afdaeb279": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.484,
+   "mid": 0.4835,
    "share": 1.0,
    "reward": 17.59805527737572,
    "fills": 0,
@@ -12025,7 +12025,7 @@
    "cash": 0.0,
    "mid": 0.685,
    "share": 1.0,
-   "reward": 690.9377980867109,
+   "reward": 691.2341851083409,
    "fills": 0,
    "q": "Will the Ornn H200 Index hit $8.00 (HIGH) by December 31, 2026?"
   },
@@ -14265,9 +14265,9 @@
   "0x6eb990d7210ce454ec236e143cf3c9d25ab0cad20dbbf2760bc04a756e16bb7a": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.406,
-   "share": null,
-   "reward": 74.90065644874309,
+   "mid": 0.1845,
+   "share": 1.0,
+   "reward": 75.22387814124396,
    "fills": 0,
    "q": "Will the Ornn H200 Index be at least $7.50 on December 31, 2026?"
   },
@@ -16590,9 +16590,9 @@
   "0x2e752b255c47874ce91a6c7aa4ecde625d19b6314cb7b65fd8560b4434dbf0e9": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.26,
-   "share": null,
-   "reward": 14.107828264747626,
+   "mid": 0.28500000000000003,
+   "share": 1.0,
+   "reward": 14.246848347543688,
    "fills": 0,
    "q": "Will the 10-year Treasury yield dip below 4.7% before 2027?"
   },
@@ -18039,7 +18039,7 @@
   "0xe43ebfb9c7af7e7560cf67dffd4431864a59f9876e0bc057bddb846bdb612d68": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.31,
+   "mid": 0.307,
    "share": 1.0,
    "reward": 76.87070843404608,
    "fills": 0,
@@ -18804,9 +18804,9 @@
   "0xc8445d8968da382d611a2da7ea88662a29fef892af6c028f36ed7124ce15c899": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.42,
+   "mid": 0.475,
    "share": 1.0,
-   "reward": 46.479408121228204,
+   "reward": 46.72249655716175,
    "fills": 0,
    "q": "Will \"Dune: Part Three\" score at least 88 on the Rotten Tomatoes Tomatometer?"
   },
@@ -19452,7 +19452,7 @@
   "0x1fd8ef1caf742f2be02e897cb4d6b72b45c54f4ea507c4f874c52017e3b44265": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.495,
+   "mid": 0.49,
    "share": 1.0,
    "reward": 25.788417514844074,
    "fills": 0,
@@ -19767,7 +19767,7 @@
   "0x46a73cf44a4946a2fb1f848069651455f58d95edcefbc5c9e2b3b67c3c2947a7": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.63,
+   "mid": 0.62,
    "share": 1.0,
    "reward": 13.075212543223191,
    "fills": 0,
@@ -19803,7 +19803,7 @@
   "0x9a8e079bb989a7f4500ee58b8962540190f2b35c15476d83721bccfeed84f822": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.395,
+   "mid": 0.39,
    "share": 1.0,
    "reward": 8.048744412006602,
    "fills": 0,
@@ -19821,7 +19821,7 @@
   "0xfc6c7fa06f53201149e1f6c693525f0b999fe794d0d7686edab7d6b50128b579": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.49,
+   "mid": 0.475,
    "share": 1.0,
    "reward": 6.133938541542049,
    "fills": 0,
@@ -19848,7 +19848,7 @@
   "0xe1ea9572020e3fac2f171c823ea36517f4c780ae62cd4be1cf67ff2cd09da456": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.455,
+   "mid": 0.405,
    "share": 1.0,
    "reward": 4.548629093992491,
    "fills": 0,
@@ -19884,7 +19884,7 @@
   "0xfce6cbb1a0ba0141f842789f0b3b188d212b64417b73498131be483975365dfa": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.605,
+   "mid": 0.62,
    "share": 1.0,
    "reward": 3.84280738617829,
    "fills": 0,
@@ -19902,7 +19902,7 @@
   "0x2a256c18683ff955f02072cd9969a52d5770b9301e3e557065330442d1c067f0": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.49,
+   "mid": 0.47500000000000003,
    "share": 1.0,
    "reward": 2.1374141492860184,
    "fills": 0,
@@ -19967,7 +19967,7 @@
    "cash": 0.0,
    "mid": 0.26,
    "share": 1.0,
-   "reward": 3.820112131157959,
+   "reward": 3.8275218066987065,
    "fills": 0,
    "q": "Will DJ Khaled perform at Coachella 2027?"
   },
@@ -20343,9 +20343,9 @@
   "0x52d3fe6349e30bb8dbca9c5485fa2a76dda92de75e7e17164473da99a01cafa8": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.53,
-   "share": 0.04356792987883468,
-   "reward": 77.23717089213085,
+   "mid": 0.52,
+   "share": null,
+   "reward": 77.23949596813617,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Strait of Hormuz be 4+ on Decemb"
   },
@@ -20354,7 +20354,7 @@
    "cash": 0.0,
    "mid": 0.495,
    "share": 1.0,
-   "reward": 48.23884865012128,
+   "reward": 48.53523567175118,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait be 22+ on D"
   },
@@ -20379,9 +20379,9 @@
   "0x11d5e82e159fe1e32c728db028b99f6c832215a46e434f4bfb65128cdee2b3c4": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.36,
-   "share": 1.0,
-   "reward": 50.532008664602806,
+   "mid": 0.43,
+   "share": 0.9548022598870056,
+   "reward": 50.69490964691946,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Strait of Hormuz be 6+ on Decemb"
   },
@@ -20397,9 +20397,9 @@
   "0x2bc2414f3e6d2171452339f8ea2ed5eaf5ad22e94a89f6fd08ef31db2dd43e50": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.615,
+   "mid": 0.625,
    "share": 1.0,
-   "reward": 44.759667332945746,
+   "reward": 45.05605435457565,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Malacca Strait be 200+ on Decemb"
   },
@@ -20407,8 +20407,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.535,
-   "share": 0.02086945354138573,
-   "reward": 75.97540956369185,
+   "share": null,
+   "reward": 75.97644640028248,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Strait of Hormuz be 3+ on Decemb"
   },
@@ -20469,9 +20469,9 @@
   "0x835c3c9a2a78640a2b6e1e8d64677c35f3ba1430525d4a08863982b6ccce386e": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.47500000000000003,
+   "mid": 0.485,
    "share": 1.0,
-   "reward": 38.591484746701305,
+   "reward": 38.628533124405045,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait be 26+ on D"
   },
@@ -20525,7 +20525,7 @@
    "cash": 0.0,
    "mid": 0.3875,
    "share": 1.0,
-   "reward": 5.100426546711539,
+   "reward": 5.107836222252285,
    "fills": 0,
    "q": "Will Avigdor Lieberman be the next Israeli Minister of Defense?"
   },
@@ -20534,7 +20534,7 @@
    "cash": 0.0,
    "mid": 0.29000000000000004,
    "share": 1.0,
-   "reward": 31.447921075166906,
+   "reward": 31.61093393706335,
    "fills": 0,
    "q": "Will the Central Bank of Chile make no change to the monetary policy rate at the"
   },
@@ -20714,25 +20714,25 @@
    "cash": 0.0,
    "mid": 0.22999999999999998,
    "share": 1.0,
-   "reward": 18.302931424092368,
+   "reward": 18.67341520112974,
    "fills": 0,
    "q": "Nvidia hit with a BIS export-control penalty by March 31, 2027?"
   },
   "0xe4e3c6d800dddb8c456251d498bb48e566a6867a469e9d973e2e792c05410d8a": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.51,
-   "share": 1.0,
-   "reward": 9.411193724539022,
+   "mid": 0.72,
+   "share": 0.7012448132780095,
+   "reward": 9.552970664362075,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait be 24+ on D"
   },
   "0x8c91d20f1e8fefcec50e045f572084e7a825f402fd87895b9288dc2e2a24cd6a": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.495,
+   "mid": 0.505,
    "share": 1.0,
-   "reward": 11.580589564089422,
+   "reward": 11.87697658571932,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 44+ on December 31"
   },
@@ -20767,7 +20767,7 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.07,
-   "share": 0.005547476882777542,
+   "share": null,
    "reward": 14.731409489878283,
    "fills": 0,
    "q": "Will Jensen Huang be TIME Person of the Year 2026?"
@@ -20775,9 +20775,9 @@
   "0x95c94d3f7425e444b5d9e3078bfea7bafa0e5989a59071612a10dd645d44e65b": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.32,
-   "share": 1.0,
-   "reward": 8.480734272891729,
+   "mid": 0.265,
+   "share": 0.7168141592920362,
+   "reward": 8.905870593894353,
    "fills": 0,
    "q": "Will Germany GDP growth in Q4 2026 be at least 1.9%?"
   },
@@ -20786,7 +20786,7 @@
    "cash": 0.0,
    "mid": 0.485,
    "share": 1.0,
-   "reward": 8.132022578530496,
+   "reward": 8.502506355567865,
    "fills": 0,
    "q": "Next Israeli election called by December 31, 2027?"
   },
@@ -20794,8 +20794,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.5,
-   "share": 0.43896103896103916,
-   "reward": 11.97740908903908,
+   "share": 0.09911581653838313,
+   "reward": 12.255504413517077,
    "fills": 0,
    "q": "You Can See Everything's Best Picture odds hit 40% by January 31?"
   },
@@ -20804,7 +20804,7 @@
    "cash": 0.0,
    "mid": 0.7050000000000001,
    "share": 1.0,
-   "reward": 12.056519651302576,
+   "reward": 12.797487205377323,
    "fills": 0,
    "q": "You Can See Everything's Best Picture odds hit 30% by January 31?"
   },
@@ -20813,7 +20813,7 @@
    "cash": 0.0,
    "mid": 0.58,
    "share": 1.0,
-   "reward": 5.824348755594093,
+   "reward": 6.706100144943043,
    "fills": 0,
    "q": "JD Vance Republican nomination odds leader on March 31?"
   },
@@ -20822,7 +20822,7 @@
    "cash": 0.0,
    "mid": 0.475,
    "share": 1.0,
-   "reward": 7.305408298652069,
+   "reward": 7.824085586504393,
    "fills": 0,
    "q": "Axel Kicillof Argentina presidential odds leader on December 31?"
   },
@@ -20848,8 +20848,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.20500000000000002,
-   "share": 0.028005170185264962,
-   "reward": 0.7984514700317591,
+   "share": null,
+   "reward": 0.8064034144257661,
    "fills": 0,
    "q": "Le Pen's French presidential odds hit 60% by December 31?"
   },
@@ -20858,7 +20858,7 @@
    "cash": 0.0,
    "mid": 0.44999999999999996,
    "share": 1.0,
-   "reward": 2.4102343152573815,
+   "reward": 2.891863225405967,
    "fills": 0,
    "q": "Javier Milei Argentina presidential odds leader on December 31?"
   },
@@ -20867,7 +20867,7 @@
    "cash": 0.0,
    "mid": 0.39,
    "share": 1.0,
-   "reward": 2.1839280206461757,
+   "reward": 2.5840504998465392,
    "fills": 0,
    "q": "Another candidate is the Argentina presidential odds leader on December 31?"
   },
@@ -20875,10 +20875,37 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.645,
-   "share": 0.01980928696881809,
-   "reward": 0.48837564510053355,
+   "share": null,
+   "reward": 0.4947482477806466,
    "fills": 0,
    "q": "Le Pen's French presidential odds dip to 45% by December 31?"
+  },
+  "0xcf7eac32963e3866c7af3109145011d776a873099bf2ac92c1ad2ec50e564cdd": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.315,
+   "share": 1.0,
+   "reward": 0.15987309521547072,
+   "fills": 0,
+   "q": "David Lisnard French presidential odds runner-up on December 31?"
+  },
+  "0x9bbde7ed3a9125e1dcb854ab3b0ef99b329fd0ae7bc56bc192e6a508b77192a8": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.19,
+   "share": 1.0,
+   "reward": 0.14597108693586455,
+   "fills": 0,
+   "q": "Tucker Carlson Republican nomination odds leader on March 31?"
+  },
+  "0x26dbb7adb346d79d90c58ba1b2ba865f0d193911e46426ac3d3225dc954904eb": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.41,
+   "share": 1.0,
+   "reward": 0.14597108693586455,
+   "fills": 0,
+   "q": "Will Eurozone GDP growth in Q4 2026 be between 0.0% and 0.3%?"
   }
  },
  "history": [
@@ -91200,17 +91227,30 @@
    "w": 2991484
   },
   {
-   "ts": "2026-11-17T04:51:52.649782+00:00",
-   "dt_h": 0.039,
-   "reward_tick": 1.325,
-   "reward_total": 54802.35,
+   "ts": "2026-11-17T04:59:32.816924+00:00",
+   "dt_h": 0.169,
+   "reward_tick": 6.6606,
+   "reward_total": 54807.69,
    "mm_value": -679.06,
-   "net": 54123.3,
-   "avg_share": 0.8664,
+   "net": 54128.63,
+   "avg_share": 0.9863,
    "n_markets": 53,
    "fills_total": 659,
    "rebalanced": false,
    "w": 2991485
+  },
+  {
+   "ts": "2026-11-17T05:02:32.845749+00:00",
+   "dt_h": 0.051,
+   "reward_tick": 2.4708,
+   "reward_total": 54810.16,
+   "mm_value": -679.06,
+   "net": 54131.1,
+   "avg_share": 0.9627,
+   "n_markets": 53,
+   "fills_total": 659,
+   "rebalanced": false,
+   "w": 2991486
   }
  ],
  "fills": [
@@ -97146,8 +97186,8 @@
    "ledger": "v4"
   }
  ],
- "reward_total": 54802.35360451549,
- "last_ts": 1794891112.6497824,
+ "reward_total": 54810.160064016316,
+ "last_ts": 1794891752.8457491,
  "chosen_at": 1791639880.921448,
  "rebalances": [
   {
@@ -97158,8 +97198,8 @@
   }
  ],
  "last_tick": {
-  "ts": "2026-11-17T04:51:52.649782+00:00",
-  "dt_h": 0.022,
+  "ts": "2026-11-17T05:02:32.845749+00:00",
+  "dt_h": 0.017,
   "markets": [
    {
     "q": "Will Chicago Bears finish the 2026-27 NFL regular ",
@@ -97170,7 +97210,7 @@
    },
    {
     "q": "Will Denver Broncos finish the 2026-27 NFL regular",
-    "mid": 0.484,
+    "mid": 0.483,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -97206,14 +97246,14 @@
    },
    {
     "q": "Will Rui Costa be the next Brazilian Minister of D",
-    "mid": 0.31,
+    "mid": 0.307,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will Workin' Man: Willie Sings Merle - Willie Nels",
-    "mid": 0.495,
+    "mid": 0.49,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -97240,7 +97280,7 @@
    },
    {
     "q": "Will BERNARR. - Durand Bernarr win Best Progressiv",
-    "mid": 0.63,
+    "mid": 0.62,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -97255,7 +97295,7 @@
    },
    {
     "q": "Will MORNING DEW (DONK) - Beyonce win Best R&B Sol",
-    "mid": 0.395,
+    "mid": 0.39,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -97266,7 +97306,7 @@
    },
    {
     "q": "Will Danceteria - Madonna win Best Dance Pop Recor",
-    "mid": 0.49,
+    "mid": 0.475,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -97277,21 +97317,21 @@
    },
    {
     "q": "Will Do Not Disturb - Young Miko win Best Musica U",
-    "mid": 0.455,
+    "mid": 0.405,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will Choosin' Texas - Ella Langley win Best Countr",
-    "mid": 0.605,
+    "mid": 0.62,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will HOPE!! - Angelique Kidjo win Best Global Musi",
-    "mid": 0.49,
+    "mid": 0.475,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -97304,227 +97344,209 @@
     "q": "Will DJ Khaled perform at Coachella 2027?",
     "mid": 0.26,
     "share": 1.0,
-    "earned": 0.0009,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the 7-day average ship traffic through the St",
-    "mid": 0.53,
-    "share": 0.0436,
-    "earned": 0.0016,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the 7-day average ship traffic through the St",
-    "mid": 0.535,
-    "share": 0.0209,
-    "earned": 0.0008,
+    "earned": 0.0007,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ba",
-    "mid": 0.475,
+    "mid": 0.485,
     "share": 1.0,
-    "earned": 0.0046,
+    "earned": 0.0035,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ba",
     "mid": 0.495,
     "share": 1.0,
-    "earned": 0.037,
+    "earned": 0.0278,
     "inv": 0.0
    },
    {
     "q": "Will Avigdor Lieberman be the next Israeli Ministe",
     "mid": 0.388,
     "share": 1.0,
-    "earned": 0.0009,
+    "earned": 0.0007,
     "inv": 0.0
    },
    {
     "q": "Will the Central Bank of Chile make no change to t",
     "mid": 0.29,
     "share": 1.0,
-    "earned": 0.0204,
+    "earned": 0.0153,
     "inv": 0.0
    },
    {
     "q": "Will GPT Astra's output price be at or below $30 i",
     "mid": 0.435,
     "share": 1.0,
-    "earned": 0.037,
+    "earned": 0.0278,
     "inv": 0.0
    },
    {
     "q": "Nvidia hit with a BIS export-control penalty by Ma",
     "mid": 0.23,
     "share": 1.0,
-    "earned": 0.0463,
-    "inv": 0.0
-   },
-   {
-    "q": "Will primmie play for Paper Rex in 2027?",
-    "mid": 0.766,
-    "share": 0.9657,
-    "earned": 0.0295,
+    "earned": 0.0347,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ba",
-    "mid": 0.51,
-    "share": 1.0,
-    "earned": 0.0,
+    "mid": 0.72,
+    "share": 0.7012,
+    "earned": 0.0195,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index hit $8.00 (HIGH) by Decem",
     "mid": 0.685,
     "share": 1.0,
-    "earned": 0.037,
+    "earned": 0.0278,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the St",
-    "mid": 0.36,
-    "share": 1.0,
-    "earned": 0.0,
+    "mid": 0.43,
+    "share": 0.9548,
+    "earned": 0.0265,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
-    "mid": 0.495,
+    "mid": 0.505,
     "share": 1.0,
-    "earned": 0.037,
+    "earned": 0.0278,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ma",
-    "mid": 0.615,
+    "mid": 0.625,
     "share": 1.0,
-    "earned": 0.037,
+    "earned": 0.0278,
     "inv": 0.0
    },
    {
     "q": "Will Dune: Part Three win Best Sound at the 99th A",
-    "mid": 0.33,
+    "mid": 0.335,
     "share": 1.0,
-    "earned": 0.0,
-    "inv": 0.0
-   },
-   {
-    "q": "Will Jensen Huang be TIME Person of the Year 2026?",
-    "mid": 0.07,
-    "share": 0.0055,
     "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will Germany GDP growth in Q4 2026 be at least 1.9",
-    "mid": 0.32,
-    "share": 1.0,
-    "earned": 0.0583,
+    "mid": 0.265,
+    "share": 0.7168,
+    "earned": 0.0314,
     "inv": 0.0
    },
    {
     "q": "Will \"Dune: Part Three\" score at least 88 on the R",
-    "mid": 0.42,
+    "mid": 0.475,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0347,
     "inv": 0.0
    },
    {
     "q": "Next Israeli election called by December 31, 2027?",
     "mid": 0.485,
     "share": 1.0,
-    "earned": 0.0463,
+    "earned": 0.0347,
     "inv": 0.0
    },
    {
     "q": "You Can See Everything's Best Picture odds hit 40%",
     "mid": 0.5,
-    "share": 0.439,
-    "earned": 0.0,
+    "share": 0.0991,
+    "earned": 0.0069,
     "inv": 0.0
    },
    {
     "q": "You Can See Everything's Best Picture odds hit 30%",
     "mid": 0.705,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0695,
     "inv": 0.0
    },
    {
     "q": "Axel Kicillof Argentina presidential odds leader o",
     "mid": 0.475,
     "share": 1.0,
-    "earned": 0.0648,
+    "earned": 0.0486,
     "inv": 0.0
    },
    {
     "q": "JD Vance Republican nomination odds leader on Marc",
     "mid": 0.58,
     "share": 1.0,
-    "earned": 0.1101,
-    "inv": 0.0
-   },
-   {
-    "q": "Le Pen's French presidential odds hit 60% by Decem",
-    "mid": 0.205,
-    "share": 0.028,
-    "earned": 0.0026,
+    "earned": 0.0827,
     "inv": 0.0
    },
    {
     "q": "Javier Milei Argentina presidential odds leader on",
     "mid": 0.45,
     "share": 1.0,
-    "earned": 0.0601,
+    "earned": 0.0452,
     "inv": 0.0
    },
    {
     "q": "Another candidate is the Argentina presidential od",
     "mid": 0.39,
     "share": 1.0,
-    "earned": 0.05,
+    "earned": 0.0375,
     "inv": 0.0
    },
    {
-    "q": "Le Pen's French presidential odds dip to 45% by De",
-    "mid": 0.645,
-    "share": 0.0198,
-    "earned": 0.0017,
+    "q": "Will the Ornn H200 Index be at least $7.50 on Dece",
+    "mid": 0.184,
+    "share": 1.0,
+    "earned": 0.0646,
+    "inv": 0.0
+   },
+   {
+    "q": "David Lisnard French presidential odds runner-up o",
+    "mid": 0.315,
+    "share": 1.0,
+    "earned": 0.032,
+    "inv": 0.0
+   },
+   {
+    "q": "Tucker Carlson Republican nomination odds leader o",
+    "mid": 0.19,
+    "share": 1.0,
+    "earned": 0.0292,
+    "inv": 0.0
+   },
+   {
+    "q": "Will Eurozone GDP growth in Q4 2026 be between 0.0",
+    "mid": 0.41,
+    "share": 1.0,
+    "earned": 0.0292,
+    "inv": 0.0
+   },
+   {
+    "q": "Will the 10-year Treasury yield dip below 4.7% bef",
+    "mid": 0.285,
+    "share": 1.0,
+    "earned": 0.0278,
+    "inv": 0.0
+   },
+   {
+    "q": "Will the Ornn H200 Index hit $3.75 (LOW) by Decemb",
+    "mid": 0.225,
+    "share": 1.0,
+    "earned": 0.0,
     "inv": 0.0
    }
   ],
-  "reward_tick": 0.6838,
-  "reward_total": 54802.35,
+  "reward_tick": 0.8138,
+  "reward_total": 54810.16,
   "mm_value": -679.06,
-  "net": 54123.3,
-  "avg_share": 0.8664,
+  "net": 54131.1,
+  "avg_share": 0.9627,
   "n_markets": 53,
   "fills_total": 659,
   "rebalanced": false
  },
  "reviews": [
-  {
-   "ts": "2026-10-27T03:44:45.282145+00:00",
-   "swapped": 5,
-   "out": [
-    "Will Mary is Missing win Best Live Action Short Fi",
-    "Will Morena win the most seats in the 2027 Colima ",
-    "Will \"The Legend of Zelda: Ocarina of Time\" have a",
-    "Will \"The Legend of Zelda: Ocarina of Time\" have a",
-    "Will Soneium launch a token by June 30, 2027?"
-   ],
-   "in": [
-    "US reissues Iran oil sanction relief by November 3",
-    "Will the highest score achieved by a Moonshot Kimi",
-    "Will the Ornn H200 Index hit $3.00 (LOW) by Decemb",
-    "Will OpenAI's frontier output token price be at or",
-    "Will GPT Astra 6.1+ debut at an output token price"
-   ]
-  },
   {
    "ts": "2026-10-27T04:47:11.439670+00:00",
    "swapped": 5,
@@ -106018,7 +106040,27 @@
     "Another candidate is the Argentina presidential od",
     "Le Pen's French presidential odds dip to 45% by De"
    ]
+  },
+  {
+   "ts": "2026-11-17T04:57:32.562370+00:00",
+   "swapped": 6,
+   "out": [
+    "Will Jensen Huang be TIME Person of the Year 2026?",
+    "Will the 7-day average ship traffic through the St",
+    "Will the 7-day average ship traffic through the St",
+    "Le Pen's French presidential odds dip to 45% by De",
+    "Le Pen's French presidential odds hit 60% by Decem",
+    "Will primmie play for Paper Rex in 2027?"
+   ],
+   "in": [
+    "Will the Ornn H200 Index be at least $7.50 on Dece",
+    "David Lisnard French presidential odds runner-up o",
+    "Tucker Carlson Republican nomination odds leader o",
+    "Will Eurozone GDP growth in Q4 2026 be between 0.0",
+    "Will the 10-year Treasury yield dip below 4.7% bef",
+    "Will the Ornn H200 Index hit $3.75 (LOW) by Decemb"
+   ]
   }
  ],
- "reviewed_at": 1794887792.5757391
+ "reviewed_at": 1794891452.5623703
 }

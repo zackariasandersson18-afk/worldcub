@@ -649,21 +649,6 @@
    "rate0": 40.0
   },
   {
-   "cond": "0x78e531ab78b40c7a9e58f90b161429d5c7872a4ba92986a22a071dfd318c2283",
-   "question": "Will the median home value in NYC be between $458,000 and $471,000 on December 31?",
-   "yes": "65365641829004334628675294834408373077365164010855511601144161909508752695778",
-   "no": "54094564720912571459446072220010828134210013599412714822396361311901130163278",
-   "rate": 45.0,
-   "v": 4.5,
-   "min_size": 20.0,
-   "d": 0.0225,
-   "collateral": 19.1,
-   "est_reward_day": 60.0,
-   "end": "2027-01-11T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 60.0
-  },
-  {
    "cond": "0xcf7eac32963e3866c7af3109145011d776a873099bf2ac92c1ad2ec50e564cdd",
    "question": "David Lisnard French presidential odds runner-up on December 31?",
    "yes": "29624719286931760222147846662431074732672553991795683604412635565375230371370",
@@ -677,66 +662,6 @@
    "end": "2026-12-31T17:00:00Z",
    "share0": 1.0,
    "rate0": 113.0
-  },
-  {
-   "cond": "0x0684a7cf3715ab98bf4b6399a91a8b96bfdfb51df2fef94304d015998bc40e70",
-   "question": "Will the median home value in NYC be less than $445,000 on December 31?",
-   "yes": "75122992353529325026265324248578599735051778655103749932850501823102253513989",
-   "no": "24698434794058782690589756181909892133645951440823601881848419308969690308128",
-   "rate": 33.0,
-   "v": 4.5,
-   "min_size": 20.0,
-   "d": 0.0225,
-   "collateral": 19.1,
-   "est_reward_day": 43.0,
-   "end": "2027-01-11T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 43.0
-  },
-  {
-   "cond": "0x37b6199aea72dad4dd96d5ea905e87efb7b9525fabd23be5b54858d74db6a4ca",
-   "question": "Will the 2-year Treasury yield hit 5.30% before 2027?",
-   "yes": "13453226768386682488854752492862875905341143135608454835862211559083264992559",
-   "no": "29057510464963677321687789667107138457576942166081571388707729157342348057604",
-   "rate": 3.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.7,
-   "est_reward_day": 40.0,
-   "end": "2027-01-01T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 40.0
-  },
-  {
-   "cond": "0x312210107231a022cb23d798d53a7c47edcd9fbc64362a3446c493320b8702a5",
-   "question": "Will Eurozone GDP growth in Q4 2026 be between 0.4% and 0.7%?",
-   "yes": "29366127441414018581948218202234195770859067636123797082838994561212097174145",
-   "no": "113331179824330364981695737238676834850115168661417608740338073450616377142610",
-   "rate": 22.0,
-   "v": 4.5,
-   "min_size": 20.0,
-   "d": 0.0225,
-   "collateral": 19.1,
-   "est_reward_day": 40.0,
-   "end": "2027-01-31T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 40.0
-  },
-  {
-   "cond": "0xe2234c1d750873a4a11870c0c3d4a366ad5e39ed286067b73377589bd825f862",
-   "question": "Will Anthropic raise less than $65B in its IPO?",
-   "yes": "35845025643057877484587760687471873461956317001449791128357385840413367284254",
-   "no": "51650986167722373121889637200784560053183950978572241244051894839286358847113",
-   "rate": 40.0,
-   "v": 4.5,
-   "min_size": 20.0,
-   "d": 0.0225,
-   "collateral": 19.1,
-   "est_reward_day": 39.0,
-   "end": "2028-01-01T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 39.0
   },
   {
    "cond": "0x7ad5206bbe6e0f4f9541e5b7ec723619bae7557b1555872f920fc3055726b4ce",
@@ -797,6 +722,81 @@
    "end": "2027-01-29T12:00:00Z",
    "share0": 1.0,
    "rate0": 89.0
+  },
+  {
+   "cond": "0x1ffd22f6ef67f25096d21f7acc08b3dd7e631852aa32c6c26f5f1dc413a36252",
+   "question": "Will UK GDP growth in Q4 2026 be between 0.2% and 0.3%?",
+   "yes": "14301032721487457045097447862348660083881049852481390552689829272564980149659",
+   "no": "100426578580643075152993234480403646989526656819915868521676230616547531779527",
+   "rate": 68.0,
+   "v": 4.5,
+   "min_size": 20.0,
+   "d": 0.0225,
+   "collateral": 19.1,
+   "est_reward_day": 68.0,
+   "end": "2027-02-12T00:00:00Z",
+   "share0": 1.0,
+   "rate0": 68.0
+  },
+  {
+   "cond": "0xc7af14e0b0172a24a101c3aa3f1b0665298ac822b34811be00bfbead992ca135",
+   "question": "Will Anthropic raise between $65B and $75B in its IPO?",
+   "yes": "60781808234504165859372275690977313845026999538609391490534776463819102601236",
+   "no": "103408287422339067157766024679389629085496345498755359318667298346644098302805",
+   "rate": 60.0,
+   "v": 4.5,
+   "min_size": 20.0,
+   "d": 0.0225,
+   "collateral": 19.1,
+   "est_reward_day": 60.0,
+   "end": "2028-01-01T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 60.0
+  },
+  {
+   "cond": "0x11d017b3ccd3859f6594058f5a13c36631cd9965c587dfafab4a412fbeae8ce4",
+   "question": "Will Anthropic open between $80 and $90 on its first trading day?",
+   "yes": "69998165513002479915736618961193488423952936050635101800688131871744035925920",
+   "no": "97317396700101201863219229402719667888619097849391070009704641120037999624315",
+   "rate": 50.0,
+   "v": 4.5,
+   "min_size": 20.0,
+   "d": 0.0225,
+   "collateral": 19.1,
+   "est_reward_day": 50.0,
+   "end": "2028-01-01T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 50.0
+  },
+  {
+   "cond": "0xb216bf377fc2573c943b58bb34685073cf70a3a19595d04909e1212c0268b9f1",
+   "question": "Will Anthropic open between $90 and $100 on its first trading day?",
+   "yes": "68784476856131761119481557783242970183801232875909980837709162836140065552452",
+   "no": "86152870759927781342516692190706004877912052336208650790052656029704775900207",
+   "rate": 50.0,
+   "v": 4.5,
+   "min_size": 20.0,
+   "d": 0.0225,
+   "collateral": 19.1,
+   "est_reward_day": 50.0,
+   "end": "2028-01-01T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 50.0
+  },
+  {
+   "cond": "0xe1bac516348d02b74e26c7a4909f41742cb9389fe5ec8c2d74f3525335848bea",
+   "question": "Will Dario Amodei ring the bell at Anthropic's IPO?",
+   "yes": "4582209654307913642849549067618196752448193027241008371445077958253939703527",
+   "no": "70356613784735638320561247704262482356493443632949809778615144397285384772676",
+   "rate": 50.0,
+   "v": 4.5,
+   "min_size": 20.0,
+   "d": 0.0225,
+   "collateral": 19.1,
+   "est_reward_day": 50.0,
+   "end": "2028-01-01T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 50.0
   }
  ],
  "positions": {
@@ -3350,9 +3350,9 @@
   "0xb064a8080de6f1eb29fa739d645a440913fdf5c819a6ebc937cff973a3771f30": {
    "inv": 0.0,
    "cash": 0.7505799999999994,
-   "mid": 0.21000000000000002,
-   "share": 0.9981100874084574,
-   "reward": 64.92344979750497,
+   "mid": 0.21100000000000002,
+   "share": 0.9869189441719227,
+   "reward": 65.03722455971939,
    "fills": 3,
    "q": "Will the Ornn H100 Index hit $2.00 (LOW) by December 31, 2026?",
    "closed_at": 0.48
@@ -3499,9 +3499,9 @@
   "0x78e531ab78b40c7a9e58f90b161429d5c7872a4ba92986a22a071dfd318c2283": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.1645,
-   "share": 0.008437297504859888,
-   "reward": 124.97246043813493,
+   "mid": 0.164,
+   "share": null,
+   "reward": 124.97388348226563,
    "fills": 0,
    "q": "Will the median home value in NYC be between $458,000 and $471,000 on December 3"
   },
@@ -4128,7 +4128,7 @@
   "0xfafaa706aa77ca7becd5741282e7455659580cbfe62a3881d5020b4b453d5753": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.355,
+   "mid": 0.345,
    "share": 1.0,
    "reward": 9.29485488192705,
    "fills": 0,
@@ -4522,7 +4522,7 @@
   "0x5d15579a3a31d6220eb8d33d167788db82976f14c856768a5e37e51afdaeb279": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.478,
+   "mid": 0.4785,
    "share": 1.0,
    "reward": 17.59805527737572,
    "fills": 0,
@@ -6531,7 +6531,7 @@
    "cash": -0.5499999999999989,
    "mid": 0.48,
    "share": 1.0,
-   "reward": 87.22346177276978,
+   "reward": 87.59587592189853,
    "fills": 1,
    "q": "Will General Mills Q2 organic net sales growth be between -1.5% and 0%?",
    "closed_at": 0.58
@@ -8648,9 +8648,9 @@
   "0x0684a7cf3715ab98bf4b6399a91a8b96bfdfb51df2fef94304d015998bc40e70": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.14200000000000002,
-   "share": 0.006857856805755379,
-   "reward": 129.59030183895,
+   "mid": 0.14,
+   "share": null,
+   "reward": 129.59153656454117,
    "fills": 0,
    "q": "Will the median home value in NYC be less than $445,000 on December 31?"
   },
@@ -11682,9 +11682,9 @@
   "0xe2234c1d750873a4a11870c0c3d4a366ad5e39ed286067b73377589bd825f862": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.22999999999999998,
-   "share": 0.05645644239100981,
-   "reward": 6.879340434439004,
+   "mid": 0.23399999999999999,
+   "share": null,
+   "reward": 6.887924449914892,
    "fills": 0,
    "q": "Will Anthropic raise less than $65B in its IPO?"
   },
@@ -12025,7 +12025,7 @@
    "cash": 0.0,
    "mid": 0.515,
    "share": 1.0,
-   "reward": 710.6672856671855,
+   "reward": 710.9593751959139,
    "fills": 0,
    "q": "Will the Ornn H200 Index hit $8.00 (HIGH) by December 31, 2026?"
   },
@@ -16365,9 +16365,9 @@
   "0xc7af14e0b0172a24a101c3aa3f1b0665298ac822b34811be00bfbead992ca135": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.493,
-   "share": null,
-   "reward": 66.48136192853606,
+   "mid": 0.6875,
+   "share": 0.9892163208480391,
+   "reward": 66.5784975398735,
    "fills": 0,
    "q": "Will Anthropic raise between $65B and $75B in its IPO?"
   },
@@ -19281,9 +19281,9 @@
   "0x1ffd22f6ef67f25096d21f7acc08b3dd7e631852aa32c6c26f5f1dc413a36252": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.36,
-   "share": null,
-   "reward": 30.737919079416635,
+   "mid": 0.295,
+   "share": 1.0,
+   "reward": 30.84851671980297,
    "fills": 0,
    "q": "Will UK GDP growth in Q4 2026 be between 0.2% and 0.3%?"
   },
@@ -19767,7 +19767,7 @@
   "0x46a73cf44a4946a2fb1f848069651455f58d95edcefbc5c9e2b3b67c3c2947a7": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.615,
+   "mid": 0.61,
    "share": 1.0,
    "reward": 13.075212543223191,
    "fills": 0,
@@ -19884,7 +19884,7 @@
   "0xfce6cbb1a0ba0141f842789f0b3b188d212b64417b73498131be483975365dfa": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.56,
+   "mid": 0.55,
    "share": 1.0,
    "reward": 3.84280738617829,
    "fills": 0,
@@ -19967,7 +19967,7 @@
    "cash": 0.0,
    "mid": 0.275,
    "share": 1.0,
-   "reward": 4.36608718557214,
+   "reward": 4.373389423790349,
    "fills": 0,
    "q": "Will DJ Khaled perform at Coachella 2027?"
   },
@@ -20363,7 +20363,7 @@
    "cash": 0.0,
    "mid": 0.44,
    "share": 1.0,
-   "reward": 65.59716581850088,
+   "reward": 65.88925534722928,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 38+ on December 31"
   },
@@ -20390,7 +20390,7 @@
    "cash": 0.0,
    "mid": 0.455,
    "share": 1.0,
-   "reward": 52.35719247567213,
+   "reward": 52.64928200440055,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 46+ on December 31"
   },
@@ -20507,7 +20507,7 @@
    "cash": 0.0,
    "mid": 0.44,
    "share": 1.0,
-   "reward": 39.44050275830491,
+   "reward": 39.73259228703333,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 40+ on December 31"
   },
@@ -20525,7 +20525,7 @@
    "cash": 0.0,
    "mid": 0.3925,
    "share": 1.0,
-   "reward": 16.97310167022152,
+   "reward": 17.338213581132038,
    "fills": 0,
    "q": "Will Avigdor Lieberman be the next Israeli Minister of Defense?"
   },
@@ -20534,7 +20534,7 @@
    "cash": 0.0,
    "mid": 0.29000000000000004,
    "share": 1.0,
-   "reward": 43.54829770594012,
+   "reward": 43.59211113524939,
    "fills": 0,
    "q": "Will the Central Bank of Chile make no change to the monetary policy rate at the"
   },
@@ -20732,7 +20732,7 @@
    "cash": 0.0,
    "mid": 0.455,
    "share": 1.0,
-   "reward": 31.400287037535957,
+   "reward": 31.692376566264375,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 44+ on December 31"
   },
@@ -20883,9 +20883,9 @@
   "0xcf7eac32963e3866c7af3109145011d776a873099bf2ac92c1ad2ec50e564cdd": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.47000000000000003,
+   "mid": 0.465,
    "share": 1.0,
-   "reward": 23.54085702280621,
+   "reward": 24.380614417900397,
    "fills": 0,
    "q": "David Lisnard French presidential odds runner-up on December 31?"
   },
@@ -20901,9 +20901,9 @@
   "0x26dbb7adb346d79d90c58ba1b2ba865f0d193911e46426ac3d3225dc954904eb": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.14,
-   "share": 0.08707180736706333,
-   "reward": 19.878437614547543,
+   "mid": 0.12,
+   "share": 0.21833825717551192,
+   "reward": 19.906762313635546,
    "fills": 0,
    "q": "Will Eurozone GDP growth in Q4 2026 be between 0.0% and 0.3%?"
   },
@@ -20937,9 +20937,9 @@
   "0x4b2ebbf7ffd8974e2e5be5519a123e9b8caff5d3f6e3dbc08b33f84fc5d84c06": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.485,
+   "mid": 0.47500000000000003,
    "share": 1.0,
-   "reward": 16.30956144753296,
+   "reward": 16.740393502407372,
    "fills": 0,
    "q": "Marco Rubio Republican nomination odds runner-up on December 31?"
   },
@@ -20966,7 +20966,7 @@
    "cash": 0.0,
    "mid": 0.4,
    "share": 1.0,
-   "reward": 13.012889472709773,
+   "reward": 13.35609466896566,
    "fills": 0,
    "q": "Ron DeSantis Republican nomination odds runner-up on December 31?"
   },
@@ -20975,7 +20975,7 @@
    "cash": 0.0,
    "mid": 0.25,
    "share": 1.0,
-   "reward": 11.489283601774098,
+   "reward": 11.781373130502512,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 48+ on December 31"
   },
@@ -20991,9 +20991,9 @@
   "0x3393a955a86f9cd89b4dd42e38fae6771a3722069970f22781388790cfdbd6e0": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.242,
+   "mid": 0.2555,
    "share": 1.0,
-   "reward": 11.489230697022533,
+   "reward": 11.781320225750948,
    "fills": 0,
    "q": "Will the 2-year Treasury yield hit 5.20% before 2027?"
   },
@@ -21002,7 +21002,7 @@
    "cash": 0.0,
    "mid": 0.46499999999999997,
    "share": 1.0,
-   "reward": 11.463960399829116,
+   "reward": 11.48951823359285,
    "fills": 0,
    "q": "0 ships transit Hormuz on any date by January 31, 2027?"
   },
@@ -21011,7 +21011,7 @@
    "cash": 0.0,
    "mid": 0.44,
    "share": 1.0,
-   "reward": 8.090270452366934,
+   "reward": 8.382359981095348,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 42+ on December 31"
   },
@@ -21036,34 +21036,34 @@
   "0xfae34aee10ace81fd881a88f5c3de504bc5517e7186df26c55ec34c051cbc6b7": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.44,
-   "share": 0.9444375349791675,
-   "reward": 2.942454853259572,
+   "mid": 0.39,
+   "share": 1.0,
+   "reward": 3.618204255903034,
    "fills": 0,
    "q": "Will Mexico GDP growth in Q4 2026 be less than 1.5%?"
   },
   "0x37b6199aea72dad4dd96d5ea905e87efb7b9525fabd23be5b54858d74db6a4ca": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.10250000000000001,
-   "share": 0.09749422534203755,
-   "reward": 2.1592776070672945,
+   "mid": 0.10200000000000001,
+   "share": null,
+   "reward": 2.1608407677040615,
    "fills": 0,
    "q": "Will the 2-year Treasury yield hit 5.30% before 2027?"
   },
   "0x312210107231a022cb23d798d53a7c47edcd9fbc64362a3446c493320b8702a5": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.14500000000000002,
-   "share": 0.2450090744101635,
-   "reward": 1.8254731597880087,
+   "mid": 0.135,
+   "share": null,
+   "reward": 1.8387909437000172,
    "fills": 0,
    "q": "Will Eurozone GDP growth in Q4 2026 be between 0.4% and 0.7%?"
   },
   "0x7ad5206bbe6e0f4f9541e5b7ec723619bae7557b1555872f920fc3055726b4ce": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.41200000000000003,
+   "mid": 0.4195,
    "share": 1.0,
    "reward": 2.1251932211496207,
    "fills": 0,
@@ -21072,20 +21072,47 @@
   "0x7806fd853806ff5bc787b0319374a83e3aa74236343f3f93ae5f782c14878b03": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.365,
+   "mid": 0.345,
    "share": 1.0,
-   "reward": 9.312220121749018,
+   "reward": 10.444067045571625,
    "fills": 0,
    "q": "Margaret Qualley announced as next Bond girl?"
   },
   "0x032e44076a6a84f43f6ba9fced3d011d65fcc99f28736eb583fcc0b08698676f": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.295,
-   "share": 1.0,
-   "reward": 1.885140314569746,
+   "mid": 0.30500000000000005,
+   "share": 0.5586206896551698,
+   "reward": 2.071939668044919,
    "fills": 0,
    "q": "Will Eurozone GDP growth in Q4 2026 be between 1.2% and 1.5%?"
+  },
+  "0x11d017b3ccd3859f6594058f5a13c36631cd9965c587dfafab4a412fbeae8ce4": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.23500000000000001,
+   "share": 1.0,
+   "reward": 0.0813217944017163,
+   "fills": 0,
+   "q": "Will Anthropic open between $80 and $90 on its first trading day?"
+  },
+  "0xb216bf377fc2573c943b58bb34685073cf70a3a19595d04909e1212c0268b9f1": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.33999999999999997,
+   "share": 1.0,
+   "reward": 0.0813217944017163,
+   "fills": 0,
+   "q": "Will Anthropic open between $90 and $100 on its first trading day?"
+  },
+  "0xe1bac516348d02b74e26c7a4909f41742cb9389fe5ec8c2d74f3525335848bea": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.565,
+   "share": 1.0,
+   "reward": 0.0813217944017163,
+   "fills": 0,
+   "q": "Will Dario Amodei ring the bell at Anthropic's IPO?"
   }
  },
  "history": [
@@ -92421,17 +92448,30 @@
    "w": 2991562
   },
   {
-   "ts": "2026-11-17T17:58:04.894484+00:00",
-   "dt_h": 0.137,
-   "reward_tick": 5.55,
-   "reward_total": 55374.45,
+   "ts": "2026-11-17T17:59:18.741746+00:00",
+   "dt_h": 0.158,
+   "reward_tick": 6.3735,
+   "reward_total": 55375.27,
    "mm_value": -678.26,
-   "net": 54696.19,
-   "avg_share": 0.8645,
+   "net": 54697.02,
+   "avg_share": 0.8655,
    "n_markets": 53,
    "fills_total": 659,
    "rebalanced": false,
    "w": 2991563
+  },
+  {
+   "ts": "2026-11-17T18:08:35.807866+00:00",
+   "dt_h": 0.157,
+   "reward_tick": 6.5554,
+   "reward_total": 55381.83,
+   "mm_value": -678.26,
+   "net": 54703.57,
+   "avg_share": 0.9696,
+   "n_markets": 53,
+   "fills_total": 659,
+   "rebalanced": false,
+   "w": 2991564
   }
  ],
  "fills": [
@@ -98367,8 +98407,8 @@
    "ledger": "v4"
   }
  ],
- "reward_total": 55374.44831376281,
- "last_ts": 1794938284.8944838,
+ "reward_total": 55381.827340706106,
+ "last_ts": 1794938915.8078659,
  "chosen_at": 1791639880.921448,
  "rebalances": [
   {
@@ -98379,8 +98419,8 @@
   }
  ],
  "last_tick": {
-  "ts": "2026-11-17T17:58:04.894484+00:00",
-  "dt_h": 0.035,
+  "ts": "2026-11-17T18:08:35.807866+00:00",
+  "dt_h": 0.017,
   "markets": [
    {
     "q": "Will Chicago Bears finish the 2026-27 NFL regular ",
@@ -98461,7 +98501,7 @@
    },
    {
     "q": "Will BERNARR. - Durand Bernarr win Best Progressiv",
-    "mid": 0.615,
+    "mid": 0.61,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -98505,7 +98545,7 @@
    },
    {
     "q": "Will Choosin' Texas - Ella Langley win Best Countr",
-    "mid": 0.56,
+    "mid": 0.55,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -98525,237 +98565,209 @@
     "q": "Will DJ Khaled perform at Coachella 2027?",
     "mid": 0.275,
     "share": 1.0,
-    "earned": 0.0015,
+    "earned": 0.0007,
     "inv": 0.0
    },
    {
     "q": "Will Avigdor Lieberman be the next Israeli Ministe",
     "mid": 0.393,
     "share": 1.0,
-    "earned": 0.0726,
+    "earned": 0.0348,
     "inv": 0.0
    },
    {
     "q": "Will the Central Bank of Chile make no change to t",
     "mid": 0.29,
     "share": 1.0,
-    "earned": 0.0087,
+    "earned": 0.0042,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index hit $8.00 (HIGH) by Decem",
     "mid": 0.515,
     "share": 1.0,
-    "earned": 0.0581,
+    "earned": 0.0279,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
     "mid": 0.455,
     "share": 1.0,
-    "earned": 0.0581,
+    "earned": 0.0279,
     "inv": 0.0
    },
    {
     "q": "Will Dune: Part Three win Best Sound at the 99th A",
-    "mid": 0.355,
+    "mid": 0.345,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will Eurozone GDP growth in Q4 2026 be between 0.0",
-    "mid": 0.14,
-    "share": 0.0871,
-    "earned": 0.0024,
+    "mid": 0.12,
+    "share": 0.2183,
+    "earned": 0.0029,
     "inv": 0.0
    },
    {
     "q": "Marco Rubio Republican nomination odds runner-up o",
-    "mid": 0.485,
+    "mid": 0.475,
     "share": 1.0,
-    "earned": 0.0857,
+    "earned": 0.0411,
     "inv": 0.0
    },
    {
     "q": "Ron DeSantis Republican nomination odds runner-up ",
     "mid": 0.4,
     "share": 1.0,
-    "earned": 0.0683,
+    "earned": 0.0327,
     "inv": 0.0
    },
    {
     "q": "Will General Mills Q2 organic net sales growth be ",
     "mid": 0.48,
     "share": 1.0,
-    "earned": 0.0741,
+    "earned": 0.0355,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
     "mid": 0.25,
     "share": 1.0,
-    "earned": 0.0581,
+    "earned": 0.0279,
     "inv": 0.0
    },
    {
     "q": "Will the 2-year Treasury yield hit 5.20% before 20",
-    "mid": 0.242,
+    "mid": 0.256,
     "share": 1.0,
-    "earned": 0.0581,
+    "earned": 0.0279,
     "inv": 0.0
    },
    {
     "q": "0 ships transit Hormuz on any date by January 31, ",
     "mid": 0.465,
     "share": 1.0,
-    "earned": 0.0051,
+    "earned": 0.0024,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
     "mid": 0.44,
     "share": 1.0,
-    "earned": 0.0581,
+    "earned": 0.0279,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
     "mid": 0.44,
     "share": 1.0,
-    "earned": 0.0581,
+    "earned": 0.0279,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
     "mid": 0.44,
     "share": 1.0,
-    "earned": 0.0581,
+    "earned": 0.0279,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
     "mid": 0.455,
     "share": 1.0,
-    "earned": 0.0581,
+    "earned": 0.0279,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H100 Index hit $2.00 (LOW) by Decemb",
-    "mid": 0.21,
-    "share": 0.9981,
-    "earned": 0.0579,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the median home value in NYC be between $458,",
-    "mid": 0.165,
-    "share": 0.0084,
-    "earned": 0.0006,
+    "mid": 0.211,
+    "share": 0.9869,
+    "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "David Lisnard French presidential odds runner-up o",
-    "mid": 0.47,
+    "mid": 0.465,
     "share": 1.0,
-    "earned": 0.167,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the median home value in NYC be less than $44",
-    "mid": 0.142,
-    "share": 0.0069,
-    "earned": 0.0003,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the 2-year Treasury yield hit 5.30% before 20",
-    "mid": 0.103,
-    "share": 0.0975,
-    "earned": 0.0004,
-    "inv": 0.0
-   },
-   {
-    "q": "Will Eurozone GDP growth in Q4 2026 be between 0.4",
-    "mid": 0.145,
-    "share": 0.245,
-    "earned": 0.0061,
-    "inv": 0.0
-   },
-   {
-    "q": "Will Anthropic raise less than $65B in its IPO?",
-    "mid": 0.23,
-    "share": 0.0565,
-    "earned": 0.0033,
+    "earned": 0.0801,
     "inv": 0.0
    },
    {
     "q": "Will the Central Bank of Chile increase the moneta",
-    "mid": 0.412,
+    "mid": 0.419,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Margaret Qualley announced as next Bond girl?",
-    "mid": 0.365,
+    "mid": 0.345,
     "share": 1.0,
-    "earned": 0.2251,
+    "earned": 0.1079,
     "inv": 0.0
    },
    {
     "q": "Will Eurozone GDP growth in Q4 2026 be between 1.2",
-    "mid": 0.295,
-    "share": 1.0,
-    "earned": 0.093,
+    "mid": 0.305,
+    "share": 0.5586,
+    "earned": 0.0249,
     "inv": 0.0
    },
    {
     "q": "Will Mexico GDP growth in Q4 2026 be less than 1.5",
-    "mid": 0.44,
-    "share": 0.9444,
-    "earned": 0.0,
+    "mid": 0.39,
+    "share": 1.0,
+    "earned": 0.0717,
+    "inv": 0.0
+   },
+   {
+    "q": "Will UK GDP growth in Q4 2026 be between 0.2% and ",
+    "mid": 0.295,
+    "share": 1.0,
+    "earned": 0.0474,
+    "inv": 0.0
+   },
+   {
+    "q": "Will Anthropic raise between $65B and $75B in its ",
+    "mid": 0.688,
+    "share": 0.9892,
+    "earned": 0.0413,
+    "inv": 0.0
+   },
+   {
+    "q": "Will Anthropic open between $80 and $90 on its fir",
+    "mid": 0.235,
+    "share": 1.0,
+    "earned": 0.0348,
+    "inv": 0.0
+   },
+   {
+    "q": "Will Anthropic open between $90 and $100 on its fi",
+    "mid": 0.34,
+    "share": 1.0,
+    "earned": 0.0348,
+    "inv": 0.0
+   },
+   {
+    "q": "Will Dario Amodei ring the bell at Anthropic's IPO",
+    "mid": 0.565,
+    "share": 1.0,
+    "earned": 0.0348,
     "inv": 0.0
    }
   ],
-  "reward_tick": 1.3367,
-  "reward_total": 55374.45,
+  "reward_tick": 0.8549,
+  "reward_total": 55381.83,
   "mm_value": -678.26,
-  "net": 54696.19,
-  "avg_share": 0.8645,
+  "net": 54703.57,
+  "avg_share": 0.9696,
   "n_markets": 53,
   "fills_total": 659,
   "rebalanced": false
  },
  "reviews": [
-  {
-   "ts": "2026-10-27T16:58:23.879862+00:00",
-   "swapped": 10,
-   "out": [
-    "Will EH Bildu win exactly 7 seats in the 2026 Span",
-    "Will \"The Legend of Zelda: Ocarina of Time\" have a",
-    "Will Reservists \u2013 New Economic Party win 3.25-3.75",
-    "Will PSOE win the most seats in Las Palmas in the ",
-    "Will Nate Sheppard be the 2026 D1 Rushing Yards Le",
-    "Will Trump's approval rating hit 42% by June 30, 2",
-    "Will the highest score achieved by a SpaceXAI Grok",
-    "Will Anthropic raise at least $135B in its IPO?",
-    "Will Morena win the most seats in the 2027 Chiapas",
-    "Will the Ornn H100 Index hit $3.50 (HIGH) by Decem"
-   ],
-   "in": [
-    "Will Together win 11-13% of the vote in the 2026 K",
-    "Will Together win 13% or more of the vote in the 2",
-    "Will Anthropic raise less than $65B in its IPO?",
-    "Will the Ornn H100 Index hit $2.25 (LOW) by Decemb",
-    "Will Morena win the most seats in the 2027 Durango",
-    "Will PP win the most seats in C\u00e1ceres in the 2026 ",
-    "Will PSOE win the most seats in Girona in the 2026",
-    "Will PSOE win the most seats in Santa Cruz de Tene",
-    "Will One Nation win the third-most seats in the ne",
-    "Will brawk play for NRG in 2027?"
-   ]
-  },
   {
    "ts": "2026-10-27T17:58:43.069467+00:00",
    "swapped": 11,
@@ -107159,7 +107171,25 @@
    "in": [
     "Will Mexico GDP growth in Q4 2026 be less than 1.5"
    ]
+  },
+  {
+   "ts": "2026-11-17T18:06:15.283805+00:00",
+   "swapped": 5,
+   "out": [
+    "Will the median home value in NYC be less than $44",
+    "Will the median home value in NYC be between $458,",
+    "Will the 2-year Treasury yield hit 5.30% before 20",
+    "Will Anthropic raise less than $65B in its IPO?",
+    "Will Eurozone GDP growth in Q4 2026 be between 0.4"
+   ],
+   "in": [
+    "Will UK GDP growth in Q4 2026 be between 0.2% and ",
+    "Will Anthropic raise between $65B and $75B in its ",
+    "Will Anthropic open between $80 and $90 on its fir",
+    "Will Anthropic open between $90 and $100 on its fi",
+    "Will Dario Amodei ring the bell at Anthropic's IPO"
+   ]
   }
  ],
- "reviewed_at": 1794935170.857271
+ "reviewed_at": 1794938775.2838051
 }

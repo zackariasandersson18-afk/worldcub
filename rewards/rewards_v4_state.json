@@ -473,7 +473,7 @@
    "question": "Axel Kicillof Argentina presidential odds leader on December 31?",
    "yes": "46195811616246446057076505841608421305088833306975119854666561103622405447733",
    "no": "19558612054840538285651347054316254221389819865778465247497649799514756644025",
-   "rate": 39.0,
+   "rate": 44.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -488,7 +488,7 @@
    "question": "Javier Milei Argentina presidential odds leader on December 31?",
    "yes": "110681887409813456106409313075474804444900552115185038921717976236949492290430",
    "no": "100412660225656910370255986123334591349867462494500901297350978496007260309860",
-   "rate": 108.79936000000001,
+   "rate": 106.79936000000001,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -503,7 +503,7 @@
    "question": "Another candidate is the Argentina presidential odds leader on December 31?",
    "yes": "84063566212454559965759606545550085625183918607640674717779908247063447730354",
    "no": "61324509958411147890496632907094771538617856764103418576542108247927677842489",
-   "rate": 55.0,
+   "rate": 52.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -518,7 +518,7 @@
    "question": "Will Eurozone GDP growth in Q4 2026 be between 0.0% and 0.3%?",
    "yes": "36255764031474500096559584919437796081690034559785885305689190973767323406925",
    "no": "43421927680009367845734873358138575014892941977144245159372075968092866505825",
-   "rate": 38.0,
+   "rate": 41.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -529,26 +529,11 @@
    "rate0": 42.0
   },
   {
-   "cond": "0x29a351b6816b4f0c5f2a6dbc3d933f8c1e9cec32e6f93c64e681ca98fcc65df0",
-   "question": "You Can See Everything's Best Picture odds hit 40% by January 31?",
-   "yes": "72505721620134847408418685036099018526134035018703587643969841496913313135502",
-   "no": "75884714504864664791316469114177397184240764242645697416375073875702298572066",
-   "rate": 100.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.700000000000003,
-   "est_reward_day": 95.48022598870055,
-   "end": "2027-02-01T04:59:00Z",
-   "share0": 0.9548022598870055,
-   "rate0": 100.0
-  },
-  {
    "cond": "0x4b2ebbf7ffd8974e2e5be5519a123e9b8caff5d3f6e3dbc08b33f84fc5d84c06",
    "question": "Marco Rubio Republican nomination odds runner-up on December 31?",
    "yes": "12881049285304302183442464573182563618555423068964826089686036508102852557089",
    "no": "60291813209425556199471145278576805348975510446556786232515629598945781085550",
-   "rate": 61.0,
+   "rate": 63.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -593,7 +578,7 @@
    "question": "Ron DeSantis Republican nomination odds runner-up on December 31?",
    "yes": "67501146939823569759231586538637755167363394560586327602873450766019166399407",
    "no": "111087078981544791260796216601532596089880245512943159892288112993459901772520",
-   "rate": 45.0,
+   "rate": 47.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -728,7 +713,7 @@
    "question": "Will Anthropic raise between $65B and $75B in its IPO?",
    "yes": "60781808234504165859372275690977313845026999538609391490534776463819102601236",
    "no": "103408287422339067157766024679389629085496345498755359318667298346644098302805",
-   "rate": 53.0,
+   "rate": 52.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -797,6 +782,21 @@
    "end": "2027-01-01T04:59:00Z",
    "share0": 0.9995268511947006,
    "rate0": 40.0
+  },
+  {
+   "cond": "0x78e531ab78b40c7a9e58f90b161429d5c7872a4ba92986a22a071dfd318c2283",
+   "question": "Will the median home value in NYC be between $458,000 and $471,000 on December 31?",
+   "yes": "65365641829004334628675294834408373077365164010855511601144161909508752695778",
+   "no": "54094564720912571459446072220010828134210013599412714822396361311901130163278",
+   "rate": 60.0,
+   "v": 4.5,
+   "min_size": 20.0,
+   "d": 0.0225,
+   "collateral": 19.1,
+   "est_reward_day": 60.0,
+   "end": "2027-01-11T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 60.0
   }
  ],
  "positions": {
@@ -1136,7 +1136,7 @@
   "0xeaf463a1a9353009d8d9c50839bcc56afe7a043cacb131fccf908dfa26b10769": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.5,
+   "mid": 0.495,
    "share": 1.0,
    "reward": 118.30446849300093,
    "fills": 0,
@@ -3350,9 +3350,9 @@
   "0xb064a8080de6f1eb29fa739d645a440913fdf5c819a6ebc937cff973a3771f30": {
    "inv": 0.0,
    "cash": 0.7505799999999994,
-   "mid": 0.2735,
+   "mid": 0.266,
    "share": 1.0,
-   "reward": 63.7357417097112,
+   "reward": 63.748154909819235,
    "fills": 3,
    "q": "Will the Ornn H100 Index hit $2.00 (LOW) by December 31, 2026?",
    "closed_at": 0.48
@@ -3499,9 +3499,9 @@
   "0x78e531ab78b40c7a9e58f90b161429d5c7872a4ba92986a22a071dfd318c2283": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.2495,
-   "share": null,
-   "reward": 117.83464835751212,
+   "mid": 0.28,
+   "share": 1.0,
+   "reward": 118.26964287792468,
    "fills": 0,
    "q": "Will the median home value in NYC be between $458,000 and $471,000 on December 3"
   },
@@ -6531,7 +6531,7 @@
    "cash": -0.5499999999999989,
    "mid": 0.5,
    "share": 1.0,
-   "reward": 78.96816626757723,
+   "reward": 79.37328673229788,
    "fills": 1,
    "q": "Will General Mills Q2 organic net sales growth be between -1.5% and 0%?",
    "closed_at": 0.58
@@ -9799,7 +9799,7 @@
    "cash": 0.0,
    "mid": 0.485,
    "share": 1.0,
-   "reward": 67.2222994506268,
+   "reward": 67.54004099158419,
    "fills": 0,
    "q": "Will the 30-year Treasury yield dip below 5.25% before 2027?"
   },
@@ -12025,7 +12025,7 @@
    "cash": 0.0,
    "mid": 0.515,
    "share": 1.0,
-   "reward": 704.5517006527407,
+   "reward": 704.869442193698,
    "fills": 0,
    "q": "Will the Ornn H200 Index hit $8.00 (HIGH) by December 31, 2026?"
   },
@@ -16365,9 +16365,9 @@
   "0xc7af14e0b0172a24a101c3aa3f1b0665298ac822b34811be00bfbead992ca135": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.552,
-   "share": 0.9572567149785803,
-   "reward": 65.76317323671465,
+   "mid": 0.5635,
+   "share": 0.23873027090796742,
+   "reward": 65.96971897205778,
    "fills": 0,
    "q": "Will Anthropic raise between $65B and $75B in its IPO?"
   },
@@ -16592,7 +16592,7 @@
    "cash": 0.0,
    "mid": 0.24,
    "share": 1.0,
-   "reward": 18.586335882620013,
+   "reward": 18.90407742357739,
    "fills": 0,
    "q": "Will the 10-year Treasury yield dip below 4.7% before 2027?"
   },
@@ -19767,7 +19767,7 @@
   "0x46a73cf44a4946a2fb1f848069651455f58d95edcefbc5c9e2b3b67c3c2947a7": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.63,
+   "mid": 0.625,
    "share": 1.0,
    "reward": 13.075212543223191,
    "fills": 0,
@@ -19803,7 +19803,7 @@
   "0x9a8e079bb989a7f4500ee58b8962540190f2b35c15476d83721bccfeed84f822": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.375,
+   "mid": 0.385,
    "share": 1.0,
    "reward": 8.048744412006602,
    "fills": 0,
@@ -19821,7 +19821,7 @@
   "0xfc6c7fa06f53201149e1f6c693525f0b999fe794d0d7686edab7d6b50128b579": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.49,
+   "mid": 0.485,
    "share": 1.0,
    "reward": 6.133938541542049,
    "fills": 0,
@@ -19848,7 +19848,7 @@
   "0xe1ea9572020e3fac2f171c823ea36517f4c780ae62cd4be1cf67ff2cd09da456": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.475,
+   "mid": 0.44,
    "share": 1.0,
    "reward": 4.548629093992491,
    "fills": 0,
@@ -19884,7 +19884,7 @@
   "0xfce6cbb1a0ba0141f842789f0b3b188d212b64417b73498131be483975365dfa": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.535,
+   "mid": 0.585,
    "share": 1.0,
    "reward": 3.84280738617829,
    "fills": 0,
@@ -19902,7 +19902,7 @@
   "0x2a256c18683ff955f02072cd9969a52d5770b9301e3e557065330442d1c067f0": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.485,
+   "mid": 0.455,
    "share": 1.0,
    "reward": 2.1374141492860184,
    "fills": 0,
@@ -19967,7 +19967,7 @@
    "cash": 0.0,
    "mid": 0.27,
    "share": 1.0,
-   "reward": 4.203689817375052,
+   "reward": 4.211633355898987,
    "fills": 0,
    "q": "Will DJ Khaled perform at Coachella 2027?"
   },
@@ -20363,7 +20363,7 @@
    "cash": 0.0,
    "mid": 0.46499999999999997,
    "share": 1.0,
-   "reward": 59.1288342607678,
+   "reward": 59.44657580172519,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 38+ on December 31"
   },
@@ -20388,9 +20388,9 @@
   "0xab3305643ef7359a90326b1f9ca37210bef91fd09d5ee336ed1e34b98d088599": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.525,
+   "mid": 0.52,
    "share": 1.0,
-   "reward": 46.0112921751958,
+   "reward": 46.329033716153184,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 46+ on December 31"
   },
@@ -20505,9 +20505,9 @@
   "0xcb409177b8ddaad2a5d6a6c197c0f273457441cd2a53e7fe70212e89c4e89c10": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.525,
+   "mid": 0.46,
    "share": 1.0,
-   "reward": 33.4459773209719,
+   "reward": 33.73588483315103,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 40+ on December 31"
   },
@@ -20525,7 +20525,7 @@
    "cash": 0.0,
    "mid": 0.402,
    "share": 1.0,
-   "reward": 12.189872612694822,
+   "reward": 12.197816151218754,
    "fills": 0,
    "q": "Will Avigdor Lieberman be the next Israeli Minister of Defense?"
   },
@@ -20534,7 +20534,7 @@
    "cash": 0.0,
    "mid": 0.265,
    "share": 1.0,
-   "reward": 40.136707223899386,
+   "reward": 40.31146507142594,
    "fills": 0,
    "q": "Will the Central Bank of Chile make no change to the monetary policy rate at the"
   },
@@ -20714,7 +20714,7 @@
    "cash": 0.0,
    "mid": 0.315,
    "share": 1.0,
-   "reward": 33.459169494100195,
+   "reward": 33.85634642029692,
    "fills": 0,
    "q": "Nvidia hit with a BIS export-control penalty by March 31, 2027?"
   },
@@ -20730,9 +20730,9 @@
   "0x8c91d20f1e8fefcec50e045f572084e7a825f402fd87895b9288dc2e2a24cd6a": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.4,
+   "mid": 0.5,
    "share": 1.0,
-   "reward": 25.10721809179693,
+   "reward": 25.39721443873863,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 44+ on December 31"
   },
@@ -20794,7 +20794,7 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.21600000000000003,
-   "share": 0.03631853277047425,
+   "share": null,
    "reward": 30.70724184298358,
    "fills": 0,
    "q": "You Can See Everything's Best Picture odds hit 40% by January 31?"
@@ -20820,9 +20820,9 @@
   "0xc61cdf48b0f5bb04773b86413c99b42030d0b8ffa92f8166e29d37edd6681360": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.18,
-   "share": 1.0,
-   "reward": 34.980739104518875,
+   "mid": 0.15000000000000002,
+   "share": 0.024636684226904747,
+   "reward": 35.083654029245956,
    "fills": 0,
    "q": "Axel Kicillof Argentina presidential odds leader on December 31?"
   },
@@ -20858,16 +20858,16 @@
    "cash": 0.0,
    "mid": 0.685,
    "share": 1.0,
-   "reward": 29.079515471134833,
+   "reward": 29.940913385287118,
    "fills": 0,
    "q": "Javier Milei Argentina presidential odds leader on December 31?"
   },
   "0xe8e63b819b0e941c6b32ad213f415867fc742cffa3584d22dca66b8eea52d332": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.175,
+   "mid": 0.15999999999999998,
    "share": 1.0,
-   "reward": 19.645822859063532,
+   "reward": 20.07843648779923,
    "fills": 0,
    "q": "Another candidate is the Argentina presidential odds leader on December 31?"
   },
@@ -20901,9 +20901,9 @@
   "0x26dbb7adb346d79d90c58ba1b2ba865f0d193911e46426ac3d3225dc954904eb": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.285,
+   "mid": 0.35,
    "share": 1.0,
-   "reward": 14.902363677998936,
+   "reward": 15.155625990731295,
    "fills": 0,
    "q": "Will Eurozone GDP growth in Q4 2026 be between 0.0% and 0.3%?"
   },
@@ -20937,9 +20937,9 @@
   "0x4b2ebbf7ffd8974e2e5be5519a123e9b8caff5d3f6e3dbc08b33f84fc5d84c06": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.42500000000000004,
-   "share": 0.7636706473915758,
-   "reward": 7.3171866710849445,
+   "mid": 0.495,
+   "share": 1.0,
+   "reward": 7.594405351304664,
    "fills": 0,
    "q": "Marco Rubio Republican nomination odds runner-up on December 31?"
   },
@@ -20957,16 +20957,16 @@
    "cash": 0.0,
    "mid": 0.135,
    "share": 1.0,
-   "reward": 6.241405898142194,
+   "reward": 6.559147439099573,
    "fills": 0,
    "q": "Glenn Youngkin Republican nomination odds leader on March 31?"
   },
   "0x04e596c2896c00e3038a04e21d32bc099478e2b3b12eb2f9b0744ef387f0eb9f": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.325,
+   "mid": 0.45,
    "share": 1.0,
-   "reward": 6.9169036944734845,
+   "reward": 7.210148076840023,
    "fills": 0,
    "q": "Ron DeSantis Republican nomination odds runner-up on December 31?"
   },
@@ -20975,16 +20975,16 @@
    "cash": 0.0,
    "mid": 0.275,
    "share": 1.0,
-   "reward": 5.021081495616173,
+   "reward": 5.338823036573552,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 48+ on December 31"
   },
   "0x3c13fc3508cba41013473c467b718268962576a5ae16368afa8b38f34b064a5f": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.395,
+   "mid": 0.405,
    "share": 1.0,
-   "reward": 5.021081495616173,
+   "reward": 5.338823036573552,
    "fills": 0,
    "q": "Will the 2-year Treasury yield hit 5.10% before 2027?"
   },
@@ -20993,7 +20993,7 @@
    "cash": 0.0,
    "mid": 0.2545,
    "share": 1.0,
-   "reward": 5.021081495616173,
+   "reward": 5.338823036573552,
    "fills": 0,
    "q": "Will the 2-year Treasury yield hit 5.20% before 2027?"
   },
@@ -21002,16 +21002,16 @@
    "cash": 0.0,
    "mid": 0.475,
    "share": 1.0,
-   "reward": 5.021081495616173,
+   "reward": 5.338823036573552,
    "fills": 0,
    "q": "0 ships transit Hormuz on any date by January 31, 2027?"
   },
   "0x9b1553011e72f02f38f542563411afdc048620bcea31924c15855f4ee68f543a": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.4,
+   "mid": 0.475,
    "share": 1.0,
-   "reward": 1.6221209184990995,
+   "reward": 1.9121172654408003,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 42+ on December 31"
   }
@@ -92050,17 +92050,30 @@
    "w": 2991539
   },
   {
-   "ts": "2026-11-17T14:04:13.761872+00:00",
-   "dt_h": 0.085,
-   "reward_tick": 3.4593,
-   "reward_total": 55214.61,
+   "ts": "2026-11-17T14:09:36.876400+00:00",
+   "dt_h": 0.176,
+   "reward_tick": 7.2946,
+   "reward_total": 55218.44,
    "mm_value": -678.26,
-   "net": 54536.35,
-   "avg_share": 0.9697,
+   "net": 54540.19,
+   "avg_share": 0.9556,
    "n_markets": 53,
    "fills_total": 659,
    "rebalanced": false,
    "w": 2991540
+  },
+  {
+   "ts": "2026-11-17T14:15:40.083600+00:00",
+   "dt_h": 0.102,
+   "reward_tick": 4.0797,
+   "reward_total": 55222.52,
+   "mm_value": -678.26,
+   "net": 54544.27,
+   "avg_share": 0.9576,
+   "n_markets": 53,
+   "fills_total": 659,
+   "rebalanced": false,
+   "w": 2991541
   }
  ],
  "fills": [
@@ -97996,8 +98009,8 @@
    "ledger": "v4"
   }
  ],
- "reward_total": 55214.60582407092,
- "last_ts": 1794924253.7618716,
+ "reward_total": 55222.52068730084,
+ "last_ts": 1794924940.0836,
  "chosen_at": 1791639880.921448,
  "rebalances": [
   {
@@ -98008,8 +98021,8 @@
   }
  ],
  "last_tick": {
-  "ts": "2026-11-17T14:04:13.761872+00:00",
-  "dt_h": 0.017,
+  "ts": "2026-11-17T14:15:40.083600+00:00",
+  "dt_h": 0.034,
   "markets": [
    {
     "q": "Will Chicago Bears finish the 2026-27 NFL regular ",
@@ -98027,7 +98040,7 @@
    },
    {
     "q": "Will Claude Opus 5.6+ debut at an output token pri",
-    "mid": 0.5,
+    "mid": 0.495,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -98090,7 +98103,7 @@
    },
    {
     "q": "Will BERNARR. - Durand Bernarr win Best Progressiv",
-    "mid": 0.63,
+    "mid": 0.625,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -98105,7 +98118,7 @@
    },
    {
     "q": "Will MORNING DEW (DONK) - Beyonce win Best R&B Sol",
-    "mid": 0.375,
+    "mid": 0.385,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -98116,7 +98129,7 @@
    },
    {
     "q": "Will Danceteria - Madonna win Best Dance Pop Recor",
-    "mid": 0.49,
+    "mid": 0.485,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -98127,21 +98140,21 @@
    },
    {
     "q": "Will Do Not Disturb - Young Miko win Best Musica U",
-    "mid": 0.475,
+    "mid": 0.44,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will Choosin' Texas - Ella Langley win Best Countr",
-    "mid": 0.535,
+    "mid": 0.585,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will HOPE!! - Angelique Kidjo win Best Global Musi",
-    "mid": 0.485,
+    "mid": 0.455,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -98154,35 +98167,35 @@
     "q": "Will DJ Khaled perform at Coachella 2027?",
     "mid": 0.27,
     "share": 1.0,
-    "earned": 0.0007,
+    "earned": 0.0014,
     "inv": 0.0
    },
    {
     "q": "Will Avigdor Lieberman be the next Israeli Ministe",
     "mid": 0.402,
     "share": 1.0,
-    "earned": 0.0007,
+    "earned": 0.0014,
     "inv": 0.0
    },
    {
     "q": "Will the Central Bank of Chile make no change to t",
     "mid": 0.265,
     "share": 1.0,
-    "earned": 0.0153,
+    "earned": 0.0314,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index hit $8.00 (HIGH) by Decem",
     "mid": 0.515,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0571,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
-    "mid": 0.4,
+    "mid": 0.5,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0571,
     "inv": 0.0
    },
    {
@@ -98194,193 +98207,169 @@
    },
    {
     "q": "Axel Kicillof Argentina presidential odds leader o",
-    "mid": 0.18,
-    "share": 1.0,
-    "earned": 0.0271,
+    "mid": 0.15,
+    "share": 0.0246,
+    "earned": 0.0015,
     "inv": 0.0
    },
    {
     "q": "Javier Milei Argentina presidential odds leader on",
     "mid": 0.685,
     "share": 1.0,
-    "earned": 0.0757,
+    "earned": 0.1524,
     "inv": 0.0
    },
    {
     "q": "Another candidate is the Argentina presidential od",
-    "mid": 0.175,
+    "mid": 0.16,
     "share": 1.0,
-    "earned": 0.0382,
+    "earned": 0.0742,
     "inv": 0.0
    },
    {
     "q": "Will Eurozone GDP growth in Q4 2026 be between 0.0",
-    "mid": 0.285,
+    "mid": 0.35,
     "share": 1.0,
-    "earned": 0.0264,
-    "inv": 0.0
-   },
-   {
-    "q": "You Can See Everything's Best Picture odds hit 40%",
-    "mid": 0.216,
-    "share": 0.0363,
-    "earned": 0.0024,
+    "earned": 0.0585,
     "inv": 0.0
    },
    {
     "q": "Marco Rubio Republican nomination odds runner-up o",
-    "mid": 0.425,
-    "share": 0.7637,
-    "earned": 0.0324,
+    "mid": 0.495,
+    "share": 1.0,
+    "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Nvidia hit with a BIS export-control penalty by Ma",
     "mid": 0.315,
     "share": 1.0,
-    "earned": 0.0348,
+    "earned": 0.0713,
     "inv": 0.0
    },
    {
     "q": "Glenn Youngkin Republican nomination odds leader o",
     "mid": 0.135,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0571,
     "inv": 0.0
    },
    {
     "q": "Ron DeSantis Republican nomination odds runner-up ",
-    "mid": 0.325,
+    "mid": 0.45,
     "share": 1.0,
-    "earned": 0.0313,
+    "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will General Mills Q2 organic net sales growth be ",
     "mid": 0.5,
     "share": 1.0,
-    "earned": 0.0355,
+    "earned": 0.0728,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
     "mid": 0.275,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0571,
     "inv": 0.0
    },
    {
     "q": "Will the 30-year Treasury yield dip below 5.25% be",
     "mid": 0.485,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0571,
     "inv": 0.0
    },
    {
     "q": "Will the 2-year Treasury yield hit 5.10% before 20",
-    "mid": 0.395,
+    "mid": 0.405,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0571,
     "inv": 0.0
    },
    {
     "q": "Will the 2-year Treasury yield hit 5.20% before 20",
     "mid": 0.255,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0571,
     "inv": 0.0
    },
    {
     "q": "0 ships transit Hormuz on any date by January 31, ",
     "mid": 0.475,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0571,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
     "mid": 0.465,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0571,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
-    "mid": 0.525,
+    "mid": 0.46,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0571,
     "inv": 0.0
    },
    {
     "q": "Will Anthropic raise between $65B and $75B in its ",
-    "mid": 0.552,
-    "share": 0.9573,
-    "earned": 0.0353,
+    "mid": 0.564,
+    "share": 0.2387,
+    "earned": 0.0177,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
-    "mid": 0.4,
+    "mid": 0.475,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0571,
     "inv": 0.0
    },
    {
     "q": "Will the 10-year Treasury yield dip below 4.7% bef",
     "mid": 0.24,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0571,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
-    "mid": 0.525,
+    "mid": 0.52,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0571,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H100 Index hit $2.00 (LOW) by Decemb",
-    "mid": 0.274,
+    "mid": 0.266,
     "share": 1.0,
-    "earned": 0.0021,
+    "earned": 0.0043,
+    "inv": 0.0
+   },
+   {
+    "q": "Will the median home value in NYC be between $458,",
+    "mid": 0.28,
+    "share": 1.0,
+    "earned": 0.0856,
     "inv": 0.0
    }
   ],
-  "reward_tick": 0.6915,
-  "reward_total": 55214.61,
+  "reward_tick": 1.3147,
+  "reward_total": 55222.52,
   "mm_value": -678.26,
-  "net": 54536.35,
-  "avg_share": 0.9697,
+  "net": 54544.27,
+  "avg_share": 0.9576,
   "n_markets": 53,
   "fills_total": 659,
   "rebalanced": false
  },
  "reviews": [
-  {
-   "ts": "2026-10-27T12:55:38.097737+00:00",
-   "swapped": 8,
-   "out": [
-    "Will the highest score achieved on Humanity\u2019s Last",
-    "Will GPT Astra 6.1+ debut at an output token price",
-    "Will Ben Johns win zero Triple Crowns in the 2026-",
-    "Will Ben Johns be Number 1 in the PPA 2026-27 Men'",
-    "Will the Ornn H100 Index hit $3.50 (HIGH) by Decem",
-    "Will Otzma win 8-9 seats in the 2026 Knesset elect",
-    "No change in Reserve Bank of Australia's interest ",
-    "Will Morena win the most seats in the 2027 Chiapas"
-   ],
-   "in": [
-    "Will Yashar win 18-20% of the vote in the 2026 Kne",
-    "Will Yashar win 20-22% of the vote in the 2026 Kne",
-    "Will the highest score achieved by a SpaceXAI Grok",
-    "Will the highest score achieved by a SpaceXAI Grok",
-    "Will Amcha Yisrael win 4-5% of the vote in the 202",
-    "Will Morena win the most seats in the 2027 Durango",
-    "Will PSOE win the most seats in Las Palmas in the ",
-    "Will PP win the most seats in the Balearic Islands"
-   ]
-  },
   {
    "ts": "2026-10-27T13:55:48.473931+00:00",
    "swapped": 11,
@@ -106830,7 +106819,17 @@
     "Will the 7-day average ship traffic through the Su",
     "Will the Ornn H100 Index hit $2.00 (LOW) by Decemb"
    ]
+  },
+  {
+   "ts": "2026-11-17T14:05:13.691491+00:00",
+   "swapped": 1,
+   "out": [
+    "You Can See Everything's Best Picture odds hit 40%"
+   ],
+   "in": [
+    "Will the median home value in NYC be between $458,"
+   ]
   }
  ],
- "reviewed_at": 1794920690.0407243
+ "reviewed_at": 1794924313.6914907
 }

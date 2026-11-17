@@ -8,7 +8,7 @@
    "question": "Will Jensen Huang be TIME Person of the Year 2026?",
    "yes": "35527825951692459592498484172559933106826770027951195030449715982833475501901",
    "no": "114009078735598058500829111884753185825640363325438204418800276312456283775682",
-   "rate": 0.0,
+   "rate": 100.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -23,7 +23,7 @@
    "question": "Will Canada\u2019s 2026 inflation be between 3.0% and 3.4%?",
    "yes": "70947022834029907891985983421086617935623882414718990926364070609942565191239",
    "no": "26890068771948329902522323370485464410795024516188981048655213665137558129893",
-   "rate": 5.0,
+   "rate": 4.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -38,7 +38,7 @@
    "question": "Will Germany GDP growth in Q4 2026 be at least 1.9%?",
    "yes": "46154952091121217072449261432101796618926141307105934338051422272877880679451",
    "no": "108277637622301424910202580455977782996552336022795329677720740094671922067298",
-   "rate": 92.0,
+   "rate": 93.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -53,7 +53,7 @@
    "question": "Will Anthropic raise between $65B and $75B in its IPO?",
    "yes": "60781808234504165859372275690977313845026999538609391490534776463819102601236",
    "no": "103408287422339067157766024679389629085496345498755359318667298346644098302805",
-   "rate": 51.0,
+   "rate": 50.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -113,7 +113,7 @@
    "question": "Will General Mills Q2 organic net sales growth be between -1.5% and 0%?",
    "yes": "28576088263275714728147098815170943696901554083673979461793096138029701621081",
    "no": "34986471761269296885095598608861119173896686256054324601576435490401085376642",
-   "rate": 54.0,
+   "rate": 55.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -173,7 +173,7 @@
    "question": "Will Mexico GDP growth in Q4 2026 be between 1.5% and 2.0%?",
    "yes": "8595067856290240029025779081641099070618643017920901580363493157961180492098",
    "no": "49268628149126296989164558081008565987788135103562167485678874620077224842430",
-   "rate": 43.0,
+   "rate": 36.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -608,7 +608,7 @@
    "question": "Will Mexico GDP growth in Q4 2026 be less than 1.5%?",
    "yes": "82747146168012487747608974061672424155420361057694136384766725380527992218754",
    "no": "69816988356271037535661645120571429005091460568919112661437462681168001481457",
-   "rate": 31.0,
+   "rate": 45.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -638,7 +638,7 @@
    "question": "Will Mexico GDP growth in Q4 2026 be between 2.0% and 2.5%?",
    "yes": "32293446459884657896838858910784228175189928179903744319201950740155723771305",
    "no": "36668182654090600048460369913300050638713853567518966062036964881763442318060",
-   "rate": 37.0,
+   "rate": 32.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -713,7 +713,7 @@
    "question": "Will primmie play for Paper Rex in 2027?",
    "yes": "80065387661331799553598752727676933037643240147033542264908321875551448316874",
    "no": "90297749759086617158234739158953701172096324824374018636468566452007013106977",
-   "rate": 35.0,
+   "rate": 31.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -743,7 +743,7 @@
    "question": "JD Vance Republican nomination odds leader on March 31?",
    "yes": "75677026979389669074432404486079012268649560658924339464961683778599558824897",
    "no": "5665170736609200231229673855886141189320257610346645794163260204189319284568",
-   "rate": 90.0,
+   "rate": 93.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -758,7 +758,7 @@
    "question": "Marco Rubio Republican nomination odds leader on March 31?",
    "yes": "96500799063906186022576648571300288413183615896187754644030989415933169536436",
    "no": "107829068006347746708692922457417816554862453424559915070215554071813670793401",
-   "rate": 71.0,
+   "rate": 54.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -1052,9 +1052,9 @@
   "0x0ce8bfcbda5a0ef4de7680d6839c887e0a1b2e1a33a4f8f9106b0821d5d7cf6c": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.435,
+   "mid": 0.37,
    "share": 1.0,
-   "reward": 255.42798532865885,
+   "reward": 255.6875196771511,
    "fills": 0,
    "q": "Will GPT Astra's output price be at or below $30 in 2026?"
   },
@@ -1160,8 +1160,8 @@
    "inv": 0.0,
    "cash": 0.057499999999999996,
    "mid": 0.8,
-   "share": 0.0048148932797423384,
-   "reward": 268.4953743516345,
+   "share": 0.005967967622398425,
+   "reward": 268.4968030683784,
    "fills": 1,
    "q": "Will OpenAI's frontier output token price be at or below $40 in 2026?",
    "closed_at": 0.4
@@ -2733,8 +2733,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.8,
-   "share": 0.005962103879934938,
-   "reward": 109.56482870013832,
+   "share": 0.006075909610406442,
+   "reward": 109.56657543527353,
    "fills": 0,
    "q": "Will GPT Astra's output price be at or below $40 in 2026?"
   },
@@ -6428,7 +6428,7 @@
    "cash": 0.0,
    "mid": 0.69,
    "share": 1.0,
-   "reward": 448.8921781404513,
+   "reward": 449.17944645940463,
    "fills": 0,
    "q": "Will the Ornn H200 Index hit $8.00 (HIGH) by December 31, 2026?"
   },
@@ -6456,7 +6456,7 @@
    "cash": 0.045050000000000145,
    "mid": 0.48,
    "share": 0.9548022598870051,
-   "reward": 503.66157130854907,
+   "reward": 503.68214264155887,
    "fills": 1,
    "q": "Will the Ornn H200 Index hit $5.00 (LOW) by December 31, 2026?",
    "closed_at": 0.47
@@ -6837,9 +6837,9 @@
   "0x29c639f7498ae455e756f9f0851f93ea75a746c3c9cf4ed90ef7d1c6ded412bd": {
    "inv": 0.0,
    "cash": -0.2900000000000009,
-   "mid": 0.27649999999999997,
+   "mid": 0.3265,
    "share": 1.0,
-   "reward": 10.969586471242597,
+   "reward": 11.001085867595455,
    "fills": 1,
    "q": "Will Canada\u2019s 2026 inflation be between 3.0% and 3.4%?",
    "closed_at": 0.344
@@ -7980,9 +7980,9 @@
   "0x99b5f98a293148518584f4b4d7970301204b9aef256ff915d32ccb3df48c8893": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.37,
-   "share": 0.1721360900458488,
-   "reward": 16.90700833021616,
+   "mid": 0.36,
+   "share": 0.29701230228471004,
+   "reward": 16.908707615079603,
    "fills": 0,
    "q": "Next Israeli election called by March 31, 2027?"
   },
@@ -9322,9 +9322,9 @@
   "0x3c13fc3508cba41013473c467b718268962576a5ae16368afa8b38f34b064a5f": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.39,
-   "share": 0.8086124401913859,
-   "reward": 9.752510347581387,
+   "mid": 0.395,
+   "share": 0.6377358490566047,
+   "reward": 9.767441967589818,
    "fills": 0,
    "q": "Will the 2-year Treasury yield hit 5.10% before 2027?"
   },
@@ -9692,8 +9692,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.46499999999999997,
-   "share": 0.0034220606847587993,
-   "reward": 22.22594884040564,
+   "share": 0.0037011528850333453,
+   "reward": 22.22736457107659,
    "fills": 0,
    "q": "Will General Mills Q2 organic net sales growth be between -1.5% and 0%?"
   },
@@ -10897,9 +10897,9 @@
   "0xc8445d8968da382d611a2da7ea88662a29fef892af6c028f36ed7124ce15c899": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.535,
+   "mid": 0.52,
    "share": 1.0,
-   "reward": 27.613281548648164,
+   "reward": 27.972366947339836,
    "fills": 0,
    "q": "Will \"Dune: Part Three\" score at least 88 on the Rotten Tomatoes Tomatometer?"
   },
@@ -11464,9 +11464,9 @@
   "0x8652314642ea8e1b8b1f5fded33bd3deb328fff284b5f8d015ef62e0c39cae3c": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.804,
-   "share": 0.28562159722417807,
-   "reward": 11.212977449852842,
+   "mid": 0.7785,
+   "share": 0.975903614457831,
+   "reward": 11.39773055285054,
    "fills": 0,
    "q": "Will primmie play for Paper Rex in 2027?"
   },
@@ -11474,8 +11474,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.1795,
-   "share": 0.015571817676822888,
-   "reward": 2.0862257273848646,
+   "share": 0.021253651403550174,
+   "reward": 2.086477766283269,
    "fills": 0,
    "q": "Will UK GDP growth in Q4 2026 be negative?"
   },
@@ -11501,8 +11501,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.615,
-   "share": 0.014357806738823848,
-   "reward": 77.11605472062038,
+   "share": 0.009523603433997259,
+   "reward": 77.11912641064949,
    "fills": 0,
    "q": "0 ships transit Hormuz on any date by March 31, 2027?"
   },
@@ -11518,9 +11518,9 @@
   "0xeac467bcba15da8ba27bdcac2a0dde4e1edf5fbe5ad5ffdb7ba54fe1cb78da44": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.495,
+   "mid": 0.51,
    "share": 1.0,
-   "reward": 77.72072875119537,
+   "reward": 78.00799707014872,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait be 22+ on D"
   },
@@ -11529,16 +11529,16 @@
    "cash": 0.0,
    "mid": 0.36,
    "share": 1.0,
-   "reward": 87.62386118843737,
+   "reward": 87.91112950739073,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 42+ on December 31"
   },
   "0xab3305643ef7359a90326b1f9ca37210bef91fd09d5ee336ed1e34b98d088599": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.515,
+   "mid": 0.52,
    "share": 1.0,
-   "reward": 75.304672003177,
+   "reward": 75.59194032213036,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 46+ on December 31"
   },
@@ -11547,7 +11547,7 @@
    "cash": 0.0,
    "mid": 0.6,
    "share": 1.0,
-   "reward": 45.551673584279634,
+   "reward": 45.838941903232964,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Malacca Strait be 200+ on Decemb"
   },
@@ -11573,8 +11573,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.495,
-   "share": 0.012311488527441074,
-   "reward": 82.9304706449388,
+   "share": 0.02086483635548348,
+   "reward": 82.93479106747219,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Strait of Hormuz be 3+ on Decemb"
   },
@@ -11583,7 +11583,7 @@
    "cash": 0.0,
    "mid": 0.385,
    "share": 0.016305501418289188,
-   "reward": 67.19915045055879,
+   "reward": 67.20391441511002,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Strait of Hormuz be 5+ on Decemb"
   },
@@ -11592,7 +11592,7 @@
    "cash": 0.0,
    "mid": 0.295,
    "share": 1.0,
-   "reward": 72.57082339079516,
+   "reward": 72.8580917097485,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Strait of Hormuz be 6+ on Decemb"
   },
@@ -11619,16 +11619,16 @@
    "cash": 0.0,
    "mid": 0.43,
    "share": 1.0,
-   "reward": 83.16763043070249,
+   "reward": 83.45489874965584,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 38+ on December 31"
   },
   "0x8c91d20f1e8fefcec50e045f572084e7a825f402fd87895b9288dc2e2a24cd6a": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.5,
+   "mid": 0.525,
    "share": 1.0,
-   "reward": 83.35255242955141,
+   "reward": 83.63982074850476,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 44+ on December 31"
   },
@@ -11637,16 +11637,16 @@
    "cash": 0.0,
    "mid": 0.26,
    "share": 1.0,
-   "reward": 29.11196370373001,
+   "reward": 29.399232022683343,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 48+ on December 31"
   },
   "0x0dd081a0f84fca7bc19651487be24e498d714dbba8b3f64f54c29c0003c67cea": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.505,
+   "mid": 0.5549999999999999,
    "share": 1.0,
-   "reward": 37.71723981882828,
+   "reward": 37.97669236005597,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Panama Canal be 25+ on December "
   },
@@ -11680,18 +11680,18 @@
   "0xb57cd7a2217ea0085db5fafc3ce5d743dc161d9c3367e15f36af5b8541f62b83": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.74,
-   "share": 0.20770176157312603,
-   "reward": 3.855754639876502,
+   "mid": 0.75,
+   "share": 0.26322347517288675,
+   "reward": 3.8669914605869127,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Malacca Strait be 190+ on Decemb"
   },
   "0x2a939931c880379be0ff462671872a6469cb63a7a7a47871854e876e1446ef7c": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.6799999999999999,
+   "mid": 0.685,
    "share": 1.0,
-   "reward": 43.99855786376329,
+   "reward": 44.28582618271662,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Malacca Strait be 210+ on Decemb"
   },
@@ -11735,8 +11735,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.645,
-   "share": 0.008402893379713334,
-   "reward": 11.234164570277827,
+   "share": 0.008200014362155339,
+   "reward": 11.236502485964142,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait reach 30+ b"
   },
@@ -11753,8 +11753,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.195,
-   "share": 0.007401484921817539,
-   "reward": 73.15061146965691,
+   "share": 0.007656967840735061,
+   "reward": 73.15272296289871,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait reach 40+ b"
   },
@@ -11835,16 +11835,16 @@
    "cash": 0.0,
    "mid": 0.45999999999999996,
    "share": 1.0,
-   "reward": 42.56638914116214,
+   "reward": 42.85365746011547,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Strait of Hormuz be 4+ on Decemb"
   },
   "0xe4e3c6d800dddb8c456251d498bb48e566a6867a469e9d973e2e792c05410d8a": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.515,
+   "mid": 0.53,
    "share": 1.0,
-   "reward": 34.50809159957269,
+   "reward": 34.641588697491024,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait be 24+ on D"
   },
@@ -11878,9 +11878,9 @@
   "0xcb409177b8ddaad2a5d6a6c197c0f273457441cd2a53e7fe70212e89c4e89c10": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.52,
+   "mid": 0.505,
    "share": 1.0,
-   "reward": 35.761470725303596,
+   "reward": 36.048739044256926,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 40+ on December 31"
   },
@@ -11907,7 +11907,7 @@
    "cash": 0.0,
    "mid": 0.42,
    "share": 1.0,
-   "reward": 33.13372086998496,
+   "reward": 33.42098918893829,
    "fills": 0,
    "q": "0 ships transit Hormuz on any date by January 31, 2027?"
   },
@@ -11952,7 +11952,7 @@
    "cash": 0.0,
    "mid": 0.45,
    "share": 0.04132635594463733,
-   "reward": 20.595918835390563,
+   "reward": 20.596837721367834,
    "fills": 0,
    "q": "Will \u00c9douard Philippe, but not Gabriel Attal, be on the ballot for the 2027 Fren"
   },
@@ -11970,7 +11970,7 @@
    "cash": 0.0,
    "mid": 0.47,
    "share": 1.0,
-   "reward": 38.58787305854262,
+   "reward": 38.86795966952213,
    "fills": 0,
    "q": "Will the Central Bank of Chile increase the monetary policy rate by 25 bps at th"
   },
@@ -11996,7 +11996,7 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.039,
-   "share": 0.00058887616421424,
+   "share": 0.00029133727620261733,
    "reward": 14.801273047108396,
    "fills": 0,
    "q": "Will Jensen Huang be TIME Person of the Year 2026?"
@@ -12004,18 +12004,18 @@
   "0x95c94d3f7425e444b5d9e3078bfea7bafa0e5989a59071612a10dd645d44e65b": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.49,
+   "mid": 0.515,
    "share": 1.0,
-   "reward": 13.440931051584124,
+   "reward": 14.102578500675751,
    "fills": 0,
    "q": "Will Germany GDP growth in Q4 2026 be at least 1.9%?"
   },
   "0xc7af14e0b0172a24a101c3aa3f1b0665298ac822b34811be00bfbead992ca135": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.47550000000000003,
-   "share": 0.08296120283502027,
-   "reward": 6.524535617875697,
+   "mid": 0.476,
+   "share": 0.05643655416515702,
+   "reward": 6.546211777170725,
    "fills": 0,
    "q": "Will Anthropic raise between $65B and $75B in its IPO?"
   },
@@ -12024,7 +12024,7 @@
    "cash": 0.0,
    "mid": 0.22999999999999998,
    "share": 1.0,
-   "reward": 12.984162711710848,
+   "reward": 13.343248110402518,
    "fills": 0,
    "q": "Nvidia hit with a BIS export-control penalty by March 31, 2027?"
   },
@@ -12032,8 +12032,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.56,
-   "share": 0.13577787061734808,
-   "reward": 12.00556886499469,
+   "share": 0.18268690275435734,
+   "reward": 12.057484312624368,
    "fills": 0,
    "q": "Next Israeli election called by December 31, 2027?"
   },
@@ -12041,17 +12041,17 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.10500000000000001,
-   "share": 0.004663495073031255,
-   "reward": 0.5460674249648328,
+   "share": 0.004698066131424428,
+   "reward": 0.5461682851231214,
    "fills": 0,
    "q": "DOJ criminally charges Megaspeed by December 31, 2026?"
   },
   "0xb0764c06c8c483f94fdcc6b5e6288e42e1c9c549b4b1332f57936e8c183ba4e3": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.42000000000000004,
+   "mid": 0.39,
    "share": 1.0,
-   "reward": 10.199746478233074,
+   "reward": 10.502047712615244,
    "fills": 0,
    "q": "Will Mexico GDP growth in Q4 2026 be between 1.5% and 2.0%?"
   },
@@ -12060,7 +12060,7 @@
    "cash": 0.0,
    "mid": 0.6599999999999999,
    "share": 0.2376131826106529,
-   "reward": 5.750128277362613,
+   "reward": 5.758787268532653,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Panama Canal be 24+ on December "
   },
@@ -12068,7 +12068,7 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.08499999999999999,
-   "share": 0.0015887808378437708,
+   "share": 0.001742912114366708,
    "reward": 2.0741843132902478,
    "fills": 0,
    "q": "Kamala Harris Democratic nomination odds leader on December 31?"
@@ -12076,27 +12076,27 @@
   "0xfae34aee10ace81fd881a88f5c3de504bc5517e7186df26c55ec34c051cbc6b7": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.31499999999999995,
+   "mid": 0.46499999999999997,
    "share": 1.0,
-   "reward": 9.096652713498042,
+   "reward": 9.310816250564887,
    "fills": 0,
    "q": "Will Mexico GDP growth in Q4 2026 be less than 1.5%?"
   },
   "0x56117d1d007526c7af64d34657ed4c936cef9704ed1218bb471a9d12f2c4eb8f": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.20500000000000002,
-   "share": 1.0,
-   "reward": 2.3988533653552153,
+   "mid": 0.22000000000000003,
+   "share": 0.8086124401913884,
+   "reward": 2.4261538324894794,
    "fills": 0,
    "q": "Will J.D. Vance win the Iowa Republican caucus?"
   },
   "0x9dce17598f3e81c2f7c349c4591403efc0e01d69ac48aa95b07f5b3fc58650a1": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.38,
+   "mid": 0.35,
    "share": 1.0,
-   "reward": 8.779054188226109,
+   "reward": 9.040125805763182,
    "fills": 0,
    "q": "Will Mexico GDP growth in Q4 2026 be between 2.0% and 2.5%?"
   },
@@ -12104,7 +12104,7 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.07,
-   "share": 0.1376062626139072,
+   "share": 0.15788365728720768,
    "reward": 2.6782114900968983,
    "fills": 0,
    "q": "Ron DeSantis Republican nomination odds leader on March 31?"
@@ -12112,9 +12112,9 @@
   "0xfd9446721d2e3489b89f5cb04da8757a908179b92eff3fba67a1e8a0ec88ea58": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.3615,
+   "mid": 0.36,
    "share": 1.0,
-   "reward": 8.062396018380921,
+   "reward": 8.270665549622093,
    "fills": 0,
    "q": "Will Radovan Vi\u0161kovi\u0107 be the next Chairman of the Council of Ministers\u00a0of Bosnia"
   },
@@ -12123,7 +12123,7 @@
    "cash": 0.0,
    "mid": 0.3145,
    "share": 1.0,
-   "reward": 0.249064499005276,
+   "reward": 0.2777913309006098,
    "fills": 0,
    "q": "Will Canada\u2019s 2026 inflation be between 2.5% and 2.9%?"
   },
@@ -12141,16 +12141,16 @@
    "cash": 0.0,
    "mid": 0.575,
    "share": 1.0,
-   "reward": 20.581409291104947,
+   "reward": 21.23055395524681,
    "fills": 0,
    "q": "JD Vance Republican nomination odds leader on March 31?"
   },
   "0xb0c2c0ca9c70d6a6eb7e09035cc0fbd7cc160c09dee96b67ca4f88c1755ca655": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.27,
+   "mid": 0.26,
    "share": 1.0,
-   "reward": 5.102499578337453,
+   "reward": 5.596585480997435,
    "fills": 0,
    "q": "Marco Rubio Republican nomination odds leader on March 31?"
   },
@@ -12159,7 +12159,7 @@
    "cash": 0.0,
    "mid": 0.5255,
    "share": 1.0,
-   "reward": 8.78081669139365,
+   "reward": 9.024994762503983,
    "fills": 0,
    "q": "Will Joe Pyfer fight Gregory Rodrigues next?"
   }
@@ -83650,17 +83650,30 @@
    "w": 2991497
   },
   {
-   "ts": "2026-11-17T07:08:31.781021+00:00",
-   "dt_h": 0.153,
-   "reward_tick": 7.5575,
-   "reward_total": 38927.47,
+   "ts": "2026-11-17T07:09:31.863101+00:00",
+   "dt_h": 0.17,
+   "reward_tick": 8.3995,
+   "reward_total": 38928.31,
    "mm_value": -589.25,
-   "net": 38338.21,
-   "avg_share": 0.6442,
+   "net": 38339.05,
+   "avg_share": 0.6454,
    "n_markets": 53,
    "fills_total": 482,
    "rebalanced": false,
    "w": 2991498
+  },
+  {
+   "ts": "2026-11-17T07:18:52.280590+00:00",
+   "dt_h": 0.158,
+   "reward_tick": 8.0035,
+   "reward_total": 38936.31,
+   "mm_value": -589.25,
+   "net": 38347.06,
+   "avg_share": 0.6548,
+   "n_markets": 53,
+   "fills_total": 482,
+   "rebalanced": false,
+   "w": 2991499
   }
  ],
  "fills": [
@@ -88003,8 +88016,8 @@
    "ledger": "v3"
   }
  ],
- "reward_total": 38927.46622854221,
- "last_ts": 1794899311.781021,
+ "reward_total": 38936.31175800053,
+ "last_ts": 1794899932.28059,
  "chosen_at": 1794876875.1478553,
  "rebalances": [
   {
@@ -88243,63 +88256,63 @@
   }
  ],
  "last_tick": {
-  "ts": "2026-11-17T07:08:31.781021+00:00",
-  "dt_h": 0.017,
+  "ts": "2026-11-17T07:18:52.280590+00:00",
+  "dt_h": 0.022,
   "markets": [
    {
     "q": "Will Jensen Huang be TIME Person of the Year 2026?",
     "mid": 0.039,
-    "share": 0.0006,
+    "share": 0.0003,
     "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will Canada\u2019s 2026 inflation be between 3.0% and 3",
-    "mid": 0.276,
+    "mid": 0.327,
     "share": 1.0,
-    "earned": 0.0035,
+    "earned": 0.0037,
     "inv": 0.0
    },
    {
     "q": "Will Germany GDP growth in Q4 2026 be at least 1.9",
-    "mid": 0.49,
+    "mid": 0.515,
     "share": 1.0,
-    "earned": 0.0637,
+    "earned": 0.0865,
     "inv": 0.0
    },
    {
     "q": "Will Anthropic raise between $65B and $75B in its ",
     "mid": 0.476,
-    "share": 0.083,
-    "earned": 0.0029,
+    "share": 0.0564,
+    "earned": 0.0026,
     "inv": 0.0
    },
    {
     "q": "Nvidia hit with a BIS export-control penalty by Ma",
     "mid": 0.23,
     "share": 1.0,
-    "earned": 0.0346,
+    "earned": 0.0465,
     "inv": 0.0
    },
    {
     "q": "Will \"Dune: Part Three\" score at least 88 on the R",
-    "mid": 0.535,
+    "mid": 0.52,
     "share": 1.0,
-    "earned": 0.0346,
+    "earned": 0.0465,
     "inv": 0.0
    },
    {
     "q": "Next Israeli election called by December 31, 2027?",
     "mid": 0.56,
-    "share": 0.1358,
-    "earned": 0.0047,
+    "share": 0.1827,
+    "earned": 0.0076,
     "inv": 0.0
    },
    {
     "q": "Will General Mills Q2 organic net sales growth be ",
     "mid": 0.465,
-    "share": 0.0034,
-    "earned": 0.0001,
+    "share": 0.0037,
+    "earned": 0.0002,
     "inv": 0.0
    },
    {
@@ -88319,132 +88332,132 @@
    {
     "q": "Will UK GDP growth in Q4 2026 be negative?",
     "mid": 0.179,
-    "share": 0.0156,
+    "share": 0.0213,
     "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will Mexico GDP growth in Q4 2026 be between 1.5% ",
-    "mid": 0.42,
+    "mid": 0.39,
     "share": 1.0,
-    "earned": 0.0298,
+    "earned": 0.0335,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the St",
     "mid": 0.46,
     "share": 1.0,
-    "earned": 0.0277,
+    "earned": 0.0372,
     "inv": 0.0
    },
    {
     "q": "Will OpenAI's frontier output token price be at or",
     "mid": 0.8,
-    "share": 0.0048,
-    "earned": 0.0001,
+    "share": 0.006,
+    "earned": 0.0002,
     "inv": 0.0
    },
    {
     "q": "Will GPT Astra's output price be at or below $30 i",
-    "mid": 0.435,
+    "mid": 0.37,
     "share": 1.0,
-    "earned": 0.0277,
+    "earned": 0.0372,
     "inv": 0.0
    },
    {
     "q": "0 ships transit Hormuz on any date by March 31, 20",
     "mid": 0.615,
-    "share": 0.0144,
+    "share": 0.0095,
     "earned": 0.0004,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ba",
-    "mid": 0.495,
+    "mid": 0.51,
     "share": 1.0,
-    "earned": 0.0277,
+    "earned": 0.0372,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
-    "mid": 0.5,
+    "mid": 0.525,
     "share": 1.0,
-    "earned": 0.0277,
+    "earned": 0.0372,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
     "mid": 0.26,
     "share": 1.0,
-    "earned": 0.0277,
+    "earned": 0.0372,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Pa",
     "mid": 0.66,
     "share": 0.2376,
-    "earned": 0.0008,
+    "earned": 0.0011,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ma",
-    "mid": 0.68,
+    "mid": 0.685,
     "share": 1.0,
-    "earned": 0.0277,
+    "earned": 0.0372,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index hit $8.00 (HIGH) by Decem",
     "mid": 0.69,
     "share": 1.0,
-    "earned": 0.0277,
+    "earned": 0.0372,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index hit $5.00 (LOW) by Decemb",
     "mid": 0.48,
     "share": 0.9548,
-    "earned": 0.002,
+    "earned": 0.0027,
     "inv": 0.0
    },
    {
     "q": "Will the 2-year Treasury yield hit 5.10% before 20",
-    "mid": 0.39,
-    "share": 0.8086,
-    "earned": 0.0017,
+    "mid": 0.395,
+    "share": 0.6377,
+    "earned": 0.0016,
     "inv": 0.0
    },
    {
     "q": "0 ships transit Hormuz on any date by January 31, ",
     "mid": 0.42,
     "share": 1.0,
-    "earned": 0.0277,
+    "earned": 0.0372,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the St",
     "mid": 0.495,
-    "share": 0.0123,
-    "earned": 0.0003,
+    "share": 0.0209,
+    "earned": 0.0007,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the St",
     "mid": 0.385,
     "share": 0.0163,
-    "earned": 0.0005,
+    "earned": 0.0006,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the St",
     "mid": 0.295,
     "share": 1.0,
-    "earned": 0.0277,
+    "earned": 0.0372,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ba",
-    "mid": 0.515,
+    "mid": 0.53,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -88453,69 +88466,69 @@
     "q": "Will the 7-day average ship traffic through the Su",
     "mid": 0.43,
     "share": 1.0,
-    "earned": 0.0277,
+    "earned": 0.0372,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
-    "mid": 0.52,
+    "mid": 0.505,
     "share": 1.0,
-    "earned": 0.0277,
+    "earned": 0.0372,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
     "mid": 0.36,
     "share": 1.0,
-    "earned": 0.0277,
+    "earned": 0.0372,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
-    "mid": 0.515,
+    "mid": 0.52,
     "share": 1.0,
-    "earned": 0.0277,
+    "earned": 0.0372,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Pa",
-    "mid": 0.505,
+    "mid": 0.555,
     "share": 1.0,
-    "earned": 0.0277,
+    "earned": 0.0372,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ma",
-    "mid": 0.74,
-    "share": 0.2077,
-    "earned": 0.0007,
+    "mid": 0.75,
+    "share": 0.2632,
+    "earned": 0.0012,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ma",
     "mid": 0.6,
     "share": 1.0,
-    "earned": 0.0277,
+    "earned": 0.0372,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ba",
     "mid": 0.645,
-    "share": 0.0084,
-    "earned": 0.0002,
+    "share": 0.0082,
+    "earned": 0.0003,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ba",
     "mid": 0.195,
-    "share": 0.0074,
-    "earned": 0.0002,
+    "share": 0.0077,
+    "earned": 0.0003,
     "inv": 0.0
    },
    {
     "q": "Kamala Harris Democratic nomination odds leader on",
     "mid": 0.085,
-    "share": 0.0016,
+    "share": 0.0017,
     "earned": 0.0,
     "inv": 0.0
    },
@@ -88523,48 +88536,48 @@
     "q": "Will the Central Bank of Chile increase the moneta",
     "mid": 0.47,
     "share": 1.0,
-    "earned": 0.027,
+    "earned": 0.0363,
     "inv": 0.0
    },
    {
     "q": "Will Mexico GDP growth in Q4 2026 be less than 1.5",
-    "mid": 0.315,
+    "mid": 0.465,
     "share": 1.0,
-    "earned": 0.0215,
+    "earned": 0.0419,
     "inv": 0.0
    },
    {
     "q": "Will J.D. Vance win the Iowa Republican caucus?",
-    "mid": 0.205,
-    "share": 1.0,
-    "earned": 0.0028,
+    "mid": 0.22,
+    "share": 0.8086,
+    "earned": 0.003,
     "inv": 0.0
    },
    {
     "q": "Will Mexico GDP growth in Q4 2026 be between 2.0% ",
-    "mid": 0.38,
+    "mid": 0.35,
     "share": 1.0,
-    "earned": 0.0256,
+    "earned": 0.0298,
     "inv": 0.0
    },
    {
     "q": "Ron DeSantis Republican nomination odds leader on ",
     "mid": 0.07,
-    "share": 0.1376,
+    "share": 0.1579,
     "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will Radovan Vi\u0161kovi\u0107 be the next Chairman of the ",
-    "mid": 0.361,
+    "mid": 0.36,
     "share": 1.0,
-    "earned": 0.0201,
+    "earned": 0.027,
     "inv": 0.0
    },
    {
     "q": "Will GPT Astra's output price be at or below $40 i",
     "mid": 0.8,
-    "share": 0.006,
+    "share": 0.0061,
     "earned": 0.0002,
     "inv": 0.0
    },
@@ -88572,14 +88585,14 @@
     "q": "Will Canada\u2019s 2026 inflation be between 2.5% and 2",
     "mid": 0.315,
     "share": 1.0,
-    "earned": 0.0028,
+    "earned": 0.0037,
     "inv": 0.0
    },
    {
     "q": "Will primmie play for Paper Rex in 2027?",
-    "mid": 0.804,
-    "share": 0.2856,
-    "earned": 0.0069,
+    "mid": 0.778,
+    "share": 0.9759,
+    "earned": 0.0281,
     "inv": 0.0
    },
    {
@@ -88593,36 +88606,36 @@
     "q": "JD Vance Republican nomination odds leader on Marc",
     "mid": 0.575,
     "share": 1.0,
-    "earned": 0.0623,
+    "earned": 0.0865,
     "inv": 0.0
    },
    {
     "q": "Marco Rubio Republican nomination odds leader on M",
-    "mid": 0.27,
+    "mid": 0.26,
     "share": 1.0,
-    "earned": 0.0491,
+    "earned": 0.0502,
     "inv": 0.0
    },
    {
     "q": "Next Israeli election called by March 31, 2027?",
-    "mid": 0.37,
-    "share": 0.1721,
-    "earned": 0.0001,
+    "mid": 0.36,
+    "share": 0.297,
+    "earned": 0.0003,
     "inv": 0.0
    },
    {
     "q": "Will Joe Pyfer fight Gregory Rodrigues next?",
     "mid": 0.525,
     "share": 1.0,
-    "earned": 0.0235,
+    "earned": 0.0316,
     "inv": 0.0
    }
   ],
-  "reward_tick": 0.838,
-  "reward_total": 38927.47,
+  "reward_tick": 1.1332,
+  "reward_total": 38936.31,
   "mm_value": -589.25,
-  "net": 38338.21,
-  "avg_share": 0.6442,
+  "net": 38347.06,
+  "avg_share": 0.6548,
   "n_markets": 53,
   "fills_total": 482,
   "rebalanced": false

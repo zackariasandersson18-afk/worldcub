@@ -604,21 +604,6 @@
    "rate0": 50.0
   },
   {
-   "cond": "0x01ead4abec498c90cefc55edc9b5ca342a57e98315a271b791df5853ee9bef54",
-   "question": "Will the 7-day average ship traffic through the Panama Canal be 24+ on December 31?",
-   "yes": "78942315543374061025113347953685447109953317377792454781515101165846922947236",
-   "no": "112979310175124455771496330576249999779122077311640184739029266785993168564903",
-   "rate": 5.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.700000000000003,
-   "est_reward_day": 40.0,
-   "end": "2027-01-01T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 40.0
-  },
-  {
    "cond": "0x2a939931c880379be0ff462671872a6469cb63a7a7a47871854e876e1446ef7c",
    "question": "Will the 7-day average ship traffic through the Malacca Strait be 210+ on December 31?",
    "yes": "57583138483420093968308122283726593009359488283870004730247051454141826420455",
@@ -754,49 +739,64 @@
    "rate0": 53.0
   },
   {
-   "cond": "0x94bde6e2d51188d1ed65a73b49c423b576a7ae68375f0c7790173de3b1b0537d",
-   "question": "Will Chicago get more snow than average this winter?",
-   "yes": "15444253853735148645754057709774892756360455149252699858473214822658961790530",
-   "no": "62667448137562316109054073537286207579986379479549847019963525872711138318084",
-   "rate": 50.0,
+   "cond": "0x5327b74b55d07ba818271dcf97c0cb9f3d2ee498e26d811787f922302ee6ac09",
+   "question": "Will the ECB make no change to the deposit facility rate at the March meeting?",
+   "yes": "27098347252509077424647809851969608846132131544193540109703488325566085690028",
+   "no": "52746745715991375381279016549502164899048830190716714694832732303811981830955",
+   "rate": 94.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
    "collateral": 19.099999999999998,
-   "est_reward_day": 50.0,
-   "end": "2027-04-30T12:00:00Z",
+   "est_reward_day": 94.0,
+   "end": "2027-03-18T23:59:00Z",
    "share0": 1.0,
-   "rate0": 50.0
-  },
-  {
-   "cond": "0x1b2378126f9438e1fd6f87fa3a32583b9681b3b0bd396d3df34e88c6aca58603",
-   "question": "Will the US Section 232 tariff rate on Canadian primary aluminum be >40-50% on December 31, 2027?",
-   "yes": "43446093046869889237052416001170161972213805707446752070843635488215970355420",
-   "no": "73969325140385939286779825311938022407886257151285917832093011483703315495405",
-   "rate": 99.0,
-   "v": 4.5,
-   "min_size": 20.0,
-   "d": 0.0225,
-   "collateral": 19.1,
-   "est_reward_day": 85.0,
-   "end": "2027-12-31T05:01:00Z",
-   "share0": 1.0,
-   "rate0": 85.0
-  },
-  {
-   "cond": "0xd5734dd2e09b67f3193f5c2d642f40a459a7923d979ed8dd9d50b5aa79e5437c",
-   "question": "Will the median home value in the US be between $403,000 and $407,000 on December 31?",
-   "yes": "99507712795652164179050193447669039181881719656945884181977166199531438030224",
-   "no": "58442307756839191199378229988220899897985293114785450542144170199125058321635",
-   "rate": 87.0,
-   "v": 4.5,
-   "min_size": 20.0,
-   "d": 0.0225,
-   "collateral": 19.1,
-   "est_reward_day": 78.49484536082493,
-   "end": "2027-01-11T04:59:00Z",
-   "share0": 0.8350515463917545,
    "rate0": 94.0
+  },
+  {
+   "cond": "0x614fea47aa31a09f9338791ad8faa03e726a3480e6366723666c7f32edbabc71",
+   "question": "Will Jensen Huang not be named NVIDIA's next CEO and Nvidia's market cap be above $4T at the end of 2026?",
+   "yes": "109813281012867936326165722347411942877600100732712701852994493764625702938889",
+   "no": "27520360070458127420070653508947150487511804672239272646359653248778628443533",
+   "rate": 83.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.700000000000003,
+   "est_reward_day": 83.0,
+   "end": "2027-01-01T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 83.0
+  },
+  {
+   "cond": "0xda320920ab483c2123d2a94a62c9c212d8f9a7457901c6acdfd53a25d0d125c2",
+   "question": "Will Jensen Huang not be named NVIDIA's next CEO and Nvidia's market cap be below $4T at the end of 2026?",
+   "yes": "29236564296250766757414520756934069882113733364092683025089511729458356641727",
+   "no": "89889636220410629281877343862946704468313813552438268481704815987491537826621",
+   "rate": 82.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.700000000000003,
+   "est_reward_day": 82.0,
+   "end": "2027-01-01T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 82.0
+  },
+  {
+   "cond": "0xfae34aee10ace81fd881a88f5c3de504bc5517e7186df26c55ec34c051cbc6b7",
+   "question": "Will Mexico GDP growth in Q4 2026 be less than 1.5%?",
+   "yes": "82747146168012487747608974061672424155420361057694136384766725380527992218754",
+   "no": "69816988356271037535661645120571429005091460568919112661437462681168001481457",
+   "rate": 77.0,
+   "v": 4.5,
+   "min_size": 20.0,
+   "d": 0.0225,
+   "collateral": 19.1,
+   "est_reward_day": 77.0,
+   "end": "2027-01-29T12:00:00Z",
+   "share0": 1.0,
+   "rate0": 77.0
   }
  ],
  "positions": {
@@ -906,8 +906,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.385,
-   "share": 0.01567902974292586,
-   "reward": 21.182167157617197,
+   "share": null,
+   "reward": 21.185686883211574,
    "fills": 0,
    "q": "Will the median home value in the US be between $403,000 and $407,000 on Decembe"
   },
@@ -923,9 +923,9 @@
   "0x8652314642ea8e1b8b1f5fded33bd3deb328fff284b5f8d015ef62e0c39cae3c": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.7125,
+   "mid": 0.7115,
    "share": 1.0,
-   "reward": 330.23687393648305,
+   "reward": 330.48091842815376,
    "fills": 0,
    "q": "Will primmie play for Paper Rex in 2027?"
   },
@@ -1028,9 +1028,9 @@
   "0xf7699db92f899f7577f55c0dc9db490d6a17d1eced1c07d3860b4ae80a13b175": {
    "inv": 0.0,
    "cash": -2.9992417699999963,
-   "mid": 0.2545,
+   "mid": 0.512,
    "share": 1.0,
-   "reward": 878.4606737810551,
+   "reward": 878.6371298891926,
    "fills": 12,
    "q": "Will the Ornn H200 Index hit $4.00 (LOW) by December 31, 2026?",
    "closed_at": 0.409
@@ -1138,7 +1138,7 @@
    "cash": 0.0,
    "mid": 0.495,
    "share": 1.0,
-   "reward": 124.0229525970282,
+   "reward": 124.12344150536322,
    "fills": 0,
    "q": "Will Claude Opus 5.6+ debut at an output token price of at least $20 by June 30,"
   },
@@ -2072,7 +2072,7 @@
   "0x7a9a68c97682b82da841fa413f4764e86024c49e2c58a01b34cb5d3c5b9b2624": {
    "inv": 20.0,
    "cash": -8.85,
-   "mid": 0.475,
+   "mid": 0.47,
    "share": 1.0,
    "reward": 87.751647885782,
    "fills": 1,
@@ -4522,7 +4522,7 @@
   "0x5d15579a3a31d6220eb8d33d167788db82976f14c856768a5e37e51afdaeb279": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.4785,
+   "mid": 0.478,
    "share": 1.0,
    "reward": 17.59805527737572,
    "fills": 0,
@@ -12025,7 +12025,7 @@
    "cash": 0.0,
    "mid": 0.525,
    "share": 1.0,
-   "reward": 727.5480016326374,
+   "reward": 727.8351127993088,
    "fills": 0,
    "q": "Will the Ornn H200 Index hit $8.00 (HIGH) by December 31, 2026?"
   },
@@ -12051,9 +12051,9 @@
   "0x12e7e3aaed06c1ac55f082a0b4282d5f525cdb2106afb1972e9d861bdc7e1649": {
    "inv": 0.0,
    "cash": -0.34185,
-   "mid": 0.415,
+   "mid": 0.435,
    "share": 1.0,
-   "reward": 733.1578398988887,
+   "reward": 733.4449510655602,
    "fills": 1,
    "q": "Will the Ornn H200 Index hit $5.00 (LOW) by December 31, 2026?",
    "closed_at": 0.85
@@ -14136,9 +14136,9 @@
   "0x5327b74b55d07ba818271dcf97c0cb9f3d2ee498e26d811787f922302ee6ac09": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.355,
-   "share": null,
-   "reward": 12.74547526018389,
+   "mid": 0.44999999999999996,
+   "share": 0.17124735729386814,
+   "reward": 12.980603137242593,
    "fills": 0,
    "q": "Will the ECB make no change to the deposit facility rate at the March meeting?"
   },
@@ -15276,9 +15276,9 @@
   "0xc714c855d2c5496d1e2ec8ea52b8fe4b30a5673ecc548bbc8234790bb4f837a9": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.3025,
+   "mid": 0.301,
    "share": 1.0,
-   "reward": 45.45887265191742,
+   "reward": 45.87401497685574,
    "fills": 0,
    "q": "Will the median home value in Miami be between $830,000 and $851,000 on December"
   },
@@ -15926,7 +15926,7 @@
    "cash": 0.0,
    "mid": 0.25,
    "share": 1.0,
-   "reward": 63.414155442050685,
+   "reward": 64.0027333337272,
    "fills": 0,
    "q": "Will the Bank of Korea increase the base rate by 25 bps at the January meeting?"
   },
@@ -15996,9 +15996,9 @@
   "0x73bcd86f674768bd4a2a2ba0a6042ee4bf328301eb51cfbd7407305629ebdf73": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.5,
+   "mid": 0.46499999999999997,
    "share": 1.0,
-   "reward": 114.13072672232126,
+   "reward": 114.14230017234573,
    "fills": 0,
    "q": "Will Benjamin Netanyahu receive the second mandate to form a government after th"
   },
@@ -16365,9 +16365,9 @@
   "0xc7af14e0b0172a24a101c3aa3f1b0665298ac822b34811be00bfbead992ca135": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.7435,
+   "mid": 0.753,
    "share": 1.0,
-   "reward": 85.38837770335206,
+   "reward": 85.83340001169282,
    "fills": 0,
    "q": "Will Anthropic raise between $65B and $75B in its IPO?"
   },
@@ -18039,7 +18039,7 @@
   "0xe43ebfb9c7af7e7560cf67dffd4431864a59f9876e0bc057bddb846bdb612d68": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.29950000000000004,
+   "mid": 0.30350000000000005,
    "share": 1.0,
    "reward": 76.87070843404608,
    "fills": 0,
@@ -19767,7 +19767,7 @@
   "0x46a73cf44a4946a2fb1f848069651455f58d95edcefbc5c9e2b3b67c3c2947a7": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.615,
+   "mid": 0.61,
    "share": 1.0,
    "reward": 13.075212543223191,
    "fills": 0,
@@ -19884,7 +19884,7 @@
   "0xfce6cbb1a0ba0141f842789f0b3b188d212b64417b73498131be483975365dfa": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.5549999999999999,
+   "mid": 0.5599999999999999,
    "share": 1.0,
    "reward": 3.84280738617829,
    "fills": 0,
@@ -19967,7 +19967,7 @@
    "cash": 0.0,
    "mid": 0.29000000000000004,
    "share": 1.0,
-   "reward": 4.788105084708444,
+   "reward": 4.795282863875231,
    "fills": 0,
    "q": "Will DJ Khaled perform at Coachella 2027?"
   },
@@ -20280,9 +20280,9 @@
   "0x5c4fb6d5317e3b45c3072416a417d9daa97136b83efdea989e221a806632b9ca": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.1915,
-   "share": 0.6629562939924696,
-   "reward": 6.276247145945516,
+   "mid": 0.231,
+   "share": 0.28079500808874513,
+   "reward": 6.2862757580739155,
    "fills": 0,
    "q": "Will US GDP growth in Q4 2026 be between 3.5% and 4.0%?"
   },
@@ -20363,7 +20363,7 @@
    "cash": 0.0,
    "mid": 0.58,
    "share": 1.0,
-   "reward": 82.21228759900235,
+   "reward": 82.49939876567382,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 38+ on December 31"
   },
@@ -20388,9 +20388,9 @@
   "0xab3305643ef7359a90326b1f9ca37210bef91fd09d5ee336ed1e34b98d088599": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.52,
+   "mid": 0.53,
    "share": 1.0,
-   "reward": 68.98702115953844,
+   "reward": 69.27413232620991,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 46+ on December 31"
   },
@@ -20505,9 +20505,9 @@
   "0xcb409177b8ddaad2a5d6a6c197c0f273457441cd2a53e7fe70212e89c4e89c10": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.5,
+   "mid": 0.51,
    "share": 1.0,
-   "reward": 55.9386225824362,
+   "reward": 56.22573374910767,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 40+ on December 31"
   },
@@ -20523,9 +20523,9 @@
   "0xd7b639810b823140b574d19e3cf880a398503700dfc777a07357b0981d3b1c40": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.388,
+   "mid": 0.387,
    "share": 1.0,
-   "reward": 36.35589595306074,
+   "reward": 36.70760713223328,
    "fills": 0,
    "q": "Will Avigdor Lieberman be the next Israeli Minister of Defense?"
   },
@@ -20534,7 +20534,7 @@
    "cash": 0.0,
    "mid": 0.395,
    "share": 1.0,
-   "reward": 46.06793861098589,
+   "reward": 46.111005285986614,
    "fills": 0,
    "q": "Will the Central Bank of Chile make no change to the monetary policy rate at the"
   },
@@ -20732,7 +20732,7 @@
    "cash": 0.0,
    "mid": 0.515,
    "share": 1.0,
-   "reward": 47.680414877997464,
+   "reward": 47.96752604466893,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 44+ on December 31"
   },
@@ -20975,7 +20975,7 @@
    "cash": 0.0,
    "mid": 0.26,
    "share": 1.0,
-   "reward": 28.3699995672261,
+   "reward": 28.657110733897568,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 48+ on December 31"
   },
@@ -21002,16 +21002,16 @@
    "cash": 0.0,
    "mid": 0.52,
    "share": 1.0,
-   "reward": 12.93615181007042,
+   "reward": 12.961274037154174,
    "fills": 0,
    "q": "0 ships transit Hormuz on any date by January 31, 2027?"
   },
   "0x9b1553011e72f02f38f542563411afdc048620bcea31924c15855f4ee68f543a": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.385,
+   "mid": 0.39,
    "share": 1.0,
-   "reward": 24.89329455373462,
+   "reward": 25.18040572040609,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 42+ on December 31"
   },
@@ -21036,9 +21036,9 @@
   "0xfae34aee10ace81fd881a88f5c3de504bc5517e7186df26c55ec34c051cbc6b7": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.41500000000000004,
-   "share": null,
-   "reward": 4.411454768993045,
+   "mid": 0.4,
+   "share": 1.0,
+   "reward": 4.6886218788290766,
    "fills": 0,
    "q": "Will Mexico GDP growth in Q4 2026 be less than 1.5%?"
   },
@@ -21063,7 +21063,7 @@
   "0x7ad5206bbe6e0f4f9541e5b7ec723619bae7557b1555872f920fc3055726b4ce": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.317,
+   "mid": 0.3175,
    "share": 1.0,
    "reward": 2.1251932211496207,
    "fills": 0,
@@ -21110,7 +21110,7 @@
    "cash": 0.0,
    "mid": 0.565,
    "share": 1.0,
-   "reward": 20.817104840306197,
+   "reward": 21.17599379864553,
    "fills": 0,
    "q": "Will Dario Amodei ring the bell at Anthropic's IPO?"
   },
@@ -21119,7 +21119,7 @@
    "cash": 0.0,
    "mid": 0.49,
    "share": 1.0,
-   "reward": 18.72937483009363,
+   "reward": 19.08826378843296,
    "fills": 0,
    "q": "Will Daniela Amodei ring the bell at Anthropic's IPO?"
   },
@@ -21145,8 +21145,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.755,
-   "share": 0.15040047463660663,
-   "reward": 13.398220967275966,
+   "share": null,
+   "reward": 13.40014030127367,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Panama Canal be 24+ on December "
   },
@@ -21155,7 +21155,7 @@
    "cash": 0.0,
    "mid": 0.615,
    "share": 1.0,
-   "reward": 14.413169671539908,
+   "reward": 14.70028083821138,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Malacca Strait be 210+ on Decemb"
   },
@@ -21163,8 +21163,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.425,
-   "share": 0.011376442841942148,
-   "reward": 3.896320195079568,
+   "share": null,
+   "reward": 3.8995095277910257,
    "fills": 0,
    "q": "Will the US Section 232 tariff rate on Canadian primary aluminum be >40-50% on D"
   },
@@ -21190,10 +21190,28 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.255,
-   "share": 0.3651938683498652,
-   "reward": 3.3066363440809905,
+   "share": null,
+   "reward": 3.3454001949554844,
    "fills": 0,
    "q": "Will Chicago get more snow than average this winter?"
+  },
+  "0x614fea47aa31a09f9338791ad8faa03e726a3480e6366723666c7f32edbabc71": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.485,
+   "share": 1.0,
+   "reward": 0.2987645469661112,
+   "fills": 0,
+   "q": "Will Jensen Huang not be named NVIDIA's next CEO and Nvidia's market cap be abov"
+  },
+  "0xda320920ab483c2123d2a94a62c9c212d8f9a7457901c6acdfd53a25d0d125c2": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.485,
+   "share": 1.0,
+   "reward": 0.2951649741110978,
+   "fills": 0,
+   "q": "Will Jensen Huang not be named NVIDIA's next CEO and Nvidia's market cap be belo"
   }
  },
  "history": [
@@ -93322,17 +93340,30 @@
    "w": 2991623
   },
   {
-   "ts": "2026-11-18T04:05:47.240969+00:00",
-   "dt_h": 0.106,
-   "reward_tick": 3.3147,
-   "reward_total": 55756.7,
-   "mm_value": -679.16,
-   "net": 55077.55,
-   "avg_share": 0.9075,
+   "ts": "2026-11-18T04:09:56.344508+00:00",
+   "dt_h": 0.176,
+   "reward_tick": 5.5664,
+   "reward_total": 55758.96,
+   "mm_value": -679.26,
+   "net": 55079.7,
+   "avg_share": 0.9037,
    "n_markets": 53,
    "fills_total": 659,
    "rebalanced": false,
    "w": 2991624
+  },
+  {
+   "ts": "2026-11-18T04:16:07.401089+00:00",
+   "dt_h": 0.105,
+   "reward_tick": 4.6221,
+   "reward_total": 55763.58,
+   "mm_value": -679.26,
+   "net": 55084.32,
+   "avg_share": 0.9622,
+   "n_markets": 53,
+   "fills_total": 659,
+   "rebalanced": false,
+   "w": 2991625
   }
  ],
  "fills": [
@@ -99268,8 +99299,8 @@
    "ledger": "v4"
   }
  ],
- "reward_total": 55756.70417971599,
- "last_ts": 1794974747.2409692,
+ "reward_total": 55763.57798683954,
+ "last_ts": 1794975367.4010892,
  "chosen_at": 1791639880.921448,
  "rebalances": [
   {
@@ -99280,12 +99311,12 @@
   }
  ],
  "last_tick": {
-  "ts": "2026-11-18T04:05:47.240969+00:00",
-  "dt_h": 0.055,
+  "ts": "2026-11-18T04:16:07.401089+00:00",
+  "dt_h": 0.017,
   "markets": [
    {
     "q": "Will Chicago Bears finish the 2026-27 NFL regular ",
-    "mid": 0.475,
+    "mid": 0.47,
     "share": 1.0,
     "earned": 0.0,
     "inv": 20.0
@@ -99301,7 +99332,7 @@
     "q": "Will Claude Opus 5.6+ debut at an output token pri",
     "mid": 0.495,
     "share": 1.0,
-    "earned": 0.032,
+    "earned": 0.0097,
     "inv": 0.0
    },
    {
@@ -99328,7 +99359,7 @@
    },
    {
     "q": "Will Rui Costa be the next Brazilian Minister of D",
-    "mid": 0.3,
+    "mid": 0.304,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -99362,7 +99393,7 @@
    },
    {
     "q": "Will BERNARR. - Durand Bernarr win Best Progressiv",
-    "mid": 0.615,
+    "mid": 0.61,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -99406,7 +99437,7 @@
    },
    {
     "q": "Will Choosin' Texas - Ella Langley win Best Countr",
-    "mid": 0.555,
+    "mid": 0.56,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -99426,35 +99457,35 @@
     "q": "Will DJ Khaled perform at Coachella 2027?",
     "mid": 0.29,
     "share": 1.0,
-    "earned": 0.0023,
+    "earned": 0.0007,
     "inv": 0.0
    },
    {
     "q": "Will Avigdor Lieberman be the next Israeli Ministe",
-    "mid": 0.388,
+    "mid": 0.387,
     "share": 1.0,
-    "earned": 0.1121,
+    "earned": 0.0338,
     "inv": 0.0
    },
    {
     "q": "Will the Central Bank of Chile make no change to t",
     "mid": 0.395,
     "share": 1.0,
-    "earned": 0.0137,
+    "earned": 0.0041,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index hit $8.00 (HIGH) by Decem",
     "mid": 0.525,
     "share": 1.0,
-    "earned": 0.0915,
+    "earned": 0.0276,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
     "mid": 0.515,
     "share": 1.0,
-    "earned": 0.0915,
+    "earned": 0.0276,
     "inv": 0.0
    },
    {
@@ -99468,47 +99499,47 @@
     "q": "Will the 7-day average ship traffic through the Su",
     "mid": 0.26,
     "share": 1.0,
-    "earned": 0.0915,
+    "earned": 0.0276,
     "inv": 0.0
    },
    {
     "q": "0 ships transit Hormuz on any date by January 31, ",
     "mid": 0.52,
     "share": 1.0,
-    "earned": 0.008,
+    "earned": 0.0024,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
     "mid": 0.58,
     "share": 1.0,
-    "earned": 0.0915,
+    "earned": 0.0276,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
-    "mid": 0.5,
+    "mid": 0.51,
     "share": 1.0,
-    "earned": 0.0915,
+    "earned": 0.0276,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
-    "mid": 0.385,
+    "mid": 0.39,
     "share": 1.0,
-    "earned": 0.0915,
+    "earned": 0.0276,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
-    "mid": 0.52,
+    "mid": 0.53,
     "share": 1.0,
-    "earned": 0.0915,
+    "earned": 0.0276,
     "inv": 0.0
    },
    {
     "q": "Will the Central Bank of Chile increase the moneta",
-    "mid": 0.317,
+    "mid": 0.318,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -99517,142 +99548,118 @@
     "q": "Will Dario Amodei ring the bell at Anthropic's IPO",
     "mid": 0.565,
     "share": 1.0,
-    "earned": 0.1144,
+    "earned": 0.0345,
     "inv": 0.0
    },
    {
     "q": "Will Daniela Amodei ring the bell at Anthropic's I",
     "mid": 0.49,
     "share": 1.0,
-    "earned": 0.1144,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the 7-day average ship traffic through the Pa",
-    "mid": 0.755,
-    "share": 0.1504,
-    "earned": 0.0017,
+    "earned": 0.0345,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ma",
     "mid": 0.615,
     "share": 1.0,
-    "earned": 0.0915,
+    "earned": 0.0276,
     "inv": 0.0
    },
    {
     "q": "Will the Bank of Korea increase the base rate by 2",
     "mid": 0.25,
     "share": 1.0,
-    "earned": 0.1876,
+    "earned": 0.0566,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index hit $4.00 (LOW) by Decemb",
-    "mid": 0.255,
+    "mid": 0.512,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0276,
     "inv": 0.0
    },
    {
     "q": "Will primmie play for Paper Rex in 2027?",
-    "mid": 0.713,
+    "mid": 0.712,
     "share": 1.0,
-    "earned": 0.0778,
+    "earned": 0.0235,
     "inv": 0.0
    },
    {
     "q": "Will Anthropic raise between $65B and $75B in its ",
-    "mid": 0.744,
+    "mid": 0.753,
     "share": 1.0,
-    "earned": 0.1419,
+    "earned": 0.0428,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index hit $5.00 (LOW) by Decemb",
-    "mid": 0.415,
+    "mid": 0.435,
     "share": 1.0,
-    "earned": 0.0915,
+    "earned": 0.0276,
     "inv": 0.0
    },
    {
     "q": "Will the median home value in Miami be between $83",
-    "mid": 0.302,
+    "mid": 0.301,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will US GDP growth in Q4 2026 be between 3.5% and ",
-    "mid": 0.192,
-    "share": 0.663,
-    "earned": 0.003,
+    "mid": 0.231,
+    "share": 0.2808,
+    "earned": 0.0004,
     "inv": 0.0
    },
    {
     "q": "Will Benjamin Netanyahu receive the second mandate",
-    "mid": 0.5,
+    "mid": 0.465,
     "share": 1.0,
-    "earned": 0.0046,
+    "earned": 0.0014,
     "inv": 0.0
    },
    {
-    "q": "Will Chicago get more snow than average this winte",
-    "mid": 0.255,
-    "share": 0.3652,
-    "earned": 0.0265,
+    "q": "Will the ECB make no change to the deposit facilit",
+    "mid": 0.45,
+    "share": 0.1712,
+    "earned": 0.0111,
     "inv": 0.0
    },
    {
-    "q": "Will the US Section 232 tariff rate on Canadian pr",
-    "mid": 0.425,
-    "share": 0.0114,
-    "earned": 0.0026,
+    "q": "Will Jensen Huang not be named NVIDIA's next CEO a",
+    "mid": 0.485,
+    "share": 1.0,
+    "earned": 0.0573,
     "inv": 0.0
    },
    {
-    "q": "Will the median home value in the US be between $4",
-    "mid": 0.385,
-    "share": 0.0157,
-    "earned": 0.0024,
+    "q": "Will Jensen Huang not be named NVIDIA's next CEO a",
+    "mid": 0.485,
+    "share": 1.0,
+    "earned": 0.0566,
+    "inv": 0.0
+   },
+   {
+    "q": "Will Mexico GDP growth in Q4 2026 be less than 1.5",
+    "mid": 0.4,
+    "share": 1.0,
+    "earned": 0.0532,
     "inv": 0.0
    }
   ],
-  "reward_tick": 1.6687,
-  "reward_total": 55756.7,
-  "mm_value": -679.16,
-  "net": 55077.55,
-  "avg_share": 0.9075,
+  "reward_tick": 0.699,
+  "reward_total": 55763.58,
+  "mm_value": -679.26,
+  "net": 55084.32,
+  "avg_share": 0.9622,
   "n_markets": 53,
   "fills_total": 659,
   "rebalanced": false
  },
  "reviews": [
-  {
-   "ts": "2026-10-28T03:04:22.113511+00:00",
-   "swapped": 8,
-   "out": [
-    "Will Shas win 8-9% of the vote in the 2026 Knesset",
-    "Will Melania Trump meet with Zelenskyy by December",
-    "Exponential Time Hypothesis disproof confirmed by ",
-    "Will South Korea\u2019s 2026 Annual Inflation be at lea",
-    "Will Amy Hunt win the 2026 BBC Sports Personality ",
-    "Will no next Israeli Minister of Defense be appoin",
-    "Will South Korea\u2019s 2026 Annual Inflation be betwee",
-    "Next Fable Model (5.2+) released by November 30, 2"
-   ],
-   "in": [
-    "Will Yashar win 16-18% of the vote in the 2026 Kne",
-    "Will exactly 2 Israeli legislative elections occur",
-    "Will Likud be in the next Israeli government?",
-    "Will Otzma Yehudit be in the next Israeli governme",
-    "Will Yisrael Beiteinu be in the next Israeli gover",
-    "Will The Democrats be in the next Israeli governme",
-    "Will Yashar be in the next Israeli government?",
-    "Will Yashar win less than 16% of the vote in the 2"
-   ]
-  },
   {
    "ts": "2026-10-28T04:04:26.569034+00:00",
    "swapped": 8,
@@ -107910,7 +107917,23 @@
     "Will the US Section 232 tariff rate on Canadian pr",
     "Will the median home value in the US be between $4"
    ]
+  },
+  {
+   "ts": "2026-11-18T04:10:56.397995+00:00",
+   "swapped": 4,
+   "out": [
+    "Will the 7-day average ship traffic through the Pa",
+    "Will the US Section 232 tariff rate on Canadian pr",
+    "Will the median home value in the US be between $4",
+    "Will Chicago get more snow than average this winte"
+   ],
+   "in": [
+    "Will the ECB make no change to the deposit facilit",
+    "Will Jensen Huang not be named NVIDIA's next CEO a",
+    "Will Jensen Huang not be named NVIDIA's next CEO a",
+    "Will Mexico GDP growth in Q4 2026 be less than 1.5"
+   ]
   }
  ],
- "reviewed_at": 1794971420.6741104
+ "reviewed_at": 1794975056.3979945
 }

@@ -7,14 +7,15 @@
    "question": "Will the median home value in Miami be between $830,000 and $851,000 on December 31?",
    "yes": "80117219921753639563996003708434984634502600009668848747574146928178888522651",
    "no": "38684802443774351350617148225299693371408659379836456981616689804297233198308",
-   "rate": 94.0,
+   "rate": 85.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
    "collateral": 19.1,
    "est_reward_day": 93.90725209669462,
    "end": "2027-01-11T04:59:00Z",
-   "share0": 0.9990133201776024
+   "share0": 0.9990133201776024,
+   "rate0": 94.0
   },
   {
    "cond": "0x0e7617d864d764d2ad96461d1624538eb1f6c72d1448c239dfc74c66428348ef",
@@ -28,77 +29,83 @@
    "collateral": 19.1,
    "est_reward_day": 82.0,
    "end": "2027-01-14T23:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 82.0
   },
   {
    "cond": "0xc7af14e0b0172a24a101c3aa3f1b0665298ac822b34811be00bfbead992ca135",
    "question": "Will Anthropic raise between $65B and $75B in its IPO?",
    "yes": "60781808234504165859372275690977313845026999538609391490534776463819102601236",
    "no": "103408287422339067157766024679389629085496345498755359318667298346644098302805",
-   "rate": 67.0,
+   "rate": 59.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
    "collateral": 19.1,
    "est_reward_day": 67.0,
    "end": "2028-01-01T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 67.0
   },
   {
    "cond": "0x5c4fb6d5317e3b45c3072416a417d9daa97136b83efdea989e221a806632b9ca",
    "question": "Will US GDP growth in Q4 2026 be between 3.5% and 4.0%?",
    "yes": "51044170036162319822483479960668645148710111613020058078569068248214992679640",
    "no": "8147725762082598830460929023323537416617484140604125960433716141606418369695",
-   "rate": 59.0,
+   "rate": 62.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
    "collateral": 19.1,
    "est_reward_day": 59.0,
    "end": "2027-01-29T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 59.0
   },
   {
    "cond": "0x1b2378126f9438e1fd6f87fa3a32583b9681b3b0bd396d3df34e88c6aca58603",
    "question": "Will the US Section 232 tariff rate on Canadian primary aluminum be >40-50% on December 31, 2027?",
    "yes": "43446093046869889237052416001170161972213805707446752070843635488215970355420",
    "no": "73969325140385939286779825311938022407886257151285917832093011483703315495405",
-   "rate": 54.0,
+   "rate": 59.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
    "collateral": 19.1,
    "est_reward_day": 54.0,
    "end": "2027-12-31T05:01:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 54.0
   },
   {
    "cond": "0xd7b639810b823140b574d19e3cf880a398503700dfc777a07357b0981d3b1c40",
    "question": "Will Avigdor Lieberman be the next Israeli Minister of Defense?",
    "yes": "10032211156818361628351672605644015708334456964334483282614669577641977911735",
    "no": "21197739176556515642589769845820421763223475295787555285115941044285682431007",
-   "rate": 50.0,
+   "rate": 1.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
    "collateral": 18.700000000000003,
    "est_reward_day": 50.0,
    "end": "2027-03-01T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 50.0
   },
   {
    "cond": "0x568d8bd0b7a2615c4eea04502a0c8456cffcff02292ebe50d474d3cf5497858f",
    "question": "Will General Mills Q2 organic net sales growth be between -1.5% and 0%?",
    "yes": "28576088263275714728147098815170943696901554083673979461793096138029701621081",
    "no": "34986471761269296885095598608861119173896686256054324601576435490401085376642",
-   "rate": 50.0,
+   "rate": 51.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
    "collateral": 18.700000000000003,
    "est_reward_day": 50.0,
    "end": "2026-12-23T14:30:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 50.0
   },
   {
    "cond": "0x2601bd72e005987f40bc74e59c1b2ade2f1793f69854f0a6f00ce31ca03f7930",
@@ -112,7 +119,8 @@
    "collateral": 19.099999999999998,
    "est_reward_day": 50.0,
    "end": "2027-04-30T12:00:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 50.0
   },
   {
    "cond": "0x94bde6e2d51188d1ed65a73b49c423b576a7ae68375f0c7790173de3b1b0537d",
@@ -126,7 +134,8 @@
    "collateral": 19.099999999999998,
    "est_reward_day": 50.0,
    "end": "2027-04-30T12:00:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 50.0
   },
   {
    "cond": "0xf4f2e175cf9567e62f1d0779741a907ea621f79916b5ad956f3f772b31963408",
@@ -140,7 +149,8 @@
    "collateral": 19.099999999999998,
    "est_reward_day": 50.0,
    "end": "2027-04-30T12:00:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 50.0
   },
   {
    "cond": "0x276c3ae03828f89292a553551249d64d2e1b11e79baad78512af642953c4445b",
@@ -154,7 +164,8 @@
    "collateral": 19.099999999999998,
    "est_reward_day": 50.0,
    "end": "2027-04-30T12:00:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 50.0
   },
   {
    "cond": "0x24d98a427d698e2621f05724a9f8ca3fe8d645482e408408af9c2e4128b4dc5f",
@@ -168,7 +179,8 @@
    "collateral": 19.099999999999998,
    "est_reward_day": 50.0,
    "end": "2027-04-30T12:00:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 50.0
   },
   {
    "cond": "0xe1bac516348d02b74e26c7a4909f41742cb9389fe5ec8c2d74f3525335848bea",
@@ -182,7 +194,8 @@
    "collateral": 19.1,
    "est_reward_day": 50.0,
    "end": "2028-01-01T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 50.0
   },
   {
    "cond": "0x23973e6b050b74525b6b038bec0629912908613c78b96aae0a4b229ba385883b",
@@ -196,21 +209,23 @@
    "collateral": 19.1,
    "est_reward_day": 50.0,
    "end": "2028-01-01T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 50.0
   },
   {
    "cond": "0xc71c5a23d02e3cc10d0a59a09e99dd0860a4c529b2de1ed83dcd10f2c5d3ab82",
    "question": "Will Denis Be\u0107irovi\u0107 be the next Chairman of the Council of Ministers\u00a0of Bosnia and Herzegovina?",
    "yes": "113222395151527603903336471660779735370416472529842699812979043832328737628543",
    "no": "31284974333389455732157041616683370284547949801815005657773011025958112657459",
-   "rate": 43.0,
+   "rate": 41.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
    "collateral": 18.700000000000003,
    "est_reward_day": 43.0,
    "end": "2028-08-01T03:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 43.0
   },
   {
    "cond": "0xb5179c7a05ae44799060e3103369b60d0e141f1b4d96914e9860496a08247600",
@@ -224,7 +239,8 @@
    "collateral": 18.7,
    "est_reward_day": 40.0,
    "end": "2027-01-01T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 40.0
   },
   {
    "cond": "0xcb409177b8ddaad2a5d6a6c197c0f273457441cd2a53e7fe70212e89c4e89c10",
@@ -238,7 +254,8 @@
    "collateral": 18.7,
    "est_reward_day": 40.0,
    "end": "2027-01-01T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 40.0
   },
   {
    "cond": "0xfdbe4b63fbef07ba3a8c8ed67919806ecb2f254c4a9c5476a907aa178bb161f8",
@@ -252,7 +269,8 @@
    "collateral": 18.7,
    "est_reward_day": 40.0,
    "end": "2027-01-01T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 40.0
   },
   {
    "cond": "0x2bc2414f3e6d2171452339f8ea2ed5eaf5ad22e94a89f6fd08ef31db2dd43e50",
@@ -266,7 +284,8 @@
    "collateral": 18.7,
    "est_reward_day": 40.0,
    "end": "2027-01-01T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 40.0
   },
   {
    "cond": "0x6cf827720a643edb6480aa0ab04d0010f4e75fdf3a18bfe0be629649a0cba714",
@@ -280,7 +299,8 @@
    "collateral": 18.700000000000003,
    "est_reward_day": 40.0,
    "end": "2027-01-01T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 40.0
   },
   {
    "cond": "0xf7699db92f899f7577f55c0dc9db490d6a17d1eced1c07d3860b4ae80a13b175",
@@ -294,7 +314,8 @@
    "collateral": 18.700000000000003,
    "est_reward_day": 40.0,
    "end": "2027-01-01T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 40.0
   },
   {
    "cond": "0x9b1553011e72f02f38f542563411afdc048620bcea31924c15855f4ee68f543a",
@@ -308,7 +329,8 @@
    "collateral": 18.700000000000003,
    "est_reward_day": 40.0,
    "end": "2027-01-01T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 40.0
   },
   {
    "cond": "0x8c91d20f1e8fefcec50e045f572084e7a825f402fd87895b9288dc2e2a24cd6a",
@@ -322,7 +344,8 @@
    "collateral": 18.700000000000003,
    "est_reward_day": 40.0,
    "end": "2027-01-01T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 40.0
   },
   {
    "cond": "0xab3305643ef7359a90326b1f9ca37210bef91fd09d5ee336ed1e34b98d088599",
@@ -336,7 +359,8 @@
    "collateral": 18.700000000000003,
    "est_reward_day": 40.0,
    "end": "2027-01-01T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 40.0
   },
   {
    "cond": "0x01ead4abec498c90cefc55edc9b5ca342a57e98315a271b791df5853ee9bef54",
@@ -350,7 +374,8 @@
    "collateral": 18.700000000000003,
    "est_reward_day": 40.0,
    "end": "2027-01-01T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 40.0
   },
   {
    "cond": "0x2a939931c880379be0ff462671872a6469cb63a7a7a47871854e876e1446ef7c",
@@ -364,35 +389,38 @@
    "collateral": 18.700000000000003,
    "est_reward_day": 40.0,
    "end": "2027-01-01T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 40.0
   },
   {
    "cond": "0x48be24f9a37efbac990fe0f2a48776904107dd6503782853980378173b0273db",
    "question": "Will the US Section 232 tariff rate on Canadian primary aluminum be >20-40% on December 31, 2027?",
    "yes": "99137272721706337332782830689442736814833420989078362394107626662034662931649",
    "no": "48314445119003244641565033572336850144176869957338731818252630539177431360199",
-   "rate": 40.0,
+   "rate": 42.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
    "collateral": 19.1,
    "est_reward_day": 40.0,
    "end": "2027-12-31T05:01:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 40.0
   },
   {
    "cond": "0x99a872246589f22d4bb3a2e77084f5d79b8cc3840aecd8f9a8ccecdebfeda449",
    "question": "Will the US Section 232 tariff rate on Canadian primary aluminum be >0-20% on December 31, 2027?",
    "yes": "73726593698413542358609855098857801039490785715753288353519853950382411068495",
    "no": "14545100046764848665768043374503992456229260213173883956626235039916234931569",
-   "rate": 38.0,
+   "rate": 29.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
    "collateral": 19.1,
    "est_reward_day": 38.0,
    "end": "2027-12-31T05:01:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 38.0
   },
   {
    "cond": "0xfd9446721d2e3489b89f5cb04da8757a908179b92eff3fba67a1e8a0ec88ea58",
@@ -406,7 +434,8 @@
    "collateral": 18.7,
    "est_reward_day": 35.0,
    "end": "2028-08-01T03:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 35.0
   },
   {
    "cond": "0x8652314642ea8e1b8b1f5fded33bd3deb328fff284b5f8d015ef62e0c39cae3c",
@@ -420,7 +449,8 @@
    "collateral": 19.1,
    "est_reward_day": 34.0,
    "end": "2027-01-01T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 34.0
   },
   {
    "cond": "0xe614fb0bcf8380a2f2668ddfa4c205c4e3870f86555fe0ed1330973dc4e7315e",
@@ -434,21 +464,23 @@
    "collateral": 19.1,
    "est_reward_day": 32.0,
    "end": "2027-11-09T03:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 32.0
   },
   {
    "cond": "0x1a4685f0af987f4d3b6830b1b810fc6b70f8f0e07f7ebbbe22504cdedd3e007c",
    "question": "Will the 2026-27 Arctic sea ice max be less than 14.2m sq km?",
    "yes": "70888700352381042226544209814090074912882393485888665379355457874204620440267",
    "no": "42418449899991042459164377039757947474453858260848686079533471752592917855617",
-   "rate": 32.0,
+   "rate": 22.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
    "collateral": 19.1,
    "est_reward_day": 32.0,
    "end": "2027-04-02T03:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 32.0
   },
   {
    "cond": "0x267de1156f571d8da9c4caada261a17ca7a44a8c6f518c1f6e9a395b17c577d4",
@@ -462,7 +494,8 @@
    "collateral": 19.1,
    "est_reward_day": 30.0,
    "end": "2027-05-01T00:00:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 30.0
   },
   {
    "cond": "0xc013d8dc92cd5ca4aebc983312e4345e61ad1dbc68ff9edf6b7b9627474fc8c6",
@@ -476,7 +509,8 @@
    "collateral": 19.1,
    "est_reward_day": 30.0,
    "end": "2028-01-01T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 30.0
   },
   {
    "cond": "0x5a76818efea77a9ee171eea9ed1d0131f9ab0a629017cc56454b88a200917046",
@@ -490,7 +524,8 @@
    "collateral": 19.1,
    "est_reward_day": 30.0,
    "end": "2028-01-01T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 30.0
   },
   {
    "cond": "0x66fbf104a45136cb4521ec544cb4faec8cf16a1eac4bf35068b1362af03d99ad",
@@ -504,7 +539,8 @@
    "collateral": 19.1,
    "est_reward_day": 30.0,
    "end": "2028-01-01T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 30.0
   },
   {
    "cond": "0xba191af6197afa418004d7b17a3f35972a5ac9ee6d7b313d57ef2b1846fc132a",
@@ -518,7 +554,8 @@
    "collateral": 19.1,
    "est_reward_day": 30.0,
    "end": "2028-01-01T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 30.0
   },
   {
    "cond": "0x5fddaeee11d92331c991b362106872c80675404d8c5e2e4e74644f379f2ec2f0",
@@ -532,21 +569,23 @@
    "collateral": 18.7,
    "est_reward_day": 28.0,
    "end": "2027-04-01T03:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 28.0
   },
   {
    "cond": "0xca97cd9e5280f3087ffe239e1fa0a3b513091e0af8dbc0348b293b71dc902825",
    "question": "Will Fred win Ultimate Self-Defense Championship Season 4?",
    "yes": "63730127498097956044406936543929604190053284068447178858212435475544731667998",
    "no": "75381049965840406610950666750386173191385009828683909951092295289306919159745",
-   "rate": 28.0,
+   "rate": 27.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
    "collateral": 18.7,
    "est_reward_day": 28.0,
    "end": "2027-04-01T03:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 28.0
   },
   {
    "cond": "0x43b6521c31574fcb09371039a994806d700b42eb50493f9a2ea0a270c30eab4c",
@@ -560,7 +599,8 @@
    "collateral": 19.1,
    "est_reward_day": 26.0,
    "end": "2027-04-26T03:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 26.0
   },
   {
    "cond": "0x6349295a923e22fdbb53bd3d40c064b36170b8664575c561e12d0fe9613e578b",
@@ -574,7 +614,8 @@
    "collateral": 19.1,
    "est_reward_day": 25.0,
    "end": "2027-01-04T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 25.0
   },
   {
    "cond": "0x836c0b4ecd9bf59e7ccd2224ff87f8c0d78fd8205f33867ec9450f6d72c9a455",
@@ -588,7 +629,8 @@
    "collateral": 19.1,
    "est_reward_day": 25.0,
    "end": "2028-01-01T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 25.0
   },
   {
    "cond": "0xcbd051e4ee2fb05406d23c5bed9d425355a7f90bc9b9d9f43cb504a9d661a581",
@@ -602,7 +644,8 @@
    "collateral": 19.1,
    "est_reward_day": 25.0,
    "end": "2028-01-01T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 25.0
   },
   {
    "cond": "0x49a483325bc5389fdcd4dae5f8b03f34291759204896bc658d941f91742ce0a0",
@@ -616,7 +659,8 @@
    "collateral": 19.1,
    "est_reward_day": 25.0,
    "end": "2028-01-01T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 25.0
   },
   {
    "cond": "0xc699596518a6de56ea8947269c85812f5f6383b3e1b43b7f2d5a7f445bc9a254",
@@ -630,7 +674,8 @@
    "collateral": 19.1,
    "est_reward_day": 25.0,
    "end": "2028-01-01T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 25.0
   },
   {
    "cond": "0xc9508aa5828f88228f31f04d88dbb05edd34d357849f6a12d576499de5fc74fb",
@@ -644,7 +689,8 @@
    "collateral": 19.1,
    "est_reward_day": 25.0,
    "end": "2028-01-01T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 25.0
   },
   {
    "cond": "0xa5129d09167818aa360d0e318eaf6cdf6eb7806eeee85e0b1257e22833e490c3",
@@ -658,7 +704,8 @@
    "collateral": 19.1,
    "est_reward_day": 25.0,
    "end": "2028-01-01T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 25.0
   },
   {
    "cond": "0x980a48e323370b32a982c6c876c5878bd87c732db9955e9de6b012803c82c5b6",
@@ -672,7 +719,8 @@
    "collateral": 19.1,
    "est_reward_day": 25.0,
    "end": "2028-01-01T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 25.0
   },
   {
    "cond": "0xa525c320c2f82632b9a2b16183339dd1daf26f626267ea47e2640a849f67c1e3",
@@ -686,7 +734,8 @@
    "collateral": 19.1,
    "est_reward_day": 25.0,
    "end": "2028-01-01T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 25.0
   },
   {
    "cond": "0xe88346c1c7851bb9171410e7e2cf3845192aeb78631b104bd796bd5b2d1a3125",
@@ -700,7 +749,8 @@
    "collateral": 19.1,
    "est_reward_day": 25.0,
    "end": "2028-01-01T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 25.0
   },
   {
    "cond": "0x9b8cbfb4309c8ffbd4a412e3ab3d0c6759681470aebe9e0724cdf9bcefc3479f",
@@ -714,7 +764,8 @@
    "collateral": 19.1,
    "est_reward_day": 25.0,
    "end": "2028-01-01T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 25.0
   },
   {
    "cond": "0x0b77fc96ee03289892284c55605b89a7adf5865578b17a86c3443c26527deb37",
@@ -728,7 +779,8 @@
    "collateral": 19.1,
    "est_reward_day": 25.0,
    "end": "2028-01-01T04:59:00Z",
-   "share0": 1.0
+   "share0": 1.0,
+   "rate0": 25.0
   }
  ],
  "positions": {
@@ -3796,7 +3848,7 @@
    "cash": 0.0,
    "mid": 0.505,
    "share": 1.0,
-   "reward": 516.2582102603008,
+   "reward": 516.563754384679,
    "fills": 0,
    "q": "Will the Ornn H200 Index hit $8.00 (HIGH) by December 31, 2026?"
   },
@@ -5213,7 +5265,7 @@
    "cash": 0.04646000000000006,
    "mid": 0.35,
    "share": 1.0,
-   "reward": 244.0674473418213,
+   "reward": 244.37299146619935,
    "fills": 1,
    "q": "Will the Ornn H200 Index hit $4.00 (LOW) by December 31, 2026?",
    "closed_at": 0.277
@@ -5411,9 +5463,9 @@
   "0x8652314642ea8e1b8b1f5fded33bd3deb328fff284b5f8d015ef62e0c39cae3c": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.714,
+   "mid": 0.7135,
    "share": 1.0,
-   "reward": 59.26495464960005,
+   "reward": 59.52466715532144,
    "fills": 0,
    "q": "Will primmie play for Paper Rex in 2027?"
   },
@@ -6439,7 +6491,7 @@
    "cash": 0.0,
    "mid": 0.25,
    "share": 1.0,
-   "reward": 43.99226836846045,
+   "reward": 44.618633823435545,
    "fills": 0,
    "q": "Will the Bank of Korea increase the base rate by 25 bps at the January meeting?"
   },
@@ -7220,9 +7272,9 @@
   "0x568d8bd0b7a2615c4eea04502a0c8456cffcff02292ebe50d474d3cf5497858f": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.51,
+   "mid": 0.495,
    "share": 1.0,
-   "reward": 46.2143906300916,
+   "reward": 46.59771053260822,
    "fills": 0,
    "q": "Will General Mills Q2 organic net sales growth be between -1.5% and 0%?"
   },
@@ -7339,7 +7391,7 @@
    "cash": 0.0,
    "mid": 0.535,
    "share": 1.0,
-   "reward": 2.8810077378839787,
+   "reward": 3.1254430373864577,
    "fills": 0,
    "q": "Will Johnny Walker fight Rizvan Kuniev next?"
   },
@@ -8833,7 +8885,7 @@
    "cash": 0.0,
    "mid": 0.45,
    "share": 1.0,
-   "reward": 117.23889128742307,
+   "reward": 117.54443541180117,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 42+ on December 31"
   },
@@ -8842,7 +8894,7 @@
    "cash": 0.0,
    "mid": 0.525,
    "share": 1.0,
-   "reward": 110.36883904446107,
+   "reward": 110.67438316883917,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 44+ on December 31"
   },
@@ -8858,9 +8910,9 @@
   "0x2bc2414f3e6d2171452339f8ea2ed5eaf5ad22e94a89f6fd08ef31db2dd43e50": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.645,
+   "mid": 0.67,
    "share": 1.0,
-   "reward": 75.11253918721566,
+   "reward": 75.41808331159376,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Malacca Strait be 200+ on Decemb"
   },
@@ -8921,9 +8973,9 @@
   "0xb5179c7a05ae44799060e3103369b60d0e141f1b4d96914e9860496a08247600": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.44,
+   "mid": 0.45,
    "share": 1.0,
-   "reward": 112.40543642136382,
+   "reward": 112.71098054574192,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 38+ on December 31"
   },
@@ -8932,7 +8984,7 @@
    "cash": 0.0,
    "mid": 0.545,
    "share": 1.0,
-   "reward": 103.87355694321407,
+   "reward": 104.17910106759217,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 46+ on December 31"
   },
@@ -8941,7 +8993,7 @@
    "cash": 0.0,
    "mid": 0.26,
    "share": 1.0,
-   "reward": 59.296356984413706,
+   "reward": 59.60190110879181,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 48+ on December 31"
   },
@@ -8984,9 +9036,9 @@
   "0x2a939931c880379be0ff462671872a6469cb63a7a7a47871854e876e1446ef7c": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.6,
+   "mid": 0.61,
    "share": 1.0,
-   "reward": 78.36971289186842,
+   "reward": 78.67525701624652,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Malacca Strait be 210+ on Decemb"
   },
@@ -9155,9 +9207,9 @@
   "0xcb409177b8ddaad2a5d6a6c197c0f273457441cd2a53e7fe70212e89c4e89c10": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.52,
+   "mid": 0.515,
    "share": 1.0,
-   "reward": 63.62718793791255,
+   "reward": 63.932732062290654,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 40+ on December 31"
   },
@@ -9245,9 +9297,9 @@
   "0x6349295a923e22fdbb53bd3d40c064b36170b8664575c561e12d0fe9613e578b": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.6365000000000001,
+   "mid": 0.6415,
    "share": 1.0,
-   "reward": 24.624825506458663,
+   "reward": 24.81579058419497,
    "fills": 0,
    "q": "Will Drew Mestemaker be the 2026 D1 Passing Yards Leader?"
   },
@@ -9344,9 +9396,9 @@
   "0x01ead4abec498c90cefc55edc9b5ca342a57e98315a271b791df5853ee9bef54": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.695,
+   "mid": 0.685,
    "share": 1.0,
-   "reward": 21.183804773171133,
+   "reward": 21.47275697395294,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Panama Canal be 24+ on December "
   },
@@ -9407,9 +9459,9 @@
   "0xfd9446721d2e3489b89f5cb04da8757a908179b92eff3fba67a1e8a0ec88ea58": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.291,
+   "mid": 0.289,
    "share": 1.0,
-   "reward": 35.09789659877888,
+   "reward": 35.365247707609726,
    "fills": 0,
    "q": "Will Radovan Vi\u0161kovi\u0107 be the next Chairman of the Council of Ministers\u00a0of Bosnia"
   },
@@ -9417,17 +9469,17 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.35850000000000004,
-   "share": 0.9990133201776022,
-   "reward": 0.0,
+   "share": 0.998684859444353,
+   "reward": 0.31356852378448685,
    "fills": 0,
    "q": "Will the median home value in Miami be between $830,000 and $851,000 on December"
   },
   "0xc7af14e0b0172a24a101c3aa3f1b0665298ac822b34811be00bfbead992ca135": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.623,
+   "mid": 0.614,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.5006684319812942,
    "fills": 0,
    "q": "Will Anthropic raise between $65B and $75B in its IPO?"
   },
@@ -9436,7 +9488,7 @@
    "cash": 0.0,
    "mid": 0.215,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.4548468245897029,
    "fills": 0,
    "q": "Will US GDP growth in Q4 2026 be between 3.5% and 4.0%?"
   },
@@ -9445,7 +9497,7 @@
    "cash": 0.0,
    "mid": 0.495,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.41943330313044563,
    "fills": 0,
    "q": "Will the US Section 232 tariff rate on Canadian primary aluminum be >40-50% on D"
   },
@@ -9454,7 +9506,7 @@
    "cash": 0.0,
    "mid": 0.3875,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.3138325503164971,
    "fills": 0,
    "q": "Will Avigdor Lieberman be the next Israeli Minister of Defense?"
   },
@@ -9463,7 +9515,7 @@
    "cash": 0.0,
    "mid": 0.5,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.381930155472623,
    "fills": 0,
    "q": "Will New York City get more snow than average this winter?"
   },
@@ -9472,7 +9524,7 @@
    "cash": 0.0,
    "mid": 0.5,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.381930155472623,
    "fills": 0,
    "q": "Will Chicago get more snow than average this winter?"
   },
@@ -9481,7 +9533,7 @@
    "cash": 0.0,
    "mid": 0.5,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.381930155472623,
    "fills": 0,
    "q": "Will Philadelphia get more snow than average this winter?"
   },
@@ -9490,7 +9542,7 @@
    "cash": 0.0,
    "mid": 0.5,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.381930155472623,
    "fills": 0,
    "q": "Will Salt Lake City get more snow than average this winter?"
   },
@@ -9499,7 +9551,7 @@
    "cash": 0.0,
    "mid": 0.5,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.381930155472623,
    "fills": 0,
    "q": "Will Minneapolis get more snow than average this winter?"
   },
@@ -9508,7 +9560,7 @@
    "cash": 0.0,
    "mid": 0.565,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.381930155472623,
    "fills": 0,
    "q": "Will Dario Amodei ring the bell at Anthropic's IPO?"
   },
@@ -9517,16 +9569,16 @@
    "cash": 0.0,
    "mid": 0.505,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.381930155472623,
    "fills": 0,
    "q": "Will Daniela Amodei ring the bell at Anthropic's IPO?"
   },
   "0xc71c5a23d02e3cc10d0a59a09e99dd0860a4c529b2de1ed83dcd10f2c5d3ab82": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.343,
+   "mid": 0.3385,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.3019186657305407,
    "fills": 0,
    "q": "Will Denis Be\u0107irovi\u0107 be the next Chairman of the Council of Ministers\u00a0of Bosnia "
   },
@@ -9535,7 +9587,7 @@
    "cash": 0.0,
    "mid": 0.37,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.3083236184661035,
    "fills": 0,
    "q": "Will the US Section 232 tariff rate on Canadian primary aluminum be >20-40% on D"
   },
@@ -9544,16 +9596,16 @@
    "cash": 0.0,
    "mid": 0.27,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.2777591947631703,
    "fills": 0,
    "q": "Will the US Section 232 tariff rate on Canadian primary aluminum be >0-20% on De"
   },
   "0x1a4685f0af987f4d3b6830b1b810fc6b70f8f0e07f7ebbbe22504cdedd3e007c": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.33499999999999996,
+   "mid": 0.32499999999999996,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.230537829062453,
    "fills": 0,
    "q": "Will the 2026-27 Arctic sea ice max be less than 14.2m sq km?"
   },
@@ -9562,7 +9614,7 @@
    "cash": 0.0,
    "mid": 0.535,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.22915809328357378,
    "fills": 0,
    "q": "Will Magomed Ankalaev fight Carlos Ulberg next?"
   },
@@ -9571,34 +9623,34 @@
    "cash": 0.0,
    "mid": 0.165,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.22915809328357378,
    "fills": 0,
    "q": "Will Anthropic's IPO price be between $74.00 and $75.99?"
   },
   "0x5a76818efea77a9ee171eea9ed1d0131f9ab0a629017cc56454b88a200917046": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.345,
+   "mid": 0.305,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.19609984035293263,
    "fills": 0,
    "q": "Will Anthropic's IPO price be between $76.00 and $78.00?"
   },
   "0x66fbf104a45136cb4521ec544cb4faec8cf16a1eac4bf35068b1362af03d99ad": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.33499999999999996,
+   "mid": 0.31,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.22915809328357378,
    "fills": 0,
    "q": "Will Anthropic's IPO price be between $78.01 and $82.00?"
   },
   "0xba191af6197afa418004d7b17a3f35972a5ac9ee6d7b313d57ef2b1846fc132a": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.35,
+   "mid": 0.32,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.22915809328357378,
    "fills": 0,
    "q": "Will Anthropic's IPO price be between $82.01 and $86.00?"
   },
@@ -9607,7 +9659,7 @@
    "cash": 0.0,
    "mid": 0.465,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.21388088706466887,
    "fills": 0,
    "q": "Will Taylor win Ultimate Self-Defense Championship Season 4?"
   },
@@ -9616,34 +9668,34 @@
    "cash": 0.0,
    "mid": 0.455,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.2124911400206663,
    "fills": 0,
    "q": "Will Fred win Ultimate Self-Defense Championship Season 4?"
   },
   "0x43b6521c31574fcb09371039a994806d700b42eb50493f9a2ea0a270c30eab4c": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.4585,
+   "mid": 0.40700000000000003,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.13386199762975728,
    "fills": 0,
    "q": "Will Karl-Anthony Towns lead the NBA in rebounds per game in 2026-27?"
   },
   "0x836c0b4ecd9bf59e7ccd2224ff87f8c0d78fd8205f33867ec9450f6d72c9a455": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.19,
+   "mid": 0.185,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.17991263284505243,
    "fills": 0,
    "q": "Will Anthropic stock fall more than 10% on IPO day?"
   },
   "0xcbd051e4ee2fb05406d23c5bed9d425355a7f90bc9b9d9f43cb504a9d661a581": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.25,
+   "mid": 0.27,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.17359791178670195,
    "fills": 0,
    "q": "Will Anthropic stock be flat or rise less than 10% on IPO day?"
   },
@@ -9652,7 +9704,7 @@
    "cash": 0.0,
    "mid": 0.21000000000000002,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.1909650777363115,
    "fills": 0,
    "q": "Will Anthropic stock rise between 20% and 30% on IPO day?"
   },
@@ -9661,7 +9713,7 @@
    "cash": 0.0,
    "mid": 0.215,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.1909650777363115,
    "fills": 0,
    "q": "Will Anthropic stock rise between 30% and 50% on IPO day?"
   },
@@ -9670,7 +9722,7 @@
    "cash": 0.0,
    "mid": 0.165,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.1317561154937563,
    "fills": 0,
    "q": "Will 500M to 650M Anthropic shares trade on IPO day?"
   },
@@ -9679,16 +9731,16 @@
    "cash": 0.0,
    "mid": 0.22499999999999998,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.1909650777363115,
    "fills": 0,
    "q": "Will 650M to 800M Anthropic shares trade on IPO day?"
   },
   "0x980a48e323370b32a982c6c876c5878bd87c732db9955e9de6b012803c82c5b6": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.395,
+   "mid": 0.39,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.1909650777363115,
    "fills": 0,
    "q": "Will 800M to 1B Anthropic shares trade on IPO day?"
   },
@@ -9697,7 +9749,7 @@
    "cash": 0.0,
    "mid": 0.34,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.1909650777363115,
    "fills": 0,
    "q": "Will 1B to 1.25B Anthropic shares trade on IPO day?"
   },
@@ -9706,7 +9758,7 @@
    "cash": 0.0,
    "mid": 0.215,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.1909650777363115,
    "fills": 0,
    "q": "Will 1.5B or more Anthropic shares trade on IPO day?"
   },
@@ -9715,7 +9767,7 @@
    "cash": 0.0,
    "mid": 0.49,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.1909650777363115,
    "fills": 0,
    "q": "Will Jared Kaplan ring the bell at Anthropic's IPO?"
   },
@@ -9724,7 +9776,7 @@
    "cash": 0.0,
    "mid": 0.51,
    "share": 1.0,
-   "reward": 0.0,
+   "reward": 0.1909650777363115,
    "fills": 0,
    "q": "Will Mike Krieger ring the bell at Anthropic's IPO?"
   }
@@ -82592,17 +82644,30 @@
    "w": 2991602
   },
   {
-   "ts": "2026-11-18T00:30:23.206032+00:00",
-   "dt_h": 0.017,
-   "reward_tick": 0.361,
-   "reward_total": 29813.19,
+   "ts": "2026-11-18T00:39:23.107196+00:00",
+   "dt_h": 0.17,
+   "reward_tick": 12.5029,
+   "reward_total": 29825.33,
    "mm_value": -256.82,
-   "net": 29556.37,
+   "net": 29568.51,
    "avg_share": 1.0,
    "n_markets": 52,
    "fills_total": 200,
    "rebalanced": true,
    "w": 2991603
+  },
+  {
+   "ts": "2026-11-18T00:41:23.181341+00:00",
+   "dt_h": 0.033,
+   "reward_tick": 2.655,
+   "reward_total": 29827.99,
+   "mm_value": -256.82,
+   "net": 29571.17,
+   "avg_share": 1.0,
+   "n_markets": 52,
+   "fills_total": 200,
+   "rebalanced": false,
+   "w": 2991604
   }
  ],
  "fills": [
@@ -84407,8 +84472,8 @@
    "ledger": "v2"
   }
  ],
- "reward_total": 29813.188458587683,
- "last_ts": 1794961823.206032,
+ "reward_total": 29827.985354931883,
+ "last_ts": 1794962483.1813407,
  "chosen_at": 1794961823.206032,
  "rebalances": [
   {
@@ -84653,381 +84718,381 @@
   }
  ],
  "last_tick": {
-  "ts": "2026-11-18T00:30:23.206032+00:00",
-  "dt_h": 0.017,
+  "ts": "2026-11-18T00:41:23.181341+00:00",
+  "dt_h": 0.007,
   "markets": [
    {
     "q": "Will the median home value in Miami be between $83",
     "mid": 0.359,
-    "share": 0.999,
-    "earned": 0.0,
+    "share": 0.9987,
+    "earned": 0.0244,
     "inv": 0.0
    },
    {
     "q": "Will the Bank of Korea increase the base rate by 2",
     "mid": 0.25,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0236,
     "inv": 0.0
    },
    {
     "q": "Will Anthropic raise between $65B and $75B in its ",
-    "mid": 0.623,
+    "mid": 0.614,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.017,
     "inv": 0.0
    },
    {
     "q": "Will US GDP growth in Q4 2026 be between 3.5% and ",
     "mid": 0.215,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0178,
     "inv": 0.0
    },
    {
     "q": "Will the US Section 232 tariff rate on Canadian pr",
     "mid": 0.495,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.017,
     "inv": 0.0
    },
    {
     "q": "Will Avigdor Lieberman be the next Israeli Ministe",
     "mid": 0.388,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0003,
     "inv": 0.0
    },
    {
     "q": "Will General Mills Q2 organic net sales growth be ",
-    "mid": 0.51,
+    "mid": 0.495,
     "share": 1.0,
-    "earned": 0.0348,
+    "earned": 0.0147,
     "inv": 0.0
    },
    {
     "q": "Will New York City get more snow than average this",
     "mid": 0.5,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0144,
     "inv": 0.0
    },
    {
     "q": "Will Chicago get more snow than average this winte",
     "mid": 0.5,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0144,
     "inv": 0.0
    },
    {
     "q": "Will Philadelphia get more snow than average this ",
     "mid": 0.5,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0144,
     "inv": 0.0
    },
    {
     "q": "Will Salt Lake City get more snow than average thi",
     "mid": 0.5,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0144,
     "inv": 0.0
    },
    {
     "q": "Will Minneapolis get more snow than average this w",
     "mid": 0.5,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0144,
     "inv": 0.0
    },
    {
     "q": "Will Dario Amodei ring the bell at Anthropic's IPO",
     "mid": 0.565,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0144,
     "inv": 0.0
    },
    {
     "q": "Will Daniela Amodei ring the bell at Anthropic's I",
     "mid": 0.505,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0144,
     "inv": 0.0
    },
    {
     "q": "Will Denis Be\u0107irovi\u0107 be the next Chairman of the C",
-    "mid": 0.343,
+    "mid": 0.339,
     "share": 1.0,
-    "earned": 0.0,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the 7-day average ship traffic through the Su",
-    "mid": 0.44,
-    "share": 1.0,
-    "earned": 0.0278,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the 7-day average ship traffic through the Su",
-    "mid": 0.52,
-    "share": 1.0,
-    "earned": 0.0278,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the 7-day average ship traffic through the Su",
-    "mid": 0.26,
-    "share": 1.0,
-    "earned": 0.0278,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the 7-day average ship traffic through the Ma",
-    "mid": 0.645,
-    "share": 1.0,
-    "earned": 0.0278,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the Ornn H200 Index hit $8.00 (HIGH) by Decem",
-    "mid": 0.505,
-    "share": 1.0,
-    "earned": 0.0278,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the Ornn H200 Index hit $4.00 (LOW) by Decemb",
-    "mid": 0.35,
-    "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0118,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
     "mid": 0.45,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0115,
+    "inv": 0.0
+   },
+   {
+    "q": "Will the 7-day average ship traffic through the Su",
+    "mid": 0.515,
+    "share": 1.0,
+    "earned": 0.0115,
+    "inv": 0.0
+   },
+   {
+    "q": "Will the 7-day average ship traffic through the Su",
+    "mid": 0.26,
+    "share": 1.0,
+    "earned": 0.0115,
+    "inv": 0.0
+   },
+   {
+    "q": "Will the 7-day average ship traffic through the Ma",
+    "mid": 0.67,
+    "share": 1.0,
+    "earned": 0.0115,
+    "inv": 0.0
+   },
+   {
+    "q": "Will the Ornn H200 Index hit $8.00 (HIGH) by Decem",
+    "mid": 0.505,
+    "share": 1.0,
+    "earned": 0.0115,
+    "inv": 0.0
+   },
+   {
+    "q": "Will the Ornn H200 Index hit $4.00 (LOW) by Decemb",
+    "mid": 0.35,
+    "share": 1.0,
+    "earned": 0.0115,
+    "inv": 0.0
+   },
+   {
+    "q": "Will the 7-day average ship traffic through the Su",
+    "mid": 0.45,
+    "share": 1.0,
+    "earned": 0.0115,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
     "mid": 0.525,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0115,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
     "mid": 0.545,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0115,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Pa",
-    "mid": 0.695,
+    "mid": 0.685,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0115,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ma",
-    "mid": 0.6,
+    "mid": 0.61,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0115,
     "inv": 0.0
    },
    {
     "q": "Will the US Section 232 tariff rate on Canadian pr",
     "mid": 0.37,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0121,
     "inv": 0.0
    },
    {
     "q": "Will the US Section 232 tariff rate on Canadian pr",
     "mid": 0.27,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0083,
     "inv": 0.0
    },
    {
     "q": "Will Radovan Vi\u0161kovi\u0107 be the next Chairman of the ",
-    "mid": 0.291,
+    "mid": 0.289,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0101,
     "inv": 0.0
    },
    {
     "q": "Will primmie play for Paper Rex in 2027?",
     "mid": 0.714,
     "share": 1.0,
-    "earned": 0.0237,
+    "earned": 0.0098,
     "inv": 0.0
    },
    {
     "q": "Will Johnny Walker fight Rizvan Kuniev next?",
     "mid": 0.535,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0092,
     "inv": 0.0
    },
    {
     "q": "Will the 2026-27 Arctic sea ice max be less than 1",
-    "mid": 0.335,
+    "mid": 0.325,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0063,
     "inv": 0.0
    },
    {
     "q": "Will Magomed Ankalaev fight Carlos Ulberg next?",
     "mid": 0.535,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0086,
     "inv": 0.0
    },
    {
     "q": "Will Anthropic's IPO price be between $74.00 and $",
     "mid": 0.165,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0086,
     "inv": 0.0
    },
    {
     "q": "Will Anthropic's IPO price be between $76.00 and $",
-    "mid": 0.345,
+    "mid": 0.305,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0086,
     "inv": 0.0
    },
    {
     "q": "Will Anthropic's IPO price be between $78.01 and $",
-    "mid": 0.335,
+    "mid": 0.31,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0086,
     "inv": 0.0
    },
    {
     "q": "Will Anthropic's IPO price be between $82.01 and $",
-    "mid": 0.35,
+    "mid": 0.32,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0086,
     "inv": 0.0
    },
    {
     "q": "Will Taylor win Ultimate Self-Defense Championship",
     "mid": 0.465,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0081,
     "inv": 0.0
    },
    {
     "q": "Will Fred win Ultimate Self-Defense Championship S",
     "mid": 0.455,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0078,
     "inv": 0.0
    },
    {
     "q": "Will Karl-Anthony Towns lead the NBA in rebounds p",
-    "mid": 0.459,
+    "mid": 0.407,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0075,
     "inv": 0.0
    },
    {
     "q": "Will Drew Mestemaker be the 2026 D1 Passing Yards ",
-    "mid": 0.637,
+    "mid": 0.641,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0072,
     "inv": 0.0
    },
    {
     "q": "Will Anthropic stock fall more than 10% on IPO day",
-    "mid": 0.19,
+    "mid": 0.185,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0072,
     "inv": 0.0
    },
    {
     "q": "Will Anthropic stock be flat or rise less than 10%",
-    "mid": 0.25,
+    "mid": 0.27,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0072,
     "inv": 0.0
    },
    {
     "q": "Will Anthropic stock rise between 20% and 30% on I",
     "mid": 0.21,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0072,
     "inv": 0.0
    },
    {
     "q": "Will Anthropic stock rise between 30% and 50% on I",
     "mid": 0.215,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0072,
     "inv": 0.0
    },
    {
     "q": "Will 500M to 650M Anthropic shares trade on IPO da",
     "mid": 0.165,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0072,
     "inv": 0.0
    },
    {
     "q": "Will 650M to 800M Anthropic shares trade on IPO da",
     "mid": 0.225,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0072,
     "inv": 0.0
    },
    {
     "q": "Will 800M to 1B Anthropic shares trade on IPO day?",
-    "mid": 0.395,
+    "mid": 0.39,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0072,
     "inv": 0.0
    },
    {
     "q": "Will 1B to 1.25B Anthropic shares trade on IPO day",
     "mid": 0.34,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0072,
     "inv": 0.0
    },
    {
     "q": "Will 1.5B or more Anthropic shares trade on IPO da",
     "mid": 0.215,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0072,
     "inv": 0.0
    },
    {
     "q": "Will Jared Kaplan ring the bell at Anthropic's IPO",
     "mid": 0.49,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0072,
     "inv": 0.0
    },
    {
     "q": "Will Mike Krieger ring the bell at Anthropic's IPO",
     "mid": 0.51,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0072,
     "inv": 0.0
    }
   ],
-  "reward_tick": 0.361,
-  "reward_total": 29813.19,
+  "reward_tick": 0.5626,
+  "reward_total": 29827.99,
   "mm_value": -256.82,
-  "net": 29556.37,
+  "net": 29571.17,
   "avg_share": 1.0,
   "n_markets": 52,
   "fills_total": 200,
-  "rebalanced": true
+  "rebalanced": false
  }
 }

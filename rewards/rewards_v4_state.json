@@ -413,7 +413,7 @@
    "question": "Will the 7-day average ship traffic through the Suez Canal be 44+ on December 31?",
    "yes": "51526892375486428252030790423644296016730811767310528720502776182503180304585",
    "no": "13684392025570395823187460567756406323986645463852339194617115591095981483581",
-   "rate": 5.0,
+   "rate": 40.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -559,26 +559,11 @@
    "rate0": 50.0
   },
   {
-   "cond": "0xf7699db92f899f7577f55c0dc9db490d6a17d1eced1c07d3860b4ae80a13b175",
-   "question": "Will the Ornn H200 Index hit $4.00 (LOW) by December 31, 2026?",
-   "yes": "30072348565478302750198876081143273757119653365741275677520918105022287518421",
-   "no": "84508516994297241911682690418747908793302393026465137868931658014066128421823",
-   "rate": 3.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.700000000000003,
-   "est_reward_day": 40.0,
-   "end": "2027-01-01T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 40.0
-  },
-  {
    "cond": "0x12e7e3aaed06c1ac55f082a0b4282d5f525cdb2106afb1972e9d861bdc7e1649",
    "question": "Will the Ornn H200 Index hit $5.00 (LOW) by December 31, 2026?",
    "yes": "84962224967559357710227660866923494523709197957026792863757180476171301908252",
    "no": "102495639053225339401782208711351369590445500952314062485123614859744323263449",
-   "rate": 3.0,
+   "rate": 40.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -638,7 +623,7 @@
    "question": "Will the 7-day average ship traffic through the Panama Canal be 26+ on December 31?",
    "yes": "114555169739312447607281760902302209047547912088673111158559135856415121804639",
    "no": "62259222741670638443025960530961071067017892439337933735528592279170037952247",
-   "rate": 5.0,
+   "rate": 40.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -758,7 +743,7 @@
    "question": "Will Bakir Izetbegovi\u0107 be the next Chairman of the Council of Ministers\u00a0of Bosnia and Herzegovina?",
    "yes": "53242874537251654451264770626565843248935764222667473763870048497263085194275",
    "no": "53519815754994454093543980789287656620578441750351723809739770492164955504589",
-   "rate": 71.0,
+   "rate": 77.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -769,26 +754,11 @@
    "rate0": 100.0
   },
   {
-   "cond": "0xc72774d94c071c0354104363c380f3fac92baec02f6b567479f3551c2acdfe4b",
-   "question": "Will Take-Two report less than 9 million GTA VI units sold before 2027?",
-   "yes": "63772466767541062825556842546186083990386183409738193852743723738548327833228",
-   "no": "83566465050397742775774007905996283600740582933214657153049225693410534261688",
-   "rate": 141.0,
-   "v": 4.5,
-   "min_size": 20.0,
-   "d": 0.0225,
-   "collateral": 19.1,
-   "est_reward_day": 93.0,
-   "end": "2027-01-01T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 93.0
-  },
-  {
    "cond": "0x0a65fe87594a6f4e0db37c9163b38587a05b9467a20f009ed8f7ac638d9a3293",
    "question": "Will Jensen Huang found a new company next?",
    "yes": "74670630322197431412618047409378361319954589448654225386298055931657225867852",
    "no": "61451165843798903384092430262262922870905545951486820351396754921690660559726",
-   "rate": 73.0,
+   "rate": 87.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -797,6 +767,36 @@
    "end": "2028-01-01T04:59:00Z",
    "share0": 1.0,
    "rate0": 91.0
+  },
+  {
+   "cond": "0x504a33da236817ce4ffb63421f899d1030bb843d496fee11aff31dca3fea397c",
+   "question": "Will Anthropic's IPO valuation be between $1.25T and $1.50T?",
+   "yes": "86351833530626841967218167932935147667187390410230538287611286227749100750125",
+   "no": "62480265706565855251270013876643477324885325217067177350973133984798255771180",
+   "rate": 95.0,
+   "v": 4.5,
+   "min_size": 20.0,
+   "d": 0.0225,
+   "collateral": 19.1,
+   "est_reward_day": 126.0,
+   "end": "2028-01-01T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 126.0
+  },
+  {
+   "cond": "0x366a98120ec16a252876ffd8b5d64fc170d53277bbe91daf5218e3bd69a24853",
+   "question": "Will Anthropic's IPO valuation be between $1.50T and $1.75T?",
+   "yes": "93673921410512921454234219359882494655237117062546031709040981679545033941614",
+   "no": "62623393672228479194600923307438214296702715490275699461114840720610112200245",
+   "rate": 105.0,
+   "v": 4.5,
+   "min_size": 20.0,
+   "d": 0.0225,
+   "collateral": 19.1,
+   "est_reward_day": 74.0,
+   "end": "2028-01-01T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 74.0
   }
  ],
  "positions": {
@@ -1029,7 +1029,7 @@
    "inv": 0.0,
    "cash": -2.9992417699999963,
    "mid": 0.2555,
-   "share": 0.4322205980275809,
+   "share": null,
    "reward": 908.6759812249304,
    "fills": 12,
    "q": "Will the Ornn H200 Index hit $4.00 (LOW) by December 31, 2026?",
@@ -1138,7 +1138,7 @@
    "cash": 0.0,
    "mid": 0.495,
    "share": 1.0,
-   "reward": 135.20964817228946,
+   "reward": 135.3207621915719,
    "fills": 0,
    "q": "Will Claude Opus 5.6+ debut at an output token price of at least $20 by June 30,"
   },
@@ -4522,7 +4522,7 @@
   "0x5d15579a3a31d6220eb8d33d167788db82976f14c856768a5e37e51afdaeb279": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.485,
+   "mid": 0.484,
    "share": 1.0,
    "reward": 17.59805527737572,
    "fills": 0,
@@ -11184,9 +11184,9 @@
   "0x366a98120ec16a252876ffd8b5d64fc170d53277bbe91daf5218e3bd69a24853": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.497,
-   "share": null,
-   "reward": 18.739809409701124,
+   "mid": 0.445,
+   "share": 1.0,
+   "reward": 19.174056980362607,
    "fills": 0,
    "q": "Will Anthropic's IPO valuation be between $1.50T and $1.75T?"
   },
@@ -12025,7 +12025,7 @@
    "cash": 0.0,
    "mid": 0.46499999999999997,
    "share": 1.0,
-   "reward": 754.9674551550834,
+   "reward": 755.2849237816048,
    "fills": 0,
    "q": "Will the Ornn H200 Index hit $8.00 (HIGH) by December 31, 2026?"
   },
@@ -12052,8 +12052,8 @@
    "inv": 0.0,
    "cash": -0.34185,
    "mid": 0.45,
-   "share": 1.0,
-   "reward": 763.9311307933693,
+   "share": 0.7012448132780081,
+   "reward": 763.9971765627231,
    "fills": 1,
    "q": "Will the Ornn H200 Index hit $5.00 (LOW) by December 31, 2026?",
    "closed_at": 0.85
@@ -15807,9 +15807,9 @@
   "0x504a33da236817ce4ffb63421f899d1030bb843d496fee11aff31dca3fea397c": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.7015,
-   "share": null,
-   "reward": 49.206274715360905,
+   "mid": 0.4535,
+   "share": 0.004146236269451093,
+   "reward": 49.81901352117151,
    "fills": 0,
    "q": "Will Anthropic's IPO valuation be between $1.25T and $1.50T?"
   },
@@ -17922,9 +17922,9 @@
   "0x9479fb1653a1b3f34c6ccccc4f15bcc74eaf89c85a253a190d0a6cb9f817894f": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.21999999999999997,
+   "mid": 0.22999999999999998,
    "share": 1.0,
-   "reward": 3.9109070763290648,
+   "reward": 3.950590654644221,
    "fills": 0,
    "q": "Will the Ornn H200 Index be between $5.50 and $6.00 on December 31, 2026?"
   },
@@ -18039,7 +18039,7 @@
   "0xe43ebfb9c7af7e7560cf67dffd4431864a59f9876e0bc057bddb846bdb612d68": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.30200000000000005,
+   "mid": 0.3025,
    "share": 1.0,
    "reward": 76.87070843404608,
    "fills": 0,
@@ -19119,9 +19119,9 @@
   "0x0a65fe87594a6f4e0db37c9163b38587a05b9467a20f009ed8f7ac638d9a3293": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.22999999999999998,
+   "mid": 0.315,
    "share": 1.0,
-   "reward": 19.49821617676509,
+   "reward": 20.050557624607432,
    "fills": 0,
    "q": "Will Jensen Huang found a new company next?"
   },
@@ -19884,7 +19884,7 @@
   "0xfce6cbb1a0ba0141f842789f0b3b188d212b64417b73498131be483975365dfa": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.625,
+   "mid": 0.64,
    "share": 1.0,
    "reward": 3.84280738617829,
    "fills": 0,
@@ -19965,9 +19965,9 @@
   "0x811a32e2c8ccd245d85702955e6f312782017d96c58cf7d0bcb7550656f7665f": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.32,
+   "mid": 0.315,
    "share": 1.0,
-   "reward": 5.561428671480529,
+   "reward": 5.569365387143561,
    "fills": 0,
    "q": "Will DJ Khaled perform at Coachella 2027?"
   },
@@ -20361,9 +20361,9 @@
   "0xb5179c7a05ae44799060e3103369b60d0e141f1b4d96914e9860496a08247600": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.6950000000000001,
+   "mid": 0.7,
    "share": 1.0,
-   "reward": 111.83577870177311,
+   "reward": 112.15324732829436,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 38+ on December 31"
   },
@@ -20388,9 +20388,9 @@
   "0xab3305643ef7359a90326b1f9ca37210bef91fd09d5ee336ed1e34b98d088599": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.47,
-   "share": 0.7012448132780095,
-   "reward": 98.42565855734932,
+   "mid": 0.54,
+   "share": 1.0,
+   "reward": 98.67097545954714,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 46+ on December 31"
   },
@@ -20444,7 +20444,7 @@
    "cash": 0.0,
    "mid": 0.7050000000000001,
    "share": 0.7253218884120193,
-   "reward": 31.62407373385263,
+   "reward": 31.652857101815126,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Panama Canal be 25+ on December "
   },
@@ -20505,9 +20505,9 @@
   "0xcb409177b8ddaad2a5d6a6c197c0f273457441cd2a53e7fe70212e89c4e89c10": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.505,
+   "mid": 0.53,
    "share": 1.0,
-   "reward": 85.27934412135134,
+   "reward": 85.59681274787259,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 40+ on December 31"
   },
@@ -20534,7 +20534,7 @@
    "cash": 0.0,
    "mid": 0.405,
    "share": 1.0,
-   "reward": 50.84665322824477,
+   "reward": 50.89427352222296,
    "fills": 0,
    "q": "Will the Central Bank of Chile make no change to the monetary policy rate at the"
   },
@@ -20732,7 +20732,7 @@
    "cash": 0.0,
    "mid": 0.61,
    "share": 1.0,
-   "reward": 76.32575831139704,
+   "reward": 76.42445422607892,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 44+ on December 31"
   },
@@ -20975,7 +20975,7 @@
    "cash": 0.0,
    "mid": 0.27,
    "share": 0.8638315272950304,
-   "reward": 49.873078229163106,
+   "reward": 49.907358155227605,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 48+ on December 31"
   },
@@ -21002,16 +21002,16 @@
    "cash": 0.0,
    "mid": 0.495,
    "share": 1.0,
-   "reward": 15.730376397408547,
+   "reward": 15.758154902229156,
    "fills": 0,
    "q": "0 ships transit Hormuz on any date by January 31, 2027?"
   },
   "0x9b1553011e72f02f38f542563411afdc048620bcea31924c15855f4ee68f543a": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.585,
+   "mid": 0.49,
    "share": 1.0,
-   "reward": 55.49092924229436,
+   "reward": 55.7807016694868,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 42+ on December 31"
   },
@@ -21063,7 +21063,7 @@
   "0x7ad5206bbe6e0f4f9541e5b7ec723619bae7557b1555872f920fc3055726b4ce": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.325,
+   "mid": 0.3255,
    "share": 1.0,
    "reward": 2.1251932211496207,
    "fills": 0,
@@ -21110,7 +21110,7 @@
    "cash": 0.0,
    "mid": 0.78,
    "share": 1.0,
-   "reward": 60.128568369269814,
+   "reward": 60.52540415242137,
    "fills": 0,
    "q": "Will Dario Amodei ring the bell at Anthropic's IPO?"
   },
@@ -21119,7 +21119,7 @@
    "cash": 0.0,
    "mid": 0.855,
    "share": 1.0,
-   "reward": 55.49745746496433,
+   "reward": 55.894293248115886,
    "fills": 0,
    "q": "Will Daniela Amodei ring the bell at Anthropic's IPO?"
   },
@@ -21155,7 +21155,7 @@
    "cash": 0.0,
    "mid": 0.6399999999999999,
    "share": 0.7012448132780095,
-   "reward": 41.517939899718705,
+   "reward": 41.743098717844134,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Malacca Strait be 210+ on Decemb"
   },
@@ -21261,9 +21261,9 @@
   "0x800bf287e0b3f3f412ed717a59e9fb1f874357d0341e306eefc3d2808364a137": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.5,
-   "share": 0.9548022598870065,
-   "reward": 22.22027635511404,
+   "mid": 0.585,
+   "share": 1.0,
+   "reward": 22.31534467086339,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Panama Canal be 26+ on December "
   },
@@ -21324,9 +21324,9 @@
   "0xa525c320c2f82632b9a2b16183339dd1daf26f626267ea47e2640a849f67c1e3": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.305,
+   "mid": 0.36000000000000004,
    "share": 1.0,
-   "reward": 7.319578896495993,
+   "reward": 7.393126091554819,
    "fills": 0,
    "q": "Will 1B to 1.25B Anthropic shares trade on IPO day?"
   },
@@ -21362,16 +21362,16 @@
    "cash": 0.0,
    "mid": 0.445,
    "share": 1.0,
-   "reward": 8.255098627949199,
+   "reward": 8.651934411100765,
    "fills": 0,
    "q": "Will Trump call for Jensen Huang's return as NVIDIA CEO by December 31?"
   },
   "0x46d4a78352e488276ef2f64a472d4de16961ae935fdab2ea59b7a3279d0b3a62": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.545,
+   "mid": 0.54,
    "share": 1.0,
-   "reward": 12.47006656615822,
+   "reward": 13.26373813246135,
    "fills": 0,
    "q": "Will \"GTA VI: The Album\" first week sales be at least 150k?"
   },
@@ -21380,7 +21380,7 @@
    "cash": 0.0,
    "mid": 0.51,
    "share": 1.0,
-   "reward": 12.053661648597979,
+   "reward": 12.84733321490111,
    "fills": 0,
    "q": "Will \"GTA VI: The Album\" first week sales be at least 250k?"
   },
@@ -21398,16 +21398,16 @@
    "cash": 0.0,
    "mid": 0.245,
    "share": 1.0,
-   "reward": 12.47006656615822,
+   "reward": 13.26373813246135,
    "fills": 0,
    "q": "Will \"GTA VI: The Album\" first week sales be at least 400k?"
   },
   "0x023668c292fd7adddeac1522ece4932d8c967ec02f78de05bfc980bfd06e67d8": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.235,
-   "share": 0.9406307977736544,
-   "reward": 9.248227570908178,
+   "mid": 0.24,
+   "share": 0.8637137989778536,
+   "reward": 9.93373265458056,
    "fills": 0,
    "q": "GTA VI story DLC announced by December 31, 2027?"
   },
@@ -21416,7 +21416,7 @@
    "cash": 0.0,
    "mid": 0.1535,
    "share": 1.0,
-   "reward": 2.79393871208584,
+   "reward": 3.3675619246810684,
    "fills": 0,
    "q": "Will Bakir Izetbegovi\u0107 be the next Chairman of the Council of Ministers\u00a0of Bosni"
   },
@@ -21424,7 +21424,7 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.485,
-   "share": 0.277207392197126,
+   "share": null,
    "reward": 2.5505673443820047,
    "fills": 0,
    "q": "Will Take-Two report less than 9 million GTA VI units sold before 2027?"
@@ -95051,17 +95051,30 @@
    "w": 2991738
   },
   {
-   "ts": "2026-11-18T23:17:25.359159+00:00",
-   "dt_h": 0.136,
-   "reward_tick": 5.5137,
-   "reward_total": 56477.22,
+   "ts": "2026-11-18T23:19:25.274894+00:00",
+   "dt_h": 0.17,
+   "reward_tick": 6.9217,
+   "reward_total": 56478.63,
    "mm_value": -679.76,
-   "net": 55797.47,
-   "avg_share": 0.9414,
+   "net": 55798.88,
+   "avg_share": 0.9606,
    "n_markets": 53,
    "fills_total": 659,
    "rebalanced": false,
    "w": 2991739
+  },
+  {
+   "ts": "2026-11-18T23:28:51.091393+00:00",
+   "dt_h": 0.159,
+   "reward_tick": 7.365,
+   "reward_total": 56486.0,
+   "mm_value": -679.76,
+   "net": 55806.24,
+   "avg_share": 0.9478,
+   "n_markets": 53,
+   "fills_total": 659,
+   "rebalanced": false,
+   "w": 2991740
   }
  ],
  "fills": [
@@ -100997,8 +101010,8 @@
    "ledger": "v4"
   }
  ],
- "reward_total": 56477.22357553913,
- "last_ts": 1795043845.3591592,
+ "reward_total": 56485.996761336086,
+ "last_ts": 1795044531.0913925,
  "chosen_at": 1791639880.921448,
  "rebalances": [
   {
@@ -101009,8 +101022,8 @@
   }
  ],
  "last_tick": {
-  "ts": "2026-11-18T23:17:25.359159+00:00",
-  "dt_h": 0.017,
+  "ts": "2026-11-18T23:28:51.091393+00:00",
+  "dt_h": 0.04,
   "markets": [
    {
     "q": "Will Chicago Bears finish the 2026-27 NFL regular ",
@@ -101021,7 +101034,7 @@
    },
    {
     "q": "Will Denver Broncos finish the 2026-27 NFL regular",
-    "mid": 0.485,
+    "mid": 0.484,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -101030,7 +101043,7 @@
     "q": "Will Claude Opus 5.6+ debut at an output token pri",
     "mid": 0.495,
     "share": 1.0,
-    "earned": 0.0097,
+    "earned": 0.0236,
     "inv": 0.0
    },
    {
@@ -101128,7 +101141,7 @@
    },
    {
     "q": "Will Choosin' Texas - Ella Langley win Best Countr",
-    "mid": 0.625,
+    "mid": 0.64,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -101146,30 +101159,30 @@
    },
    {
     "q": "Will DJ Khaled perform at Coachella 2027?",
-    "mid": 0.32,
+    "mid": 0.315,
     "share": 1.0,
-    "earned": 0.0007,
+    "earned": 0.0017,
     "inv": 0.0
    },
    {
     "q": "Will the Central Bank of Chile make no change to t",
     "mid": 0.405,
     "share": 1.0,
-    "earned": 0.0042,
+    "earned": 0.0101,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index hit $8.00 (HIGH) by Decem",
     "mid": 0.465,
     "share": 1.0,
-    "earned": 0.0277,
+    "earned": 0.0674,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
     "mid": 0.61,
     "share": 1.0,
-    "earned": 0.0035,
+    "earned": 0.0674,
     "inv": 0.0
    },
    {
@@ -101183,47 +101196,47 @@
     "q": "Will the 7-day average ship traffic through the Su",
     "mid": 0.27,
     "share": 0.8638,
-    "earned": 0.003,
+    "earned": 0.0073,
     "inv": 0.0
    },
    {
     "q": "0 ships transit Hormuz on any date by January 31, ",
     "mid": 0.495,
     "share": 1.0,
-    "earned": 0.0024,
+    "earned": 0.0059,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
-    "mid": 0.695,
+    "mid": 0.7,
     "share": 1.0,
-    "earned": 0.0277,
+    "earned": 0.0674,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
-    "mid": 0.505,
+    "mid": 0.53,
     "share": 1.0,
-    "earned": 0.0277,
+    "earned": 0.0674,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
-    "mid": 0.585,
+    "mid": 0.49,
     "share": 1.0,
-    "earned": 0.0277,
+    "earned": 0.0674,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
-    "mid": 0.47,
-    "share": 0.7012,
-    "earned": 0.0,
+    "mid": 0.54,
+    "share": 1.0,
+    "earned": 0.0674,
     "inv": 0.0
    },
    {
     "q": "Will the Central Bank of Chile increase the moneta",
-    "mid": 0.325,
+    "mid": 0.326,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -101232,61 +101245,54 @@
     "q": "Will Dario Amodei ring the bell at Anthropic's IPO",
     "mid": 0.78,
     "share": 1.0,
-    "earned": 0.0347,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the Ornn H200 Index hit $4.00 (LOW) by Decemb",
-    "mid": 0.256,
-    "share": 0.4322,
-    "earned": 0.0009,
+    "earned": 0.0843,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index hit $5.00 (LOW) by Decemb",
     "mid": 0.45,
-    "share": 1.0,
-    "earned": 0.0021,
+    "share": 0.7012,
+    "earned": 0.0473,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Pa",
     "mid": 0.705,
     "share": 0.7253,
-    "earned": 0.0025,
+    "earned": 0.0061,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index be between $5.50 and $6.0",
-    "mid": 0.22,
+    "mid": 0.23,
     "share": 1.0,
-    "earned": 0.0035,
+    "earned": 0.0084,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ma",
     "mid": 0.64,
     "share": 0.7012,
-    "earned": 0.0194,
+    "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Pa",
-    "mid": 0.5,
-    "share": 0.9548,
-    "earned": 0.0033,
+    "mid": 0.585,
+    "share": 1.0,
+    "earned": 0.0674,
     "inv": 0.0
    },
    {
     "q": "Will Daniela Amodei ring the bell at Anthropic's I",
     "mid": 0.855,
     "share": 1.0,
-    "earned": 0.0347,
+    "earned": 0.0843,
     "inv": 0.0
    },
    {
     "q": "Will 1B to 1.25B Anthropic shares trade on IPO day",
-    "mid": 0.305,
+    "mid": 0.36,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -101295,101 +101301,76 @@
     "q": "Will Trump call for Jensen Huang's return as NVIDI",
     "mid": 0.445,
     "share": 1.0,
-    "earned": 0.0347,
+    "earned": 0.0843,
     "inv": 0.0
    },
    {
     "q": "Will \"GTA VI: The Album\" first week sales be at le",
-    "mid": 0.545,
+    "mid": 0.54,
     "share": 1.0,
-    "earned": 0.0693,
+    "earned": 0.1686,
     "inv": 0.0
    },
    {
     "q": "Will \"GTA VI: The Album\" first week sales be at le",
     "mid": 0.51,
     "share": 1.0,
-    "earned": 0.0693,
+    "earned": 0.1686,
     "inv": 0.0
    },
    {
     "q": "Will \"GTA VI: The Album\" first week sales be at le",
     "mid": 0.245,
     "share": 1.0,
-    "earned": 0.0693,
+    "earned": 0.1686,
     "inv": 0.0
    },
    {
     "q": "GTA VI story DLC announced by December 31, 2027?",
-    "mid": 0.235,
-    "share": 0.9406,
-    "earned": 0.0652,
+    "mid": 0.24,
+    "share": 0.8637,
+    "earned": 0.1456,
     "inv": 0.0
    },
    {
     "q": "Will Bakir Izetbegovi\u0107 be the next Chairman of the",
     "mid": 0.153,
     "share": 1.0,
-    "earned": 0.0492,
-    "inv": 0.0
-   },
-   {
-    "q": "Will Take-Two report less than 9 million GTA VI un",
-    "mid": 0.485,
-    "share": 0.2772,
-    "earned": 0.0271,
+    "earned": 0.1298,
     "inv": 0.0
    },
    {
     "q": "Will Jensen Huang found a new company next?",
-    "mid": 0.23,
+    "mid": 0.315,
     "share": 1.0,
-    "earned": 0.0283,
+    "earned": 0.1467,
+    "inv": 0.0
+   },
+   {
+    "q": "Will Anthropic's IPO valuation be between $1.25T a",
+    "mid": 0.454,
+    "share": 0.0041,
+    "earned": 0.0,
+    "inv": 0.0
+   },
+   {
+    "q": "Will Anthropic's IPO valuation be between $1.50T a",
+    "mid": 0.445,
+    "share": 1.0,
+    "earned": 0.177,
     "inv": 0.0
    }
   ],
-  "reward_tick": 0.6477,
-  "reward_total": 56477.22,
+  "reward_tick": 1.9404,
+  "reward_total": 56486.0,
   "mm_value": -679.76,
-  "net": 55797.47,
-  "avg_share": 0.9414,
+  "net": 55806.24,
+  "avg_share": 0.9478,
   "n_markets": 53,
   "fills_total": 659,
   "rebalanced": false
  },
  "reviews": [
-  {
-   "ts": "2026-10-28T22:20:30.610420+00:00",
-   "swapped": 12,
-   "out": [
-    "Will Felipe Fernando Mac\u00edas Olvera win the 2027 Qu",
-    "Will Google be the second-best AI Agent Lab at the",
-    "OpenAI announces a full training pause in 2026?",
-    "Will the Ornn H200 Index hit $7.00 (HIGH) by Decem",
-    "Will Morena win the most seats in the 2027 Baja Ca",
-    "Will the US birth rate in 2026 be 53.0 or higher?",
-    "Will The Democrats be in the next Israeli governme",
-    "Will Alphabet be the third-largest company in the ",
-    "Will Microsoft be the third-largest company in the",
-    "Will no next Israeli Minister of Finance be appoin",
-    "Over $20M committed to the over.computer public sa",
-    "Will the Ornn B200 Index hit $5.50 (LOW) by Decemb"
-   ],
-   "in": [
-    "Will Gemini Carbon debut at a score of at least 15",
-    "Government shutdown by December 31?",
-    "Will Gemini Carbon debut at a score of at least 15",
-    "Will Gemini Carbon debut in the top 1 of the Text ",
-    "Will Gemini Carbon debut in the top 3 of the Text ",
-    "Government shutdown by December 12?",
-    "Will Gemini Carbon debut at a score of at least 15",
-    "Will Gemini Carbon debut in the top 5 of the Text ",
-    "Will Gemini Carbon debut in the top 10 of the Text",
-    "Will GPT Astra 6.1+ debut in the top 1 of the Text",
-    "Will GPT Astra 6.1+ debut in the top 20 of the Tex",
-    "Will the next Fable model (5.2+) debut in the top "
-   ]
-  },
   {
    "ts": "2026-10-28T23:23:01.455887+00:00",
    "swapped": 10,
@@ -109435,7 +109416,19 @@
     "Will Take-Two report less than 9 million GTA VI un",
     "Will Jensen Huang found a new company next?"
    ]
+  },
+  {
+   "ts": "2026-11-18T23:18:25.299136+00:00",
+   "swapped": 2,
+   "out": [
+    "Will the Ornn H200 Index hit $4.00 (LOW) by Decemb",
+    "Will Take-Two report less than 9 million GTA VI un"
+   ],
+   "in": [
+    "Will Anthropic's IPO valuation be between $1.25T a",
+    "Will Anthropic's IPO valuation be between $1.50T a"
+   ]
   }
  ],
- "reviewed_at": 1795040283.954349
+ "reviewed_at": 1795043905.2991357
 }

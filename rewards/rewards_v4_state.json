@@ -664,21 +664,6 @@
    "rate0": 82.0
   },
   {
-   "cond": "0xb498b53a9e3a3f81be42d5f1a9cdd57f113d1ca1469c4c52fcd68285d37432ea",
-   "question": "Will Alphabet\u2019s market capitalization be less than $3.50T at the end of 2026?",
-   "yes": "78490237271117368083911285137530664241206415887870965846447478187710455962376",
-   "no": "13092360062089909577152931138630123935407666626038179090241257814511938611990",
-   "rate": 35.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.7,
-   "est_reward_day": 43.0,
-   "end": "2026-12-31T23:59:00Z",
-   "share0": 1.0,
-   "rate0": 43.0
-  },
-  {
    "cond": "0xf7699db92f899f7577f55c0dc9db490d6a17d1eced1c07d3860b4ae80a13b175",
    "question": "Will the Ornn H200 Index hit $4.00 (LOW) by December 31, 2026?",
    "yes": "30072348565478302750198876081143273757119653365741275677520918105022287518421",
@@ -754,21 +739,6 @@
    "rate0": 40.0
   },
   {
-   "cond": "0xb064a8080de6f1eb29fa739d645a440913fdf5c819a6ebc937cff973a3771f30",
-   "question": "Will the Ornn H100 Index hit $2.00 (LOW) by December 31, 2026?",
-   "yes": "60906871929864827843278740350334799722028812032831554807107789304596159256114",
-   "no": "393113151447587018510618104046431336863191371754490528673191034514975670308",
-   "rate": 40.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.7,
-   "est_reward_day": 40.0,
-   "end": "2027-01-01T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 40.0
-  },
-  {
    "cond": "0x4e315963ad8e7616243ade550951e28c5e7f4a241bfaec272a3d5481b316e3ed",
    "question": "Will the 2-year Treasury yield dip below 4.40% before 2027?",
    "yes": "13297809078714655996096416669359540720582177045568663656274205724786922751694",
@@ -784,19 +754,49 @@
    "rate0": 40.0
   },
   {
-   "cond": "0x6d557e3b9420111be98c5ab6ff9e40e39a40dfeafaa0cd0a5fbec3a00e5f9abf",
-   "question": "Will the ECB increase the deposit facility rate by 25 bps at the March meeting?",
-   "yes": "111930699904366412326348482677275879157961655755765965019325716848767824621505",
-   "no": "72099336007015515320417384464085626785741188848546247629461425907861482242102",
-   "rate": 106.0,
+   "cond": "0x5327b74b55d07ba818271dcf97c0cb9f3d2ee498e26d811787f922302ee6ac09",
+   "question": "Will the ECB make no change to the deposit facility rate at the March meeting?",
+   "yes": "27098347252509077424647809851969608846132131544193540109703488325566085690028",
+   "no": "52746745715991375381279016549502164899048830190716714694832732303811981830955",
+   "rate": 94.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
    "collateral": 19.1,
-   "est_reward_day": 106.0,
+   "est_reward_day": 94.0,
    "end": "2027-03-18T23:59:00Z",
    "share0": 1.0,
-   "rate0": 106.0
+   "rate0": 94.0
+  },
+  {
+   "cond": "0xc714c855d2c5496d1e2ec8ea52b8fe4b30a5673ecc548bbc8234790bb4f837a9",
+   "question": "Will the median home value in Miami be between $830,000 and $851,000 on December 31?",
+   "yes": "80117219921753639563996003708434984634502600009668848747574146928178888522651",
+   "no": "38684802443774351350617148225299693371408659379836456981616689804297233198308",
+   "rate": 86.0,
+   "v": 4.5,
+   "min_size": 20.0,
+   "d": 0.0225,
+   "collateral": 19.1,
+   "est_reward_day": 85.49337260677481,
+   "end": "2027-01-11T04:59:00Z",
+   "share0": 0.9941089837997071,
+   "rate0": 86.0
+  },
+  {
+   "cond": "0x1b2378126f9438e1fd6f87fa3a32583b9681b3b0bd396d3df34e88c6aca58603",
+   "question": "Will the US Section 232 tariff rate on Canadian primary aluminum be >40-50% on December 31, 2027?",
+   "yes": "43446093046869889237052416001170161972213805707446752070843635488215970355420",
+   "no": "73969325140385939286779825311938022407886257151285917832093011483703315495405",
+   "rate": 57.0,
+   "v": 4.5,
+   "min_size": 20.0,
+   "d": 0.0225,
+   "collateral": 19.1,
+   "est_reward_day": 57.0,
+   "end": "2027-12-31T05:01:00Z",
+   "share0": 1.0,
+   "rate0": 57.0
   }
  ],
  "positions": {
@@ -923,9 +923,9 @@
   "0x8652314642ea8e1b8b1f5fded33bd3deb328fff284b5f8d015ef62e0c39cae3c": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.714,
+   "mid": 0.7145,
    "share": 1.0,
-   "reward": 324.40887095223525,
+   "reward": 324.6557844047093,
    "fills": 0,
    "q": "Will primmie play for Paper Rex in 2027?"
   },
@@ -1030,7 +1030,7 @@
    "cash": -2.9992417699999963,
    "mid": 0.3525,
    "share": 1.0,
-   "reward": 871.9871057162748,
+   "reward": 872.2775921309502,
    "fills": 12,
    "q": "Will the Ornn H200 Index hit $4.00 (LOW) by December 31, 2026?",
    "closed_at": 0.409
@@ -1138,7 +1138,7 @@
    "cash": 0.0,
    "mid": 0.505,
    "share": 1.0,
-   "reward": 121.6231866623379,
+   "reward": 121.72485690747428,
    "fills": 0,
    "q": "Will Claude Opus 5.6+ debut at an output token price of at least $20 by June 30,"
   },
@@ -2072,7 +2072,7 @@
   "0x7a9a68c97682b82da841fa413f4764e86024c49e2c58a01b34cb5d3c5b9b2624": {
    "inv": 20.0,
    "cash": -8.85,
-   "mid": 0.495,
+   "mid": 0.51,
    "share": 1.0,
    "reward": 87.751647885782,
    "fills": 1,
@@ -3350,9 +3350,9 @@
   "0xb064a8080de6f1eb29fa739d645a440913fdf5c819a6ebc937cff973a3771f30": {
    "inv": 0.0,
    "cash": 0.7505799999999994,
-   "mid": 0.3055,
-   "share": 0.4630136986301364,
-   "reward": 66.7157703311063,
+   "mid": 0.2835,
+   "share": null,
+   "reward": 66.76982108839783,
    "fills": 3,
    "q": "Will the Ornn H100 Index hit $2.00 (LOW) by December 31, 2026?",
    "closed_at": 0.48
@@ -12023,9 +12023,9 @@
   "0x6cf827720a643edb6480aa0ab04d0010f4e75fdf3a18bfe0be629649a0cba714": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.515,
+   "mid": 0.51,
    "share": 1.0,
-   "reward": 720.691527533522,
+   "reward": 720.9820139481975,
    "fills": 0,
    "q": "Will the Ornn H200 Index hit $8.00 (HIGH) by December 31, 2026?"
   },
@@ -12051,9 +12051,9 @@
   "0x12e7e3aaed06c1ac55f082a0b4282d5f525cdb2106afb1972e9d861bdc7e1649": {
    "inv": 0.0,
    "cash": -0.34185,
-   "mid": 0.46499999999999997,
-   "share": 0.6664668580622795,
-   "reward": 732.3027369687682,
+   "mid": 0.505,
+   "share": 1.0,
+   "reward": 732.3235058864694,
    "fills": 1,
    "q": "Will the Ornn H200 Index hit $5.00 (LOW) by December 31, 2026?",
    "closed_at": 0.85
@@ -13443,9 +13443,9 @@
   "0xb498b53a9e3a3f81be42d5f1a9cdd57f113d1ca1469c4c52fcd68285d37432ea": {
    "inv": 0.0,
    "cash": -0.7700000000000014,
-   "mid": 0.3375,
-   "share": 1.0,
-   "reward": 120.47918467305692,
+   "mid": 0.44399999999999995,
+   "share": null,
+   "reward": 120.54255775689155,
    "fills": 1,
    "q": "Will Alphabet\u2019s market capitalization be less than $3.50T at the end of 2026?",
    "closed_at": 0.53
@@ -13646,8 +13646,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.5900000000000001,
-   "share": 0.36000000000000076,
-   "reward": 24.083794607195106,
+   "share": null,
+   "reward": 24.242371597948786,
    "fills": 0,
    "q": "Will the ECB increase the deposit facility rate by 25 bps at the March meeting?"
   },
@@ -14136,8 +14136,8 @@
   "0x5327b74b55d07ba818271dcf97c0cb9f3d2ee498e26d811787f922302ee6ac09": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.355,
-   "share": null,
+   "mid": 0.305,
+   "share": 1.0,
    "reward": 12.01762403432505,
    "fills": 0,
    "q": "Will the ECB make no change to the deposit facility rate at the March meeting?"
@@ -15276,8 +15276,8 @@
   "0xc714c855d2c5496d1e2ec8ea52b8fe4b30a5673ecc548bbc8234790bb4f837a9": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.3995,
-   "share": null,
+   "mid": 0.35950000000000004,
+   "share": 0.9980285855101041,
    "reward": 36.8493860209698,
    "fills": 0,
    "q": "Will the median home value in Miami be between $830,000 and $851,000 on December"
@@ -15645,9 +15645,9 @@
   "0xc71c5a23d02e3cc10d0a59a09e99dd0860a4c529b2de1ed83dcd10f2c5d3ab82": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.187,
+   "mid": 0.34850000000000003,
    "share": 1.0,
-   "reward": 49.55808662842305,
+   "reward": 49.833796342617184,
    "fills": 0,
    "q": "Will Denis Be\u0107irovi\u0107 be the next Chairman of the Council of Ministers\u00a0of Bosnia "
   },
@@ -15926,7 +15926,7 @@
    "cash": 0.0,
    "mid": 0.25,
    "share": 1.0,
-   "reward": 49.299204055328545,
+   "reward": 49.89470120541303,
    "fills": 0,
    "q": "Will the Bank of Korea increase the base rate by 25 bps at the January meeting?"
   },
@@ -16365,9 +16365,9 @@
   "0xc7af14e0b0172a24a101c3aa3f1b0665298ac822b34811be00bfbead992ca135": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.621,
+   "mid": 0.6134999999999999,
    "share": 1.0,
-   "reward": 74.46238031681597,
+   "reward": 74.93442074066341,
    "fills": 0,
    "q": "Will Anthropic raise between $65B and $75B in its IPO?"
   },
@@ -18651,9 +18651,9 @@
   "0x4e315963ad8e7616243ade550951e28c5e7f4a241bfaec272a3d5481b316e3ed": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.26,
-   "share": 1.0,
-   "reward": 33.01355232747872,
+   "mid": 0.21000000000000002,
+   "share": 0.8617583269310533,
+   "reward": 33.17268660315806,
    "fills": 0,
    "q": "Will the 2-year Treasury yield dip below 4.40% before 2027?"
   },
@@ -19767,7 +19767,7 @@
   "0x46a73cf44a4946a2fb1f848069651455f58d95edcefbc5c9e2b3b67c3c2947a7": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.625,
+   "mid": 0.61,
    "share": 1.0,
    "reward": 13.075212543223191,
    "fills": 0,
@@ -19884,7 +19884,7 @@
   "0xfce6cbb1a0ba0141f842789f0b3b188d212b64417b73498131be483975365dfa": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.545,
+   "mid": 0.5499999999999999,
    "share": 1.0,
    "reward": 3.84280738617829,
    "fills": 0,
@@ -19967,7 +19967,7 @@
    "cash": 0.0,
    "mid": 0.28500000000000003,
    "share": 1.0,
-   "reward": 4.616693232230565,
+   "reward": 4.623955392597449,
    "fills": 0,
    "q": "Will DJ Khaled perform at Coachella 2027?"
   },
@@ -20363,7 +20363,7 @@
    "cash": 0.0,
    "mid": 0.445,
    "share": 1.0,
-   "reward": 75.62140768483782,
+   "reward": 75.91189409951319,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 38+ on December 31"
   },
@@ -20388,9 +20388,9 @@
   "0xab3305643ef7359a90326b1f9ca37210bef91fd09d5ee336ed1e34b98d088599": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.535,
+   "mid": 0.545,
    "share": 1.0,
-   "reward": 62.18465240229942,
+   "reward": 62.47513881697478,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 46+ on December 31"
   },
@@ -20505,9 +20505,9 @@
   "0xcb409177b8ddaad2a5d6a6c197c0f273457441cd2a53e7fe70212e89c4e89c10": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.515,
+   "mid": 0.525,
    "share": 1.0,
-   "reward": 49.13199412991886,
+   "reward": 49.422480544594215,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 40+ on December 31"
   },
@@ -20525,16 +20525,16 @@
    "cash": 0.0,
    "mid": 0.3875,
    "share": 1.0,
-   "reward": 29.503404003142673,
+   "reward": 29.86651202148687,
    "fills": 0,
    "q": "Will Avigdor Lieberman be the next Israeli Minister of Defense?"
   },
   "0xb2fc207f27057b2528f3369f660910b2764a07980ef86907a1a3bdf09a7e7002": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.39,
+   "mid": 0.4,
    "share": 1.0,
-   "reward": 45.03946749611864,
+   "reward": 45.08304045831994,
    "fills": 0,
    "q": "Will the Central Bank of Chile make no change to the monetary policy rate at the"
   },
@@ -20730,9 +20730,9 @@
   "0x8c91d20f1e8fefcec50e045f572084e7a825f402fd87895b9288dc2e2a24cd6a": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.52,
+   "mid": 0.51,
    "share": 1.0,
-   "reward": 40.823940778882395,
+   "reward": 41.11442719355775,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 44+ on December 31"
   },
@@ -20975,7 +20975,7 @@
    "cash": 0.0,
    "mid": 0.26,
    "share": 1.0,
-   "reward": 21.513525468111013,
+   "reward": 21.804011882786366,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 48+ on December 31"
   },
@@ -21000,9 +21000,9 @@
   "0x2641479bc6956af081f23643ab9843833466ae3924917ab790b564adc12f8982": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.505,
+   "mid": 0.51,
    "share": 1.0,
-   "reward": 12.33864888423156,
+   "reward": 12.364066445515652,
    "fills": 0,
    "q": "0 ships transit Hormuz on any date by January 31, 2027?"
   },
@@ -21011,7 +21011,7 @@
    "cash": 0.0,
    "mid": 0.44,
    "share": 1.0,
-   "reward": 18.086666101217254,
+   "reward": 18.377152515892607,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 42+ on December 31"
   },
@@ -21063,7 +21063,7 @@
   "0x7ad5206bbe6e0f4f9541e5b7ec723619bae7557b1555872f920fc3055726b4ce": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.3425,
+   "mid": 0.3385,
    "share": 1.0,
    "reward": 2.1251932211496207,
    "fills": 0,
@@ -21110,25 +21110,25 @@
    "cash": 0.0,
    "mid": 0.565,
    "share": 1.0,
-   "reward": 12.246512216412361,
+   "reward": 12.609620234756559,
    "fills": 0,
    "q": "Will Dario Amodei ring the bell at Anthropic's IPO?"
   },
   "0x23973e6b050b74525b6b038bec0629912908613c78b96aae0a4b229ba385883b": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.495,
+   "mid": 0.505,
    "share": 1.0,
-   "reward": 10.158782206199788,
+   "reward": 10.521890224543986,
    "fills": 0,
    "q": "Will Daniela Amodei ring the bell at Anthropic's IPO?"
   },
   "0xfd9446721d2e3489b89f5cb04da8757a908179b92eff3fba67a1e8a0ec88ea58": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.297,
+   "mid": 0.295,
    "share": 1.0,
-   "reward": 8.297782110632573,
+   "reward": 8.559219883840397,
    "fills": 0,
    "q": "Will Radovan Vi\u0161kovi\u0107 be the next Chairman of the Council of Ministers\u00a0of Bosnia"
   },
@@ -21146,7 +21146,7 @@
    "cash": 0.0,
    "mid": 0.7,
    "share": 1.0,
-   "reward": 8.127025764959829,
+   "reward": 8.417512179635187,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Panama Canal be 24+ on December "
   },
@@ -21155,9 +21155,18 @@
    "cash": 0.0,
    "mid": 0.62,
    "share": 1.0,
-   "reward": 7.667794647702463,
+   "reward": 7.958281062377824,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Malacca Strait be 210+ on Decemb"
+  },
+  "0x1b2378126f9438e1fd6f87fa3a32583b9681b3b0bd396d3df34e88c6aca58603": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.51,
+   "share": 1.0,
+   "reward": 0.0,
+   "fills": 0,
+   "q": "Will the US Section 232 tariff rate on Canadian primary aluminum be >40-50% on D"
   }
  },
  "history": [
@@ -92961,17 +92970,30 @@
    "w": 2991598
   },
   {
-   "ts": "2026-11-17T23:58:57.256915+00:00",
-   "dt_h": 0.162,
-   "reward_tick": 6.6697,
-   "reward_total": 55599.71,
-   "mm_value": -678.76,
-   "net": 54920.96,
-   "avg_share": 0.9632,
+   "ts": "2026-11-17T23:59:24.845338+00:00",
+   "dt_h": 0.17,
+   "reward_tick": 6.9614,
+   "reward_total": 55600.01,
+   "mm_value": -678.96,
+   "net": 54921.05,
+   "avg_share": 0.9533,
    "n_markets": 53,
    "fills_total": 659,
    "rebalanced": false,
    "w": 2991599
+  },
+  {
+   "ts": "2026-11-18T00:09:24.707571+00:00",
+   "dt_h": 0.17,
+   "reward_tick": 6.1879,
+   "reward_total": 55606.19,
+   "mm_value": -678.46,
+   "net": 54927.74,
+   "avg_share": 0.9966,
+   "n_markets": 53,
+   "fills_total": 659,
+   "rebalanced": false,
+   "w": 2991600
   }
  ],
  "fills": [
@@ -98907,8 +98929,8 @@
    "ledger": "v4"
   }
  ],
- "reward_total": 55599.71495912233,
- "last_ts": 1794959937.256915,
+ "reward_total": 55606.19457279218,
+ "last_ts": 1794960564.7075708,
  "chosen_at": 1791639880.921448,
  "rebalances": [
   {
@@ -98919,12 +98941,12 @@
   }
  ],
  "last_tick": {
-  "ts": "2026-11-17T23:58:57.256915+00:00",
-  "dt_h": 0.026,
+  "ts": "2026-11-18T00:09:24.707571+00:00",
+  "dt_h": 0.017,
   "markets": [
    {
     "q": "Will Chicago Bears finish the 2026-27 NFL regular ",
-    "mid": 0.495,
+    "mid": 0.51,
     "share": 1.0,
     "earned": 0.0,
     "inv": 20.0
@@ -98940,7 +98962,7 @@
     "q": "Will Claude Opus 5.6+ debut at an output token pri",
     "mid": 0.505,
     "share": 1.0,
-    "earned": 0.015,
+    "earned": 0.0097,
     "inv": 0.0
    },
    {
@@ -99001,7 +99023,7 @@
    },
    {
     "q": "Will BERNARR. - Durand Bernarr win Best Progressiv",
-    "mid": 0.625,
+    "mid": 0.61,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -99045,7 +99067,7 @@
    },
    {
     "q": "Will Choosin' Texas - Ella Langley win Best Countr",
-    "mid": 0.545,
+    "mid": 0.55,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -99065,35 +99087,35 @@
     "q": "Will DJ Khaled perform at Coachella 2027?",
     "mid": 0.285,
     "share": 1.0,
-    "earned": 0.0011,
+    "earned": 0.0007,
     "inv": 0.0
    },
    {
     "q": "Will Avigdor Lieberman be the next Israeli Ministe",
     "mid": 0.388,
     "share": 1.0,
-    "earned": 0.0536,
+    "earned": 0.0347,
     "inv": 0.0
    },
    {
     "q": "Will the Central Bank of Chile make no change to t",
-    "mid": 0.39,
+    "mid": 0.4,
     "share": 1.0,
-    "earned": 0.0064,
+    "earned": 0.0042,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index hit $8.00 (HIGH) by Decem",
-    "mid": 0.515,
+    "mid": 0.51,
     "share": 1.0,
-    "earned": 0.0429,
+    "earned": 0.0277,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
-    "mid": 0.52,
+    "mid": 0.51,
     "share": 1.0,
-    "earned": 0.0429,
+    "earned": 0.0277,
     "inv": 0.0
    },
    {
@@ -99107,47 +99129,47 @@
     "q": "Will the 7-day average ship traffic through the Su",
     "mid": 0.26,
     "share": 1.0,
-    "earned": 0.0429,
+    "earned": 0.0277,
     "inv": 0.0
    },
    {
     "q": "0 ships transit Hormuz on any date by January 31, ",
-    "mid": 0.505,
+    "mid": 0.51,
     "share": 1.0,
-    "earned": 0.0038,
+    "earned": 0.0024,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
     "mid": 0.445,
     "share": 1.0,
-    "earned": 0.0429,
+    "earned": 0.0277,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
-    "mid": 0.515,
+    "mid": 0.525,
     "share": 1.0,
-    "earned": 0.0429,
+    "earned": 0.0277,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
     "mid": 0.44,
     "share": 1.0,
-    "earned": 0.0429,
+    "earned": 0.0277,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
-    "mid": 0.535,
+    "mid": 0.545,
     "share": 1.0,
-    "earned": 0.0429,
+    "earned": 0.0277,
     "inv": 0.0
    },
    {
     "q": "Will the Central Bank of Chile increase the moneta",
-    "mid": 0.343,
+    "mid": 0.339,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -99156,144 +99178,118 @@
     "q": "Will Dario Amodei ring the bell at Anthropic's IPO",
     "mid": 0.565,
     "share": 1.0,
-    "earned": 0.0536,
+    "earned": 0.0347,
     "inv": 0.0
    },
    {
     "q": "Will Daniela Amodei ring the bell at Anthropic's I",
-    "mid": 0.495,
+    "mid": 0.505,
     "share": 1.0,
-    "earned": 0.0536,
+    "earned": 0.0347,
     "inv": 0.0
    },
    {
     "q": "Will Radovan Vi\u0161kovi\u0107 be the next Chairman of the ",
-    "mid": 0.297,
+    "mid": 0.295,
     "share": 1.0,
-    "earned": 0.0386,
+    "earned": 0.025,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Pa",
     "mid": 0.7,
     "share": 1.0,
-    "earned": 0.0429,
+    "earned": 0.0277,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ma",
     "mid": 0.62,
     "share": 1.0,
-    "earned": 0.0429,
+    "earned": 0.0277,
     "inv": 0.0
    },
    {
     "q": "Will the Bank of Korea increase the base rate by 2",
     "mid": 0.25,
     "share": 1.0,
-    "earned": 0.088,
-    "inv": 0.0
-   },
-   {
-    "q": "Will Alphabet\u2019s market capitalization be less than",
-    "mid": 0.338,
-    "share": 1.0,
-    "earned": 0.0375,
+    "earned": 0.0569,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index hit $4.00 (LOW) by Decemb",
     "mid": 0.352,
     "share": 1.0,
-    "earned": 0.0429,
+    "earned": 0.0277,
     "inv": 0.0
    },
    {
     "q": "Will Denis Be\u0107irovi\u0107 be the next Chairman of the C",
-    "mid": 0.187,
+    "mid": 0.349,
+    "share": 1.0,
+    "earned": 0.0291,
+    "inv": 0.0
+   },
+   {
+    "q": "Will primmie play for Paper Rex in 2027?",
+    "mid": 0.715,
+    "share": 1.0,
+    "earned": 0.0236,
+    "inv": 0.0
+   },
+   {
+    "q": "Will Anthropic raise between $65B and $75B in its ",
+    "mid": 0.613,
     "share": 1.0,
     "earned": 0.0451,
     "inv": 0.0
    },
    {
-    "q": "Will primmie play for Paper Rex in 2027?",
-    "mid": 0.714,
-    "share": 1.0,
-    "earned": 0.0365,
-    "inv": 0.0
-   },
-   {
-    "q": "Will Anthropic raise between $65B and $75B in its ",
-    "mid": 0.621,
-    "share": 1.0,
-    "earned": 0.0697,
-    "inv": 0.0
-   },
-   {
     "q": "Will the Ornn H200 Index hit $5.00 (LOW) by Decemb",
-    "mid": 0.465,
-    "share": 0.6665,
+    "mid": 0.505,
+    "share": 1.0,
     "earned": 0.0021,
     "inv": 0.0
    },
    {
-    "q": "Will the Ornn H100 Index hit $2.00 (LOW) by Decemb",
-    "mid": 0.305,
-    "share": 0.463,
-    "earned": 0.0199,
+    "q": "Will the 2-year Treasury yield dip below 4.40% bef",
+    "mid": 0.21,
+    "share": 0.8618,
+    "earned": 0.0239,
     "inv": 0.0
    },
    {
-    "q": "Will the 2-year Treasury yield dip below 4.40% bef",
-    "mid": 0.26,
+    "q": "Will the ECB make no change to the deposit facilit",
+    "mid": 0.305,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
    },
    {
-    "q": "Will the ECB increase the deposit facility rate by",
-    "mid": 0.59,
-    "share": 0.36,
-    "earned": 0.0409,
+    "q": "Will the median home value in Miami be between $83",
+    "mid": 0.36,
+    "share": 0.998,
+    "earned": 0.0,
+    "inv": 0.0
+   },
+   {
+    "q": "Will the US Section 232 tariff rate on Canadian pr",
+    "mid": 0.51,
+    "share": 1.0,
+    "earned": 0.0,
     "inv": 0.0
    }
   ],
-  "reward_tick": 0.9946,
-  "reward_total": 55599.71,
-  "mm_value": -678.76,
-  "net": 54920.96,
-  "avg_share": 0.9632,
+  "reward_tick": 0.6042,
+  "reward_total": 55606.19,
+  "mm_value": -678.46,
+  "net": 54927.74,
+  "avg_share": 0.9966,
   "n_markets": 53,
   "fills_total": 659,
   "rebalanced": false
  },
  "reviews": [
-  {
-   "ts": "2026-10-27T23:02:35.348907+00:00",
-   "swapped": 9,
-   "out": [
-    "Will the median home value in San Francisco Metro ",
-    "Will the Republicans win New Mexico in the 2028 Pr",
-    "Will Trump's approval rating hit 40% by June 30, 2",
-    "Will the Ornn H200 Index hit $3.50 (LOW) by Decemb",
-    "US reissues Iran oil sanction relief by November 3",
-    "Will \"Resident Evil Requiem\" win Ultimate Game of ",
-    "Will DoorDash acquire Instacart in 2026?",
-    "Will the Fed increase interest rates by 50+ bps af",
-    "No change in Reserve Bank of Australia's interest "
-   ],
-   "in": [
-    "Will Otzma win 6-7 seats in the 2026 Knesset elect",
-    "Will South Korea\u2019s 2026 Annual Inflation be betwee",
-    "Will Otzma win 8-9 seats in the 2026 Knesset elect",
-    "Will Melania Trump meet with Zelenskyy by December",
-    "Another vessel struck in the Black Sea by November",
-    "EU country blames Russia for new sabotage attack b",
-    "Netanyahu out before the next Israel x Lebanon dip",
-    "US imports Russian diesel before Russia x Ukraine ",
-    "NATO downs another Russian drone before Russia x U"
-   ]
-  },
   {
    "ts": "2026-10-28T00:03:24.874912+00:00",
    "swapped": 4,
@@ -107607,7 +107603,21 @@
    "in": [
     "Will the ECB increase the deposit facility rate by"
    ]
+  },
+  {
+   "ts": "2026-11-18T00:09:24.707571+00:00",
+   "swapped": 3,
+   "out": [
+    "Will Alphabet\u2019s market capitalization be less than",
+    "Will the Ornn H100 Index hit $2.00 (LOW) by Decemb",
+    "Will the ECB increase the deposit facility rate by"
+   ],
+   "in": [
+    "Will the ECB make no change to the deposit facilit",
+    "Will the median home value in Miami be between $83",
+    "Will the US Section 232 tariff rate on Canadian pr"
+   ]
   }
  ],
- "reviewed_at": 1794956904.934957
+ "reviewed_at": 1794960564.7075708
 }

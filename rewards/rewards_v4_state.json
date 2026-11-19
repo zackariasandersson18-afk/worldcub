@@ -574,21 +574,6 @@
    "rate0": 51.0
   },
   {
-   "cond": "0x2a939931c880379be0ff462671872a6469cb63a7a7a47871854e876e1446ef7c",
-   "question": "Will the 7-day average ship traffic through the Malacca Strait be 210+ on December 31?",
-   "yes": "57583138483420093968308122283726593009359488283870004730247051454141826420455",
-   "no": "103815542316413238640347282673847495724482473028267320231164407196865319270703",
-   "rate": 40.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.700000000000003,
-   "est_reward_day": 40.0,
-   "end": "2027-01-01T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 40.0
-  },
-  {
    "cond": "0x800bf287e0b3f3f412ed717a59e9fb1f874357d0341e306eefc3d2808364a137",
    "question": "Will the 7-day average ship traffic through the Panama Canal be 26+ on December 31?",
    "yes": "114555169739312447607281760902302209047547912088673111158559135856415121804639",
@@ -638,21 +623,6 @@
    "question": "Will \"GTA VI: The Album\" first week sales be at least 150k?",
    "yes": "113507629915207363000446387781294129679060040875712158382238572154850267520484",
    "no": "111602420529469226538866479327739815997853350909087739788217927404358052177462",
-   "rate": 100.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.700000000000003,
-   "est_reward_day": 100.0,
-   "end": "2027-01-01T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 100.0
-  },
-  {
-   "cond": "0x3c6f67704734e8819d69daca738c1bf3ca04e5126a4efc39cf209a182ce9e645",
-   "question": "Will \"GTA VI: The Album\" first week sales be at least 250k?",
-   "yes": "14756024697904822298319051905582472396239371794847820601218572424887295411996",
-   "no": "66905541157937658996894714686889348491105888254310617916794818815619239583761",
    "rate": 100.0,
    "v": 6.5,
    "min_size": 20.0,
@@ -754,21 +724,6 @@
    "rate0": 112.0
   },
   {
-   "cond": "0x00ffdf4baaa11c14077660b8e4b2e80c9671789b1a9ca9550e60ae5dcb535ed4",
-   "question": "Will Marques Brownlee shave his head by March 31, 2027?",
-   "yes": "94814248849068779007591020655956380263446497953367277530803406879734830691469",
-   "no": "37711507728983794551084949257373127562503001602591804089326369957508835640707",
-   "rate": 100.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.700000000000003,
-   "est_reward_day": 87.56476683937827,
-   "end": "2027-04-01T03:59:00Z",
-   "share0": 0.8756476683937826,
-   "rate0": 100.0
-  },
-  {
    "cond": "0x9e66af0122f61920637ac3430accd435ee14eb607a2c470e4631f24e56ad6ccd",
    "question": "Will the median home value in the Chicago Metro be between $308,000 and $313,000 on December 31?",
    "yes": "76236849303232429695095904246388350876199969700342212496797492678261946167319",
@@ -797,6 +752,51 @@
    "end": "2026-12-31T00:00:00Z",
    "share0": 1.0,
    "rate0": 70.0
+  },
+  {
+   "cond": "0xc9c678f250b9bbdad0ee4fcd85dba6381d9663eacf373bbb202d58bd96e96e80",
+   "question": "Will Take-Two report 48 million or more GTA VI units sold before 2027?",
+   "yes": "14918318232433605315610587208575522047285207242096183338399910164284845036431",
+   "no": "1201266618743479751473756150164290735580495101962552289931075341625059241996",
+   "rate": 63.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.700000000000003,
+   "est_reward_day": 63.0,
+   "end": "2027-01-01T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 63.0
+  },
+  {
+   "cond": "0x89a7018f5a79076b28dceaa34e6a0a3380d8462d9db96a60446061145c9392ad",
+   "question": "Will Trump call for Jensen Huang's return as NVIDIA CEO by December 31?",
+   "yes": "43928921774418180344634616346763413501398709468551271061471627894656386399600",
+   "no": "83661458075740702249259137428718943368310472682304997932503887080515388832848",
+   "rate": 50.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.700000000000003,
+   "est_reward_day": 50.0,
+   "end": "2027-01-01T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 50.0
+  },
+  {
+   "cond": "0x874f80afa0766e0f3b5ec0a200c61896bab01b4824d9e65248d001d465e1ecc5",
+   "question": "Cuban regime falls by December 31, 2027?",
+   "yes": "13468251800100174078443909155285796199604263947658806654933463646787935753209",
+   "no": "47933601525689707634965808847658079848980057891279945570018217175055091007809",
+   "rate": 50.0,
+   "v": 4.5,
+   "min_size": 20.0,
+   "d": 0.0225,
+   "collateral": 19.1,
+   "est_reward_day": 50.0,
+   "end": "2028-01-01T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 50.0
   }
  ],
  "positions": {
@@ -1138,7 +1138,7 @@
    "cash": 0.0,
    "mid": 0.49000000000000005,
    "share": 1.0,
-   "reward": 139.8924934020831,
+   "reward": 139.9902588636262,
    "fills": 0,
    "q": "Will Claude Opus 5.6+ debut at an output token price of at least $20 by June 30,"
   },
@@ -4522,7 +4522,7 @@
   "0x5d15579a3a31d6220eb8d33d167788db82976f14c856768a5e37e51afdaeb279": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.478,
+   "mid": 0.4785,
    "share": 1.0,
    "reward": 17.59805527737572,
    "fills": 0,
@@ -7503,9 +7503,9 @@
   "0x6af0a36ceb2de8075d9085b19392c338449cf7a82efe4190e12d0cb920bc1848": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.6945,
-   "share": 0.10910229469885493,
-   "reward": 17.196520561753104,
+   "mid": 0.712,
+   "share": 1.0,
+   "reward": 17.605146824715536,
    "fills": 0,
    "q": "Will Man I Need \u2013 Olivia Dean be the #2 song in the US for 2026?"
   },
@@ -12025,7 +12025,7 @@
    "cash": 0.0,
    "mid": 0.5,
    "share": 1.0,
-   "reward": 768.3192212239311,
+   "reward": 768.5985511140542,
    "fills": 0,
    "q": "Will the Ornn H200 Index hit $8.00 (HIGH) by December 31, 2026?"
   },
@@ -12051,9 +12051,9 @@
   "0x12e7e3aaed06c1ac55f082a0b4282d5f525cdb2106afb1972e9d861bdc7e1649": {
    "inv": 0.0,
    "cash": -0.34185,
-   "mid": 0.47500000000000003,
+   "mid": 0.47000000000000003,
    "share": 1.0,
-   "reward": 770.4103578749235,
+   "reward": 770.6896877650466,
    "fills": 1,
    "q": "Will the Ornn H200 Index hit $5.00 (LOW) by December 31, 2026?",
    "closed_at": 0.85
@@ -13744,9 +13744,9 @@
   "0xc26a65a19262bb524f7670cca0929ea6cc0c1425be9397cd7e34916b6022ddef": {
    "inv": 0.0,
    "cash": -1.950000000000001,
-   "mid": 0.61,
-   "share": 0.45083487940630884,
-   "reward": 180.85953716529784,
+   "mid": 0.625,
+   "share": 0.5586206896551712,
+   "reward": 180.87974513229528,
    "fills": 1,
    "q": "Will the Bank of England increase the Bank Rate by 25 bps at the February meetin",
    "closed_at": 0.57
@@ -17924,7 +17924,7 @@
    "cash": 0.0,
    "mid": 0.25,
    "share": 1.0,
-   "reward": 5.568228234278454,
+   "reward": 5.603144470543844,
    "fills": 0,
    "q": "Will the Ornn H200 Index be between $5.50 and $6.00 on December 31, 2026?"
   },
@@ -17940,9 +17940,9 @@
   "0x9e66af0122f61920637ac3430accd435ee14eb607a2c470e4631f24e56ad6ccd": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.2885,
-   "share": 0.9524438140459678,
-   "reward": 5.6962444563915895,
+   "mid": 0.2845,
+   "share": 0.9350493913867389,
+   "reward": 6.080089649292865,
    "fills": 0,
    "q": "Will the median home value in the Chicago Metro be between $308,000 and $313,000"
   },
@@ -19767,7 +19767,7 @@
   "0x46a73cf44a4946a2fb1f848069651455f58d95edcefbc5c9e2b3b67c3c2947a7": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.57,
+   "mid": 0.575,
    "share": 1.0,
    "reward": 13.075212543223191,
    "fills": 0,
@@ -19965,9 +19965,9 @@
   "0x811a32e2c8ccd245d85702955e6f312782017d96c58cf7d0bcb7550656f7665f": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.33,
-   "share": 0.9694072657743786,
-   "reward": 5.8861441324333965,
+   "mid": 0.335,
+   "share": 0.8879159369527143,
+   "reward": 5.892687467844418,
    "fills": 0,
    "q": "Will DJ Khaled perform at Coachella 2027?"
   },
@@ -20361,9 +20361,9 @@
   "0xb5179c7a05ae44799060e3103369b60d0e141f1b4d96914e9860496a08247600": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.72,
+   "mid": 0.725,
    "share": 1.0,
-   "reward": 123.22737800789582,
+   "reward": 123.50670789801893,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 38+ on December 31"
   },
@@ -20388,9 +20388,9 @@
   "0xab3305643ef7359a90326b1f9ca37210bef91fd09d5ee336ed1e34b98d088599": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.595,
+   "mid": 0.585,
    "share": 1.0,
-   "reward": 106.13778135088097,
+   "reward": 106.38929028782921,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 46+ on December 31"
   },
@@ -20505,9 +20505,9 @@
   "0xcb409177b8ddaad2a5d6a6c197c0f273457441cd2a53e7fe70212e89c4e89c10": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.54,
+   "mid": 0.535,
    "share": 1.0,
-   "reward": 96.35265110958619,
+   "reward": 96.57643760979289,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 40+ on December 31"
   },
@@ -20534,7 +20534,7 @@
    "cash": 0.0,
    "mid": 0.4,
    "share": 1.0,
-   "reward": 52.853586898156315,
+   "reward": 52.89548638167478,
    "fills": 0,
    "q": "Will the Central Bank of Chile make no change to the monetary policy rate at the"
   },
@@ -20730,9 +20730,9 @@
   "0x8c91d20f1e8fefcec50e045f572084e7a825f402fd87895b9288dc2e2a24cd6a": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.63,
+   "mid": 0.595,
    "share": 1.0,
-   "reward": 86.38723651478095,
+   "reward": 86.66656640490406,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 44+ on December 31"
   },
@@ -20948,7 +20948,7 @@
    "cash": 0.0,
    "mid": 0.163,
    "share": 0.6804930689029437,
-   "reward": 2.470553995942836,
+   "reward": 2.4800580986511465,
    "fills": 0,
    "q": "Will the Ornn H200 Index be between $6.00 and $6.50 on December 31, 2026?"
   },
@@ -21002,16 +21002,16 @@
    "cash": 0.0,
    "mid": 0.485,
    "share": 1.0,
-   "reward": 16.901087704856916,
+   "reward": 16.925529070242693,
    "fills": 0,
    "q": "0 ships transit Hormuz on any date by January 31, 2027?"
   },
   "0x9b1553011e72f02f38f542563411afdc048620bcea31924c15855f4ee68f543a": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.39999999999999997,
+   "mid": 0.40499999999999997,
    "share": 1.0,
-   "reward": 65.8025812880741,
+   "reward": 66.02632708482076,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 42+ on December 31"
   },
@@ -21063,7 +21063,7 @@
   "0x7ad5206bbe6e0f4f9541e5b7ec723619bae7557b1555872f920fc3055726b4ce": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.3245,
+   "mid": 0.3215,
    "share": 1.0,
    "reward": 2.1251932211496207,
    "fills": 0,
@@ -21110,7 +21110,7 @@
    "cash": 0.0,
    "mid": 0.78,
    "share": 1.0,
-   "reward": 76.85301561853218,
+   "reward": 77.2021779811861,
    "fills": 0,
    "q": "Will Dario Amodei ring the bell at Anthropic's IPO?"
   },
@@ -21119,7 +21119,7 @@
    "cash": 0.0,
    "mid": 0.855,
    "share": 1.0,
-   "reward": 71.4741804405363,
+   "reward": 71.82334280319022,
    "fills": 0,
    "q": "Will Daniela Amodei ring the bell at Anthropic's IPO?"
   },
@@ -21154,8 +21154,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.635,
-   "share": 0.3900120003692417,
-   "reward": 51.705198491500994,
+   "share": null,
+   "reward": 51.73769602719659,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Malacca Strait be 210+ on Decemb"
   },
@@ -21261,9 +21261,9 @@
   "0x800bf287e0b3f3f412ed717a59e9fb1f874357d0341e306eefc3d2808364a137": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.5,
-   "share": 0.8941798941798961,
-   "reward": 29.757666575584043,
+   "mid": 0.585,
+   "share": 1.0,
+   "reward": 29.788003874383556,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Panama Canal be 26+ on December "
   },
@@ -21324,9 +21324,9 @@
   "0xa525c320c2f82632b9a2b16183339dd1daf26f626267ea47e2640a849f67c1e3": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.28,
+   "mid": 0.23,
    "share": 1.0,
-   "reward": 13.208743014797703,
+   "reward": 13.31386060134252,
    "fills": 0,
    "q": "Will 1B to 1.25B Anthropic shares trade on IPO day?"
   },
@@ -21360,18 +21360,18 @@
   "0x89a7018f5a79076b28dceaa34e6a0a3380d8462d9db96a60446061145c9392ad": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.375,
-   "share": null,
-   "reward": 18.998421034935514,
+   "mid": 0.635,
+   "share": 1.0,
+   "reward": 19.2086602122983,
    "fills": 0,
    "q": "Will Trump call for Jensen Huang's return as NVIDIA CEO by December 31?"
   },
   "0x46d4a78352e488276ef2f64a472d4de16961ae935fdab2ea59b7a3279d0b3a62": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.73,
+   "mid": 0.7350000000000001,
    "share": 1.0,
-   "reward": 45.84985575935353,
+   "reward": 46.54818048466134,
    "fills": 0,
    "q": "Will \"GTA VI: The Album\" first week sales be at least 150k?"
   },
@@ -21379,8 +21379,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.435,
-   "share": 0.3597275436355892,
-   "reward": 42.473599216761166,
+   "share": null,
+   "reward": 42.53784667180657,
    "fills": 0,
    "q": "Will \"GTA VI: The Album\" first week sales be at least 250k?"
   },
@@ -21416,7 +21416,7 @@
    "cash": 0.0,
    "mid": 0.1535,
    "share": 1.0,
-   "reward": 22.391974986253533,
+   "reward": 22.831919563197445,
    "fills": 0,
    "q": "Will Bakir Izetbegovi\u0107 be the next Chairman of the Council of Ministers\u00a0of Bosni"
   },
@@ -21432,9 +21432,9 @@
   "0xc9c678f250b9bbdad0ee4fcd85dba6381d9663eacf373bbb202d58bd96e96e80": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.27,
-   "share": null,
-   "reward": 2.2519666644214373,
+   "mid": 0.38,
+   "share": 1.0,
+   "reward": 2.516868027898548,
    "fills": 0,
    "q": "Will Take-Two report 48 million or more GTA VI units sold before 2027?"
   },
@@ -21442,8 +21442,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.365,
-   "share": 0.016564924703105582,
-   "reward": 10.019781199439745,
+   "share": null,
+   "reward": 10.023115296906223,
    "fills": 0,
    "q": "Will Marques Brownlee shave his head by March 31, 2027?"
   },
@@ -21461,7 +21461,7 @@
    "cash": 0.0,
    "mid": 0.51,
    "share": 1.0,
-   "reward": 6.1791932883637894,
+   "reward": 6.528355651017689,
    "fills": 0,
    "q": "China Chip Manufacturing Export Restrictions become law by June 30, 2027?"
   },
@@ -21470,7 +21470,7 @@
    "cash": 0.0,
    "mid": 0.505,
    "share": 1.0,
-   "reward": 6.1791932883637894,
+   "reward": 6.528355651017689,
    "fills": 0,
    "q": "China Chip Manufacturing Export Restrictions become law by December 31, 2027?"
   },
@@ -21479,9 +21479,18 @@
    "cash": 0.0,
    "mid": 0.5,
    "share": 1.0,
-   "reward": 6.1791932883637894,
+   "reward": 6.528355651017689,
    "fills": 0,
    "q": "Cuban regime falls by June 30, 2027?"
+  },
+  "0x874f80afa0766e0f3b5ec0a200c61896bab01b4824d9e65248d001d465e1ecc5": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.53,
+   "share": 1.0,
+   "reward": 0.2102391773627864,
+   "fills": 0,
+   "q": "Cuban regime falls by December 31, 2027?"
   }
  },
  "history": [
@@ -95740,6 +95749,19 @@
    "fills_total": 659,
    "rebalanced": false,
    "w": 2991787
+  },
+  {
+   "ts": "2026-11-19T07:29:08.556569+00:00",
+   "dt_h": 0.171,
+   "reward_tick": 6.6492,
+   "reward_total": 56828.33,
+   "mm_value": -679.76,
+   "net": 56148.57,
+   "avg_share": 0.9771,
+   "n_markets": 53,
+   "fills_total": 659,
+   "rebalanced": false,
+   "w": 2991788
   }
  ],
  "fills": [
@@ -101675,8 +101697,8 @@
    "ledger": "v4"
   }
  ],
- "reward_total": 56821.676594346245,
- "last_ts": 1795072745.204006,
+ "reward_total": 56828.325699355606,
+ "last_ts": 1795073348.5565686,
  "chosen_at": 1791639880.921448,
  "rebalances": [
   {
@@ -101687,7 +101709,7 @@
   }
  ],
  "last_tick": {
-  "ts": "2026-11-19T07:19:05.204006+00:00",
+  "ts": "2026-11-19T07:29:08.556569+00:00",
   "dt_h": 0.017,
   "markets": [
    {
@@ -101769,7 +101791,7 @@
    },
    {
     "q": "Will BERNARR. - Durand Bernarr win Best Progressiv",
-    "mid": 0.57,
+    "mid": 0.575,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -101824,9 +101846,9 @@
    },
    {
     "q": "Will DJ Khaled perform at Coachella 2027?",
-    "mid": 0.33,
-    "share": 0.9694,
-    "earned": 0.0007,
+    "mid": 0.335,
+    "share": 0.8879,
+    "earned": 0.0006,
     "inv": 0.0
    },
    {
@@ -101845,9 +101867,9 @@
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
-    "mid": 0.63,
+    "mid": 0.595,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0278,
     "inv": 0.0
    },
    {
@@ -101866,35 +101888,35 @@
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
-    "mid": 0.72,
+    "mid": 0.725,
     "share": 1.0,
     "earned": 0.0278,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
-    "mid": 0.54,
+    "mid": 0.535,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
-    "mid": 0.4,
+    "mid": 0.405,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
-    "mid": 0.595,
+    "mid": 0.585,
     "share": 1.0,
     "earned": 0.0278,
     "inv": 0.0
    },
    {
     "q": "Will the Central Bank of Chile increase the moneta",
-    "mid": 0.325,
+    "mid": 0.322,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -101908,7 +101930,7 @@
    },
    {
     "q": "Will the Ornn H200 Index hit $5.00 (LOW) by Decemb",
-    "mid": 0.475,
+    "mid": 0.47,
     "share": 1.0,
     "earned": 0.0278,
     "inv": 0.0
@@ -101921,17 +101943,10 @@
     "inv": 0.0
    },
    {
-    "q": "Will the 7-day average ship traffic through the Ma",
-    "mid": 0.635,
-    "share": 0.39,
-    "earned": 0.0108,
-    "inv": 0.0
-   },
-   {
     "q": "Will the 7-day average ship traffic through the Pa",
-    "mid": 0.5,
-    "share": 0.8942,
-    "earned": 0.0031,
+    "mid": 0.585,
+    "share": 1.0,
+    "earned": 0.0035,
     "inv": 0.0
    },
    {
@@ -101943,23 +101958,16 @@
    },
    {
     "q": "Will 1B to 1.25B Anthropic shares trade on IPO day",
-    "mid": 0.28,
+    "mid": 0.23,
     "share": 1.0,
     "earned": 0.0174,
     "inv": 0.0
    },
    {
     "q": "Will \"GTA VI: The Album\" first week sales be at le",
-    "mid": 0.73,
+    "mid": 0.735,
     "share": 1.0,
     "earned": 0.0694,
-    "inv": 0.0
-   },
-   {
-    "q": "Will \"GTA VI: The Album\" first week sales be at le",
-    "mid": 0.435,
-    "share": 0.3597,
-    "earned": 0.025,
     "inv": 0.0
    },
    {
@@ -101999,65 +102007,57 @@
    },
    {
     "q": "Will the Bank of England increase the Bank Rate by",
-    "mid": 0.61,
-    "share": 0.4508,
-    "earned": 0.0016,
-    "inv": 0.0
-   },
-   {
-    "q": "Will Marques Brownlee shave his head by March 31, ",
-    "mid": 0.365,
-    "share": 0.0166,
-    "earned": 0.0012,
+    "mid": 0.625,
+    "share": 0.5586,
+    "earned": 0.0023,
     "inv": 0.0
    },
    {
     "q": "Will the median home value in the Chicago Metro be",
-    "mid": 0.288,
-    "share": 0.9524,
-    "earned": 0.0384,
+    "mid": 0.284,
+    "share": 0.935,
+    "earned": 0.0376,
     "inv": 0.0
    },
    {
     "q": "Will Man I Need \u2013 Olivia Dean be the #2 song in th",
-    "mid": 0.695,
-    "share": 0.1091,
-    "earned": 0.004,
+    "mid": 0.712,
+    "share": 1.0,
+    "earned": 0.0465,
+    "inv": 0.0
+   },
+   {
+    "q": "Will Take-Two report 48 million or more GTA VI uni",
+    "mid": 0.38,
+    "share": 1.0,
+    "earned": 0.0437,
+    "inv": 0.0
+   },
+   {
+    "q": "Will Trump call for Jensen Huang's return as NVIDI",
+    "mid": 0.635,
+    "share": 1.0,
+    "earned": 0.0347,
+    "inv": 0.0
+   },
+   {
+    "q": "Cuban regime falls by December 31, 2027?",
+    "mid": 0.53,
+    "share": 1.0,
+    "earned": 0.0347,
     "inv": 0.0
    }
   ],
-  "reward_tick": 0.5761,
-  "reward_total": 56821.68,
+  "reward_tick": 0.6673,
+  "reward_total": 56828.33,
   "mm_value": -679.76,
-  "net": 56141.92,
-  "avg_share": 0.8981,
+  "net": 56148.57,
+  "avg_share": 0.9771,
   "n_markets": 53,
   "fills_total": 659,
   "rebalanced": false
  },
  "reviews": [
-  {
-   "ts": "2026-10-29T06:27:29.901049+00:00",
-   "swapped": 7,
-   "out": [
-    "Will the U.S. 30-year Fixed-Rate Mortgage hit 6.75",
-    "Will Gemini Carbon be released between November 30",
-    "Will HLE be number 1 on the end of year Global Pow",
-    "Will the Ornn B200 Index hit $5.50 (LOW) by Decemb",
-    "OpenAI announces a full training pause in 2026?",
-    "Will Gemini Carbon be released between November 23",
-    "Will the next Fable model (5.2+) debut in the top "
-   ],
-   "in": [
-    "Government shutdown by December 31?",
-    "Will no next Israeli Minister of Finance be appoin",
-    "Will Shas be in the next Israeli government?",
-    "Will PP win the most seats in the Balearic Islands",
-    "Will there be no next Fable model (5.2+) release b",
-    "Will PSOE win the most seats in Biscay in the 2026",
-    "Will the Democrats win Arizona in the 2028 Preside"
-   ]
-  },
   {
    "ts": "2026-10-29T07:28:25.767038+00:00",
    "swapped": 14,
@@ -110005,7 +110005,21 @@
     "Will the median home value in the Chicago Metro be",
     "Will Man I Need \u2013 Olivia Dean be the #2 song in th"
    ]
+  },
+  {
+   "ts": "2026-11-19T07:23:05.263270+00:00",
+   "swapped": 3,
+   "out": [
+    "Will Marques Brownlee shave his head by March 31, ",
+    "Will the 7-day average ship traffic through the Ma",
+    "Will \"GTA VI: The Album\" first week sales be at le"
+   ],
+   "in": [
+    "Will Take-Two report 48 million or more GTA VI uni",
+    "Will Trump call for Jensen Huang's return as NVIDI",
+    "Cuban regime falls by December 31, 2027?"
+   ]
   }
  ],
- "reviewed_at": 1795069377.9177437
+ "reviewed_at": 1795072985.2632701
 }

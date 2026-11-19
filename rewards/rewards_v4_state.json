@@ -413,7 +413,7 @@
    "question": "Will the 7-day average ship traffic through the Suez Canal be 40+ on December 31?",
    "yes": "6931842133072788063149134512439690350242846853677132294003245518355625323450",
    "no": "91209712430141524455538123935802800851814701403067781912029328752886864806027",
-   "rate": 5.0,
+   "rate": 40.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -444,21 +444,6 @@
    "yes": "84962224967559357710227660866923494523709197957026792863757180476171301908252",
    "no": "102495639053225339401782208711351369590445500952314062485123614859744323263449",
    "rate": 40.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.700000000000003,
-   "est_reward_day": 40.0,
-   "end": "2027-01-01T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 40.0
-  },
-  {
-   "cond": "0x800bf287e0b3f3f412ed717a59e9fb1f874357d0341e306eefc3d2808364a137",
-   "question": "Will the 7-day average ship traffic through the Panama Canal be 26+ on December 31?",
-   "yes": "114555169739312447607281760902302209047547912088673111158559135856415121804639",
-   "no": "62259222741670638443025960530961071067017892439337933735528592279170037952247",
-   "rate": 5.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -529,21 +514,6 @@
    "rate0": 50.0
   },
   {
-   "cond": "0x6808b35d1beddee1d37cf5999929a8c7866ac70a811c5dfba4d37e2f870361bf",
-   "question": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait be 30+ on December 31?",
-   "yes": "85816629718025268428147794699438805487669719350293802623119544134335689861592",
-   "no": "97383395474684843548547262815829371700410525229054392975544932925792674875730",
-   "rate": 5.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.699999999999996,
-   "est_reward_day": 40.0,
-   "end": "2027-01-01T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 40.0
-  },
-  {
    "cond": "0x52d3fe6349e30bb8dbca9c5485fa2a76dda92de75e7e17164473da99a01cafa8",
    "question": "Will the 7-day average ship traffic through the Strait of Hormuz be 4+ on December 31?",
    "yes": "57509727190721575496267891220332521843170027173631170823031493215202727780321",
@@ -563,7 +533,7 @@
    "question": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait be 24+ on December 31?",
    "yes": "90410304253425020821741916120729087536161367885046909368206885120831785568298",
    "no": "101890866998359921066295536638154841197454591161781471653160357028989200133711",
-   "rate": 5.0,
+   "rate": 40.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -608,7 +578,7 @@
    "question": "Will Space Exploration Technologies\u2019 market capitalization be between $1.10T and $1.40T at the end of December 2026?",
    "yes": "19286528768846774176405235960215173535708029488678199857186368908083983960368",
    "no": "64926623280010583350973871084642344674548428254196421983115712605860498924258",
-   "rate": 28.0,
+   "rate": 23.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -619,26 +589,11 @@
    "rate0": 29.0
   },
   {
-   "cond": "0xb4bd0440399a198b700190832d6083de7c21b43868cd2915ecac3266786ff412",
-   "question": "Will the median home value in the US be less than $403,000 on December 31?",
-   "yes": "74871819720031070490081631699298401493606107010380697452744685113810767954407",
-   "no": "83655952924456408598406475855758990740676026561682320385483009896736902824544",
-   "rate": 73.0,
-   "v": 4.5,
-   "min_size": 20.0,
-   "d": 0.0225,
-   "collateral": 19.1,
-   "est_reward_day": 68.93171936236176,
-   "end": "2027-01-11T04:59:00Z",
-   "share0": 0.9708692867938277,
-   "rate0": 71.0
-  },
-  {
    "cond": "0x835c3c9a2a78640a2b6e1e8d64677c35f3ba1430525d4a08863982b6ccce386e",
    "question": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait be 26+ on December 31?",
    "yes": "40716269990998375556304785670243786277041426991771774947000640576572897579882",
    "no": "24220214640586229105143112397410631094158904425966938502153807332471664346069",
-   "rate": 40.0,
+   "rate": 5.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -664,56 +619,11 @@
    "rate0": 40.0
   },
   {
-   "cond": "0x21407bd40c0506d4630318c618074af9165c2aac59f0851b5d20899f44ef1151",
-   "question": "Will Anthropic open between $100 and $110 on its first trading day?",
-   "yes": "107262743973361665422802933292843471175199927295436653146443496071517645832770",
-   "no": "61517405967396315554320990986238369361494350538286102084529472720513789575273",
-   "rate": 0.0,
-   "v": 4.5,
-   "min_size": 20.0,
-   "d": 0.0225,
-   "collateral": 19.1,
-   "est_reward_day": 200.0,
-   "end": "2028-01-01T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 200.0
-  },
-  {
-   "cond": "0x933c3797d9f617a5c6c568c4d32e8597da39359d55b5660615227b326b0b23b6",
-   "question": "China Chip Manufacturing Export Restrictions become law by June 30, 2027?",
-   "yes": "106065082540904834081675896681405943688454204868238861916936337386329748516101",
-   "no": "29841796641170914184902794667632826318028945083979050540240062657711193652502",
-   "rate": 50.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.7,
-   "est_reward_day": 49.22330097087378,
-   "end": "2027-07-01T03:59:00Z",
-   "share0": 0.9844660194174756,
-   "rate0": 50.0
-  },
-  {
-   "cond": "0xfbb52a6fce2e17192549b62d15e8931a4d0af9335b2af0271ca33a4546835ad2",
-   "question": "Will Typical Gamer be the first of these streamers to finish GTA VI by December 31, 2026?",
-   "yes": "78497974006583123966368719968328344120904111132655563149965406569885723815203",
-   "no": "103281983887162183300432873685042626156683329262337891061012930973447384641750",
-   "rate": 89.0,
-   "v": 4.5,
-   "min_size": 20.0,
-   "d": 0.0225,
-   "collateral": 19.1,
-   "est_reward_day": 49.0,
-   "end": "2027-01-01T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 49.0
-  },
-  {
    "cond": "0xef2acdd2a2c2a27794f04915a3b662552d88dbf8034a7bb026b6241691cc3f10",
    "question": "Will Alanzoka be the first of these streamers to finish GTA VI by December 31, 2026?",
    "yes": "3178976122894360137602909303067792849945723160250457419775171455737334680836",
    "no": "74021510814573131480698836826948873102074137359713380894626392370747970375230",
-   "rate": 0.0,
+   "rate": 95.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -739,64 +649,154 @@
    "rate0": 287.0
   },
   {
-   "cond": "0x6eb990d7210ce454ec236e143cf3c9d25ab0cad20dbbf2760bc04a756e16bb7a",
-   "question": "Will the Ornn H200 Index be at least $7.50 on December 31, 2026?",
-   "yes": "17312059198784864902159974558461646960457754419620883240463520007587289103439",
-   "no": "99219306389058447912548715929596338323917586104903050055332315603176404295194",
-   "rate": 3.0,
-   "v": 6.5,
+   "cond": "0xaef6fab7e081a1238fb020b81ae779e6cc2ed582077a67bb41ec54fd303105e2",
+   "question": "Will Anthropic close between $100 and $110 on its first trading day?",
+   "yes": "20080589594026595350200317835658886144019718982194335116227068329150836368318",
+   "no": "83796046925566067911060361968066185778328932481478725562444798461253054383899",
+   "rate": 425.0,
+   "v": 4.5,
    "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.700000000000003,
-   "est_reward_day": 40.19299887563776,
-   "end": "2027-01-01T04:59:00Z",
-   "share0": 0.6379841091371073,
-   "rate0": 63.0
+   "d": 0.0225,
+   "collateral": 19.1,
+   "est_reward_day": 480.0,
+   "end": "2028-01-01T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 480.0
   },
   {
-   "cond": "0xbbb715f9f823c0750ac7d883df2ef2e6f6e92a314793cfef4ede45db66773110",
-   "question": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait be 28+ on December 31?",
-   "yes": "5787634319049342752900230691477075932255405864944950823297919331970507761353",
-   "no": "49276607613541147021567162033263008781107924373561346339243492021373953033675",
+   "cond": "0x4ec269b1dbc3c46260eeac7d5b295727de37b52b47679d481810db0e67e2a07d",
+   "question": "Will Anthropic close between $90 and $100 on its first trading day?",
+   "yes": "76301769652249870958834578154394639236130317847309716973385181444029754158021",
+   "no": "75287886991611887434825267312768935573966807071534263532436512257678624855927",
+   "rate": 413.0,
+   "v": 4.5,
+   "min_size": 20.0,
+   "d": 0.0225,
+   "collateral": 19.1,
+   "est_reward_day": 247.0,
+   "end": "2028-01-01T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 247.0
+  },
+  {
+   "cond": "0x51c5da2e602e1962f06cda1a7820ba769a9a0852d24bff74db1745f68756892b",
+   "question": "Will Lord Kebun be the first of these Kick streamers to finish GTA VI by December 31, 2026?",
+   "yes": "86450215227345614810262641715090189668989547420884875078354372435001140714464",
+   "no": "40464222647433261425192729306768454553008544482243124312850600300225324968996",
+   "rate": 94.0,
+   "v": 4.5,
+   "min_size": 20.0,
+   "d": 0.0225,
+   "collateral": 19.1,
+   "est_reward_day": 107.0,
+   "end": "2027-01-01T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 107.0
+  },
+  {
+   "cond": "0xd4a1585dcd49fc4f0b997afb4c8161c0984e3138f232ced353b32a13627aa02b",
+   "question": "Will Kaysan be the first of these Kick streamers to finish GTA VI by December 31, 2026?",
+   "yes": "107239573093215380248048401792454435964446593011901804052931084747048713153056",
+   "no": "5564225755078351126302834434584862233506635737335339974311564460133200816554",
+   "rate": 69.0,
+   "v": 4.5,
+   "min_size": 20.0,
+   "d": 0.0225,
+   "collateral": 19.1,
+   "est_reward_day": 103.0,
+   "end": "2027-01-01T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 103.0
+  },
+  {
+   "cond": "0xbcac71220a226317a50744bef0cdf2c95c40ec490ce5a69b99d6927b027d0d96",
+   "question": "Will xQc be the first of these streamers to finish GTA VI by December 31, 2026?",
+   "yes": "18328923465647873326831972039939295832810131610880655653381995080066784710271",
+   "no": "90453417113655061714501556134864723023893434541687358929108805307963397800379",
+   "rate": 111.0,
+   "v": 4.5,
+   "min_size": 20.0,
+   "d": 0.0225,
+   "collateral": 19.1,
+   "est_reward_day": 71.0,
+   "end": "2027-01-01T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 71.0
+  },
+  {
+   "cond": "0x16c5031a60750db3eb802ddf05660fc3e90cfb4e2c6fdb16af2840154999a53c",
+   "question": "Cuban regime falls by June 30, 2027?",
+   "yes": "73912718948027355439920289849333799511921040497144085271179128755343426383085",
+   "no": "29581878654900279187448310863576470005268558360741392643008021605776266804325",
+   "rate": 50.0,
+   "v": 4.5,
+   "min_size": 20.0,
+   "d": 0.0225,
+   "collateral": 19.1,
+   "est_reward_day": 50.0,
+   "end": "2027-07-01T03:59:00Z",
+   "share0": 1.0,
+   "rate0": 50.0
+  },
+  {
+   "cond": "0x70beb0e4d66c4da7243d33739a035dbf3ecc0c1c3eb5005b6cca378e7ed7a5fb",
+   "question": "Will IShowSpeed be the first of these streamers to finish GTA VI by December 31, 2026?",
+   "yes": "103327993756637181043255955488076438560060372120331882217696547575583245282121",
+   "no": "33785034293374175024934873940888439697194652389711329751590397194481600336472",
+   "rate": 101.0,
+   "v": 4.5,
+   "min_size": 20.0,
+   "d": 0.0225,
+   "collateral": 19.1,
+   "est_reward_day": 45.0,
+   "end": "2027-01-01T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 45.0
+  },
+  {
+   "cond": "0x2641479bc6956af081f23643ab9843833466ae3924917ab790b564adc12f8982",
+   "question": "0 ships transit Hormuz on any date by January 31, 2027?",
+   "yes": "113144626159596420094867479003413527986293322628603328363930689556018692885578",
+   "no": "93914026003293650533841790112621658797500243168671265628191081425442851417688",
    "rate": 40.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
-   "collateral": 18.700000000000003,
+   "collateral": 18.7,
    "est_reward_day": 40.0,
-   "end": "2027-01-01T04:59:00Z",
+   "end": "2027-02-01T04:59:00Z",
    "share0": 1.0,
    "rate0": 40.0
   },
   {
-   "cond": "0x128b4b965913624b0a3afd39c383eb8fd19eb82bbc183c9c7e054089e39ca617",
-   "question": "Will Sean Dyche be the next head coach of the England national team?",
-   "yes": "65860944746794288797490685727709645348363042205475527748771980948314834467380",
-   "no": "112596714742891629166731926593703962899319962477856987075020658254737155642194",
-   "rate": 0.0,
+   "cond": "0xa7c193d4613bd909a735c42989583625ef751ae97400fb8f2b685b27df97b04b",
+   "question": "Will Caleb Hawkins be the 2026 D1 Rushing Yards Leader?",
+   "yes": "39161953182167506162060371100174536877378240281728700817507956330544890713569",
+   "no": "19706874043851152872506275228535022616874900846568590851223780957439072168188",
+   "rate": 37.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
    "collateral": 19.1,
-   "est_reward_day": 40.0,
-   "end": "2026-12-31T23:59:00Z",
+   "est_reward_day": 37.0,
+   "end": "2027-01-04T04:59:00Z",
    "share0": 1.0,
-   "rate0": 40.0
+   "rate0": 37.0
   },
   {
-   "cond": "0x45e82521707e2dbf53b1e3af0df693049105ebbe318350cda82d3ff4cbfd7481",
-   "question": "Will DjMaRiiO be the first of these streamers to finish GTA VI by December 31, 2026?",
-   "yes": "107399322631893478963414210571780821419238745325185289526508671901294160394537",
-   "no": "73795253783737364423246530808873450451223747651585906302337548623811450322168",
-   "rate": 0.0,
-   "v": 4.5,
+   "cond": "0x5fddaeee11d92331c991b362106872c80675404d8c5e2e4e74644f379f2ec2f0",
+   "question": "Will Taylor win Ultimate Self-Defense Championship Season 4?",
+   "yes": "27065681090910932247042109874086738377268888288533397504833867731428273907229",
+   "no": "596427390090450859988686185272940235191890721884136330484885277967513461564",
+   "rate": 49.0,
+   "v": 6.5,
    "min_size": 20.0,
-   "d": 0.0225,
-   "collateral": 19.1,
-   "est_reward_day": 35.0,
-   "end": "2027-01-01T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 35.0
+   "d": 0.0325,
+   "collateral": 18.7,
+   "est_reward_day": 28.75103734439839,
+   "end": "2027-04-01T03:59:00Z",
+   "share0": 0.7012448132780096,
+   "rate0": 41.0
   }
  ],
  "positions": {
@@ -1138,7 +1138,7 @@
    "cash": 0.0,
    "mid": 0.47000000000000003,
    "share": 1.0,
-   "reward": 145.52551862128067,
+   "reward": 145.62597999246293,
    "fills": 0,
    "q": "Will Claude Opus 5.6+ debut at an output token price of at least $20 by June 30,"
   },
@@ -1212,9 +1212,9 @@
   "0xb4bd0440399a198b700190832d6083de7c21b43868cd2915ecac3266786ff412": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.3425,
-   "share": 0.9990133201776025,
-   "reward": 2.9460502252569962,
+   "mid": 0.35150000000000003,
+   "share": null,
+   "reward": 3.0487291742820926,
    "fills": 0,
    "q": "Will the median home value in the US be less than $403,000 on December 31?"
   },
@@ -4128,8 +4128,8 @@
   "0xfafaa706aa77ca7becd5741282e7455659580cbfe62a3881d5020b4b453d5753": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.305,
-   "share": 0.8407960199004973,
+   "mid": 0.32,
+   "share": 1.0,
    "reward": 9.29485488192705,
    "fills": 0,
    "q": "Will Dune: Part Three win Best Sound at the 99th Academy Awards?"
@@ -12025,7 +12025,7 @@
    "cash": 0.0,
    "mid": 0.52,
    "share": 1.0,
-   "reward": 784.3580468121368,
+   "reward": 784.6450793012291,
    "fills": 0,
    "q": "Will the Ornn H200 Index hit $8.00 (HIGH) by December 31, 2026?"
   },
@@ -12051,9 +12051,9 @@
   "0x12e7e3aaed06c1ac55f082a0b4282d5f525cdb2106afb1972e9d861bdc7e1649": {
    "inv": 0.0,
    "cash": -0.34185,
-   "mid": 0.475,
+   "mid": 0.495,
    "share": 1.0,
-   "reward": 781.076670265782,
+   "reward": 781.3080934502784,
    "fills": 1,
    "q": "Will the Ornn H200 Index hit $5.00 (LOW) by December 31, 2026?",
    "closed_at": 0.85
@@ -14266,8 +14266,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.268,
-   "share": 0.049127667050928435,
-   "reward": 76.51531924823014,
+   "share": null,
+   "reward": 76.51593300630671,
    "fills": 0,
    "q": "Will the Ornn H200 Index be at least $7.50 on December 31, 2026?"
   },
@@ -19623,7 +19623,7 @@
   "0xde3b2838acf91270a03d4b4a442bbdcb618bcddb9f8ed75c7b771ecf08ccf7c2": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.305,
+   "mid": 0.27,
    "share": 1.0,
    "reward": 8.511376862470751,
    "fills": 0,
@@ -19967,7 +19967,7 @@
    "cash": 0.0,
    "mid": 0.265,
    "share": 1.0,
-   "reward": 6.291789000012925,
+   "reward": 6.298964812240232,
    "fills": 0,
    "q": "Will DJ Khaled perform at Coachella 2027?"
   },
@@ -20343,9 +20343,9 @@
   "0x52d3fe6349e30bb8dbca9c5485fa2a76dda92de75e7e17164473da99a01cafa8": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.405,
+   "mid": 0.55,
    "share": 1.0,
-   "reward": 80.14234115545135,
+   "reward": 80.34791188946205,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Strait of Hormuz be 4+ on Decemb"
   },
@@ -20388,9 +20388,9 @@
   "0xab3305643ef7359a90326b1f9ca37210bef91fd09d5ee336ed1e34b98d088599": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.385,
-   "share": 0.8407960199004981,
-   "reward": 110.44688124317162,
+   "mid": 0.35,
+   "share": 1.0,
+   "reward": 110.70171020237423,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 46+ on December 31"
   },
@@ -20434,8 +20434,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.44499999999999995,
-   "share": 0.0494724886125456,
-   "reward": 29.50101965673879,
+   "share": null,
+   "reward": 29.50186509523582,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait be 30+ on D"
   },
@@ -20470,8 +20470,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.5349999999999999,
-   "share": 0.5492957746478927,
-   "reward": 42.40693587874443,
+   "share": 0.3646957272334897,
+   "reward": 42.53193510891342,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait be 26+ on D"
   },
@@ -20479,8 +20479,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.51,
-   "share": 0.9135135135135143,
-   "reward": 40.05156846251581,
+   "share": null,
+   "reward": 40.121239391286615,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait be 28+ on D"
   },
@@ -20505,9 +20505,9 @@
   "0xcb409177b8ddaad2a5d6a6c197c0f273457441cd2a53e7fe70212e89c4e89c10": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.375,
+   "mid": 0.53,
    "share": 1.0,
-   "reward": 110.96082714082823,
+   "reward": 111.02226218637851,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 40+ on December 31"
   },
@@ -20534,7 +20534,7 @@
    "cash": 0.0,
    "mid": 0.37,
    "share": 1.0,
-   "reward": 55.25939526224295,
+   "reward": 55.30245013560679,
    "fills": 0,
    "q": "Will the Central Bank of Chile make no change to the monetary policy rate at the"
   },
@@ -20721,18 +20721,18 @@
   "0xe4e3c6d800dddb8c456251d498bb48e566a6867a469e9d973e2e792c05410d8a": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.8,
-   "share": 1.0,
-   "reward": 18.29666466898503,
+   "mid": 0.81,
+   "share": 0.7012448132780095,
+   "reward": 18.353930241595485,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait be 24+ on D"
   },
   "0x8c91d20f1e8fefcec50e045f572084e7a825f402fd87895b9288dc2e2a24cd6a": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.49,
+   "mid": 0.495,
    "share": 1.0,
-   "reward": 92.87786815983016,
+   "reward": 93.10102838819468,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 44+ on December 31"
   },
@@ -21000,18 +21000,18 @@
   "0x2641479bc6956af081f23643ab9843833466ae3924917ab790b564adc12f8982": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.615,
-   "share": null,
-   "reward": 18.78817652392138,
+   "mid": 0.44,
+   "share": 1.0,
+   "reward": 18.880899414585407,
    "fills": 0,
    "q": "0 ships transit Hormuz on any date by January 31, 2027?"
   },
   "0x9b1553011e72f02f38f542563411afdc048620bcea31924c15855f4ee68f543a": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.48,
+   "mid": 0.495,
    "share": 1.0,
-   "reward": 73.7562485988212,
+   "reward": 74.04328108791346,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 42+ on December 31"
   },
@@ -21063,7 +21063,7 @@
   "0x7ad5206bbe6e0f4f9541e5b7ec723619bae7557b1555872f920fc3055726b4ce": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.3135,
+   "mid": 0.3025,
    "share": 1.0,
    "reward": 2.1251932211496207,
    "fills": 0,
@@ -21262,8 +21262,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.485,
-   "share": 0.39764705882353024,
-   "reward": 34.96776173176512,
+   "share": null,
+   "reward": 34.97604148899841,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Panama Canal be 26+ on December "
   },
@@ -21460,26 +21460,26 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.355,
-   "share": 0.07450842077418214,
-   "reward": 17.26756620959545,
+   "share": null,
+   "reward": 17.281429599779475,
    "fills": 0,
    "q": "China Chip Manufacturing Export Restrictions become law by June 30, 2027?"
   },
   "0xc1b148991bc9a9cba14978d14bf516e927aefab3f9059502afafca3ac232c757": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.46499999999999997,
+   "mid": 0.45499999999999996,
    "share": 1.0,
-   "reward": 20.506871860926555,
+   "reward": 20.86566247229188,
    "fills": 0,
    "q": "China Chip Manufacturing Export Restrictions become law by December 31, 2027?"
   },
   "0x16c5031a60750db3eb802ddf05660fc3e90cfb4e2c6fdb16af2840154999a53c": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.27,
-   "share": null,
-   "reward": 20.080279198197246,
+   "mid": 0.24,
+   "share": 0.07634307257304433,
+   "reward": 20.14979082894209,
    "fills": 0,
    "q": "Cuban regime falls by June 30, 2027?"
   },
@@ -21495,9 +21495,9 @@
   "0xaef6fab7e081a1238fb020b81ae779e6cc2ed582077a67bb41ec54fd303105e2": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.38,
-   "share": null,
-   "reward": 1.0521557216307198,
+   "mid": 0.43,
+   "share": 0.06457613606165286,
+   "reward": 1.4119981755486517,
    "fills": 0,
    "q": "Will Anthropic close between $100 and $110 on its first trading day?"
   },
@@ -21531,18 +21531,18 @@
   "0x616b81197940662202ea3033ec24ae076a12a127891d833a5776a316434f2ab3": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.11,
+   "mid": 0.1,
    "share": 1.0,
-   "reward": 7.218780807033076,
+   "reward": 7.225956619260383,
    "fills": 0,
    "q": "Will Take-Two report between 33 million and 36 million GTA VI units sold before "
   },
   "0x5fddaeee11d92331c991b362106872c80675404d8c5e2e4e74644f379f2ec2f0": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.5,
-   "share": null,
-   "reward": 3.843996198405945,
+   "mid": 0.525,
+   "share": 1.0,
+   "reward": 3.883966828234247,
    "fills": 0,
    "q": "Will Taylor win Ultimate Self-Defense Championship Season 4?"
   },
@@ -21567,9 +21567,9 @@
   "0xa7c193d4613bd909a735c42989583625ef751ae97400fb8f2b685b27df97b04b": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.023,
-   "share": null,
-   "reward": 3.02418731154115,
+   "mid": 0.2,
+   "share": 1.0,
+   "reward": 3.109955985405378,
    "fills": 0,
    "q": "Will Caleb Hawkins be the 2026 D1 Rushing Yards Leader?"
   },
@@ -21594,9 +21594,9 @@
   "0x49a483325bc5389fdcd4dae5f8b03f34291759204896bc658d941f91742ce0a0": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.32,
+   "mid": 0.25,
    "share": 1.0,
-   "reward": 4.349307559915539,
+   "reward": 4.511368740076093,
    "fills": 0,
    "q": "Will Anthropic stock rise between 20% and 30% on IPO day?"
   },
@@ -21612,9 +21612,9 @@
   "0x980a48e323370b32a982c6c876c5878bd87c732db9955e9de6b012803c82c5b6": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.175,
-   "share": 1.0,
-   "reward": 4.177204234515261,
+   "mid": 0.12,
+   "share": 0.5294117647058827,
+   "reward": 4.320108119416462,
    "fills": 0,
    "q": "Will 800M to 1B Anthropic shares trade on IPO day?"
   },
@@ -21648,9 +21648,9 @@
   "0x062b7d33916363e2dcc7340e71ffd323b2c2ea612676130b5762f30db2363d89": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.26,
-   "share": 1.0,
-   "reward": 3.3182446642256864,
+   "mid": 0.22500000000000003,
+   "share": 0.5494386405999387,
+   "reward": 3.4523570878327288,
    "fills": 0,
    "q": "Will Space Exploration Technologies\u2019 market capitalization be between $1.10T and"
   },
@@ -21658,7 +21658,7 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.029,
-   "share": 0.08637236084452976,
+   "share": null,
    "reward": 0.7249302887449652,
    "fills": 0,
    "q": "Will Typical Gamer be the first of these streamers to finish GTA VI by December "
@@ -21666,26 +21666,26 @@
   "0xef2acdd2a2c2a27794f04915a3b662552d88dbf8034a7bb026b6241691cc3f10": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.4155,
+   "mid": 0.4095,
    "share": 1.0,
-   "reward": 0.8139545021730439,
+   "reward": 0.9020992690849081,
    "fills": 0,
    "q": "Will Alanzoka be the first of these streamers to finish GTA VI by December 31, 2"
   },
   "0xb14fc0f0294a0c33c695b4b23e15dd41fc1e8f23043b1438f4415b099e0a9d5b": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.3,
+   "mid": 0.37,
    "share": 1.0,
-   "reward": 2.141198548092099,
+   "reward": 2.770120062364237,
    "fills": 0,
    "q": "Will xQc be the first of these Kick streamers to finish GTA VI by December 31, 2"
   },
   "0x128b4b965913624b0a3afd39c383eb8fd19eb82bbc183c9c7e054089e39ca617": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.458,
-   "share": 1.0,
+   "mid": 0.026000000000000002,
+   "share": null,
    "reward": 0.6425961412765362,
    "fills": 0,
    "q": "Will Sean Dyche be the next head coach of the England national team?"
@@ -21694,10 +21694,55 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.029,
-   "share": 0.05945914202660249,
+   "share": null,
    "reward": 0.6183689387253036,
    "fills": 0,
    "q": "Will DjMaRiiO be the first of these streamers to finish GTA VI by December 31, 2"
+  },
+  "0x4ec269b1dbc3c46260eeac7d5b295727de37b52b47679d481810db0e67e2a07d": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.365,
+   "share": 1.0,
+   "reward": 0.31512814101558584,
+   "fills": 0,
+   "q": "Will Anthropic close between $90 and $100 on its first trading day?"
+  },
+  "0x51c5da2e602e1962f06cda1a7820ba769a9a0852d24bff74db1745f68756892b": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.305,
+   "share": 1.0,
+   "reward": 0.0742164546996355,
+   "fills": 0,
+   "q": "Will Lord Kebun be the first of these Kick streamers to finish GTA VI by Decembe"
+  },
+  "0xd4a1585dcd49fc4f0b997afb4c8161c0984e3138f232ced353b32a13627aa02b": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.245,
+   "share": 1.0,
+   "reward": 0.1354629437625408,
+   "fills": 0,
+   "q": "Will Kaysan be the first of these Kick streamers to finish GTA VI by December 31"
+  },
+  "0xbcac71220a226317a50744bef0cdf2c95c40ec490ce5a69b99d6927b027d0d96": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.46699999999999997,
+   "share": 1.0,
+   "reward": 0.20169671699680664,
+   "fills": 0,
+   "q": "Will xQc be the first of these streamers to finish GTA VI by December 31, 2026?"
+  },
+  "0x70beb0e4d66c4da7243d33739a035dbf3ecc0c1c3eb5005b6cca378e7ed7a5fb": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.43000000000000005,
+   "share": 1.0,
+   "reward": 0.15627227249244846,
+   "fills": 0,
+   "q": "Will IShowSpeed be the first of these streamers to finish GTA VI by December 31,"
   }
  },
  "history": [
@@ -96736,6 +96781,32 @@
    "fills_total": 659,
    "rebalanced": false,
    "w": 2991847
+  },
+  {
+   "ts": "2026-11-19T17:28:58.152962+00:00",
+   "dt_h": 0.153,
+   "reward_tick": 4.2319,
+   "reward_total": 57143.46,
+   "mm_value": -679.76,
+   "net": 56463.71,
+   "avg_share": 0.9292,
+   "n_markets": 53,
+   "fills_total": 659,
+   "rebalanced": false,
+   "w": 2991848
+  },
+  {
+   "ts": "2026-11-19T17:30:18.318308+00:00",
+   "dt_h": 0.022,
+   "reward_tick": 0.9002,
+   "reward_total": 57144.36,
+   "mm_value": -679.76,
+   "net": 56464.61,
+   "avg_share": 0.9093,
+   "n_markets": 53,
+   "fills_total": 659,
+   "rebalanced": false,
+   "w": 2991849
   }
  ],
  "fills": [
@@ -102671,8 +102742,8 @@
    "ledger": "v4"
   }
  ],
- "reward_total": 57139.229716059766,
- "last_ts": 1795108798.3281314,
+ "reward_total": 57144.36181127235,
+ "last_ts": 1795109418.3183079,
  "chosen_at": 1791639880.921448,
  "rebalances": [
   {
@@ -102683,8 +102754,8 @@
   }
  ],
  "last_tick": {
-  "ts": "2026-11-19T17:19:58.328131+00:00",
-  "dt_h": 0.017,
+  "ts": "2026-11-19T17:30:18.318308+00:00",
+  "dt_h": 0.022,
   "markets": [
    {
     "q": "Will Chicago Bears finish the 2026-27 NFL regular ",
@@ -102704,7 +102775,7 @@
     "q": "Will Claude Opus 5.6+ debut at an output token pri",
     "mid": 0.47,
     "share": 1.0,
-    "earned": 0.0097,
+    "earned": 0.013,
     "inv": 0.0
    },
    {
@@ -102753,7 +102824,7 @@
    },
    {
     "q": "Will Paradise win Best Television Series \u2013 Drama a",
-    "mid": 0.305,
+    "mid": 0.27,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -102818,234 +102889,223 @@
     "q": "Will DJ Khaled perform at Coachella 2027?",
     "mid": 0.265,
     "share": 1.0,
-    "earned": 0.0007,
+    "earned": 0.0009,
     "inv": 0.0
    },
    {
     "q": "Will the Central Bank of Chile make no change to t",
     "mid": 0.37,
     "share": 1.0,
-    "earned": 0.0042,
+    "earned": 0.0056,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index hit $8.00 (HIGH) by Decem",
     "mid": 0.52,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0371,
     "inv": 0.0
    },
    {
     "q": "Will Dune: Part Three win Best Sound at the 99th A",
-    "mid": 0.305,
-    "share": 0.8408,
-    "earned": 0.0,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the 7-day average ship traffic through the Su",
-    "mid": 0.375,
+    "mid": 0.32,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
    },
    {
+    "q": "Will the 7-day average ship traffic through the Su",
+    "mid": 0.53,
+    "share": 1.0,
+    "earned": 0.0371,
+    "inv": 0.0
+   },
+   {
     "q": "Will the Central Bank of Chile increase the moneta",
-    "mid": 0.314,
+    "mid": 0.302,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index hit $5.00 (LOW) by Decemb",
-    "mid": 0.475,
+    "mid": 0.495,
     "share": 1.0,
-    "earned": 0.0278,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the 7-day average ship traffic through the Pa",
-    "mid": 0.485,
-    "share": 0.3976,
-    "earned": 0.0014,
+    "earned": 0.0371,
     "inv": 0.0
    },
    {
     "q": "Will Take-Two report between 33 million and 36 mil",
-    "mid": 0.11,
+    "mid": 0.1,
     "share": 1.0,
-    "earned": 0.0007,
+    "earned": 0.0009,
     "inv": 0.0
    },
    {
     "q": "Will Anthropic stock rise between 20% and 30% on I",
-    "mid": 0.32,
+    "mid": 0.25,
     "share": 1.0,
-    "earned": 0.0174,
+    "earned": 0.0232,
     "inv": 0.0
    },
    {
     "q": "Will 800M to 1B Anthropic shares trade on IPO day?",
-    "mid": 0.175,
-    "share": 1.0,
-    "earned": 0.0174,
+    "mid": 0.12,
+    "share": 0.5294,
+    "earned": 0.0123,
     "inv": 0.0
    },
    {
     "q": "China Chip Manufacturing Export Restrictions becom",
-    "mid": 0.465,
+    "mid": 0.455,
     "share": 1.0,
-    "earned": 0.0347,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the 7-day average ship traffic through the Ba",
-    "mid": 0.445,
-    "share": 0.0495,
-    "earned": 0.0002,
+    "earned": 0.0464,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the St",
-    "mid": 0.405,
+    "mid": 0.55,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ba",
-    "mid": 0.8,
-    "share": 1.0,
-    "earned": 0.0035,
+    "mid": 0.81,
+    "share": 0.7012,
+    "earned": 0.026,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
-    "mid": 0.48,
+    "mid": 0.495,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0371,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
-    "mid": 0.49,
+    "mid": 0.495,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0371,
     "inv": 0.0
    },
    {
     "q": "Will Space Exploration Technologies\u2019 market capita",
-    "mid": 0.26,
-    "share": 1.0,
-    "earned": 0.0194,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the median home value in the US be less than ",
-    "mid": 0.343,
-    "share": 0.999,
-    "earned": 0.0501,
+    "mid": 0.225,
+    "share": 0.5494,
+    "earned": 0.0117,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ba",
     "mid": 0.535,
-    "share": 0.5493,
-    "earned": 0.0153,
+    "share": 0.3647,
+    "earned": 0.0017,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
-    "mid": 0.385,
-    "share": 0.8408,
-    "earned": 0.0234,
-    "inv": 0.0
-   },
-   {
-    "q": "Will Anthropic open between $100 and $110 on its f",
-    "status": "no book"
-   },
-   {
-    "q": "China Chip Manufacturing Export Restrictions becom",
-    "mid": 0.355,
-    "share": 0.0745,
-    "earned": 0.0026,
-    "inv": 0.0
-   },
-   {
-    "q": "Will Typical Gamer be the first of these streamers",
-    "mid": 0.029,
-    "share": 0.0864,
-    "earned": 0.0,
+    "mid": 0.35,
+    "share": 1.0,
+    "earned": 0.0371,
     "inv": 0.0
    },
    {
     "q": "Will Alanzoka be the first of these streamers to f",
-    "mid": 0.415,
+    "mid": 0.409,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0881,
     "inv": 0.0
    },
    {
     "q": "Will xQc be the first of these Kick streamers to f",
-    "mid": 0.3,
+    "mid": 0.37,
     "share": 1.0,
-    "earned": 0.0674,
+    "earned": 0.09,
     "inv": 0.0
    },
    {
-    "q": "Will the Ornn H200 Index be at least $7.50 on Dece",
-    "mid": 0.268,
-    "share": 0.0491,
-    "earned": 0.0001,
+    "q": "Will Anthropic close between $100 and $110 on its ",
+    "mid": 0.43,
+    "share": 0.0646,
+    "earned": 0.0255,
     "inv": 0.0
    },
    {
-    "q": "Will the 7-day average ship traffic through the Ba",
-    "mid": 0.51,
-    "share": 0.9135,
-    "earned": 0.0,
-    "inv": 0.0
-   },
-   {
-    "q": "Will Sean Dyche be the next head coach of the Engl",
-    "mid": 0.458,
+    "q": "Will Anthropic close between $90 and $100 on its f",
+    "mid": 0.365,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
    },
    {
-    "q": "Will DjMaRiiO be the first of these streamers to f",
-    "mid": 0.029,
-    "share": 0.0595,
+    "q": "Will Lord Kebun be the first of these Kick streame",
+    "mid": 0.305,
+    "share": 1.0,
+    "earned": 0.0,
+    "inv": 0.0
+   },
+   {
+    "q": "Will Kaysan be the first of these Kick streamers t",
+    "mid": 0.245,
+    "share": 1.0,
+    "earned": 0.064,
+    "inv": 0.0
+   },
+   {
+    "q": "Will xQc be the first of these streamers to finish",
+    "mid": 0.467,
+    "share": 1.0,
+    "earned": 0.103,
+    "inv": 0.0
+   },
+   {
+    "q": "Cuban regime falls by June 30, 2027?",
+    "mid": 0.24,
+    "share": 0.0763,
+    "earned": 0.0,
+    "inv": 0.0
+   },
+   {
+    "q": "Will IShowSpeed be the first of these streamers to",
+    "mid": 0.43,
+    "share": 1.0,
+    "earned": 0.0937,
+    "inv": 0.0
+   },
+   {
+    "q": "0 ships transit Hormuz on any date by January 31, ",
+    "mid": 0.44,
+    "share": 1.0,
+    "earned": 0.0371,
+    "inv": 0.0
+   },
+   {
+    "q": "Will Caleb Hawkins be the 2026 D1 Rushing Yards Le",
+    "mid": 0.2,
+    "share": 1.0,
+    "earned": 0.0343,
+    "inv": 0.0
+   },
+   {
+    "q": "Will Taylor win Ultimate Self-Defense Championship",
+    "mid": 0.525,
+    "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
    }
   ],
-  "reward_tick": 0.4069,
-  "reward_total": 57139.23,
+  "reward_tick": 0.9002,
+  "reward_total": 57144.36,
   "mm_value": -679.76,
-  "net": 56459.47,
-  "avg_share": 0.8479,
+  "net": 56464.61,
+  "avg_share": 0.9093,
   "n_markets": 53,
   "fills_total": 659,
   "rebalanced": false
  },
  "reviews": [
-  {
-   "ts": "2026-10-29T16:35:44.351312+00:00",
-   "swapped": 3,
-   "out": [
-    "Will the Ornn H100 Index hit $2.25 (LOW) by Decemb",
-    "Will there be no next Grok model (4.8+) release by",
-    "Will Google be the second-best AI lab at the end o"
-   ],
-   "in": [
-    "Will Yashar be in the next Israeli government?",
-    "Will Rihanna have the second-greatest number of mo",
-    "Will the Ornn H100 Index hit $2.00 (LOW) by Decemb"
-   ]
-  },
   {
    "ts": "2026-10-29T17:36:28.526675+00:00",
    "swapped": 3,
@@ -110983,7 +111043,35 @@
     "Will Sean Dyche be the next head coach of the Engl",
     "Will DjMaRiiO be the first of these streamers to f"
    ]
+  },
+  {
+   "ts": "2026-11-19T17:26:58.036864+00:00",
+   "swapped": 10,
+   "out": [
+    "Will Anthropic open between $100 and $110 on its f",
+    "Will Sean Dyche be the next head coach of the Engl",
+    "Will DjMaRiiO be the first of these streamers to f",
+    "Will the Ornn H200 Index be at least $7.50 on Dece",
+    "Will the 7-day average ship traffic through the Ba",
+    "Will the 7-day average ship traffic through the Pa",
+    "China Chip Manufacturing Export Restrictions becom",
+    "Will the 7-day average ship traffic through the Ba",
+    "Will Typical Gamer be the first of these streamers",
+    "Will the median home value in the US be less than "
+   ],
+   "in": [
+    "Will Anthropic close between $100 and $110 on its ",
+    "Will Anthropic close between $90 and $100 on its f",
+    "Will Lord Kebun be the first of these Kick streame",
+    "Will Kaysan be the first of these Kick streamers t",
+    "Will xQc be the first of these streamers to finish",
+    "Cuban regime falls by June 30, 2027?",
+    "Will IShowSpeed be the first of these streamers to",
+    "0 ships transit Hormuz on any date by January 31, ",
+    "Will Caleb Hawkins be the 2026 D1 Rushing Yards Le",
+    "Will Taylor win Ultimate Self-Defense Championship"
+   ]
   }
  ],
- "reviewed_at": 1795105610.1560376
+ "reviewed_at": 1795109218.036864
 }

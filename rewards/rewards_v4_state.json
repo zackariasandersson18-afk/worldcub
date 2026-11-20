@@ -619,21 +619,6 @@
    "rate0": 40.0
   },
   {
-   "cond": "0xa3d8344e1fda781e5f4329c961235a262ab16d75aaacdc96b130637b18e4088a",
-   "question": "Will the 7-day average ship traffic through the Malacca Strait be 230+ on December 31?",
-   "yes": "44852520027824263953787065196429656668025599210853670718864206611203350928310",
-   "no": "91649849410479640814200670446336969487527333023458010878034755967335501151472",
-   "rate": 5.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.700000000000003,
-   "est_reward_day": 40.0,
-   "end": "2027-01-01T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 40.0
-  },
-  {
    "cond": "0x800bf287e0b3f3f412ed717a59e9fb1f874357d0341e306eefc3d2808364a137",
    "question": "Will the 7-day average ship traffic through the Panama Canal be 26+ on December 31?",
    "yes": "114555169739312447607281760902302209047547912088673111158559135856415121804639",
@@ -709,21 +694,6 @@
    "rate0": 35.0
   },
   {
-   "cond": "0x3ba7d7639f3a7427bee61953ecc2b863d986230f2fb3e5ce7141ae8712a54259",
-   "question": "Will the Republicans win Kentucky in the 2028 Presidential Election?",
-   "yes": "20561841909935492722279042813495223146912093472738487521625491786206139940220",
-   "no": "105372906990668560856298812195830017958049526400041865475541899537284290881706",
-   "rate": 60.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.700000000000003,
-   "est_reward_day": 86.0,
-   "end": "2028-11-08T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 86.0
-  },
-  {
    "cond": "0x835c3c9a2a78640a2b6e1e8d64677c35f3ba1430525d4a08863982b6ccce386e",
    "question": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait be 26+ on December 31?",
    "yes": "40716269990998375556304785670243786277041426991771774947000640576572897579882",
@@ -744,21 +714,6 @@
    "yes": "5787634319049342752900230691477075932255405864944950823297919331970507761353",
    "no": "49276607613541147021567162033263008781107924373561346339243492021373953033675",
    "rate": 5.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.700000000000003,
-   "est_reward_day": 40.0,
-   "end": "2027-01-01T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 40.0
-  },
-  {
-   "cond": "0xab3305643ef7359a90326b1f9ca37210bef91fd09d5ee336ed1e34b98d088599",
-   "question": "Will the 7-day average ship traffic through the Suez Canal be 46+ on December 31?",
-   "yes": "90224176809256449528135595594910326442973167101957045337667974213663968110730",
-   "no": "106100297480992987864562749410840012516078416724319937832667449784229919326398",
-   "rate": 40.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -797,6 +752,51 @@
    "end": "2027-01-01T04:59:00Z",
    "share0": 1.0,
    "rate0": 27.0
+  },
+  {
+   "cond": "0x935dbe4d2a812350fd2aa1cb1fa8cb002c334e449a013610059bc16eb88de6f9",
+   "question": "Will the Reserve Bank of New Zealand make no change to the official cash rate at the March meeting?",
+   "yes": "75352888584460763928395979047824288255515378278211373958656131327485953618523",
+   "no": "63993497353535235349234018960710981119312493792595660848175395129895928975458",
+   "rate": 108.0,
+   "v": 4.5,
+   "min_size": 20.0,
+   "d": 0.0225,
+   "collateral": 19.1,
+   "est_reward_day": 108.0,
+   "end": "2027-03-17T23:59:00Z",
+   "share0": 1.0,
+   "rate0": 108.0
+  },
+  {
+   "cond": "0x2157bd4fe2db116ed36de997aa816b5623af66f55bf0233b6926e2cb28660326",
+   "question": "Will the Reserve Bank of New Zealand increase the official cash rate by 25 bps at the March meeting?",
+   "yes": "98031418963279106013185013241030488167547094377759084556032997091260219621699",
+   "no": "107849691282771179774670395377886428959395701057517427523483166749074541492231",
+   "rate": 92.0,
+   "v": 4.5,
+   "min_size": 20.0,
+   "d": 0.0225,
+   "collateral": 19.1,
+   "est_reward_day": 92.0,
+   "end": "2027-03-17T23:59:00Z",
+   "share0": 1.0,
+   "rate0": 92.0
+  },
+  {
+   "cond": "0xb498b53a9e3a3f81be42d5f1a9cdd57f113d1ca1469c4c52fcd68285d37432ea",
+   "question": "Will Alphabet\u2019s market capitalization be less than $3.50T at the end of 2026?",
+   "yes": "78490237271117368083911285137530664241206415887870965846447478187710455962376",
+   "no": "13092360062089909577152931138630123935407666626038179090241257814511938611990",
+   "rate": 49.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.7,
+   "est_reward_day": 49.0,
+   "end": "2026-12-31T23:59:00Z",
+   "share0": 1.0,
+   "rate0": 49.0
   }
  ],
  "positions": {
@@ -1138,7 +1138,7 @@
    "cash": 0.0,
    "mid": 0.54,
    "share": 1.0,
-   "reward": 152.59079718007655,
+   "reward": 152.69049012027958,
    "fills": 0,
    "q": "Will Claude Opus 5.6+ debut at an output token price of at least $20 by June 30,"
   },
@@ -4522,7 +4522,7 @@
   "0x5d15579a3a31d6220eb8d33d167788db82976f14c856768a5e37e51afdaeb279": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.484,
+   "mid": 0.4785,
    "share": 1.0,
    "reward": 17.59805527737572,
    "fills": 0,
@@ -12023,9 +12023,9 @@
   "0x6cf827720a643edb6480aa0ab04d0010f4e75fdf3a18bfe0be629649a0cba714": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.565,
+   "mid": 0.675,
    "share": 1.0,
-   "reward": 797.868359697315,
+   "reward": 798.128005875821,
    "fills": 0,
    "q": "Will the Ornn H200 Index hit $8.00 (HIGH) by December 31, 2026?"
   },
@@ -12051,9 +12051,9 @@
   "0x12e7e3aaed06c1ac55f082a0b4282d5f525cdb2106afb1972e9d861bdc7e1649": {
    "inv": 0.0,
    "cash": -0.34185,
-   "mid": 0.44,
-   "share": 0.7012448132780081,
-   "reward": 791.9093902591679,
+   "mid": 0.46499999999999997,
+   "share": 1.0,
+   "reward": 792.1953969512382,
    "fills": 1,
    "q": "Will the Ornn H200 Index hit $5.00 (LOW) by December 31, 2026?",
    "closed_at": 0.85
@@ -13443,9 +13443,9 @@
   "0xb498b53a9e3a3f81be42d5f1a9cdd57f113d1ca1469c4c52fcd68285d37432ea": {
    "inv": 0.0,
    "cash": -0.7700000000000014,
-   "mid": 0.44399999999999995,
-   "share": null,
-   "reward": 120.54255775689155,
+   "mid": 0.4025,
+   "share": 1.0,
+   "reward": 120.75287408214656,
    "fills": 1,
    "q": "Will Alphabet\u2019s market capitalization be less than $3.50T at the end of 2026?",
    "closed_at": 0.53
@@ -13536,9 +13536,9 @@
   "0x935dbe4d2a812350fd2aa1cb1fa8cb002c334e449a013610059bc16eb88de6f9": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.395,
-   "share": null,
-   "reward": 104.37521603311495,
+   "mid": 0.545,
+   "share": 1.0,
+   "reward": 104.83877038265662,
    "fills": 0,
    "q": "Will the Reserve Bank of New Zealand make no change to the official cash rate at"
   },
@@ -13746,7 +13746,7 @@
    "cash": -1.950000000000001,
    "mid": 0.475,
    "share": 1.0,
-   "reward": 202.48207104740774,
+   "reward": 203.40159104652332,
    "fills": 1,
    "q": "Will the Bank of England increase the Bank Rate by 25 bps at the February meetin",
    "closed_at": 0.57
@@ -13820,9 +13820,9 @@
   "0x2157bd4fe2db116ed36de997aa816b5623af66f55bf0233b6926e2cb28660326": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.365,
-   "share": null,
-   "reward": 57.471216117783044,
+   "mid": 0.39,
+   "share": 1.0,
+   "reward": 57.86609574887409,
    "fills": 0,
    "q": "Will the Reserve Bank of New Zealand increase the official cash rate by 25 bps a"
   },
@@ -14674,7 +14674,7 @@
    "cash": -7.07,
    "mid": 0.6005,
    "share": 1.0,
-   "reward": 181.47583400553486,
+   "reward": 181.66979525534828,
    "fills": 1,
    "q": "Will Diable play for JD Gaming in 2027?",
    "closed_at": 0.024
@@ -18039,7 +18039,7 @@
   "0xe43ebfb9c7af7e7560cf67dffd4431864a59f9876e0bc057bddb846bdb612d68": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.29400000000000004,
+   "mid": 0.2945,
    "share": 1.0,
    "reward": 76.87070843404608,
    "fills": 0,
@@ -19623,7 +19623,7 @@
   "0xde3b2838acf91270a03d4b4a442bbdcb618bcddb9f8ed75c7b771ecf08ccf7c2": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.1795,
+   "mid": 0.179,
    "share": 1.0,
    "reward": 8.511376862470751,
    "fills": 0,
@@ -19803,7 +19803,7 @@
   "0x9a8e079bb989a7f4500ee58b8962540190f2b35c15476d83721bccfeed84f822": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.235,
+   "mid": 0.22499999999999998,
    "share": 1.0,
    "reward": 8.048744412006602,
    "fills": 0,
@@ -19967,7 +19967,7 @@
    "cash": 0.0,
    "mid": 0.345,
    "share": 0.6644823066841423,
-   "reward": 6.62755660198067,
+   "reward": 6.632330076746722,
    "fills": 0,
    "q": "Will DJ Khaled perform at Coachella 2027?"
   },
@@ -20345,7 +20345,7 @@
    "cash": 0.0,
    "mid": 0.43499999999999994,
    "share": 1.0,
-   "reward": 88.02883959751041,
+   "reward": 88.26069079777312,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Strait of Hormuz be 4+ on Decemb"
   },
@@ -20388,9 +20388,9 @@
   "0xab3305643ef7359a90326b1f9ca37210bef91fd09d5ee336ed1e34b98d088599": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.345,
-   "share": 0.7253218884120193,
-   "reward": 120.05605265662027,
+   "mid": 0.36,
+   "share": null,
+   "reward": 120.08814462932152,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 46+ on December 31"
   },
@@ -20469,18 +20469,18 @@
   "0x835c3c9a2a78640a2b6e1e8d64677c35f3ba1430525d4a08863982b6ccce386e": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.485,
+   "mid": 0.515,
    "share": 1.0,
-   "reward": 47.939679163163774,
+   "reward": 48.2270291628874,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait be 26+ on D"
   },
   "0xbbb715f9f823c0750ac7d883df2ef2e6f6e92a314793cfef4ede45db66773110": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.475,
-   "share": 0.3055085542395184,
-   "reward": 44.229019318597715,
+   "mid": 0.46499999999999997,
+   "share": 0.5686559530539169,
+   "reward": 44.242096962270715,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait be 28+ on D"
   },
@@ -20534,7 +20534,7 @@
    "cash": 0.0,
    "mid": 0.37,
    "share": 1.0,
-   "reward": 58.278163111764464,
+   "reward": 58.32126561172301,
    "fills": 0,
    "q": "Will the Central Bank of Chile make no change to the monetary policy rate at the"
   },
@@ -21000,18 +21000,18 @@
   "0x2641479bc6956af081f23643ab9843833466ae3924917ab790b564adc12f8982": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.47,
+   "mid": 0.485,
    "share": 1.0,
-   "reward": 37.98325181819669,
+   "reward": 38.270601817920316,
    "fills": 0,
    "q": "0 ships transit Hormuz on any date by January 31, 2027?"
   },
   "0x9b1553011e72f02f38f542563411afdc048620bcea31924c15855f4ee68f543a": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.28,
-   "share": 1.0,
-   "reward": 81.99488307384745,
+   "mid": 0.38,
+   "share": 0.8756476683937826,
+   "reward": 82.21885909917934,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 42+ on December 31"
   },
@@ -21153,9 +21153,9 @@
   "0x2a939931c880379be0ff462671872a6469cb63a7a7a47871854e876e1446ef7c": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.6699999999999999,
-   "share": 1.0,
-   "reward": 54.020356165334704,
+   "mid": 0.6100000000000001,
+   "share": 0.5277951280449733,
+   "reward": 54.26687741969837,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Malacca Strait be 210+ on Decemb"
   },
@@ -21263,16 +21263,16 @@
    "cash": 0.0,
    "mid": 0.6,
    "share": 1.0,
-   "reward": 38.96696672134448,
+   "reward": 39.2543167210681,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Panama Canal be 26+ on December "
   },
   "0x3947a6152041a45eb3aacd924d3b23370dbcd0cc5f2e8168d6c1afb23f0cfa35": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.46499999999999997,
-   "share": 1.0,
-   "reward": 2.501457050496542,
+   "mid": 0.39,
+   "share": 0.7012448132780088,
+   "reward": 2.7445624177490013,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Panama Canal be 28+ on December "
   },
@@ -21558,9 +21558,9 @@
   "0xbf88d40419110feaf0b30cb34e50132e69ca4f22a93e1b55afe5728b4f5fa12a": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.3495,
+   "mid": 0.349,
    "share": 1.0,
-   "reward": 15.498036014208632,
+   "reward": 15.792569763925332,
    "fills": 0,
    "q": "Will Tyreek Hill sign with the Buffalo Bills in 2026?"
   },
@@ -21686,7 +21686,7 @@
    "cash": 0.0,
    "mid": 0.223,
    "share": 1.0,
-   "reward": 3.89545361256158,
+   "reward": 4.182803612285192,
    "fills": 0,
    "q": "Will Sean Dyche be the next head coach of the England national team?"
   },
@@ -21767,25 +21767,25 @@
    "cash": 0.0,
    "mid": 0.63,
    "share": 1.0,
-   "reward": 6.587809012286078,
+   "reward": 6.6955652621824315,
    "fills": 0,
    "q": "Will Josh Shapiro run but lose the 2028 Democratic nomination?"
   },
   "0x4a3bf1d04d3b497aa509c019de1a8bdf4575539c1a1e081b921a7b08bea1701e": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.43,
+   "mid": 0.41000000000000003,
    "share": 1.0,
-   "reward": 12.792887039879147,
+   "reward": 13.080237039602757,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait reach 30+ b"
   },
   "0x7524362a1711f195cf6720b731ddbf0abd3a733febb535e690464c17e8d75f7a": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.41000000000000003,
+   "mid": 0.42000000000000004,
    "share": 1.0,
-   "reward": 14.731493575473637,
+   "reward": 14.975741075238705,
    "fills": 0,
    "q": "Will Ramee be the second of these Kick streamers to finish GTA VI by December 31"
   },
@@ -21794,7 +21794,7 @@
    "cash": 0.0,
    "mid": 0.445,
    "share": 1.0,
-   "reward": 13.508358613545138,
+   "reward": 13.774157363289477,
    "fills": 0,
    "q": "Will dcampion be the second of these Kick streamers to finish GTA VI by December"
   },
@@ -21803,7 +21803,7 @@
    "cash": 0.0,
    "mid": 0.425,
    "share": 1.0,
-   "reward": 13.361985414660081,
+   "reward": 13.61341666441824,
    "fills": 0,
    "q": "Will Lord Kebun be the second of these Kick streamers to finish GTA VI by Decemb"
   },
@@ -22008,9 +22008,9 @@
   "0x0139e7d1f90572a46505cd2964d2a16e03b3597afa47542f51d97f1fb2606fc4": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.26,
+   "mid": 0.215,
    "share": 1.0,
-   "reward": 10.103795974704683,
+   "reward": 10.428336682366837,
    "fills": 0,
    "q": "Will Joe Dunford join NVIDIA's national security committee by March 31, 2027?"
   },
@@ -22028,7 +22028,7 @@
    "cash": 0.0,
    "mid": 0.29500000000000004,
    "share": 1.0,
-   "reward": 9.437524757704505,
+   "reward": 9.803896007352106,
    "fills": 0,
    "q": "Will no Israeli government be formed after the 2026 Knesset election?"
   },
@@ -22044,9 +22044,9 @@
   "0xa3d8344e1fda781e5f4329c961235a262ab16d75aaacdc96b130637b18e4088a": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.395,
-   "share": 0.180362860192103,
-   "reward": 2.955915590212642,
+   "mid": 0.39,
+   "share": null,
+   "reward": 2.958040015430349,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Malacca Strait be 230+ on Decemb"
   },
@@ -22064,7 +22064,7 @@
    "cash": 0.0,
    "mid": 0.26,
    "share": 1.0,
-   "reward": 6.8956194217542555,
+   "reward": 7.204520671457138,
    "fills": 0,
    "q": "Will the next Israeli government be a unity government?"
   },
@@ -22073,7 +22073,7 @@
    "cash": 0.0,
    "mid": 0.23500000000000001,
    "share": 1.0,
-   "reward": 6.012449075568605,
+   "reward": 6.292615325299124,
    "fills": 0,
    "q": "Will the next Israeli government be supported by the change bloc and Haredi part"
   },
@@ -22082,7 +22082,7 @@
    "cash": 0.0,
    "mid": 0.25,
    "share": 1.0,
-   "reward": 6.546260724914492,
+   "reward": 6.8407944746311955,
    "fills": 0,
    "q": "Will the next Israeli government be supported by the change bloc and Arab partie"
   },
@@ -22109,7 +22109,7 @@
    "cash": 0.0,
    "mid": 0.42000000000000004,
    "share": 1.0,
-   "reward": 2.8298504160151445,
+   "reward": 3.0740979157802135,
    "fills": 0,
    "q": "Will Kaysan be the second of these Kick streamers to finish GTA VI by December 3"
   },
@@ -22117,8 +22117,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.855,
-   "share": 0.0020970830146070487,
-   "reward": 0.9208196607183903,
+   "share": null,
+   "reward": 0.9211081376580045,
    "fills": 0,
    "q": "Will the Republicans win Kentucky in the 2028 Presidential Election?"
   },
@@ -22127,7 +22127,7 @@
    "cash": 0.0,
    "mid": 0.41500000000000004,
    "share": 1.0,
-   "reward": 1.3406067009380576,
+   "reward": 1.5848542007031272,
    "fills": 0,
    "q": "Will xQc be the second of these Kick streamers to finish GTA VI by December 31, "
   }
@@ -98119,17 +98119,30 @@
    "w": 2991920
   },
   {
-   "ts": "2026-11-20T05:31:18.378076+00:00",
-   "dt_h": 0.037,
-   "reward_tick": 1.5019,
-   "reward_total": 57753.52,
+   "ts": "2026-11-20T05:39:39.176669+00:00",
+   "dt_h": 0.179,
+   "reward_tick": 8.3731,
+   "reward_total": 57760.39,
    "mm_value": -680.26,
-   "net": 57073.27,
-   "avg_share": 0.9198,
+   "net": 57080.14,
+   "avg_share": 0.9754,
    "n_markets": 53,
    "fills_total": 659,
    "rebalanced": false,
    "w": 2991921
+  },
+  {
+   "ts": "2026-11-20T05:41:39.054075+00:00",
+   "dt_h": 0.034,
+   "reward_tick": 1.6609,
+   "reward_total": 57762.06,
+   "mm_value": -680.26,
+   "net": 57081.8,
+   "avg_share": 0.9607,
+   "n_markets": 53,
+   "fills_total": 659,
+   "rebalanced": false,
+   "w": 2991922
   }
  ],
  "fills": [
@@ -104065,8 +104078,8 @@
    "ledger": "v4"
   }
  ],
- "reward_total": 57753.52381252332,
- "last_ts": 1795152678.378076,
+ "reward_total": 57762.055827932876,
+ "last_ts": 1795153299.0540755,
  "chosen_at": 1791639880.921448,
  "rebalances": [
   {
@@ -104077,8 +104090,8 @@
   }
  ],
  "last_tick": {
-  "ts": "2026-11-20T05:31:18.378076+00:00",
-  "dt_h": 0.037,
+  "ts": "2026-11-20T05:41:39.054075+00:00",
+  "dt_h": 0.017,
   "markets": [
    {
     "q": "Will Chicago Bears finish the 2026-27 NFL regular ",
@@ -104089,7 +104102,7 @@
    },
    {
     "q": "Will Denver Broncos finish the 2026-27 NFL regular",
-    "mid": 0.484,
+    "mid": 0.478,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -104098,7 +104111,7 @@
     "q": "Will Claude Opus 5.6+ debut at an output token pri",
     "mid": 0.54,
     "share": 1.0,
-    "earned": 0.0214,
+    "earned": 0.0097,
     "inv": 0.0
    },
    {
@@ -104166,7 +104179,7 @@
    },
    {
     "q": "Will MORNING DEW (DONK) - Beyonce win Best R&B Sol",
-    "mid": 0.235,
+    "mid": 0.225,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -104194,21 +104207,21 @@
     "q": "Will DJ Khaled perform at Coachella 2027?",
     "mid": 0.345,
     "share": 0.6645,
-    "earned": 0.001,
+    "earned": 0.0005,
     "inv": 0.0
    },
    {
     "q": "Will the Central Bank of Chile make no change to t",
     "mid": 0.37,
     "share": 1.0,
-    "earned": 0.0092,
+    "earned": 0.0042,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index hit $8.00 (HIGH) by Decem",
-    "mid": 0.565,
+    "mid": 0.675,
     "share": 1.0,
-    "earned": 0.0612,
+    "earned": 0.0278,
     "inv": 0.0
    },
    {
@@ -104227,225 +104240,211 @@
    },
    {
     "q": "Will the Ornn H200 Index hit $5.00 (LOW) by Decemb",
-    "mid": 0.44,
-    "share": 0.7012,
-    "earned": 0.0,
+    "mid": 0.465,
+    "share": 1.0,
+    "earned": 0.0278,
     "inv": 0.0
    },
    {
     "q": "0 ships transit Hormuz on any date by January 31, ",
-    "mid": 0.47,
+    "mid": 0.485,
     "share": 1.0,
-    "earned": 0.0612,
+    "earned": 0.0278,
     "inv": 0.0
    },
    {
     "q": "Will Josh Shapiro run but lose the 2028 Democratic",
     "mid": 0.63,
     "share": 1.0,
-    "earned": 0.023,
+    "earned": 0.0104,
     "inv": 0.0
    },
    {
     "q": "Will Tyreek Hill sign with the Buffalo Bills in 20",
     "mid": 0.349,
     "share": 1.0,
-    "earned": 0.0628,
+    "earned": 0.0285,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ba",
-    "mid": 0.43,
+    "mid": 0.41,
     "share": 1.0,
-    "earned": 0.0612,
+    "earned": 0.0278,
     "inv": 0.0
    },
    {
     "q": "Will Ramee be the second of these Kick streamers t",
-    "mid": 0.41,
+    "mid": 0.42,
     "share": 1.0,
-    "earned": 0.052,
+    "earned": 0.0236,
     "inv": 0.0
    },
    {
     "q": "Will dcampion be the second of these Kick streamer",
     "mid": 0.445,
     "share": 1.0,
-    "earned": 0.0566,
+    "earned": 0.0257,
     "inv": 0.0
    },
    {
     "q": "Will Lord Kebun be the second of these Kick stream",
     "mid": 0.425,
     "share": 1.0,
-    "earned": 0.0536,
+    "earned": 0.0243,
     "inv": 0.0
    },
    {
     "q": "Will Joe Dunford join NVIDIA's national security c",
-    "mid": 0.26,
+    "mid": 0.215,
     "share": 1.0,
-    "earned": 0.0765,
+    "earned": 0.0347,
     "inv": 0.0
    },
    {
     "q": "Will no Israeli government be formed after the 202",
     "mid": 0.295,
     "share": 1.0,
-    "earned": 0.0781,
+    "earned": 0.0354,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
-    "mid": 0.28,
-    "share": 1.0,
-    "earned": 0.0,
+    "mid": 0.38,
+    "share": 0.8756,
+    "earned": 0.0243,
     "inv": 0.0
    },
    {
     "q": "Will the Bank of England increase the Bank Rate by",
     "mid": 0.475,
     "share": 1.0,
-    "earned": 0.1959,
+    "earned": 0.0889,
     "inv": 0.0
    },
    {
     "q": "Will the next Israeli government be a unity govern",
     "mid": 0.26,
     "share": 1.0,
-    "earned": 0.0658,
+    "earned": 0.0299,
     "inv": 0.0
    },
    {
     "q": "Will the next Israeli government be supported by t",
     "mid": 0.235,
     "share": 1.0,
-    "earned": 0.0597,
+    "earned": 0.0271,
     "inv": 0.0
    },
    {
     "q": "Will the next Israeli government be supported by t",
     "mid": 0.25,
     "share": 1.0,
-    "earned": 0.0628,
+    "earned": 0.0285,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the St",
     "mid": 0.435,
     "share": 1.0,
-    "earned": 0.0612,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the 7-day average ship traffic through the Ma",
-    "mid": 0.395,
-    "share": 0.1804,
-    "earned": 0.0014,
+    "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Pa",
     "mid": 0.6,
     "share": 1.0,
-    "earned": 0.0612,
+    "earned": 0.0278,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Pa",
-    "mid": 0.465,
-    "share": 1.0,
-    "earned": 0.0,
+    "mid": 0.39,
+    "share": 0.7012,
+    "earned": 0.0195,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ma",
-    "mid": 0.67,
-    "share": 1.0,
-    "earned": 0.0612,
+    "mid": 0.61,
+    "share": 0.5278,
+    "earned": 0.0147,
     "inv": 0.0
    },
    {
     "q": "Will Sean Dyche be the next head coach of the Engl",
     "mid": 0.223,
     "share": 1.0,
-    "earned": 0.0612,
+    "earned": 0.0278,
     "inv": 0.0
    },
    {
     "q": "Will Kaysan be the second of these Kick streamers ",
     "mid": 0.42,
     "share": 1.0,
-    "earned": 0.052,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the Republicans win Kentucky in the 2028 Pres",
-    "mid": 0.855,
-    "share": 0.0021,
-    "earned": 0.0002,
+    "earned": 0.0236,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ba",
-    "mid": 0.485,
+    "mid": 0.515,
     "share": 1.0,
-    "earned": 0.0612,
+    "earned": 0.0278,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ba",
-    "mid": 0.475,
-    "share": 0.3055,
-    "earned": 0.0023,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the 7-day average ship traffic through the Su",
-    "mid": 0.345,
-    "share": 0.7253,
-    "earned": 0.0444,
+    "mid": 0.465,
+    "share": 0.5687,
+    "earned": 0.002,
     "inv": 0.0
    },
    {
     "q": "Will xQc be the second of these Kick streamers to ",
     "mid": 0.415,
     "share": 1.0,
-    "earned": 0.052,
+    "earned": 0.0236,
     "inv": 0.0
    },
    {
     "q": "Will Diable play for JD Gaming in 2027?",
     "mid": 0.601,
     "share": 1.0,
-    "earned": 0.0413,
+    "earned": 0.0188,
+    "inv": 0.0
+   },
+   {
+    "q": "Will the Reserve Bank of New Zealand make no chang",
+    "mid": 0.545,
+    "share": 1.0,
+    "earned": 0.075,
+    "inv": 0.0
+   },
+   {
+    "q": "Will the Reserve Bank of New Zealand increase the ",
+    "mid": 0.39,
+    "share": 1.0,
+    "earned": 0.0639,
+    "inv": 0.0
+   },
+   {
+    "q": "Will Alphabet\u2019s market capitalization be less than",
+    "mid": 0.403,
+    "share": 1.0,
+    "earned": 0.034,
     "inv": 0.0
    }
   ],
-  "reward_tick": 1.5019,
-  "reward_total": 57753.52,
+  "reward_tick": 0.8656,
+  "reward_total": 57762.06,
   "mm_value": -680.26,
-  "net": 57073.27,
-  "avg_share": 0.9198,
+  "net": 57081.8,
+  "avg_share": 0.9607,
   "n_markets": 53,
   "fills_total": 659,
   "rebalanced": false
  },
  "reviews": [
-  {
-   "ts": "2026-10-30T04:44:51.079061+00:00",
-   "swapped": 3,
-   "out": [
-    "Will the 10-year Japanese government bond yield on",
-    "Will the Ornn H100 Index hit $2.00 (LOW) by Decemb",
-    "Will Juan Pablo Ledezma be arrested in 2026?"
-   ],
-   "in": [
-    "Will the 10-year Japanese government bond yield on",
-    "Will Canada\u2019s 2026 inflation be between 3.0% and 3",
-    "Will the Reserve Bank of New Zealand make no chang"
-   ]
-  },
   {
    "ts": "2026-10-30T05:45:33.687449+00:00",
    "swapped": 6,
@@ -112455,7 +112454,21 @@
     "Will xQc be the second of these Kick streamers to ",
     "Will Diable play for JD Gaming in 2027?"
    ]
+  },
+  {
+   "ts": "2026-11-20T05:35:28.210596+00:00",
+   "swapped": 3,
+   "out": [
+    "Will the Republicans win Kentucky in the 2028 Pres",
+    "Will the 7-day average ship traffic through the Ma",
+    "Will the 7-day average ship traffic through the Su"
+   ],
+   "in": [
+    "Will the Reserve Bank of New Zealand make no chang",
+    "Will the Reserve Bank of New Zealand increase the ",
+    "Will Alphabet\u2019s market capitalization be less than"
+   ]
   }
  ],
- "reviewed_at": 1795149271.6598713
+ "reviewed_at": 1795152928.2105958
 }

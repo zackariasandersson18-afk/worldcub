@@ -589,21 +589,6 @@
    "rate0": 20.0
   },
   {
-   "cond": "0xa8818217726c5c55fdb16c01afd175ba825fd2d7be77ca06773694907989e1b6",
-   "question": "Will the Ornn H100 Index hit $2.25 (LOW) by December 31, 2026?",
-   "yes": "25170369415064222414693894314906702233031416893103651931137825643567355071801",
-   "no": "58107642725287652585087645049026236637181255309404977878640647945260259495282",
-   "rate": 3.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.700000000000003,
-   "est_reward_day": 40.0,
-   "end": "2027-01-01T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 40.0
-  },
-  {
    "cond": "0x4a3bf1d04d3b497aa509c019de1a8bdf4575539c1a1e081b921a7b08bea1701e",
    "question": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait reach 30+ by December 31?",
    "yes": "95987997600346006649009296459736635201104065235763466263194153781064533653409",
@@ -797,6 +782,21 @@
    "end": "2027-01-01T04:59:00Z",
    "share0": 0.39764705882353024,
    "rate0": 40.0
+  },
+  {
+   "cond": "0x0a4c084a59fb7a2d80382f300ddebdcc69adcbcaa644185f89060b0387fb8ff4",
+   "question": "Will AI solve the twin prime conjecture in 2026?",
+   "yes": "67642197954042102335463115551501629949780721679887639626152422749903192524838",
+   "no": "73517211377730235199259977065559056736272856305856210813973268932043757126012",
+   "rate": 300.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.7,
+   "est_reward_day": 300.0,
+   "end": "2027-01-01T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 300.0
   }
  ],
  "positions": {
@@ -1008,9 +1008,9 @@
   "0xa8818217726c5c55fdb16c01afd175ba825fd2d7be77ca06773694907989e1b6": {
    "inv": 0.0,
    "cash": 0.432975000000001,
-   "mid": 0.225,
-   "share": 0.5946516537649544,
-   "reward": 346.1031940838199,
+   "mid": 0.255,
+   "share": null,
+   "reward": 346.1039849392599,
    "fills": 3,
    "q": "Will the Ornn H100 Index hit $2.25 (LOW) by December 31, 2026?",
    "closed_at": 0.64
@@ -1029,8 +1029,8 @@
    "inv": 0.0,
    "cash": -2.9992417699999963,
    "mid": 0.188,
-   "share": 0.9745783823982608,
-   "reward": 909.4992573253257,
+   "share": 0.9718380874042423,
+   "reward": 909.5200323757497,
    "fills": 12,
    "q": "Will the Ornn H200 Index hit $4.00 (LOW) by December 31, 2026?",
    "closed_at": 0.409
@@ -1138,7 +1138,7 @@
    "cash": 0.0,
    "mid": 0.52,
    "share": 1.0,
-   "reward": 160.2027045785277,
+   "reward": 160.3024359373362,
    "fills": 0,
    "q": "Will Claude Opus 5.6+ debut at an output token price of at least $20 by June 30,"
   },
@@ -2072,7 +2072,7 @@
   "0x7a9a68c97682b82da841fa413f4764e86024c49e2c58a01b34cb5d3c5b9b2624": {
    "inv": 20.0,
    "cash": -8.85,
-   "mid": 0.455,
+   "mid": 0.435,
    "share": 1.0,
    "reward": 87.751647885782,
    "fills": 1,
@@ -4128,7 +4128,7 @@
   "0xfafaa706aa77ca7becd5741282e7455659580cbfe62a3881d5020b4b453d5753": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.375,
+   "mid": 0.365,
    "share": 1.0,
    "reward": 9.29485488192705,
    "fills": 0,
@@ -7917,9 +7917,9 @@
   "0x334931805ae11470f59f662e303a65f7c196e2f934749b3fcf0540c959b27b5a": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.35,
+   "mid": 0.33999999999999997,
    "share": 1.0,
-   "reward": 1.0724742881661227,
+   "reward": 1.3574210276189789,
    "fills": 0,
    "q": "Will the 5-year Treasury yield dip below 4.50% before 2027?"
   },
@@ -12023,9 +12023,9 @@
   "0x6cf827720a643edb6480aa0ab04d0010f4e75fdf3a18bfe0be629649a0cba714": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.5449999999999999,
+   "mid": 0.55,
    "share": 1.0,
-   "reward": 819.6193083105347,
+   "reward": 819.9042550499877,
    "fills": 0,
    "q": "Will the Ornn H200 Index hit $8.00 (HIGH) by December 31, 2026?"
   },
@@ -12051,9 +12051,9 @@
   "0x12e7e3aaed06c1ac55f082a0b4282d5f525cdb2106afb1972e9d861bdc7e1649": {
    "inv": 0.0,
    "cash": -0.34185,
-   "mid": 0.495,
+   "mid": 0.5,
    "share": 1.0,
-   "reward": 803.4155564006999,
+   "reward": 803.6449637550063,
    "fills": 1,
    "q": "Will the Ornn H200 Index hit $5.00 (LOW) by December 31, 2026?",
    "closed_at": 0.85
@@ -14817,9 +14817,9 @@
   "0x2252e9b137560e9282281137b7c6ee0ee1cd7505d8efefa3011e86ea243e8f20": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.14500000000000002,
-   "share": 0.10162159630381772,
-   "reward": 239.61490144016446,
+   "mid": 0.15000000000000002,
+   "share": 1.0,
+   "reward": 239.62637824078354,
    "fills": 0,
    "q": "Will the Bank of Russia decrease the key rate by 25 bps at the February meeting?"
   },
@@ -16023,7 +16023,7 @@
   "0x8ea966333094c05db58c2c5af2a21262aad3d3ea3ecae518fa671366978841d2": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.525,
+   "mid": 0.545,
    "share": 1.0,
    "reward": 101.06796161997823,
    "fills": 0,
@@ -19452,7 +19452,7 @@
   "0x1fd8ef1caf742f2be02e897cb4d6b72b45c54f4ea507c4f874c52017e3b44265": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.36,
+   "mid": 0.37,
    "share": 1.0,
    "reward": 25.788417514844074,
    "fills": 0,
@@ -19623,7 +19623,7 @@
   "0xde3b2838acf91270a03d4b4a442bbdcb618bcddb9f8ed75c7b771ecf08ccf7c2": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.1545,
+   "mid": 0.131,
    "share": 1.0,
    "reward": 8.511376862470751,
    "fills": 0,
@@ -19849,7 +19849,7 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.185,
-   "share": 0.9056806002143621,
+   "share": 0.8637137989778533,
    "reward": 4.548629093992491,
    "fills": 0,
    "q": "Will Do Not Disturb - Young Miko win Best Musica Urbana Album at the 69th Annual"
@@ -19965,9 +19965,9 @@
   "0x811a32e2c8ccd245d85702955e6f312782017d96c58cf7d0bcb7550656f7665f": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.33499999999999996,
-   "share": 0.6887464000434723,
-   "reward": 6.991486997993828,
+   "mid": 0.33999999999999997,
+   "share": 0.7788018433179733,
+   "reward": 6.996899795197882,
    "fills": 0,
    "q": "Will DJ Khaled perform at Coachella 2027?"
   },
@@ -20361,9 +20361,9 @@
   "0xb5179c7a05ae44799060e3103369b60d0e141f1b4d96914e9860496a08247600": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.6100000000000001,
-   "share": 0.5399361022364175,
-   "reward": 144.84422833173377,
+   "mid": 0.605,
+   "share": 0.39764705882353024,
+   "reward": 144.85838837333483,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 38+ on December 31"
   },
@@ -20435,7 +20435,7 @@
    "cash": 0.0,
    "mid": 0.315,
    "share": 0.6014234875444835,
-   "reward": 31.422982069887183,
+   "reward": 31.444251374823757,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait be 30+ on D"
   },
@@ -20469,9 +20469,9 @@
   "0x835c3c9a2a78640a2b6e1e8d64677c35f3ba1430525d4a08863982b6ccce386e": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.52,
-   "share": 0.4152592626568089,
-   "reward": 50.450083799840655,
+   "mid": 0.54,
+   "share": 1.0,
+   "reward": 50.46464922936478,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait be 26+ on D"
   },
@@ -20532,9 +20532,9 @@
   "0xb2fc207f27057b2528f3369f660910b2764a07980ef86907a1a3bdf09a7e7002": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.385,
+   "mid": 0.375,
    "share": 1.0,
-   "reward": 61.5164514069175,
+   "reward": 61.559193417835424,
    "fills": 0,
    "q": "Will the Central Bank of Chile make no change to the monetary policy rate at the"
   },
@@ -21063,7 +21063,7 @@
   "0x7ad5206bbe6e0f4f9541e5b7ec723619bae7557b1555872f920fc3055726b4ce": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.31,
+   "mid": 0.297,
    "share": 1.0,
    "reward": 2.1251932211496207,
    "fills": 0,
@@ -21774,16 +21774,16 @@
   "0x4a3bf1d04d3b497aa509c019de1a8bdf4575539c1a1e081b921a7b08bea1701e": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.445,
+   "mid": 0.595,
    "share": 1.0,
-   "reward": 24.552828901512058,
+   "reward": 24.810162367481183,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait reach 30+ b"
   },
   "0x7524362a1711f195cf6720b731ddbf0abd3a733febb535e690464c17e8d75f7a": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.445,
+   "mid": 0.44,
    "share": 1.0,
    "reward": 33.44092037180233,
    "fills": 0,
@@ -22170,7 +22170,7 @@
   "0xa28e8240e31fa7a8db54c92864a1e99235ffdf1c6275224d04b77fe7784124e4": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.1885,
+   "mid": 0.1865,
    "share": 1.0,
    "reward": 8.701023350741574,
    "fills": 0,
@@ -22188,7 +22188,7 @@
   "0xf1bd4bf43248868f8e987dd8b7f00e2e5d0d02dcb748f950d1073556ce1e15df": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.655,
+   "mid": 0.65,
    "share": 1.0,
    "reward": 3.951425856153306,
    "fills": 0,
@@ -22287,7 +22287,7 @@
   "0xb4f9612dfc350f888c5884cff9b7f6aa318abc65045b7d143e77f1b4bdcaf43b": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.285,
+   "mid": 0.225,
    "share": 1.0,
    "reward": 4.600737872372042,
    "fills": 0,
@@ -22305,9 +22305,9 @@
   "0xd32f322024335e79142cddfb00b99d06eaaadd200bb51a5c86abe332481e1f1a": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.28300000000000003,
+   "mid": 0.28250000000000003,
    "share": 1.0,
-   "reward": 4.131220962441077,
+   "reward": 4.238075989735898,
    "fills": 0,
    "q": "Will Cristiano Ronaldo join the Qatar Stars League next?"
   },
@@ -22350,7 +22350,7 @@
   "0x33ee7b84a69dadb3b55399353e2ecd4edf43afce8ae0b4de7befb987a7199ccd": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.365,
+   "mid": 0.375,
    "share": 1.0,
    "reward": 3.202941422018189,
    "fills": 0,
@@ -22386,16 +22386,16 @@
   "0x0da2188f18843313a300ef526855bb3909f3dc8d0d9aa18e39597eace7453504": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.40599999999999997,
+   "mid": 0.40499999999999997,
    "share": 1.0,
-   "reward": 1.0042787583744026,
+   "reward": 1.1253811226418668,
    "fills": 0,
    "q": "Will Diable play for Bilibili Gaming in 2027?"
   },
   "0x98b3f467c09497bdc58e3227b09b87ee49120c035f8b361f6e351b320fb42b65": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.37,
+   "mid": 0.35500000000000004,
    "share": 1.0,
    "reward": 1.2380457475395112,
    "fills": 0,
@@ -22413,7 +22413,7 @@
   "0x7a4618278354fd62e390889dadd620eb60d60459bffe1d6fb478009278e2add8": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.35,
+   "mid": 0.36,
    "share": 1.0,
    "reward": 1.1577181350274213,
    "fills": 0,
@@ -22422,20 +22422,29 @@
   "0xf062c34322fd3ff98b9eb32a5d6cc3ce687d61a332b7093dc7c3df3239848392": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.6045,
-   "share": 1.0,
-   "reward": 1.2275527117815281,
+   "mid": 0.597,
+   "share": 0.20095210611700226,
+   "reward": 1.3872054048000986,
    "fills": 0,
    "q": "Will Luka Doncic lead the NBA in three-pointers made per game in 2026-27?"
   },
   "0x082d1f4afd04d5209d9627ec79c30f0ad27e5442c9d515d5f600e656faf87e4d": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.1485,
+   "mid": 0.148,
    "share": 1.0,
    "reward": 0.3490017880085441,
    "fills": 0,
    "q": "Will Gigliola Haveriku win Festivali i K\u00ebng\u00ebs 65?"
+  },
+  "0x0a4c084a59fb7a2d80382f300ddebdcc69adcbcaa644185f89060b0387fb8ff4": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.445,
+   "share": 1.0,
+   "reward": 1.2698332452111774,
+   "fills": 0,
+   "q": "Will AI solve the twin prime conjecture in 2026?"
   }
  },
  "history": [
@@ -99439,17 +99448,30 @@
    "w": 2991998
   },
   {
-   "ts": "2026-11-20T18:36:20.264970+00:00",
-   "dt_h": 0.117,
-   "reward_tick": 2.3706,
-   "reward_total": 58141.21,
+   "ts": "2026-11-20T18:39:29.785501+00:00",
+   "dt_h": 0.171,
+   "reward_tick": 2.8532,
+   "reward_total": 58141.69,
    "mm_value": -679.56,
-   "net": 57461.65,
-   "avg_share": 0.9261,
+   "net": 57462.13,
+   "avg_share": 0.9361,
    "n_markets": 53,
    "fills_total": 659,
    "rebalanced": false,
    "w": 2991999
+  },
+  {
+   "ts": "2026-11-20T18:46:35.749927+00:00",
+   "dt_h": 0.12,
+   "reward_tick": 2.4624,
+   "reward_total": 58144.15,
+   "mm_value": -679.96,
+   "net": 57464.2,
+   "avg_share": 0.9492,
+   "n_markets": 53,
+   "fills_total": 659,
+   "rebalanced": false,
+   "w": 2992000
   }
  ],
  "fills": [
@@ -105385,8 +105407,8 @@
    "ledger": "v4"
   }
  ],
- "reward_total": 58141.20672763769,
- "last_ts": 1795199780.2649696,
+ "reward_total": 58144.151728916135,
+ "last_ts": 1795200395.7499268,
  "chosen_at": 1791639880.921448,
  "rebalances": [
   {
@@ -105397,12 +105419,12 @@
   }
  ],
  "last_tick": {
-  "ts": "2026-11-20T18:36:20.264970+00:00",
-  "dt_h": 0.032,
+  "ts": "2026-11-20T18:46:35.749927+00:00",
+  "dt_h": 0.017,
   "markets": [
    {
     "q": "Will Chicago Bears finish the 2026-27 NFL regular ",
-    "mid": 0.455,
+    "mid": 0.435,
     "share": 1.0,
     "earned": 0.0,
     "inv": 20.0
@@ -105418,7 +105440,7 @@
     "q": "Will Claude Opus 5.6+ debut at an output token pri",
     "mid": 0.52,
     "share": 1.0,
-    "earned": 0.0184,
+    "earned": 0.0098,
     "inv": 0.0
    },
    {
@@ -105438,7 +105460,7 @@
    },
    {
     "q": "Will Marine Le Pen hit 42% in any poll before the ",
-    "mid": 0.525,
+    "mid": 0.545,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -105452,7 +105474,7 @@
    },
    {
     "q": "Will Workin' Man: Willie Sings Merle - Willie Nels",
-    "mid": 0.36,
+    "mid": 0.37,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -105463,7 +105485,7 @@
    },
    {
     "q": "Will Paradise win Best Television Series \u2013 Drama a",
-    "mid": 0.154,
+    "mid": 0.131,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -105502,7 +105524,7 @@
    {
     "q": "Will Do Not Disturb - Young Miko win Best Musica U",
     "mid": 0.185,
-    "share": 0.9057,
+    "share": 0.8637,
     "earned": 0.0,
     "inv": 0.0
    },
@@ -105512,35 +105534,35 @@
    },
    {
     "q": "Will DJ Khaled perform at Coachella 2027?",
-    "mid": 0.335,
-    "share": 0.6887,
-    "earned": 0.0009,
+    "mid": 0.34,
+    "share": 0.7788,
+    "earned": 0.0005,
     "inv": 0.0
    },
    {
     "q": "Will the Central Bank of Chile make no change to t",
-    "mid": 0.385,
+    "mid": 0.375,
     "share": 1.0,
-    "earned": 0.0079,
+    "earned": 0.0042,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index hit $8.00 (HIGH) by Decem",
-    "mid": 0.545,
+    "mid": 0.55,
     "share": 1.0,
-    "earned": 0.0526,
+    "earned": 0.0279,
     "inv": 0.0
    },
    {
     "q": "Will Dune: Part Three win Best Sound at the 99th A",
-    "mid": 0.375,
+    "mid": 0.365,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will the Central Bank of Chile increase the moneta",
-    "mid": 0.31,
+    "mid": 0.297,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -105554,7 +105576,7 @@
    },
    {
     "q": "Will Ramee be the second of these Kick streamers t",
-    "mid": 0.445,
+    "mid": 0.44,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -105589,7 +105611,7 @@
    },
    {
     "q": "Will fewer than two of these Kick streamers finish",
-    "mid": 0.189,
+    "mid": 0.186,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -105603,16 +105625,16 @@
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
-    "mid": 0.61,
-    "share": 0.5399,
-    "earned": 0.0023,
+    "mid": 0.605,
+    "share": 0.3976,
+    "earned": 0.0014,
     "inv": 0.0
    },
    {
     "q": "Will Cristiano Ronaldo join the Qatar Stars League",
     "mid": 0.283,
     "share": 1.0,
-    "earned": 0.0197,
+    "earned": 0.0105,
     "inv": 0.0
    },
    {
@@ -105624,7 +105646,7 @@
    },
    {
     "q": "Will xQc be the second of these streamers to finis",
-    "mid": 0.365,
+    "mid": 0.375,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -105632,48 +105654,41 @@
    {
     "q": "Will the Ornn H200 Index hit $4.00 (LOW) by Decemb",
     "mid": 0.188,
-    "share": 0.9746,
-    "earned": 0.0038,
+    "share": 0.9718,
+    "earned": 0.002,
     "inv": 0.0
    },
    {
     "q": "Will Iran target Bahrain by December 31, 2026?",
-    "mid": 0.655,
+    "mid": 0.65,
     "share": 1.0,
     "earned": 0.0,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the Ornn H100 Index hit $2.25 (LOW) by Decemb",
-    "mid": 0.225,
-    "share": 0.5947,
-    "earned": 0.0022,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ba",
-    "mid": 0.445,
+    "mid": 0.595,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0279,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ba",
     "mid": 0.315,
     "share": 0.6014,
-    "earned": 0.004,
+    "earned": 0.0021,
     "inv": 0.0
    },
    {
     "q": "Will Diable play for Bilibili Gaming in 2027?",
-    "mid": 0.406,
+    "mid": 0.405,
     "share": 1.0,
-    "earned": 0.0223,
+    "earned": 0.0119,
     "inv": 0.0
    },
    {
     "q": "Will IlloJuan be the second of these streamers to ",
-    "mid": 0.37,
+    "mid": 0.355,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -105687,35 +105702,35 @@
    },
    {
     "q": "Will RRaenee be the second of these streamers to f",
-    "mid": 0.35,
+    "mid": 0.36,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will the 5-year Treasury yield dip below 4.50% bef",
-    "mid": 0.35,
+    "mid": 0.34,
     "share": 1.0,
-    "earned": 0.0526,
+    "earned": 0.0279,
     "inv": 0.0
    },
    {
     "q": "Will Luka Doncic lead the NBA in three-pointers ma",
-    "mid": 0.605,
-    "share": 1.0,
-    "earned": 0.0447,
+    "mid": 0.597,
+    "share": 0.201,
+    "earned": 0.0048,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index hit $5.00 (LOW) by Decemb",
-    "mid": 0.495,
+    "mid": 0.5,
     "share": 1.0,
-    "earned": 0.0526,
+    "earned": 0.0279,
     "inv": 0.0
    },
    {
     "q": "Will Iran target Oman by December 31, 2026?",
-    "mid": 0.285,
+    "mid": 0.225,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -105729,43 +105744,36 @@
    },
    {
     "q": "Will the Bank of Russia decrease the key rate by 2",
-    "mid": 0.145,
-    "share": 0.1016,
-    "earned": 0.0002,
+    "mid": 0.15,
+    "share": 1.0,
+    "earned": 0.0014,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ba",
-    "mid": 0.52,
-    "share": 0.4153,
-    "earned": 0.0027,
+    "mid": 0.54,
+    "share": 1.0,
+    "earned": 0.0015,
+    "inv": 0.0
+   },
+   {
+    "q": "Will AI solve the twin prime conjecture in 2026?",
+    "mid": 0.445,
+    "share": 1.0,
+    "earned": 0.2092,
     "inv": 0.0
    }
   ],
-  "reward_tick": 0.287,
-  "reward_total": 58141.21,
-  "mm_value": -679.56,
-  "net": 57461.65,
-  "avg_share": 0.9261,
+  "reward_tick": 0.3707,
+  "reward_total": 58144.15,
+  "mm_value": -679.96,
+  "net": 57464.2,
+  "avg_share": 0.9492,
   "n_markets": 53,
   "fills_total": 659,
   "rebalanced": false
  },
  "reviews": [
-  {
-   "ts": "2026-10-30T17:53:33.964082+00:00",
-   "swapped": 3,
-   "out": [
-    "Will Justin Bieber appear at the 2027 Big Game hal",
-    "Will Miley Cyrus appear at the 2027 Big Game halft",
-    "Will Kanye West appear at the 2027 Big Game halfti"
-   ],
-   "in": [
-    "Will Anthropic be the #2 AI lab at the end of Nove",
-    "Will Russia capture all of Bilytske by November 30",
-    "Will the Reserve Bank of Australia increase the ca"
-   ]
-  },
   {
    "ts": "2026-10-30T18:54:21.451001+00:00",
    "swapped": 5,
@@ -113841,7 +113849,17 @@
     "Will the Bank of Russia decrease the key rate by 2",
     "Will the 7-day average ship traffic through the Ba"
    ]
+  },
+  {
+   "ts": "2026-11-20T18:40:30.037952+00:00",
+   "swapped": 1,
+   "out": [
+    "Will the Ornn H100 Index hit $2.25 (LOW) by Decemb"
+   ],
+   "in": [
+    "Will AI solve the twin prime conjecture in 2026?"
+   ]
   }
  ],
- "reviewed_at": 1795196415.506833
+ "reviewed_at": 1795200030.0379522
 }

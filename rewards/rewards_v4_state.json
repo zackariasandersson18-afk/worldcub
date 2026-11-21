@@ -424,36 +424,6 @@
    "rate0": 17.0
   },
   {
-   "cond": "0xea2590e990456ee92ecdce851ccce6f0164c46b39044f308da5e84e75e443c57",
-   "question": "Will the 2-year Treasury yield hit 4.90% before 2027?",
-   "yes": "64347331751948650892055452974723137417595315656612023941543186050978341140121",
-   "no": "80222020791697906795622958063980319927633849693725268430667166552757030444226",
-   "rate": 40.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.700000000000003,
-   "est_reward_day": 40.0,
-   "end": "2027-01-01T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 40.0
-  },
-  {
-   "cond": "0x52d3fe6349e30bb8dbca9c5485fa2a76dda92de75e7e17164473da99a01cafa8",
-   "question": "Will the 7-day average ship traffic through the Strait of Hormuz be 4+ on December 31?",
-   "yes": "57509727190721575496267891220332521843170027173631170823031493215202727780321",
-   "no": "11854117532988087734163263288399410715925510752621310600885489019446384060626",
-   "rate": 5.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.700000000000003,
-   "est_reward_day": 40.0,
-   "end": "2027-01-01T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 40.0
-  },
-  {
    "cond": "0x16da0ef6c2f804b49bdf6985d281d5f92551c0d2b5a465b2733f7e885d08ad99",
    "question": "Will Diable play for JD Gaming in 2027?",
    "yes": "25347245891397225614423330859788612510000101237594639326828126042396858085506",
@@ -739,51 +709,6 @@
    "rate0": 15.0
   },
   {
-   "cond": "0xe4bd4379affdaaa1dda5a47c09538c531b163b7e46f15e6271113c4b8bb7fa4d",
-   "question": "Will the Ornn H100 Index hit $1.50 (LOW) by December 31, 2026?",
-   "yes": "2389327902493939139660017678008283304451660109940306722985794307416328412989",
-   "no": "90809552319419172780474982142048463183948633172424198726431844061235718573983",
-   "rate": 40.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.7,
-   "est_reward_day": 40.0,
-   "end": "2027-01-01T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 40.0
-  },
-  {
-   "cond": "0xa8818217726c5c55fdb16c01afd175ba825fd2d7be77ca06773694907989e1b6",
-   "question": "Will the Ornn H100 Index hit $2.25 (LOW) by December 31, 2026?",
-   "yes": "25170369415064222414693894314906702233031416893103651931137825643567355071801",
-   "no": "58107642725287652585087645049026236637181255309404977878640647945260259495282",
-   "rate": 3.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.7,
-   "est_reward_day": 28.049792531120367,
-   "end": "2027-01-01T04:59:00Z",
-   "share0": 0.7012448132780091,
-   "rate0": 40.0
-  },
-  {
-   "cond": "0x19c2a2656e90c2d3a8980fa40a74b157ff336072007613a6239c4bc618894c04",
-   "question": "Will Josh Shapiro run but lose the 2028 Democratic nomination?",
-   "yes": "13223865585397082726361125622023044870984470700319850833352012694946733919170",
-   "no": "87057577750786825148643355195948926003234847103713261690704439593777235144997",
-   "rate": 15.0,
-   "v": 4.5,
-   "min_size": 20.0,
-   "d": 0.0225,
-   "collateral": 19.1,
-   "est_reward_day": 15.0,
-   "end": "2028-11-08T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 15.0
-  },
-  {
    "cond": "0x115205593f7bd4940a4e39dccd6c06ade0e8dacba2301c25afc2658fd44d85da",
    "question": "Will Andy Beshear run but lose the 2028 Democratic nomination?",
    "yes": "83422984593529645384487884228188049831324029716639103878705659547059429591344",
@@ -797,6 +722,81 @@
    "end": "2028-11-08T04:59:00Z",
    "share0": 1.0,
    "rate0": 15.0
+  },
+  {
+   "cond": "0xf972d088695984d8c9ea0ca83e9af3b092be93439d40a91d550df126669b7095",
+   "question": "Will China GDP growth in Q4 2026 be between 4.3% and 4.6%?",
+   "yes": "19874197752434895325664346035095920675489528429099740587233466738926122311549",
+   "no": "59546859156572854582523556687317003102604353319495620174826452573169216713934",
+   "rate": 112.0,
+   "v": 4.5,
+   "min_size": 20.0,
+   "d": 0.0225,
+   "collateral": 19.1,
+   "est_reward_day": 93.52577319587651,
+   "end": "2027-02-01T04:59:00Z",
+   "share0": 0.8350515463917546,
+   "rate0": 112.0
+  },
+  {
+   "cond": "0xad1aec1613c03601209eb3447ddfdec82cd97b75b70614a308a2e9b0e8f3b05f",
+   "question": "Will China GDP growth in Q4 2026 be between 4.6% and 4.9%?",
+   "yes": "67486562792953876274515206363848418642673398777742288609797513289002439530673",
+   "no": "35203681780512799152731675955573550326827715822308071910637005208944183161663",
+   "rate": 88.0,
+   "v": 4.5,
+   "min_size": 20.0,
+   "d": 0.0225,
+   "collateral": 19.1,
+   "est_reward_day": 80.08988764044946,
+   "end": "2027-02-01T04:59:00Z",
+   "share0": 0.910112359550562,
+   "rate0": 88.0
+  },
+  {
+   "cond": "0x2a939931c880379be0ff462671872a6469cb63a7a7a47871854e876e1446ef7c",
+   "question": "Will the 7-day average ship traffic through the Malacca Strait be 210+ on December 31?",
+   "yes": "57583138483420093968308122283726593009359488283870004730247051454141826420455",
+   "no": "103815542316413238640347282673847495724482473028267320231164407196865319270703",
+   "rate": 40.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.7,
+   "est_reward_day": 40.0,
+   "end": "2027-01-01T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 40.0
+  },
+  {
+   "cond": "0xf7483262455459dfcbebb6e3badcaf8cc62ff3a22767592259f0b751e4957388",
+   "question": "Will Patrik Schick (Leverkusen) be the top goalscorer of the 2026-27 Bundesliga season?",
+   "yes": "10894840884370805155441543197700465452460991323652532885239899539654635672909",
+   "no": "76771420746884806492659580008189335760633134396129167261564740195808725224881",
+   "rate": 33.0,
+   "v": 4.5,
+   "min_size": 20.0,
+   "d": 0.0225,
+   "collateral": 19.1,
+   "est_reward_day": 33.0,
+   "end": "2027-06-15T03:59:00Z",
+   "share0": 1.0,
+   "rate0": 33.0
+  },
+  {
+   "cond": "0xa3f56dcef9d844bad3a15f19de864aaa1deafda3ebc7c1f75c62bb0d4ab145e0",
+   "question": "Will David Lisnard receive less than 7% of the vote in the first round of the 2027 French presidential election?",
+   "yes": "102014175163688340847063368252957731552481658965754259609692529681745347537028",
+   "no": "32142165101226352451860043315860530681579282149002763666767818318870694763878",
+   "rate": 29.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.700000000000003,
+   "est_reward_day": 29.0,
+   "end": "2027-04-18T23:59:00Z",
+   "share0": 1.0,
+   "rate0": 29.0
   }
  ],
  "positions": {
@@ -1008,9 +1008,9 @@
   "0xa8818217726c5c55fdb16c01afd175ba825fd2d7be77ca06773694907989e1b6": {
    "inv": 0.0,
    "cash": 0.432975000000001,
-   "mid": 0.265,
-   "share": 0.09912023460410564,
-   "reward": 346.1275972135283,
+   "mid": 0.26,
+   "share": null,
+   "reward": 346.12868828359996,
    "fills": 3,
    "q": "Will the Ornn H100 Index hit $2.25 (LOW) by December 31, 2026?",
    "closed_at": 0.64
@@ -1030,7 +1030,7 @@
    "cash": -2.9992417699999963,
    "mid": 0.38649999999999995,
    "share": 1.0,
-   "reward": 925.3144033705154,
+   "reward": 925.5961737176295,
    "fills": 12,
    "q": "Will the Ornn H200 Index hit $4.00 (LOW) by December 31, 2026?",
    "closed_at": 0.409
@@ -1138,7 +1138,7 @@
    "cash": 0.0,
    "mid": 0.525,
    "share": 1.0,
-   "reward": 171.72267072317226,
+   "reward": 171.82129034466217,
    "fills": 0,
    "q": "Will Claude Opus 5.6+ debut at an output token price of at least $20 by June 30,"
   },
@@ -2072,7 +2072,7 @@
   "0x7a9a68c97682b82da841fa413f4764e86024c49e2c58a01b34cb5d3c5b9b2624": {
    "inv": 20.0,
    "cash": -8.85,
-   "mid": 0.38,
+   "mid": 0.42,
    "share": 1.0,
    "reward": 87.751647885782,
    "fills": 1,
@@ -4522,7 +4522,7 @@
   "0x5d15579a3a31d6220eb8d33d167788db82976f14c856768a5e37e51afdaeb279": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.475,
+   "mid": 0.476,
    "share": 1.0,
    "reward": 17.59805527737572,
    "fills": 0,
@@ -4568,9 +4568,9 @@
   "0xe4bd4379affdaaa1dda5a47c09538c531b163b7e46f15e6271113c4b8bb7fa4d": {
    "inv": 0.0,
    "cash": -1.35406,
-   "mid": 0.1895,
-   "share": 1.0,
-   "reward": 17.58830549415538,
+   "mid": 0.034,
+   "share": null,
+   "reward": 17.675721134045947,
    "fills": 1,
    "q": "Will the Ornn H100 Index hit $1.50 (LOW) by December 31, 2026?",
    "closed_at": 0.205
@@ -7720,9 +7720,9 @@
   "0xf972d088695984d8c9ea0ca83e9af3b092be93439d40a91d550df126669b7095": {
    "inv": 0.0,
    "cash": -0.5715726749999996,
-   "mid": 0.395,
-   "share": null,
-   "reward": 18.82612960645941,
+   "mid": 0.5549999999999999,
+   "share": 0.08871851040525784,
+   "reward": 18.955063267350184,
    "fills": 1,
    "q": "Will China GDP growth in Q4 2026 be between 4.3% and 4.6%?",
    "closed_at": 0.3
@@ -7739,9 +7739,9 @@
   "0xad1aec1613c03601209eb3447ddfdec82cd97b75b70614a308a2e9b0e8f3b05f": {
    "inv": 0.0,
    "cash": 2.9500000000000006,
-   "mid": 0.12000000000000001,
-   "share": null,
-   "reward": 10.887804814335833,
+   "mid": 0.38,
+   "share": 0.02821316614420065,
+   "reward": 10.92491817992352,
    "fills": 1,
    "q": "Will China GDP growth in Q4 2026 be between 4.6% and 4.9%?",
    "closed_at": 0.14
@@ -12025,7 +12025,7 @@
    "cash": 0.0,
    "mid": 0.465,
    "share": 1.0,
-   "reward": 852.4499520871483,
+   "reward": 852.7317224342625,
    "fills": 0,
    "q": "Will the Ornn H200 Index hit $8.00 (HIGH) by December 31, 2026?"
   },
@@ -12051,9 +12051,9 @@
   "0x12e7e3aaed06c1ac55f082a0b4282d5f525cdb2106afb1972e9d861bdc7e1649": {
    "inv": 0.0,
    "cash": -0.34185,
-   "mid": 0.475,
-   "share": 0.840796019900499,
-   "reward": 811.1359593271804,
+   "mid": 0.48,
+   "share": 0.4579945799458001,
+   "reward": 811.2132732105373,
    "fills": 1,
    "q": "Will the Ornn H200 Index hit $5.00 (LOW) by December 31, 2026?",
    "closed_at": 0.85
@@ -14674,7 +14674,7 @@
    "cash": -7.07,
    "mid": 0.32899999999999996,
    "share": 1.0,
-   "reward": 199.18015741767908,
+   "reward": 199.2717327804911,
    "fills": 1,
    "q": "Will Diable play for JD Gaming in 2027?",
    "closed_at": 0.024
@@ -16023,7 +16023,7 @@
   "0x8ea966333094c05db58c2c5af2a21262aad3d3ea3ecae518fa671366978841d2": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.52,
+   "mid": 0.515,
    "share": 1.0,
    "reward": 101.06796161997823,
    "fills": 0,
@@ -16725,18 +16725,18 @@
   "0x240a543e8137917193717da1217bc549cd9c5b35a92dd03e427e0637e5ad6d27": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.47,
-   "share": 0.89224747812498,
-   "reward": 4.53278451728533,
+   "mid": 0.46499999999999997,
+   "share": 0.6377358490566022,
+   "reward": 4.725597173958033,
    "fills": 0,
    "q": "Will the 5-year Treasury yield hit 5.00% before 2027?"
   },
   "0xea2590e990456ee92ecdce851ccce6f0164c46b39044f308da5e84e75e443c57": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.56,
-   "share": 0.5174652165392853,
-   "reward": 20.926914430833982,
+   "mid": 0.5700000000000001,
+   "share": null,
+   "reward": 20.953351556725266,
    "fills": 0,
    "q": "Will the 2-year Treasury yield hit 4.90% before 2027?"
   },
@@ -18039,7 +18039,7 @@
   "0xe43ebfb9c7af7e7560cf67dffd4431864a59f9876e0bc057bddb846bdb612d68": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.277,
+   "mid": 0.2785,
    "share": 1.0,
    "reward": 76.87070843404608,
    "fills": 0,
@@ -18651,9 +18651,9 @@
   "0x4e315963ad8e7616243ade550951e28c5e7f4a241bfaec272a3d5481b316e3ed": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.37,
-   "share": 1.0,
-   "reward": 40.0331474901386,
+   "mid": 0.36,
+   "share": 0.1277238946970652,
+   "reward": 40.04340177014614,
    "fills": 0,
    "q": "Will the 2-year Treasury yield dip below 4.40% before 2027?"
   },
@@ -19364,7 +19364,7 @@
    "cash": 0.0,
    "mid": 0.245,
    "share": 0.21786211519620502,
-   "reward": 9.669138822729368,
+   "reward": 9.673610333606543,
    "fills": 0,
    "q": "Will the 30-year Treasury yield hit 5.60% before 2027?"
   },
@@ -20343,9 +20343,9 @@
   "0x52d3fe6349e30bb8dbca9c5485fa2a76dda92de75e7e17164473da99a01cafa8": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.43999999999999995,
-   "share": 0.17733473242392467,
-   "reward": 114.0680416115205,
+   "mid": 0.44999999999999996,
+   "share": null,
+   "reward": 114.06960202085423,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Strait of Hormuz be 4+ on Decemb"
   },
@@ -20370,9 +20370,9 @@
   "0x27ce2fe6452e02bbc4e767d77eae732b3999d8500268eb67a1adcf577b82c9bc": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.29500000000000004,
+   "mid": 0.25,
    "share": 1.0,
-   "reward": 31.13009875378277,
+   "reward": 31.411869100896734,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Strait of Hormuz be 5+ on Decemb"
   },
@@ -20532,9 +20532,9 @@
   "0xb2fc207f27057b2528f3369f660910b2764a07980ef86907a1a3bdf09a7e7002": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.375,
+   "mid": 0.385,
    "share": 1.0,
-   "reward": 66.3463977411966,
+   "reward": 66.38866329326368,
    "fills": 0,
    "q": "Will the Central Bank of Chile make no change to the monetary policy rate at the"
   },
@@ -21063,7 +21063,7 @@
   "0x7ad5206bbe6e0f4f9541e5b7ec723619bae7557b1555872f920fc3055726b4ce": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.2715,
+   "mid": 0.2685,
    "share": 1.0,
    "reward": 2.1251932211496207,
    "fills": 0,
@@ -21153,9 +21153,9 @@
   "0x2a939931c880379be0ff462671872a6469cb63a7a7a47871854e876e1446ef7c": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.615,
-   "share": null,
-   "reward": 57.1972088486107,
+   "mid": 0.7150000000000001,
+   "share": 1.0,
+   "reward": 57.308190717977126,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Malacca Strait be 210+ on Decemb"
   },
@@ -21766,8 +21766,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.605,
-   "share": 0.06629649758058684,
-   "reward": 23.100857692881,
+   "share": null,
+   "reward": 23.103883718443115,
    "fills": 0,
    "q": "Will Josh Shapiro run but lose the 2028 Democratic nomination?"
   },
@@ -22045,8 +22045,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.375,
-   "share": 0.8407960199004981,
-   "reward": 3.8557020015503745,
+   "share": 0.29869211735595635,
+   "reward": 3.8774163924271097,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Malacca Strait be 230+ on Decemb"
   },
@@ -22190,7 +22190,7 @@
    "cash": 0.0,
    "mid": 0.77,
    "share": 1.0,
-   "reward": 19.791339591222957,
+   "reward": 19.932224764779935,
    "fills": 0,
    "q": "Will Iran target Bahrain by December 31, 2026?"
   },
@@ -22215,9 +22215,9 @@
   "0xb3dd9d2ac3e802fb87f8fb041f35286428424a217866b87840ce663f5ee26ce9": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.715,
+   "mid": 0.72,
    "share": 1.0,
-   "reward": 5.111256832096042,
+   "reward": 5.266221506357613,
    "fills": 0,
    "q": "Will Iran target Iraq by December 31, 2026?"
   },
@@ -22242,9 +22242,9 @@
   "0x260e6ed1ceede2d9e4eded305732f16388e60dcba9df7c35243ef5e9457b551d": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.765,
+   "mid": 0.78,
    "share": 1.0,
-   "reward": 20.363744848522682,
+   "reward": 20.50463002207966,
    "fills": 0,
    "q": "Will Iran target Kuwait by December 31, 2026?"
   },
@@ -22260,9 +22260,9 @@
   "0xa3f56dcef9d844bad3a15f19de864aaa1deafda3ebc7c1f75c62bb0d4ab145e0": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.21000000000000002,
-   "share": null,
-   "reward": 2.2699615591002598,
+   "mid": 0.28,
+   "share": 1.0,
+   "reward": 2.3469442065721133,
    "fills": 0,
    "q": "Will David Lisnard receive less than 7% of the vote in the first round of the 20"
   },
@@ -22305,9 +22305,9 @@
   "0xd32f322024335e79142cddfb00b99d06eaaadd200bb51a5c86abe332481e1f1a": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.309,
+   "mid": 0.302,
    "share": 1.0,
-   "reward": 18.706346199780196,
+   "reward": 18.833142855981478,
    "fills": 0,
    "q": "Will Cristiano Ronaldo join the Qatar Stars League next?"
   },
@@ -22386,9 +22386,9 @@
   "0x0da2188f18843313a300ef526855bb3909f3dc8d0d9aa18e39597eace7453504": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.5745,
+   "mid": 0.5755,
    "share": 1.0,
-   "reward": 13.51899640399563,
+   "reward": 13.638748801519064,
    "fills": 0,
    "q": "Will Diable play for Bilibili Gaming in 2027?"
   },
@@ -22431,9 +22431,9 @@
   "0x082d1f4afd04d5209d9627ec79c30f0ad27e5442c9d515d5f600e656faf87e4d": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.1205,
+   "mid": 0.12,
    "share": 1.0,
-   "reward": 7.751571470634253,
+   "reward": 7.807925540057046,
    "fills": 0,
    "q": "Will Gigliola Haveriku win Festivali i K\u00ebng\u00ebs 65?"
   },
@@ -22539,9 +22539,9 @@
   "0xf7483262455459dfcbebb6e3badcaf8cc62ff3a22767592259f0b751e4957388": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.6425000000000001,
-   "share": null,
-   "reward": 1.426032804135406,
+   "mid": 0.506,
+   "share": 1.0,
+   "reward": 1.5175928463627142,
    "fills": 0,
    "q": "Will Patrik Schick (Leverkusen) be the top goalscorer of the 2026-27 Bundesliga "
   },
@@ -22577,7 +22577,7 @@
    "cash": 0.0,
    "mid": 0.5549999999999999,
    "share": 1.0,
-   "reward": 6.228995154313273,
+   "reward": 6.387353414580229,
    "fills": 0,
    "q": "Will the next Qwen Max model (3.9+) debut at a score of at least 1480 by June 30"
   },
@@ -22665,9 +22665,9 @@
   "0xd7599f743c9b33d6e12a383b960bd449acf80209eef2f628f57b478f737c7932": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.2805,
+   "mid": 0.2775,
    "share": 1.0,
-   "reward": 5.0050899432240845,
+   "reward": 5.117798082069671,
    "fills": 0,
    "q": "Will the 2027 Big Game national anthem last between 110 and 120 seconds?"
   },
@@ -22683,9 +22683,9 @@
   "0x4e14663987ba6c5b36e4bf9659ddca0382902dc28de4715a6b5199bd71f02676": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.32,
+   "mid": 0.325,
    "share": 1.0,
-   "reward": 5.431207652872161,
+   "reward": 5.445296170227861,
    "fills": 0,
    "q": "Will Jonatan Vseviov be the next Prime Minister of Estonia?"
   },
@@ -22712,7 +22712,7 @@
    "cash": 0.0,
    "mid": 0.375,
    "share": 1.0,
-   "reward": 2.9428978877100658,
+   "reward": 3.048561767877802,
    "fills": 0,
    "q": "Will Tom Nolan fight Mauricio Ruffy next?"
   },
@@ -22728,9 +22728,9 @@
   "0xfe640a325d990ae354c33a86d9c32587f1abcd2abcad16876107f38600b66851": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.315,
-   "share": 1.0,
-   "reward": 2.0983187035206776,
+   "mid": 0.36,
+   "share": 0.5294117647058832,
+   "reward": 2.1530968951456777,
    "fills": 0,
    "q": "Will Gavin Newsom not announce a run for the Democratic nomination before 2028?"
   },
@@ -22746,36 +22746,36 @@
   "0x3beca94bb149903783b91436d076edf0afcfc601e843fa570f89837d3b4f0615": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.42200000000000004,
-   "share": 0.988286969253294,
-   "reward": 1.3005234878691678,
+   "mid": 0.4375,
+   "share": 1.0,
+   "reward": 1.4254907921894366,
    "fills": 0,
    "q": "Will Benin win AFCON 2027 qualifying Group F?"
   },
   "0xd813b326b198500eb15b666ab9c43a9c7cd2c1c9b72f69b08d9d2062cbaa1bcb": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.16999999999999998,
-   "share": 0.440730064570866,
-   "reward": 0.33010411506664444,
+   "mid": 0.135,
+   "share": 0.53993610223642,
+   "reward": 0.3379978343990632,
    "fills": 0,
    "q": "Will Anthropic\u2019s market capitalization be between $1.00T and $1.25T at the end o"
   },
   "0xf82da5164c295a8c3ca0ea89a33ddd56bd28f6828ec362a4952f406b7187287b": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.485,
+   "mid": 0.46,
    "share": 1.0,
-   "reward": 0.7591476073692022,
+   "reward": 0.8397022173486869,
    "fills": 0,
    "q": "Will Pete Buttigieg run but lose the 2028 Democratic nomination?"
   },
   "0x58d03309fcd23eb5646dd42b1f7b55b73e1091c92ee0f21a0ce2195dcb41b64d": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.22,
+   "mid": 0.22499999999999998,
    "share": 1.0,
-   "reward": 1.1551966612951625,
+   "reward": 1.2608605414628984,
    "fills": 0,
    "q": "Will Ron DeSantis not announce a run for the Republican nomination before 2028?"
   },
@@ -22784,16 +22784,16 @@
    "cash": 0.0,
    "mid": 0.46,
    "share": 1.0,
-   "reward": 1.196881979289982,
+   "reward": 1.302545859457718,
    "fills": 0,
    "q": "Will Andy Beshear not announce a run for the Democratic nomination before 2028?"
   },
   "0x115205593f7bd4940a4e39dccd6c06ade0e8dacba2301c25afc2658fd44d85da": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.44000000000000006,
+   "mid": 0.43500000000000005,
    "share": 1.0,
-   "reward": 0.5615265961736441,
+   "reward": 0.6671904763413801,
    "fills": 0,
    "q": "Will Andy Beshear run but lose the 2028 Democratic nomination?"
   }
@@ -101372,17 +101372,30 @@
    "w": 2992119
   },
   {
-   "ts": "2026-11-21T14:43:14.528470+00:00",
-   "dt_h": 0.066,
-   "reward_tick": 1.2442,
-   "reward_total": 58731.69,
-   "mm_value": -681.06,
-   "net": 58050.64,
-   "avg_share": 0.885,
+   "ts": "2026-11-21T14:49:23.431582+00:00",
+   "dt_h": 0.17,
+   "reward_tick": 3.2545,
+   "reward_total": 58733.7,
+   "mm_value": -680.66,
+   "net": 58053.05,
+   "avg_share": 0.9283,
    "n_markets": 53,
    "fills_total": 659,
    "rebalanced": false,
    "w": 2992120
+  },
+  {
+   "ts": "2026-11-21T14:53:23.152420+00:00",
+   "dt_h": 0.068,
+   "reward_tick": 1.6549,
+   "reward_total": 58735.36,
+   "mm_value": -680.26,
+   "net": 58055.1,
+   "avg_share": 0.8581,
+   "n_markets": 53,
+   "fills_total": 659,
+   "rebalanced": false,
+   "w": 2992121
   }
  ],
  "fills": [
@@ -107318,8 +107331,8 @@
    "ledger": "v4"
   }
  ],
- "reward_total": 58731.69159838556,
- "last_ts": 1795272194.5284698,
+ "reward_total": 58735.35668094827,
+ "last_ts": 1795272803.1524196,
  "chosen_at": 1791639880.921448,
  "rebalances": [
   {
@@ -107330,19 +107343,19 @@
   }
  ],
  "last_tick": {
-  "ts": "2026-11-21T14:43:14.528470+00:00",
-  "dt_h": 0.032,
+  "ts": "2026-11-21T14:53:23.152420+00:00",
+  "dt_h": 0.017,
   "markets": [
    {
     "q": "Will Chicago Bears finish the 2026-27 NFL regular ",
-    "mid": 0.38,
+    "mid": 0.42,
     "share": 1.0,
     "earned": 0.0,
     "inv": 20.0
    },
    {
     "q": "Will Denver Broncos finish the 2026-27 NFL regular",
-    "mid": 0.475,
+    "mid": 0.476,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -107351,7 +107364,7 @@
     "q": "Will Claude Opus 5.6+ debut at an output token pri",
     "mid": 0.525,
     "share": 1.0,
-    "earned": 0.0186,
+    "earned": 0.0097,
     "inv": 0.0
    },
    {
@@ -107371,14 +107384,14 @@
    },
    {
     "q": "Will Marine Le Pen hit 42% in any poll before the ",
-    "mid": 0.52,
+    "mid": 0.515,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will Rui Costa be the next Brazilian Minister of D",
-    "mid": 0.277,
+    "mid": 0.279,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -107438,16 +107451,16 @@
    },
    {
     "q": "Will the Central Bank of Chile make no change to t",
-    "mid": 0.375,
+    "mid": 0.385,
     "share": 1.0,
-    "earned": 0.008,
+    "earned": 0.0042,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index hit $8.00 (HIGH) by Decem",
     "mid": 0.465,
     "share": 1.0,
-    "earned": 0.053,
+    "earned": 0.0278,
     "inv": 0.0
    },
    {
@@ -107459,242 +107472,232 @@
    },
    {
     "q": "Will the Central Bank of Chile increase the moneta",
-    "mid": 0.272,
+    "mid": 0.269,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will Cristiano Ronaldo join the Qatar Stars League",
-    "mid": 0.309,
+    "mid": 0.302,
     "share": 1.0,
-    "earned": 0.0239,
+    "earned": 0.0125,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index hit $4.00 (LOW) by Decemb",
     "mid": 0.386,
     "share": 1.0,
-    "earned": 0.053,
+    "earned": 0.0278,
     "inv": 0.0
    },
    {
     "q": "Will Iran target Bahrain by December 31, 2026?",
     "mid": 0.77,
     "share": 1.0,
-    "earned": 0.0265,
+    "earned": 0.0139,
     "inv": 0.0
    },
    {
     "q": "Will Diable play for Bilibili Gaming in 2027?",
-    "mid": 0.575,
+    "mid": 0.576,
     "share": 1.0,
-    "earned": 0.0225,
+    "earned": 0.0118,
     "inv": 0.0
    },
    {
     "q": "Will Gigliola Haveriku win Festivali i K\u00ebng\u00ebs 65?",
     "mid": 0.12,
     "share": 1.0,
-    "earned": 0.0106,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the 2-year Treasury yield hit 4.90% before 20",
-    "mid": 0.56,
-    "share": 0.5175,
-    "earned": 0.0274,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the 7-day average ship traffic through the St",
-    "mid": 0.44,
-    "share": 0.1773,
-    "earned": 0.0012,
+    "earned": 0.0056,
     "inv": 0.0
    },
    {
     "q": "Will Diable play for JD Gaming in 2027?",
     "mid": 0.329,
     "share": 1.0,
-    "earned": 0.0172,
+    "earned": 0.009,
     "inv": 0.0
    },
    {
     "q": "Will the 2-year Treasury yield dip below 4.40% bef",
-    "mid": 0.37,
-    "share": 1.0,
-    "earned": 0.0038,
+    "mid": 0.36,
+    "share": 0.1277,
+    "earned": 0.0003,
     "inv": 0.0
    },
    {
     "q": "Will the 2027 Big Game national anthem last betwee",
-    "mid": 0.281,
+    "mid": 0.278,
     "share": 1.0,
-    "earned": 0.0212,
+    "earned": 0.0111,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index hit $5.00 (LOW) by Decemb",
-    "mid": 0.475,
-    "share": 0.8408,
-    "earned": 0.0,
+    "mid": 0.48,
+    "share": 0.458,
+    "earned": 0.0127,
     "inv": 0.0
    },
    {
     "q": "Will Jonatan Vseviov be the next Prime Minister of",
-    "mid": 0.32,
+    "mid": 0.325,
     "share": 1.0,
-    "earned": 0.0027,
+    "earned": 0.0014,
     "inv": 0.0
    },
    {
     "q": "Will Iran target Kuwait by December 31, 2026?",
-    "mid": 0.765,
+    "mid": 0.78,
     "share": 1.0,
-    "earned": 0.0265,
+    "earned": 0.0139,
     "inv": 0.0
    },
    {
     "q": "Will Tom Nolan fight Mauricio Ruffy next?",
     "mid": 0.375,
     "share": 1.0,
-    "earned": 0.0199,
+    "earned": 0.0104,
     "inv": 0.0
    },
    {
     "q": "Will Gavin Newsom not announce a run for the Democ",
-    "mid": 0.315,
-    "share": 1.0,
-    "earned": 0.0199,
+    "mid": 0.36,
+    "share": 0.5294,
+    "earned": 0.0055,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ma",
     "mid": 0.375,
-    "share": 0.8408,
-    "earned": 0.0055,
+    "share": 0.2987,
+    "earned": 0.001,
     "inv": 0.0
    },
    {
     "q": "Will Iran target Iraq by December 31, 2026?",
-    "mid": 0.715,
+    "mid": 0.72,
     "share": 1.0,
-    "earned": 0.0292,
+    "earned": 0.0153,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the St",
-    "mid": 0.295,
+    "mid": 0.25,
     "share": 1.0,
-    "earned": 0.053,
+    "earned": 0.0278,
     "inv": 0.0
    },
    {
     "q": "Will the 5-year Treasury yield hit 5.00% before 20",
-    "mid": 0.47,
-    "share": 0.8922,
-    "earned": 0.0473,
+    "mid": 0.465,
+    "share": 0.6377,
+    "earned": 0.0177,
     "inv": 0.0
    },
    {
     "q": "Will the next Qwen Max model (3.9+) debut at a sco",
     "mid": 0.555,
     "share": 1.0,
-    "earned": 0.0318,
+    "earned": 0.0167,
     "inv": 0.0
    },
    {
     "q": "Will Benin win AFCON 2027 qualifying Group F?",
-    "mid": 0.422,
-    "share": 0.9883,
-    "earned": 0.0171,
+    "mid": 0.438,
+    "share": 1.0,
+    "earned": 0.0125,
     "inv": 0.0
    },
    {
     "q": "Will the 30-year Treasury yield hit 5.60% before 2",
     "mid": 0.245,
     "share": 0.2179,
-    "earned": 0.0009,
+    "earned": 0.0005,
     "inv": 0.0
    },
    {
     "q": "Will Anthropic\u2019s market capitalization be between ",
-    "mid": 0.17,
-    "share": 0.4407,
-    "earned": 0.0012,
+    "mid": 0.135,
+    "share": 0.5399,
+    "earned": 0.0008,
     "inv": 0.0
    },
    {
     "q": "Will Pete Buttigieg run but lose the 2028 Democrat",
-    "mid": 0.485,
+    "mid": 0.46,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0104,
     "inv": 0.0
    },
    {
     "q": "Will Ron DeSantis not announce a run for the Repub",
-    "mid": 0.22,
+    "mid": 0.225,
     "share": 1.0,
-    "earned": 0.0199,
+    "earned": 0.0104,
     "inv": 0.0
    },
    {
     "q": "Will Andy Beshear not announce a run for the Democ",
     "mid": 0.46,
     "share": 1.0,
-    "earned": 0.0199,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the Ornn H100 Index hit $1.50 (LOW) by Decemb",
-    "mid": 0.19,
-    "share": 1.0,
-    "earned": 0.053,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the Ornn H100 Index hit $2.25 (LOW) by Decemb",
-    "mid": 0.265,
-    "share": 0.0991,
-    "earned": 0.0004,
-    "inv": 0.0
-   },
-   {
-    "q": "Will Josh Shapiro run but lose the 2028 Democratic",
-    "mid": 0.605,
-    "share": 0.0663,
-    "earned": 0.0013,
+    "earned": 0.0104,
     "inv": 0.0
    },
    {
     "q": "Will Andy Beshear run but lose the 2028 Democratic",
-    "mid": 0.44,
+    "mid": 0.435,
     "share": 1.0,
-    "earned": 0.0199,
+    "earned": 0.0104,
+    "inv": 0.0
+   },
+   {
+    "q": "Will China GDP growth in Q4 2026 be between 4.3% a",
+    "mid": 0.555,
+    "share": 0.0887,
+    "earned": 0.0069,
+    "inv": 0.0
+   },
+   {
+    "q": "Will China GDP growth in Q4 2026 be between 4.6% a",
+    "mid": 0.38,
+    "share": 0.0282,
+    "earned": 0.0017,
+    "inv": 0.0
+   },
+   {
+    "q": "Will the 7-day average ship traffic through the Ma",
+    "mid": 0.715,
+    "share": 1.0,
+    "earned": 0.0278,
+    "inv": 0.0
+   },
+   {
+    "q": "Will Patrik Schick (Leverkusen) be the top goalsco",
+    "mid": 0.506,
+    "share": 1.0,
+    "earned": 0.0229,
+    "inv": 0.0
+   },
+   {
+    "q": "Will David Lisnard receive less than 7% of the vot",
+    "mid": 0.28,
+    "share": 1.0,
+    "earned": 0.0202,
     "inv": 0.0
    }
   ],
-  "reward_tick": 0.6563,
-  "reward_total": 58731.69,
-  "mm_value": -681.06,
-  "net": 58050.64,
-  "avg_share": 0.885,
+  "reward_tick": 0.3914,
+  "reward_total": 58735.36,
+  "mm_value": -680.26,
+  "net": 58055.1,
+  "avg_share": 0.8581,
   "n_markets": 53,
   "fills_total": 659,
   "rebalanced": false
  },
  "reviews": [
-  {
-   "ts": "2026-10-31T14:10:22.931473+00:00",
-   "swapped": 1,
-   "out": [
-    "Will the Swiss National Bank make no change to the"
-   ],
-   "in": [
-    "Will OpenAI have the best Text-to-Image AI at the "
-   ]
-  },
   {
    "ts": "2026-10-31T15:10:51.336089+00:00",
    "swapped": 2,
@@ -115936,7 +115939,25 @@
     "Will Josh Shapiro run but lose the 2028 Democratic",
     "Will Andy Beshear run but lose the 2028 Democratic"
    ]
+  },
+  {
+   "ts": "2026-11-21T14:49:23.431582+00:00",
+   "swapped": 5,
+   "out": [
+    "Will the Ornn H100 Index hit $1.50 (LOW) by Decemb",
+    "Will the Ornn H100 Index hit $2.25 (LOW) by Decemb",
+    "Will Josh Shapiro run but lose the 2028 Democratic",
+    "Will the 7-day average ship traffic through the St",
+    "Will the 2-year Treasury yield hit 4.90% before 20"
+   ],
+   "in": [
+    "Will China GDP growth in Q4 2026 be between 4.3% a",
+    "Will China GDP growth in Q4 2026 be between 4.6% a",
+    "Will the 7-day average ship traffic through the Ma",
+    "Will Patrik Schick (Leverkusen) be the top goalsco",
+    "Will David Lisnard receive less than 7% of the vot"
+   ]
   }
  ],
- "reviewed_at": 1795268960.1352758
+ "reviewed_at": 1795272563.4315817
 }

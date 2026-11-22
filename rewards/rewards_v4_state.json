@@ -529,21 +529,6 @@
    "rate0": 14.0
   },
   {
-   "cond": "0xc3912110a16ab916517566dab30096ebeb39febe8b53e10359465780518fb273",
-   "question": "Will Gemini Krypton debut with an HLE-Diamond score of 70% or higher?",
-   "yes": "67303923857048537737682790015036520226767287313632976457232208487969086551846",
-   "no": "20020012308369203759986858551529884756005790994188114793114144964442369686470",
-   "rate": 14.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.7,
-   "est_reward_day": 14.0,
-   "end": "2027-07-01T03:59:00Z",
-   "share0": 1.0,
-   "rate0": 14.0
-  },
-  {
    "cond": "0xe282520a9ce73672bc2cfe3acd920d4409de7ecce38343b652bd987d63cf88d3",
    "question": "Will the next Claude Opus model (5.6+) debut with an HLE-Diamond score of 65% or higher?",
    "yes": "64142611179927044246533571377183444996811341726447779841071811547024589041994",
@@ -664,36 +649,6 @@
    "rate0": 29.0
   },
   {
-   "cond": "0xfdbe4b63fbef07ba3a8c8ed67919806ecb2f254c4a9c5476a907aa178bb161f8",
-   "question": "Will the 7-day average ship traffic through the Suez Canal be 48+ on December 31?",
-   "yes": "29816082618469012092008532426889188917725483767431416992506943502461419392479",
-   "no": "36246692144330056267350257925056724628714629785337713808930740055153130215911",
-   "rate": 5.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.700000000000003,
-   "est_reward_day": 40.0,
-   "end": "2027-01-01T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 40.0
-  },
-  {
-   "cond": "0x52d3fe6349e30bb8dbca9c5485fa2a76dda92de75e7e17164473da99a01cafa8",
-   "question": "Will the 7-day average ship traffic through the Strait of Hormuz be 4+ on December 31?",
-   "yes": "57509727190721575496267891220332521843170027173631170823031493215202727780321",
-   "no": "11854117532988087734163263288399410715925510752621310600885489019446384060626",
-   "rate": 5.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.700000000000003,
-   "est_reward_day": 37.62523191094618,
-   "end": "2027-01-01T04:59:00Z",
-   "share0": 0.9406307977736544,
-   "rate0": 40.0
-  },
-  {
    "cond": "0x21e33a6a1a67605c3156a151bd2e6dd7ca0ae07cad63aa12073758c51fe4f522",
    "question": "Will Pep Guardiola's next job be Brazil?",
    "yes": "88800571151431031939540536497799210124182193244389026272589698214403652332518",
@@ -722,21 +677,6 @@
    "end": "2027-04-02T03:59:00Z",
    "share0": 1.0,
    "rate0": 17.0
-  },
-  {
-   "cond": "0xfe640a325d990ae354c33a86d9c32587f1abcd2abcad16876107f38600b66851",
-   "question": "Will Gavin Newsom not announce a run for the Democratic nomination before 2028?",
-   "yes": "78949052180175158734636384955956035386670392641344777460154306361466130816459",
-   "no": "14747920523409517943603022484293597837342067959471484102807491581571718181588",
-   "rate": 15.0,
-   "v": 4.5,
-   "min_size": 20.0,
-   "d": 0.0225,
-   "collateral": 19.1,
-   "est_reward_day": 15.0,
-   "end": "2028-11-08T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 15.0
   },
   {
    "cond": "0x1291b4dd8af987b439d97e5385e23b75c370d5671ad9c06f1eeb41e2fe8e3916",
@@ -797,6 +737,66 @@
    "end": "2027-01-27T04:59:00Z",
    "share0": 0.996703904290174,
    "rate0": 15.0
+  },
+  {
+   "cond": "0x0684a7cf3715ab98bf4b6399a91a8b96bfdfb51df2fef94304d015998bc40e70",
+   "question": "Will the median home value in NYC be less than $445,000 on December 31?",
+   "yes": "75122992353529325026265324248578599735051778655103749932850501823102253513989",
+   "no": "24698434794058782690589756181909892133645951440823601881848419308969690308128",
+   "rate": 101.0,
+   "v": 4.5,
+   "min_size": 20.0,
+   "d": 0.0225,
+   "collateral": 19.1,
+   "est_reward_day": 101.0,
+   "end": "2027-01-11T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 101.0
+  },
+  {
+   "cond": "0x45faf80d2aca209bc57974c759dc964737b252a897ae267af0cdc1df942df620",
+   "question": "Will the median home value in NYC be between $445,000 and $458,000 on December 31?",
+   "yes": "92615158670617961130420814013432699874146469195896193032230368016932294564021",
+   "no": "108852165285161772479865558742332524397905491803244173718409000153162589357827",
+   "rate": 75.0,
+   "v": 4.5,
+   "min_size": 20.0,
+   "d": 0.0225,
+   "collateral": 19.099999999999998,
+   "est_reward_day": 75.0,
+   "end": "2027-01-11T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 75.0
+  },
+  {
+   "cond": "0x58a606720613d3350fcee6af2cf38e62538c30322b620f4dca8f5c8d2abe69de",
+   "question": "Will San Marino come in 3rd place at Eurovision 2027?",
+   "yes": "97432828148696621443460707293711536968846838718840139348532349896226773357551",
+   "no": "16734995112814225151402595933683921602186102284167411899095399153391425111004",
+   "rate": 24.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.700000000000003,
+   "est_reward_day": 24.0,
+   "end": "2027-05-16T03:59:00Z",
+   "share0": 1.0,
+   "rate0": 24.0
+  },
+  {
+   "cond": "0x0a4c084a59fb7a2d80382f300ddebdcc69adcbcaa644185f89060b0387fb8ff4",
+   "question": "Will AI solve the twin prime conjecture in 2026?",
+   "yes": "67642197954042102335463115551501629949780721679887639626152422749903192524838",
+   "no": "73517211377730235199259977065559056736272856305856210813973268932043757126012",
+   "rate": 20.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.700000000000003,
+   "est_reward_day": 20.0,
+   "end": "2027-01-01T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 20.0
   }
  ],
  "positions": {
@@ -1028,9 +1028,9 @@
   "0xf7699db92f899f7577f55c0dc9db490d6a17d1eced1c07d3860b4ae80a13b175": {
    "inv": 0.0,
    "cash": -2.9992417699999963,
-   "mid": 0.346,
+   "mid": 0.46499999999999997,
    "share": 1.0,
-   "reward": 934.3104722502079,
+   "reward": 934.4258661812453,
    "fills": 12,
    "q": "Will the Ornn H200 Index hit $4.00 (LOW) by December 31, 2026?",
    "closed_at": 0.409
@@ -1136,9 +1136,9 @@
   "0xeaf463a1a9353009d8d9c50839bcc56afe7a043cacb131fccf908dfa26b10769": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.56,
+   "mid": 0.545,
    "share": 1.0,
-   "reward": 177.63008036291703,
+   "reward": 177.73338329420037,
    "fills": 0,
    "q": "Will Claude Opus 5.6+ debut at an output token price of at least $20 by June 30,"
   },
@@ -1483,9 +1483,9 @@
   "0x45faf80d2aca209bc57974c759dc964737b252a897ae267af0cdc1df942df620": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.46499999999999997,
-   "share": null,
-   "reward": 119.39889689137121,
+   "mid": 0.325,
+   "share": 1.0,
+   "reward": 119.91961385408621,
    "fills": 0,
    "q": "Will the median home value in NYC be between $445,000 and $458,000 on December 3"
   },
@@ -2072,7 +2072,7 @@
   "0x7a9a68c97682b82da841fa413f4764e86024c49e2c58a01b34cb5d3c5b9b2624": {
    "inv": 20.0,
    "cash": -8.85,
-   "mid": 0.43999999999999995,
+   "mid": 0.435,
    "share": 1.0,
    "reward": 87.751647885782,
    "fills": 1,
@@ -2678,7 +2678,7 @@
    "cash": 0.0,
    "mid": 0.2005,
    "share": 1.0,
-   "reward": 2.4796532836730525,
+   "reward": 2.641981738984329,
    "fills": 0,
    "q": "Will Pep Guardiola's next job be Argentina?"
   },
@@ -4522,7 +4522,7 @@
   "0x5d15579a3a31d6220eb8d33d167788db82976f14c856768a5e37e51afdaeb279": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.4795,
+   "mid": 0.4785,
    "share": 1.0,
    "reward": 17.59805527737572,
    "fills": 0,
@@ -7677,7 +7677,7 @@
    "cash": 0.0,
    "mid": 0.208,
    "share": 1.0,
-   "reward": 2.4271219308196246,
+   "reward": 2.434500711625579,
    "fills": 0,
    "q": "Will Jaxon Smith-Njigba finish the 2026-27 NFL regular season with the most rece"
   },
@@ -8648,9 +8648,9 @@
   "0x0684a7cf3715ab98bf4b6399a91a8b96bfdfb51df2fef94304d015998bc40e70": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.271,
-   "share": null,
-   "reward": 131.45859934483116,
+   "mid": 0.5455,
+   "share": 1.0,
+   "reward": 132.11429161155033,
    "fills": 0,
    "q": "Will the median home value in NYC be less than $445,000 on December 31?"
   },
@@ -9677,7 +9677,7 @@
    "cash": 0.0,
    "mid": 0.595,
    "share": 1.0,
-   "reward": 3.4622282257727854,
+   "reward": 3.5655311570561445,
    "fills": 0,
    "q": "Will the next Claude Opus model (5.6+) debut with an HLE-Diamond score of 65% or"
   },
@@ -14672,9 +14672,9 @@
   "0x16da0ef6c2f804b49bdf6985d281d5f92551c0d2b5a465b2733f7e885d08ad99": {
    "inv": 0.0,
    "cash": -7.07,
-   "mid": 0.316,
+   "mid": 0.32899999999999996,
    "share": 1.0,
-   "reward": 205.00018691134366,
+   "reward": 205.1182474042389,
    "fills": 1,
    "q": "Will Diable play for JD Gaming in 2027?",
    "closed_at": 0.024
@@ -15601,8 +15601,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.45999999999999996,
-   "share": 0.7012448132780073,
-   "reward": 15.973229493740657,
+   "share": 0.7012448132780095,
+   "reward": 16.127283022967916,
    "fills": 0,
    "q": "Will the 5-year Treasury yield hit 5.05% before 2027?"
   },
@@ -15854,7 +15854,7 @@
    "cash": 0.0,
    "mid": 0.73,
    "share": 1.0,
-   "reward": 66.57995708594011,
+   "reward": 66.68326001722347,
    "fills": 0,
    "q": "Will Hy4 debut at a score of at least 1460 by June 30, 2027?"
   },
@@ -16725,9 +16725,9 @@
   "0x240a543e8137917193717da1217bc549cd9c5b35a92dd03e427e0637e5ad6d27": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.5249999999999999,
-   "share": 0.8407960199005003,
-   "reward": 9.384633876208218,
+   "mid": 0.53,
+   "share": 0.9548022598870065,
+   "reward": 9.401735128199006,
    "fills": 0,
    "q": "Will the 5-year Treasury yield hit 5.00% before 2027?"
   },
@@ -17806,7 +17806,7 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.36,
-   "share": 0.02982809135514843,
+   "share": null,
    "reward": 23.874393163661974,
    "fills": 0,
    "q": "Will Gemini Krypton debut with an HLE-Diamond score of 70% or higher?"
@@ -20344,7 +20344,7 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.46499999999999997,
-   "share": 0.23477178515464292,
+   "share": null,
    "reward": 117.72646897678361,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Strait of Hormuz be 4+ on Decemb"
@@ -20534,7 +20534,7 @@
    "cash": 0.0,
    "mid": 0.32,
    "share": 1.0,
-   "reward": 68.78932787684063,
+   "reward": 68.83360056167636,
    "fills": 0,
    "q": "Will the Central Bank of Chile make no change to the monetary policy rate at the"
   },
@@ -20974,7 +20974,7 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.28500000000000003,
-   "share": 0.08280254777070079,
+   "share": null,
    "reward": 51.29875859444481,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 48+ on December 31"
@@ -21153,9 +21153,9 @@
   "0x2a939931c880379be0ff462671872a6469cb63a7a7a47871854e876e1446ef7c": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.645,
-   "share": 0.7984251968503943,
-   "reward": 62.19902633308135,
+   "mid": 0.615,
+   "share": 0.1959798994974871,
+   "reward": 62.324638626667536,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Malacca Strait be 210+ on Decemb"
   },
@@ -21774,9 +21774,9 @@
   "0x4a3bf1d04d3b497aa509c019de1a8bdf4575539c1a1e081b921a7b08bea1701e": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.685,
-   "share": 0.5328540799596388,
-   "reward": 31.41091769412436,
+   "mid": 0.6799999999999999,
+   "share": 0.36980306345733177,
+   "reward": 31.425693907273647,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait reach 30+ b"
   },
@@ -22044,9 +22044,9 @@
   "0xa3d8344e1fda781e5f4329c961235a262ab16d75aaacdc96b130637b18e4088a": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.375,
-   "share": 0.7253218884120181,
-   "reward": 8.977558638884776,
+   "mid": 0.38,
+   "share": 0.39524890546457003,
+   "reward": 9.10984170470221,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Malacca Strait be 230+ on Decemb"
   },
@@ -22305,9 +22305,9 @@
   "0xd32f322024335e79142cddfb00b99d06eaaadd200bb51a5c86abe332481e1f1a": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.28200000000000003,
+   "mid": 0.28400000000000003,
    "share": 1.0,
-   "reward": 26.258467164119722,
+   "reward": 26.37652765701499,
    "fills": 0,
    "q": "Will Cristiano Ronaldo join the Qatar Stars League next?"
   },
@@ -22431,18 +22431,18 @@
   "0x082d1f4afd04d5209d9627ec79c30f0ad27e5442c9d515d5f600e656faf87e4d": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.20350000000000001,
+   "mid": 0.2025,
    "share": 1.0,
-   "reward": 11.510348451245157,
+   "reward": 11.591515040110654,
    "fills": 0,
    "q": "Will Gigliola Haveriku win Festivali i K\u00ebng\u00ebs 65?"
   },
   "0x0a4c084a59fb7a2d80382f300ddebdcc69adcbcaa644185f89060b0387fb8ff4": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.2,
-   "share": null,
-   "reward": 5.109342982699107,
+   "mid": 0.485,
+   "share": 1.0,
+   "reward": 5.248200839423104,
    "fills": 0,
    "q": "Will AI solve the twin prime conjecture in 2026?"
   },
@@ -22577,7 +22577,7 @@
    "cash": 0.0,
    "mid": 0.535,
    "share": 1.0,
-   "reward": 12.02397706464762,
+   "reward": 12.12727999593098,
    "fills": 0,
    "q": "Will the next Qwen Max model (3.9+) debut at a score of at least 1480 by June 30"
   },
@@ -22712,7 +22712,7 @@
    "cash": 0.0,
    "mid": 0.315,
    "share": 1.0,
-   "reward": 8.358330935653706,
+   "reward": 8.45425508613111,
    "fills": 0,
    "q": "Will Tom Nolan fight Mauricio Ruffy next?"
   },
@@ -22729,7 +22729,7 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.39,
-   "share": 0.018951801591015456,
+   "share": null,
    "reward": 4.205923609541523,
    "fills": 0,
    "q": "Will Gavin Newsom not announce a run for the Democratic nomination before 2028?"
@@ -22782,8 +22782,8 @@
   "0x80ac2cb511467a54c1020b0cabfc5b844224deaaeed3991084660962e8c55434": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.12000000000000001,
-   "share": 1.0,
+   "mid": 0.17,
+   "share": 0.5294117647058824,
    "reward": 5.1685364676147145,
    "fills": 0,
    "q": "Will Andy Beshear not announce a run for the Democratic nomination before 2028?"
@@ -22800,9 +22800,9 @@
   "0xd479ca05155e7a691df50002b70f7569195c0b1554ba7e4c6aa42bc83eb713a0": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.42,
+   "mid": 0.455,
    "share": 1.0,
-   "reward": 20.230066825777296,
+   "reward": 20.985291521678374,
    "fills": 0,
    "q": "Will HoneyMad be the next of these streamers to finish GTA VI by December 31, 20"
   },
@@ -22827,9 +22827,9 @@
   "0xcc2c963cc9caea9d1843a7fe1a1ee35e7890a1cb481d337d7a2e1d16c0c291a1": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.39749999999999996,
+   "mid": 0.23,
    "share": 1.0,
-   "reward": 11.327110959811632,
+   "reward": 11.904538929027828,
    "fills": 0,
    "q": "Will Windah Basudara be the next of these streamers to finish GTA VI by December"
   },
@@ -22854,18 +22854,18 @@
   "0x1bce9cf02ea3faf777b8a2716d1fe48351d768a9233219a3039cbdba0b6dba11": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.2955,
+   "mid": 0.2175,
    "share": 1.0,
-   "reward": 11.976117948296443,
+   "reward": 12.353575220483318,
    "fills": 0,
    "q": "Will DjMaRiiO be the next of these streamers to finish GTA VI by December 31, 20"
   },
   "0x2a82df66332a6e7f8202e5f38dd3b3453705d473091ca8a34aef0b8f9e0aee61": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.2935,
+   "mid": 0.202,
    "share": 1.0,
-   "reward": 6.566504767418463,
+   "reward": 6.953383055500414,
    "fills": 0,
    "q": "Will TheBurntPeanut be the next of these streamers to finish GTA VI by December "
   },
@@ -22881,9 +22881,9 @@
   "0x80a07ae5761f080947d94a2684334eb0b88ea86c5f205789426ce06cb131bf2b": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.445,
-   "share": 1.0,
-   "reward": 18.446171655983626,
+   "mid": 0.495,
+   "share": 0.1282863477985431,
+   "reward": 19.02162619774264,
    "fills": 0,
    "q": "Will xQc be the next of these streamers to finish GTA VI by December 31, 2026?"
   },
@@ -22973,7 +22973,7 @@
    "cash": 0.0,
    "mid": 0.215,
    "share": 1.0,
-   "reward": 1.7580198852773066,
+   "reward": 1.7653986660832608,
    "fills": 0,
    "q": "Will Ukraine be the Jury Winner in the Eurovision 2027 Grand Final?"
   },
@@ -22989,8 +22989,8 @@
   "0x23226844960cbd6c5d71c9f6ff0ce7b789ed04b6568e50e2514fd78df8a6d618": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.1465,
-   "share": 1.0,
+   "mid": 0.0465,
+   "share": 0.9101123595505607,
    "reward": 1.3014946709794026,
    "fills": 0,
    "q": "Will Adin Ross be the next of these streamers to finish GTA VI by December 31, 2"
@@ -23009,7 +23009,7 @@
    "cash": 0.0,
    "mid": 0.268,
    "share": 1.0,
-   "reward": 0.9371968555841852,
+   "reward": 1.1069064529112749,
    "fills": 0,
    "q": "Will Pep Guardiola's next job be Brazil?"
   },
@@ -23018,27 +23018,36 @@
    "cash": 0.0,
    "mid": 0.165,
    "share": 1.0,
-   "reward": 0.633616033348015,
+   "reward": 0.7442977454373284,
    "fills": 0,
    "q": "Will the 2026-27 Arctic sea ice max be at least 14.8m sq km?"
   },
   "0x1291b4dd8af987b439d97e5385e23b75c370d5671ad9c06f1eeb41e2fe8e3916": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.255,
-   "share": 1.0,
-   "reward": 0.5776592471748659,
+   "mid": 0.24,
+   "share": 0.5294117647058832,
+   "reward": 0.663258919509025,
    "fills": 0,
    "q": "Will Pete Buttigieg not announce a run for the Democratic nomination before 2028"
   },
   "0xf1613a4c22184b36df307c7955ee203003cf041de88b344842dd5444909e2bf9": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.345,
-   "share": 1.0,
-   "reward": 0.4471423091817168,
+   "mid": 0.35,
+   "share": 0.5294117647058832,
+   "reward": 0.5330203816743682,
    "fills": 0,
    "q": "Will Kamala Harris run but lose the 2028 Democratic nomination?"
+  },
+  "0x58a606720613d3350fcee6af2cf38e62538c30322b620f4dca8f5c8d2abe69de": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.155,
+   "share": 1.0,
+   "reward": 0.1666294280687968,
+   "fills": 0,
+   "q": "Will San Marino come in 3rd place at Eurovision 2027?"
   }
  },
  "history": [
@@ -102408,17 +102417,30 @@
    "w": 2992180
   },
   {
-   "ts": "2026-11-22T00:52:51.549186+00:00",
-   "dt_h": 0.057,
-   "reward_tick": 1.7389,
-   "reward_total": 58994.37,
-   "mm_value": -679.86,
-   "net": 58314.52,
-   "avg_share": 0.8823,
+   "ts": "2026-11-22T00:59:29.356644+00:00",
+   "dt_h": 0.169,
+   "reward_tick": 6.2067,
+   "reward_total": 58998.84,
+   "mm_value": -679.96,
+   "net": 58318.88,
+   "avg_share": 0.9238,
    "n_markets": 53,
    "fills_total": 659,
    "rebalanced": false,
    "w": 2992181
+  },
+  {
+   "ts": "2026-11-22T01:03:29.075847+00:00",
+   "dt_h": 0.068,
+   "reward_tick": 1.7454,
+   "reward_total": 59000.58,
+   "mm_value": -679.96,
+   "net": 58320.63,
+   "avg_share": 0.8888,
+   "n_markets": 53,
+   "fills_total": 659,
+   "rebalanced": false,
+   "w": 2992182
   }
  ],
  "fills": [
@@ -108354,8 +108376,8 @@
    "ledger": "v4"
   }
  ],
- "reward_total": 58994.37096329206,
- "last_ts": 1795308771.5491858,
+ "reward_total": 59000.584174064505,
+ "last_ts": 1795309409.0758474,
  "chosen_at": 1791639880.921448,
  "rebalances": [
   {
@@ -108366,28 +108388,28 @@
   }
  ],
  "last_tick": {
-  "ts": "2026-11-22T00:52:51.549186+00:00",
-  "dt_h": 0.023,
+  "ts": "2026-11-22T01:03:29.075847+00:00",
+  "dt_h": 0.017,
   "markets": [
    {
     "q": "Will Chicago Bears finish the 2026-27 NFL regular ",
-    "mid": 0.44,
+    "mid": 0.435,
     "share": 1.0,
     "earned": 0.0,
     "inv": 20.0
    },
    {
     "q": "Will Denver Broncos finish the 2026-27 NFL regular",
-    "mid": 0.479,
+    "mid": 0.478,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will Claude Opus 5.6+ debut at an output token pri",
-    "mid": 0.56,
+    "mid": 0.545,
     "share": 1.0,
-    "earned": 0.0133,
+    "earned": 0.0097,
     "inv": 0.0
    },
    {
@@ -108476,7 +108498,7 @@
     "q": "Will the Central Bank of Chile make no change to t",
     "mid": 0.32,
     "share": 1.0,
-    "earned": 0.0057,
+    "earned": 0.0042,
     "inv": 0.0
    },
    {
@@ -108495,211 +108517,183 @@
    },
    {
     "q": "Will Cristiano Ronaldo join the Qatar Stars League",
-    "mid": 0.282,
+    "mid": 0.284,
     "share": 1.0,
-    "earned": 0.0153,
+    "earned": 0.0111,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index hit $4.00 (LOW) by Decemb",
-    "mid": 0.346,
+    "mid": 0.465,
     "share": 1.0,
-    "earned": 0.0381,
+    "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will Gigliola Haveriku win Festivali i K\u00ebng\u00ebs 65?",
-    "mid": 0.204,
+    "mid": 0.203,
     "share": 1.0,
-    "earned": 0.0105,
+    "earned": 0.0076,
     "inv": 0.0
    },
    {
     "q": "Will Diable play for JD Gaming in 2027?",
-    "mid": 0.316,
+    "mid": 0.329,
     "share": 1.0,
-    "earned": 0.0153,
+    "earned": 0.0111,
     "inv": 0.0
    },
    {
     "q": "Will Tom Nolan fight Mauricio Ruffy next?",
     "mid": 0.315,
     "share": 1.0,
-    "earned": 0.0124,
+    "earned": 0.009,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ma",
-    "mid": 0.375,
-    "share": 0.7253,
-    "earned": 0.0277,
+    "mid": 0.38,
+    "share": 0.3952,
+    "earned": 0.011,
     "inv": 0.0
    },
    {
     "q": "Will the 5-year Treasury yield hit 5.00% before 20",
-    "mid": 0.525,
-    "share": 0.8408,
-    "earned": 0.0024,
+    "mid": 0.53,
+    "share": 0.9548,
+    "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will the next Qwen Max model (3.9+) debut at a sco",
     "mid": 0.535,
     "share": 1.0,
-    "earned": 0.0133,
+    "earned": 0.0097,
     "inv": 0.0
    },
    {
     "q": "Will HoneyMad be the next of these streamers to fi",
-    "mid": 0.42,
+    "mid": 0.455,
     "share": 1.0,
-    "earned": 0.1201,
+    "earned": 0.0875,
     "inv": 0.0
    },
    {
     "q": "Will Windah Basudara be the next of these streamer",
-    "mid": 0.397,
+    "mid": 0.23,
     "share": 1.0,
-    "earned": 0.1039,
+    "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will DjMaRiiO be the next of these streamers to fi",
-    "mid": 0.295,
+    "mid": 0.217,
     "share": 1.0,
-    "earned": 0.0601,
+    "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will xQc be the next of these streamers to finish ",
-    "mid": 0.445,
-    "share": 1.0,
-    "earned": 0.1077,
+    "mid": 0.495,
+    "share": 0.1283,
+    "earned": 0.0101,
     "inv": 0.0
    },
    {
     "q": "Will Hy4 debut at a score of at least 1460 by June",
     "mid": 0.73,
     "share": 1.0,
-    "earned": 0.0133,
-    "inv": 0.0
-   },
-   {
-    "q": "Will Gemini Krypton debut with an HLE-Diamond scor",
-    "mid": 0.36,
-    "share": 0.0298,
-    "earned": 0.0004,
+    "earned": 0.0097,
     "inv": 0.0
    },
    {
     "q": "Will the next Claude Opus model (5.6+) debut with ",
     "mid": 0.595,
     "share": 1.0,
-    "earned": 0.0133,
+    "earned": 0.0097,
     "inv": 0.0
    },
    {
     "q": "Will TheBurntPeanut be the next of these streamers",
-    "mid": 0.293,
+    "mid": 0.202,
     "share": 1.0,
-    "earned": 0.0696,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the 7-day average ship traffic through the Ma",
-    "mid": 0.645,
-    "share": 0.7984,
     "earned": 0.0,
     "inv": 0.0
    },
    {
+    "q": "Will the 7-day average ship traffic through the Ma",
+    "mid": 0.615,
+    "share": 0.196,
+    "earned": 0.0052,
+    "inv": 0.0
+   },
+   {
     "q": "Will the 7-day average ship traffic through the Ba",
-    "mid": 0.685,
-    "share": 0.5329,
-    "earned": 0.0025,
+    "mid": 0.68,
+    "share": 0.3698,
+    "earned": 0.0013,
     "inv": 0.0
    },
    {
     "q": "Will Ukraine be the Jury Winner in the Eurovision ",
     "mid": 0.215,
     "share": 1.0,
-    "earned": 0.001,
+    "earned": 0.0007,
     "inv": 0.0
    },
    {
     "q": "Will Pep Guardiola's next job be Argentina?",
     "mid": 0.201,
     "share": 1.0,
-    "earned": 0.021,
+    "earned": 0.0153,
     "inv": 0.0
    },
    {
     "q": "Will the 5-year Treasury yield hit 5.05% before 20",
     "mid": 0.46,
     "share": 0.7012,
-    "earned": 0.0267,
-    "inv": 0.0
-   },
-   {
-    "q": "Will Adin Ross be the next of these streamers to f",
-    "mid": 0.146,
-    "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
    },
    {
-    "q": "Will the 7-day average ship traffic through the Su",
-    "mid": 0.285,
-    "share": 0.0828,
-    "earned": 0.0004,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the 7-day average ship traffic through the St",
-    "mid": 0.465,
-    "share": 0.2348,
-    "earned": 0.0011,
+    "q": "Will Adin Ross be the next of these streamers to f",
+    "mid": 0.046,
+    "share": 0.9101,
+    "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will Pep Guardiola's next job be Brazil?",
     "mid": 0.268,
     "share": 1.0,
-    "earned": 0.0219,
+    "earned": 0.016,
     "inv": 0.0
    },
    {
     "q": "Will the 2026-27 Arctic sea ice max be at least 14",
     "mid": 0.165,
     "share": 1.0,
-    "earned": 0.0143,
-    "inv": 0.0
-   },
-   {
-    "q": "Will Gavin Newsom not announce a run for the Democ",
-    "mid": 0.39,
-    "share": 0.019,
-    "earned": 0.0003,
+    "earned": 0.0104,
     "inv": 0.0
    },
    {
     "q": "Will Pete Buttigieg not announce a run for the Dem",
-    "mid": 0.255,
-    "share": 1.0,
-    "earned": 0.0143,
+    "mid": 0.24,
+    "share": 0.5294,
+    "earned": 0.0055,
     "inv": 0.0
    },
    {
     "q": "Will Kamala Harris run but lose the 2028 Democrati",
-    "mid": 0.345,
-    "share": 1.0,
-    "earned": 0.0143,
+    "mid": 0.35,
+    "share": 0.5294,
+    "earned": 0.0055,
     "inv": 0.0
    },
    {
     "q": "Will Andy Beshear not announce a run for the Democ",
-    "mid": 0.12,
-    "share": 1.0,
+    "mid": 0.17,
+    "share": 0.5294,
     "earned": 0.0,
     "inv": 0.0
    },
@@ -108707,36 +108701,48 @@
     "q": "Will Jaxon Smith-Njigba finish the 2026-27 NFL reg",
     "mid": 0.208,
     "share": 1.0,
-    "earned": 0.001,
+    "earned": 0.0007,
+    "inv": 0.0
+   },
+   {
+    "q": "Will the median home value in NYC be less than $44",
+    "mid": 0.545,
+    "share": 1.0,
+    "earned": 0.0701,
+    "inv": 0.0
+   },
+   {
+    "q": "Will the median home value in NYC be between $445,",
+    "mid": 0.325,
+    "share": 1.0,
+    "earned": 0.0521,
+    "inv": 0.0
+   },
+   {
+    "q": "Will San Marino come in 3rd place at Eurovision 20",
+    "mid": 0.155,
+    "share": 1.0,
+    "earned": 0.0167,
+    "inv": 0.0
+   },
+   {
+    "q": "Will AI solve the twin prime conjecture in 2026?",
+    "mid": 0.485,
+    "share": 1.0,
+    "earned": 0.0139,
     "inv": 0.0
    }
   ],
-  "reward_tick": 0.7613,
-  "reward_total": 58994.37,
-  "mm_value": -679.86,
-  "net": 58314.52,
-  "avg_share": 0.8823,
+  "reward_tick": 0.4036,
+  "reward_total": 59000.58,
+  "mm_value": -679.96,
+  "net": 58320.63,
+  "avg_share": 0.8888,
   "n_markets": 53,
   "fills_total": 659,
   "rebalanced": false
  },
  "reviews": [
-  {
-   "ts": "2026-11-01T00:19:14.675390+00:00",
-   "swapped": 4,
-   "out": [
-    "Will Chou Chun-mi win the next Pingtung County Mag",
-    "Will Google have the best Image-to-Video AI at the",
-    "Will OpenAI's frontier output token price be at or",
-    "Will Trump meet with Elon Musk by November 30, 202"
-   ],
-   "in": [
-    "Will Trump speak to Mark Rutte by November 30?",
-    "Will the Swiss National Bank make no change to the",
-    "Will the ECB increase the deposit facility rate by",
-    "Will the Bank of Canada increase the target for th"
-   ]
-  },
   {
    "ts": "2026-11-01T01:19:15.177193+00:00",
    "swapped": 4,
@@ -117046,7 +117052,23 @@
     "Will Andy Beshear not announce a run for the Democ",
     "Will Jaxon Smith-Njigba finish the 2026-27 NFL reg"
    ]
+  },
+  {
+   "ts": "2026-11-22T00:53:29.209906+00:00",
+   "swapped": 4,
+   "out": [
+    "Will Gavin Newsom not announce a run for the Democ",
+    "Will the 7-day average ship traffic through the Su",
+    "Will Gemini Krypton debut with an HLE-Diamond scor",
+    "Will the 7-day average ship traffic through the St"
+   ],
+   "in": [
+    "Will the median home value in NYC be less than $44",
+    "Will the median home value in NYC be between $445,",
+    "Will San Marino come in 3rd place at Eurovision 20",
+    "Will AI solve the twin prime conjecture in 2026?"
+   ]
   }
  ],
- "reviewed_at": 1795305209.1682045
+ "reviewed_at": 1795308809.2099063
 }

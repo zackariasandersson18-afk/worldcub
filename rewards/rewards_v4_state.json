@@ -353,7 +353,7 @@
    "question": "Will Gigliola Haveriku win Festivali i K\u00ebng\u00ebs 65?",
    "yes": "111087437569880345410617087576125864317865243905300004383815075438131842648125",
    "no": "19416722534440143713184028739586744423978358426221357675184895612591606826485",
-   "rate": 8.0,
+   "rate": 6.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -428,7 +428,7 @@
    "question": "Will US births in 2026 be between 3.50 million and 3.53 million?",
    "yes": "5025480205465819793740564903993120299824205757405738584692945523670914238842",
    "no": "58886934006317366819880478896058373535203676547964882956410375506984561225376",
-   "rate": 8.0,
+   "rate": 9.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -514,21 +514,6 @@
    "rate0": 10.0
   },
   {
-   "cond": "0xa3d8344e1fda781e5f4329c961235a262ab16d75aaacdc96b130637b18e4088a",
-   "question": "Will the 7-day average ship traffic through the Malacca Strait be 230+ on December 31?",
-   "yes": "44852520027824263953787065196429656668025599210853670718864206611203350928310",
-   "no": "91649849410479640814200670446336969487527333023458010878034755967335501151472",
-   "rate": 5.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.700000000000003,
-   "est_reward_day": 40.0,
-   "end": "2027-01-01T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 40.0
-  },
-  {
    "cond": "0x2a939931c880379be0ff462671872a6469cb63a7a7a47871854e876e1446ef7c",
    "question": "Will the 7-day average ship traffic through the Malacca Strait be 210+ on December 31?",
    "yes": "57583138483420093968308122283726593009359488283870004730247051454141826420455",
@@ -572,21 +557,6 @@
    "end": "2027-04-26T03:59:00Z",
    "share0": 1.0,
    "rate0": 17.0
-  },
-  {
-   "cond": "0x4e315963ad8e7616243ade550951e28c5e7f4a241bfaec272a3d5481b316e3ed",
-   "question": "Will the 2-year Treasury yield dip below 4.40% before 2027?",
-   "yes": "13297809078714655996096416669359540720582177045568663656274205724786922751694",
-   "no": "94672894501858534825722704484162100828628953438474542415743934525160886645480",
-   "rate": 3.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.7,
-   "est_reward_day": 30.039282138180695,
-   "end": "2027-01-01T04:59:00Z",
-   "share0": 0.7509820534545174,
-   "rate0": 40.0
   },
   {
    "cond": "0x0dfb208bfcfb8be5cc1616f2c41f74425fb187f184942f21f88362ddcc8e3209",
@@ -713,7 +683,7 @@
    "question": "Will the Ornn H200 Index hit $4.00 (LOW) by December 31, 2026?",
    "yes": "30072348565478302750198876081143273757119653365741275677520918105022287518421",
    "no": "84508516994297241911682690418747908793302393026465137868931658014066128421823",
-   "rate": 3.0,
+   "rate": 40.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -743,7 +713,7 @@
    "question": "Will xQc be the next of these streamers to finish GTA VI by December 31, 2026?",
    "yes": "56383565877400278868643288319247365374452516701269615932791780997450743463546",
    "no": "60904767819733049159931430434998529087415694207016513624693662216443619180373",
-   "rate": 278.0,
+   "rate": 265.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -758,7 +728,7 @@
    "question": "Will HoneyMad be the next of these streamers to finish GTA VI by December 31, 2026?",
    "yes": "63672076361242483640819641229518405636878290725976696054240060158839167000296",
    "no": "106325707824300864829651774143115467176597930345038275175826202053101619623472",
-   "rate": 222.0,
+   "rate": 235.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -788,7 +758,7 @@
    "question": "Will the 7-day average ship traffic through the Strait of Hormuz be 3+ on December 31?",
    "yes": "40957700497133318495858241814768518528242946788828498421614731758515708674607",
    "no": "1762875088011585647201374308269553836730718568424290453659902377986355756767",
-   "rate": 40.0,
+   "rate": 5.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -797,6 +767,36 @@
    "end": "2027-01-01T04:59:00Z",
    "share0": 1.0,
    "rate0": 40.0
+  },
+  {
+   "cond": "0xd78f98201fc7f226f232f377603d2b4e96a0b6e32f8d36c65649925216879503",
+   "question": "Will the Bank of Israel make no change to the Bank of Israel Interest Rate at the January meeting?",
+   "yes": "70865312913098633084587533812415811609024863344921710000463897063378379424891",
+   "no": "10375593452245426720076186238820128252143350584828541629111276619753070695620",
+   "rate": 113.0,
+   "v": 4.5,
+   "min_size": 20.0,
+   "d": 0.0225,
+   "collateral": 19.1,
+   "est_reward_day": 91.0,
+   "end": "2027-01-04T23:59:00Z",
+   "share0": 1.0,
+   "rate0": 91.0
+  },
+  {
+   "cond": "0xf4b2be4cad7cc1c3cbd6d76e6c802aa6d7b34817e7f5c22959dc3ddfb62f4477",
+   "question": "Will Rob Sand win the Nevada Democratic primary?",
+   "yes": "16601194739347848028442797063286460824983553790568537827082145938428253780588",
+   "no": "72490739904804345963435187441214000137924585494208336204398598875877509528447",
+   "rate": 19.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.7,
+   "est_reward_day": 28.0,
+   "end": "2028-02-02T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 28.0
   }
  ],
  "positions": {
@@ -1028,9 +1028,9 @@
   "0xf7699db92f899f7577f55c0dc9db490d6a17d1eced1c07d3860b4ae80a13b175": {
    "inv": 0.0,
    "cash": -2.9992417699999963,
-   "mid": 0.402,
-   "share": 0.9981100874084574,
-   "reward": 938.2906605757069,
+   "mid": 0.40449999999999997,
+   "share": 0.7377764842840522,
+   "reward": 938.3343378428182,
    "fills": 12,
    "q": "Will the Ornn H200 Index hit $4.00 (LOW) by December 31, 2026?",
    "closed_at": 0.409
@@ -1138,7 +1138,7 @@
    "cash": 0.0,
    "mid": 0.5650000000000001,
    "share": 1.0,
-   "reward": 184.08387464230788,
+   "reward": 184.18916114586898,
    "fills": 0,
    "q": "Will Claude Opus 5.6+ debut at an output token price of at least $20 by June 30,"
   },
@@ -4522,7 +4522,7 @@
   "0x5d15579a3a31d6220eb8d33d167788db82976f14c856768a5e37e51afdaeb279": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.468,
+   "mid": 0.467,
    "share": 1.0,
    "reward": 17.59805527737572,
    "fills": 0,
@@ -7275,7 +7275,7 @@
    "cash": 0.0,
    "mid": 0.1695,
    "share": 1.0,
-   "reward": 5.319590399551027,
+   "reward": 5.334631328631186,
    "fills": 0,
    "q": "Will Amazon\u2019s market capitalization be between $2.00T and $2.50T at the end of 2"
   },
@@ -8964,7 +8964,7 @@
    "cash": 0.0,
    "mid": 0.65,
    "share": 1.0,
-   "reward": 19.31375257335075,
+   "reward": 19.388957218751553,
    "fills": 0,
    "q": "Next DeepSeek Flash released by December 31, 2026?"
   },
@@ -9677,7 +9677,7 @@
    "cash": 0.0,
    "mid": 0.605,
    "share": 1.0,
-   "reward": 9.896570998711365,
+   "reward": 10.001857502272479,
    "fills": 0,
    "q": "Will the next Claude Opus model (5.6+) debut with an HLE-Diamond score of 65% or"
   },
@@ -14674,7 +14674,7 @@
    "cash": -7.07,
    "mid": 0.51,
    "share": 1.0,
-   "reward": 212.00468400152698,
+   "reward": 212.11749096962822,
    "fills": 1,
    "q": "Will Diable play for JD Gaming in 2027?",
    "closed_at": 0.024
@@ -14961,9 +14961,9 @@
   "0xd78f98201fc7f226f232f377603d2b4e96a0b6e32f8d36c65649925216879503": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.59,
-   "share": null,
-   "reward": 90.11937031922646,
+   "mid": 0.525,
+   "share": 0.17419354838709708,
+   "reward": 90.27701929917045,
    "fills": 0,
    "q": "Will the Bank of Israel make no change to the Bank of Israel Interest Rate at th"
   },
@@ -18652,7 +18652,7 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.32999999999999996,
-   "share": 0.3012477718360074,
+   "share": null,
    "reward": 44.00919019457483,
    "fills": 0,
    "q": "Will the 2-year Treasury yield dip below 4.40% before 2027?"
@@ -19803,7 +19803,7 @@
   "0x9a8e079bb989a7f4500ee58b8962540190f2b35c15476d83721bccfeed84f822": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.25,
+   "mid": 0.255,
    "share": 1.0,
    "reward": 8.048744412006602,
    "fills": 0,
@@ -20406,9 +20406,9 @@
   "0x8d4b03bc93fa84c1fda0b25ee18b7ac1fee8a37f110230acac29cdcae6b8c169": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.585,
-   "share": 0.34049331907783237,
-   "reward": 77.37361044027536,
+   "mid": 0.56,
+   "share": 0.9441340782122916,
+   "reward": 77.60426195966046,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Strait of Hormuz be 3+ on Decemb"
   },
@@ -20534,7 +20534,7 @@
    "cash": 0.0,
    "mid": 0.425,
    "share": 1.0,
-   "reward": 71.52651802681352,
+   "reward": 71.57164081405398,
    "fills": 0,
    "q": "Will the Central Bank of Chile make no change to the monetary policy rate at the"
   },
@@ -21063,7 +21063,7 @@
   "0x7ad5206bbe6e0f4f9541e5b7ec723619bae7557b1555872f920fc3055726b4ce": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.34600000000000003,
+   "mid": 0.3565,
    "share": 1.0,
    "reward": 2.1251932211496207,
    "fills": 0,
@@ -21155,7 +21155,7 @@
    "cash": 0.0,
    "mid": 0.7949999999999999,
    "share": 1.0,
-   "reward": 66.7270434167308,
+   "reward": 66.80224806213158,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Malacca Strait be 210+ on Decemb"
   },
@@ -21414,9 +21414,9 @@
   "0x4dd9ad3a0275fb0b91002a235781fd83c32f324d03b242cf4df1eef02b8d5fc1": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.1565,
+   "mid": 0.163,
    "share": 1.0,
-   "reward": 29.160907130984963,
+   "reward": 29.85278986867231,
    "fills": 0,
    "q": "Will Bakir Izetbegovi\u0107 be the next Chairman of the Council of Ministers\u00a0of Bosni"
   },
@@ -22045,7 +22045,7 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.41500000000000004,
-   "share": 0.04528807503349708,
+   "share": null,
    "reward": 13.795395780918502,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Malacca Strait be 230+ on Decemb"
@@ -22307,7 +22307,7 @@
    "cash": 0.0,
    "mid": 0.2925,
    "share": 1.0,
-   "reward": 34.2947212869868,
+   "reward": 34.430089648708226,
    "fills": 0,
    "q": "Will Cristiano Ronaldo join the Qatar Stars League next?"
   },
@@ -22386,9 +22386,9 @@
   "0x0da2188f18843313a300ef526855bb3909f3dc8d0d9aa18e39597eace7453504": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.417,
+   "mid": 0.4165,
    "share": 1.0,
-   "reward": 23.588162946135725,
+   "reward": 23.685928985156764,
    "fills": 0,
    "q": "Will Diable play for Bilibili Gaming in 2027?"
   },
@@ -22433,7 +22433,7 @@
    "cash": 0.0,
    "mid": 0.148,
    "share": 1.0,
-   "reward": 17.10457572275838,
+   "reward": 17.162202780279813,
    "fills": 0,
    "q": "Will Gigliola Haveriku win Festivali i K\u00ebng\u00ebs 65?"
   },
@@ -22712,7 +22712,7 @@
    "cash": 0.0,
    "mid": 0.29500000000000004,
    "share": 1.0,
-   "reward": 15.277942518895399,
+   "reward": 15.390749486996596,
    "fills": 0,
    "q": "Will Tom Nolan fight Mauricio Ruffy next?"
   },
@@ -22800,9 +22800,9 @@
   "0xd479ca05155e7a691df50002b70f7569195c0b1554ba7e4c6aa42bc83eb713a0": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.255,
-   "share": 0.38461538461538475,
-   "reward": 49.40457361424736,
+   "mid": 0.27,
+   "share": 0.2056860773379657,
+   "reward": 49.956423840622435,
    "fills": 0,
    "q": "Will HoneyMad be the next of these streamers to finish GTA VI by December 31, 20"
   },
@@ -22882,8 +22882,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.6950000000000001,
-   "share": 0.38755980861244427,
-   "reward": 45.730023681388076,
+   "share": 0.05061361193731371,
+   "reward": 46.07821809926473,
    "fills": 0,
    "q": "Will xQc be the next of these streamers to finish GTA VI by December 31, 2026?"
   },
@@ -22935,9 +22935,9 @@
   "0x53d195f189ef569b683139c982e3ae51fe4f32e8cccef20dacfabebd435c3ff8": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.1455,
-   "share": 0.9911894273127752,
-   "reward": 9.149518359260366,
+   "mid": 0.1555,
+   "share": 0.9996708902418956,
+   "reward": 9.210897571686228,
    "fills": 0,
    "q": "Will US births in 2026 be between 3.50 million and 3.53 million?"
   },
@@ -23009,7 +23009,7 @@
    "cash": 0.0,
    "mid": 0.21000000000000002,
    "share": 1.0,
-   "reward": 6.594136423608298,
+   "reward": 6.706940985160842,
    "fills": 0,
    "q": "Will Pep Guardiola's next job be Brazil?"
   },
@@ -23018,7 +23018,7 @@
    "cash": 0.0,
    "mid": 0.195,
    "share": 1.0,
-   "reward": 4.551807760322882,
+   "reward": 4.619491941183601,
    "fills": 0,
    "q": "Will the 2026-27 Arctic sea ice max be at least 14.8m sq km?"
   },
@@ -23153,7 +23153,7 @@
    "cash": 0.0,
    "mid": 0.61,
    "share": 1.0,
-   "reward": 2.913000051760012,
+   "reward": 2.98820469716081,
    "fills": 0,
    "q": "Will the chopsticks catch the Starship for SpaceX Starship Flight Test 16?"
   },
@@ -23162,7 +23162,7 @@
    "cash": 0.0,
    "mid": 0.23249999999999998,
    "share": 1.0,
-   "reward": 3.8478118953881455,
+   "reward": 3.945577934409183,
    "fills": 0,
    "q": "Will Davion Mitchell win the 2026-27 NBA Most Improved Player?"
   },
@@ -23207,7 +23207,7 @@
    "cash": 0.0,
    "mid": 0.3285,
    "share": 1.0,
-   "reward": 2.895898313503021,
+   "reward": 3.023746210684378,
    "fills": 0,
    "q": "Will Karl-Anthony Towns lead the NBA in rebounds per game in 2026-27?"
   },
@@ -23216,7 +23216,7 @@
    "cash": 0.0,
    "mid": 0.28200000000000003,
    "share": 1.0,
-   "reward": 1.5212165488578655,
+   "reward": 1.6265030524189827,
    "fills": 0,
    "q": "Will Victor Wembanyama lead the NBA in rebounds per game in 2026-27?"
   },
@@ -23225,16 +23225,16 @@
    "cash": 0.0,
    "mid": 0.43,
    "share": 1.0,
-   "reward": 1.2478032060243456,
+   "reward": 1.3230078514251435,
    "fills": 0,
    "q": "Will the Starship for SpaceX Starship Flight Test 16 achieve a successful splash"
   },
   "0x0245582780dfd9375857cd5a40ee33b2747ec7539c7a42a6574acc80157aa4d6": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.26,
+   "mid": 0.275,
    "share": 1.0,
-   "reward": 1.0625585492886405,
+   "reward": 1.123904086571443,
    "fills": 0,
    "q": "AMD hit with a BIS export-control penalty by March 31, 2027?"
   },
@@ -23243,7 +23243,7 @@
    "cash": 0.0,
    "mid": 0.46499999999999997,
    "share": 1.0,
-   "reward": 1.2478032060243456,
+   "reward": 1.3230078514251435,
    "fills": 0,
    "q": "Next Gemini Neon (4.1+) released by December 31, 2026?"
   },
@@ -23252,7 +23252,7 @@
    "cash": 0.0,
    "mid": 0.46499999999999997,
    "share": 1.0,
-   "reward": 1.2478032060243456,
+   "reward": 1.3230078514251435,
    "fills": 0,
    "q": "Next Gemini Neon (4.1+) released by January 31, 2027?"
   },
@@ -23261,7 +23261,7 @@
    "cash": 0.0,
    "mid": 0.525,
    "share": 1.0,
-   "reward": 1.2478032060243456,
+   "reward": 1.3230078514251435,
    "fills": 0,
    "q": "Next Gemini Neon (4.1+) released by February 28, 2027?"
   },
@@ -23270,7 +23270,7 @@
    "cash": 0.0,
    "mid": 0.49,
    "share": 1.0,
-   "reward": 1.2478032060243456,
+   "reward": 1.3230078514251435,
    "fills": 0,
    "q": "Will the SpaceX Starship Flight Test 16 Super Heavy booster explode?"
   },
@@ -23279,7 +23279,7 @@
    "cash": 0.0,
    "mid": 0.64,
    "share": 1.0,
-   "reward": 1.2478032060243456,
+   "reward": 1.3230078514251435,
    "fills": 0,
    "q": "Will the chopsticks catch SpaceX Starship Flight Test 16 Super Heavy booster?"
   },
@@ -23288,9 +23288,18 @@
    "cash": 0.0,
    "mid": 0.495,
    "share": 1.0,
-   "reward": 0.8311310832975092,
+   "reward": 0.9063357286983069,
    "fills": 0,
    "q": "Next Gemini Carbon (4.1+) released by January 31, 2027?"
+  },
+  "0xf4b2be4cad7cc1c3cbd6d76e6c802aa6d7b34817e7f5c22959dc3ddfb62f4477": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.1535,
+   "share": 0.09981336672257775,
+   "reward": 0.04652355198736027,
+   "fills": 0,
+   "q": "Will Rob Sand win the Nevada Democratic primary?"
   }
  },
  "history": [
@@ -103518,17 +103527,30 @@
    "w": 2992246
   },
   {
-   "ts": "2026-11-22T11:56:40.679596+00:00",
-   "dt_h": 0.119,
-   "reward_tick": 2.7944,
-   "reward_total": 59225.16,
+   "ts": "2026-11-22T11:59:40.767864+00:00",
+   "dt_h": 0.17,
+   "reward_tick": 4.066,
+   "reward_total": 59226.43,
    "mm_value": -679.96,
-   "net": 58545.2,
-   "avg_share": 0.9168,
+   "net": 58546.48,
+   "avg_share": 0.9675,
    "n_markets": 53,
    "fills_total": 659,
    "rebalanced": false,
    "w": 2992247
+  },
+  {
+   "ts": "2026-11-22T12:07:30.447732+00:00",
+   "dt_h": 0.132,
+   "reward_tick": 2.9721,
+   "reward_total": 59229.4,
+   "mm_value": -679.96,
+   "net": 58549.45,
+   "avg_share": 0.9113,
+   "n_markets": 53,
+   "fills_total": 659,
+   "rebalanced": false,
+   "w": 2992248
   }
  ],
  "fills": [
@@ -109464,8 +109486,8 @@
    "ledger": "v4"
   }
  ],
- "reward_total": 59225.1600274308,
- "last_ts": 1795348600.6795957,
+ "reward_total": 59229.40372863497,
+ "last_ts": 1795349250.447732,
  "chosen_at": 1791639880.921448,
  "rebalances": [
   {
@@ -109476,8 +109498,8 @@
   }
  ],
  "last_tick": {
-  "ts": "2026-11-22T11:56:40.679596+00:00",
-  "dt_h": 0.017,
+  "ts": "2026-11-22T12:07:30.447732+00:00",
+  "dt_h": 0.03,
   "markets": [
    {
     "q": "Will Chicago Bears finish the 2026-27 NFL regular ",
@@ -109488,7 +109510,7 @@
    },
    {
     "q": "Will Denver Broncos finish the 2026-27 NFL regular",
-    "mid": 0.468,
+    "mid": 0.467,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -109497,7 +109519,7 @@
     "q": "Will Claude Opus 5.6+ debut at an output token pri",
     "mid": 0.565,
     "share": 1.0,
-    "earned": 0.0097,
+    "earned": 0.0178,
     "inv": 0.0
    },
    {
@@ -109558,7 +109580,7 @@
    },
    {
     "q": "Will MORNING DEW (DONK) - Beyonce win Best R&B Sol",
-    "mid": 0.25,
+    "mid": 0.255,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -109586,7 +109608,7 @@
     "q": "Will the Central Bank of Chile make no change to t",
     "mid": 0.425,
     "share": 1.0,
-    "earned": 0.0042,
+    "earned": 0.0076,
     "inv": 0.0
    },
    {
@@ -109598,7 +109620,7 @@
    },
    {
     "q": "Will the Central Bank of Chile increase the moneta",
-    "mid": 0.346,
+    "mid": 0.356,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -109607,242 +109629,230 @@
     "q": "Will Cristiano Ronaldo join the Qatar Stars League",
     "mid": 0.292,
     "share": 1.0,
-    "earned": 0.0125,
+    "earned": 0.0228,
     "inv": 0.0
    },
    {
     "q": "Will Gigliola Haveriku win Festivali i K\u00ebng\u00ebs 65?",
     "mid": 0.148,
     "share": 1.0,
-    "earned": 0.0056,
+    "earned": 0.0076,
     "inv": 0.0
    },
    {
     "q": "Will Diable play for JD Gaming in 2027?",
     "mid": 0.51,
     "share": 1.0,
-    "earned": 0.0104,
+    "earned": 0.019,
     "inv": 0.0
    },
    {
     "q": "Will Tom Nolan fight Mauricio Ruffy next?",
     "mid": 0.295,
     "share": 1.0,
-    "earned": 0.0104,
+    "earned": 0.019,
     "inv": 0.0
    },
    {
     "q": "Will the next Claude Opus model (5.6+) debut with ",
     "mid": 0.605,
     "share": 1.0,
-    "earned": 0.0097,
+    "earned": 0.0178,
     "inv": 0.0
    },
    {
     "q": "Will the 2026-27 Arctic sea ice max be at least 14",
     "mid": 0.195,
     "share": 1.0,
-    "earned": 0.0063,
+    "earned": 0.0114,
     "inv": 0.0
    },
    {
     "q": "Will US births in 2026 be between 3.50 million and",
-    "mid": 0.145,
-    "share": 0.9912,
-    "earned": 0.0055,
+    "mid": 0.155,
+    "share": 0.9997,
+    "earned": 0.0114,
     "inv": 0.0
    },
    {
     "q": "Will Amazon\u2019s market capitalization be between $2.",
     "mid": 0.17,
     "share": 1.0,
-    "earned": 0.0014,
+    "earned": 0.0025,
     "inv": 0.0
    },
    {
     "q": "Will Pep Guardiola's next job be Brazil?",
     "mid": 0.21,
     "share": 1.0,
-    "earned": 0.0104,
+    "earned": 0.019,
     "inv": 0.0
    },
    {
     "q": "Will the chopsticks catch the Starship for SpaceX ",
     "mid": 0.61,
     "share": 1.0,
-    "earned": 0.007,
+    "earned": 0.0127,
     "inv": 0.0
    },
    {
     "q": "Will Davion Mitchell win the 2026-27 NBA Most Impr",
     "mid": 0.232,
     "share": 1.0,
-    "earned": 0.009,
+    "earned": 0.0165,
     "inv": 0.0
    },
    {
     "q": "Next DeepSeek Flash released by December 31, 2026?",
     "mid": 0.65,
     "share": 1.0,
-    "earned": 0.007,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the 7-day average ship traffic through the Ma",
-    "mid": 0.415,
-    "share": 0.0453,
-    "earned": 0.0002,
+    "earned": 0.0127,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ma",
     "mid": 0.795,
     "share": 1.0,
-    "earned": 0.007,
+    "earned": 0.0127,
     "inv": 0.0
    },
    {
     "q": "Will Diable play for Bilibili Gaming in 2027?",
-    "mid": 0.417,
+    "mid": 0.416,
     "share": 1.0,
-    "earned": 0.009,
+    "earned": 0.0165,
     "inv": 0.0
    },
    {
     "q": "Will Karl-Anthony Towns lead the NBA in rebounds p",
     "mid": 0.329,
     "share": 1.0,
-    "earned": 0.0118,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the 2-year Treasury yield dip below 4.40% bef",
-    "mid": 0.33,
-    "share": 0.3012,
-    "earned": 0.0006,
+    "earned": 0.0216,
     "inv": 0.0
    },
    {
     "q": "Will Victor Wembanyama lead the NBA in rebounds pe",
     "mid": 0.282,
     "share": 1.0,
-    "earned": 0.0097,
+    "earned": 0.0178,
     "inv": 0.0
    },
    {
     "q": "Will the Starship for SpaceX Starship Flight Test ",
     "mid": 0.43,
     "share": 1.0,
-    "earned": 0.007,
+    "earned": 0.0127,
     "inv": 0.0
    },
    {
     "q": "AMD hit with a BIS export-control penalty by March",
-    "mid": 0.26,
+    "mid": 0.275,
     "share": 1.0,
-    "earned": 0.007,
+    "earned": 0.0127,
     "inv": 0.0
    },
    {
     "q": "Next Gemini Neon (4.1+) released by December 31, 2",
     "mid": 0.465,
     "share": 1.0,
-    "earned": 0.007,
+    "earned": 0.0127,
     "inv": 0.0
    },
    {
     "q": "Next Gemini Neon (4.1+) released by January 31, 20",
     "mid": 0.465,
     "share": 1.0,
-    "earned": 0.007,
+    "earned": 0.0127,
     "inv": 0.0
    },
    {
     "q": "Next Gemini Neon (4.1+) released by February 28, 2",
     "mid": 0.525,
     "share": 1.0,
-    "earned": 0.007,
+    "earned": 0.0127,
     "inv": 0.0
    },
    {
     "q": "Will the SpaceX Starship Flight Test 16 Super Heav",
     "mid": 0.49,
     "share": 1.0,
-    "earned": 0.007,
+    "earned": 0.0127,
     "inv": 0.0
    },
    {
     "q": "Will the chopsticks catch SpaceX Starship Flight T",
     "mid": 0.64,
     "share": 1.0,
-    "earned": 0.007,
+    "earned": 0.0127,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index hit $4.00 (LOW) by Decemb",
-    "mid": 0.402,
-    "share": 0.9981,
-    "earned": 0.0021,
+    "mid": 0.404,
+    "share": 0.7378,
+    "earned": 0.0374,
     "inv": 0.0
    },
    {
     "q": "Next Gemini Carbon (4.1+) released by January 31, ",
     "mid": 0.495,
     "share": 1.0,
-    "earned": 0.007,
+    "earned": 0.0127,
     "inv": 0.0
    },
    {
     "q": "Will xQc be the next of these streamers to finish ",
     "mid": 0.695,
-    "share": 0.3876,
-    "earned": 0.075,
+    "share": 0.0506,
+    "earned": 0.0158,
     "inv": 0.0
    },
    {
     "q": "Will HoneyMad be the next of these streamers to fi",
-    "mid": 0.255,
-    "share": 0.3846,
-    "earned": 0.0594,
+    "mid": 0.27,
+    "share": 0.2057,
+    "earned": 0.0613,
     "inv": 0.0
    },
    {
     "q": "Will Bakir Izetbegovi\u0107 be the next Chairman of the",
-    "mid": 0.157,
+    "mid": 0.163,
     "share": 1.0,
-    "earned": 0.064,
+    "earned": 0.1167,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the St",
-    "mid": 0.585,
-    "share": 0.3405,
-    "earned": 0.0095,
+    "mid": 0.56,
+    "share": 0.9441,
+    "earned": 0.006,
+    "inv": 0.0
+   },
+   {
+    "q": "Will the Bank of Israel make no change to the Bank",
+    "mid": 0.525,
+    "share": 0.1742,
+    "earned": 0.0154,
+    "inv": 0.0
+   },
+   {
+    "q": "Will Rob Sand win the Nevada Democratic primary?",
+    "mid": 0.153,
+    "share": 0.0998,
+    "earned": 0.0023,
     "inv": 0.0
    }
   ],
-  "reward_tick": 0.4133,
-  "reward_total": 59225.16,
+  "reward_tick": 0.6227,
+  "reward_total": 59229.4,
   "mm_value": -679.96,
-  "net": 58545.2,
-  "avg_share": 0.9168,
+  "net": 58549.45,
+  "avg_share": 0.9113,
   "n_markets": 53,
   "fills_total": 659,
   "rebalanced": false
  },
  "reviews": [
-  {
-   "ts": "2026-11-01T11:28:16.863976+00:00",
-   "swapped": 2,
-   "out": [
-    "Will the Bank of Japan increase the uncollateraliz",
-    "Will the Reserve Bank of India increase the policy"
-   ],
-   "in": [
-    "Will the median home value in the US be between $4",
-    "Will Pacifica launch a token by December 31, 2027?"
-   ]
-  },
   {
    "ts": "2026-11-01T12:28:36.838717+00:00",
    "swapped": 3,
@@ -118228,7 +118238,19 @@
     "Will Bakir Izetbegovi\u0107 be the next Chairman of the",
     "Will the 7-day average ship traffic through the St"
    ]
+  },
+  {
+   "ts": "2026-11-22T11:57:40.837592+00:00",
+   "swapped": 2,
+   "out": [
+    "Will the 7-day average ship traffic through the Ma",
+    "Will the 2-year Treasury yield dip below 4.40% bef"
+   ],
+   "in": [
+    "Will the Bank of Israel make no change to the Bank",
+    "Will Rob Sand win the Nevada Democratic primary?"
+   ]
   }
  ],
- "reviewed_at": 1795345030.9521658
+ "reviewed_at": 1795348660.8375916
 }

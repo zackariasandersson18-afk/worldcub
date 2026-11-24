@@ -379,21 +379,6 @@
    "rate0": 10.0
   },
   {
-   "cond": "0x6ec7488799349b287b7d7074880fce11d87d6b8173c64550b063501d8d1a65f3",
-   "question": "Will Trey McBride finish the 2026-27 NFL regular season with the most receptions?",
-   "yes": "1113624002629125612171346195982885414679489718594607275479465838861747078799",
-   "no": "82237213835676617753850359543253298300569639387873871744224472438537272250992",
-   "rate": 21.0,
-   "v": 4.5,
-   "min_size": 20.0,
-   "d": 0.0225,
-   "collateral": 19.1,
-   "est_reward_day": 15.0,
-   "end": "2027-01-27T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 15.0
-  },
-  {
    "cond": "0x12e7e3aaed06c1ac55f082a0b4282d5f525cdb2106afb1972e9d861bdc7e1649",
    "question": "Will the Ornn H200 Index hit $5.00 (LOW) by December 31, 2026?",
    "yes": "84962224967559357710227660866923494523709197957026792863757180476171301908252",
@@ -413,7 +398,7 @@
    "question": "Will CeeDee Lamb finish the 2026-27 NFL regular season with the most receptions?",
    "yes": "79602597152199907294335029925828817068518963016023047926155170849738530186033",
    "no": "45793643482473989039619134361109086048433274735953997019924684997744024918946",
-   "rate": 10.0,
+   "rate": 14.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -593,7 +578,7 @@
    "question": "Will Zetod feat. hellika win Eesti Laul 2027?",
    "yes": "96196089338687007405101026965064730712061715666742363993991053305165322379052",
    "no": "76564757761354371387507110636972507803655699159229899516745942412353091602931",
-   "rate": 24.0,
+   "rate": 21.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -709,21 +694,6 @@
    "rate0": 100.0
   },
   {
-   "cond": "0xcfb52668c69b301c75017686d329cc2d269b3a20ecd26ac035596f2358363e26",
-   "question": "Will Chris Van Hollen announce a presidential run before 2028?",
-   "yes": "27643700414661920785978937806759318782947647860497419776063262862119744264768",
-   "no": "83690632620112112982175919009720594847814568872060507667405052893062431828069",
-   "rate": 50.0,
-   "v": 4.5,
-   "min_size": 20.0,
-   "d": 0.0225,
-   "collateral": 19.099999999999998,
-   "est_reward_day": 50.0,
-   "end": "2028-01-01T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 50.0
-  },
-  {
    "cond": "0x4043f3373c2aadd7b3d885620dc76d0b95631c5f4d245c9dcd8086f9ab24a55b",
    "question": "Will Jasmine Crockett announce a presidential run before 2028?",
    "yes": "74411931649568887643218185394642776629697415742545549247544579330125808462303",
@@ -795,6 +765,36 @@
    "collateral": 18.700000000000003,
    "est_reward_day": 200.0,
    "end": "2028-01-01T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 200.0
+  },
+  {
+   "cond": "0x15e62832733374c81648dcef8cf0c1451b643a3d99f867aef8ba679e34fccdb1",
+   "question": "Will Nscale IPO by March 31, 2027?",
+   "yes": "23050382546543275536898718159301836929126091512442146635959448263146057896008",
+   "no": "46405881662563970676925428100244125162168330933121751754925717143975255291567",
+   "rate": 200.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.700000000000003,
+   "est_reward_day": 200.0,
+   "end": "2027-04-01T03:59:00Z",
+   "share0": 1.0,
+   "rate0": 200.0
+  },
+  {
+   "cond": "0xd7e5d700439dc80e56f1d59f956545c2c0328222163a46309a7ab4dd22b97b75",
+   "question": "Will Nscale IPO by June 30, 2027?",
+   "yes": "10012527546267750647743689024840789148342146552562500698866621234949397952707",
+   "no": "54107711851669756740070898662518457270927361113646768905007766628350684181699",
+   "rate": 200.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.700000000000003,
+   "est_reward_day": 200.0,
+   "end": "2027-07-01T03:59:00Z",
    "share0": 1.0,
    "rate0": 200.0
   }
@@ -1136,9 +1136,9 @@
   "0xeaf463a1a9353009d8d9c50839bcc56afe7a043cacb131fccf908dfa26b10769": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.535,
+   "mid": 0.545,
    "share": 1.0,
-   "reward": 208.11016587409196,
+   "reward": 208.21713144440938,
    "fills": 0,
    "q": "Will Claude Opus 5.6+ debut at an output token price of at least $20 by June 30,"
   },
@@ -2072,7 +2072,7 @@
   "0x7a9a68c97682b82da841fa413f4764e86024c49e2c58a01b34cb5d3c5b9b2624": {
    "inv": 20.0,
    "cash": -8.85,
-   "mid": 0.385,
+   "mid": 0.41000000000000003,
    "share": 1.0,
    "reward": 87.751647885782,
    "fills": 1,
@@ -4128,7 +4128,7 @@
   "0xfafaa706aa77ca7becd5741282e7455659580cbfe62a3881d5020b4b453d5753": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.325,
+   "mid": 0.32,
    "share": 1.0,
    "reward": 9.29485488192705,
    "fills": 0,
@@ -4522,7 +4522,7 @@
   "0x5d15579a3a31d6220eb8d33d167788db82976f14c856768a5e37e51afdaeb279": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.46950000000000003,
+   "mid": 0.47,
    "share": 1.0,
    "reward": 17.59805527737572,
    "fills": 0,
@@ -6612,8 +6612,8 @@
    "inv": 0.0,
    "cash": -2.67096,
    "mid": 0.268,
-   "share": 0.1410854873545605,
-   "reward": 45.420176535894,
+   "share": null,
+   "reward": 45.433891761335694,
    "fills": 2,
    "q": "Will Trey McBride finish the 2026-27 NFL regular season with the most receptions",
    "closed_at": 0.194
@@ -7675,9 +7675,9 @@
   "0xd638569ea59abc5dec70d2aed1cb5f4c86353da8614f06d0e3a88751ba2d420b": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.14150000000000001,
+   "mid": 0.17700000000000002,
    "share": 1.0,
-   "reward": 15.937676818684627,
+   "reward": 15.971714430901736,
    "fills": 0,
    "q": "Will Jaxon Smith-Njigba finish the 2026-27 NFL regular season with the most rece"
   },
@@ -12053,7 +12053,7 @@
    "cash": -0.34185,
    "mid": 0.36500000000000005,
    "share": 1.0,
-   "reward": 832.5333263176258,
+   "reward": 832.5496377650402,
    "fills": 1,
    "q": "Will the Ornn H200 Index hit $5.00 (LOW) by December 31, 2026?",
    "closed_at": 0.85
@@ -20534,7 +20534,7 @@
    "cash": 0.0,
    "mid": 0.5650000000000001,
    "share": 1.0,
-   "reward": 81.61050872422541,
+   "reward": 81.6563511115043,
    "fills": 0,
    "q": "Will the Central Bank of Chile make no change to the monetary policy rate at the"
   },
@@ -21774,9 +21774,9 @@
   "0x4a3bf1d04d3b497aa509c019de1a8bdf4575539c1a1e081b921a7b08bea1701e": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.38,
+   "mid": 0.36,
    "share": 1.0,
-   "reward": 36.6473617985359,
+   "reward": 36.92510148927679,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait reach 30+ b"
   },
@@ -23232,9 +23232,9 @@
   "0x0245582780dfd9375857cd5a40ee33b2747ec7539c7a42a6574acc80157aa4d6": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.29,
+   "mid": 0.275,
    "share": 1.0,
-   "reward": 17.518303956322796,
+   "reward": 17.59470793512092,
    "fills": 0,
    "q": "AMD hit with a BIS export-control penalty by March 31, 2027?"
   },
@@ -23279,7 +23279,7 @@
    "cash": 0.0,
    "mid": 0.635,
    "share": 1.0,
-   "reward": 4.505777218823347,
+   "reward": 4.517237815643066,
    "fills": 0,
    "q": "Will the chopsticks catch SpaceX Starship Flight Test 16 Super Heavy booster?"
   },
@@ -23288,7 +23288,7 @@
    "cash": 0.0,
    "mid": 0.45,
    "share": 1.0,
-   "reward": 8.181810140830493,
+   "reward": 8.212371732349743,
    "fills": 0,
    "q": "Next Gemini Carbon (4.1+) released by January 31, 2027?"
   },
@@ -23378,7 +23378,7 @@
    "cash": 0.0,
    "mid": 0.24,
    "share": 1.0,
-   "reward": 5.682846782945767,
+   "reward": 5.862054419353447,
    "fills": 0,
    "q": "Will Zetod feat. hellika win Eesti Laul 2027?"
   },
@@ -23556,27 +23556,27 @@
   "0x2cc3a90736030c3115625fcdfd71f93f05cbd398b786c2dd3cb415d588775fdb": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.2405,
+   "mid": 0.2395,
    "share": 1.0,
-   "reward": 9.471869135904656,
+   "reward": 9.553822331646538,
    "fills": 0,
    "q": "Will CeeDee Lamb finish the 2026-27 NFL regular season with the most receptions?"
   },
   "0x4a9dec4f5df3526b535e9ec7c5b49bdba9c235d7963a7d1e23ef7e66128f0f82": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.26,
+   "mid": 0.25,
    "share": 1.0,
-   "reward": 5.117652999046776,
+   "reward": 5.159331816269291,
    "fills": 0,
    "q": "Will Lamine Yamal rank in Google\u2019s Top 5 Most Searched People in the US of 2026?"
   },
   "0x49b57c5f1288d20e6d12e735ff87fa2e204b574120680ae4a9445d30c75060b1": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.305,
+   "mid": 0.315,
    "share": 1.0,
-   "reward": 5.928467015002944,
+   "reward": 5.974309402281818,
    "fills": 0,
    "q": "Will Wagner Moura rank in Google\u2019s Top 5 Most Searched Actors of 2026?"
   },
@@ -23700,9 +23700,9 @@
   "0x5f87b5a6e804985aabee25a0ff63b15ed64beb04c85b7172113bdab95d6de2be": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.445,
+   "mid": 0.485,
    "share": 1.0,
-   "reward": 3.43415599813064,
+   "reward": 3.4549906576673197,
    "fills": 0,
    "q": "Will MegaETH hit $0.10 by June 30, 2027?"
   },
@@ -23765,7 +23765,7 @@
    "cash": 0.0,
    "mid": 0.745,
    "share": 1.0,
-   "reward": 17.37998996005841,
+   "reward": 17.647403885851844,
    "fills": 0,
    "q": "Will any game last over 70 minutes at the BLAST Slam IX Playoffs?"
   },
@@ -23853,9 +23853,9 @@
   "0x462256abfa7296067759fba9922a6b33f6287d07914e496563881ae631b0081f": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.505,
+   "mid": 0.51,
    "share": 1.0,
-   "reward": 14.506226111175831,
+   "reward": 14.773640036969267,
    "fills": 0,
    "q": "Will M80 qualify to the Playoffs at PGL Major Singapore 2026?"
   },
@@ -23873,7 +23873,7 @@
    "cash": 0.0,
    "mid": 0.75,
    "share": 1.0,
-   "reward": 14.457695894881523,
+   "reward": 14.725109820674959,
    "fills": 0,
    "q": "Will one team kill two Tormentors in a single game at the BLAST Slam IX Playoffs"
   },
@@ -23927,7 +23927,7 @@
    "cash": 0.0,
    "mid": 0.5,
    "share": 1.0,
-   "reward": 12.718249861900365,
+   "reward": 12.9856637876938,
    "fills": 0,
    "q": "Will Eternal Fire qualify to the Playoffs at PGL Major Singapore 2026?"
   },
@@ -23999,7 +23999,7 @@
    "cash": 0.0,
    "mid": 0.505,
    "share": 1.0,
-   "reward": 8.638174538010796,
+   "reward": 8.905588463804232,
    "fills": 0,
    "q": "Will FaZe qualify to the Playoffs at PGL Major Singapore 2026?"
   },
@@ -24026,7 +24026,7 @@
    "cash": 0.0,
    "mid": 0.5,
    "share": 1.0,
-   "reward": 8.638174538010796,
+   "reward": 8.905588463804232,
    "fills": 0,
    "q": "Will there be a 1v5 ace clutch in the PGL Major Singapore 2026 playoffs?"
   },
@@ -24035,16 +24035,16 @@
    "cash": 0.0,
    "mid": 0.49,
    "share": 1.0,
-   "reward": 8.638174538010796,
+   "reward": 8.905588463804232,
    "fills": 0,
    "q": "Will 100 Thieves go 3-0 in Stage 1 of the PGL Major Singapore 2026?"
   },
   "0xa67f19e4233f692da262b7eec89ef323be4b7f31de20c87a55a30e8d1bdb9f6c": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.6699999999999999,
+   "mid": 0.675,
    "share": 1.0,
-   "reward": 5.305991305823526,
+   "reward": 5.470250080530207,
    "fills": 0,
    "q": "Will Off Campus rank in Google\u2019s Top 5 Most Searched TV Shows of 2026?"
   },
@@ -24062,7 +24062,7 @@
    "cash": 0.0,
    "mid": 0.5,
    "share": 1.0,
-   "reward": 6.327277294808517,
+   "reward": 6.594691220601954,
    "fills": 0,
    "q": "Will DENDELE qualify to the Playoffs at PGL Major Singapore 2026?"
   },
@@ -24150,9 +24150,9 @@
   "0x9f734334149eb4e7d7ede78276ea2ee775122ed275060a80c94d26a6c3186bc4": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.495,
+   "mid": 0.5,
    "share": 1.0,
-   "reward": 7.899522627945295,
+   "reward": 8.66356241592654,
    "fills": 0,
    "q": "U.S. diplomat expelled by March 31, 2027?"
   },
@@ -24161,25 +24161,25 @@
    "cash": 0.0,
    "mid": 0.515,
    "share": 1.0,
-   "reward": 7.899522627945295,
+   "reward": 8.66356241592654,
    "fills": 0,
    "q": "Poilievre announced resignation or removal by March 31, 2027?"
   },
   "0xf11511e14873ba8742587c36a5ef1d9a6f4bab6f95142d4f97e19c6517fb4dde": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.495,
+   "mid": 0.505,
    "share": 1.0,
-   "reward": 7.899522627945295,
+   "reward": 8.66356241592654,
    "fills": 0,
    "q": "Poilievre announced resignation or removal by June 30, 2027?"
   },
   "0x6c902b8809fcf5a95e1ac0fba7f51a6d2b3f4d698936c2b391d55f558968df0a": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.51,
+   "mid": 0.505,
    "share": 1.0,
-   "reward": 7.899522627945295,
+   "reward": 8.66356241592654,
    "fills": 0,
    "q": "Poilievre announced resignation or removal by December 31, 2027?"
   },
@@ -24195,18 +24195,18 @@
   "0xcfb52668c69b301c75017686d329cc2d269b3a20ecd26ac035596f2358363e26": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.405,
-   "share": 0.26281635301751904,
-   "reward": 2.5272963012317136,
+   "mid": 0.415,
+   "share": null,
+   "reward": 2.5448125131115504,
    "fills": 0,
    "q": "Will Chris Van Hollen announce a presidential run before 2028?"
   },
   "0x4043f3373c2aadd7b3d885620dc76d0b95631c5f4d245c9dcd8086f9ab24a55b": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.49,
+   "mid": 0.495,
    "share": 1.0,
-   "reward": 3.9497613139726475,
+   "reward": 4.33178120796327,
    "fills": 0,
    "q": "Will Jasmine Crockett announce a presidential run before 2028?"
   },
@@ -24245,6 +24245,24 @@
    "reward": 0.4345551235213906,
    "fills": 0,
    "q": "Will Crusoe be acquired before 2028?"
+  },
+  "0x15e62832733374c81648dcef8cf0c1451b643a3d99f867aef8ba679e34fccdb1": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.38,
+   "share": 1.0,
+   "reward": 0.4168419694458997,
+   "fills": 0,
+   "q": "Will Nscale IPO by March 31, 2027?"
+  },
+  "0xd7e5d700439dc80e56f1d59f956545c2c0328222163a46309a7ab4dd22b97b75": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.5549999999999999,
+   "share": 1.0,
+   "reward": 0.13938112225797442,
+   "fills": 0,
+   "q": "Will Nscale IPO by June 30, 2027?"
   }
  },
  "history": [
@@ -107696,17 +107714,30 @@
    "w": 2992494
   },
   {
-   "ts": "2026-11-24T05:10:58.330602+00:00",
-   "dt_h": 0.017,
-   "reward_tick": 0.6118,
-   "reward_total": 59954.17,
-   "mm_value": -680.96,
-   "net": 59273.22,
-   "avg_share": 0.9581,
+   "ts": "2026-11-24T05:19:58.597893+00:00",
+   "dt_h": 0.17,
+   "reward_tick": 6.4088,
+   "reward_total": 59959.97,
+   "mm_value": -680.46,
+   "net": 59279.51,
+   "avg_share": 0.999,
    "n_markets": 53,
    "fills_total": 659,
    "rebalanced": false,
    "w": 2992495
+  },
+  {
+   "ts": "2026-11-24T05:21:58.460979+00:00",
+   "dt_h": 0.033,
+   "reward_tick": 1.5011,
+   "reward_total": 59961.47,
+   "mm_value": -680.46,
+   "net": 59281.02,
+   "avg_share": 0.999,
+   "n_markets": 53,
+   "fills_total": 659,
+   "rebalanced": false,
+   "w": 2992496
   }
  ],
  "fills": [
@@ -113642,8 +113673,8 @@
    "ledger": "v4"
   }
  ],
- "reward_total": 59954.17273569958,
- "last_ts": 1795497058.3306024,
+ "reward_total": 59961.470779026866,
+ "last_ts": 1795497718.4609792,
  "chosen_at": 1791639880.921448,
  "rebalances": [
   {
@@ -113654,12 +113685,12 @@
   }
  ],
  "last_tick": {
-  "ts": "2026-11-24T05:10:58.330602+00:00",
-  "dt_h": 0.017,
+  "ts": "2026-11-24T05:21:58.460979+00:00",
+  "dt_h": 0.033,
   "markets": [
    {
     "q": "Will Chicago Bears finish the 2026-27 NFL regular ",
-    "mid": 0.385,
+    "mid": 0.41,
     "share": 1.0,
     "earned": 0.0,
     "inv": 20.0
@@ -113673,9 +113704,9 @@
    },
    {
     "q": "Will Claude Opus 5.6+ debut at an output token pri",
-    "mid": 0.535,
+    "mid": 0.545,
     "share": 1.0,
-    "earned": 0.0097,
+    "earned": 0.0194,
     "inv": 0.0
    },
    {
@@ -113764,12 +113795,12 @@
     "q": "Will the Central Bank of Chile make no change to t",
     "mid": 0.565,
     "share": 1.0,
-    "earned": 0.0042,
+    "earned": 0.0083,
     "inv": 0.0
    },
    {
     "q": "Will Dune: Part Three win Best Sound at the 99th A",
-    "mid": 0.325,
+    "mid": 0.32,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -113783,70 +113814,63 @@
    },
    {
     "q": "AMD hit with a BIS export-control penalty by March",
-    "mid": 0.29,
+    "mid": 0.275,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0139,
     "inv": 0.0
    },
    {
     "q": "Will the chopsticks catch SpaceX Starship Flight T",
     "mid": 0.635,
     "share": 1.0,
-    "earned": 0.001,
+    "earned": 0.0021,
     "inv": 0.0
    },
    {
     "q": "Next Gemini Carbon (4.1+) released by January 31, ",
     "mid": 0.45,
     "share": 1.0,
-    "earned": 0.0028,
-    "inv": 0.0
-   },
-   {
-    "q": "Will Trey McBride finish the 2026-27 NFL regular s",
-    "mid": 0.268,
-    "share": 0.1411,
-    "earned": 0.0021,
+    "earned": 0.0055,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index hit $5.00 (LOW) by Decemb",
     "mid": 0.365,
     "share": 1.0,
-    "earned": 0.0021,
+    "earned": 0.0042,
     "inv": 0.0
    },
    {
     "q": "Will CeeDee Lamb finish the 2026-27 NFL regular se",
-    "mid": 0.24,
+    "mid": 0.239,
+    "share": 1.0,
+    "earned": 0.0194,
+    "inv": 0.0
+   },
+   {
+    "q": "Will Lamine Yamal rank in Google\u2019s Top 5 Most Sear",
+    "mid": 0.25,
+    "share": 1.0,
+    "earned": 0.0083,
+    "inv": 0.0
+   },
+   {
+    "q": "Will Wagner Moura rank in Google\u2019s Top 5 Most Sear",
+    "mid": 0.315,
+    "share": 1.0,
+    "earned": 0.0083,
+    "inv": 0.0
+   },
+   {
+    "q": "Will MegaETH hit $0.10 by June 30, 2027?",
+    "mid": 0.485,
     "share": 1.0,
     "earned": 0.0069,
     "inv": 0.0
    },
    {
-    "q": "Will Lamine Yamal rank in Google\u2019s Top 5 Most Sear",
-    "mid": 0.26,
-    "share": 1.0,
-    "earned": 0.0042,
-    "inv": 0.0
-   },
-   {
-    "q": "Will Wagner Moura rank in Google\u2019s Top 5 Most Sear",
-    "mid": 0.305,
-    "share": 1.0,
-    "earned": 0.0042,
-    "inv": 0.0
-   },
-   {
-    "q": "Will MegaETH hit $0.10 by June 30, 2027?",
-    "mid": 0.445,
-    "share": 1.0,
-    "earned": 0.0,
-    "inv": 0.0
-   },
-   {
     "q": "Will Jaxon Smith-Njigba finish the 2026-27 NFL reg",
-    "mid": 0.142,
+    "mid": 0.177,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -113855,119 +113879,112 @@
     "q": "Will any game last over 70 minutes at the BLAST Sl",
     "mid": 0.745,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0486,
     "inv": 0.0
    },
    {
     "q": "Will M80 qualify to the Playoffs at PGL Major Sing",
-    "mid": 0.505,
+    "mid": 0.51,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0486,
     "inv": 0.0
    },
    {
     "q": "Will one team kill two Tormentors in a single game",
     "mid": 0.75,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0486,
     "inv": 0.0
    },
    {
     "q": "Will Eternal Fire qualify to the Playoffs at PGL M",
     "mid": 0.5,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0486,
     "inv": 0.0
    },
    {
     "q": "Will FaZe qualify to the Playoffs at PGL Major Sin",
     "mid": 0.505,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0486,
     "inv": 0.0
    },
    {
     "q": "Will there be a 1v5 ace clutch in the PGL Major Si",
     "mid": 0.5,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0486,
     "inv": 0.0
    },
    {
     "q": "Will 100 Thieves go 3-0 in Stage 1 of the PGL Majo",
     "mid": 0.49,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0486,
     "inv": 0.0
    },
    {
     "q": "Will Zetod feat. hellika win Eesti Laul 2027?",
     "mid": 0.24,
     "share": 1.0,
-    "earned": 0.0166,
+    "earned": 0.0291,
     "inv": 0.0
    },
    {
     "q": "Will Off Campus rank in Google\u2019s Top 5 Most Search",
-    "mid": 0.67,
+    "mid": 0.675,
     "share": 1.0,
-    "earned": 0.0149,
+    "earned": 0.0298,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ba",
-    "mid": 0.38,
+    "mid": 0.36,
     "share": 1.0,
-    "earned": 0.0277,
+    "earned": 0.0555,
     "inv": 0.0
    },
    {
     "q": "Will DENDELE qualify to the Playoffs at PGL Major ",
     "mid": 0.5,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0486,
     "inv": 0.0
    },
    {
     "q": "U.S. diplomat expelled by March 31, 2027?",
-    "mid": 0.495,
+    "mid": 0.5,
     "share": 1.0,
-    "earned": 0.0694,
+    "earned": 0.1387,
     "inv": 0.0
    },
    {
     "q": "Poilievre announced resignation or removal by Marc",
     "mid": 0.515,
     "share": 1.0,
-    "earned": 0.0694,
+    "earned": 0.1387,
     "inv": 0.0
    },
    {
     "q": "Poilievre announced resignation or removal by June",
-    "mid": 0.495,
+    "mid": 0.505,
     "share": 1.0,
-    "earned": 0.0694,
+    "earned": 0.1387,
     "inv": 0.0
    },
    {
     "q": "Poilievre announced resignation or removal by Dece",
-    "mid": 0.51,
+    "mid": 0.505,
     "share": 1.0,
-    "earned": 0.0694,
-    "inv": 0.0
-   },
-   {
-    "q": "Will Chris Van Hollen announce a presidential run ",
-    "mid": 0.405,
-    "share": 0.2628,
-    "earned": 0.0091,
+    "earned": 0.1387,
     "inv": 0.0
    },
    {
     "q": "Will Jasmine Crockett announce a presidential run ",
-    "mid": 0.49,
+    "mid": 0.495,
     "share": 1.0,
-    "earned": 0.0347,
+    "earned": 0.0694,
     "inv": 0.0
    },
    {
@@ -113985,34 +114002,32 @@
    {
     "q": "Will Crusoe be acquired before 2028?",
     "status": "no book"
+   },
+   {
+    "q": "Will Nscale IPO by March 31, 2027?",
+    "mid": 0.38,
+    "share": 1.0,
+    "earned": 0.2775,
+    "inv": 0.0
+   },
+   {
+    "q": "Will Nscale IPO by June 30, 2027?",
+    "mid": 0.555,
+    "share": 1.0,
+    "earned": 0.0,
+    "inv": 0.0
    }
   ],
-  "reward_tick": 0.6118,
-  "reward_total": 59954.17,
-  "mm_value": -680.96,
-  "net": 59273.22,
-  "avg_share": 0.9581,
+  "reward_tick": 1.5011,
+  "reward_total": 59961.47,
+  "mm_value": -680.46,
+  "net": 59281.02,
+  "avg_share": 0.999,
   "n_markets": 53,
   "fills_total": 659,
   "rebalanced": false
  },
  "reviews": [
-  {
-   "ts": "2026-11-03T04:56:17.934326+00:00",
-   "swapped": 4,
-   "out": [
-    "Will the Bank of England increase the Bank Rate by",
-    "Will Apple be the second-largest company in the wo",
-    "Will Theo launch a token by June 30, 2027?",
-    "Will Cryocells play for 100 Thieves in 2027?"
-   ],
-   "in": [
-    "Will the ECB increase the deposit facility rate by",
-    "Will the Reserve Bank of Australia increase the ca",
-    "Will Rachel Campos-Duffy be the next White House P",
-    "Will the ECB make no change to the deposit facilit"
-   ]
-  },
   {
    "ts": "2026-11-03T05:57:14.786020+00:00",
    "swapped": 4,
@@ -122662,7 +122677,19 @@
     "Will Lambda be acquired before 2028?",
     "Will Crusoe be acquired before 2028?"
    ]
+  },
+  {
+   "ts": "2026-11-24T05:18:58.385248+00:00",
+   "swapped": 2,
+   "out": [
+    "Will Chris Van Hollen announce a presidential run ",
+    "Will Trey McBride finish the 2026-27 NFL regular s"
+   ],
+   "in": [
+    "Will Nscale IPO by March 31, 2027?",
+    "Will Nscale IPO by June 30, 2027?"
+   ]
   }
  ],
- "reviewed_at": 1795493884.2792668
+ "reviewed_at": 1795497538.3852484
 }

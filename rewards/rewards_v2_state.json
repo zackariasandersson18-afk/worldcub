@@ -22,7 +22,7 @@
    "question": "Will the 5-year Treasury yield hit 5.05% before 2027?",
    "yes": "93259160770902642649324137579044300855686960588442173647278145832316752114564",
    "no": "43245011614048464406521201592122505555550112638296857795342288555623054243825",
-   "rate": 40.0,
+   "rate": 3.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -67,7 +67,7 @@
    "question": "Will DENDELE qualify to the Playoffs at PGL Major Singapore 2026?",
    "yes": "12030683417277809895545806816943009476176318945305388341149166431601748522615",
    "no": "50733812185293994043434787248680601098317728741621052552100423317057653676287",
-   "rate": 0.0,
+   "rate": 35.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -97,7 +97,7 @@
    "question": "Will GOSH (BC.Game) qualify to the Playoffs at PGL Major Singapore 2026?",
    "yes": "89701038368830977524866677187091189570234369526900508083983754989108971890645",
    "no": "99827010213661111257943761586177213062664872769517622517262120867527109438446",
-   "rate": 0.0,
+   "rate": 35.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -232,7 +232,7 @@
    "question": "Will FlyQuest go 3-0 in Stage 1 of the PGL Major Singapore 2026?",
    "yes": "22491324118066318642461743558448765766636479567988342476883579702231087561872",
    "no": "21929586672810056149903124939396691060117095879548081727019621005220371380653",
-   "rate": 35.0,
+   "rate": 0.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -6534,9 +6534,9 @@
   "0xe83778c342c966289dbbc33bbc53851ae057ed77b8e497fd8aaf0fb1142f3b5a": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.39,
-   "share": 1.0,
-   "reward": 32.603143265868056,
+   "mid": 0.355,
+   "share": 0.52784787986307,
+   "reward": 32.7501037262063,
    "fills": 0,
    "q": "Will the 5-year Treasury yield hit 5.05% before 2027?"
   },
@@ -9055,8 +9055,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.445,
-   "share": 0.02313483915126627,
-   "reward": 61.181455888484095,
+   "share": 0.020851326341764356,
+   "reward": 61.18237285626394,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Malacca Strait be 230+ on Decemb"
   },
@@ -9083,7 +9083,7 @@
    "cash": 0.0,
    "mid": 0.375,
    "share": 1.0,
-   "reward": 53.11146016820523,
+   "reward": 53.45051596875354,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait reach 30+ b"
   },
@@ -11305,25 +11305,25 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.5700000000000001,
-   "share": 0.006102595938835389,
-   "reward": 1.8410233774286648,
+   "share": 0.01344858158972188,
+   "reward": 1.8468056921372529,
    "fills": 0,
    "q": "Will Carlos Alcaraz win the 2027 Australian Open?"
   },
   "0xf4a19715597c09ddf1321895bc5e631ead75d80899d61bee2ef5a76a9b96fcd1": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.509,
+   "mid": 0.5,
    "share": 1.0,
-   "reward": 12.694272223584077,
+   "reward": 12.767503471396587,
    "fills": 0,
    "q": "Will DENDELE qualify to the Playoffs at PGL Major Singapore 2026?"
   },
   "0x6d9f5b3171293fea2f50cc1e2737733c4d5d3fde9800fef723d1bf9f9587678d": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.4555,
-   "share": 1.0,
+   "mid": 0.0355,
+   "share": 0.03648758220967595,
    "reward": 4.772593243420123,
    "fills": 0,
    "q": "Will Wildcard qualify to the Playoffs at PGL Major Singapore 2026?"
@@ -11331,8 +11331,8 @@
   "0x2a45e983c66754fcf05be528784dbf9f4af1c47323e218ea4d4dfb2dae84b820": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.475,
-   "share": 1.0,
+   "mid": 0.045,
+   "share": 0.3062767834635741,
    "reward": 13.065843150130018,
    "fills": 0,
    "q": "Will GOSH (BC.Game) qualify to the Playoffs at PGL Major Singapore 2026?"
@@ -11342,7 +11342,7 @@
    "cash": 0.0,
    "mid": 0.525,
    "share": 1.0,
-   "reward": 2.3441906425167245,
+   "reward": 2.356057595535915,
    "fills": 0,
    "q": "Will there be a Zeus kill in the PGL Major Singapore 2026 playoffs?"
   },
@@ -11351,7 +11351,7 @@
    "cash": 0.0,
    "mid": 0.5,
    "share": 1.0,
-   "reward": 14.193057111664498,
+   "reward": 14.489730937144268,
    "fills": 0,
    "q": "Will there be a 1v5 ace clutch in the PGL Major Singapore 2026 playoffs?"
   },
@@ -11367,18 +11367,18 @@
   "0x747e9f429801cd695425ded02f764a89e13b7fc3dedfc77aa962b86831eb4631": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.615,
+   "mid": 0.47500000000000003,
    "share": 1.0,
-   "reward": 14.098564961943094,
+   "reward": 14.370922985139003,
    "fills": 0,
    "q": "Will 100 Thieves go 3-0 in Stage 1 of the PGL Major Singapore 2026?"
   },
   "0x6c6cdc45313ede14775c08ccf1ab7a8c0cadcad8ef5d92a054bc63be12c96fab": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.1,
-   "share": 0.38267716535433055,
-   "reward": 13.192288516237005,
+   "mid": 0.355,
+   "share": 1.0,
+   "reward": 13.416033289329102,
    "fills": 0,
    "q": "Will Wildcard go 3-0 in Stage 1 of the PGL Major Singapore 2026?"
   },
@@ -11387,7 +11387,7 @@
    "cash": 0.0,
    "mid": 0.35,
    "share": 1.0,
-   "reward": 12.656629932686805,
+   "reward": 12.953303758166575,
    "fills": 0,
    "q": "Will Lynn Vision go 3-0 in Stage 1 of the PGL Major Singapore 2026?"
   },
@@ -11405,16 +11405,16 @@
    "cash": 0.0,
    "mid": 0.47000000000000003,
    "share": 1.0,
-   "reward": 13.603839032148294,
+   "reward": 13.900512857628064,
    "fills": 0,
    "q": "Will Imperial go 3-0 in Stage 1 of the PGL Major Singapore 2026?"
   },
   "0x4d2c51788f6f1bf1c22d8376cc52563e35bc154b586e18c59d2a3b5ac2e65450": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.08499999999999999,
-   "share": 0.7168141592920356,
-   "reward": 12.833844411007503,
+   "mid": 0.465,
+   "share": 1.0,
+   "reward": 12.85815330645138,
    "fills": 0,
    "q": "Will FlyQuest go 3-0 in Stage 1 of the PGL Major Singapore 2026?"
   },
@@ -11430,9 +11430,9 @@
   "0x296bd83dcccce550790072036afe7b977ef1d5662d7ff0be11026fe542a02b01": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.38,
-   "share": 0.8282208588957061,
-   "reward": 14.048907742715844,
+   "mid": 0.48000000000000004,
+   "share": 1.0,
+   "reward": 14.283925792072758,
    "fills": 0,
    "q": "Will PVISION (PARIVISION) go 3-0 in Stage 1 of the PGL Major Singapore 2026?"
   },
@@ -11457,9 +11457,9 @@
   "0x6a8d82788845b81659b9f70baebcd399895ad189a4f6e59b16d665efe08fec92": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.5,
+   "mid": 0.495,
    "share": 1.0,
-   "reward": 13.480409929701956,
+   "reward": 13.777083755181726,
    "fills": 0,
    "q": "Will Chinggis Warriors go 0-3 in Stage 1 of the PGL Major Singapore 2026?"
   },
@@ -11476,8 +11476,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.13,
-   "share": 0.03182461103253185,
-   "reward": 12.512523512944188,
+   "share": 0.12247490020563699,
+   "reward": 12.528603475834327,
    "fills": 0,
    "q": "Will Wildcard go 3-1 in Stage 1 of the PGL Major Singapore 2026?"
   },
@@ -11486,7 +11486,7 @@
    "cash": 0.0,
    "mid": 0.495,
    "share": 1.0,
-   "reward": 13.544909514159727,
+   "reward": 13.841583339639497,
    "fills": 0,
    "q": "Will 9z go 3-2 in Stage 1 of the PGL Major Singapore 2026?"
   },
@@ -11495,7 +11495,7 @@
    "cash": 0.0,
    "mid": 0.2,
    "share": 0.8350515463917516,
-   "reward": 13.458902023068903,
+   "reward": 13.708458767766386,
    "fills": 0,
    "q": "Will Eternal Fire go 3-2 in Stage 1 of the PGL Major Singapore 2026?"
   },
@@ -11504,7 +11504,7 @@
    "cash": 0.0,
    "mid": 0.51,
    "share": 1.0,
-   "reward": 14.193057111664498,
+   "reward": 14.489730937144268,
    "fills": 0,
    "q": "Will any map go to triple overtime in the PGL Major Singapore 2026 playoffs?"
   },
@@ -11513,7 +11513,7 @@
    "cash": 0.0,
    "mid": 0.5,
    "share": 1.0,
-   "reward": 14.168749202994832,
+   "reward": 14.465423028474602,
    "fills": 0,
    "q": "Will an Asian team reach the PGL Major Singapore 2026 playoffs?"
   },
@@ -11522,7 +11522,7 @@
    "cash": 0.0,
    "mid": 0.48,
    "share": 1.0,
-   "reward": 14.168749202994832,
+   "reward": 14.465423028474602,
    "fills": 0,
    "q": "Will a Stage 3 invite go 0-3 at the PGL Major Singapore 2026?"
   },
@@ -11531,7 +11531,7 @@
    "cash": 0.0,
    "mid": 0.5,
    "share": 1.0,
-   "reward": 14.193057111664498,
+   "reward": 14.489730937144268,
    "fills": 0,
    "q": "Will ZywOo record a 1v5 clutch at the PGL Major Singapore 2026?"
   },
@@ -11540,7 +11540,7 @@
    "cash": 0.0,
    "mid": 0.47500000000000003,
    "share": 1.0,
-   "reward": 14.168749202994832,
+   "reward": 14.465423028474602,
    "fills": 0,
    "q": "Will ropz record a 1v5 clutch at the PGL Major Singapore 2026?"
   },
@@ -11549,7 +11549,7 @@
    "cash": 0.0,
    "mid": 0.5,
    "share": 1.0,
-   "reward": 14.193057111664498,
+   "reward": 14.489730937144268,
    "fills": 0,
    "q": "Will m0NESY record a 1v5 clutch at the PGL Major Singapore 2026?"
   },
@@ -11558,7 +11558,7 @@
    "cash": 0.0,
    "mid": 0.495,
    "share": 1.0,
-   "reward": 14.193057111664498,
+   "reward": 14.489730937144268,
    "fills": 0,
    "q": "Will sh1ro record a 1v5 clutch at the PGL Major Singapore 2026?"
   },
@@ -11567,7 +11567,7 @@
    "cash": 0.0,
    "mid": 0.485,
    "share": 1.0,
-   "reward": 14.193057111664498,
+   "reward": 14.489730937144268,
    "fills": 0,
    "q": "Will molodoy record a 1v5 clutch at the PGL Major Singapore 2026?"
   },
@@ -11576,7 +11576,7 @@
    "cash": 0.0,
    "mid": 0.495,
    "share": 1.0,
-   "reward": 14.193057111664498,
+   "reward": 14.489730937144268,
    "fills": 0,
    "q": "Will flameZ record a 1v5 clutch at the PGL Major Singapore 2026?"
   },
@@ -11585,7 +11585,7 @@
    "cash": 0.0,
    "mid": 0.485,
    "share": 1.0,
-   "reward": 14.193057111664498,
+   "reward": 14.489730937144268,
    "fills": 0,
    "q": "Will frozen record a 1v5 clutch at the PGL Major Singapore 2026?"
   },
@@ -11594,7 +11594,7 @@
    "cash": 0.0,
    "mid": 0.495,
    "share": 1.0,
-   "reward": 14.193057111664498,
+   "reward": 14.489730937144268,
    "fills": 0,
    "q": "Will KSCERATO record a 1v5 clutch at the PGL Major Singapore 2026?"
   },
@@ -11603,7 +11603,7 @@
    "cash": 0.0,
    "mid": 0.495,
    "share": 1.0,
-   "reward": 14.193057111664498,
+   "reward": 14.489730937144268,
    "fills": 0,
    "q": "Will Spinx record a 1v5 clutch at the PGL Major Singapore 2026?"
   },
@@ -11612,7 +11612,7 @@
    "cash": 0.0,
    "mid": 0.48,
    "share": 1.0,
-   "reward": 14.193057111664498,
+   "reward": 14.489730937144268,
    "fills": 0,
    "q": "Will Twistzz record a 1v5 clutch at the PGL Major Singapore 2026?"
   },
@@ -11621,7 +11621,7 @@
    "cash": 0.0,
    "mid": 0.485,
    "share": 1.0,
-   "reward": 14.193057111664498,
+   "reward": 14.489730937144268,
    "fills": 0,
    "q": "Will mezii record a 1v5 clutch at the PGL Major Singapore 2026?"
   },
@@ -11630,7 +11630,7 @@
    "cash": 0.0,
    "mid": 0.48,
    "share": 1.0,
-   "reward": 14.193057111664498,
+   "reward": 14.489730937144268,
    "fills": 0,
    "q": "Will Senzu record a 1v5 clutch at the PGL Major Singapore 2026?"
   },
@@ -11639,7 +11639,7 @@
    "cash": 0.0,
    "mid": 0.495,
    "share": 1.0,
-   "reward": 14.193057111664498,
+   "reward": 14.489730937144268,
    "fills": 0,
    "q": "Will YEKINDAR record a 1v5 clutch at the PGL Major Singapore 2026?"
   },
@@ -11648,7 +11648,7 @@
    "cash": 0.0,
    "mid": 0.49,
    "share": 1.0,
-   "reward": 14.193057111664498,
+   "reward": 14.489730937144268,
    "fills": 0,
    "q": "Will xertioN record a 1v5 clutch at the PGL Major Singapore 2026?"
   },
@@ -11657,7 +11657,7 @@
    "cash": 0.0,
    "mid": 0.495,
    "share": 1.0,
-   "reward": 14.193057111664498,
+   "reward": 14.489730937144268,
    "fills": 0,
    "q": "Will torzsi record a 1v5 clutch at the PGL Major Singapore 2026?"
   },
@@ -11666,7 +11666,7 @@
    "cash": 0.0,
    "mid": 0.475,
    "share": 1.0,
-   "reward": 14.193057111664498,
+   "reward": 14.489730937144268,
    "fills": 0,
    "q": "Will NiKo record a 1v5 clutch at the PGL Major Singapore 2026?"
   },
@@ -11675,7 +11675,7 @@
    "cash": 0.0,
    "mid": 0.5,
    "share": 1.0,
-   "reward": 14.168749202994832,
+   "reward": 14.465423028474602,
    "fills": 0,
    "q": "Will iM record a 1v5 clutch at the PGL Major Singapore 2026?"
   },
@@ -11684,7 +11684,7 @@
    "cash": 0.0,
    "mid": 0.485,
    "share": 1.0,
-   "reward": 14.193057111664498,
+   "reward": 14.489730937144268,
    "fills": 0,
    "q": "Will b1t record a 1v5 clutch at the PGL Major Singapore 2026?"
   },
@@ -11693,7 +11693,7 @@
    "cash": 0.0,
    "mid": 0.465,
    "share": 1.0,
-   "reward": 13.581554295800474,
+   "reward": 13.878228121280245,
    "fills": 0,
    "q": "Will Vitality record 3 or more aces at the PGL Major Singapore 2026?"
   },
@@ -11702,7 +11702,7 @@
    "cash": 0.0,
    "mid": 0.48000000000000004,
    "share": 1.0,
-   "reward": 13.878190849239983,
+   "reward": 14.174864674719753,
    "fills": 0,
    "q": "Will Spirit record 3 or more aces at the PGL Major Singapore 2026?"
   },
@@ -11710,8 +11710,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.21000000000000002,
-   "share": 0.033398756411736674,
-   "reward": 7.549106880283285,
+   "share": 0.03214744963566234,
+   "reward": 7.558892156339789,
    "fills": 0,
    "q": "Will MOUZ record 3 or more aces at the PGL Major Singapore 2026?"
   },
@@ -11720,7 +11720,7 @@
    "cash": 0.0,
    "mid": 0.445,
    "share": 1.0,
-   "reward": 13.34448235354767,
+   "reward": 13.64115617902744,
    "fills": 0,
    "q": "Will Aurora record 3 or more aces at the PGL Major Singapore 2026?"
   },
@@ -11729,7 +11729,7 @@
    "cash": 0.0,
    "mid": 0.48,
    "share": 1.0,
-   "reward": 14.193057111664498,
+   "reward": 14.489730937144268,
    "fills": 0,
    "q": "Will Falcons record 3 or more aces at the PGL Major Singapore 2026?"
   },
@@ -11737,8 +11737,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.18,
-   "share": 0.04912187075490002,
-   "reward": 9.304967843765573,
+   "share": 0.03678540936256786,
+   "reward": 9.31661341414808,
    "fills": 0,
    "q": "Will BB Team (BetBoom) record 3 or more aces at the PGL Major Singapore 2026?"
   }
@@ -96592,17 +96592,30 @@
    "w": 2992524
   },
   {
-   "ts": "2026-11-24T10:17:45.946270+00:00",
-   "dt_h": 0.136,
-   "reward_tick": 6.7307,
-   "reward_total": 33614.95,
+   "ts": "2026-11-24T10:19:45.951550+00:00",
+   "dt_h": 0.17,
+   "reward_tick": 8.4294,
+   "reward_total": 33616.65,
    "mm_value": -256.82,
-   "net": 33358.14,
-   "avg_share": 0.8675,
+   "net": 33359.83,
+   "avg_share": 0.8708,
    "n_markets": 52,
    "fills_total": 200,
    "rebalanced": false,
    "w": 2992525
+  },
+  {
+   "ts": "2026-11-24T10:29:58.306799+00:00",
+   "dt_h": 0.172,
+   "reward_tick": 8.8218,
+   "reward_total": 33625.47,
+   "mm_value": -256.82,
+   "net": 33368.66,
+   "avg_share": 0.8463,
+   "n_markets": 52,
+   "fills_total": 200,
+   "rebalanced": false,
+   "w": 2992526
   }
  ],
  "fills": [
@@ -98407,8 +98420,8 @@
    "ledger": "v2"
   }
  ],
- "reward_total": 33614.95366188155,
- "last_ts": 1795515465.9462698,
+ "reward_total": 33625.474187685264,
+ "last_ts": 1795516198.306799,
  "chosen_at": 1795480429.3709998,
  "rebalances": [
   {
@@ -98689,55 +98702,55 @@
   }
  ],
  "last_tick": {
-  "ts": "2026-11-24T10:17:45.946270+00:00",
-  "dt_h": 0.017,
+  "ts": "2026-11-24T10:29:58.306799+00:00",
+  "dt_h": 0.05,
   "markets": [
    {
     "q": "Will Carlos Alcaraz win the 2027 Australian Open?",
     "mid": 0.57,
-    "share": 0.0061,
-    "earned": 0.0003,
+    "share": 0.0134,
+    "earned": 0.0023,
     "inv": 0.0
    },
    {
     "q": "Will the 5-year Treasury yield hit 5.05% before 20",
-    "mid": 0.39,
-    "share": 1.0,
-    "earned": 0.0278,
+    "mid": 0.355,
+    "share": 0.5278,
+    "earned": 0.0015,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ma",
     "mid": 0.445,
-    "share": 0.0231,
-    "earned": 0.0001,
+    "share": 0.0209,
+    "earned": 0.0002,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ba",
     "mid": 0.375,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0837,
     "inv": 0.0
    },
    {
     "q": "Will DENDELE qualify to the Playoffs at PGL Major ",
-    "mid": 0.509,
+    "mid": 0.5,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0732,
     "inv": 0.0
    },
    {
     "q": "Will Wildcard qualify to the Playoffs at PGL Major",
-    "mid": 0.456,
-    "share": 1.0,
+    "mid": 0.035,
+    "share": 0.0365,
     "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will GOSH (BC.Game) qualify to the Playoffs at PGL",
-    "mid": 0.475,
-    "share": 1.0,
+    "mid": 0.045,
+    "share": 0.3063,
     "earned": 0.0,
     "inv": 0.0
    },
@@ -98745,14 +98758,14 @@
     "q": "Will there be a Zeus kill in the PGL Major Singapo",
     "mid": 0.525,
     "share": 1.0,
-    "earned": 0.001,
+    "earned": 0.0029,
     "inv": 0.0
    },
    {
     "q": "Will there be a 1v5 ace clutch in the PGL Major Si",
     "mid": 0.5,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0732,
     "inv": 0.0
    },
    {
@@ -98761,23 +98774,23 @@
    },
    {
     "q": "Will 100 Thieves go 3-0 in Stage 1 of the PGL Majo",
-    "mid": 0.615,
+    "mid": 0.475,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0732,
     "inv": 0.0
    },
    {
     "q": "Will Wildcard go 3-0 in Stage 1 of the PGL Major S",
-    "mid": 0.1,
-    "share": 0.3827,
-    "earned": 0.0,
+    "mid": 0.355,
+    "share": 1.0,
+    "earned": 0.0732,
     "inv": 0.0
    },
    {
     "q": "Will Lynn Vision go 3-0 in Stage 1 of the PGL Majo",
     "mid": 0.35,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0732,
     "inv": 0.0
    },
    {
@@ -98788,13 +98801,13 @@
     "q": "Will Imperial go 3-0 in Stage 1 of the PGL Major S",
     "mid": 0.47,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0732,
     "inv": 0.0
    },
    {
     "q": "Will FlyQuest go 3-0 in Stage 1 of the PGL Major S",
-    "mid": 0.085,
-    "share": 0.7168,
+    "mid": 0.465,
+    "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
    },
@@ -98804,9 +98817,9 @@
    },
    {
     "q": "Will PVISION (PARIVISION) go 3-0 in Stage 1 of the",
-    "mid": 0.38,
-    "share": 0.8282,
-    "earned": 0.0202,
+    "mid": 0.48,
+    "share": 1.0,
+    "earned": 0.0732,
     "inv": 0.0
    },
    {
@@ -98819,9 +98832,9 @@
    },
    {
     "q": "Will Chinggis Warriors go 0-3 in Stage 1 of the PG",
-    "mid": 0.5,
+    "mid": 0.495,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0732,
     "inv": 0.0
    },
    {
@@ -98831,219 +98844,219 @@
    {
     "q": "Will Wildcard go 3-1 in Stage 1 of the PGL Major S",
     "mid": 0.13,
-    "share": 0.0318,
-    "earned": 0.0008,
+    "share": 0.1225,
+    "earned": 0.009,
     "inv": 0.0
    },
    {
     "q": "Will 9z go 3-2 in Stage 1 of the PGL Major Singapo",
     "mid": 0.495,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0732,
     "inv": 0.0
    },
    {
     "q": "Will Eternal Fire go 3-2 in Stage 1 of the PGL Maj",
     "mid": 0.2,
     "share": 0.8351,
-    "earned": 0.0203,
+    "earned": 0.0612,
     "inv": 0.0
    },
    {
     "q": "Will any map go to triple overtime in the PGL Majo",
     "mid": 0.51,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0732,
     "inv": 0.0
    },
    {
     "q": "Will an Asian team reach the PGL Major Singapore 2",
     "mid": 0.5,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0732,
     "inv": 0.0
    },
    {
     "q": "Will a Stage 3 invite go 0-3 at the PGL Major Sing",
     "mid": 0.48,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0732,
     "inv": 0.0
    },
    {
     "q": "Will ZywOo record a 1v5 clutch at the PGL Major Si",
     "mid": 0.5,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0732,
     "inv": 0.0
    },
    {
     "q": "Will ropz record a 1v5 clutch at the PGL Major Sin",
     "mid": 0.475,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0732,
     "inv": 0.0
    },
    {
     "q": "Will m0NESY record a 1v5 clutch at the PGL Major S",
     "mid": 0.5,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0732,
     "inv": 0.0
    },
    {
     "q": "Will sh1ro record a 1v5 clutch at the PGL Major Si",
     "mid": 0.495,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0732,
     "inv": 0.0
    },
    {
     "q": "Will molodoy record a 1v5 clutch at the PGL Major ",
     "mid": 0.485,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0732,
     "inv": 0.0
    },
    {
     "q": "Will flameZ record a 1v5 clutch at the PGL Major S",
     "mid": 0.495,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0732,
     "inv": 0.0
    },
    {
     "q": "Will frozen record a 1v5 clutch at the PGL Major S",
     "mid": 0.485,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0732,
     "inv": 0.0
    },
    {
     "q": "Will KSCERATO record a 1v5 clutch at the PGL Major",
     "mid": 0.495,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0732,
     "inv": 0.0
    },
    {
     "q": "Will Spinx record a 1v5 clutch at the PGL Major Si",
     "mid": 0.495,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0732,
     "inv": 0.0
    },
    {
     "q": "Will Twistzz record a 1v5 clutch at the PGL Major ",
     "mid": 0.48,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0732,
     "inv": 0.0
    },
    {
     "q": "Will mezii record a 1v5 clutch at the PGL Major Si",
     "mid": 0.485,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0732,
     "inv": 0.0
    },
    {
     "q": "Will Senzu record a 1v5 clutch at the PGL Major Si",
     "mid": 0.48,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0732,
     "inv": 0.0
    },
    {
     "q": "Will YEKINDAR record a 1v5 clutch at the PGL Major",
     "mid": 0.495,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0732,
     "inv": 0.0
    },
    {
     "q": "Will xertioN record a 1v5 clutch at the PGL Major ",
     "mid": 0.49,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0732,
     "inv": 0.0
    },
    {
     "q": "Will torzsi record a 1v5 clutch at the PGL Major S",
     "mid": 0.495,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0732,
     "inv": 0.0
    },
    {
     "q": "Will NiKo record a 1v5 clutch at the PGL Major Sin",
     "mid": 0.475,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0732,
     "inv": 0.0
    },
    {
     "q": "Will iM record a 1v5 clutch at the PGL Major Singa",
     "mid": 0.5,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0732,
     "inv": 0.0
    },
    {
     "q": "Will b1t record a 1v5 clutch at the PGL Major Sing",
     "mid": 0.485,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0732,
     "inv": 0.0
    },
    {
     "q": "Will Vitality record 3 or more aces at the PGL Maj",
     "mid": 0.465,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0732,
     "inv": 0.0
    },
    {
     "q": "Will Spirit record 3 or more aces at the PGL Major",
     "mid": 0.48,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0732,
     "inv": 0.0
    },
    {
     "q": "Will MOUZ record 3 or more aces at the PGL Major S",
     "mid": 0.21,
-    "share": 0.0334,
-    "earned": 0.0008,
+    "share": 0.0321,
+    "earned": 0.0024,
     "inv": 0.0
    },
    {
     "q": "Will Aurora record 3 or more aces at the PGL Major",
     "mid": 0.445,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0732,
     "inv": 0.0
    },
    {
     "q": "Will Falcons record 3 or more aces at the PGL Majo",
     "mid": 0.48,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0732,
     "inv": 0.0
    },
    {
     "q": "Will BB Team (BetBoom) record 3 or more aces at th",
     "mid": 0.18,
-    "share": 0.0491,
-    "earned": 0.0011,
+    "share": 0.0368,
+    "earned": 0.0027,
     "inv": 0.0
    }
   ],
-  "reward_tick": 0.855,
-  "reward_total": 33614.95,
+  "reward_tick": 2.6557,
+  "reward_total": 33625.47,
   "mm_value": -256.82,
-  "net": 33358.14,
-  "avg_share": 0.8675,
+  "net": 33368.66,
+  "avg_share": 0.8463,
   "n_markets": 52,
   "fills_total": 200,
   "rebalanced": false

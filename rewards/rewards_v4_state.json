@@ -548,7 +548,7 @@
    "question": "Will Zetod feat. hellika win Eesti Laul 2027?",
    "yes": "96196089338687007405101026965064730712061715666742363993991053305165322379052",
    "no": "76564757761354371387507110636972507803655699159229899516745942412353091602931",
-   "rate": 21.0,
+   "rate": 19.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -602,21 +602,6 @@
    "end": "2027-01-13T04:59:00Z",
    "share0": 1.0,
    "rate0": 35.0
-  },
-  {
-   "cond": "0x2d7d66314e9271f1d7620750437fbc12db3d40131d2166114732825de78a1376",
-   "question": "Poilievre announced resignation or removal by March 31, 2027?",
-   "yes": "114336529057798064485620102597006424956808985587707977733933023509497911514796",
-   "no": "30241824200723009275532891607063575185999079613375968417685065892481224772047",
-   "rate": 100.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.700000000000003,
-   "est_reward_day": 100.0,
-   "end": "2027-04-01T03:59:00Z",
-   "share0": 1.0,
-   "rate0": 100.0
   },
   {
    "cond": "0xe77f40a5f2d79d13cfaf88fc010792b1959d373760c82fa2e00317ce573eb6bf",
@@ -694,66 +679,6 @@
    "rate0": 200.0
   },
   {
-   "cond": "0xef55dce101d27dbb78f8069d1f82055425ba76d82ee5233ecbd54b6f51f4fa60",
-   "question": "Will Crusoe IPO by December 31, 2027?",
-   "yes": "112468253339807721055633097692573175603547686621616756869764528191849157783536",
-   "no": "13458044289074785440973933105330072669791887136297473060801872654893509917146",
-   "rate": 200.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.700000000000003,
-   "est_reward_day": 200.0,
-   "end": "2028-01-01T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 200.0
-  },
-  {
-   "cond": "0x9f734334149eb4e7d7ede78276ea2ee775122ed275060a80c94d26a6c3186bc4",
-   "question": "U.S. diplomat expelled by March 31, 2027?",
-   "yes": "7215197137783970619106672270075237583282306111617544937616638019403228645351",
-   "no": "72491922707925791375209496606979288517332365569676070449079593642610551463514",
-   "rate": 100.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.700000000000003,
-   "est_reward_day": 100.0,
-   "end": "2027-04-01T03:59:00Z",
-   "share0": 1.0,
-   "rate0": 100.0
-  },
-  {
-   "cond": "0x9cf313aa932b57795231a0331208b5e270017f6be9ae3a8058e3fc9e3c6f6444",
-   "question": "U.S. diplomat expelled by June 30, 2027?",
-   "yes": "23327312974117564917091041299842987185200693934149703190282326800852824131718",
-   "no": "60008420673085887438640761548171220436125276203176393401411407805403028723050",
-   "rate": 100.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.700000000000003,
-   "est_reward_day": 100.0,
-   "end": "2027-07-01T03:59:00Z",
-   "share0": 1.0,
-   "rate0": 100.0
-  },
-  {
-   "cond": "0xf11511e14873ba8742587c36a5ef1d9a6f4bab6f95142d4f97e19c6517fb4dde",
-   "question": "Poilievre announced resignation or removal by June 30, 2027?",
-   "yes": "14266902246619052365711186654052514096999960543686400010225356752504972723379",
-   "no": "12964334446153426128268850029708528402514137169141796275564619430411068593760",
-   "rate": 100.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.700000000000003,
-   "est_reward_day": 100.0,
-   "end": "2027-07-01T03:59:00Z",
-   "share0": 1.0,
-   "rate0": 100.0
-  },
-  {
    "cond": "0x52d3fe6349e30bb8dbca9c5485fa2a76dda92de75e7e17164473da99a01cafa8",
    "question": "Will the 7-day average ship traffic through the Strait of Hormuz be 4+ on December 31?",
    "yes": "57509727190721575496267891220332521843170027173631170823031493215202727780321",
@@ -784,18 +709,93 @@
    "rate0": 40.0
   },
   {
-   "cond": "0xa5642e1ff4a1eab7a1752b3176bf8301ddeb6baee3c85f615e810d1b7eeedb00",
-   "question": "Will the Ornn B200 Index hit $5.50 (LOW) by December 31, 2026?",
-   "yes": "115395915268360037284581545608210295551599972442929214768868587430316916898028",
-   "no": "40805991361927122746810621095049165716184890967380090907202055256392269271368",
+   "cond": "0x11e6ac31f31b89e584cccec798c386fd5e0e5022ff0424b076618241c3bc32e4",
+   "question": "EU country expels a Russian diplomat by December 31, 2026?",
+   "yes": "58826042168035402868001963611814770867290644285194448329870811803960823135341",
+   "no": "59756096340604396510607106507918841297811422855996304567907181664495955522145",
+   "rate": 100.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.700000000000003,
+   "est_reward_day": 100.0,
+   "end": "2027-01-01T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 100.0
+  },
+  {
+   "cond": "0xc68ccd3b9c93d90dac002cdbbbd61f4b02e788069549c18687f92d49f58617e5",
+   "question": "Will the next governing coalition of Sweden include M + KD + L + C?",
+   "yes": "93425554121359403233899831016593831128742808878108257305313028639779857773971",
+   "no": "110439955662303008957738922307562688742870722405736077572660692989898302028964",
+   "rate": 73.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.700000000000003,
+   "est_reward_day": 73.0,
+   "end": "2027-08-01T03:59:00Z",
+   "share0": 1.0,
+   "rate0": 73.0
+  },
+  {
+   "cond": "0x10607f24543541a30a9f857fc854a93251638d08652c80bf94b201e626e4a5ff",
+   "question": "Will Croatia come in 3rd place at Eurovision 2027?",
+   "yes": "102045428952786548631894743229769488346268204469900142716455371262683944518538",
+   "no": "30538453822939574936391471292989680203176847858256041223360053452717737312276",
+   "rate": 36.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.700000000000003,
+   "est_reward_day": 42.0,
+   "end": "2027-05-16T03:59:00Z",
+   "share0": 1.0,
+   "rate0": 42.0
+  },
+  {
+   "cond": "0x6cf827720a643edb6480aa0ab04d0010f4e75fdf3a18bfe0be629649a0cba714",
+   "question": "Will the Ornn H200 Index hit $8.00 (HIGH) by December 31, 2026?",
+   "yes": "71379004205090867761438859332136818014603572559247736476524429968079865507395",
+   "no": "91845490505617539840044507852358742816275770745295475061624768100812930360514",
+   "rate": 40.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.700000000000003,
+   "est_reward_day": 40.0,
+   "end": "2027-01-01T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 40.0
+  },
+  {
+   "cond": "0xea2590e990456ee92ecdce851ccce6f0164c46b39044f308da5e84e75e443c57",
+   "question": "Will the 2-year Treasury yield hit 4.90% before 2027?",
+   "yes": "64347331751948650892055452974723137417595315656612023941543186050978341140121",
+   "no": "80222020791697906795622958063980319927633849693725268430667166552757030444226",
    "rate": 3.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
-   "collateral": 18.7,
-   "est_reward_day": 38.52290859357193,
+   "collateral": 18.700000000000003,
+   "est_reward_day": 40.0,
    "end": "2027-01-01T04:59:00Z",
-   "share0": 0.9630727148392981,
+   "share0": 1.0,
+   "rate0": 40.0
+  },
+  {
+   "cond": "0x98d60b024f30f06c80e1eebb49db7b9bb12895ee0b4c252a2e384c42deaeac9a",
+   "question": "Will the 7-day average ship traffic through the Panama Canal be 27+ on December 31?",
+   "yes": "39631502914071015786528103384058769984673279217438117987053384898122850837753",
+   "no": "112481832201177433554737368176642863263139336951584975911588948184257583845535",
+   "rate": 40.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.700000000000003,
+   "est_reward_day": 40.0,
+   "end": "2027-01-01T04:59:00Z",
+   "share0": 1.0,
    "rate0": 40.0
   }
  ],
@@ -1038,9 +1038,9 @@
   "0xa5642e1ff4a1eab7a1752b3176bf8301ddeb6baee3c85f615e810d1b7eeedb00": {
    "inv": 0.0,
    "cash": -0.29499999999999993,
-   "mid": 0.1655,
-   "share": 0.9987337553098361,
-   "reward": 154.33016429067945,
+   "mid": 0.16849999999999998,
+   "share": null,
+   "reward": 154.33831277599666,
    "fills": 4,
    "q": "Will the Ornn B200 Index hit $5.50 (LOW) by December 31, 2026?",
    "closed_at": 0.31
@@ -1136,9 +1136,9 @@
   "0xeaf463a1a9353009d8d9c50839bcc56afe7a043cacb131fccf908dfa26b10769": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.535,
+   "mid": 0.545,
    "share": 1.0,
-   "reward": 210.46038777175932,
+   "reward": 210.57281910519413,
    "fills": 0,
    "q": "Will Claude Opus 5.6+ debut at an output token price of at least $20 by June 30,"
   },
@@ -4522,7 +4522,7 @@
   "0x5d15579a3a31d6220eb8d33d167788db82976f14c856768a5e37e51afdaeb279": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.483,
+   "mid": 0.473,
    "share": 1.0,
    "reward": 17.59805527737572,
    "fills": 0,
@@ -12023,9 +12023,9 @@
   "0x6cf827720a643edb6480aa0ab04d0010f4e75fdf3a18bfe0be629649a0cba714": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.515,
-   "share": null,
-   "reward": 860.8486406653743,
+   "mid": 0.595,
+   "share": 1.0,
+   "reward": 860.9476851987241,
    "fills": 0,
    "q": "Will the Ornn H200 Index hit $8.00 (HIGH) by December 31, 2026?"
   },
@@ -16734,9 +16734,9 @@
   "0xea2590e990456ee92ecdce851ccce6f0164c46b39044f308da5e84e75e443c57": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.44,
-   "share": null,
-   "reward": 22.10898583894878,
+   "mid": 0.55,
+   "share": 1.0,
+   "reward": 22.113970200229776,
    "fills": 0,
    "q": "Will the 2-year Treasury yield hit 4.90% before 2027?"
   },
@@ -20343,9 +20343,9 @@
   "0x52d3fe6349e30bb8dbca9c5485fa2a76dda92de75e7e17164473da99a01cafa8": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.34500000000000003,
+   "mid": 0.35500000000000004,
    "share": 1.0,
-   "reward": 122.67667952515897,
+   "reward": 122.99791190640126,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Strait of Hormuz be 4+ on Decemb"
   },
@@ -20372,7 +20372,7 @@
    "cash": 0.0,
    "mid": 0.25,
    "share": 1.0,
-   "reward": 35.212344169464345,
+   "reward": 35.53357655070664,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Strait of Hormuz be 5+ on Decemb"
   },
@@ -20415,9 +20415,9 @@
   "0x98d60b024f30f06c80e1eebb49db7b9bb12895ee0b4c252a2e384c42deaeac9a": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.525,
-   "share": null,
-   "reward": 71.80833851387514,
+   "mid": 0.6799999999999999,
+   "share": 1.0,
+   "reward": 71.90738304722498,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Panama Canal be 27+ on December "
   },
@@ -20534,7 +20534,7 @@
    "cash": 0.0,
    "mid": 0.56,
    "share": 1.0,
-   "reward": 82.61774668036863,
+   "reward": 82.66593153755495,
    "fills": 0,
    "q": "Will the Central Bank of Chile make no change to the monetary policy rate at the"
   },
@@ -21063,7 +21063,7 @@
   "0x7ad5206bbe6e0f4f9541e5b7ec723619bae7557b1555872f920fc3055726b4ce": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.384,
+   "mid": 0.38149999999999995,
    "share": 1.0,
    "reward": 2.1251932211496207,
    "fills": 0,
@@ -21774,9 +21774,9 @@
   "0x4a3bf1d04d3b497aa509c019de1a8bdf4575539c1a1e081b921a7b08bea1701e": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.35,
+   "mid": 0.36,
    "share": 1.0,
-   "reward": 43.25605181257595,
+   "reward": 43.577284193818244,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait reach 30+ b"
   },
@@ -23232,9 +23232,9 @@
   "0x0245582780dfd9375857cd5a40ee33b2747ec7539c7a42a6574acc80157aa4d6": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.26,
+   "mid": 0.315,
    "share": 1.0,
-   "reward": 18.8948931761073,
+   "reward": 18.958586733814546,
    "fills": 0,
    "q": "AMD hit with a BIS export-control penalty by March 31, 2027?"
   },
@@ -23279,7 +23279,7 @@
    "cash": 0.0,
    "mid": 0.635,
    "share": 1.0,
-   "reward": 4.7575867078591205,
+   "reward": 4.769632922155706,
    "fills": 0,
    "q": "Will the chopsticks catch SpaceX Starship Flight Test 16 Super Heavy booster?"
   },
@@ -23288,7 +23288,7 @@
    "cash": 0.0,
    "mid": 0.435,
    "share": 1.0,
-   "reward": 8.85330211159254,
+   "reward": 8.885425349716769,
    "fills": 0,
    "q": "Next Gemini Carbon (4.1+) released by January 31, 2027?"
   },
@@ -23378,7 +23378,7 @@
    "cash": 0.0,
    "mid": 0.22,
    "share": 1.0,
-   "reward": 9.007873590228579,
+   "reward": 9.173197682860115,
    "fills": 0,
    "q": "Will Zetod feat. hellika win Eesti Laul 2027?"
   },
@@ -23558,16 +23558,16 @@
    "cash": 0.0,
    "mid": 0.239,
    "share": 1.0,
-   "reward": 11.32728370229404,
+   "reward": 11.415622607135669,
    "fills": 0,
    "q": "Will CeeDee Lamb finish the 2026-27 NFL regular season with the most receptions?"
   },
   "0x4a9dec4f5df3526b535e9ec7c5b49bdba9c235d7963a7d1e23ef7e66128f0f82": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.27,
+   "mid": 0.235,
    "share": 1.0,
-   "reward": 5.937993541210892,
+   "reward": 5.986178398397235,
    "fills": 0,
    "q": "Will Lamine Yamal rank in Google\u2019s Top 5 Most Searched People in the US of 2026?"
   },
@@ -23576,7 +23576,7 @@
    "cash": 0.0,
    "mid": 0.33499999999999996,
    "share": 1.0,
-   "reward": 6.927386046225609,
+   "reward": 6.975570903411953,
    "fills": 0,
    "q": "Will Wagner Moura rank in Google\u2019s Top 5 Most Searched Actors of 2026?"
   },
@@ -23702,7 +23702,7 @@
    "cash": 0.0,
    "mid": 0.49,
    "share": 1.0,
-   "reward": 4.127703632207378,
+   "reward": 4.164383820609912,
    "fills": 0,
    "q": "Will MegaETH hit $0.10 by June 30, 2027?"
   },
@@ -23765,7 +23765,7 @@
    "cash": 0.0,
    "mid": 0.515,
    "share": 1.0,
-   "reward": 23.231294827577134,
+   "reward": 23.512373161164142,
    "fills": 0,
    "q": "Will any game last over 70 minutes at the BLAST Slam IX Playoffs?"
   },
@@ -23855,7 +23855,7 @@
    "cash": 0.0,
    "mid": 0.495,
    "share": 1.0,
-   "reward": 20.38178085534385,
+   "reward": 20.66285918893086,
    "fills": 0,
    "q": "Will M80 qualify to the Playoffs at PGL Major Singapore 2026?"
   },
@@ -23873,7 +23873,7 @@
    "cash": 0.0,
    "mid": 0.525,
    "share": 1.0,
-   "reward": 20.309000762400252,
+   "reward": 20.59007909598726,
    "fills": 0,
    "q": "Will one team kill two Tormentors in a single game at the BLAST Slam IX Playoffs"
   },
@@ -23927,7 +23927,7 @@
    "cash": 0.0,
    "mid": 0.5,
    "share": 1.0,
-   "reward": 18.59380460606839,
+   "reward": 18.874882939655397,
    "fills": 0,
    "q": "Will Eternal Fire qualify to the Playoffs at PGL Major Singapore 2026?"
   },
@@ -23997,9 +23997,9 @@
   "0x810d1e7aa6d64a47dfc3d071a08fe5bb9d1635241863a16814a94d0b4228571b": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.51,
+   "mid": 0.505,
    "share": 1.0,
-   "reward": 14.513729282178812,
+   "reward": 14.794807615765817,
    "fills": 0,
    "q": "Will FaZe qualify to the Playoffs at PGL Major Singapore 2026?"
   },
@@ -24026,16 +24026,16 @@
    "cash": 0.0,
    "mid": 0.5,
    "share": 1.0,
-   "reward": 14.513729282178812,
+   "reward": 14.794807615765817,
    "fills": 0,
    "q": "Will there be a 1v5 ace clutch in the PGL Major Singapore 2026 playoffs?"
   },
   "0x747e9f429801cd695425ded02f764a89e13b7fc3dedfc77aa962b86831eb4631": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.605,
+   "mid": 0.615,
    "share": 1.0,
-   "reward": 14.41940128796149,
+   "reward": 14.700479621548496,
    "fills": 0,
    "q": "Will 100 Thieves go 3-0 in Stage 1 of the PGL Major Singapore 2026?"
   },
@@ -24044,7 +24044,7 @@
    "cash": 0.0,
    "mid": 0.6699999999999999,
    "share": 1.0,
-   "reward": 8.915045771238951,
+   "reward": 9.087697896720483,
    "fills": 0,
    "q": "Will Off Campus rank in Google\u2019s Top 5 Most Searched TV Shows of 2026?"
   },
@@ -24062,7 +24062,7 @@
    "cash": 0.0,
    "mid": 0.5,
    "share": 1.0,
-   "reward": 12.202832038976533,
+   "reward": 12.483910372563539,
    "fills": 0,
    "q": "Will DENDELE qualify to the Playoffs at PGL Major Singapore 2026?"
   },
@@ -24151,17 +24151,17 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.22999999999999998,
-   "share": 0.011060339716043786,
-   "reward": 17.260679292613123,
+   "share": null,
+   "reward": 17.265823196807926,
    "fills": 0,
    "q": "U.S. diplomat expelled by March 31, 2027?"
   },
   "0x2d7d66314e9271f1d7620750437fbc12db3d40131d2166114732825de78a1376": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.23,
-   "share": 0.035177845866915344,
-   "reward": 21.653908472206748,
+   "mid": 0.21500000000000002,
+   "share": null,
+   "reward": 21.670689952358998,
    "fills": 0,
    "q": "Poilievre announced resignation or removal by March 31, 2027?"
   },
@@ -24169,8 +24169,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.28500000000000003,
-   "share": 0.01654513552130297,
-   "reward": 17.03411499283931,
+   "share": null,
+   "reward": 17.042048090310054,
    "fills": 0,
    "q": "Poilievre announced resignation or removal by June 30, 2027?"
   },
@@ -24249,9 +24249,9 @@
   "0x15e62832733374c81648dcef8cf0c1451b643a3d99f867aef8ba679e34fccdb1": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.295,
-   "share": 1.0,
-   "reward": 30.573718923877014,
+   "mid": 0.435,
+   "share": 0.6014234875444835,
+   "reward": 31.844202164409346,
    "fills": 0,
    "q": "Will Nscale IPO by March 31, 2027?"
   },
@@ -24276,18 +24276,18 @@
   "0xef55dce101d27dbb78f8069d1f82055425ba76d82ee5233ecbd54b6f51f4fa60": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.625,
-   "share": 0.009882463013858847,
-   "reward": 19.924327481253336,
+   "mid": 0.615,
+   "share": null,
+   "reward": 19.934665374978206,
    "fills": 0,
    "q": "Will Crusoe IPO by December 31, 2027?"
   },
   "0x11e6ac31f31b89e584cccec798c386fd5e0e5022ff0424b076618241c3bc32e4": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.74,
-   "share": null,
-   "reward": 3.8915189979253,
+   "mid": 0.5549999999999999,
+   "share": 1.0,
+   "reward": 4.139130331299924,
    "fills": 0,
    "q": "EU country expels a Russian diplomat by December 31, 2026?"
   },
@@ -24295,10 +24295,28 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.47,
-   "share": 0.05022885335552524,
-   "reward": 4.439645858799311,
+   "share": null,
+   "reward": 4.463425322811853,
    "fills": 0,
    "q": "U.S. diplomat expelled by June 30, 2027?"
+  },
+  "0xc68ccd3b9c93d90dac002cdbbbd61f4b02e788069549c18687f92d49f58617e5": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.516,
+   "share": 1.0,
+   "reward": 0.18075627336347544,
+   "fills": 0,
+   "q": "Will the next governing coalition of Sweden include M + KD + L + C?"
+  },
+  "0x10607f24543541a30a9f857fc854a93251638d08652c80bf94b201e626e4a5ff": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.14850000000000002,
+   "share": 1.0,
+   "reward": 0.09402803745534685,
+   "fills": 0,
+   "q": "Will Croatia come in 3rd place at Eurovision 2027?"
   }
  },
  "history": [
@@ -108062,17 +108080,30 @@
    "w": 2992518
   },
   {
-   "ts": "2026-11-24T09:12:42.557171+00:00",
-   "dt_h": 0.051,
-   "reward_tick": 1.5073,
-   "reward_total": 60143.29,
-   "mm_value": -680.66,
-   "net": 59462.63,
-   "avg_share": 0.8739,
+   "ts": "2026-11-24T09:19:42.739680+00:00",
+   "dt_h": 0.17,
+   "reward_tick": 5.0094,
+   "reward_total": 60146.79,
+   "mm_value": -681.26,
+   "net": 59465.54,
+   "avg_share": 0.8517,
    "n_markets": 53,
    "fills_total": 659,
    "rebalanced": false,
    "w": 2992519
+  },
+  {
+   "ts": "2026-11-24T09:24:16.419114+00:00",
+   "dt_h": 0.077,
+   "reward_tick": 2.6061,
+   "reward_total": 60149.4,
+   "mm_value": -680.66,
+   "net": 59468.74,
+   "avg_share": 0.9888,
+   "n_markets": 53,
+   "fills_total": 659,
+   "rebalanced": false,
+   "w": 2992520
   }
  ],
  "fills": [
@@ -114008,8 +114039,8 @@
    "ledger": "v4"
   }
  ],
- "reward_total": 60143.289247913875,
- "last_ts": 1795511562.5571709,
+ "reward_total": 60149.39749259035,
+ "last_ts": 1795512256.4191144,
  "chosen_at": 1791639880.921448,
  "rebalances": [
   {
@@ -114020,8 +114051,8 @@
   }
  ],
  "last_tick": {
-  "ts": "2026-11-24T09:12:42.557171+00:00",
-  "dt_h": 0.017,
+  "ts": "2026-11-24T09:24:16.419114+00:00",
+  "dt_h": 0.04,
   "markets": [
    {
     "q": "Will Chicago Bears finish the 2026-27 NFL regular ",
@@ -114032,16 +114063,16 @@
    },
    {
     "q": "Will Denver Broncos finish the 2026-27 NFL regular",
-    "mid": 0.483,
+    "mid": 0.473,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will Claude Opus 5.6+ debut at an output token pri",
-    "mid": 0.535,
+    "mid": 0.545,
     "share": 1.0,
-    "earned": 0.0097,
+    "earned": 0.0233,
     "inv": 0.0
    },
    {
@@ -114130,7 +114161,7 @@
     "q": "Will the Central Bank of Chile make no change to t",
     "mid": 0.56,
     "share": 1.0,
-    "earned": 0.0042,
+    "earned": 0.01,
     "inv": 0.0
    },
    {
@@ -114142,142 +114173,135 @@
    },
    {
     "q": "Will the Central Bank of Chile increase the moneta",
-    "mid": 0.384,
+    "mid": 0.381,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "AMD hit with a BIS export-control penalty by March",
-    "mid": 0.26,
+    "mid": 0.315,
     "share": 1.0,
-    "earned": 0.0069,
+    "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will the chopsticks catch SpaceX Starship Flight T",
     "mid": 0.635,
     "share": 1.0,
-    "earned": 0.001,
+    "earned": 0.0025,
     "inv": 0.0
    },
    {
     "q": "Next Gemini Carbon (4.1+) released by January 31, ",
     "mid": 0.435,
     "share": 1.0,
-    "earned": 0.0028,
+    "earned": 0.0066,
     "inv": 0.0
    },
    {
     "q": "Will CeeDee Lamb finish the 2026-27 NFL regular se",
     "mid": 0.239,
     "share": 1.0,
-    "earned": 0.0076,
+    "earned": 0.0183,
     "inv": 0.0
    },
    {
     "q": "Will Lamine Yamal rank in Google\u2019s Top 5 Most Sear",
-    "mid": 0.27,
+    "mid": 0.235,
     "share": 1.0,
-    "earned": 0.0042,
+    "earned": 0.01,
     "inv": 0.0
    },
    {
     "q": "Will Wagner Moura rank in Google\u2019s Top 5 Most Sear",
     "mid": 0.335,
     "share": 1.0,
-    "earned": 0.0042,
+    "earned": 0.01,
     "inv": 0.0
    },
    {
     "q": "Will MegaETH hit $0.10 by June 30, 2027?",
     "mid": 0.49,
     "share": 1.0,
-    "earned": 0.0035,
+    "earned": 0.0083,
     "inv": 0.0
    },
    {
     "q": "Will any game last over 70 minutes at the BLAST Sl",
     "mid": 0.515,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0582,
     "inv": 0.0
    },
    {
     "q": "Will M80 qualify to the Playoffs at PGL Major Sing",
     "mid": 0.495,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0582,
     "inv": 0.0
    },
    {
     "q": "Will one team kill two Tormentors in a single game",
     "mid": 0.525,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0582,
     "inv": 0.0
    },
    {
     "q": "Will Eternal Fire qualify to the Playoffs at PGL M",
     "mid": 0.5,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0582,
     "inv": 0.0
    },
    {
     "q": "Will FaZe qualify to the Playoffs at PGL Major Sin",
-    "mid": 0.51,
+    "mid": 0.505,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0582,
     "inv": 0.0
    },
    {
     "q": "Will there be a 1v5 ace clutch in the PGL Major Si",
     "mid": 0.5,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0582,
     "inv": 0.0
    },
    {
     "q": "Will 100 Thieves go 3-0 in Stage 1 of the PGL Majo",
-    "mid": 0.605,
+    "mid": 0.615,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0582,
     "inv": 0.0
    },
    {
     "q": "Will Zetod feat. hellika win Eesti Laul 2027?",
     "mid": 0.22,
     "share": 1.0,
-    "earned": 0.0146,
+    "earned": 0.0316,
     "inv": 0.0
    },
    {
     "q": "Will Off Campus rank in Google\u2019s Top 5 Most Search",
     "mid": 0.67,
     "share": 1.0,
-    "earned": 0.0149,
+    "earned": 0.0357,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ba",
-    "mid": 0.35,
+    "mid": 0.36,
     "share": 1.0,
-    "earned": 0.0277,
+    "earned": 0.0665,
     "inv": 0.0
    },
    {
     "q": "Will DENDELE qualify to the Playoffs at PGL Major ",
     "mid": 0.5,
     "share": 1.0,
-    "earned": 0.0243,
-    "inv": 0.0
-   },
-   {
-    "q": "Poilievre announced resignation or removal by Marc",
-    "mid": 0.23,
-    "share": 0.0352,
-    "earned": 0.0024,
+    "earned": 0.0582,
     "inv": 0.0
    },
    {
@@ -114298,83 +114322,78 @@
    },
    {
     "q": "Will Nscale IPO by March 31, 2027?",
-    "mid": 0.295,
-    "share": 1.0,
-    "earned": 0.1386,
-    "inv": 0.0
-   },
-   {
-    "q": "Will Crusoe IPO by December 31, 2027?",
-    "mid": 0.625,
-    "share": 0.0099,
-    "earned": 0.0014,
-    "inv": 0.0
-   },
-   {
-    "q": "U.S. diplomat expelled by March 31, 2027?",
-    "mid": 0.23,
-    "share": 0.0111,
-    "earned": 0.0008,
-    "inv": 0.0
-   },
-   {
-    "q": "U.S. diplomat expelled by June 30, 2027?",
-    "mid": 0.47,
-    "share": 0.0502,
-    "earned": 0.0035,
-    "inv": 0.0
-   },
-   {
-    "q": "Poilievre announced resignation or removal by June",
-    "mid": 0.285,
-    "share": 0.0165,
-    "earned": 0.0011,
+    "mid": 0.435,
+    "share": 0.6014,
+    "earned": 0.1998,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the St",
-    "mid": 0.345,
+    "mid": 0.355,
     "share": 1.0,
-    "earned": 0.0277,
+    "earned": 0.0665,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the St",
     "mid": 0.25,
     "share": 1.0,
-    "earned": 0.0277,
+    "earned": 0.0665,
     "inv": 0.0
    },
    {
-    "q": "Will the Ornn B200 Index hit $5.50 (LOW) by Decemb",
-    "mid": 0.166,
-    "share": 0.9987,
-    "earned": 0.0021,
+    "q": "EU country expels a Russian diplomat by December 3",
+    "mid": 0.555,
+    "share": 1.0,
+    "earned": 0.1661,
+    "inv": 0.0
+   },
+   {
+    "q": "Will the next governing coalition of Sweden includ",
+    "mid": 0.516,
+    "share": 1.0,
+    "earned": 0.1213,
+    "inv": 0.0
+   },
+   {
+    "q": "Will Croatia come in 3rd place at Eurovision 2027?",
+    "mid": 0.149,
+    "share": 1.0,
+    "earned": 0.0598,
+    "inv": 0.0
+   },
+   {
+    "q": "Will the Ornn H200 Index hit $8.00 (HIGH) by Decem",
+    "mid": 0.595,
+    "share": 1.0,
+    "earned": 0.0665,
+    "inv": 0.0
+   },
+   {
+    "q": "Will the 2-year Treasury yield hit 4.90% before 20",
+    "mid": 0.55,
+    "share": 1.0,
+    "earned": 0.005,
+    "inv": 0.0
+   },
+   {
+    "q": "Will the 7-day average ship traffic through the Pa",
+    "mid": 0.68,
+    "share": 1.0,
+    "earned": 0.0665,
     "inv": 0.0
    }
   ],
-  "reward_tick": 0.5004,
-  "reward_total": 60143.29,
+  "reward_tick": 1.5057,
+  "reward_total": 60149.4,
   "mm_value": -680.66,
-  "net": 59462.63,
-  "avg_share": 0.8739,
+  "net": 59468.74,
+  "avg_share": 0.9888,
   "n_markets": 53,
   "fills_total": 659,
   "rebalanced": false
  },
  "reviews": [
-  {
-   "ts": "2026-11-03T08:58:39.405613+00:00",
-   "swapped": 2,
-   "out": [
-    "Will the Reserve Bank of Australia make no change ",
-    "Will the ECB increase the deposit facility rate by"
-   ],
-   "in": [
-    "Will Apple be the second-largest company in the wo",
-    "Will the 2-year Treasury yield hit 4.75% before 20"
-   ]
-  },
   {
    "ts": "2026-11-03T09:59:02.316790+00:00",
    "swapped": 5,
@@ -123014,7 +123033,27 @@
     "Will the 7-day average ship traffic through the St",
     "Will the Ornn B200 Index hit $5.50 (LOW) by Decemb"
    ]
+  },
+  {
+   "ts": "2026-11-24T09:20:42.482922+00:00",
+   "swapped": 6,
+   "out": [
+    "Will the Ornn B200 Index hit $5.50 (LOW) by Decemb",
+    "U.S. diplomat expelled by March 31, 2027?",
+    "Poilievre announced resignation or removal by June",
+    "Will Crusoe IPO by December 31, 2027?",
+    "Poilievre announced resignation or removal by Marc",
+    "U.S. diplomat expelled by June 30, 2027?"
+   ],
+   "in": [
+    "EU country expels a Russian diplomat by December 3",
+    "Will the next governing coalition of Sweden includ",
+    "Will Croatia come in 3rd place at Eurovision 2027?",
+    "Will the Ornn H200 Index hit $8.00 (HIGH) by Decem",
+    "Will the 2-year Treasury yield hit 4.90% before 20",
+    "Will the 7-day average ship traffic through the Pa"
+   ]
   }
  ],
- "reviewed_at": 1795508419.1022317
+ "reviewed_at": 1795512042.4829223
 }

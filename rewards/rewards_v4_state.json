@@ -304,21 +304,6 @@
    "rate0": 10.0
   },
   {
-   "cond": "0x49b57c5f1288d20e6d12e735ff87fa2e204b574120680ae4a9445d30c75060b1",
-   "question": "Will Wagner Moura rank in Google\u2019s Top 5 Most Searched Actors of 2026?",
-   "yes": "91051779537359260696855836911546128148339061353236880976607832141505861174342",
-   "no": "62801416153694017548143679927346759846200746670429784846603880037557904622892",
-   "rate": 6.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.7,
-   "est_reward_day": 6.0,
-   "end": "2026-12-31T23:59:00Z",
-   "share0": 1.0,
-   "rate0": 6.0
-  },
-  {
    "cond": "0x5f87b5a6e804985aabee25a0ff63b15ed64beb04c85b7172113bdab95d6de2be",
    "question": "Will MegaETH hit $0.10 by June 30, 2027?",
    "yes": "74412824398309832745287386774532588192097627627324768484495006990489145205311",
@@ -739,21 +724,6 @@
    "rate0": 35.0
   },
   {
-   "cond": "0x62cec27729d027ce5df7ef1a4c0bb07d958e51dfba3e6f8730d652075424fd67",
-   "question": "Magdalena Andersson announced resignation or removal by March 31, 2027?",
-   "yes": "80178228232678118524300784961456732582247816158917532458880336452184145973807",
-   "no": "102169813509968642590579783451537362802652382409731220450133836364096661827519",
-   "rate": 100.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.700000000000003,
-   "est_reward_day": 100.0,
-   "end": "2027-04-01T03:59:00Z",
-   "share0": 1.0,
-   "rate0": 100.0
-  },
-  {
    "cond": "0x37688b45cec9db48277e1cd4509868d79eedbe938049b9520b5b6ce3a296bd5b",
    "question": "Will the 7-day average ship traffic through the Strait of Hormuz reach 10+ by January 31?",
    "yes": "29657140418029850547361198790245394015359578968861416953225342373072400176083",
@@ -795,6 +765,36 @@
    "collateral": 18.7,
    "est_reward_day": 40.0,
    "end": "2027-02-01T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 40.0
+  },
+  {
+   "cond": "0x2432344f197997cb93ce0dab118dfcfab917a522d0936a95f37cd7fad8ba03af",
+   "question": "Magdalena Andersson announced resignation or removal by December 31, 2026?",
+   "yes": "31568361574381144413891060298334060657726953729568939711189553559586097165929",
+   "no": "16223066330518622702882305280844049232061525092779332644309646108359213973051",
+   "rate": 100.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.700000000000003,
+   "est_reward_day": 43.69996483316428,
+   "end": "2027-01-01T04:59:00Z",
+   "share0": 0.4369996483316428,
+   "rate0": 100.0
+  },
+  {
+   "cond": "0xc1915f0c9dd497c9ddcdd17d92dd75dc94efa1a8d68a6c15769ad9d5d8dfe6fa",
+   "question": "Will the 2-year Treasury yield hit 5.00% before 2027?",
+   "yes": "108434977780652763585914525353222263577732684137962673411545881341859456575857",
+   "no": "8756551636182683609762067410766027065456120620236898875108803930526821168335",
+   "rate": 40.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.699999999999996,
+   "est_reward_day": 40.0,
+   "end": "2027-01-01T04:59:00Z",
    "share0": 1.0,
    "rate0": 40.0
   }
@@ -4128,7 +4128,7 @@
   "0xfafaa706aa77ca7becd5741282e7455659580cbfe62a3881d5020b4b453d5753": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.335,
+   "mid": 0.34,
    "share": 1.0,
    "reward": 9.29485488192705,
    "fills": 0,
@@ -8427,9 +8427,9 @@
   "0x5df5bce5c1f715317efbf76be611c9192f7531f881e71b711a15907aae18f08f": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.22499999999999998,
-   "share": 1.0,
-   "reward": 2.843052747054597,
+   "mid": 0.22999999999999998,
+   "share": 0.9464181712288868,
+   "reward": 2.84791487363309,
    "fills": 0,
    "q": "Will Hili Tropper be the next Israeli Minister of Justice?"
   },
@@ -18039,7 +18039,7 @@
   "0xe43ebfb9c7af7e7560cf67dffd4431864a59f9876e0bc057bddb846bdb612d68": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.269,
+   "mid": 0.2685,
    "share": 1.0,
    "reward": 76.87070843404608,
    "fills": 0,
@@ -20523,9 +20523,9 @@
   "0xd7b639810b823140b574d19e3cf880a398503700dfc777a07357b0981d3b1c40": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.4285,
-   "share": 0.9542631281761715,
-   "reward": 49.941991469265304,
+   "mid": 0.4125,
+   "share": 1.0,
+   "reward": 49.95653395376009,
    "fills": 0,
    "q": "Will Avigdor Lieberman be the next Israeli Minister of Defense?"
   },
@@ -23234,7 +23234,7 @@
    "cash": 0.0,
    "mid": 0.28,
    "share": 1.0,
-   "reward": 30.049921496204202,
+   "reward": 30.099389270767567,
    "fills": 0,
    "q": "AMD hit with a BIS export-control penalty by March 31, 2027?"
   },
@@ -23279,7 +23279,7 @@
    "cash": 0.0,
    "mid": 0.61,
    "share": 1.0,
-   "reward": 6.523592857674317,
+   "reward": 6.531013023858821,
    "fills": 0,
    "q": "Will the chopsticks catch SpaceX Starship Flight Test 16 Super Heavy booster?"
   },
@@ -23288,7 +23288,7 @@
    "cash": 0.0,
    "mid": 0.435,
    "share": 1.0,
-   "reward": 13.55987373614749,
+   "reward": 13.579660845972835,
    "fills": 0,
    "q": "Next Gemini Carbon (4.1+) released by January 31, 2027?"
   },
@@ -23575,8 +23575,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.2,
-   "share": 0.08857442348008372,
-   "reward": 13.700343087745773,
+   "share": null,
+   "reward": 13.702693679434423,
    "fills": 0,
    "q": "Will Wagner Moura rank in Google\u2019s Top 5 Most Searched Actors of 2026?"
   },
@@ -23702,7 +23702,7 @@
    "cash": 0.0,
    "mid": 0.355,
    "share": 1.0,
-   "reward": 8.645075680908793,
+   "reward": 8.662859398361169,
    "fills": 0,
    "q": "Will MegaETH hit $0.10 by June 30, 2027?"
   },
@@ -23718,8 +23718,8 @@
   "0xc1915f0c9dd497c9ddcdd17d92dd75dc94efa1a8d68a6c15769ad9d5d8dfe6fa": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.23,
-   "share": null,
+   "mid": 0.35000000000000003,
+   "share": 1.0,
    "reward": 0.3743720662543098,
    "fills": 0,
    "q": "Will the 2-year Treasury yield hit 5.00% before 2027?"
@@ -23855,7 +23855,7 @@
    "cash": 0.0,
    "mid": 0.4995,
    "share": 1.0,
-   "reward": 36.526118953263875,
+   "reward": 36.699256164235656,
    "fills": 0,
    "q": "Will M80 qualify to the Playoffs at PGL Major Singapore 2026?"
   },
@@ -23873,7 +23873,7 @@
    "cash": 0.0,
    "mid": 0.54,
    "share": 1.0,
-   "reward": 61.515810924754824,
+   "reward": 61.688948135726605,
    "fills": 0,
    "q": "Will one team kill two Tormentors in a single game at the BLAST Slam IX Playoffs"
   },
@@ -23927,7 +23927,7 @@
    "cash": 0.0,
    "mid": 0.46,
    "share": 1.0,
-   "reward": 35.80674209342674,
+   "reward": 35.97987930439852,
    "fills": 0,
    "q": "Will Eternal Fire qualify to the Playoffs at PGL Major Singapore 2026?"
   },
@@ -24044,7 +24044,7 @@
    "cash": 0.0,
    "mid": 0.675,
    "share": 1.0,
-   "reward": 23.046088001878907,
+   "reward": 23.053508168063413,
    "fills": 0,
    "q": "Will Off Campus rank in Google\u2019s Top 5 Most Searched TV Shows of 2026?"
   },
@@ -24071,7 +24071,7 @@
    "cash": 0.0,
    "mid": 0.4995,
    "share": 1.0,
-   "reward": 16.652879114173082,
+   "reward": 16.826016325144863,
    "fills": 0,
    "q": "Will Wildcard qualify to the Playoffs at PGL Major Singapore 2026?"
   },
@@ -24312,7 +24312,7 @@
   "0x10607f24543541a30a9f857fc854a93251638d08652c80bf94b201e626e4a5ff": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.241,
+   "mid": 0.23950000000000002,
    "share": 1.0,
    "reward": 2.2525113925117033,
    "fills": 0,
@@ -24512,7 +24512,7 @@
    "cash": 0.0,
    "mid": 0.47000000000000003,
    "share": 1.0,
-   "reward": 27.728615848195787,
+   "reward": 27.901753059167568,
    "fills": 0,
    "q": "PGL Major Singapore 2026: Any map to go 13-0"
   },
@@ -24636,9 +24636,9 @@
   "0x3f3ab2ff387ccdf28b8d07a4267bd9800f5e9bddc22d91c557284e9cb8678bfb": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.42500000000000004,
+   "mid": 0.43,
    "share": 1.0,
-   "reward": 23.14339822369555,
+   "reward": 23.249402943945764,
    "fills": 0,
    "q": "Will a team from Europe win the PGL Major Singapore 2026?"
   },
@@ -24665,7 +24665,7 @@
    "cash": 0.0,
    "mid": 0.5,
    "share": 1.0,
-   "reward": 20.389572528502896,
+   "reward": 20.562709739474677,
    "fills": 0,
    "q": "Will Legacy record 3 or more aces at the PGL Major Singapore 2026?"
   },
@@ -24674,7 +24674,7 @@
    "cash": 0.0,
    "mid": 0.58,
    "share": 1.0,
-   "reward": 19.995229261947994,
+   "reward": 20.168366472919775,
    "fills": 0,
    "q": "Will Nemiga record 3 or more aces at the PGL Major Singapore 2026?"
   },
@@ -24737,16 +24737,16 @@
    "cash": 0.0,
    "mid": 0.47450000000000003,
    "share": 1.0,
-   "reward": 15.98059593590873,
+   "reward": 16.15373314688051,
    "fills": 0,
    "q": "Will Legacy reach the Grand Final at PGL Major Singapore 2026?"
   },
   "0x4ee59475775783108d2af7e8a64f550b9c7a77c0122fe2c8a36f47dc444bd753": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.48750000000000004,
+   "mid": 0.48700000000000004,
    "share": 1.0,
-   "reward": 15.98059593590873,
+   "reward": 16.15373314688051,
    "fills": 0,
    "q": "Will Nemiga reach the Grand Final at PGL Major Singapore 2026?"
   },
@@ -24755,7 +24755,7 @@
    "cash": 0.0,
    "mid": 0.10500000000000001,
    "share": 1.0,
-   "reward": 15.907666826924238,
+   "reward": 16.08080403789602,
    "fills": 0,
    "q": "Will Spirit record 3 or more aces at the PGL Major Singapore 2026?"
   },
@@ -24764,7 +24764,7 @@
    "cash": 0.0,
    "mid": 0.512,
    "share": 1.0,
-   "reward": 14.788755685005736,
+   "reward": 14.961892895977513,
    "fills": 0,
    "q": "Will Doublelift be inducted into the Hall of Legends in 2027?"
   },
@@ -24773,7 +24773,7 @@
    "cash": 0.0,
    "mid": 0.5449999999999999,
    "share": 1.0,
-   "reward": 15.956291784553061,
+   "reward": 16.12942899552484,
    "fills": 0,
    "q": "Will HEROIC record 3 or more aces at the PGL Major Singapore 2026?"
   },
@@ -24782,7 +24782,7 @@
    "cash": 0.0,
    "mid": 0.7649999999999999,
    "share": 1.0,
-   "reward": 15.88668200990174,
+   "reward": 16.05981922087352,
    "fills": 0,
    "q": "Will the LPL have an official English broadcast in 2027?"
   },
@@ -24791,7 +24791,7 @@
    "cash": 0.0,
    "mid": 0.42000000000000004,
    "share": 1.0,
-   "reward": 15.956332186568112,
+   "reward": 16.129469397539893,
    "fills": 0,
    "q": "Will TheShy be inducted into the Hall of Legends in 2027?"
   },
@@ -24809,7 +24809,7 @@
    "cash": 0.0,
    "mid": 0.475,
    "share": 1.0,
-   "reward": 13.117015926435041,
+   "reward": 13.27531280503781,
    "fills": 0,
    "q": "Will Pep Guardiola's next job be England?"
   },
@@ -24827,7 +24827,7 @@
    "cash": 0.0,
    "mid": 0.235,
    "share": 1.0,
-   "reward": 8.454268095137342,
+   "reward": 8.647192415934468,
    "fills": 0,
    "q": "Will JaCkky have the most kills at BLAST Slam IX Playoffs?"
   },
@@ -24843,8 +24843,8 @@
   "0x2432344f197997cb93ce0dab118dfcfab917a522d0936a95f37cd7fad8ba03af": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.29000000000000004,
-   "share": null,
+   "mid": 0.475,
+   "share": 0.43699964833164284,
    "reward": 1.2778115811661441,
    "fills": 0,
    "q": "Magdalena Andersson announced resignation or removal by December 31, 2026?"
@@ -24853,8 +24853,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.535,
-   "share": 0.05961333871381932,
-   "reward": 5.817578240999717,
+   "share": null,
+   "reward": 5.838040729770967,
    "fills": 0,
    "q": "Magdalena Andersson announced resignation or removal by March 31, 2027?"
   },
@@ -24863,7 +24863,7 @@
    "cash": 0.0,
    "mid": 0.25,
    "share": 1.0,
-   "reward": 1.365041152019589,
+   "reward": 1.562912250273051,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Strait of Hormuz reach 10+ by Ja"
   },
@@ -24872,7 +24872,7 @@
    "cash": 0.0,
    "mid": 0.505,
    "share": 1.0,
-   "reward": 1.4688783964625112,
+   "reward": 1.6667494947159731,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait reach 30+ b"
   },
@@ -24881,7 +24881,7 @@
    "cash": 0.0,
    "mid": 0.48,
    "share": 1.0,
-   "reward": 1.4688783964625112,
+   "reward": 1.6667494947159731,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 38+ on January 31?"
   }
@@ -110844,17 +110844,30 @@
    "w": 2992687
   },
   {
-   "ts": "2026-11-25T13:28:04.511400+00:00",
-   "dt_h": 0.15,
-   "reward_tick": 4.5119,
-   "reward_total": 60908.1,
+   "ts": "2026-11-25T13:29:11.803518+00:00",
+   "dt_h": 0.169,
+   "reward_tick": 5.0695,
+   "reward_total": 60908.66,
    "mm_value": -680.76,
-   "net": 60227.34,
-   "avg_share": 0.9459,
+   "net": 60227.9,
+   "avg_share": 0.9454,
    "n_markets": 53,
    "fills_total": 659,
    "rebalanced": false,
    "w": 2992688
+  },
+  {
+   "ts": "2026-11-25T13:35:11.912972+00:00",
+   "dt_h": 0.102,
+   "reward_tick": 3.0613,
+   "reward_total": 60911.72,
+   "mm_value": -680.76,
+   "net": 60230.96,
+   "avg_share": 0.9805,
+   "n_markets": 53,
+   "fills_total": 659,
+   "rebalanced": false,
+   "w": 2992689
   }
  ],
  "fills": [
@@ -116790,8 +116803,8 @@
    "ledger": "v4"
   }
  ],
- "reward_total": 60908.099238595474,
- "last_ts": 1795613284.5114002,
+ "reward_total": 60911.71809538924,
+ "last_ts": 1795613711.9129725,
  "chosen_at": 1791639880.921448,
  "rebalances": [
   {
@@ -116802,8 +116815,8 @@
   }
  ],
  "last_tick": {
-  "ts": "2026-11-25T13:28:04.511400+00:00",
-  "dt_h": 0.031,
+  "ts": "2026-11-25T13:35:11.912972+00:00",
+  "dt_h": 0.017,
   "markets": [
    {
     "q": "Will Chicago Bears finish the 2026-27 NFL regular ",
@@ -116889,7 +116902,7 @@
    },
    {
     "q": "Will Dune: Part Three win Best Sound at the 99th A",
-    "mid": 0.335,
+    "mid": 0.34,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -116898,42 +116911,35 @@
     "q": "AMD hit with a BIS export-control penalty by March",
     "mid": 0.28,
     "share": 1.0,
-    "earned": 0.013,
+    "earned": 0.0069,
     "inv": 0.0
    },
    {
     "q": "Will the chopsticks catch SpaceX Starship Flight T",
     "mid": 0.61,
     "share": 1.0,
-    "earned": 0.002,
+    "earned": 0.001,
     "inv": 0.0
    },
    {
     "q": "Next Gemini Carbon (4.1+) released by January 31, ",
     "mid": 0.435,
     "share": 1.0,
-    "earned": 0.0052,
-    "inv": 0.0
-   },
-   {
-    "q": "Will Wagner Moura rank in Google\u2019s Top 5 Most Sear",
-    "mid": 0.2,
-    "share": 0.0886,
-    "earned": 0.0007,
+    "earned": 0.0028,
     "inv": 0.0
    },
    {
     "q": "Will MegaETH hit $0.10 by June 30, 2027?",
     "mid": 0.355,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0035,
     "inv": 0.0
    },
    {
     "q": "Will one team kill two Tormentors in a single game",
     "mid": 0.54,
     "share": 1.0,
-    "earned": 0.0455,
+    "earned": 0.0243,
     "inv": 0.0
    },
    {
@@ -116944,7 +116950,7 @@
     "q": "Will Off Campus rank in Google\u2019s Top 5 Most Search",
     "mid": 0.675,
     "share": 1.0,
-    "earned": 0.002,
+    "earned": 0.001,
     "inv": 0.0
    },
    {
@@ -116965,7 +116971,7 @@
    },
    {
     "q": "Will Croatia come in 3rd place at Eurovision 2027?",
-    "mid": 0.241,
+    "mid": 0.24,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -116974,7 +116980,7 @@
     "q": "PGL Major Singapore 2026: Any map to go 13-0",
     "mid": 0.47,
     "share": 1.0,
-    "earned": 0.0455,
+    "earned": 0.0243,
     "inv": 0.0
    },
    {
@@ -116983,184 +116989,169 @@
    },
    {
     "q": "Will a team from Europe win the PGL Major Singapor",
-    "mid": 0.425,
+    "mid": 0.43,
     "share": 1.0,
-    "earned": 0.0481,
+    "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will Legacy record 3 or more aces at the PGL Major",
     "mid": 0.5,
     "share": 1.0,
-    "earned": 0.0455,
+    "earned": 0.0243,
     "inv": 0.0
    },
    {
     "q": "Will Nemiga record 3 or more aces at the PGL Major",
     "mid": 0.58,
     "share": 1.0,
-    "earned": 0.0455,
+    "earned": 0.0243,
     "inv": 0.0
    },
    {
     "q": "Will Hili Tropper be the next Israeli Minister of ",
-    "mid": 0.225,
-    "share": 1.0,
-    "earned": 0.0013,
+    "mid": 0.23,
+    "share": 0.9464,
+    "earned": 0.0007,
     "inv": 0.0
    },
    {
     "q": "Will Legacy reach the Grand Final at PGL Major Sin",
     "mid": 0.475,
     "share": 1.0,
-    "earned": 0.0455,
+    "earned": 0.0243,
     "inv": 0.0
    },
    {
     "q": "Will Nemiga reach the Grand Final at PGL Major Sin",
-    "mid": 0.488,
+    "mid": 0.487,
     "share": 1.0,
-    "earned": 0.0455,
+    "earned": 0.0243,
     "inv": 0.0
    },
    {
     "q": "Will Spirit record 3 or more aces at the PGL Major",
     "mid": 0.105,
     "share": 1.0,
-    "earned": 0.0455,
+    "earned": 0.0243,
     "inv": 0.0
    },
    {
     "q": "Will Doublelift be inducted into the Hall of Legen",
     "mid": 0.512,
     "share": 1.0,
-    "earned": 0.0455,
+    "earned": 0.0243,
     "inv": 0.0
    },
    {
     "q": "Will HEROIC record 3 or more aces at the PGL Major",
     "mid": 0.545,
     "share": 1.0,
-    "earned": 0.0455,
+    "earned": 0.0243,
     "inv": 0.0
    },
    {
     "q": "Will the LPL have an official English broadcast in",
     "mid": 0.765,
     "share": 1.0,
-    "earned": 0.0455,
+    "earned": 0.0243,
     "inv": 0.0
    },
    {
     "q": "Will TheShy be inducted into the Hall of Legends i",
     "mid": 0.42,
     "share": 1.0,
-    "earned": 0.0455,
+    "earned": 0.0243,
     "inv": 0.0
    },
    {
     "q": "Will Eternal Fire qualify to the Playoffs at PGL M",
     "mid": 0.46,
     "share": 1.0,
-    "earned": 0.0455,
+    "earned": 0.0243,
     "inv": 0.0
    },
    {
     "q": "Will Wildcard qualify to the Playoffs at PGL Major",
     "mid": 0.499,
     "share": 1.0,
-    "earned": 0.0455,
+    "earned": 0.0243,
     "inv": 0.0
    },
    {
     "q": "Will Pep Guardiola's next job be England?",
     "mid": 0.475,
     "share": 1.0,
-    "earned": 0.0416,
+    "earned": 0.0222,
     "inv": 0.0
    },
    {
     "q": "Will JaCkky have the most kills at BLAST Slam IX P",
     "mid": 0.235,
     "share": 1.0,
-    "earned": 0.0507,
+    "earned": 0.0271,
     "inv": 0.0
    },
    {
     "q": "Will Avigdor Lieberman be the next Israeli Ministe",
-    "mid": 0.428,
-    "share": 0.9543,
-    "earned": 0.0037,
+    "mid": 0.412,
+    "share": 1.0,
+    "earned": 0.0021,
     "inv": 0.0
    },
    {
     "q": "Will M80 qualify to the Playoffs at PGL Major Sing",
     "mid": 0.499,
     "share": 1.0,
-    "earned": 0.0455,
-    "inv": 0.0
-   },
-   {
-    "q": "Magdalena Andersson announced resignation or remov",
-    "mid": 0.535,
-    "share": 0.0596,
-    "earned": 0.0078,
+    "earned": 0.0243,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the St",
     "mid": 0.25,
     "share": 1.0,
-    "earned": 0.052,
+    "earned": 0.0278,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ba",
     "mid": 0.505,
     "share": 1.0,
-    "earned": 0.052,
+    "earned": 0.0278,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
     "mid": 0.48,
     "share": 1.0,
-    "earned": 0.052,
+    "earned": 0.0278,
+    "inv": 0.0
+   },
+   {
+    "q": "Magdalena Andersson announced resignation or remov",
+    "mid": 0.475,
+    "share": 0.437,
+    "earned": 0.0,
+    "inv": 0.0
+   },
+   {
+    "q": "Will the 2-year Treasury yield hit 5.00% before 20",
+    "mid": 0.35,
+    "share": 1.0,
+    "earned": 0.0,
     "inv": 0.0
    }
   ],
-  "reward_tick": 0.9697,
-  "reward_total": 60908.1,
+  "reward_tick": 0.4905,
+  "reward_total": 60911.72,
   "mm_value": -680.76,
-  "net": 60227.34,
-  "avg_share": 0.9459,
+  "net": 60230.96,
+  "avg_share": 0.9805,
   "n_markets": 53,
   "fills_total": 659,
   "rebalanced": false
  },
  "reviews": [
-  {
-   "ts": "2026-11-04T13:15:16.583777+00:00",
-   "swapped": 7,
-   "out": [
-    "Will Trump's approval rating hit 35% by June 30, 2",
-    "Will South Korea\u2019s 2026 Annual Inflation be at lea",
-    "Will Xiaomi be the second-best Chinese AI company ",
-    "Buttigieg's Democratic nomination odds dip to 4% b",
-    "Will Kewan Lacy be the 2026 D1 Rushing Yards Leade",
-    "Belgium snap election called by December 31?",
-    "Newsom flips Vance for 2028 president by March 31?"
-   ],
-   "in": [
-    "Will the Bank of Brazil make no change to the targ",
-    "Will the Ornn RTX 6000 Index be between $1.25 and ",
-    "Will the Central Bank of Chile increase the moneta",
-    "Will the Bank of Brazil decrease the target for th",
-    "Will Diable play for JD Gaming in 2027?",
-    "Will the Ornn RTX 6000 Index be between $1.50 and ",
-    "Will the Ornn H100 Index be between $2.25 and $2.5"
-   ]
-  },
   {
    "ts": "2026-11-04T14:15:29.197961+00:00",
    "swapped": 3,
@@ -125914,7 +125905,19 @@
     "Will the 7-day average ship traffic through the Ba",
     "Will the 7-day average ship traffic through the Su"
    ]
+  },
+  {
+   "ts": "2026-11-25T13:35:11.912972+00:00",
+   "swapped": 2,
+   "out": [
+    "Will Wagner Moura rank in Google\u2019s Top 5 Most Sear",
+    "Magdalena Andersson announced resignation or remov"
+   ],
+   "in": [
+    "Magdalena Andersson announced resignation or remov",
+    "Will the 2-year Treasury yield hit 5.00% before 20"
+   ]
   }
  ],
- "reviewed_at": 1795610111.7340639
+ "reviewed_at": 1795613711.9129725
 }

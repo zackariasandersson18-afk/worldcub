@@ -439,21 +439,6 @@
    "rate0": 35.0
   },
   {
-   "cond": "0x3f3ab2ff387ccdf28b8d07a4267bd9800f5e9bddc22d91c557284e9cb8678bfb",
-   "question": "Will a team from Europe win the PGL Major Singapore 2026?",
-   "yes": "4518510451640628278138460179582149060396502103280351139740066573141196784139",
-   "no": "4304049260914794476915735787843100096828000916023735762182974563271299261441",
-   "rate": 36.0,
-   "v": 4.5,
-   "min_size": 20.0,
-   "d": 0.0225,
-   "collateral": 19.1,
-   "est_reward_day": 40.0,
-   "end": "2027-01-13T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 40.0
-  },
-  {
    "cond": "0x576483a6bdecd35abc99014b507dc91f6a1d5d8915601da6a9440b4a5fe38f23",
    "question": "Will Legacy record 3 or more aces at the PGL Major Singapore 2026?",
    "yes": "1263730231713761531777287051152148482880085349396290740056678429827437345737",
@@ -604,21 +589,6 @@
    "rate0": 40.0
   },
   {
-   "cond": "0x7d2fab69c861d7c797c465eb2d6ff0ef197fb276af0df7765d1c34edb0bc3c61",
-   "question": "Will the next governing coalition of Israel consist of Yashar + Together + YB + Democrats?",
-   "yes": "49334242972552889315371261685328832503297589758007499867740568975753393611176",
-   "no": "73985736599702432522947087279109899832447982823344920061094829153441816420731",
-   "rate": 10.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.7,
-   "est_reward_day": 45.97823515495624,
-   "end": "2028-01-01T04:59:00Z",
-   "share0": 0.9995268511947009,
-   "rate0": 46.0
-  },
-  {
    "cond": "0x0106f9b1e69be64aaecaee0da142df29c3ce6ba6ef2e9654f8ae0b7dcf0ec530",
    "question": "Will no Israeli government be formed after the 2026 Knesset election?",
    "yes": "64252084001598356153998245795822656204061720769167328720612310549664065274573",
@@ -754,21 +724,6 @@
    "rate0": 40.0
   },
   {
-   "cond": "0x67d4fff50ad850751c2ee34d1ed1da57b0c3253b3020d55fd61059b35e06a7fb",
-   "question": "Will Danielle Alvarez be the next White House Press Secretary?",
-   "yes": "98858113637464031667601243779300504361698046880603495105247264891681934598969",
-   "no": "103375937287662099654359416061390999902296859106100970287813569725536953951223",
-   "rate": 113.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.7,
-   "est_reward_day": 126.0,
-   "end": "2028-01-01T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 126.0
-  },
-  {
    "cond": "0x37688b45cec9db48277e1cd4509868d79eedbe938049b9520b5b6ce3a296bd5b",
    "question": "Will the 7-day average ship traffic through the Strait of Hormuz reach 10+ by January 31?",
    "yes": "29657140418029850547361198790245394015359578968861416953225342373072400176083",
@@ -797,6 +752,51 @@
    "end": "2027-01-01T04:59:00Z",
    "share0": 1.0,
    "rate0": 40.0
+  },
+  {
+   "cond": "0x5804602bff8b6857033f368e49a801441549f715c648f1fa59add6b804ac93ed",
+   "question": "Will Trump pardon anyone by January 31, 2027?",
+   "yes": "40478017111803513848310509797946120308050972859945630412004694034090850041784",
+   "no": "35654005638468230663747442506143947680281789509061575181567789131260937011534",
+   "rate": 50.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.7,
+   "est_reward_day": 50.0,
+   "end": "2027-02-01T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 50.0
+  },
+  {
+   "cond": "0xe5fe861eca3509f7f1a6bdb94ce4a5a6d55af0f52bc58423b585786249cca870",
+   "question": "Will Trump pardon anyone by December 31, 2026?",
+   "yes": "51970850288838034668791556532268188659537396401532914203061842187277557365603",
+   "no": "102669558734091784273518873663179046391861852016403320146634084800560401808990",
+   "rate": 50.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.700000000000003,
+   "est_reward_day": 50.0,
+   "end": "2027-01-01T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 50.0
+  },
+  {
+   "cond": "0x327cb7949a613357d3ebccff20cec09f411780a76734519d50204dfcdccbb75e",
+   "question": "Will Mexico GDP growth in Q4 2026 be between 2.5% and 3.0%?",
+   "yes": "68981444222265260402582116962631196181704134238616582049357731706167162041165",
+   "no": "48727080730742515846964534872096107910133771076534801350709195687552643942039",
+   "rate": 46.0,
+   "v": 4.5,
+   "min_size": 20.0,
+   "d": 0.0225,
+   "collateral": 19.1,
+   "est_reward_day": 46.0,
+   "end": "2027-01-29T12:00:00Z",
+   "share0": 1.0,
+   "rate0": 46.0
   }
  ],
  "positions": {
@@ -2072,7 +2072,7 @@
   "0x7a9a68c97682b82da841fa413f4764e86024c49e2c58a01b34cb5d3c5b9b2624": {
    "inv": 20.0,
    "cash": -8.85,
-   "mid": 0.38,
+   "mid": 0.395,
    "share": 1.0,
    "reward": 87.751647885782,
    "fills": 1,
@@ -4522,7 +4522,7 @@
   "0x5d15579a3a31d6220eb8d33d167788db82976f14c856768a5e37e51afdaeb279": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.474,
+   "mid": 0.475,
    "share": 1.0,
    "reward": 17.59805527737572,
    "fills": 0,
@@ -12025,7 +12025,7 @@
    "cash": 0.0,
    "mid": 0.6,
    "share": 1.0,
-   "reward": 866.3024184642779,
+   "reward": 866.5851240494397,
    "fills": 0,
    "q": "Will the Ornn H200 Index hit $8.00 (HIGH) by December 31, 2026?"
   },
@@ -13810,9 +13810,9 @@
   "0x0106f9b1e69be64aaecaee0da142df29c3ce6ba6ef2e9654f8ae0b7dcf0ec530": {
    "inv": 0.0,
    "cash": -0.2537186874999999,
-   "mid": 0.31,
-   "share": 1.0,
-   "reward": 124.24847465183103,
+   "mid": 0.29500000000000004,
+   "share": 0.26698262243285825,
+   "reward": 124.29712716893872,
    "fills": 2,
    "q": "Will no Israeli government be formed after the 2026 Knesset election?",
    "closed_at": 0.37
@@ -16734,9 +16734,9 @@
   "0xea2590e990456ee92ecdce851ccce6f0164c46b39044f308da5e84e75e443c57": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.48,
+   "mid": 0.49,
    "share": 1.0,
-   "reward": 25.566941071246426,
+   "reward": 25.849646656408268,
    "fills": 0,
    "q": "Will the 2-year Treasury yield hit 4.90% before 2027?"
   },
@@ -17985,9 +17985,9 @@
   "0x7d2fab69c861d7c797c465eb2d6ff0ef197fb276af0df7765d1c34edb0bc3c61": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.3415,
-   "share": 0.33843341136392974,
-   "reward": 2.8149657268686212,
+   "mid": 0.34099999999999997,
+   "share": null,
+   "reward": 2.818772124569316,
    "fills": 0,
    "q": "Will the next governing coalition of Israel consist of Yashar + Together + YB + "
   },
@@ -18039,7 +18039,7 @@
   "0xe43ebfb9c7af7e7560cf67dffd4431864a59f9876e0bc057bddb846bdb612d68": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.2765,
+   "mid": 0.277,
    "share": 1.0,
    "reward": 76.87070843404608,
    "fills": 0,
@@ -23232,9 +23232,9 @@
   "0x0245582780dfd9375857cd5a40ee33b2747ec7539c7a42a6574acc80157aa4d6": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.25,
+   "mid": 0.245,
    "share": 1.0,
-   "reward": 33.73822679914136,
+   "reward": 33.80890319543182,
    "fills": 0,
    "q": "AMD hit with a BIS export-control penalty by March 31, 2027?"
   },
@@ -23279,7 +23279,7 @@
    "cash": 0.0,
    "mid": 0.605,
    "share": 1.0,
-   "reward": 7.0942771790273245,
+   "reward": 7.104878638470895,
    "fills": 0,
    "q": "Will the chopsticks catch SpaceX Starship Flight Test 16 Super Heavy booster?"
   },
@@ -23288,7 +23288,7 @@
    "cash": 0.0,
    "mid": 0.485,
    "share": 1.0,
-   "reward": 15.076132660905497,
+   "reward": 15.104403219421682,
    "fills": 0,
    "q": "Next Gemini Carbon (4.1+) released by January 31, 2027?"
   },
@@ -23700,9 +23700,9 @@
   "0x5f87b5a6e804985aabee25a0ff63b15ed64beb04c85b7172113bdab95d6de2be": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.28,
+   "mid": 0.355,
    "share": 1.0,
-   "reward": 10.18104460082121,
+   "reward": 10.205947879094776,
    "fills": 0,
    "q": "Will MegaETH hit $0.10 by June 30, 2027?"
   },
@@ -23871,9 +23871,9 @@
   "0xf63a84e18452f9a84a449d844ba3f10384273f0f5220132b0d016a60cafecbc9": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.51,
+   "mid": 0.505,
    "share": 1.0,
-   "reward": 74.6310375430321,
+   "reward": 74.87840493004869,
    "fills": 0,
    "q": "Will one team kill two Tormentors in a single game at the BLAST Slam IX Playoffs"
   },
@@ -24044,7 +24044,7 @@
    "cash": 0.0,
    "mid": 0.725,
    "share": 1.0,
-   "reward": 23.612282754064648,
+   "reward": 23.62288421350821,
    "fills": 0,
    "q": "Will Off Campus rank in Google\u2019s Top 5 Most Searched TV Shows of 2026?"
   },
@@ -24078,9 +24078,9 @@
   "0x327cb7949a613357d3ebccff20cec09f411780a76734519d50204dfcdccbb75e": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.191,
-   "share": null,
-   "reward": 0.27434936461267667,
+   "mid": 0.2005,
+   "share": 1.0,
+   "reward": 0.49807459407024934,
    "fills": 0,
    "q": "Will Mexico GDP growth in Q4 2026 be between 2.5% and 3.0%?"
   },
@@ -24312,7 +24312,7 @@
   "0x10607f24543541a30a9f857fc854a93251638d08652c80bf94b201e626e4a5ff": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.1865,
+   "mid": 0.162,
    "share": 1.0,
    "reward": 2.2525113925117033,
    "fills": 0,
@@ -24512,7 +24512,7 @@
    "cash": 0.0,
    "mid": 0.47000000000000003,
    "share": 1.0,
-   "reward": 41.020296326914355,
+   "reward": 41.26766371393098,
    "fills": 0,
    "q": "PGL Major Singapore 2026: Any map to go 13-0"
   },
@@ -24636,9 +24636,9 @@
   "0x3f3ab2ff387ccdf28b8d07a4267bd9800f5e9bddc22d91c557284e9cb8678bfb": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.435,
-   "share": 1.0,
-   "reward": 34.04684143791843,
+   "mid": 0.745,
+   "share": null,
+   "reward": 34.05122321506588,
    "fills": 0,
    "q": "Will a team from Europe win the PGL Major Singapore 2026?"
   },
@@ -24665,7 +24665,7 @@
    "cash": 0.0,
    "mid": 0.53,
    "share": 1.0,
-   "reward": 33.70554002673967,
+   "reward": 33.95290741375629,
    "fills": 0,
    "q": "Will Legacy record 3 or more aces at the PGL Major Singapore 2026?"
   },
@@ -24674,7 +24674,7 @@
    "cash": 0.0,
    "mid": 0.59,
    "share": 1.0,
-   "reward": 33.311196760184785,
+   "reward": 33.55856414720141,
    "fills": 0,
    "q": "Will Nemiga record 3 or more aces at the PGL Major Singapore 2026?"
   },
@@ -24762,9 +24762,9 @@
   "0xa9e9260e255b920b12cebde28e31b9818917bed466a222f3d0b66b9dd09f61d3": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.511,
+   "mid": 0.5105000000000001,
    "share": 1.0,
-   "reward": 28.104723183242502,
+   "reward": 28.352090570259115,
    "fills": 0,
    "q": "Will Doublelift be inducted into the Hall of Legends in 2027?"
   },
@@ -24773,16 +24773,16 @@
    "cash": 0.0,
    "mid": 0.48,
    "share": 1.0,
-   "reward": 29.24795581252761,
+   "reward": 29.495323199544224,
    "fills": 0,
    "q": "Will HEROIC record 3 or more aces at the PGL Major Singapore 2026?"
   },
   "0x094a7e5ada8aa809c634cb49d8e3ce479661fe019479ecb40969ece3d6d15cac": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.81,
+   "mid": 0.8049999999999999,
    "share": 1.0,
-   "reward": 29.202649508138514,
+   "reward": 29.450016895155127,
    "fills": 0,
    "q": "Will the LPL have an official English broadcast in 2027?"
   },
@@ -24791,7 +24791,7 @@
    "cash": 0.0,
    "mid": 0.365,
    "share": 1.0,
-   "reward": 29.18209679347496,
+   "reward": 29.429464180491575,
    "fills": 0,
    "q": "Will TheShy be inducted into the Hall of Legends in 2027?"
   },
@@ -24807,9 +24807,9 @@
   "0xb7ce70eacd48c8692e0b0bec8a4f7b43bd70ce217d36149cbe5185aa31573d91": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.4375,
+   "mid": 0.4385,
    "share": 1.0,
-   "reward": 23.585770935085097,
+   "reward": 23.776597205069343,
    "fills": 0,
    "q": "Will Pep Guardiola's next job be England?"
   },
@@ -24825,9 +24825,9 @@
   "0x1340197835250fc684dc0252ab561b664feeb1e52a4fb5954f80142cb2e1c2e7": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.22,
-   "share": 1.0,
-   "reward": 15.406113560563997,
+   "mid": 0.025,
+   "share": 0.002701120141317128,
+   "reward": 15.461211785795518,
    "fills": 0,
    "q": "Will JaCkky have the most kills at BLAST Slam IX Playoffs?"
   },
@@ -24863,7 +24863,7 @@
    "cash": 0.0,
    "mid": 0.29000000000000004,
    "share": 1.0,
-   "reward": 9.141120716564998,
+   "reward": 9.423826301726843,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Strait of Hormuz reach 10+ by Ja"
   },
@@ -24888,18 +24888,18 @@
   "0x2b26706820757dabdabb611cdbfb085399e9baefe81bfdfee6cafd36d637acfb": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.305,
+   "mid": 0.32999999999999996,
    "share": 1.0,
-   "reward": 8.306085214102104,
+   "reward": 8.588790799263949,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Strait of Hormuz reach 8+ by Jan"
   },
   "0x74205c1e7253a4ea8f74a18a600f37959af00b6f244e60194557bf5f1269fd2f": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.605,
+   "mid": 0.625,
    "share": 1.0,
-   "reward": 9.371128538204603,
+   "reward": 9.625970244361334,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 42+ on January 31?"
   },
@@ -24933,9 +24933,9 @@
   "0xf5f29307dd097874dc2433cae51b821bf82ccec3dedcd50dbb61c4633a693ed7": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.515,
+   "mid": 0.5,
    "share": 1.0,
-   "reward": 8.31791344516807,
+   "reward": 8.600619030329915,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Strait of Hormuz reach 6+ by Jan"
   },
@@ -24953,7 +24953,7 @@
    "cash": 0.0,
    "mid": 0.485,
    "share": 1.0,
-   "reward": 8.279464798255104,
+   "reward": 8.632846779707409,
    "fills": 0,
    "q": "Will China blockade Taiwan by June 30, 2027?"
   },
@@ -24962,16 +24962,16 @@
    "cash": 0.0,
    "mid": 0.51,
    "share": 1.0,
-   "reward": 8.279464798255104,
+   "reward": 8.632846779707409,
    "fills": 0,
    "q": "Will China blockade Taiwan by December 31, 2027?"
   },
   "0xe3f57fc21fa08a928bde14f6ac6d40260bd4422636913231b2340a58adb0482b": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.485,
+   "mid": 0.48,
    "share": 1.0,
-   "reward": 6.62357183860408,
+   "reward": 6.906277423765926,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait reach 40+ b"
   },
@@ -24998,16 +24998,16 @@
    "cash": 0.0,
    "mid": 0.56,
    "share": 1.0,
-   "reward": 3.2729397368651845,
+   "reward": 3.5556453220270288,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Panama Canal be 27+ on January 3"
   },
   "0x79f82f0759b1ec0f9c4dcc9bdee976ae2fffb28a3ac3df0a73789f2d82235c57": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.5,
+   "mid": 0.53,
    "share": 1.0,
-   "reward": 2.850846354497803,
+   "reward": 3.0780214656282343,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Malacca Strait be 210+ on Januar"
   },
@@ -25016,7 +25016,7 @@
    "cash": 0.0,
    "mid": 0.255,
    "share": 1.0,
-   "reward": 3.2729397368651845,
+   "reward": 3.5556453220270288,
    "fills": 0,
    "q": "Will at least 10 ships transit the Strait of Hormuz on any day by December 31, 2"
   },
@@ -25024,10 +25024,28 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.245,
-   "share": 0.19485790362105188,
-   "reward": 4.417208416551644,
+   "share": null,
+   "reward": 4.444596387653426,
    "fills": 0,
    "q": "Will Danielle Alvarez be the next White House Press Secretary?"
+  },
+  "0x5804602bff8b6857033f368e49a801441549f715c648f1fa59add6b804ac93ed": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.7549999999999999,
+   "share": 1.0,
+   "reward": 0.24317959723649202,
+   "fills": 0,
+   "q": "Will Trump pardon anyone by January 31, 2027?"
+  },
+  "0xe5fe861eca3509f7f1a6bdb94ce4a5a6d55af0f52bc58423b585786249cca870": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.605,
+   "share": 1.0,
+   "reward": 0.24317959723649202,
+   "fills": 0,
+   "q": "Will Trump pardon anyone by December 31, 2026?"
   }
  },
  "history": [
@@ -111703,17 +111721,30 @@
    "w": 2992742
   },
   {
-   "ts": "2026-11-25T22:35:55.928310+00:00",
-   "dt_h": 0.115,
-   "reward_tick": 4.4728,
-   "reward_total": 61204.79,
+   "ts": "2026-11-25T22:39:06.358030+00:00",
+   "dt_h": 0.169,
+   "reward_tick": 6.3661,
+   "reward_total": 61206.69,
    "mm_value": -681.06,
-   "net": 60523.74,
-   "avg_share": 0.9614,
+   "net": 60525.63,
+   "avg_share": 1.0,
    "n_markets": 53,
    "fills_total": 659,
    "rebalanced": false,
    "w": 2992743
+  },
+  {
+   "ts": "2026-11-25T22:46:06.572374+00:00",
+   "dt_h": 0.119,
+   "reward_tick": 4.7214,
+   "reward_total": 61211.41,
+   "mm_value": -680.76,
+   "net": 60530.65,
+   "avg_share": 0.9545,
+   "n_markets": 53,
+   "fills_total": 659,
+   "rebalanced": false,
+   "w": 2992744
   }
  ],
  "fills": [
@@ -117649,8 +117680,8 @@
    "ledger": "v4"
   }
  ],
- "reward_total": 61204.79299399454,
- "last_ts": 1795646155.9283102,
+ "reward_total": 61211.407649286324,
+ "last_ts": 1795646766.572374,
  "chosen_at": 1791639880.921448,
  "rebalances": [
   {
@@ -117661,19 +117692,19 @@
   }
  ],
  "last_tick": {
-  "ts": "2026-11-25T22:35:55.928310+00:00",
-  "dt_h": 0.03,
+  "ts": "2026-11-25T22:46:06.572374+00:00",
+  "dt_h": 0.017,
   "markets": [
    {
     "q": "Will Chicago Bears finish the 2026-27 NFL regular ",
-    "mid": 0.38,
+    "mid": 0.395,
     "share": 1.0,
     "earned": 0.0,
     "inv": 20.0
    },
    {
     "q": "Will Denver Broncos finish the 2026-27 NFL regular",
-    "mid": 0.474,
+    "mid": 0.475,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -117748,37 +117779,37 @@
    },
    {
     "q": "AMD hit with a BIS export-control penalty by March",
-    "mid": 0.25,
+    "mid": 0.245,
     "share": 1.0,
-    "earned": 0.0127,
+    "earned": 0.0069,
     "inv": 0.0
    },
    {
     "q": "Will the chopsticks catch SpaceX Starship Flight T",
     "mid": 0.605,
     "share": 1.0,
-    "earned": 0.0019,
+    "earned": 0.001,
     "inv": 0.0
    },
    {
     "q": "Next Gemini Carbon (4.1+) released by January 31, ",
     "mid": 0.485,
     "share": 1.0,
-    "earned": 0.0051,
+    "earned": 0.0028,
     "inv": 0.0
    },
    {
     "q": "Will MegaETH hit $0.10 by June 30, 2027?",
-    "mid": 0.28,
+    "mid": 0.355,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0035,
     "inv": 0.0
    },
    {
     "q": "Will one team kill two Tormentors in a single game",
-    "mid": 0.51,
+    "mid": 0.505,
     "share": 1.0,
-    "earned": 0.0444,
+    "earned": 0.0243,
     "inv": 0.0
    },
    {
@@ -117789,7 +117820,7 @@
     "q": "Will Off Campus rank in Google\u2019s Top 5 Most Search",
     "mid": 0.725,
     "share": 1.0,
-    "earned": 0.0019,
+    "earned": 0.001,
     "inv": 0.0
    },
    {
@@ -117810,7 +117841,7 @@
    },
    {
     "q": "Will Croatia come in 3rd place at Eurovision 2027?",
-    "mid": 0.186,
+    "mid": 0.162,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -117819,202 +117850,188 @@
     "q": "PGL Major Singapore 2026: Any map to go 13-0",
     "mid": 0.47,
     "share": 1.0,
-    "earned": 0.0444,
-    "inv": 0.0
-   },
-   {
-    "q": "Will a team from Europe win the PGL Major Singapor",
-    "mid": 0.435,
-    "share": 1.0,
-    "earned": 0.0456,
+    "earned": 0.0243,
     "inv": 0.0
    },
    {
     "q": "Will Legacy record 3 or more aces at the PGL Major",
     "mid": 0.53,
     "share": 1.0,
-    "earned": 0.0444,
+    "earned": 0.0243,
     "inv": 0.0
    },
    {
     "q": "Will Nemiga record 3 or more aces at the PGL Major",
     "mid": 0.59,
     "share": 1.0,
-    "earned": 0.0444,
+    "earned": 0.0243,
     "inv": 0.0
    },
    {
     "q": "Will Doublelift be inducted into the Hall of Legen",
     "mid": 0.511,
     "share": 1.0,
-    "earned": 0.0444,
+    "earned": 0.0243,
     "inv": 0.0
    },
    {
     "q": "Will HEROIC record 3 or more aces at the PGL Major",
     "mid": 0.48,
     "share": 1.0,
-    "earned": 0.0444,
+    "earned": 0.0243,
     "inv": 0.0
    },
    {
     "q": "Will the LPL have an official English broadcast in",
-    "mid": 0.81,
+    "mid": 0.805,
     "share": 1.0,
-    "earned": 0.0444,
+    "earned": 0.0243,
     "inv": 0.0
    },
    {
     "q": "Will TheShy be inducted into the Hall of Legends i",
     "mid": 0.365,
     "share": 1.0,
-    "earned": 0.0444,
+    "earned": 0.0243,
     "inv": 0.0
    },
    {
     "q": "Will Pep Guardiola's next job be England?",
-    "mid": 0.438,
+    "mid": 0.439,
     "share": 1.0,
-    "earned": 0.0342,
+    "earned": 0.0187,
     "inv": 0.0
    },
    {
     "q": "Will JaCkky have the most kills at BLAST Slam IX P",
-    "mid": 0.22,
-    "share": 1.0,
-    "earned": 0.0241,
+    "mid": 0.025,
+    "share": 0.0027,
+    "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the St",
-    "mid": 0.305,
+    "mid": 0.33,
     "share": 1.0,
-    "earned": 0.0507,
+    "earned": 0.0278,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
-    "mid": 0.605,
+    "mid": 0.625,
     "share": 1.0,
-    "earned": 0.0507,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the next governing coalition of Israel consis",
-    "mid": 0.342,
-    "share": 0.3384,
-    "earned": 0.0028,
+    "earned": 0.0278,
     "inv": 0.0
    },
    {
     "q": "Will no Israeli government be formed after the 202",
-    "mid": 0.31,
-    "share": 1.0,
-    "earned": 0.0114,
+    "mid": 0.295,
+    "share": 0.267,
+    "earned": 0.0017,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the St",
-    "mid": 0.515,
+    "mid": 0.5,
     "share": 1.0,
-    "earned": 0.0507,
+    "earned": 0.0278,
     "inv": 0.0
    },
    {
     "q": "Will China blockade Taiwan by June 30, 2027?",
     "mid": 0.485,
     "share": 1.0,
-    "earned": 0.0634,
+    "earned": 0.0347,
     "inv": 0.0
    },
    {
     "q": "Will China blockade Taiwan by December 31, 2027?",
     "mid": 0.51,
     "share": 1.0,
-    "earned": 0.0634,
+    "earned": 0.0347,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ba",
-    "mid": 0.485,
+    "mid": 0.48,
     "share": 1.0,
-    "earned": 0.0507,
+    "earned": 0.0278,
     "inv": 0.0
    },
    {
     "q": "Will the 2-year Treasury yield hit 4.90% before 20",
-    "mid": 0.48,
+    "mid": 0.49,
     "share": 1.0,
-    "earned": 0.0507,
+    "earned": 0.0278,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Pa",
     "mid": 0.56,
     "share": 1.0,
-    "earned": 0.0507,
+    "earned": 0.0278,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ma",
-    "mid": 0.5,
+    "mid": 0.53,
     "share": 1.0,
-    "earned": 0.0507,
+    "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will at least 10 ships transit the Strait of Hormu",
     "mid": 0.255,
     "share": 1.0,
-    "earned": 0.0507,
-    "inv": 0.0
-   },
-   {
-    "q": "Will Danielle Alvarez be the next White House Pres",
-    "mid": 0.245,
-    "share": 0.1949,
-    "earned": 0.0,
+    "earned": 0.0278,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the St",
     "mid": 0.29,
     "share": 1.0,
-    "earned": 0.0507,
+    "earned": 0.0278,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index hit $8.00 (HIGH) by Decem",
     "mid": 0.6,
     "share": 1.0,
-    "earned": 0.0507,
+    "earned": 0.0278,
+    "inv": 0.0
+   },
+   {
+    "q": "Will Trump pardon anyone by January 31, 2027?",
+    "mid": 0.755,
+    "share": 1.0,
+    "earned": 0.0347,
+    "inv": 0.0
+   },
+   {
+    "q": "Will Trump pardon anyone by December 31, 2026?",
+    "mid": 0.605,
+    "share": 1.0,
+    "earned": 0.0347,
+    "inv": 0.0
+   },
+   {
+    "q": "Will Mexico GDP growth in Q4 2026 be between 2.5% ",
+    "mid": 0.201,
+    "share": 1.0,
+    "earned": 0.0319,
     "inv": 0.0
    }
   ],
-  "reward_tick": 1.1281,
-  "reward_total": 61204.79,
-  "mm_value": -681.06,
-  "net": 60523.74,
-  "avg_share": 0.9614,
+  "reward_tick": 0.6506,
+  "reward_total": 61211.41,
+  "mm_value": -680.76,
+  "net": 60530.65,
+  "avg_share": 0.9545,
   "n_markets": 53,
   "fills_total": 659,
   "rebalanced": false
  },
  "reviews": [
-  {
-   "ts": "2026-11-04T22:21:51.447926+00:00",
-   "swapped": 3,
-   "out": [
-    "Will the median home value in Miami be between $83",
-    "Ukraine peace referendum passed by December 31, 20",
-    "Will the Bank of Brazil make no change to the targ"
-   ],
-   "in": [
-    "Will the Bank of Canada increase the target for th",
-    "Next James Bond announced by December 15, 2026?",
-    "Will the Ornn B200 Index be between $9.50 and $10."
-   ]
-  },
   {
    "ts": "2026-11-04T23:22:25.753079+00:00",
    "swapped": 4,
@@ -126772,7 +126789,21 @@
     "Will the 7-day average ship traffic through the St",
     "Will the Ornn H200 Index hit $8.00 (HIGH) by Decem"
    ]
+  },
+  {
+   "ts": "2026-11-25T22:39:06.358030+00:00",
+   "swapped": 3,
+   "out": [
+    "Will the next governing coalition of Israel consis",
+    "Will a team from Europe win the PGL Major Singapor",
+    "Will Danielle Alvarez be the next White House Pres"
+   ],
+   "in": [
+    "Will Trump pardon anyone by January 31, 2027?",
+    "Will Trump pardon anyone by December 31, 2026?",
+    "Will Mexico GDP growth in Q4 2026 be between 2.5% "
+   ]
   }
  ],
- "reviewed_at": 1795642686.537204
+ "reviewed_at": 1795646346.35803
 }

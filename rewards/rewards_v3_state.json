@@ -8,7 +8,7 @@
    "question": "Will the median home value in Miami be between $851,000 and $870,000 on December 31?",
    "yes": "10586749311300173330573458225122570475048456321366063677447919520045672094597",
    "no": "58245321437983411448484161977272186821888458012120716560086572653740903784278",
-   "rate": 2.0,
+   "rate": 3.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -68,7 +68,7 @@
    "question": "Will Etched name a second customer by December 31, 2026?",
    "yes": "14687513753563294234630979989588890043818368223975756933283585607264579664005",
    "no": "83576363736091418879835346485669824588400790821429289609512717661597410487540",
-   "rate": 50.0,
+   "rate": 200.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -98,7 +98,7 @@
    "question": "Will Etched name a second customer by June 30, 2027?",
    "yes": "20186810889349493858073009347590170223825040635144488570912662265783936677046",
    "no": "5867668744919796518814699926229624938614619155330976748958073213765537019363",
-   "rate": 50.0,
+   "rate": 200.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -6428,7 +6428,7 @@
    "cash": 0.0,
    "mid": 0.5700000000000001,
    "share": 1.0,
-   "reward": 619.3683439076082,
+   "reward": 619.6941758908744,
    "fills": 0,
    "q": "Will the Ornn H200 Index hit $8.00 (HIGH) by December 31, 2026?"
   },
@@ -6454,9 +6454,9 @@
   "0x12e7e3aaed06c1ac55f082a0b4282d5f525cdb2106afb1972e9d861bdc7e1649": {
    "inv": 0.0,
    "cash": 0.045050000000000145,
-   "mid": 0.375,
+   "mid": 0.395,
    "share": 1.0,
-   "reward": 587.4916880203267,
+   "reward": 587.8175200035929,
    "fills": 1,
    "q": "Will the Ornn H200 Index hit $5.00 (LOW) by December 31, 2026?",
    "closed_at": 0.47
@@ -9054,7 +9054,7 @@
    "cash": 0.0,
    "mid": 0.505,
    "share": 1.0,
-   "reward": 50.69602398994147,
+   "reward": 51.02185597320753,
    "fills": 0,
    "q": "Will the 2-year Treasury yield hit 4.90% before 2027?"
   },
@@ -11536,9 +11536,9 @@
   "0xab3305643ef7359a90326b1f9ca37210bef91fd09d5ee336ed1e34b98d088599": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.315,
+   "mid": 0.31,
    "share": 1.0,
-   "reward": 163.2996543475068,
+   "reward": 163.62548633077287,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 46+ on December 31"
   },
@@ -11581,18 +11581,18 @@
   "0x27ce2fe6452e02bbc4e767d77eae732b3999d8500268eb67a1adcf577b82c9bc": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.305,
+   "mid": 0.32,
    "share": 1.0,
-   "reward": 71.7979559803706,
+   "reward": 72.12378796363664,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Strait of Hormuz be 5+ on Decemb"
   },
   "0x11d5e82e159fe1e32c728db028b99f6c832215a46e434f4bfb65128cdee2b3c4": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.275,
+   "mid": 0.265,
    "share": 1.0,
-   "reward": 77.90069208865253,
+   "reward": 78.22652407191858,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Strait of Hormuz be 6+ on Decemb"
   },
@@ -11626,9 +11626,9 @@
   "0x8c91d20f1e8fefcec50e045f572084e7a825f402fd87895b9288dc2e2a24cd6a": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.3,
+   "mid": 0.32,
    "share": 1.0,
-   "reward": 178.31429289089107,
+   "reward": 178.64012487415715,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 44+ on December 31"
   },
@@ -11700,7 +11700,7 @@
    "cash": 0.0,
    "mid": 0.725,
    "share": 1.0,
-   "reward": 14.50221521664324,
+   "reward": 14.828047199909292,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Malacca Strait be 220+ on Decemb"
   },
@@ -14121,7 +14121,7 @@
    "cash": 0.0,
    "mid": 0.515,
    "share": 1.0,
-   "reward": 64.98080656269799,
+   "reward": 65.2659095480558,
    "fills": 0,
    "q": "Will an Asian team reach the PGL Major Singapore 2026 playoffs?"
   },
@@ -14209,8 +14209,8 @@
   "0x7c13bca4da969fbf08a70f8d2b1c58dfdd2c3f04bc9f7bdbab1ebcedd10ff8a4": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.0355,
-   "share": 0.02752217828867098,
+   "mid": 0.4995,
+   "share": 1.0,
    "reward": 36.89453499653828,
    "fills": 0,
    "q": "Will Spinx record a 1v5 clutch at the PGL Major Singapore 2026?"
@@ -14220,7 +14220,7 @@
    "cash": 0.0,
    "mid": 0.48800000000000004,
    "share": 1.0,
-   "reward": 46.44992295260053,
+   "reward": 46.73502593795831,
    "fills": 0,
    "q": "Will Twistzz record a 1v5 clutch at the PGL Major Singapore 2026?"
   },
@@ -14247,7 +14247,7 @@
    "cash": 0.0,
    "mid": 0.2575,
    "share": 1.0,
-   "reward": 26.954201082595528,
+   "reward": 27.239304067953327,
    "fills": 0,
    "q": "Will XANTARES record a 1v5 clutch at the PGL Major Singapore 2026?"
   },
@@ -14263,8 +14263,8 @@
   "0xbac4d710dbd1f514296b41b9b2a9ae821f66906bff68e3604e9b820166e67164": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.455,
-   "share": 1.0,
+   "mid": 0.0355,
+   "share": 0.0384615384615385,
    "reward": 26.823227036799558,
    "fills": 0,
    "q": "Will xertioN record a 1v5 clutch at the PGL Major Singapore 2026?"
@@ -14274,7 +14274,7 @@
    "cash": 0.0,
    "mid": 0.516,
    "share": 1.0,
-   "reward": 27.14868860407561,
+   "reward": 27.433791589433408,
    "fills": 0,
    "q": "Will torzsi record a 1v5 clutch at the PGL Major Singapore 2026?"
   },
@@ -14290,8 +14290,8 @@
   "0x8a951416c550bef42645887ed9663a3d82c252c67f50f35b6e92bbd0fb2b1109": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.455,
-   "share": 1.0,
+   "mid": 0.0355,
+   "share": 0.06716417910447768,
    "reward": 26.977966226913317,
    "fills": 0,
    "q": "Will b1t record a 1v5 clutch at the PGL Major Singapore 2026?"
@@ -14346,7 +14346,7 @@
    "cash": 0.0,
    "mid": 0.52,
    "share": 1.0,
-   "reward": 64.63005784380256,
+   "reward": 64.91516082916037,
    "fills": 0,
    "q": "Will Legacy record 3 or more aces at the PGL Major Singapore 2026?"
   },
@@ -14364,7 +14364,7 @@
    "cash": 0.0,
    "mid": 0.47000000000000003,
    "share": 1.0,
-   "reward": 68.79288182591516,
+   "reward": 69.07798481127297,
    "fills": 0,
    "q": "Will Nemiga record 3 or more aces at the PGL Major Singapore 2026?"
   },
@@ -14481,7 +14481,7 @@
    "cash": 0.0,
    "mid": 0.505,
    "share": 1.0,
-   "reward": 35.36042014873739,
+   "reward": 35.64552313409517,
    "fills": 0,
    "q": "Will one team kill two Tormentors in a single game at the BLAST Slam IX Playoffs"
   },
@@ -14517,7 +14517,7 @@
    "cash": 0.0,
    "mid": 0.49,
    "share": 1.0,
-   "reward": 35.51260208546848,
+   "reward": 35.79770507082626,
    "fills": 0,
    "q": "Will HEROIC record 3 or more aces at the PGL Major Singapore 2026?"
   },
@@ -14562,7 +14562,7 @@
    "cash": 0.0,
    "mid": 0.48,
    "share": 1.0,
-   "reward": 35.512637112427726,
+   "reward": 35.79774009778551,
    "fills": 0,
    "q": "PGL Major Singapore 2026: Any map to go 13-0"
   },
@@ -14659,18 +14659,18 @@
   "0x7502bc2b4f9e3acf321a4a9f4e49b4b5bc16eb50806b5d5547b46fc0e81995a1": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.261,
+   "mid": 0.253,
    "share": 1.0,
-   "reward": 0.06817081427829613,
+   "reward": 0.08566082281791981,
    "fills": 0,
    "q": "Will the median home value in Miami be between $851,000 and $870,000 on December"
   },
   "0x5804602bff8b6857033f368e49a801441549f715c648f1fa59add6b804ac93ed": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.7250000000000001,
+   "mid": 0.72,
    "share": 1.0,
-   "reward": 0.7775210625043623,
+   "reward": 1.184811041586929,
    "fills": 0,
    "q": "Will Trump pardon anyone by January 31, 2027?"
   },
@@ -14679,7 +14679,7 @@
    "cash": 0.0,
    "mid": 0.585,
    "share": 1.0,
-   "reward": 0.7775210625043623,
+   "reward": 1.184811041586929,
    "fills": 0,
    "q": "Will Trump pardon anyone by December 31, 2026?"
   },
@@ -14688,7 +14688,7 @@
    "cash": 0.0,
    "mid": 0.52,
    "share": 1.0,
-   "reward": 0.7775210625043623,
+   "reward": 1.184811041586929,
    "fills": 0,
    "q": "Will China blockade Taiwan by December 31, 2027?"
   },
@@ -14697,7 +14697,7 @@
    "cash": 0.0,
    "mid": 0.5,
    "share": 1.0,
-   "reward": 0.7775210625043623,
+   "reward": 1.3645724480350814,
    "fills": 0,
    "q": "Will Etched name a second customer by December 31, 2026?"
   },
@@ -14706,7 +14706,7 @@
    "cash": 0.0,
    "mid": 0.485,
    "share": 1.0,
-   "reward": 0.7775210625043623,
+   "reward": 1.184811041586929,
    "fills": 0,
    "q": "Will China blockade Taiwan by June 30, 2027?"
   },
@@ -14715,25 +14715,25 @@
    "cash": 0.0,
    "mid": 0.5,
    "share": 1.0,
-   "reward": 0.7775210625043623,
+   "reward": 1.3645724480350814,
    "fills": 0,
    "q": "Will Etched name a second customer by June 30, 2027?"
   },
   "0x370311d954339712bb969ce648a9537f446947982ca84f0a942f887645ca1306": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.2875,
+   "mid": 0.29600000000000004,
    "share": 1.0,
-   "reward": 0.5895089050851487,
+   "reward": 0.8990492891878994,
    "fills": 0,
    "q": "Will Oded Forer be the next Israeli Minister of Justice?"
   },
   "0x37688b45cec9db48277e1cd4509868d79eedbe938049b9520b5b6ce3a296bd5b": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.25,
+   "mid": 0.255,
    "share": 1.0,
-   "reward": 0.6220168500034898,
+   "reward": 0.9478488332695433,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Strait of Hormuz reach 10+ by Ja"
   },
@@ -14742,7 +14742,7 @@
    "cash": 0.0,
    "mid": 0.48500000000000004,
    "share": 1.0,
-   "reward": 0.6220168500034898,
+   "reward": 0.9478488332695433,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait reach 36+ b"
   },
@@ -14751,16 +14751,16 @@
    "cash": 0.0,
    "mid": 0.48,
    "share": 1.0,
-   "reward": 0.6220168500034898,
+   "reward": 0.9478488332695433,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait reach 40+ b"
   },
   "0x0376d627e96d7c38c7deaa309196745a6d18f615ca5f9f6e416b809ce04b32b1": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.535,
+   "mid": 0.53,
    "share": 1.0,
-   "reward": 0.5667449041649147,
+   "reward": 0.8647406592413232,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 44+ on January 31?"
   },
@@ -14769,7 +14769,7 @@
    "cash": 0.0,
    "mid": 0.56,
    "share": 1.0,
-   "reward": 0.6220168500034898,
+   "reward": 0.9478488332695433,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Panama Canal be 27+ on January 3"
   },
@@ -14778,7 +14778,7 @@
    "cash": 0.0,
    "mid": 0.255,
    "share": 1.0,
-   "reward": 0.6220168500034898,
+   "reward": 0.9478488332695433,
    "fills": 0,
    "q": "Will at least 10 ships transit the Strait of Hormuz on any day by December 31, 2"
   },
@@ -14787,7 +14787,7 @@
    "cash": 0.0,
    "mid": 0.49,
    "share": 1.0,
-   "reward": 0.6220168500034898,
+   "reward": 0.9478488332695433,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Strait of Hormuz reach 6+ by Jan"
   },
@@ -14796,7 +14796,7 @@
    "cash": 0.0,
    "mid": 0.345,
    "share": 1.0,
-   "reward": 0.6220168500034898,
+   "reward": 0.9478488332695433,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Strait of Hormuz reach 8+ by Jan"
   },
@@ -14805,7 +14805,7 @@
    "cash": 0.0,
    "mid": 0.51,
    "share": 1.0,
-   "reward": 0.6220168500034898,
+   "reward": 0.9478488332695433,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait reach 32+ b"
   },
@@ -14814,7 +14814,7 @@
    "cash": 0.0,
    "mid": 0.47,
    "share": 1.0,
-   "reward": 0.6220168500034898,
+   "reward": 0.9478488332695433,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait reach 34+ b"
   },
@@ -14823,25 +14823,25 @@
    "cash": 0.0,
    "mid": 0.53,
    "share": 1.0,
-   "reward": 0.5666690611177021,
+   "reward": 0.8646076087598449,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 40+ on January 31?"
   },
   "0x74205c1e7253a4ea8f74a18a600f37959af00b6f244e60194557bf5f1269fd2f": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.55,
+   "mid": 0.595,
    "share": 1.0,
-   "reward": 0.5385081785696525,
+   "reward": 0.8366955764867643,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 42+ on January 31?"
   },
   "0xe2c5c00abbd4d3fe554891350ba1930b636cce20c7290bbe0ae85af7c85155fd": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.525,
+   "mid": 0.54,
    "share": 1.0,
-   "reward": 0.6220168500034898,
+   "reward": 0.9478488332695433,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 46+ on January 31?"
   },
@@ -14850,16 +14850,16 @@
    "cash": 0.0,
    "mid": 0.51,
    "share": 1.0,
-   "reward": 0.6220168500034898,
+   "reward": 0.9478488332695433,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 48+ on January 31?"
   },
   "0x4037c116c61359cb73ec89078b51c4511fcfebdfa393052bf1f35cc3a319ce10": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.615,
+   "mid": 0.61,
    "share": 1.0,
-   "reward": 0.6220168500034898,
+   "reward": 0.8925477319293553,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Panama Canal be 25+ on January 3"
   },
@@ -14868,25 +14868,25 @@
    "cash": 0.0,
    "mid": 0.6,
    "share": 1.0,
-   "reward": 0.6220168500034898,
+   "reward": 0.9478488332695433,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Panama Canal be 26+ on January 3"
   },
   "0x71026595f68fc3843a70a1d11c1962f34a7133aa52efaed3b79b0649cef35884": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.48,
+   "mid": 0.475,
    "share": 1.0,
-   "reward": 0.6220168500034898,
+   "reward": 0.9478488332695433,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Panama Canal be 29+ on January 3"
   },
   "0x79f82f0759b1ec0f9c4dcc9bdee976ae2fffb28a3ac3df0a73789f2d82235c57": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.5,
+   "mid": 0.51,
    "share": 1.0,
-   "reward": 0.6220168500034898,
+   "reward": 0.9478488332695433,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Malacca Strait be 210+ on Januar"
   },
@@ -14895,7 +14895,7 @@
    "cash": 0.0,
    "mid": 0.7,
    "share": 1.0,
-   "reward": 0.6220168500034898,
+   "reward": 0.9478488332695433,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Malacca Strait be 220+ on Januar"
   },
@@ -14904,16 +14904,16 @@
    "cash": 0.0,
    "mid": 0.545,
    "share": 1.0,
-   "reward": 0.6220168500034898,
+   "reward": 0.9478488332695433,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Malacca Strait be 230+ on Januar"
   },
   "0x8500197f25587f24ccbeaf6cbc2aa0728e1e82770ef5bef6cf453c314bb02880": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.47450000000000003,
+   "mid": 0.4775,
    "share": 1.0,
-   "reward": 0.6220168500034898,
+   "reward": 0.9478488332695433,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Malacca Strait be 250+ on Januar"
   },
@@ -14922,7 +14922,7 @@
    "cash": 0.0,
    "mid": 0.5,
    "share": 1.0,
-   "reward": 0.6220168500034898,
+   "reward": 0.9478488332695433,
    "fills": 0,
    "q": "Will Advanced Micro Devices (AMD) Q4 Data Center revenue be above $13.5B?"
   },
@@ -14931,15 +14931,15 @@
    "cash": 0.0,
    "mid": 0.5095000000000001,
    "share": 1.0,
-   "reward": 0.5442647437530534,
+   "reward": 0.82936772911085,
    "fills": 0,
    "q": "Will Doublelift be inducted into the Hall of Legends in 2027?"
   },
   "0x48fa658a5c0a806efb8c2f709751007c3ddd8f5665f19ca5ee4705d0eb649962": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.498,
-   "share": 1.0,
+   "mid": 0.0355,
+   "share": 0.03169014084507045,
    "reward": 0.02421528005765544,
    "fills": 0,
    "q": "Will Mata be inducted into the Hall of Legends in 2027?"
@@ -102837,17 +102837,30 @@
    "w": 2992759
   },
   {
-   "ts": "2026-11-26T01:22:29.774469+00:00",
-   "dt_h": 0.051,
-   "reward_tick": 3.7873,
-   "reward_total": 44847.48,
+   "ts": "2026-11-26T01:29:30.021510+00:00",
+   "dt_h": 0.17,
+   "reward_tick": 12.8414,
+   "reward_total": 44856.53,
    "mm_value": -589.25,
-   "net": 44258.22,
-   "avg_share": 0.9641,
+   "net": 44267.28,
+   "avg_share": 0.9102,
    "n_markets": 53,
    "fills_total": 482,
    "rebalanced": false,
    "w": 2992760
+  },
+  {
+   "ts": "2026-11-26T01:34:13.571553+00:00",
+   "dt_h": 0.08,
+   "reward_tick": 6.5633,
+   "reward_total": 44863.1,
+   "mm_value": -589.25,
+   "net": 44273.84,
+   "avg_share": 0.9285,
+   "n_markets": 53,
+   "fills_total": 482,
+   "rebalanced": false,
+   "w": 2992761
   }
  ],
  "fills": [
@@ -107190,8 +107203,8 @@
    "ledger": "v3"
   }
  ],
- "reward_total": 44847.478694294674,
- "last_ts": 1795656149.7744694,
+ "reward_total": 44863.09630137576,
+ "last_ts": 1795656853.5715532,
  "chosen_at": 1795654806.2180734,
  "rebalances": [
   {
@@ -107484,279 +107497,279 @@
   }
  ],
  "last_tick": {
-  "ts": "2026-11-26T01:22:29.774469+00:00",
-  "dt_h": 0.017,
+  "ts": "2026-11-26T01:34:13.571553+00:00",
+  "dt_h": 0.029,
   "markets": [
    {
     "q": "Will the median home value in Miami be between $85",
-    "mid": 0.261,
+    "mid": 0.253,
     "share": 1.0,
-    "earned": 0.0014,
+    "earned": 0.0036,
     "inv": 0.0
    },
    {
     "q": "Will Trump pardon anyone by January 31, 2027?",
-    "mid": 0.725,
+    "mid": 0.72,
     "share": 1.0,
-    "earned": 0.0348,
+    "earned": 0.0599,
     "inv": 0.0
    },
    {
     "q": "Will Trump pardon anyone by December 31, 2026?",
     "mid": 0.585,
     "share": 1.0,
-    "earned": 0.0348,
+    "earned": 0.0599,
     "inv": 0.0
    },
    {
     "q": "Will China blockade Taiwan by December 31, 2027?",
     "mid": 0.52,
     "share": 1.0,
-    "earned": 0.0348,
+    "earned": 0.0599,
     "inv": 0.0
    },
    {
     "q": "Will Etched name a second customer by December 31,",
     "mid": 0.5,
     "share": 1.0,
-    "earned": 0.0348,
+    "earned": 0.2397,
     "inv": 0.0
    },
    {
     "q": "Will China blockade Taiwan by June 30, 2027?",
     "mid": 0.485,
     "share": 1.0,
-    "earned": 0.0348,
+    "earned": 0.0599,
     "inv": 0.0
    },
    {
     "q": "Will Etched name a second customer by June 30, 202",
     "mid": 0.5,
     "share": 1.0,
-    "earned": 0.0348,
+    "earned": 0.2397,
     "inv": 0.0
    },
    {
     "q": "Will Oded Forer be the next Israeli Minister of Ju",
-    "mid": 0.287,
+    "mid": 0.296,
     "share": 1.0,
-    "earned": 0.0264,
+    "earned": 0.0455,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
-    "mid": 0.315,
+    "mid": 0.31,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0479,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index hit $5.00 (LOW) by Decemb",
-    "mid": 0.375,
+    "mid": 0.395,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0479,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the St",
-    "mid": 0.305,
+    "mid": 0.32,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0479,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the St",
-    "mid": 0.275,
+    "mid": 0.265,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0479,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
-    "mid": 0.3,
+    "mid": 0.32,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0479,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ma",
     "mid": 0.725,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0479,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the St",
-    "mid": 0.25,
+    "mid": 0.255,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0479,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ba",
     "mid": 0.485,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0479,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ba",
     "mid": 0.48,
     "share": 1.0,
-    "earned": 0.0278,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the 7-day average ship traffic through the Su",
-    "mid": 0.535,
-    "share": 1.0,
-    "earned": 0.0278,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the 7-day average ship traffic through the Pa",
-    "mid": 0.56,
-    "share": 1.0,
-    "earned": 0.0278,
-    "inv": 0.0
-   },
-   {
-    "q": "Will at least 10 ships transit the Strait of Hormu",
-    "mid": 0.255,
-    "share": 1.0,
-    "earned": 0.0278,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the Ornn H200 Index hit $8.00 (HIGH) by Decem",
-    "mid": 0.57,
-    "share": 1.0,
-    "earned": 0.0,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the 2-year Treasury yield hit 4.90% before 20",
-    "mid": 0.505,
-    "share": 1.0,
-    "earned": 0.0278,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the 7-day average ship traffic through the St",
-    "mid": 0.49,
-    "share": 1.0,
-    "earned": 0.0278,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the 7-day average ship traffic through the St",
-    "mid": 0.345,
-    "share": 1.0,
-    "earned": 0.0278,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the 7-day average ship traffic through the Ba",
-    "mid": 0.51,
-    "share": 1.0,
-    "earned": 0.0278,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the 7-day average ship traffic through the Ba",
-    "mid": 0.47,
-    "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0479,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
     "mid": 0.53,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0479,
+    "inv": 0.0
+   },
+   {
+    "q": "Will the 7-day average ship traffic through the Pa",
+    "mid": 0.56,
+    "share": 1.0,
+    "earned": 0.0479,
+    "inv": 0.0
+   },
+   {
+    "q": "Will at least 10 ships transit the Strait of Hormu",
+    "mid": 0.255,
+    "share": 1.0,
+    "earned": 0.0479,
+    "inv": 0.0
+   },
+   {
+    "q": "Will the Ornn H200 Index hit $8.00 (HIGH) by Decem",
+    "mid": 0.57,
+    "share": 1.0,
+    "earned": 0.0479,
+    "inv": 0.0
+   },
+   {
+    "q": "Will the 2-year Treasury yield hit 4.90% before 20",
+    "mid": 0.505,
+    "share": 1.0,
+    "earned": 0.0479,
+    "inv": 0.0
+   },
+   {
+    "q": "Will the 7-day average ship traffic through the St",
+    "mid": 0.49,
+    "share": 1.0,
+    "earned": 0.0479,
+    "inv": 0.0
+   },
+   {
+    "q": "Will the 7-day average ship traffic through the St",
+    "mid": 0.345,
+    "share": 1.0,
+    "earned": 0.0479,
+    "inv": 0.0
+   },
+   {
+    "q": "Will the 7-day average ship traffic through the Ba",
+    "mid": 0.51,
+    "share": 1.0,
+    "earned": 0.0479,
+    "inv": 0.0
+   },
+   {
+    "q": "Will the 7-day average ship traffic through the Ba",
+    "mid": 0.47,
+    "share": 1.0,
+    "earned": 0.0479,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
-    "mid": 0.55,
+    "mid": 0.53,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0479,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
-    "mid": 0.525,
+    "mid": 0.595,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0479,
+    "inv": 0.0
+   },
+   {
+    "q": "Will the 7-day average ship traffic through the Su",
+    "mid": 0.54,
+    "share": 1.0,
+    "earned": 0.0479,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
     "mid": 0.51,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0479,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Pa",
-    "mid": 0.615,
+    "mid": 0.61,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0479,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Pa",
     "mid": 0.6,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0479,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Pa",
-    "mid": 0.48,
+    "mid": 0.475,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0479,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ma",
-    "mid": 0.5,
+    "mid": 0.51,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0479,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ma",
     "mid": 0.7,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0479,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ma",
     "mid": 0.545,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0479,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ma",
-    "mid": 0.475,
+    "mid": 0.477,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0479,
     "inv": 0.0
    },
    {
     "q": "Will Advanced Micro Devices (AMD) Q4 Data Center r",
     "mid": 0.5,
     "share": 1.0,
-    "earned": 0.0278,
+    "earned": 0.0479,
     "inv": 0.0
    },
    {
     "q": "Will Spinx record a 1v5 clutch at the PGL Major Si",
-    "mid": 0.035,
-    "share": 0.0275,
+    "mid": 0.499,
+    "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
    },
@@ -107764,34 +107777,34 @@
     "q": "Will XANTARES record a 1v5 clutch at the PGL Major",
     "mid": 0.258,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0419,
     "inv": 0.0
    },
    {
     "q": "Will torzsi record a 1v5 clutch at the PGL Major S",
     "mid": 0.516,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0419,
     "inv": 0.0
    },
    {
     "q": "Will Legacy record 3 or more aces at the PGL Major",
     "mid": 0.52,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0419,
     "inv": 0.0
    },
    {
     "q": "Will Doublelift be inducted into the Hall of Legen",
     "mid": 0.51,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0419,
     "inv": 0.0
    },
    {
     "q": "Will Mata be inducted into the Hall of Legends in ",
-    "mid": 0.498,
-    "share": 1.0,
+    "mid": 0.035,
+    "share": 0.0317,
     "earned": 0.0,
     "inv": 0.0
    },
@@ -107799,41 +107812,41 @@
     "q": "PGL Major Singapore 2026: Any map to go 13-0",
     "mid": 0.48,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0419,
     "inv": 0.0
    },
    {
     "q": "Will one team kill two Tormentors in a single game",
     "mid": 0.505,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0419,
     "inv": 0.0
    },
    {
     "q": "Will an Asian team reach the PGL Major Singapore 2",
     "mid": 0.515,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0419,
     "inv": 0.0
    },
    {
     "q": "Will Twistzz record a 1v5 clutch at the PGL Major ",
     "mid": 0.488,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0419,
     "inv": 0.0
    },
    {
     "q": "Will xertioN record a 1v5 clutch at the PGL Major ",
-    "mid": 0.455,
-    "share": 1.0,
+    "mid": 0.035,
+    "share": 0.0385,
     "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will b1t record a 1v5 clutch at the PGL Major Sing",
-    "mid": 0.455,
-    "share": 1.0,
+    "mid": 0.035,
+    "share": 0.0672,
     "earned": 0.0,
     "inv": 0.0
    },
@@ -107841,14 +107854,14 @@
     "q": "Will Nemiga record 3 or more aces at the PGL Major",
     "mid": 0.47,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0419,
     "inv": 0.0
    },
    {
     "q": "Will HEROIC record 3 or more aces at the PGL Major",
     "mid": 0.49,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0419,
     "inv": 0.0
    },
    {
@@ -107859,11 +107872,11 @@
     "inv": 0.0
    }
   ],
-  "reward_tick": 1.2869,
-  "reward_total": 44847.48,
+  "reward_tick": 2.6257,
+  "reward_total": 44863.1,
   "mm_value": -589.25,
-  "net": 44258.22,
-  "avg_share": 0.9641,
+  "net": 44273.84,
+  "avg_share": 0.9285,
   "n_markets": 53,
   "fills_total": 482,
   "rebalanced": false

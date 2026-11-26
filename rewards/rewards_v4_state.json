@@ -724,26 +724,11 @@
    "rate0": 40.0
   },
   {
-   "cond": "0xe5fe861eca3509f7f1a6bdb94ce4a5a6d55af0f52bc58423b585786249cca870",
-   "question": "Will Trump pardon anyone by December 31, 2026?",
-   "yes": "51970850288838034668791556532268188659537396401532914203061842187277557365603",
-   "no": "102669558734091784273518873663179046391861852016403320146634084800560401808990",
-   "rate": 50.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.700000000000003,
-   "est_reward_day": 50.0,
-   "end": "2027-01-01T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 50.0
-  },
-  {
    "cond": "0x370311d954339712bb969ce648a9537f446947982ca84f0a942f887645ca1306",
    "question": "Will Oded Forer be the next Israeli Minister of Justice?",
    "yes": "88683630079522661747697825868779438852557030994471575602091461882871975452857",
    "no": "87737262580730517113514668769957618631484040364810518028200671544607507345337",
-   "rate": 46.0,
+   "rate": 45.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -795,6 +780,21 @@
    "collateral": 18.700000000000003,
    "est_reward_day": 200.0,
    "end": "2028-01-01T04:59:00Z",
+   "share0": 1.0,
+   "rate0": 200.0
+  },
+  {
+   "cond": "0x929240b1778805bb4c3f1ac7701b8a84cf8ae29ca4ff0764d9c6195d7a335789",
+   "question": "Will Etched name a second customer by December 31, 2026?",
+   "yes": "14687513753563294234630979989588890043818368223975756933283585607264579664005",
+   "no": "83576363736091418879835346485669824588400790821429289609512717661597410487540",
+   "rate": 200.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.700000000000003,
+   "est_reward_day": 200.0,
+   "end": "2027-01-01T04:59:00Z",
    "share0": 1.0,
    "rate0": 200.0
   }
@@ -2072,7 +2072,7 @@
   "0x7a9a68c97682b82da841fa413f4764e86024c49e2c58a01b34cb5d3c5b9b2624": {
    "inv": 20.0,
    "cash": -8.85,
-   "mid": 0.38,
+   "mid": 0.425,
    "share": 1.0,
    "reward": 87.751647885782,
    "fills": 1,
@@ -4522,7 +4522,7 @@
   "0x5d15579a3a31d6220eb8d33d167788db82976f14c856768a5e37e51afdaeb279": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.474,
+   "mid": 0.475,
    "share": 1.0,
    "reward": 17.59805527737572,
    "fills": 0,
@@ -12023,9 +12023,9 @@
   "0x6cf827720a643edb6480aa0ab04d0010f4e75fdf3a18bfe0be629649a0cba714": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.64,
-   "share": 1.0,
-   "reward": 874.3114270525385,
+   "mid": 0.5349999999999999,
+   "share": 0.6377358490566086,
+   "reward": 874.3269069633974,
    "fills": 0,
    "q": "Will the Ornn H200 Index hit $8.00 (HIGH) by December 31, 2026?"
   },
@@ -16734,9 +16734,9 @@
   "0xea2590e990456ee92ecdce851ccce6f0164c46b39044f308da5e84e75e443c57": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.52,
+   "mid": 0.515,
    "share": 1.0,
-   "reward": 35.41552987684063,
+   "reward": 35.71835234529802,
    "fills": 0,
    "q": "Will the 2-year Treasury yield hit 4.90% before 2027?"
   },
@@ -20372,7 +20372,7 @@
    "cash": 0.0,
    "mid": 0.31,
    "share": 1.0,
-   "reward": 45.63525619151909,
+   "reward": 45.93807865997648,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Strait of Hormuz be 5+ on Decemb"
   },
@@ -23234,7 +23234,7 @@
    "cash": 0.0,
    "mid": 0.22499999999999998,
    "share": 1.0,
-   "reward": 36.219459182436694,
+   "reward": 36.29516479955105,
    "fills": 0,
    "q": "AMD hit with a BIS export-control penalty by March 31, 2027?"
   },
@@ -23279,7 +23279,7 @@
    "cash": 0.0,
    "mid": 0.605,
    "share": 1.0,
-   "reward": 7.466462036521627,
+   "reward": 7.47781787908878,
    "fills": 0,
    "q": "Will the chopsticks catch SpaceX Starship Flight Test 16 Super Heavy booster?"
   },
@@ -23288,7 +23288,7 @@
    "cash": 0.0,
    "mid": 0.485,
    "share": 1.0,
-   "reward": 16.068625614223652,
+   "reward": 16.098907861069392,
    "fills": 0,
    "q": "Next Gemini Carbon (4.1+) released by January 31, 2027?"
   },
@@ -23700,9 +23700,9 @@
   "0x5f87b5a6e804985aabee25a0ff63b15ed64beb04c85b7172113bdab95d6de2be": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.36,
+   "mid": 0.355,
    "share": 1.0,
-   "reward": 11.158150806664322,
+   "reward": 11.189063283801083,
    "fills": 0,
    "q": "Will MegaETH hit $0.10 by June 30, 2027?"
   },
@@ -23873,7 +23873,7 @@
    "cash": 0.0,
    "mid": 0.505,
    "share": 1.0,
-   "reward": 83.31535088456583,
+   "reward": 83.58032054446608,
    "fills": 0,
    "q": "Will one team kill two Tormentors in a single game at the BLAST Slam IX Playoffs"
   },
@@ -24042,9 +24042,9 @@
   "0xa67f19e4233f692da262b7eec89ef323be4b7f31de20c87a55a30e8d1bdb9f6c": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.73,
+   "mid": 0.74,
    "share": 1.0,
-   "reward": 23.98446761155894,
+   "reward": 23.995823454126093,
    "fills": 0,
    "q": "Will Off Campus rank in Google\u2019s Top 5 Most Searched TV Shows of 2026?"
   },
@@ -24312,7 +24312,7 @@
   "0x10607f24543541a30a9f857fc854a93251638d08652c80bf94b201e626e4a5ff": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.1625,
+   "mid": 0.1655,
    "share": 1.0,
    "reward": 2.2525113925117033,
    "fills": 0,
@@ -24510,9 +24510,9 @@
   "0xa32392acb13874fad4de2d514f10bc1905d1c9ae58f40ac493a44bc2a83d45a4": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.49,
+   "mid": 0.48,
    "share": 1.0,
-   "reward": 49.65577507437107,
+   "reward": 49.92074473427129,
    "fills": 0,
    "q": "PGL Major Singapore 2026: Any map to go 13-0"
   },
@@ -24665,7 +24665,7 @@
    "cash": 0.0,
    "mid": 0.52,
    "share": 1.0,
-   "reward": 42.38985336827337,
+   "reward": 42.65482302817359,
    "fills": 0,
    "q": "Will Legacy record 3 or more aces at the PGL Major Singapore 2026?"
   },
@@ -24674,7 +24674,7 @@
    "cash": 0.0,
    "mid": 0.47500000000000003,
    "share": 1.0,
-   "reward": 41.97123167786609,
+   "reward": 42.23620133776631,
    "fills": 0,
    "q": "Will Nemiga record 3 or more aces at the PGL Major Singapore 2026?"
   },
@@ -24762,9 +24762,9 @@
   "0xa9e9260e255b920b12cebde28e31b9818917bed466a222f3d0b66b9dd09f61d3": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.508,
+   "mid": 0.507,
    "share": 1.0,
-   "reward": 36.7890365247762,
+   "reward": 37.05400618467642,
    "fills": 0,
    "q": "Will Doublelift be inducted into the Hall of Legends in 2027?"
   },
@@ -24773,16 +24773,16 @@
    "cash": 0.0,
    "mid": 0.495,
    "share": 1.0,
-   "reward": 37.932269154061316,
+   "reward": 38.19723881396153,
    "fills": 0,
    "q": "Will HEROIC record 3 or more aces at the PGL Major Singapore 2026?"
   },
   "0x094a7e5ada8aa809c634cb49d8e3ce479661fe019479ecb40969ece3d6d15cac": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.77,
+   "mid": 0.7749999999999999,
    "share": 1.0,
-   "reward": 37.862667421083785,
+   "reward": 38.127637080984,
    "fills": 0,
    "q": "Will the LPL have an official English broadcast in 2027?"
   },
@@ -24791,7 +24791,7 @@
    "cash": 0.0,
    "mid": 0.365,
    "share": 1.0,
-   "reward": 37.866410135008664,
+   "reward": 38.13137979490888,
    "fills": 0,
    "q": "Will TheShy be inducted into the Hall of Legends in 2027?"
   },
@@ -24809,7 +24809,7 @@
    "cash": 0.0,
    "mid": 0.4305,
    "share": 1.0,
-   "reward": 30.519905123981037,
+   "reward": 30.731880851901217,
    "fills": 0,
    "q": "Will Pep Guardiola's next job be England?"
   },
@@ -24861,9 +24861,9 @@
   "0x37688b45cec9db48277e1cd4509868d79eedbe938049b9520b5b6ce3a296bd5b": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.275,
+   "mid": 0.28500000000000003,
    "share": 1.0,
-   "reward": 18.74466435213611,
+   "reward": 19.047486820593505,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Strait of Hormuz reach 10+ by Ja"
   },
@@ -24890,16 +24890,16 @@
    "cash": 0.0,
    "mid": 0.345,
    "share": 1.0,
-   "reward": 18.231014747283467,
+   "reward": 18.533837215740864,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Strait of Hormuz reach 8+ by Jan"
   },
   "0x74205c1e7253a4ea8f74a18a600f37959af00b6f244e60194557bf5f1269fd2f": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.565,
+   "mid": 0.6,
    "share": 1.0,
-   "reward": 17.925872548264522,
+   "reward": 18.228695016721918,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 42+ on January 31?"
   },
@@ -24935,7 +24935,7 @@
    "cash": 0.0,
    "mid": 0.49,
    "share": 1.0,
-   "reward": 18.242842978349433,
+   "reward": 18.54566544680683,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Strait of Hormuz reach 6+ by Jan"
   },
@@ -24953,16 +24953,16 @@
    "cash": 0.0,
    "mid": 0.485,
    "share": 1.0,
-   "reward": 20.685626714731832,
+   "reward": 21.06415480030358,
    "fills": 0,
    "q": "Will China blockade Taiwan by June 30, 2027?"
   },
   "0x88d94a120cac3331616d82b949de1d65d9a098a4bae3a86ada3fac1d0bd08f89": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.515,
+   "mid": 0.505,
    "share": 1.0,
-   "reward": 20.685626714731832,
+   "reward": 21.06415480030358,
    "fills": 0,
    "q": "Will China blockade Taiwan by December 31, 2027?"
   },
@@ -24971,7 +24971,7 @@
    "cash": 0.0,
    "mid": 0.505,
    "share": 1.0,
-   "reward": 16.548501371785445,
+   "reward": 16.85132384024284,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait reach 40+ b"
   },
@@ -24996,18 +24996,18 @@
   "0xf1bf3837fa8ceddb0484550c73caf79e0b59ec43c94e6255006ff7dc3bb70a22": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.615,
+   "mid": 0.595,
    "share": 1.0,
-   "reward": 13.197869270046553,
+   "reward": 13.500691738503953,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Panama Canal be 27+ on January 3"
   },
   "0x79f82f0759b1ec0f9c4dcc9bdee976ae2fffb28a3ac3df0a73789f2d82235c57": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.525,
+   "mid": 0.475,
    "share": 1.0,
-   "reward": 12.581567114150081,
+   "reward": 12.884389582607481,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Malacca Strait be 210+ on Januar"
   },
@@ -25016,7 +25016,7 @@
    "cash": 0.0,
    "mid": 0.28500000000000003,
    "share": 1.0,
-   "reward": 13.197869270046553,
+   "reward": 13.500691738503953,
    "fills": 0,
    "q": "Will at least 10 ships transit the Strait of Hormuz on any day by December 31, 2"
   },
@@ -25041,18 +25041,18 @@
   "0xe5fe861eca3509f7f1a6bdb94ce4a5a6d55af0f52bc58423b585786249cca870": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.6399999999999999,
-   "share": 0.8086124401913807,
-   "reward": 12.083963860749773,
+   "mid": 0.635,
+   "share": null,
+   "reward": 12.220642203080462,
    "fills": 0,
    "q": "Will Trump pardon anyone by December 31, 2026?"
   },
   "0x370311d954339712bb969ce648a9537f446947982ca84f0a942f887645ca1306": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.3325,
+   "mid": 0.3275,
    "share": 1.0,
-   "reward": 8.364087065971558,
+   "reward": 8.711045527273305,
    "fills": 0,
    "q": "Will Oded Forer be the next Israeli Minister of Justice?"
   },
@@ -25070,7 +25070,7 @@
    "cash": 0.0,
    "mid": 0.51,
    "share": 1.0,
-   "reward": 7.287278613006628,
+   "reward": 8.801390955293622,
    "fills": 0,
    "q": "Will Lambda IPO by June 30, 2027?"
   },
@@ -25079,9 +25079,18 @@
    "cash": 0.0,
    "mid": 0.53,
    "share": 1.0,
-   "reward": 7.287278613006628,
+   "reward": 8.801390955293622,
    "fills": 0,
    "q": "Will Lambda IPO by December 31, 2027?"
+  },
+  "0x929240b1778805bb4c3f1ac7701b8a84cf8ae29ca4ff0764d9c6195d7a335789": {
+   "inv": 0.0,
+   "cash": 0.0,
+   "mid": 0.5,
+   "share": 1.0,
+   "reward": 0.4029018056613427,
+   "fills": 0,
+   "q": "Will Etched name a second customer by December 31, 2026?"
   }
  },
  "history": [
@@ -112225,17 +112234,30 @@
    "w": 2992778
   },
   {
-   "ts": "2026-11-26T04:33:13.776102+00:00",
-   "dt_h": 0.068,
-   "reward_tick": 3.639,
-   "reward_total": 61471.05,
-   "mm_value": -681.06,
-   "net": 60790.0,
-   "avg_share": 0.995,
+   "ts": "2026-11-26T04:39:13.505718+00:00",
+   "dt_h": 0.17,
+   "reward_tick": 9.0801,
+   "reward_total": 61476.49,
+   "mm_value": -680.26,
+   "net": 60796.24,
+   "avg_share": 0.975,
    "n_markets": 53,
    "fills_total": 659,
    "rebalanced": false,
    "w": 2992779
+  },
+  {
+   "ts": "2026-11-26T04:44:07.872634+00:00",
+   "dt_h": 0.082,
+   "reward_tick": 4.7657,
+   "reward_total": 61481.26,
+   "mm_value": -680.16,
+   "net": 60801.1,
+   "avg_share": 0.9905,
+   "n_markets": 53,
+   "fills_total": 659,
+   "rebalanced": false,
+   "w": 2992780
   }
  ],
  "fills": [
@@ -118171,8 +118193,8 @@
    "ledger": "v4"
   }
  ],
- "reward_total": 61471.05063897036,
- "last_ts": 1795667593.7761018,
+ "reward_total": 61481.257508064155,
+ "last_ts": 1795668247.8726337,
  "chosen_at": 1791639880.921448,
  "rebalances": [
   {
@@ -118183,19 +118205,19 @@
   }
  ],
  "last_tick": {
-  "ts": "2026-11-26T04:33:13.776102+00:00",
-  "dt_h": 0.017,
+  "ts": "2026-11-26T04:44:07.872634+00:00",
+  "dt_h": 0.031,
   "markets": [
    {
     "q": "Will Chicago Bears finish the 2026-27 NFL regular ",
-    "mid": 0.38,
+    "mid": 0.425,
     "share": 1.0,
     "earned": 0.0,
     "inv": 20.0
    },
    {
     "q": "Will Denver Broncos finish the 2026-27 NFL regular",
-    "mid": 0.474,
+    "mid": 0.475,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -118272,35 +118294,35 @@
     "q": "AMD hit with a BIS export-control penalty by March",
     "mid": 0.225,
     "share": 1.0,
-    "earned": 0.0069,
+    "earned": 0.0129,
     "inv": 0.0
    },
    {
     "q": "Will the chopsticks catch SpaceX Starship Flight T",
     "mid": 0.605,
     "share": 1.0,
-    "earned": 0.001,
+    "earned": 0.0019,
     "inv": 0.0
    },
    {
     "q": "Next Gemini Carbon (4.1+) released by January 31, ",
     "mid": 0.485,
     "share": 1.0,
-    "earned": 0.0028,
+    "earned": 0.0051,
     "inv": 0.0
    },
    {
     "q": "Will MegaETH hit $0.10 by June 30, 2027?",
-    "mid": 0.36,
+    "mid": 0.355,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0064,
     "inv": 0.0
    },
    {
     "q": "Will one team kill two Tormentors in a single game",
     "mid": 0.505,
     "share": 1.0,
-    "earned": 0.0242,
+    "earned": 0.0451,
     "inv": 0.0
    },
    {
@@ -118309,9 +118331,9 @@
    },
    {
     "q": "Will Off Campus rank in Google\u2019s Top 5 Most Search",
-    "mid": 0.73,
+    "mid": 0.74,
     "share": 1.0,
-    "earned": 0.001,
+    "earned": 0.0019,
     "inv": 0.0
    },
    {
@@ -118332,207 +118354,197 @@
    },
    {
     "q": "Will Croatia come in 3rd place at Eurovision 2027?",
-    "mid": 0.163,
+    "mid": 0.166,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "PGL Major Singapore 2026: Any map to go 13-0",
-    "mid": 0.49,
+    "mid": 0.48,
     "share": 1.0,
-    "earned": 0.0242,
+    "earned": 0.0451,
     "inv": 0.0
    },
    {
     "q": "Will Legacy record 3 or more aces at the PGL Major",
     "mid": 0.52,
     "share": 1.0,
-    "earned": 0.0242,
+    "earned": 0.0451,
     "inv": 0.0
    },
    {
     "q": "Will Nemiga record 3 or more aces at the PGL Major",
     "mid": 0.475,
     "share": 1.0,
-    "earned": 0.0242,
+    "earned": 0.0451,
     "inv": 0.0
    },
    {
     "q": "Will Doublelift be inducted into the Hall of Legen",
-    "mid": 0.508,
+    "mid": 0.507,
     "share": 1.0,
-    "earned": 0.0242,
+    "earned": 0.0451,
     "inv": 0.0
    },
    {
     "q": "Will HEROIC record 3 or more aces at the PGL Major",
     "mid": 0.495,
     "share": 1.0,
-    "earned": 0.0242,
+    "earned": 0.0451,
     "inv": 0.0
    },
    {
     "q": "Will the LPL have an official English broadcast in",
-    "mid": 0.77,
+    "mid": 0.775,
     "share": 1.0,
-    "earned": 0.0242,
+    "earned": 0.0451,
     "inv": 0.0
    },
    {
     "q": "Will TheShy be inducted into the Hall of Legends i",
     "mid": 0.365,
     "share": 1.0,
-    "earned": 0.0242,
+    "earned": 0.0451,
     "inv": 0.0
    },
    {
     "q": "Will Pep Guardiola's next job be England?",
     "mid": 0.43,
     "share": 1.0,
-    "earned": 0.0193,
+    "earned": 0.036,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the St",
     "mid": 0.345,
     "share": 1.0,
-    "earned": 0.0276,
+    "earned": 0.0515,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
-    "mid": 0.565,
+    "mid": 0.6,
     "share": 1.0,
-    "earned": 0.0276,
+    "earned": 0.0515,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the St",
     "mid": 0.49,
     "share": 1.0,
-    "earned": 0.0276,
+    "earned": 0.0515,
     "inv": 0.0
    },
    {
     "q": "Will China blockade Taiwan by June 30, 2027?",
     "mid": 0.485,
     "share": 1.0,
-    "earned": 0.0345,
+    "earned": 0.0644,
     "inv": 0.0
    },
    {
     "q": "Will China blockade Taiwan by December 31, 2027?",
-    "mid": 0.515,
+    "mid": 0.505,
     "share": 1.0,
-    "earned": 0.0345,
+    "earned": 0.0644,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ba",
     "mid": 0.505,
     "share": 1.0,
-    "earned": 0.0276,
+    "earned": 0.0515,
     "inv": 0.0
    },
    {
     "q": "Will the 2-year Treasury yield hit 4.90% before 20",
-    "mid": 0.52,
+    "mid": 0.515,
     "share": 1.0,
-    "earned": 0.0276,
+    "earned": 0.0515,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Pa",
-    "mid": 0.615,
+    "mid": 0.595,
     "share": 1.0,
-    "earned": 0.0276,
+    "earned": 0.0515,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ma",
-    "mid": 0.525,
+    "mid": 0.475,
     "share": 1.0,
-    "earned": 0.0276,
+    "earned": 0.0515,
     "inv": 0.0
    },
    {
     "q": "Will at least 10 ships transit the Strait of Hormu",
     "mid": 0.285,
     "share": 1.0,
-    "earned": 0.0276,
+    "earned": 0.0515,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the St",
-    "mid": 0.275,
+    "mid": 0.285,
     "share": 1.0,
-    "earned": 0.0276,
+    "earned": 0.0515,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index hit $8.00 (HIGH) by Decem",
-    "mid": 0.64,
-    "share": 1.0,
-    "earned": 0.0021,
-    "inv": 0.0
-   },
-   {
-    "q": "Will Trump pardon anyone by December 31, 2026?",
-    "mid": 0.64,
-    "share": 0.8086,
-    "earned": 0.0279,
+    "mid": 0.535,
+    "share": 0.6377,
+    "earned": 0.0022,
     "inv": 0.0
    },
    {
     "q": "Will Oded Forer be the next Israeli Minister of Ju",
-    "mid": 0.333,
+    "mid": 0.328,
     "share": 1.0,
-    "earned": 0.0317,
+    "earned": 0.0579,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the St",
     "mid": 0.31,
     "share": 1.0,
-    "earned": 0.0276,
+    "earned": 0.0515,
     "inv": 0.0
    },
    {
     "q": "Will Lambda IPO by June 30, 2027?",
     "mid": 0.51,
     "share": 1.0,
-    "earned": 0.138,
+    "earned": 0.2575,
     "inv": 0.0
    },
    {
     "q": "Will Lambda IPO by December 31, 2027?",
     "mid": 0.53,
     "share": 1.0,
-    "earned": 0.138,
+    "earned": 0.2575,
+    "inv": 0.0
+   },
+   {
+    "q": "Will Etched name a second customer by December 31,",
+    "mid": 0.5,
+    "share": 1.0,
+    "earned": 0.2575,
     "inv": 0.0
    }
   ],
-  "reward_tick": 0.9072,
-  "reward_total": 61471.05,
-  "mm_value": -681.06,
-  "net": 60790.0,
-  "avg_share": 0.995,
+  "reward_tick": 1.9011,
+  "reward_total": 61481.26,
+  "mm_value": -680.16,
+  "net": 60801.1,
+  "avg_share": 0.9905,
   "n_markets": 53,
   "fills_total": 659,
   "rebalanced": false
  },
  "reviews": [
-  {
-   "ts": "2026-11-05T04:28:21.815323+00:00",
-   "swapped": 1,
-   "out": [
-    "Will there be no government shutdown by December 3"
-   ],
-   "in": [
-    "Will the Bank of Japan increase the uncollateraliz"
-   ]
-  },
   {
    "ts": "2026-11-05T05:31:19.062389+00:00",
    "swapped": 2,
@@ -127270,7 +127282,17 @@
     "Will Lambda IPO by June 30, 2027?",
     "Will Lambda IPO by December 31, 2027?"
    ]
+  },
+  {
+   "ts": "2026-11-26T04:41:13.819054+00:00",
+   "swapped": 1,
+   "out": [
+    "Will Trump pardon anyone by December 31, 2026?"
+   ],
+   "in": [
+    "Will Etched name a second customer by December 31,"
+   ]
   }
  ],
- "reviewed_at": 1795664445.671741
+ "reviewed_at": 1795668073.8190536
 }

@@ -664,21 +664,6 @@
    "rate0": 44.0
   },
   {
-   "cond": "0x5a14673c9b5ad4020541a6d427e6dcad0d8a050b55dfa130c19481f8cfad494b",
-   "question": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait reach 34+ by January 31?",
-   "yes": "25033326478514574858467996642187799443235323545743123435514186214520698497320",
-   "no": "36486390152764070583892576614437660723196689968804240284790184876587771719111",
-   "rate": 40.0,
-   "v": 6.5,
-   "min_size": 20.0,
-   "d": 0.0325,
-   "collateral": 18.699999999999996,
-   "est_reward_day": 40.0,
-   "end": "2027-02-01T04:59:00Z",
-   "share0": 1.0,
-   "rate0": 40.0
-  },
-  {
    "cond": "0xc23fdf34eede9fb47841c4773c3937a56c1b6359b74da025979a32b9201e9afe",
    "question": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait reach 32+ by January 31?",
    "yes": "78396210765134885642410883688522901595460511929398335779988791392734000827541",
@@ -797,6 +782,21 @@
    "end": "2027-01-01T04:59:00Z",
    "share0": 1.0,
    "rate0": 40.0
+  },
+  {
+   "cond": "0x9bc915eb0a3ab074df4a10454eca451caa2790899e8ca4001f41b4048a364477",
+   "question": "Will Apple\u2019s market capitalization be between $5.00T and $5.50T at the end of 2026?",
+   "yes": "76730568175360124131327339158826374855912345961696063089830115434963874070919",
+   "no": "89577242078253168354345979852585279332007782821791166238711399768700794267030",
+   "rate": 54.0,
+   "v": 6.5,
+   "min_size": 20.0,
+   "d": 0.0325,
+   "collateral": 18.700000000000003,
+   "est_reward_day": 54.0,
+   "end": "2026-12-31T23:59:00Z",
+   "share0": 1.0,
+   "rate0": 54.0
   }
  ],
  "positions": {
@@ -2072,7 +2072,7 @@
   "0x7a9a68c97682b82da841fa413f4764e86024c49e2c58a01b34cb5d3c5b9b2624": {
    "inv": 20.0,
    "cash": -8.85,
-   "mid": 0.42,
+   "mid": 0.44,
    "share": 1.0,
    "reward": 87.751647885782,
    "fills": 1,
@@ -4128,7 +4128,7 @@
   "0xfafaa706aa77ca7becd5741282e7455659580cbfe62a3881d5020b4b453d5753": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.315,
+   "mid": 0.3,
    "share": 1.0,
    "reward": 9.29485488192705,
    "fills": 0,
@@ -4522,7 +4522,7 @@
   "0x5d15579a3a31d6220eb8d33d167788db82976f14c856768a5e37e51afdaeb279": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.4835,
+   "mid": 0.484,
    "share": 1.0,
    "reward": 17.59805527737572,
    "fills": 0,
@@ -7620,9 +7620,9 @@
   "0x9bc915eb0a3ab074df4a10454eca451caa2790899e8ca4001f41b4048a364477": {
    "inv": 0.0,
    "cash": 0.25,
-   "mid": 0.43,
-   "share": null,
-   "reward": 12.064467783236195,
+   "mid": 0.42500000000000004,
+   "share": 1.0,
+   "reward": 12.251923851930783,
    "fills": 1,
    "q": "Will Apple\u2019s market capitalization be between $5.00T and $5.50T at the end of 20",
    "closed_at": 0.34
@@ -12023,9 +12023,9 @@
   "0x6cf827720a643edb6480aa0ab04d0010f4e75fdf3a18bfe0be629649a0cba714": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.575,
+   "mid": 0.5549999999999999,
    "share": 1.0,
-   "reward": 881.9167696077208,
+   "reward": 882.1834020808584,
    "fills": 0,
    "q": "Will the Ornn H200 Index hit $8.00 (HIGH) by December 31, 2026?"
   },
@@ -16023,7 +16023,7 @@
   "0x8ea966333094c05db58c2c5af2a21262aad3d3ea3ecae518fa671366978841d2": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.47500000000000003,
+   "mid": 0.465,
    "share": 1.0,
    "reward": 101.06796161997823,
    "fills": 0,
@@ -16727,7 +16727,7 @@
    "cash": 0.0,
    "mid": 0.495,
    "share": 1.0,
-   "reward": 15.105300362264348,
+   "reward": 15.399741650422092,
    "fills": 0,
    "q": "Will the 5-year Treasury yield hit 5.00% before 2027?"
   },
@@ -18039,7 +18039,7 @@
   "0xe43ebfb9c7af7e7560cf67dffd4431864a59f9876e0bc057bddb846bdb612d68": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.1975,
+   "mid": 0.1945,
    "share": 1.0,
    "reward": 76.87070843404608,
    "fills": 0,
@@ -20361,9 +20361,9 @@
   "0xb5179c7a05ae44799060e3103369b60d0e141f1b4d96914e9860496a08247600": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.76,
+   "mid": 0.7929999999999999,
    "share": 1.0,
-   "reward": 166.520958308884,
+   "reward": 166.81539959704176,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 38+ on December 31"
   },
@@ -20559,9 +20559,9 @@
   "0x2c37524d0f90b629f17e2c6219f646703e2151452f1a7973e8e03932e9a14a7c": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.37,
+   "mid": 0.36,
    "share": 1.0,
-   "reward": 10.459849585921845,
+   "reward": 10.732207777467757,
    "fills": 0,
    "q": "Will the Bank of Korea make no change to the base rate at the April meeting?"
   },
@@ -21776,7 +21776,7 @@
    "cash": 0.0,
    "mid": 0.58,
    "share": 1.0,
-   "reward": 57.73655742650645,
+   "reward": 58.003286174722014,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait reach 30+ b"
   },
@@ -22387,8 +22387,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.2825,
-   "share": 0.9990133201776025,
-   "reward": 45.357140831021724,
+   "share": 0.997045790251108,
+   "reward": 45.489336545828465,
    "fills": 0,
    "q": "Will Diable play for Bilibili Gaming in 2027?"
   },
@@ -23234,7 +23234,7 @@
    "cash": 0.0,
    "mid": 0.22000000000000003,
    "share": 1.0,
-   "reward": 48.77029019094184,
+   "reward": 48.77397070704382,
    "fills": 0,
    "q": "AMD hit with a BIS export-control penalty by March 31, 2027?"
   },
@@ -23430,9 +23430,9 @@
   "0xdaae829981042e7b447e86c0b5fff90364d2d8fed19c06c2fe0fa7e8a703b0ec": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.575,
-   "share": 0.49482724965840597,
-   "reward": 3.1982392942913953,
+   "mid": 0.5249999999999999,
+   "share": 0.940630797773656,
+   "reward": 3.2147392296807853,
    "fills": 0,
    "q": "Will the 10-year Treasury yield dip below 4.8% before 2027?"
   },
@@ -24044,7 +24044,7 @@
    "cash": 0.0,
    "mid": 0.72,
    "share": 1.0,
-   "reward": 27.078482968341316,
+   "reward": 27.08952451664723,
    "fills": 0,
    "q": "Will Off Campus rank in Google\u2019s Top 5 Most Searched TV Shows of 2026?"
   },
@@ -24312,7 +24312,7 @@
   "0x10607f24543541a30a9f857fc854a93251638d08652c80bf94b201e626e4a5ff": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.242,
+   "mid": 0.245,
    "share": 1.0,
    "reward": 2.2525113925117033,
    "fills": 0,
@@ -24764,7 +24764,7 @@
    "cash": 0.0,
    "mid": 0.5155000000000001,
    "share": 1.0,
-   "reward": 105.52900412341317,
+   "reward": 105.78664025055119,
    "fills": 0,
    "q": "Will Doublelift be inducted into the Hall of Legends in 2027?"
   },
@@ -24872,7 +24872,7 @@
    "cash": 0.0,
    "mid": 0.71,
    "share": 1.0,
-   "reward": 28.126240383933585,
+   "reward": 28.42068167209133,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait reach 30+ b"
   },
@@ -24971,7 +24971,7 @@
    "cash": 0.0,
    "mid": 0.47,
    "share": 1.0,
-   "reward": 50.627544384277336,
+   "reward": 50.89418579778056,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait reach 40+ b"
   },
@@ -25113,9 +25113,9 @@
   "0x7e7fc984165039c2b262b66fe4328234b4bd1804f71b3d1ff4036aa144d2d33b": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.45999999999999996,
-   "share": 0.7012448132780095,
-   "reward": 17.460404427045283,
+   "mid": 0.485,
+   "share": 1.0,
+   "reward": 17.4931107646414,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait reach 36+ b"
   },
@@ -25158,9 +25158,9 @@
   "0x5a14673c9b5ad4020541a6d427e6dcad0d8a050b55dfa130c19481f8cfad494b": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.4,
-   "share": 1.0,
-   "reward": 10.046419954062346,
+   "mid": 0.44,
+   "share": null,
+   "reward": 10.092084246849126,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait reach 34+ b"
   },
@@ -25178,7 +25178,7 @@
    "cash": 0.0,
    "mid": 0.53,
    "share": 1.0,
-   "reward": 21.643119468193028,
+   "reward": 21.937560756350774,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait reach 32+ b"
   },
@@ -25286,7 +25286,7 @@
    "cash": 0.0,
    "mid": 0.495,
    "share": 1.0,
-   "reward": 20.798933995712414,
+   "reward": 20.813656060120298,
    "fills": 0,
    "q": "Will Zohran Mamdani say \"President\" or \"Trump\" during his next livestream?"
   },
@@ -25304,7 +25304,7 @@
    "cash": 0.0,
    "mid": 0.515,
    "share": 1.0,
-   "reward": 21.193168956233965,
+   "reward": 21.20789102064185,
    "fills": 0,
    "q": "Will Zohran Mamdani say \"Five Borough\" during his next livestream?"
   },
@@ -25331,7 +25331,7 @@
    "cash": 0.0,
    "mid": 0.53,
    "share": 1.0,
-   "reward": 17.66222971200611,
+   "reward": 17.676951776413993,
    "fills": 0,
    "q": "Will Zohran Mamdani say \"Afford\" or \"Affordable\" or \"Affordability\" during his n"
   },
@@ -25545,9 +25545,9 @@
   "0xbec79ec6fdd8fe109f8e7aaa29eca41a8798d9e9ef5feef0b0916aa9d6b017cf": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.39,
+   "mid": 0.33499999999999996,
    "share": 1.0,
-   "reward": 23.36203190786421,
+   "reward": 23.508684947733546,
    "fills": 0,
    "q": "Will the Bank of Japan decrease the uncollateralized overnight call rate by 50+ "
   },
@@ -25572,18 +25572,18 @@
   "0x8347a35509fecc1a006d1b21129275ee0109ab9c86b03abdaa392e5cb8202ccc": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.31000000000000005,
+   "mid": 0.30500000000000005,
    "share": 1.0,
-   "reward": 21.40237188586758,
+   "reward": 21.5356881224364,
    "fills": 0,
    "q": "Will the Bank of Japan decrease the uncollateralized overnight call rate by 25 b"
   },
   "0x0e66fd858f1ddd6fcc8e8d459b7e2f95ab6c4b984ec55f423d399561765608f3": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.33,
+   "mid": 0.29000000000000004,
    "share": 1.0,
-   "reward": 20.47515935383739,
+   "reward": 20.651824126732038,
    "fills": 0,
    "q": "Will the Bank of Japan increase the uncollateralized overnight call rate by 50+ "
   },
@@ -25637,7 +25637,7 @@
    "cash": 0.0,
    "mid": 0.545,
    "share": 1.0,
-   "reward": 11.581542823712038,
+   "reward": 11.60362592032387,
    "fills": 0,
    "q": "Will Trump speak to Ali al-Zaidi by December 31?"
   },
@@ -25653,9 +25653,9 @@
   "0xf1fdd4cc9408c089de7e537e405e09c8835e38afdc36b9e4c3e5337985212ffa": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.7,
+   "mid": 0.7250000000000001,
    "share": 1.0,
-   "reward": 11.591966937956993,
+   "reward": 11.614050034568825,
    "fills": 0,
    "q": "Will Trump speak to Jensen Huang by December 31?"
   },
@@ -25671,18 +25671,18 @@
   "0xe660639aa69a1a296350ecf3bd48fd4bc478d3d4c7bf1e44427d53de3ab425f2": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.28,
+   "mid": 0.37,
    "share": 1.0,
-   "reward": 15.48749245862167,
+   "reward": 15.6299673032264,
    "fills": 0,
    "q": "Will the Central Bank of Chile increase the monetary policy rate by 50+ bps at t"
   },
   "0x61b8976c9b8e8f8d8038b782f929985e980f9f14e818729e03a8a1cd4e920fe5": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.33499999999999996,
+   "mid": 0.255,
    "share": 1.0,
-   "reward": 15.170672009029404,
+   "reward": 15.354697814127993,
    "fills": 0,
    "q": "Will the Central Bank of Chile increase the monetary policy rate by 25 bps at th"
   },
@@ -25691,7 +25691,7 @@
    "cash": 0.0,
    "mid": 0.46,
    "share": 1.0,
-   "reward": 17.162558421652637,
+   "reward": 17.272973904711787,
    "fills": 0,
    "q": "Will There be 170-189 HE Grenade Kills at PGL Major Singapore 2026?"
   },
@@ -25826,7 +25826,7 @@
    "cash": 0.0,
    "mid": 0.54,
    "share": 1.0,
-   "reward": 15.413641582622576,
+   "reward": 15.72609947552836,
    "fills": 0,
    "q": "Will there be at least 8000 measles cases in the U.S. in 2026?"
   },
@@ -25835,7 +25835,7 @@
    "cash": 0.0,
    "mid": 0.32,
    "share": 1.0,
-   "reward": 16.536125307557757,
+   "reward": 16.904176917754935,
    "fills": 0,
    "q": "Will there be at least 8500 measles cases in the U.S. in 2026?"
   },
@@ -25844,7 +25844,7 @@
    "cash": 0.0,
    "mid": 0.29,
    "share": 1.0,
-   "reward": 16.501430180613642,
+   "reward": 16.86948179081082,
    "fills": 0,
    "q": "Will there be at least 9000 measles cases in the U.S. in 2026?"
   },
@@ -25871,7 +25871,7 @@
    "cash": 0.0,
    "mid": 0.31,
    "share": 1.0,
-   "reward": 10.396220815710487,
+   "reward": 10.690662103868231,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Malacca Strait be 240+ on Januar"
   },
@@ -25889,16 +25889,16 @@
    "cash": 0.0,
    "mid": 0.39,
    "share": 1.0,
-   "reward": 8.245210092260878,
+   "reward": 8.539651380418622,
    "fills": 0,
    "q": "Will the Bank of Korea increase the base rate by 25 bps at the April meeting?"
   },
   "0x158742b8b11b48c0959e7c6d5a6222273b2500fd404f92a5836c771c2918afc0": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.5805,
+   "mid": 0.59,
    "share": 1.0,
-   "reward": 11.627098028725088,
+   "reward": 12.215980605040581,
    "fills": 0,
    "q": "Will Yair Golan be the next Israeli Minister of National Security?"
   }
@@ -116905,17 +116905,30 @@
    "w": 2993075
   },
   {
-   "ts": "2026-11-28T06:03:29.060652+00:00",
-   "dt_h": 0.074,
-   "reward_tick": 2.3633,
-   "reward_total": 63015.75,
-   "mm_value": -680.26,
-   "net": 62335.49,
-   "avg_share": 0.9788,
+   "ts": "2026-11-28T06:09:05.124125+00:00",
+   "dt_h": 0.169,
+   "reward_tick": 5.4885,
+   "reward_total": 63018.87,
+   "mm_value": -680.76,
+   "net": 62338.12,
+   "avg_share": 0.9984,
    "n_markets": 53,
    "fills_total": 659,
    "rebalanced": false,
    "w": 2993076
+  },
+  {
+   "ts": "2026-11-28T06:14:05.053835+00:00",
+   "dt_h": 0.085,
+   "reward_tick": 3.0201,
+   "reward_total": 63021.89,
+   "mm_value": -679.86,
+   "net": 62342.04,
+   "avg_share": 0.9984,
+   "n_markets": 53,
+   "fills_total": 659,
+   "rebalanced": false,
+   "w": 2993077
   }
  ],
  "fills": [
@@ -122851,8 +122864,8 @@
    "ledger": "v4"
   }
  ],
- "reward_total": 63015.74670893475,
- "last_ts": 1795845809.0606525,
+ "reward_total": 63021.89192428907,
+ "last_ts": 1795846445.053835,
  "chosen_at": 1791639880.921448,
  "rebalances": [
   {
@@ -122863,19 +122876,19 @@
   }
  ],
  "last_tick": {
-  "ts": "2026-11-28T06:03:29.060652+00:00",
-  "dt_h": 0.023,
+  "ts": "2026-11-28T06:14:05.053835+00:00",
+  "dt_h": 0.017,
   "markets": [
    {
     "q": "Will Chicago Bears finish the 2026-27 NFL regular ",
-    "mid": 0.42,
+    "mid": 0.44,
     "share": 1.0,
     "earned": 0.0,
     "inv": 20.0
    },
    {
     "q": "Will Denver Broncos finish the 2026-27 NFL regular",
-    "mid": 0.483,
+    "mid": 0.484,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -122890,14 +122903,14 @@
    },
    {
     "q": "Will Marine Le Pen hit 42% in any poll before the ",
-    "mid": 0.475,
+    "mid": 0.465,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will Rui Costa be the next Brazilian Minister of D",
-    "mid": 0.198,
+    "mid": 0.195,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -122936,7 +122949,7 @@
    },
    {
     "q": "Will Dune: Part Three win Best Sound at the 99th A",
-    "mid": 0.315,
+    "mid": 0.3,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -122945,7 +122958,7 @@
     "q": "AMD hit with a BIS export-control penalty by March",
     "mid": 0.22,
     "share": 1.0,
-    "earned": 0.0005,
+    "earned": 0.0003,
     "inv": 0.0
    },
    {
@@ -122956,7 +122969,7 @@
     "q": "Will Off Campus rank in Google\u2019s Top 5 Most Search",
     "mid": 0.72,
     "share": 1.0,
-    "earned": 0.0015,
+    "earned": 0.001,
     "inv": 0.0
    },
    {
@@ -122977,7 +122990,7 @@
    },
    {
     "q": "Will Croatia come in 3rd place at Eurovision 2027?",
-    "mid": 0.242,
+    "mid": 0.245,
     "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
@@ -122986,237 +122999,223 @@
     "q": "Will Zohran Mamdani say \"Five Borough\" during his ",
     "mid": 0.515,
     "share": 1.0,
-    "earned": 0.0019,
+    "earned": 0.0014,
     "inv": 0.0
    },
    {
     "q": "Will Zohran Mamdani say \"President\" or \"Trump\" dur",
     "mid": 0.495,
     "share": 1.0,
-    "earned": 0.0019,
+    "earned": 0.0014,
     "inv": 0.0
    },
    {
     "q": "Will Zohran Mamdani say \"Afford\" or \"Affordable\" o",
     "mid": 0.53,
     "share": 1.0,
-    "earned": 0.0019,
+    "earned": 0.0014,
     "inv": 0.0
    },
    {
     "q": "Will the Bank of Japan decrease the uncollateraliz",
-    "mid": 0.39,
+    "mid": 0.335,
     "share": 1.0,
-    "earned": 0.0214,
+    "earned": 0.0153,
     "inv": 0.0
    },
    {
     "q": "Will the Bank of Japan decrease the uncollateraliz",
-    "mid": 0.31,
+    "mid": 0.305,
     "share": 1.0,
-    "earned": 0.0195,
+    "earned": 0.0139,
     "inv": 0.0
    },
    {
     "q": "Will the Bank of Japan increase the uncollateraliz",
-    "mid": 0.33,
+    "mid": 0.29,
     "share": 1.0,
-    "earned": 0.0233,
+    "earned": 0.0167,
     "inv": 0.0
    },
    {
     "q": "Will Diable play for Bilibili Gaming in 2027?",
     "mid": 0.282,
-    "share": 0.999,
-    "earned": 0.0,
+    "share": 0.997,
+    "earned": 0.0125,
     "inv": 0.0
    },
    {
     "q": "Will Trump speak to Ali al-Zaidi by December 31?",
     "mid": 0.545,
     "share": 1.0,
-    "earned": 0.0029,
+    "earned": 0.0021,
     "inv": 0.0
    },
    {
     "q": "Will Trump speak to Jensen Huang by December 31?",
-    "mid": 0.7,
+    "mid": 0.725,
     "share": 1.0,
-    "earned": 0.0029,
+    "earned": 0.0021,
     "inv": 0.0
    },
    {
     "q": "Will the Central Bank of Chile increase the moneta",
-    "mid": 0.28,
+    "mid": 0.37,
     "share": 1.0,
-    "earned": 0.0263,
+    "earned": 0.0187,
     "inv": 0.0
    },
    {
     "q": "Will Doublelift be inducted into the Hall of Legen",
     "mid": 0.516,
     "share": 1.0,
-    "earned": 0.034,
+    "earned": 0.0243,
     "inv": 0.0
    },
    {
     "q": "Will the Central Bank of Chile increase the moneta",
-    "mid": 0.335,
+    "mid": 0.255,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0173,
     "inv": 0.0
    },
    {
     "q": "Will There be 170-189 HE Grenade Kills at PGL Majo",
     "mid": 0.46,
     "share": 1.0,
-    "earned": 0.0146,
+    "earned": 0.0104,
     "inv": 0.0
    },
    {
     "q": "Will there be at least 8000 measles cases in the U",
     "mid": 0.54,
     "share": 1.0,
-    "earned": 0.0486,
+    "earned": 0.0347,
     "inv": 0.0
    },
    {
     "q": "Will there be at least 8500 measles cases in the U",
     "mid": 0.32,
     "share": 1.0,
-    "earned": 0.0486,
+    "earned": 0.0347,
     "inv": 0.0
    },
    {
     "q": "Will there be at least 9000 measles cases in the U",
     "mid": 0.29,
     "share": 1.0,
-    "earned": 0.0486,
+    "earned": 0.0347,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ba",
     "mid": 0.47,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0278,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ma",
     "mid": 0.31,
     "share": 1.0,
-    "earned": 0.0389,
+    "earned": 0.0278,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ba",
     "mid": 0.71,
     "share": 1.0,
-    "earned": 0.0389,
+    "earned": 0.0278,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ba",
-    "mid": 0.46,
-    "share": 0.7012,
-    "earned": 0.0034,
+    "mid": 0.485,
+    "share": 1.0,
+    "earned": 0.0035,
     "inv": 0.0
    },
    {
     "q": "Will the Bank of Korea increase the base rate by 2",
     "mid": 0.39,
     "share": 1.0,
-    "earned": 0.0389,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the 7-day average ship traffic through the Ba",
-    "mid": 0.4,
-    "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0278,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ba",
     "mid": 0.53,
     "share": 1.0,
-    "earned": 0.0389,
+    "earned": 0.0278,
     "inv": 0.0
    },
    {
     "q": "Will Yair Golan be the next Israeli Minister of Na",
-    "mid": 0.581,
+    "mid": 0.59,
     "share": 1.0,
-    "earned": 0.0778,
+    "earned": 0.0555,
     "inv": 0.0
    },
    {
     "q": "Will the Bank of Korea make no change to the base ",
-    "mid": 0.37,
+    "mid": 0.36,
     "share": 1.0,
-    "earned": 0.036,
+    "earned": 0.0257,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
-    "mid": 0.76,
+    "mid": 0.793,
     "share": 1.0,
-    "earned": 0.0389,
+    "earned": 0.0278,
     "inv": 0.0
    },
    {
     "q": "Will the 10-year Treasury yield dip below 4.8% bef",
-    "mid": 0.575,
-    "share": 0.4948,
-    "earned": 0.0014,
+    "mid": 0.525,
+    "share": 0.9406,
+    "earned": 0.002,
     "inv": 0.0
    },
    {
     "q": "Will the Ornn H200 Index hit $8.00 (HIGH) by Decem",
-    "mid": 0.575,
+    "mid": 0.555,
     "share": 1.0,
-    "earned": 0.0389,
+    "earned": 0.0278,
     "inv": 0.0
    },
    {
     "q": "Will the 5-year Treasury yield hit 5.00% before 20",
     "mid": 0.495,
     "share": 1.0,
-    "earned": 0.0389,
+    "earned": 0.0278,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ba",
     "mid": 0.58,
     "share": 1.0,
-    "earned": 0.0389,
+    "earned": 0.0278,
+    "inv": 0.0
+   },
+   {
+    "q": "Will Apple\u2019s market capitalization be between $5.0",
+    "mid": 0.425,
+    "share": 1.0,
+    "earned": 0.0375,
     "inv": 0.0
    }
   ],
-  "reward_tick": 0.7285,
-  "reward_total": 63015.75,
-  "mm_value": -680.26,
-  "net": 62335.49,
-  "avg_share": 0.9788,
+  "reward_tick": 0.6168,
+  "reward_total": 63021.89,
+  "mm_value": -679.86,
+  "net": 62342.04,
+  "avg_share": 0.9984,
   "n_markets": 53,
   "fills_total": 659,
   "rebalanced": false
  },
  "reviews": [
-  {
-   "ts": "2026-11-07T05:58:29.793451+00:00",
-   "swapped": 3,
-   "out": [
-    "Will the next Qwen Max model (3.9+) debut at a sco",
-    "Will the next Qwen Max model (3.9+) debut at a sco",
-    "Will the next Qwen Max model (3.9+) debut at a sco"
-   ],
-   "in": [
-    "Will Benjamin Netanyahu receive the second mandate",
-    "Will the Ornn A100 Index be between $0.75 and $1.0",
-    "Will the Ornn B200 Index be at least $10.00 on Dec"
-   ]
-  },
   {
    "ts": "2026-11-07T06:59:13.191437+00:00",
    "swapped": 2,
@@ -132112,7 +132111,17 @@
    "swapped": 0,
    "out": [],
    "in": []
+  },
+  {
+   "ts": "2026-11-28T06:09:05.124125+00:00",
+   "swapped": 1,
+   "out": [
+    "Will the 7-day average ship traffic through the Ba"
+   ],
+   "in": [
+    "Will Apple\u2019s market capitalization be between $5.0"
+   ]
   }
  ],
- "reviewed_at": 1795842513.0196114
+ "reviewed_at": 1795846145.124125
 }

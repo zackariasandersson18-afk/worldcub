@@ -98,7 +98,7 @@
    "question": "Will the 7-day average ship traffic through the Suez Canal be 38+ on December 31?",
    "yes": "47385138946522891390553558835052768806397086013872155937416960171430549992687",
    "no": "22631393867640584065601195412214180530485889886064600302751997922974985806218",
-   "rate": 40.0,
+   "rate": 5.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -143,7 +143,7 @@
    "question": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait reach 30+ by January 31?",
    "yes": "69165780029622109116769275930050386694346732030680365589717309615156142334612",
    "no": "94958022809382558941654003179531596156649876018124909932987563885046169795422",
-   "rate": 40.0,
+   "rate": 5.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -158,7 +158,7 @@
    "question": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait reach 34+ by January 31?",
    "yes": "25033326478514574858467996642187799443235323545743123435514186214520698497320",
    "no": "36486390152764070583892576614437660723196689968804240284790184876587771719111",
-   "rate": 5.0,
+   "rate": 40.0,
    "v": 6.5,
    "min_size": 20.0,
    "d": 0.0325,
@@ -338,7 +338,7 @@
    "question": "Will Japan Q4 GDP growth (annualized) be between -0.8% and 0.0%?",
    "yes": "114388433685274166690615015546277563292406682058597568677212252215580259056007",
    "no": "48179633819553125039670608273788960348752507298429110769705490465158008447310",
-   "rate": 23.0,
+   "rate": 1.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -353,7 +353,7 @@
    "question": "Will the Bank of Russia make no change to the key rate at the April meeting?",
    "yes": "34307819675629750033945509309744969810648283611416362473940519793108314511592",
    "no": "40986953706891863795352704502907131849111486545765840540557402899436434589883",
-   "rate": 28.0,
+   "rate": 38.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -398,7 +398,7 @@
    "question": "Will Japan Q4 GDP growth (annualized) be between -2.4% and -1.6%?",
    "yes": "109550967841485121397860691692928722555682928744904197613604555020509981051356",
    "no": "99017105213056857537427169422388398061706422249232183406274691537779019575888",
-   "rate": 23.0,
+   "rate": 1.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -413,7 +413,7 @@
    "question": "Will the Bank of Russia increase the key rate by 25 bps at the April meeting?",
    "yes": "44252082248706849852300852890708977928686730121616729145976776098746772892908",
    "no": "88400699392388282207908721975901712418884321802390316323097382317086191729315",
-   "rate": 33.0,
+   "rate": 30.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -428,7 +428,7 @@
    "question": "Will the Bank of Japan decrease the uncollateralized overnight call rate by 50+ bps at the April meeting?",
    "yes": "21202097953244246075887675746155083541354896816660119970835231859578953491764",
    "no": "106414873910682348787215072704951641943489293625602649299931085461536625383453",
-   "rate": 23.0,
+   "rate": 22.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -458,7 +458,7 @@
    "question": "Will Diable play for Bilibili Gaming in 2027?",
    "yes": "70827847809071440896184076301493158336877166814899667192200082814105322861915",
    "no": "58815419376229234718580660663174199175364528322814497244678479261135295727549",
-   "rate": 13.0,
+   "rate": 15.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -503,7 +503,7 @@
    "question": "Will the Bank of Russia decrease the key rate by 50+ bps at the April meeting?",
    "yes": "12364897670688901466024212118493029439612775864922036328023071230461938248341",
    "no": "46586455092363280794430450106219845598438660892947587129853315273861945402777",
-   "rate": 23.0,
+   "rate": 16.0,
    "v": 4.5,
    "min_size": 20.0,
    "d": 0.0225,
@@ -8160,7 +8160,7 @@
    "cash": 0.0,
    "mid": 0.775,
    "share": 0.028753993610223665,
-   "reward": 7.759435478968076,
+   "reward": 7.759881691943756,
    "fills": 0,
    "q": "Will Joe Burrow finish the 2026-27 NFL regular season with the most passing touc"
   },
@@ -8862,7 +8862,7 @@
    "cash": 0.0,
    "mid": 0.31,
    "share": 0.9135135135135135,
-   "reward": 32.694065842053746,
+   "reward": 32.715330101310066,
    "fills": 0,
    "q": "Will the 30-year Treasury yield hit 5.50% before 2027?"
   },
@@ -11587,9 +11587,9 @@
   "0xb5179c7a05ae44799060e3103369b60d0e141f1b4d96914e9860496a08247600": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.7989999999999999,
-   "share": 0.3585589883425772,
-   "reward": 163.79793858993187,
+   "mid": 0.796,
+   "share": 0.08232903815000939,
+   "reward": 163.825498043612,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 38+ on December 31"
   },
@@ -13162,9 +13162,9 @@
   "0x0da2188f18843313a300ef526855bb3909f3dc8d0d9aa18e39597eace7453504": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.3045,
-   "share": 0.5999999999999999,
-   "reward": 42.948619581142474,
+   "mid": 0.29100000000000004,
+   "share": 0.9036144578313243,
+   "reward": 42.99804894019727,
    "fills": 0,
    "q": "Will Diable play for Bilibili Gaming in 2027?"
   },
@@ -14215,9 +14215,9 @@
   "0xdf3e18a66c2eda72101d20b0aa669291b3d9e94aa95f7ababed8c4d6f394c3bd": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.482,
+   "mid": 0.469,
    "share": 1.0,
-   "reward": 74.50746359899632,
+   "reward": 74.77903377391665,
    "fills": 0,
    "q": "Will XANTARES record a 1v5 clutch at the PGL Major Singapore 2026?"
   },
@@ -14512,9 +14512,9 @@
   "0xde9c436ce2b0acc9ed6cf45230d5aaf83d4d9bf0c1bcc1149ae5f4b25b8b424d": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.31,
+   "mid": 0.32,
    "share": 1.0,
-   "reward": 64.15945509224491,
+   "reward": 64.17031789924171,
    "fills": 0,
    "q": "Will TheShy be inducted into the Hall of Legends in 2027?"
   },
@@ -14530,9 +14530,9 @@
   "0xa32392acb13874fad4de2d514f10bc1905d1c9ae58f40ac493a44bc2a83d45a4": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.2,
-   "share": 0.015280135823429563,
-   "reward": 94.60960705227889,
+   "mid": 0.195,
+   "share": 0.021860460095214425,
+   "reward": 94.61916642918817,
    "fills": 0,
    "q": "PGL Major Singapore 2026: Any map to go 13-0"
   },
@@ -14710,18 +14710,18 @@
   "0x7e7fc984165039c2b262b66fe4328234b4bd1804f71b3d1ff4036aa144d2d33b": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.41000000000000003,
-   "share": 0.07386492770852635,
-   "reward": 35.78247316998854,
+   "mid": 0.635,
+   "share": 1.0,
+   "reward": 35.79534741328847,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait reach 36+ b"
   },
   "0xe3f57fc21fa08a928bde14f6ac6d40260bd4422636913231b2340a58adb0482b": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.33,
+   "mid": 0.55,
    "share": 1.0,
-   "reward": 72.69237196119197,
+   "reward": 72.94713404625006,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait reach 40+ b"
   },
@@ -14782,18 +14782,18 @@
   "0x5a14673c9b5ad4020541a6d427e6dcad0d8a050b55dfa130c19481f8cfad494b": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.62,
+   "mid": 0.605,
    "share": 1.0,
-   "reward": 29.069933087618345,
+   "reward": 29.161533134904808,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait reach 34+ b"
   },
   "0x76dfe88bdcceda409eebe32902ac26e468848d50ad68898c650fa1f207dbf9c1": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.585,
-   "share": 0.04045552764540842,
-   "reward": 25.947966062023166,
+   "mid": 0.72,
+   "share": 1.0,
+   "reward": 25.959939591252052,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 40+ on January 31?"
   },
@@ -14801,8 +14801,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.545,
-   "share": 0.0804660747410801,
-   "reward": 32.05464905328781,
+   "share": 0.1279333838001514,
+   "reward": 32.05837749124862,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Suez Canal be 42+ on January 31?"
   },
@@ -14828,8 +14828,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.6399999999999999,
-   "share": 0.41320293398532604,
-   "reward": 24.431976119677014,
+   "share": 0.3196882566585969,
+   "reward": 24.44489208655685,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Panama Canal be 25+ on January 3"
   },
@@ -14901,7 +14901,7 @@
    "cash": 0.0,
    "mid": 0.5085,
    "share": 1.0,
-   "reward": 94.18366041565109,
+   "reward": 94.45523059057142,
    "fills": 0,
    "q": "Will Doublelift be inducted into the Hall of Legends in 2027?"
   },
@@ -14935,8 +14935,8 @@
   "0x96066bcc65345d702035e110500dc39803c730be968880b6c4c470ddf98d542b": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.0305,
-   "share": 0.04949310627020474,
+   "mid": 0.498,
+   "share": 1.0,
    "reward": 3.4325871331824187,
    "fills": 0,
    "q": "Will Rekkles be inducted into the Hall of Legends in 2027?"
@@ -15108,7 +15108,7 @@
    "cash": 0.0,
    "mid": 0.355,
    "share": 0.004699778170470353,
-   "reward": 28.038079003754248,
+   "reward": 28.038910637520022,
    "fills": 0,
    "q": "Will the Bank of Japan decrease the uncollateralized overnight call rate by 50+ "
   },
@@ -15135,7 +15135,7 @@
    "cash": 0.0,
    "mid": 0.265,
    "share": 0.006489931152246416,
-   "reward": 21.95455408198857,
+   "reward": 21.955343586499882,
    "fills": 0,
    "q": "Will the Bank of Japan increase the uncollateralized overnight call rate by 25 b"
   },
@@ -15196,18 +15196,18 @@
   "0x48efa78b61bf86bd63f592dd1d03dacb1f1382582c2449c8034cecfd9a9f6bf9": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.24,
+   "mid": 0.25,
    "share": 1.0,
-   "reward": 35.906428470923835,
+   "reward": 36.24818139786179,
    "fills": 0,
    "q": "Will there be at least 8500 measles cases in the U.S. in 2026?"
   },
   "0xa062a693c15a76c0170f831cc23156dd59327baed6963cbf34433ea09ada6d0e": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.17,
-   "share": 0.916936744024539,
-   "reward": 19.066034950102924,
+   "mid": 0.175,
+   "share": 1.0,
+   "reward": 19.086883085581483,
    "fills": 0,
    "q": "Will there be at least 9000 measles cases in the U.S. in 2026?"
   },
@@ -15215,44 +15215,44 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.28,
-   "share": 0.8497928315700537,
-   "reward": 25.429072778005597,
+   "share": 0.7202768590814531,
+   "reward": 25.711336051770267,
    "fills": 0,
    "q": "Will there be at least 8000 measles cases in the U.S. in 2026?"
   },
   "0x002a0dd2fcf4181917d2bd7fd11af2087f2c10eb4133b5465d5323be34658eae": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.435,
-   "share": 0.12035322603617699,
-   "reward": 12.234636774871458,
+   "mid": 0.42000000000000004,
+   "share": 0.057698873335609246,
+   "reward": 12.238157633339524,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Malacca Strait be 240+ on Januar"
   },
   "0xd890d14db469342993029280ae0ba98a45fbc63de128990295c09984e09a6226": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.18,
-   "share": 0.7798368341393184,
-   "reward": 1.629924516119434,
+   "mid": 0.16999999999999998,
+   "share": 0.4589896795219985,
+   "reward": 1.6426082727564695,
    "fills": 0,
    "q": "Will the 30-year Treasury yield hit 5.60% before 2027?"
   },
   "0x18926a58de08063bbb3760039d25c25cd513bfdc95fc736c83bf511655d2c276": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.71,
-   "share": 1.0,
-   "reward": 20.55953784468715,
+   "mid": 0.7150000000000001,
+   "share": 0.3698030634573354,
+   "reward": 20.697040135115543,
    "fills": 0,
    "q": "Will the 7-day average ship traffic through the Bab el-Mandeb Strait reach 30+ b"
   },
   "0xf94eb73698b564a561be635ccf419707072a6fa04b9cab414e7f72988d7542b8": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.585,
-   "share": 0.7764736152121461,
-   "reward": 6.5825186106395694,
+   "mid": 0.5800000000000001,
+   "share": 0.6736717902927462,
+   "reward": 6.58839126948796,
    "fills": 0,
    "q": "Will SpaceX's nameplate compute be above 2.65 GW at the end of 2026?"
   },
@@ -15260,8 +15260,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.5700000000000001,
-   "share": 0.04527582892273525,
-   "reward": 4.954060768567478,
+   "share": 0.061209706628033364,
+   "reward": 4.9553261974872544,
    "fills": 0,
    "q": "Will the 10-year Treasury yield dip below 4.8% before 2027?"
   },
@@ -15270,25 +15270,25 @@
    "cash": 0.0,
    "mid": 0.69,
    "share": 0.02626397827288072,
-   "reward": 7.472614253518652,
+   "reward": 7.473632931569793,
    "fills": 0,
    "q": "Will Jahmyr Gibbs finish the 2026-27 NFL regular season with the most rushing to"
   },
   "0x4cbfc21a31b5826394494248cf18b0d03c612f12e0b6474c69b0aa01845dfff3": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.115,
-   "share": 0.02162699048412421,
-   "reward": 2.1560733513938266,
+   "mid": 0.14500000000000002,
+   "share": 1.0,
+   "reward": 2.1767778192479885,
    "fills": 0,
    "q": "Will Japan Q4 GDP growth (annualized) be between -0.8% and 0.0%?"
   },
   "0x70804b9931d63497e00ff1c4268e7cd7a70d61ffb3c340556d859ac8d52050d1": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.35,
-   "share": 0.7714285714285681,
-   "reward": 10.781134674175313,
+   "mid": 0.355,
+   "share": 0.0773343517280888,
+   "reward": 10.81588803283268,
    "fills": 0,
    "q": "Will the Bank of Russia make no change to the key rate at the April meeting?"
   },
@@ -15296,44 +15296,44 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.165,
-   "share": 0.014036928096269058,
-   "reward": 9.674978141387324,
+   "share": 0.013464483684148694,
+   "reward": 9.67658475444987,
    "fills": 0,
    "q": "Will the Central Bank of Chile decrease the monetary policy rate by 50+ bps at t"
   },
   "0xfdec7991e27c1dafc0c9ab528cb3334a1a08565069da0548b10269bba2d0d3d3": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.115,
-   "share": 0.02541894181886653,
-   "reward": 0.9204568067558304,
+   "mid": 0.12000000000000001,
+   "share": 0.09518213866039975,
+   "reward": 0.9264567942582191,
    "fills": 0,
    "q": "Will Japan Q4 GDP growth (annualized) be between -2.4% and -1.6%?"
   },
   "0xa05c2dd1b836005e729f9e34f587db3491cc249cda72e39d4ae439144c7114b3": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.31000000000000005,
-   "share": 0.23076923076923136,
-   "reward": 11.4632564791818,
+   "mid": 0.29500000000000004,
+   "share": 0.045582442318514396,
+   "reward": 11.485985744161322,
    "fills": 0,
    "q": "Will the Bank of Russia increase the key rate by 25 bps at the April meeting?"
   },
   "0x6af9176461bb5eae50f61428fa8a0cdd6ac81423f62f2211634fba2534aefa19": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.375,
+   "mid": 0.37,
    "share": 1.0,
-   "reward": 13.559328250529664,
+   "reward": 13.675715468352665,
    "fills": 0,
    "q": "Will Satanic have the most kills at BLAST Slam IX Playoffs?"
   },
   "0x2cb34f98328ac986128827c7b2b6192acafee6d1f1bba9435eb592898efcdf2f": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.185,
-   "share": 0.38755980861243966,
-   "reward": 10.444959517945591,
+   "mid": 0.175,
+   "share": 0.07598023888437236,
+   "reward": 10.466974815140249,
    "fills": 0,
    "q": "Will the Bank of Russia decrease the key rate by 50+ bps at the April meeting?"
   },
@@ -15342,16 +15342,16 @@
    "cash": 0.0,
    "mid": 0.57,
    "share": 1.0,
-   "reward": 15.168563645305458,
+   "reward": 15.323746602402794,
    "fills": 0,
    "q": "Will Trump hug another head of state by March 31, 2027?"
   },
   "0xc192a8f70d242a82007f6759ad59f57069c5c3fe54b52a760bf99a3e64ffaeb9": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.67,
-   "share": 0.12296012308623562,
-   "reward": 4.679580383188037,
+   "mid": 0.66,
+   "share": 0.06619663141402278,
+   "reward": 4.711154417188492,
    "fills": 0,
    "q": "Will NVIDIA Rubin Ultra shipments begin by September 30, 2027?"
   },
@@ -15359,8 +15359,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.245,
-   "share": 0.01135053958718961,
-   "reward": 7.9432831096215795,
+   "share": 0.01407259125534176,
+   "reward": 7.945256873039664,
    "fills": 0,
    "q": "Will Li Ganjie be a member of China\u2019s 21st Politburo Standing Committee?"
   },
@@ -15369,7 +15369,7 @@
    "cash": 0.0,
    "mid": 0.415,
    "share": 1.0,
-   "reward": 15.168563645305458,
+   "reward": 15.323746602402794,
    "fills": 0,
    "q": "Will Russia capture all of Stepove by December 31, 2026?"
   },
@@ -15378,7 +15378,7 @@
    "cash": 0.0,
    "mid": 0.515,
    "share": 1.0,
-   "reward": 15.168563645305458,
+   "reward": 15.323746602402794,
    "fills": 0,
    "q": "Will Russia capture all of Stepove by January 31, 2027?"
   },
@@ -15386,8 +15386,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.135,
-   "share": 0.0060756206983527,
-   "reward": 1.6385923467989556,
+   "share": 0.005838256123259751,
+   "reward": 1.639517183500806,
    "fills": 0,
    "q": "Will Ukraine re-enter Velyka Novosilka by December 31, 2026?"
   },
@@ -15395,8 +15395,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.745,
-   "share": 0.011032731568548922,
-   "reward": 7.462589913497407,
+   "share": 0.009802070104405397,
+   "reward": 7.464214368895778,
    "fills": 0,
    "q": "Will Iran target Iraq by December 31, 2026?"
   },
@@ -15404,8 +15404,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.85,
-   "share": 0.005035836082284012,
-   "reward": 5.786803325247152,
+   "share": 0.008510228589775572,
+   "reward": 5.78805614790034,
    "fills": 0,
    "q": "Will Li Qiang be a member of China\u2019s 21st Politburo Standing Committee?"
   },
@@ -15413,8 +15413,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.135,
-   "share": 0.007663022876617175,
-   "reward": 4.077036172766691,
+   "share": 0.013113421004441501,
+   "reward": 4.078574191826659,
    "fills": 0,
    "q": "Will Zhao Leji be a member of China\u2019s 21st Politburo Standing Committee?"
   },
@@ -15422,17 +15422,17 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.185,
-   "share": 0.010790012815215208,
-   "reward": 9.628488470118157,
+   "share": 0.01192690851708299,
+   "reward": 9.630263176690523,
    "fills": 0,
    "q": "Will Wang Huning be a member of China\u2019s 21st Politburo Standing Committee?"
   },
   "0x69d4daaddebf376971083a5e5412a5fb10f3a3295c6daedf6b7664e35d98ed8a": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.4,
-   "share": 1.0,
-   "reward": 8.409651200750526,
+   "mid": 0.37,
+   "share": 0.7012448132780088,
+   "reward": 8.547530576689212,
    "fills": 0,
    "q": "Will Cai Qi be a member of China\u2019s 21st Politburo Standing Committee?"
   },
@@ -15440,8 +15440,8 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.84,
-   "share": 0.006598544696823807,
-   "reward": 1.5393292274439692,
+   "share": 0.008093817013452393,
+   "reward": 1.540495247218124,
    "fills": 0,
    "q": "Will Ding Xuexiang be a member of China\u2019s 21st Politburo Standing Committee?"
   },
@@ -15450,25 +15450,25 @@
    "cash": 0.0,
    "mid": 0.245,
    "share": 1.0,
-   "reward": 14.45277277946173,
+   "reward": 14.607955736559067,
    "fills": 0,
    "q": "Will Li Xi be a member of China\u2019s 21st Politburo Standing Committee?"
   },
   "0x7fc6da7f06f17f2f0c36afbc97058a21ba26e46ebdd6e67f1095db947ecfe410": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.23,
-   "share": 0.05550862321534851,
-   "reward": 12.114353950828463,
+   "mid": 0.245,
+   "share": 0.03335201572478473,
+   "reward": 12.120878584969224,
    "fills": 0,
    "q": "Will Chen Min\u2019er be a member of China\u2019s 21st Politburo Standing Committee?"
   },
   "0xaadb0fd33157c4dd44c42ff70a20a41038774eecda5a829d2a4223c215841c58": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.325,
+   "mid": 0.33,
    "share": 1.0,
-   "reward": 15.133258839613864,
+   "reward": 15.2884417967112,
    "fills": 0,
    "q": "Will Chen Wenqing be a member of China\u2019s 21st Politburo Standing Committee?"
   },
@@ -15476,17 +15476,17 @@
    "inv": 0.0,
    "cash": 0.0,
    "mid": 0.16,
-   "share": 0.025446442015237762,
-   "reward": 11.206217235442027,
+   "share": 0.02783542510788287,
+   "reward": 11.210103820208303,
    "fills": 0,
    "q": "Will He Lifeng be a member of China\u2019s 21st Politburo Standing Committee?"
   },
   "0xef39747515d239f0b72c2762c7a04ba31e5377de6dadf4e71e8e750fd63ed902": {
    "inv": 0.0,
    "cash": 0.0,
-   "mid": 0.27999999999999997,
+   "mid": 0.285,
    "share": 1.0,
-   "reward": 15.154665688066572,
+   "reward": 15.309848645163909,
    "fills": 0,
    "q": "Will Huang Kunming be a member of China\u2019s 21st Politburo Standing Committee?"
   }
@@ -108518,17 +108518,30 @@
    "w": 2993154
   },
   {
-   "ts": "2026-11-28T19:12:51.608167+00:00",
-   "dt_h": 0.051,
-   "reward_tick": 1.0163,
-   "reward_total": 47082.9,
+   "ts": "2026-11-28T19:19:51.788758+00:00",
+   "dt_h": 0.17,
+   "reward_tick": 3.0575,
+   "reward_total": 47084.95,
    "mm_value": -589.25,
-   "net": 46493.65,
-   "avg_share": 0.4634,
+   "net": 46495.69,
+   "avg_share": 0.421,
    "n_markets": 51,
    "fills_total": 482,
    "rebalanced": false,
    "w": 2993155
+  },
+  {
+   "ts": "2026-11-28T19:24:01.998542+00:00",
+   "dt_h": 0.07,
+   "reward_tick": 1.1627,
+   "reward_total": 47086.11,
+   "mm_value": -589.25,
+   "net": 46496.85,
+   "avg_share": 0.4863,
+   "n_markets": 51,
+   "fills_total": 482,
+   "rebalanced": false,
+   "w": 2993156
   }
  ],
  "fills": [
@@ -112871,8 +112884,8 @@
    "ledger": "v3"
   }
  ],
- "reward_total": 47082.90432437702,
- "last_ts": 1795893171.608167,
+ "reward_total": 47086.10820285334,
+ "last_ts": 1795893841.9985416,
  "chosen_at": 1795827643.4132192,
  "rebalances": [
   {
@@ -113177,224 +113190,224 @@
   }
  ],
  "last_tick": {
-  "ts": "2026-11-28T19:12:51.608167+00:00",
-  "dt_h": 0.017,
+  "ts": "2026-11-28T19:24:01.998542+00:00",
+  "dt_h": 0.036,
   "markets": [
    {
     "q": "Will there be at least 8500 measles cases in the U",
-    "mid": 0.24,
+    "mid": 0.25,
     "share": 1.0,
-    "earned": 0.0347,
+    "earned": 0.0514,
     "inv": 0.0
    },
    {
     "q": "Will there be at least 9000 measles cases in the U",
-    "mid": 0.17,
-    "share": 0.9169,
-    "earned": 0.0019,
+    "mid": 0.175,
+    "share": 1.0,
+    "earned": 0.0045,
     "inv": 0.0
    },
    {
     "q": "Will there be at least 8000 measles cases in the U",
     "mid": 0.28,
-    "share": 0.8498,
-    "earned": 0.0283,
+    "share": 0.7203,
+    "earned": 0.0543,
     "inv": 0.0
    },
    {
     "q": "Will the 30-year Treasury yield hit 5.50% before 2",
     "mid": 0.31,
     "share": 0.9135,
-    "earned": 0.0019,
+    "earned": 0.0041,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ma",
-    "mid": 0.435,
-    "share": 0.1204,
+    "mid": 0.42,
+    "share": 0.0577,
     "earned": 0.0004,
     "inv": 0.0
    },
    {
     "q": "Will the 30-year Treasury yield hit 5.60% before 2",
-    "mid": 0.18,
-    "share": 0.7798,
-    "earned": 0.0016,
+    "mid": 0.17,
+    "share": 0.459,
+    "earned": 0.0021,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
-    "mid": 0.799,
-    "share": 0.3586,
-    "earned": 0.0099,
+    "mid": 0.796,
+    "share": 0.0823,
+    "earned": 0.0006,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ba",
-    "mid": 0.33,
+    "mid": 0.55,
     "share": 1.0,
-    "earned": 0.0277,
+    "earned": 0.0603,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Pa",
     "mid": 0.64,
-    "share": 0.4132,
-    "earned": 0.0014,
+    "share": 0.3197,
+    "earned": 0.0024,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ba",
-    "mid": 0.71,
-    "share": 1.0,
-    "earned": 0.0277,
+    "mid": 0.715,
+    "share": 0.3698,
+    "earned": 0.0026,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Ba",
-    "mid": 0.62,
+    "mid": 0.605,
     "share": 1.0,
-    "earned": 0.0035,
+    "earned": 0.0603,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
-    "mid": 0.585,
-    "share": 0.0405,
-    "earned": 0.0001,
+    "mid": 0.72,
+    "share": 1.0,
+    "earned": 0.0075,
     "inv": 0.0
    },
    {
     "q": "Will the 7-day average ship traffic through the Su",
     "mid": 0.545,
-    "share": 0.0805,
-    "earned": 0.0003,
+    "share": 0.1279,
+    "earned": 0.001,
     "inv": 0.0
    },
    {
     "q": "Will SpaceX's nameplate compute be above 2.65 GW a",
-    "mid": 0.585,
-    "share": 0.7765,
-    "earned": 0.0002,
+    "mid": 0.58,
+    "share": 0.6737,
+    "earned": 0.001,
     "inv": 0.0
    },
    {
     "q": "Will the 10-year Treasury yield dip below 4.8% bef",
     "mid": 0.57,
-    "share": 0.0453,
-    "earned": 0.0001,
+    "share": 0.0612,
+    "earned": 0.0003,
     "inv": 0.0
    },
    {
     "q": "Will Rekkles be inducted into the Hall of Legends ",
-    "mid": 0.03,
-    "share": 0.0495,
+    "mid": 0.498,
+    "share": 1.0,
     "earned": 0.0,
     "inv": 0.0
    },
    {
     "q": "Will XANTARES record a 1v5 clutch at the PGL Major",
-    "mid": 0.482,
+    "mid": 0.469,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0528,
     "inv": 0.0
    },
    {
     "q": "Will TheShy be inducted into the Hall of Legends i",
-    "mid": 0.31,
+    "mid": 0.32,
     "share": 1.0,
-    "earned": 0.001,
+    "earned": 0.0021,
     "inv": 0.0
    },
    {
     "q": "Will Doublelift be inducted into the Hall of Legen",
     "mid": 0.508,
     "share": 1.0,
-    "earned": 0.0243,
+    "earned": 0.0528,
     "inv": 0.0
    },
    {
     "q": "PGL Major Singapore 2026: Any map to go 13-0",
-    "mid": 0.2,
-    "share": 0.0153,
-    "earned": 0.0006,
+    "mid": 0.195,
+    "share": 0.0219,
+    "earned": 0.002,
     "inv": 0.0
    },
    {
     "q": "Will Joe Burrow finish the 2026-27 NFL regular sea",
     "mid": 0.775,
     "share": 0.0288,
-    "earned": 0.0,
+    "earned": 0.0001,
     "inv": 0.0
    },
    {
     "q": "Will Jahmyr Gibbs finish the 2026-27 NFL regular s",
     "mid": 0.69,
     "share": 0.0263,
-    "earned": 0.0001,
-    "inv": 0.0
-   },
-   {
-    "q": "Will Japan Q4 GDP growth (annualized) be between -",
-    "mid": 0.115,
-    "share": 0.0216,
-    "earned": 0.0003,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the Bank of Russia make no change to the key ",
-    "mid": 0.35,
-    "share": 0.7714,
-    "earned": 0.015,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the 7-day average ship traffic through the Ba",
-    "mid": 0.41,
-    "share": 0.0739,
-    "earned": 0.0003,
-    "inv": 0.0
-   },
-   {
-    "q": "Will the Central Bank of Chile decrease the moneta",
-    "mid": 0.165,
-    "share": 0.014,
     "earned": 0.0002,
     "inv": 0.0
    },
    {
     "q": "Will Japan Q4 GDP growth (annualized) be between -",
-    "mid": 0.115,
-    "share": 0.0254,
+    "mid": 0.145,
+    "share": 1.0,
+    "earned": 0.0015,
+    "inv": 0.0
+   },
+   {
+    "q": "Will the Bank of Russia make no change to the key ",
+    "mid": 0.355,
+    "share": 0.0773,
+    "earned": 0.0029,
+    "inv": 0.0
+   },
+   {
+    "q": "Will the 7-day average ship traffic through the Ba",
+    "mid": 0.635,
+    "share": 1.0,
+    "earned": 0.0075,
+    "inv": 0.0
+   },
+   {
+    "q": "Will the Central Bank of Chile decrease the moneta",
+    "mid": 0.165,
+    "share": 0.0135,
     "earned": 0.0003,
     "inv": 0.0
    },
    {
+    "q": "Will Japan Q4 GDP growth (annualized) be between -",
+    "mid": 0.12,
+    "share": 0.0952,
+    "earned": 0.0001,
+    "inv": 0.0
+   },
+   {
     "q": "Will the Bank of Russia increase the key rate by 2",
-    "mid": 0.31,
-    "share": 0.2308,
-    "earned": 0.0053,
+    "mid": 0.295,
+    "share": 0.0456,
+    "earned": 0.0021,
     "inv": 0.0
    },
    {
     "q": "Will the Bank of Japan decrease the uncollateraliz",
     "mid": 0.355,
     "share": 0.0047,
-    "earned": 0.0001,
+    "earned": 0.0002,
     "inv": 0.0
    },
    {
     "q": "Will Satanic have the most kills at BLAST Slam IX ",
-    "mid": 0.375,
+    "mid": 0.37,
     "share": 1.0,
-    "earned": 0.0,
+    "earned": 0.0226,
     "inv": 0.0
    },
    {
     "q": "Will Diable play for Bilibili Gaming in 2027?",
-    "mid": 0.304,
-    "share": 0.6,
-    "earned": 0.0054,
+    "mid": 0.291,
+    "share": 0.9036,
+    "earned": 0.0136,
     "inv": 0.0
    },
    {
@@ -113408,141 +113421,141 @@
     "q": "Will the Bank of Japan increase the uncollateraliz",
     "mid": 0.265,
     "share": 0.0065,
-    "earned": 0.0001,
+    "earned": 0.0002,
     "inv": 0.0
    },
    {
     "q": "Will the Bank of Russia decrease the key rate by 5",
-    "mid": 0.185,
-    "share": 0.3876,
-    "earned": 0.0062,
+    "mid": 0.175,
+    "share": 0.076,
+    "earned": 0.0018,
     "inv": 0.0
    },
    {
     "q": "Will Trump hug another head of state by March 31, ",
     "mid": 0.57,
     "share": 1.0,
-    "earned": 0.0139,
+    "earned": 0.0302,
     "inv": 0.0
    },
    {
     "q": "Will NVIDIA Rubin Ultra shipments begin by Septemb",
-    "mid": 0.67,
-    "share": 0.123,
-    "earned": 0.0043,
+    "mid": 0.66,
+    "share": 0.0662,
+    "earned": 0.005,
     "inv": 0.0
    },
    {
     "q": "Will Li Ganjie be a member of China\u2019s 21st Politbu",
     "mid": 0.245,
-    "share": 0.0114,
-    "earned": 0.0002,
+    "share": 0.0141,
+    "earned": 0.0004,
     "inv": 0.0
    },
    {
     "q": "Will Russia capture all of Stepove by December 31,",
     "mid": 0.415,
     "share": 1.0,
-    "earned": 0.0139,
+    "earned": 0.0302,
     "inv": 0.0
    },
    {
     "q": "Will Russia capture all of Stepove by January 31, ",
     "mid": 0.515,
     "share": 1.0,
-    "earned": 0.0139,
+    "earned": 0.0302,
     "inv": 0.0
    },
    {
     "q": "Will Ukraine re-enter Velyka Novosilka by December",
     "mid": 0.135,
-    "share": 0.0061,
-    "earned": 0.0001,
+    "share": 0.0058,
+    "earned": 0.0002,
     "inv": 0.0
    },
    {
     "q": "Will Iran target Iraq by December 31, 2026?",
     "mid": 0.745,
-    "share": 0.011,
-    "earned": 0.0002,
+    "share": 0.0098,
+    "earned": 0.0003,
     "inv": 0.0
    },
    {
     "q": "Will Li Qiang be a member of China\u2019s 21st Politbur",
     "mid": 0.85,
-    "share": 0.005,
-    "earned": 0.0001,
+    "share": 0.0085,
+    "earned": 0.0003,
     "inv": 0.0
    },
    {
     "q": "Will Zhao Leji be a member of China\u2019s 21st Politbu",
     "mid": 0.135,
-    "share": 0.0077,
-    "earned": 0.0001,
+    "share": 0.0131,
+    "earned": 0.0004,
     "inv": 0.0
    },
    {
     "q": "Will Wang Huning be a member of China\u2019s 21st Polit",
     "mid": 0.185,
-    "share": 0.0108,
-    "earned": 0.0001,
+    "share": 0.0119,
+    "earned": 0.0004,
     "inv": 0.0
    },
    {
     "q": "Will Cai Qi be a member of China\u2019s 21st Politburo ",
-    "mid": 0.4,
-    "share": 1.0,
-    "earned": 0.0139,
+    "mid": 0.37,
+    "share": 0.7012,
+    "earned": 0.0212,
     "inv": 0.0
    },
    {
     "q": "Will Ding Xuexiang be a member of China\u2019s 21st Pol",
     "mid": 0.84,
-    "share": 0.0066,
-    "earned": 0.0001,
+    "share": 0.0081,
+    "earned": 0.0002,
     "inv": 0.0
    },
    {
     "q": "Will Li Xi be a member of China\u2019s 21st Politburo S",
     "mid": 0.245,
     "share": 1.0,
-    "earned": 0.0139,
+    "earned": 0.0302,
     "inv": 0.0
    },
    {
     "q": "Will Chen Min\u2019er be a member of China\u2019s 21st Polit",
-    "mid": 0.23,
-    "share": 0.0555,
-    "earned": 0.0008,
+    "mid": 0.245,
+    "share": 0.0334,
+    "earned": 0.001,
     "inv": 0.0
    },
    {
     "q": "Will Chen Wenqing be a member of China\u2019s 21st Poli",
-    "mid": 0.325,
+    "mid": 0.33,
     "share": 1.0,
-    "earned": 0.0139,
+    "earned": 0.0302,
     "inv": 0.0
    },
    {
     "q": "Will He Lifeng be a member of China\u2019s 21st Politbu",
     "mid": 0.16,
-    "share": 0.0254,
-    "earned": 0.0004,
+    "share": 0.0278,
+    "earned": 0.0008,
     "inv": 0.0
    },
    {
     "q": "Will Huang Kunming be a member of China\u2019s 21st Pol",
-    "mid": 0.28,
+    "mid": 0.285,
     "share": 1.0,
-    "earned": 0.0139,
+    "earned": 0.0302,
     "inv": 0.0
    }
   ],
-  "reward_tick": 0.3264,
-  "reward_total": 47082.9,
+  "reward_tick": 0.6269,
+  "reward_total": 47086.11,
   "mm_value": -589.25,
-  "net": 46493.65,
-  "avg_share": 0.4634,
+  "net": 46496.85,
+  "avg_share": 0.4863,
   "n_markets": 51,
   "fills_total": 482,
   "rebalanced": false
